@@ -1,0 +1,258 @@
+{% assign spendmsg = '' %}
+{%- for block in section.blocks -%}
+{% assign cartamount =  cart.original_total_price | divided_by: 100 %}
+{% assign ruleamount = block.settings.spendamount | times: 1 %}
+{% if cartamount < ruleamount%}
+{% assign spendmsg = ruleamount | minus : cartamount %}
+{% assign spendrulmsg = block.settings.spendamountmsg %} 
+{% assign previndex = forloop.index | minus:1  %} 
+{% break %}
+{% endif %}
+{%- endfor -%}
+
+{%- for block in section.blocks -%}
+{% if forloop.first == true %}
+{% assign firstindex = block.settings.spendamount | times: 100 %}
+{% endif %}
+{% if forloop.last == true %}
+{% assign lastindex = block.settings.spendamount | times: 1.0 %}
+{% endif %}
+{% endfor %}
+<div class="outer-spent" >
+  <div class="spend-progress-bar">
+
+    {% if lastindex > cartamount %}  
+    <div class="next-spend-msg">
+      Spend {{spendmsg | times : 100 | money_without_trailing_zeros}} more to get <span style="color:#000">free {{spendrulmsg}}</span>
+    </div> 
+    {% endif %}
+    {%- for block in section.blocks -%}
+    {% if forloop.last == true %}
+    {% assign lastindex = block.settings.spendamount | times: 1.0 %}
+    {% assign lastindexof  = forloop.index   %}  
+    {% endif %}
+    {% endfor %}
+    {% assign perc = cartamount | divided_by: lastindex | times: 100 %}
+    {% assign cartamount =  cart.original_total_price | divided_by: 100 %}
+    {% if cartamount > lastindex %}
+    {% assign perc = '102.5' %}
+    {% assign previndex = lastindexof  %} 
+    {% endif %}
+
+
+    <div class="spend-progress-main">
+      <ul>
+        {%- for block in section.blocks -%}
+        <li><p>{{block.settings.spendamount | times: 100 | money_without_trailing_zeros}}</p><p>{{block.settings.spendamountmsg }}</p></li>  
+        {%- endfor -%}  
+      </ul>   
+    </div> 
+    <div class="unlockshtml">
+      <div class="unlock-msg">
+        {%- for block in section.blocks -%}
+        {% if forloop.index == previndex %}
+        <div  >Enjoy - <b> {{ block.settings.spendamountmsg }}</b> 
+          <span class="svg-img">
+          <?xml version="1.0" encoding="utf-8"?>
+          <!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 624 570" style="enable-background:new 0 0 624 570;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill-rule:evenodd;clip-rule:evenodd;}
+            </style>
+            <path class="st0" d="M200.2,565L4.8,307.2l195.4,143L619.2,5L200.2,565z"/>
+          </svg>
+
+          </span>
+        </div>
+        {% endif %} 
+        {%- endfor -%}
+      </div>  
+    </div>
+
+  </div>
+</div>
+
+<style type="text/css">
+  .spend-progress-main ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    list-style: none;
+    position: relative;
+    margin: 0;
+
+  }
+
+  .spend-progress-main ul li {
+    flex: 1;
+    text-align: right;
+    padding: 0px 10px;
+    font-size: 13px;
+    position: relative;
+  }
+
+  .spend-progress-main ul li p {
+    margin: 15px 0px;
+  }
+
+  .spend-progress-main ul:before {
+    border: 1px solid {{section.settings.bgcolor_bar}};
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    height: 9px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    content: "";
+    border-radius: 10px;
+
+  }
+
+  .spend-progress-main ul li:before {
+    background: {{section.settings.bgcolor_bar}};
+    content: "";
+    position: absolute;
+    height: 9px;
+    width: 1px;
+    top: 35px;
+    right: 23px;
+  }
+  .spend-progress-main ul::after {
+
+    width: calc({{perc}}% - 10px);
+    background: {{section.settings.bgcolor_bar}};
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    height: 7px;
+    left: 0;
+    margin: auto;
+    content: "";
+    border-radius: 10px;
+  }
+  .spend-progress-main ul li p:last-child
+  {
+    min-height: 35px;
+    max-width: 55px;
+    right: -15px;
+    position: relative;
+    margin-right: 0;
+    margin-left: auto;
+    text-align: center;
+  }
+  .outer-spent{
+    padding : 0px 30px;
+    margin-top: -15px;
+
+  }
+  .outer-spent .unlock-msg{
+    display:none;
+  }  
+  .unlockmsg  .outer-spent .unlock-msg{
+    display:block !important;
+  }
+  .unlockmsg  .next-spend-msg ,.unlockmsg  .spend-progress-main {
+    display:none;
+  }
+  .unlock-msg div:last-child {
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .drawer__inner .outer-spent {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+ 
+  #tick-mark {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px 0 0;
+    top: -2px;
+  }
+
+  #tick-mark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 2px;
+    background-color: #000;
+    content: "";
+    transform: translateX(9px) rotate(-45deg);
+    transform-origin: left bottom;
+  }
+
+  #tick-mark::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+  }  
+  .unlock-msg {
+     margin-top: -14px;
+  }
+  @media (max-width:480px){
+    .outer-spent{
+      padding:0px 15px;
+
+    }
+
+  }
+
+</style>
+
+
+
+{% schema %}
+{
+"max_blocks":4,
+"settings": [
+{
+"id": "bgcolor_bar",
+"type": "color",
+"label": "Bar and Text Color"
+}
+],
+"blocks": [
+{
+"type": "cart-spend-section",
+"name": "Cart Spend Section",
+"settings": [
+{
+"id": "spendamount",
+"type": "text",
+"label": "Spend amount"
+},
+{
+"id": "spendamountmsg",
+"type": "text",
+"label": "Spend Shipping Message"
+}
+
+]
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

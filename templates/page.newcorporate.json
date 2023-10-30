@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "main-content": {
+        "type": "page-corporate-template",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main-content"
+    ]
+}

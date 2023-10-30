@@ -1,0 +1,10 @@
+{% case request.path %}
+{% when '/collections/baby-pink-scrubs/men' %}
+  Men's Baby Pink Scrubs
+{% when '/collections/shadow-gray-scrubs/women' %}
+  Women's Dark Gray Scrubs
+{% when '' %}
+  
+{% else %}
+    {{ collection.title }}
+{% endcase %}

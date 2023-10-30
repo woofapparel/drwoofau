@@ -1,0 +1,38 @@
+{
+    "sections": {
+      "product-template": {
+        "type": "product-template-nlp-os2",
+        "settings": {
+        }
+      },      
+      "stories": {
+        "type": "product-sections-bundle-os2",
+        "settings": {
+        }
+      },
+      "reviews": {
+        "type": "looxreviews",
+        "settings": {
+        }
+      },
+      "recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+        }
+      },
+      "sudofooter": {
+        "type": "product-nlp-sudofooter-os2",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "product-template",
+      "stories",
+      "reviews",
+      "recommendations",
+      "sudofooter"
+    ]
+  }
+
+  

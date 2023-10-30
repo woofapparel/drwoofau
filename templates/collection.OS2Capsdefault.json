@@ -1,0 +1,36 @@
+{
+    "sections": {
+      "collection-headervar": {
+        "type": "dr-woof-hero-scrubs",
+            "settings": {
+            }
+          },  
+      "collection-header": {
+        "type": "dr-woof-hero-scrubs3",
+        "settings": {
+        }
+      },      
+      "collection-filter": {
+        "type": "collection-thumbnail-filter",
+        "settings": {
+        }
+      },
+      "collection-filters": {
+        "type": "collection-filters-def",
+        "settings": {
+        }
+      },
+      "main-collection": {
+        "type": "collection-template-caps",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "collection-headervar",
+      "collection-header",
+      "collection-filter",
+      "collection-filters",
+      "main-collection"
+    ]
+  }

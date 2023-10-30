@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "main-content": {
+        "type": "page-teams-template",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main-content"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "main-content": {
+        "type": "page-operationwoof-template",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main-content"
+    ]
+}

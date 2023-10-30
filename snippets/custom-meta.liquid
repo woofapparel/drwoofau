@@ -1,0 +1,18 @@
+{% case request.path %}
+{% when '/collections/baby-pink-scrubs/men' %}
+<title>Men's Baby Pink Scrubs | Buy Scrubs Australia | Dr. Woof Apparel</title>
+<meta name="description" content="Browse our Men's 3-pocket scrub top, classic 5-pocket jogger, and straight-cut 9-pocket cargo pants in baby pink! Soft, breathable, sweat-wicking, and wrinkle-resistant!">
+
+  {% when '/collections/shadow-gray-scrubs/women' %}
+<title>Women's Dark Gray Scrubs | Buy Scrubs Australia | Dr. Woof Apparel</title>
+<meta name="description" content="Browse our Women's 3-pocket scrub top, 6-pocket jogger, and scrub pants in dark grey! Softer than pyjamas, breathable, sweat-wicking, and made to last!">
+
+  {% when '' %}
+<title></title>
+<meta name="description" content="">
+
+  
+{% else %}
+    <title>{{ page_title }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+    {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+{% endcase %}
