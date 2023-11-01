@@ -1,0 +1,48 @@
+<div class="announcement">
+  <div class="announcement__wrapper">
+
+
+    <div class="announcement__text" data-text="{{ section.settings.announcement_text | strip_html | handle }}">
+      <span class="blinking">{{ section.settings.a_text1 | strip_html }}</span> {{ section.settings.a_text2 | strip_html }}
+    </div>
+
+  </div>
+</div>
+<style>
+    .blinking {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+{% schema %}
+  {
+    "name": "Announcement",
+    "settings": [
+      {
+        "label": "Announcement Text",
+        "id": "a_text1",
+        "type": "text"
+      },
+      {
+        "label": "Announcement Text2",
+        "id": "a_text2",
+        "type": "text"
+      }
+    ],
+    "presets": [{
+      "name": "Announcement",
+      "category": "Text"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
