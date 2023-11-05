@@ -2495,7 +2495,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     
       </head>
-      <body data-instant-intensity="viewport" class="{{ template.suffix }} {% if template == 'product.preorder' %}Body_preorder_Template {% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" ontouchstart="return true;">
+      <body data-instant-intensity="viewport" class="{{ template }} {{ template.suffix }} {% if template == 'product.preorder' %}Body_preorder_Template {% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" ontouchstart="return true;">
         {% if template.suffix == 'default' %}   
         <style>
 
@@ -2555,7 +2555,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-   {% if product.type == "Women Scrub Tops" or product.type == "Men Scrub Tops" %}
+   {% if product.type == "Women Scrub Tops" or product.type == "Men Scrub Tops" or product.type == 'OS2 test product' %}
    <div class="outer-modal">
       <div class="inner-modal">
          <button type="button" class="btn btn--circle btn--large screen-layer__close js-screen-close" id="modalclose">
@@ -3640,7 +3640,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% if template == "product.preordernew" %}
       <script src="{{ 'theme-uts.js' | asset_url }}" defer></script>
       {% else %}
-        {% if product.id == 8005417533698 or product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192 or product.id == 8005449679106 or product.id == 6751404523704  or product.id == 7473530503426 or product.id == 6701375455416  or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 6751389483192 or product.id == 7461809258754 %}
+        {% if product.id == 8207921185026 or product.id == 8177226187010 or product.id == 8005417533698 or product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192 or product.id == 8005449679106 or product.id == 6751404523704  or product.id == 7473530503426 or product.id == 6701375455416  or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 6751389483192 or product.id == 7461809258754 %}
           <script src="{{ 'theme-preorder.js' | asset_url }}" defer></script>
         {% else %}
           <script src="{{ 'theme.js' | asset_url }}" defer></script>
@@ -4920,6 +4920,7 @@ $bb =  {{ my_product.id }}
               {% if template.suffix == 'template-scrubs' %}
                 $(".slick-track .slick-slide[data-slick-index=0]").trigger("click")
               {% endif %}
+              $(".slick-track .slick-slide[data-slick-index=0]").trigger("click")
               $(".product-image-main img").css("opacity", 1);
               $(".product__thumbs").css("opacity", 1);
               

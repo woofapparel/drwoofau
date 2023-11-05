@@ -1,4 +1,4 @@
-<!-- snippets/product-form-preorder.liquid -->
+<!-- snippets/product-form-os2.liquid -->
 <style>
     .tprice,
   .tleft{
@@ -59,11 +59,6 @@
 </style>
 
 {% unless template contains 'custom_builder' %}
-<div class="inventoryWrapper" style="display:none;">
-  {% if current_variant.inventory_management == 'shopify' %}
-    <p>Stock: <span id="quantitytoh">{{ current_variant.inventory_quantity }}</span></p>
-  {% endif %}
-</div>
 {%- capture cl -%}
 {%- for c in product.collections -%}{{ c.title | downcase }}{%- endfor -%}
 {%- endcapture -%}
@@ -71,8 +66,8 @@
 {% form 'product', product, id: form_id, class: 'product-single__form small--text-center' %}
 
 <input type="hidden" name="data-product-id" value="{{ product.id }}">
-<input type="hidden" name="data-product-variant-id" value="{{ product.selected_or_first_available_variant.id }}">
 <input id="addon" class="resetmarker" type="hidden" name="properties[ADD ON]">
+<input type="hidden" name="data-product-variant-id" value="{{ product.selected_or_first_available_variant.id }}">
 <input id="namePlacement" class="resetmarker" type="hidden" name="properties[Name Position]">
 <input id="nameFirstline" class="resetmarker" type="hidden" name="properties[Name First Line]">
 <input id="nameSecondline" class="resetmarker" type="hidden" name="properties[Name Second Line]">
@@ -140,21 +135,17 @@ counter = 0;
 </script>
 <!-- 09 -->
 {% unless product.has_only_default_variant %}
-<div class="flexreorder">
-  {% for option in product.options_with_values %}
-    <!-- 09 -->
-
-    {% if variant_type == 'button' %} 
-    <!-- 10 -->
-    {% include 'variant-button', section_id: section_id, option_drop: option %}
-    {% else %}
-    <!-- 11 -->
-    {% include 'variant-dropdown', section_id: section_id %}
-    {% endif %}
-  <!-- 12 -->
-
-  {% endfor %}
-</div>
+{% for option in product.options_with_values %}
+  <!-- 09 -->
+  {% if variant_type == 'button' %} 
+  <!-- 10 -->
+  {% include 'variant-button', section_id: section_id, option_drop: option %}
+  {% else %}
+  <!-- 11 -->
+  {% include 'variant-dropdown', section_id: section_id %}
+  {% endif %}
+<!-- 12 -->
+{% endfor %}
 {% endunless %}
 <!-- 14 -->
 {% comment %}Start Please dont delete it{% endcomment %} 
@@ -184,7 +175,7 @@ counter = 0;
 
 
 {% assign SectotalVariants2 = sf_product_third.variants.size %}
-<div data-totaljson="{{ totalVariants | plus: SectotalVariants2 }}" style="display:none;" class="all-options thirdproducthandle_for_JS" data-secondproducthandle2="{{ sf_product_third.handle }}">
+<div data-totaljson="{{ totalVariants | plus: SectotalVariants2 }}" style="display:none;" class="all-options secondproducthandle_for_JS" data-secondproducthandle="{{ sf_product_third.handle }}">
   {% unless sf_product_third.empty? %}
   {%- assign product_combined_index = forloop.index -%}
   {% for product_combined in sf_product_third.options_with_values %}
@@ -308,7 +299,7 @@ counter = 0;
 {% endif %}
 
 
-    {% if product.type == "Women Scrub Tops" or product.type == "Men Scrub Tops" or product.type == 'OS2 test product' %}
+
 
     <input type="hidden" class="embroidery-products" value="">
         <span class="hoverclicker"><label class="variant__label tleft"><input type="checkbox" id="embroiderycheckbox">Add Embroidery <span class="icon"><img src="{{ 'gificon.gif' | asset_url }}" class="gificon" alt="gificon" /></span> </label>  <span class="thirder"><span class="dollarsign">+$</span><span class="tprice">18 to $30</span> 
@@ -469,7 +460,7 @@ counter = 0;
             flex-wrap: wrap;
           }
        </style>
-{% endif %} 
+
 
 
 
@@ -483,8 +474,8 @@ counter = 0;
 
 <div class="mobile-atc">
 {%- assign enable_dynamic_buttons = false -%}
-{% if enable_payment_button and template != 'product.preorder' and  product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682 and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874  and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 %} 
-{%- assign enable_dynamic_buttons = true -%}
+{% if enable_payment_button and template != 'product.preorder' %}
+{%- assign enable_dynamic_buttons = false -%}
 {% endif %}
 <ul class="sticky-size-list">
 {% for option in product.options_with_values %}
@@ -534,13 +525,18 @@ counter = 0;
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
-      {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 6751404523704 or product.id == 7473530503426 or product.id == 6701375455416 or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %} 
-          ADD TO BAG
+      {% if template == 'product.preorder' %}
+      {{ 'products.product.preorder' | t }}
       {% else %}
-      {% render 'alt-atc', cl:cl %}
+      {% if template.suffix == "template-scrubs-secret" %}
+PRE-ORDER
+{% else %}
+ADD TO BAG
+{% endif %}
+      
       {% endif %}
       {% else %}
-      ADD TO BAG
+      {{ 'products.product.sold_out' | t }}
       {% endif %}
     </span>
   </button>
@@ -565,7 +561,7 @@ counter = 0;
 
 
 {%- assign enable_dynamic_buttons = false -%}
-{% if enable_payment_button and template != 'product.preorder' and  product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682  and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874 and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 and product.type != 'OS2 test product' %} 
+{% if enable_payment_button and template != 'product.preorder' %}
 {%- assign enable_dynamic_buttons = true -%}
 {% endif %}
 <div class="main_contnt2">
@@ -586,13 +582,19 @@ counter = 0;
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
-        {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434  and product.id == 6751404523704  and product.id == 7473530503426  and product.id == 6701375455416 and product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %}
-            ADD TO BAG
-        {% else %}
-        {% render 'alt-atc', cl:cl %}
-        {% endif %}
+      {% if template == 'product.preorder' %}
+      {{ 'products.product.preorder' | t }}
       {% else %}
-        SOLD OUT
+      
+      {% if template.suffix == "template-scrubs-secret" %}
+PRE-ORDER
+{% else %}
+ADD TO BAG
+{% endif %}
+      
+      {% endif %}
+      {% else %}
+      {{ 'products.product.sold_out' | t }}
       {% endif %}
     </span>
   </button>
@@ -610,13 +612,17 @@ counter = 0;
 
 {% assign xmy_value = product.metafields.sf_product_bundle.preorder_date %}
 
-{% if product.type == "Women Scrub Tops" or product.type == "Women Scrub Pants" or product.type == 'OS2 test product' %}
-<a href="https://www.drwoofapparel.com.au/collections/deals/products/wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
-{% endif %}
+<div class="preordermessage">
+  <p >Oops, looks like we're out of stock on this item. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.
+    </p><p><span>**We're expecting to restock the color you picked on {% if xmy_value %}<span class="colorit">{{ xmy_value }}</span>{% endif %}. Thanks for your patience!"**</span></p>
+</div>
 
-{% if product.type == "Men Scrub Tops" or product.type == "Men Scrub Pants" or product.type == 'OS2 test product' %}
+<a href="https://www.drwoofapparel.com.au/collections/deals/products/wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
+
+
+
 <a href="https://www.drwoofapparel.com.au/collections/deals/products/men-wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
-{% endif %}
+
 
 {% unless product.empty? %}
 <textarea class="hide" aria-hidden="true" data-variant-json>
@@ -636,16 +642,13 @@ counter = 0;
 
 </div>
 </div>
-
-
-{% assign my_date = variant.metafields.sf_variantsglobal.preorder_date %}
-
-
 <div class="main-icon-cont" style="padding:5px 0px 5px;">
-    <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;">
+  {% if template.suffix == "template-scrubs-secret" %}
+  <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;">
     <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
-    <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate"></span>. Thanks for your patience!**</p> 
+    <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate" style="font-weight:bold">October 7th</span>. Thanks for your patience!**</p> 
     </div>
+{% endif %}
   <div class="sub-icon-cont">
     {%if section.settings.img1 != blank %}
     <div class="sub-icon-cont1">
@@ -1105,9 +1108,11 @@ counter = 0;
 {% endcomment %}
 <button type="submit" name="add" id="add_to_cart_box" data-add-to-cart="" class="btn btn--tertiary btn--full add-to-cart">
   <span data-add-to-cart-text="">
-
+{% if template.suffix == "template-scrubs-secret" %}
+  PRE-ORDER
+{% else %}
     ADD TO BAG
-
+{% endif %}
   </span>
 </button>
 
@@ -1115,42 +1120,23 @@ counter = 0;
 {% endif %}
 
 <style>
-  .flexreorder{
-    display:flex;
-    flex-wrap:wrap;
-  }
- .variant-wrapper{
-  width:100%;
- }
-  .variant-wrapper--button{
-    order:1;
-  }
-  .variant-change-color{
-    order:0;
-  }
   .main-cont
   {
     background-color:{{section.settings.color_link}};
     padding: 25px 10px 1px;
   }
 
-{% if product.selected_or_first_available_variant.available %}
-  .preorder-text{
+  .preordermessage{
     display:none;
-    margin-top: 0px;
-}
-{% else %}
-.preorder-text{
-    display:block;
-    margin-top:0px;
-}
-{% endif %}
-  .preorder-text span{
+    margin-top:20px;
+
+  }
+  .preordermessage span{
     font-weight:800;
   }
 {% assign my_value = product.metafields.sf_product_bundle.preorder_color %}
 {% if my_value %}
-.preorder-text .colorit{
+.preordermessage .colorit{
   color: {{ my_value }} !important;
 }
 {% endif %}

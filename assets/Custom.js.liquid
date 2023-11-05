@@ -574,9 +574,53 @@ $('html, body').animate({
 }, 500);
  $(".custom-option-value").html($(".varin[name=Size][checked=checked").val())
  $(document).ready(function () {
+    /*
     if($("body").hasClass("template-scrubs")){
-        $('.add-to-cart').on('click', function (e) {
+*/
+if(true){
+    $('.add-to-cart').on('click', function (e) {
             e.preventDefault()
+            if($("body").hasClass("scrunchies")){
+                $varidx = $('input[name=data-product-variant-id]').val()
+                $dataxx = {
+                            "id": $varidx,
+                            "quantity": 1
+                         }
+
+                jQuery.ajax({
+                            type: 'POST',
+                            url: '/cart/add.js',
+                            data: $dataxx,
+                            dataType: 'json',
+                            success: function (e) {
+                               cart_update();
+     
+                            }
+                         })
+                console.log("gsdgsdg")
+            }else{
+                if($("body").hasClass("product")){
+                    $varidx = $('input[name=data-product-variant-id]').val()
+                    $dataxx = {
+                            "id": $varidx,
+                            "quantity": 1
+                         }
+
+                    jQuery.ajax({
+                            type: 'POST',
+                            url: '/cart/add.js',
+                            data: $dataxx,
+                            dataType: 'json',
+                            success: function (e) {
+                               cart_update();
+     
+                            }
+                         })
+                         console.log(" yy y y yy y y")
+                }
+                
+            }
+            
             $addon = $("#addon").val()
             $namePlacement = $("#namePlacement").val()
             $nameFirstline = $("#nameFirstline").val()

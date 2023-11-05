@@ -491,6 +491,12 @@ button.btn.btn--tertiary.btn--full.xxxs:hover{
     height: 43px;
     margin-top: 7px;
   }
+  .product__photo-dots{
+    height:0;
+  }
+  .product-content-right.grid__item.medium-up--two-fifths{
+    margin-top:0 !important;
+  }
 }
 
 .cts-flexer .loox-rating .loox-icon{

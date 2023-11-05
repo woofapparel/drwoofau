@@ -1,12 +1,12 @@
 {
     "sections": {
       "product-template": {
-        "type": "product-template",
+        "type": "product-template-os2",
         "settings": {
         }
       },      
       "stories": {
-        "type": "Product-section-template-scrubs",
+        "type": "Product-section-template-scrubs-os2",
         "settings": {
         }
       },
@@ -19,12 +19,18 @@
         "type": "product-recommendations",
         "settings": {
         }
+      },
+      "sudofooter": {
+        "type": "product-sudofooter-os2",
+        "settings": {
+        }
       }
     },
     "order": [
       "product-template",
       "stories",
       "reviews",
-      "recommendations"
+      "recommendations",
+      "sudofooter"
     ]
   }
