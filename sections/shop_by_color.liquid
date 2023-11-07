@@ -79,7 +79,7 @@
         class="overflow-scroller"
         data-pagination-wrapper>
         <div
-          class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2"
+          class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2 colour"
           data-aos="overflow__animation"
           data-product-container>
 
@@ -94,15 +94,28 @@
   </div>
 
 </div>
+
 <style>
- .grid-product__title {
+  .grid-product__title {
+      font-size: 18px!important;
+      font-weight: 500;
+      margin-bottom: 7px;
+      text-transform: capitalize!important;
+        line-height: 1.2;
+  }
+  .colour .grid-product__title{ 
+    font-family: Oxygen, sans-serif;
     font-size: 18px!important;
     font-weight: 500;
     margin-bottom: 7px;
+    margin-top: 0 !important;
     text-transform: capitalize!important;
-	    line-height: 1.2;
-}
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: underline;
+  }
 </style>  
+
 {% schema %}
   {
     "name": "Shop by color",
