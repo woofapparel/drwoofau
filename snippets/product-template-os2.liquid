@@ -1,4 +1,4 @@
-<!-- snippets/product-template-os2.liquid -->
+<!-- snippets/product-template.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -116,8 +116,9 @@
 {% assign premistyblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_misty_blue %}
 <span class="premistyblue">{{ premistyblue }}</span>
 </div>
+<!-- back here milski -->
 
-      {% if template contains "new-bundle-template" %}
+      
         <style>
           .desktop-view {
             display: block;
@@ -136,11 +137,13 @@
           }
         </style>
         <div class="product-single__header mobile-view" style="margin-bottom:35px">
+
           {% if settings.vendor_enable %}
             <div class="product-single__vendor">
               {{ product.vendor }}
             </div>
           {% endif %}
+
           {% if sku_enable %}
             <p class="product-single__sku" data-sku>
               {% if current_variant.sku %}
@@ -148,6 +151,7 @@
               {% endif %}
             </p>
           {% endif %}
+
           {% if isModal %}
             <p class="h1 product-single__title">
               {{ product.title }}
@@ -157,6 +161,7 @@
               {{ product.title }}
             </p>
           {% endif %}
+
           {% if settings.enable_product_reviews %}
             {% if isModal %}
               {%- assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id -%}
@@ -167,20 +172,21 @@
               <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
             </a>
           {% endif %}
+
           {% if settings.enable_product_loox_reviews %}
             {% comment %} this block was created by belowyellow.com {% endcomment %}
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
 
 
-          <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer'  %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %} bundle_template grid-product__price{% endif %}">
+          <div class="product-single__prices  bundle_template grid-product__price">
             {% if product.compare_at_price_max > product.price %}
               {%- assign hide_sale_price = true -%}
               {% if current_variant.compare_at_price %}
                 {%- assign hide_sale_price = false -%}
               {% endif %}
             {% endif %}
-            {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+            
               <style>
                 p.afterpay-paragraph {
                   display: block !important;
@@ -196,6 +202,7 @@
               {% assign intro2 = product.metafields.sf_product_bundle.intro_text2 %}
               {% assign intro3 = product.metafields.sf_product_bundle.intro_text_3 %}
               {% assign disc_additional = product.metafields.sf_product_bundle.discount_code_additional_text %}
+              
               {% if sf_product_bundlecompare_price != blank or normal_price != blank %}
                 <span class="{% if hide_sale_price %} hide{% endif %}{% if normal_price != blank %} normal_price{% endif %}" data-price-wrapper>
                   <span
@@ -222,6 +229,7 @@
                     </span>
                   </p>
                 {% endif %}
+
               {% else %}
                 <span
                   data-price=" {{ current_variant.compare_at_price | money }}"
@@ -241,27 +249,10 @@
                   {{ current_variant.price | money }}
                 </span>
               {% endif %}
-            {% endif %}
-            {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
-              <div class="grid-product__price">
-                {% if current_variant.compare_at_price > current_variant.price %}
-                  <del data-price=" {{ current_variant.price | money }}" class="5s normalPrice product__price grid-product__price--original ">
-                    {{ current_variant.compare_at_price | money }}
-                  </del>
-                  <div class="sale-price">
-                    {{ current_variant.price | money }}
-                  </div>
-                {% else %}
-                  <span
-                    data-price=" {{ current_variant.price | money }}"
-                    class="5s normalPrice product__price grid-product__price--original"
-                    data-product-price>
-                    {{ current_variant.price | money }}
-                    <!-- j -->
-                  </span>
-                {% endif %}
-              </div>
-            {% endunless %}
+
+
+            
+
             {% comment %}
             THIS SECTION WAS UPDATED BY CASEY - TO SHOW PRODUCT DESCRIPTION INSTEAD OF PRODUCT CALLOUT
             {% endcomment %}
@@ -275,28 +266,20 @@
             {% endcomment %}
           </div>
         </div>
-      {% endif %}
+      
 
 
 
       <div class="grid">
         <div class="product-image-left grid__item {{ product_image_width }}">
-          {% if template contains 'custom_builderaaaa' %}
 
-            {% include 'product-images-builder'
-             , section_id: section_id,
-             isModal: isModal,
-             video_looping: video_looping,
-             video_style: video_style %}
-
-          {% else %}
             {% include 'product-images'
              , section_id: section_id,
              isModal: isModal,
              video_looping: video_looping,
              video_style: video_style %}
 
-          {% endif %}
+          
           
           <div class="fullimage ddoo" style="margin-top:0x; margin-bottom:0px">
             {% if product.metafields.sf_product_bundle.cts_desktop_image_1 %}
@@ -385,7 +368,7 @@
                 <div class="warning-text">FINAL SALE</div>
               {% endif %}
             {% endcomment %}
-              <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'   or template contains 'LTV-Bulk-scrubs-offer'  %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' %} bundle_template grid-product__price{% endif %}">
+              <div class="product-single__prices bundle_template grid-product__price">
 
                 {% if product.compare_at_price_max > product.price %}
                   {%- assign hide_sale_price = true -%}
@@ -394,7 +377,7 @@
                   {% endif %}
                 {% endif %}
 
-                {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+                
                   <style>
                     p.afterpay-paragraph {
                       display: block !important;
@@ -457,34 +440,7 @@
                       <!-- k -->
                     </span>
                   {% endif %}
-                {% endif %}
-
-
-                {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
-
-                  <div class="grid-product__price">
-
-                    {% if current_variant.compare_at_price > current_variant.price %}
-                      <del data-price=" {{ current_variant.price | money }}" class="5s normalPrice product__price grid-product__price--original ">
-                        {{ current_variant.compare_at_price | money }}
-                      </del>
-                      <div class="sale-price">
-                        {{ current_variant.price | money }}
-                        <!-- q -->
-                      </div>
-
-
-                    {% else %}
-                      <span
-                        data-price=" {{ current_variant.price | money }}"
-                        class="5s normalPrice product__price grid-product__price--original"
-                        data-product-price>
-                        {{ current_variant.price | money }}
-                        <!-- o -->
-                      </span>
-                    {% endif %}
-                  </div>
-                {% endunless %}
+                
                 {% comment %}
                 THIS SECTION WAS UPDATED BY CASEY - TO SHOW PRODUCT DESCRIPTION INSTEAD OF PRODUCT CALLOUT
                 {% endcomment %}
@@ -579,35 +535,7 @@
                   {%- assign inventory_visible = false -%}
                 {% endif %}
 
-                {%- unless template.suffix == 'Bundle_Metafield' or template.suffix == 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
-
-
-
-                  {%- if inventory_enable -%}
-                    <p data-product-inventory class="product__inventory {% unless inventory_visible %}hide{% endunless %}">
-                      {% if current_variant.available %}
-                        {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
-                      {% endif %}
-                    </p>
-                  {%- endif -%}
-
-                  {%- if inventory_transfers_enable -%}
-                    <div data-product-incoming-inventory class="product__inventory{% if inventory_visible %} hide{% endif %}">
-                      {%- if current_variant.incoming and inventory_visible == false -%}
-                        {%- if current_variant.next_incoming_date -%}
-                          {% assign date = current_variant.next_incoming_date | date: format: 'date' %}
-                          {%- if current_variant.available -%}
-                            {{ 'products.product.will_not_ship_until' | t: date: date }}
-                          {%- else -%}
-                            {{ 'products.product.will_be_in_stock_after' | t: date: date }}
-                          {%- endif -%}
-                        {%- else -%}
-                          {{ 'products.product.waiting_for_stock' | t }}
-                        {%- endif -%}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                {%- endunless -%}
+   
               {% endif %}
             </div>
 
@@ -621,40 +549,15 @@
               Quick view modals request these on-demand.
               {% endcomment %}
 
-              {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'LTV-Bulk-scrubs-offer' %}
-                {% if product.id == 6775596187832 %}
-                  {% include 'Bundle_product-form-mega'
-                   , section_id: section_id,
-                   variant_type: variant_type,
-                   variant_labels_enable: variant_labels_enable,
-                   quantity_enable: quantity_enable,
-                   enable_payment_button: enable_payment_button %}
-                {% else %}
-                  {% include 'Bundle_product-form'
-                   , section_id: section_id,
-                   variant_type: variant_type,
-                   variant_labels_enable: variant_labels_enable,
-                   quantity_enable: quantity_enable,
-                   enable_payment_button: enable_payment_button %}
-                {% endif %}
-              {% else %}
+              
+              {% include 'Bundle_product-form-os2'
+              , section_id: section_id,
+              variant_type: variant_type,
+              variant_labels_enable: variant_labels_enable,
+              quantity_enable: quantity_enable,
+              enable_payment_button: enable_payment_button %}
 
-                {% if template contains 'compression_sock' %}
-                  {% include 'Bundle_product-form-normal'
-                   , section_id: section_id,
-                   variant_type: variant_type,
-                   variant_labels_enable: variant_labels_enable,
-                   quantity_enable: quantity_enable,
-                   enable_payment_button: enable_payment_button %}
-                {% else %}
-                  {% include 'product-form-preorder'
-                  , section_id: section_id,
-                  variant_type: variant_type,
-                  variant_labels_enable: variant_labels_enable,
-                  quantity_enable: quantity_enable,
-                  enable_payment_button: enable_payment_button %}
-                {% endif %}
-              {% endif %}
+              
             {% else %}
               <div
                 id="ProductFormPlaceholder-{{ section_id }}"
@@ -669,9 +572,8 @@
                 <div class="placeholder-content" style="min-height: 86px;"></div>
               </div>
             {% endunless %}
-          {% if product.handle == 'dr-woof-scrub-set'  %}
-            <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">Get your set for only $98 with code SCRUBUP<br/>(One time offer only. Max 3 sets per customer)</p>
-          {% endif %}
+
+
             <span id="ShopifyKlarnaOnSiteMessagingAppElement"></span>
             {%- if settings.trust_image != blank -%}
               <div class="aos-animate trust-image" style="max-width: {{ settings.trust_image.width }}px;">
@@ -706,6 +608,7 @@
                 <img src="{{ product.metafields.sf_product_bundle.cts_mobile_image }}" class="mobileshow" alt="USE CODE SCRUBUP">
               {% endif %}
             </div>
+
             <style>
               .fullimage img{
                 display:block;
@@ -748,6 +651,7 @@
             {% if disc or disc != blank %}
               <!-- <p><br/>💡 Get {{ product.title }} for only ${{ normal_price }} using code <strong>{{ disc }}</strong> at checkout</p><p>&nbsp;</p> -->
             {% endif %}
+
             {% if settings.additional_content_style == 'expandable' %}
 
               {% include 'product-additional-content', section_id: section_id %}
@@ -882,11 +786,7 @@
 
     .product__main-photos .slick-dots {
       z-index: 9 !important;
-      {% if template contains "template-scrub-caps" %}
-        bottom: 36px;
-      {% else %}
-        bottom: 56px;
-      {% endif %}
+
     }
   }
 </style>

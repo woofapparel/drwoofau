@@ -610,6 +610,8 @@ lazySizesConfig.expFactor = 4;
         
         var product_handle = $('.secondproducthandle_for_JS').data('secondproducthandle');
         var thirdproduct = $('.thirdproducthandle_for_JS').data('secondproducthandle2');
+        var fourthproduct = $('.fourthproducthandle_for_JS').data('secondproducthandle3');
+        
         var getcount = variants.length;
         var totalvariants=  $('.secondproducthandle_for_JS').data('totaljson');
         if(getcount >= totalvariants){
@@ -635,6 +637,18 @@ lazySizesConfig.expFactor = 4;
               }
             }
           });
+
+          jQuery.getJSON('/products/'+fourthproduct+'.js', function(product){
+            var count = product.variants.length;
+            for (var i = 0; i < count; i++) {
+              var arrayval = product.variants[i];
+              var exist =  variants.includes(arrayval);
+              if( exist == false){
+                variants.push(arrayval);
+              }
+            }
+          });
+
         }
 
 

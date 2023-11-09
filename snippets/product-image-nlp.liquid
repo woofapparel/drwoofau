@@ -1,5 +1,7 @@
 {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
 {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
+{% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+
 {% capture option_titles %}Color{% endcapture %}
 {% assign option_titles = option_titles %}
 {% for option in product.options %}

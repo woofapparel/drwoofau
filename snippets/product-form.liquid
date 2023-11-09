@@ -81,6 +81,7 @@
 <!-- combined two product id Metafield Data -->
 {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
 {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
+{% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
 
 <script>
 let currentVariant = "{{ product.selected_or_first_available_variant.title }}";
@@ -197,6 +198,30 @@ counter = 0;
 </div>
 
 
+
+{% assign SectotalVariants3 = sf_product_fourth.variants.size %}
+<div data-totaljson="{{ totalVariants | plus: SectotalVariants3 }}" style="display:none;" class="all-options secondproducthandle_for_JS" data-secondproducthandle="{{ sf_product_fourth.handle }}">
+  {% unless sf_product_fourth.empty? %}
+  {%- assign product_combined_index = forloop.index -%}
+  {% for product_combined in sf_product_fourth.options_with_values %}
+  <!-- 02 -->
+  {% if product_combined.position  == 1 %}
+  <!-- 03 -->
+ <p class="sec_prod_first_option" data-index="1">{% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 2 %}
+    <!-- 04 -->
+ <p class="sec_prod_sec_option" data-index="2"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 3 %}
+    <!-- 05 -->
+ <p class="sec_prod_third_option" data-index="3"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+  {% endfor %}
+  {% endunless %}
+</div>
+
+
 {% comment %} End Please dont delete it{% endcomment %} 
 <!-- 06 -->
 <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js" data-product-select>
@@ -249,6 +274,23 @@ counter = 0;
   {% endunless %}
 
 
+
+  {% unless sf_product_fourth.empty? %}
+    {% for product_combined in sf_product_fourth.variants %}
+    {% if product_combined.available %}
+    <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+            selected="selected" {% endif %}
+            value="{{ product_combined.id }}">
+      {{ product_combined.title }} 
+    </option>
+    {% else %}
+    <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+      {{ product_combined.title }}
+    </option>
+    {% endif %}
+    {% endfor %}
+    {% endunless %}
+
 </select>
   
   <select class="custom-product-single__variants no-js hidden" data-product-select>
@@ -286,6 +328,20 @@ counter = 0;
   {% endfor %}
   {% endunless %}
 
+
+  {% unless sf_product_fourth.empty? %}
+    {% for product_combined in sf_product_fourth.variants %}
+    {% if product_combined.available %}
+    <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+            selected="selected" {% endif %}
+            value="{{ product_combined.id }}">
+    </option>
+    {% else %}
+    <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+    </option>
+    {% endif %}
+    {% endfor %}
+    {% endunless %}
 </select>
 {% if quantity_enable %}
 <div class="product__quantity product__quantity--{{ variant_type }}">

@@ -3846,6 +3846,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
       {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
       {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
+      {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+
       {% assign someProduct = all_products.womens-3-pocket-scrub-top-2 %}
       
       {% assign someProduct2 = all_products.women-classic-6-pocket-joggers %}
@@ -3871,7 +3873,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% assign someProduct22 = all_products.mens-classic-5-pocket-jogger %}
       {% assign someProduct23 = all_products.mens-straight-cut-9-pocket-cargo-pants-2 %}
       {% assign someProduct24 = all_products.mens-straight-cut-9-pocket-cargo-pant %}
-
+      {% assign someProduct25 = all_products.womens-6-pocket-jogger-5 %}
 
       var variantStock = {};
       var variantAvail = {};
@@ -3884,6 +3886,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         variantAvail[{{- variant.id -}}] = {{ variant.available }};
       {% endfor %}
       {% for variant in sf_product_third.variants %}
+        variantStock[{{- variant.id -}}] = {{ variant.inventory_quantity }};
+        variantAvail[{{- variant.id -}}] = {{ variant.available }};
+      {% endfor %}
+
+      {% for variant in sf_product_fourth.variants %}
         variantStock[{{- variant.id -}}] = {{ variant.inventory_quantity }};
         variantAvail[{{- variant.id -}}] = {{ variant.available }};
       {% endfor %}
@@ -4062,7 +4069,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% endfor %}  
 
-  
+    {% for variant in someProduct25.variants %}
+      
+      variantStock[{{- variant.id -}}] = {{ variant.inventory_quantity }};
+      variantAvail[{{- variant.id -}}] = {{ variant.available }};
+
+    {% endfor %}  
 
 
       
@@ -4905,6 +4917,13 @@ $('.mainpdpslider').slick({
 {% unless my_product.empty? %}
 $bb =  {{ my_product.id }}
 {% endunless %}
+
+{% assign my_product = all_products[product.metafields.sf_product_combined.fourth_product] %}
+{% unless my_product.empty? %}
+$cc =  {{ my_product.id }}
+{% endunless %}
+
+
     </script>
     
     <script>
