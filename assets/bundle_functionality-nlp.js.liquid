@@ -103,7 +103,7 @@ $('.builder_card .variant-input').click(function(e) {
         if(jj == kk){
             var ll = myArray[2];
             
-            $(".datahere").html(ll)
+            $(this).parents(".builder_card").find(".datahere").html(ll)
             $(".dotspacer").show()
             boser = true;
         }else{
