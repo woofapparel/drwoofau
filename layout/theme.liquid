@@ -4939,7 +4939,10 @@ $cc =  {{ my_product.id }}
               {% if template.suffix == 'template-scrubs' %}
                 $(".slick-track .slick-slide[data-slick-index=0]").trigger("click")
               {% endif %}
+              {% comment %}
               $(".slick-track .slick-slide[data-slick-index=0]").trigger("click")
+              /* removed due to collection pages defaulting to shadow gray */
+              {% endcomment %}
               $(".product-image-main img").css("opacity", 1);
               $(".product__thumbs").css("opacity", 1);
               
