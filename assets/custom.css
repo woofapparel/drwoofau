@@ -549,3 +549,12 @@ button.btn.btn--circle.btn--large.close-button{
 .custom-option-value{
   display:none;
 }
+
+@media only screen and (max-width:480px){
+  .tag-list--swatches li{
+    width:auto !important;
+  }
+  .collection-filter__wrapper .slick-track {
+    width: 100% !important;
+  }
+}
