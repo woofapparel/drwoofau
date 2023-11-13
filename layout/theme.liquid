@@ -5077,6 +5077,18 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
 .completoseto{
  
 }
+@media only screen and (max-width:480px){
+  .tag-list--swatches li{
+    width:auto !important;
+  }
+  {% if collection.handle == 'layers' %}
+  .collection-filter__wrapper .slick-track {
+    width:auto !important;
+  }
+  {% endif %}
+}
+
 </style>
+
     </body>
 </html> 
