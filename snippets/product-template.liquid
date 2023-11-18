@@ -173,17 +173,17 @@
           {% endif %}
 
 
-          <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer'  %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %} bundle_template grid-product__price{% endif %}">
+          <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Surgical Scrub Cap' %} bundle_template grid-product__price{% endif %}">
             {% if product.compare_at_price_max > product.price %}
               {%- assign hide_sale_price = true -%}
               {% if current_variant.compare_at_price %}
                 {%- assign hide_sale_price = false -%}
               {% endif %}
             {% endif %}
-            {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+            {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Surgical Scrub Cap' %}
               <style>
                 p.afterpay-paragraph {
-                  display: block !important;
+                  display: block;
                 }
                 p.afterpay-paragraph .afterpay-text2 {
                   display: none;
@@ -227,7 +227,7 @@
                   data-price=" {{ current_variant.compare_at_price | money }}"
                   class="{% if hide_sale_price %} hide{% endif %}"
                   data-price-wrapper>
-                  <span class="8 product__price product__price--compare" data-product-price-compare>
+                  <span class="8 aa product__price product__price--compare" data-product-price-compare>
                     {% if current_variant.compare_at_price > current_variant.price %}
                       {{ current_variant.compare_at_price | money }}
                     {% endif %}
@@ -242,7 +242,7 @@
                 </span>
               {% endif %}
             {% endif %}
-            {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+            {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Surgical Scrub Cap' %}
               <div class="grid-product__price">
                 {% if current_variant.compare_at_price > current_variant.price %}
                   <del data-price=" {{ current_variant.price | money }}" class="5s normalPrice product__price grid-product__price--original ">
@@ -385,7 +385,7 @@
                 <div class="warning-text">FINAL SALE</div>
               {% endif %}
             {% endcomment %}
-              <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'   or template contains 'LTV-Bulk-scrubs-offer'  %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' %} bundle_template grid-product__price{% endif %}">
+              <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %} bundle_template grid-product__price{% endif %}">
 
                 {% if product.compare_at_price_max > product.price %}
                   {%- assign hide_sale_price = true -%}
@@ -394,10 +394,10 @@
                   {% endif %}
                 {% endif %}
 
-                {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+                {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %}
                   <style>
                     p.afterpay-paragraph {
-                      display: block !important;
+                      display: block;
                     }
                     p.afterpay-paragraph .afterpay-text2 {
                       display: none;
@@ -437,17 +437,18 @@
                     {% endif %}
 
                   {% else %}
-
+                  {% if current_variant.compare_at_price > current_variant.price %}
                     <span
                       data-price=" {{ current_variant.compare_at_price | money }}"
                       class="{% if hide_sale_price %} hide{% endif %}"
                       data-price-wrapper>
                       <span class="8 product__price product__price--compare" data-product-price-compare>
-                        {% if current_variant.compare_at_price > current_variant.price %}
+                        
                           {{ current_variant.compare_at_price | money }}
-                        {% endif %}
+                        
                       </span>
                     </span>
+                  {% endif %}
                     <span class="3 visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
                     <span
                       data-price=" {{ current_variant.price | money }}"
@@ -460,7 +461,7 @@
                 {% endif %}
 
 
-                {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+                {% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %}
 
                   <div class="grid-product__price">
 
@@ -496,6 +497,25 @@
                 </span>   {% endcomment %}
 
               </div>
+              {% if product.type == 'Surgical Scrub Cap' %}
+                {% if section.settings.enable_ab %}  
+              <p class="mobileshow afterpay-paragraph"><span class="afterpay-main-text">or 4 interest-free payments of <strong>$6.50</strong> with </span><span class="afterpay-logo-link"><button class="afterpay-logo brand-afterpay compact-badge type-badge black-on-mint" aria-label="Afterpay logo - Opens a dialog" title="Afterpay logo - Opens a dialog">
+                          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="98" height="36" class="compact-badge-logo" viewBox="0 0 100 21">
+                            <path class="afterpay-logo-badge-background" fill="#b2fce4" d="M89.85 20.92h-78.9a10.42 10.42 0 110-20.82h78.89a10.42 10.42 0 010 20.83v-.01z"></path>
+                            <g class="afterpay-logo-badge-lockup">
+                              <path d="M85.05 6.37L82.88 5.1l-2.2-1.27a2.2 2.2 0 00-3.3 1.9v.29c0 .16.08.3.22.38l1.03.58c.28.16.63-.04.63-.37v-.67c0-.34.36-.54.65-.38l2.02 1.16 2 1.15c.3.16.3.58 0 .75l-2 1.15-2.02 1.16a.43.43 0 01-.65-.38v-.33a2.2 2.2 0 00-3.28-1.9l-2.2 1.26-2.19 1.25a2.2 2.2 0 000 3.8l2.18 1.25 2.2 1.27a2.2 2.2 0 003.3-1.9v-.3c0-.15-.09-.3-.23-.37L78.02 14a.43.43 0 00-.64.37v.67c0 .34-.36.54-.65.38l-2-1.16-2-1.15a.43.43 0 010-.75l2-1.15 2-1.16c.3-.16.65.05.65.38v.33a2.2 2.2 0 003.3 1.9l2.2-1.26 2.17-1.25a2.2 2.2 0 000-3.8z"></path>
+                              <path d="M70.77 6.78l-5.1 10.53h-2.12l1.91-3.93-3-6.6h2.17l1.93 4.42 2.1-4.42h2.11z"></path>
+                              <path d="M19.8 10.5c0-1.24-.92-2.12-2.04-2.12s-2.03.9-2.03 2.14c0 1.23.91 2.14 2.03 2.14s2.03-.88 2.03-2.14m.02 3.74v-.97a3 3 0 01-2.36 1.09c-2.05 0-3.6-1.65-3.6-3.86 0-2.2 1.61-3.87 3.65-3.87.95 0 1.76.42 2.31 1.08v-.95h1.84v7.48h-1.84z"></path>
+                              <path d="M30.6 12.6c-.65 0-.84-.24-.84-.87V8.4h1.2V6.78h-1.2V4.96h-1.88v1.82h-2.43v-.74c0-.63.24-.87.9-.87h.42V3.72h-.9c-1.56 0-2.3.5-2.3 2.07v1h-1.04V8.4h1.04v5.85h1.88V8.4h2.43v3.66c0 1.53.6 2.19 2.11 2.19h.97V12.6h-.37z"></path>
+                              <path d="M37.35 9.85c-.13-.97-.93-1.56-1.86-1.56-.92 0-1.7.57-1.88 1.56h3.74zM33.6 11c.13 1.1.93 1.74 1.93 1.74.8 0 1.4-.37 1.76-.97h1.94c-.45 1.58-1.87 2.6-3.74 2.6a3.68 3.68 0 01-3.85-3.85 3.78 3.78 0 013.9-3.9 3.74 3.74 0 013.8 4.38H33.6z"></path>
+                              <path d="M51.35 10.5c0-1.2-.9-2.12-2.03-2.12-1.12 0-2.03.9-2.03 2.14 0 1.23.9 2.14 2.03 2.14 1.12 0 2.03-.93 2.03-2.14m-5.92 6.79V6.78h1.84v.97a2.97 2.97 0 012.36-1.1c2.02 0 3.6 1.65 3.6 3.85s-1.6 3.87-3.65 3.87a2.9 2.9 0 01-2.26-1v3.93h-1.9.01z"></path>
+                              <path d="M59.86 10.5c0-1.24-.9-2.12-2.03-2.12-1.12 0-2.04.9-2.04 2.14 0 1.23.92 2.14 2.04 2.14s2.03-.88 2.03-2.14m.02 3.74v-.97a3 3 0 01-2.36 1.09c-2.05 0-3.6-1.65-3.6-3.86 0-2.2 1.61-3.87 3.64-3.87.96 0 1.76.42 2.32 1.08v-.95h1.84v7.48h-1.84z"></path>
+                              <path d="M42.11 7.5s.47-.86 1.62-.86c.5 0 .8.17.8.17v1.9s-.69-.42-1.32-.33c-.64.09-1.04.67-1.04 1.45v4.42h-1.9V6.78h1.84v.73z"></path>
+                            </g>
+                          </svg></button> <button id="logo-link" class="afterpay-link" tabindex="0" aria-label="Learn More about Afterpay - Opens a dialog" title="Learn More about Afterpay - Opens a dialog"><template style="text-decoration: none; display: inline-block;"></template></button></span></p>
+                {% endif %}        
+              {% endif %}        
+
               {% if product.id == 7815295336706 or product.id == 7815303627010 or product.id == 7815283802370 or product.id == 7815290028290 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 7815312441602 %}
                 <div class="warning-text">
                   <p>This product cannot be returned or exchanged unless faulty.</p>
@@ -579,7 +599,7 @@
                   {%- assign inventory_visible = false -%}
                 {% endif %}
 
-                {%- unless template.suffix == 'Bundle_Metafield' or template.suffix == 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %}
+                {%- unless template.suffix == 'Bundle_Metafield' or template.suffix == 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Surgical Scrub Cap' %}
 
 
 
@@ -620,6 +640,233 @@
               scripts that cause slower load times and false statistics.
               Quick view modals request these on-demand.
               {% endcomment %}
+
+              {% if product.type == 'Surgical Scrub Cap' %}
+              {% if section.settings.enable_ab %}  
+          <style>
+            .image-overlay{
+              z-index: 1;
+              display: block;
+              background-size: 100% !important;
+              flex: 0 0 100px;
+              height: 100px;
+              position: relative;
+              margin-right: 12px;
+              border-radius: 8px;
+              margin-bottom: 12px;
+              overflow: hidden;
+            }
+            .scrubs-products{
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              flex-wrap: wrap;
+            }
+            .scrubs-products:hover{
+              cursor:pointer;
+            }
+            .image-overlay:after{
+              content: "";
+              display: block;
+              padding-bottom: 100%; 
+            }
+            .activer{
+              border:2px solid #f5be15;
+            }
+            .activer:after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+                
+                background:rgba(0, 0, 0, 0.5);
+                top:0;
+                left:0;
+              }
+          </style>
+              <input type="hidden" class="capstandardid" value=""/>
+              <input type="hidden" class="capxlid" value=""/>
+              <div class="scrubcaps-wrapper">
+                <div class="scrubs-products">
+              
+                    {% for productb in collections['scrub-caps'].products %}
+                      {% if productb.available %}
+                        {% if productb.tags contains 'caps bundle' %}
+                          {% for media in productb.media %}
+                            {% if media.alt contains "Closeup" %}
+                            {% assign overlayimage = media %}
+                            {% assign overlayimagex = overlayimage | img_url: '500x500' %}
+                            {% endif %}
+                          {% endfor %}
+                          <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}"
+                          {% for variant in productb.variants %}
+                              data-{{ variant.title }} = '{{ variant.id }}'
+                          {% endfor %}
+                          style="background: url({{ overlayimagex }}) left top;" >
+                          </div>
+
+                          {% comment %}
+                            <li>
+                              <a href="{{ productb.url }}">
+                                <img src="{{ productb.featured_image | img_url: 'medium' }}" alt="{{ productb.title }}">
+                                <p>{{ productb.title }}</p>
+                              </a>
+                            </li>
+                          {% endcomment %}
+                          
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                </div>
+              </div>
+
+            <div class="scrubs-cart">
+              <label style="margin-bottom:8px">Size</label>
+              <span class="btn-primer standard atv">Standard</span>
+              <span class="btn-primer XL">XL</span>
+            </div>
+
+            <style>
+              .scrubcaps-wrapper{
+                width:100%;
+                overflow-x:scroll;
+                margin-bottom:12px;
+              }
+              .scrubcaps-wrapper::-webkit-scrollbar {
+                width: 14px;
+              }
+              .scrubcaps-wrapper::-webkit-scrollbar-track {
+                border-radius: 8px;
+                background-color: #e7e7e7;
+                
+              }
+              .product__main-photos .slick-dots{
+                height:0;
+              }
+              .product-content-right.grid__item.medium-up--two-fifths{
+                margin-top:0 !important;
+              }
+              .scrubcaps-wrapper::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                border: 3px solid #f5be15;
+                background-clip: content-box;
+                background-color: #f5be15;
+              }
+              .scrubs-products{
+                width: 438%;
+                height: 327px;
+              }
+              .btn-primer {
+                display:inline-block;
+                text-align: center;
+                padding: 0 15px;
+                line-height: 30px;
+                font-weight: 500;
+                margin-right:12px;
+                border-radius: 100px;
+              }
+              .btn-primer:hover{
+                cursor:pointer;
+              }
+              .btn-primer.atv {
+                box-shadow: 0 0 0 1px #000;
+              }
+              .capsbundleatc{
+                width: 100%;
+                color: #fff;
+                background: #000;
+                padding: 12px 0px;
+                margin-top: 17px;
+                margin-bottom: 20px;
+              }
+              .add-to-cart{
+                display:none !important;
+              }
+              p.afterpay-paragraph,
+              .mobileshow{
+                display:none !important
+              }
+                svg.compact-badge-logo{
+                  margin-bottom:-12px !important;
+                }
+              @media only screen and (max-width:480px){
+                .scrubcaps-wrapper{
+                  width: 100%;
+                  overflow-x: scroll;
+                  /* height: 300px; */
+                  overflow-y: hidden;
+                  margin-bottom: 12px;
+                }
+                .scrubs-products{
+                  flex-wrap:wrap;
+                  width:2800px;
+                  height:auto;
+                }
+                
+                .image-overlay{
+                  flex:0 0 100px;
+                  height:100px;
+                }
+                p.afterpay-paragraph,
+                .mobileshow{
+                  display:block !important
+                }
+                .afterpay-logo-link {
+                    white-space: nowrap;
+                    display: initial;
+                }
+                square-placement{
+                  display:none !important;
+                }
+                .afterpay-paragraph{
+                  margin: 0px;
+                  line-height: 1.5;
+                  line-height: var(--messaging-line-height, 1.8);
+                  font-size:12px !important;
+                }
+                .afterpay-logo.compact-badge svg, .afterpay-logo.compact-badge {
+                    height: calc(0.19*var(--logo-badge-width,92px) + 10px);
+                }
+
+                .afterpay-logo.type-badge svg, .afterpay-logo.type-badge {
+                    height: calc(32/96*var(--logo-badge-width,96px));
+                }
+
+                .afterpay-logo.compact-badge, .afterpay-logo.compact-badge svg {
+                    margin: initial;
+                    margin-left: 0px;
+                    width: var(--logo-badge-width, 92px);
+                }
+
+                .afterpay-logo.compact-badge {
+                    padding-bottom: 2px;
+                }
+
+                .afterpay-logo.type-badge {
+                    margin: 1px 0;
+                }
+
+                .afterpay-logo.brand-afterpay, .afterpay-logo.brand-afterpay svg {
+                    width: 96px;
+                    width: var(--logo-badge-width, 96px);
+                    min-width: 50px;
+                    min-height: 20px;
+                }
+                p.afterpay-paragraph {
+                    margin: 10px 0!important;
+                    margin-top: -6px !important;
+                }
+
+              }
+            </style>
+            <button class="capsbundleatc">Add to cart</button>
+            {% include 'Bundle_product-form'
+                   , section_id: section_id,
+                   variant_type: variant_type,
+                   variant_labels_enable: variant_labels_enable,
+                   quantity_enable: quantity_enable,
+                   enable_payment_button: enable_payment_button %}
+              {% endif %}
+            {% endif %}
 
               {% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'LTV-Bulk-scrubs-offer' %}
                 {% if product.id == 6775596187832 %}
@@ -664,6 +911,9 @@
                   {% endif %}
                 {% endif %}
               {% endif %}
+
+              
+
             {% else %}
               <div
                 id="ProductFormPlaceholder-{{ section_id }}"

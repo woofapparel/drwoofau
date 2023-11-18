@@ -123,10 +123,21 @@ if($totalin >= 97){
 
     $(".close_button").click(function () {
         $(this).closest(".slide-nav__overflow").removeClass("js-menu--is-open"), $(this).parent().parent().find("button.btn.site-nav__thumb-button.js-toggle-slide-nav").trigger("click");
-    }),
-        $(window).scroll(function () {
-            $(this).scrollTop() > 50 ? $("div#shopify-section-header").addClass("fix_header") : $("div#shopify-section-header").removeClass("fix_header");
-        });
+    })
+    var lastScrollTop = 0, delta = 0;
+	 $(window).scroll(function(){
+		 var nowScrollTop = $(this).scrollTop();
+		 if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+		 	if (nowScrollTop > lastScrollTop){
+		 		// ACTION ON
+		 		// SCROLLING DOWN 
+                 $(".header-wrapper").removeClass("fix_header")
+		 	} else {
+                $(".header-wrapper").addClass("fix_header")
+			}
+		 lastScrollTop = nowScrollTop;
+		 }
+	 });
     var t = setInterval(function () {
         var i = $("#BIS_trigger");
         i.length && (i.length && i.wrap('<div class="bts_container"></div>'), clearInterval(t));

@@ -15,19 +15,24 @@
 </script>
 <link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
 <link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
-<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+<!-- <link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin /> 
 
 <script>
 /* >> TriplePixel :: start*/
 window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0"},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","application/json")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e]),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("https://conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,url:window.location.href,ref:document.referrer,ver:window.TriplePixelData.ver},O("https://api.config-security.com/",5,p),O("https://triplewhale-pixel.web.app/dot1.9.txt",5)))}}("","TriplePixel",localStorage);
 /* << TriplePixel :: end*/
 </script>   
+-->
+
   {% if handle contains 'seq=uniform' %}
   <meta name="robots" content="noindex">
   {% endif %}
 <!--  {{ handle }}  -->
 <!--  x  -->
+{% comment %}
 {% include 'replo-head.liquid' %}
+{% endcomment %}
+
     {% comment %}
       <script>
       /* >> TriplePixel :: start*/
@@ -35,12 +40,19 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
       /* << TriplePixel :: end*/
       </script>
     {% endcomment %}
+
+    {% comment %}
     <!-- Begin: Northbeam pixel -->
     <script async type="text/javascript" src="//j.northbeam.io/ota-sp/6ddffa4c-64ea-43e3-a60f-167c7354d2af.js"></script>
     <!-- End: Northbeam pixel -->
+    {% endcomment %}
+
+    {% comment %}
     <!-- google optomise snippet start -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PJRVLG6"></script>
     <!-- google optomise snippet end -->
+    {% endcomment %}
+
     {% if template != 'product' %}
       <style>
         @charset "UTF-8";
@@ -2431,20 +2443,11 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
       </script>
         <script src="{{ 'jquery351.js' | asset_url }}"></script>
         
-    <script>
-      $(document).ready(function(){
-        
-      {% if product.id == 8005417533698 %}
 
-
-      {% endif %}
-      });
-      
-
-    </script>
       {% comment %}
         {% render 'sca-aff-refer-customer' %}
       {% endcomment %}
+
       {% render "geo" %}
 
       <style>{% if template.name contains 'index' of template.name contains 'collection' %}
@@ -2471,6 +2474,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-WHPZ44KM77');
 </script>
+
+
 {% unless product.handle == 'scrub-cap-mega-pack' or product.handle == 'wardrobe-deal' %}
   <!-- heatmap.com snippet -->
   <script>
@@ -3487,11 +3492,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
           {%comment%}
             {% section 'newsletter-popup' %}
-          {%endcomment%}
+          {% endcomment %}
           {% if request.page_type == 'product' %}
             {% if product.options contains 'Size' %}{% endif %}
           {% endif %}
-          {%comment%}{% if settings.animate_page_transition_style == 'page-logo' %}
+          {%comment%}
+          
+          {% if settings.animate_page_transition_style == 'page-logo' %}
           <div class="loader-logo">
           {% if settings.logo_loader_image != blank %}
           <div class="splash-screen__loader">
@@ -3521,7 +3528,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           });
           </script>
         {% endcomment %}
-        {%- if template.suffix == 'Bundle_Metafield' or template.suffix == 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' -%}
+        {%- if template.suffix == 'Bundle_Metafield' or template.suffix == 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' -%}
           <script src="{{ 'bundle_functionality.js' | asset_url }}" defer></script>
         {%- endif -%}
         {%- if template.suffix == 'newlandingpage' -%}
@@ -3530,6 +3537,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {%- if request.page_type contains 'customers/' -%}
           <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
         {%- endif -%}
+        {% comment %}
         <!-- Hotjar Tracking Code for https://www.drwoofapparel.com.au -->
         <script>
           (function(h, o, t, j, a, r) {
@@ -3547,6 +3555,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             a.appendChild(r);
           })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
         </script>
+        {% endcomment %}
         <!-- Critical for loader -->
         {% include 'load-css' %}
         {{ shop.metafields.loox["global_html_head"] }}
@@ -3619,8 +3628,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </script>
       {% endif %}
       <!-- Back in Stock helper snippet -->
+      {% comment %}
       {% render 'back-in-stock-helper' %}
       <!-- End Back in Stock helper snippet -->
+      {% endcomment %}
       {% comment %}
         <script >
         //       document.addEventListener('scroll', function() {
@@ -4249,7 +4260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         display:none !important;
       }
      </style>
-     {% if product.handle == "wardrobe-deal" or product.handle == "buy-2-sets-get-free-scrub-pants-women" or product.handle == "dr-woof-scrub-set-2"  or product.handle == "dr-woof-scrub-set" or template.suffix == "new-bundle-template"%}
+     {% if product.handle == "wardrobe-deal" or product.handle == "buy-2-sets-get-free-scrub-pants-women" or product.handle == "dr-woof-scrub-set-2"  or product.handle == "dr-woof-scrub-set" or template.suffix == "new-bundle-template" or product.type == 'Surgical Scrub Cap' %}
       <style>
         select [data-handle='womens-3-pocket-scrub-top-2'],
         select [data-handle='womens-6-pocket-jogger'],
@@ -4548,7 +4559,7 @@ $('.mainpdpslider').slick({
         font-size: 18px;
         position: relative;
         top: -1px;
-        padding-left: 0;
+        padding-left: 15px;
       }
       .swatchcheck{
         display: none;
@@ -4962,6 +4973,145 @@ $(document).ready(function(){
 })
 {% endif %}
 
+
+{% if product.type == 'Surgical Scrub Cap' %}
+$(document).ready(function(){
+
+  $(".btn-primer").on('click',function(){
+    $(".btn-primer").removeClass("atv")
+    $(this).addClass("atv")
+  })
+  var interval = setInterval(function() {
+        if ($(".image-overlay").length) {
+          {% comment %}
+          /* $(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").trigger("click") */
+          {% endcomment %}
+          $(".scrubs-products .image-overlay:first-child").trigger("click")
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+        }
+      }, 1000); // 1000 milliseconds = 1 second
+  
+  $(".capsbundleatc").click(function() {
+    
+  $capstandardid = $(".capstandardid").val()            
+  $capxlid = $(".capxlid").val()
+  if($(".standard").hasClass("atv")){
+    dataxc = {
+               "id": $capstandardid,
+               "quantity": 1
+            }
+         
+         
+            jQuery.ajax({
+               type: 'POST',
+               url: '/cart/add.js',
+               data: dataxc,
+               dataType: 'json',
+               success: function () {
+                cart_update();
+               }
+            })
+  }else{
+    dataxc = {
+               "id": $capxlid,
+               "quantity": 1
+            }
+         
+         
+            jQuery.ajax({
+               type: 'POST',
+               url: '/cart/add.js',
+               data: dataxc,
+               dataType: 'json',
+               success: function () {
+                cart_update();
+               }
+            })
+  }     
+
+/*
+    var products = [];
+  
+    // Loop through the list items and create an array of product objects
+    $(".scrubs-cast-list li").each(function() {
+      var variantId = $(this).data("id");
+      
+      products.push({ id: variantId, quantity: 1 });
+    });
+    
+    // Convert the array of product objects to JSON
+    var productsJson = JSON.stringify(products);
+    console.log(productsJson)
+    // Call Shopify's AJAX API to add the products to the cart
+    addToCart(productsJson);
+    */
+  });
+
+  // Function to add products to the cart
+  function addToCart(productsJson) {
+    $.ajax({
+      type: 'POST',
+      url: '/cart/add.js', // Shopify's cart endpoint
+      data: {
+        items: products
+      },
+      dataType: 'json',
+      success: function() {
+        alert("Products added to the cart.");
+        cart_update();
+        // You can optionally update the cart contents or show a success message here
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR);
+        cart_update();
+        // Handle errors or display an error message if needed
+      }
+    });
+  }
+
+
+
+
+$(".image-overlay").on("click",function(){
+
+$(".image-overlay").removeClass("activer");
+      $(this).addClass("activer");
+      $caphandle = $(this).attr("data-handle")
+      $captitle = $(this).attr("data-title")
+      $capid = $(this).attr("data-id")
+      $capimage = $(this).attr("data-image")
+      $capurl = $(this).attr("data-url")
+      $capxlid = $(this).attr("data-xl+")
+      $capstandardid = $(this).attr("data-standard")
+      $(".capstandardid").val($capstandardid)
+      $(".capxlid").val($capxlid)
+      $(".product-single__title").html($captitle)
+      $.ajax({
+                            type: "GET",
+                            url: $capurl,
+                            datatype: "HTML",
+                            beforeSend: function () {},
+                            complete: function () {
+                                setTimeout(function () {
+                                    $(".product__photos").css("opacity", 1);
+                                }, 1);
+                            },
+                            success: function (t) {
+                                t = disableJavaScript(t)
+                                var i = $(t).find(".oneway.product__photos").html();
+                                $(".oneway.product__photos").html(i),
+                                    $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
+                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '40px', dots: !0 }),
+                                    
+                                    $(".product__photos").css("opacity", 1);
+                            },
+                        });
+
+  })
+})
+
+{% endif %}
+
 {% if template.suffix == 'atheltikan' %}
 $(document).ready(function(){
   /*
@@ -5088,6 +5238,11 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   {% endif %}
 }
 
+{% if product.type == 'Gift Cards' %}
+  .collapsible-trigger:nth-of-type(2){
+    display:none;
+  }
+{% endif %}
 </style>
 
     </body>

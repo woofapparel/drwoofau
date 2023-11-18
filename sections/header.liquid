@@ -478,17 +478,32 @@ margin-top: 40px;
 
     }); 
 
-      $(window).scroll(function(){
-      if ($(this).scrollTop() > 50) {
-        $('div#shopify-section-header').addClass('fix_header');
-      } else {
-        $('div#shopify-section-header').removeClass('fix_header');
+    var lastScrollTop = 0, delta = 0;
+	 $(window).scroll(function(){
+      if ($(this).scrollTop() == 0 ) {
+         $(".header-wrapper").removeClass("fix_header")
+      }else{
+         var nowScrollTop = $(this).scrollTop();
+         if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+            if (nowScrollTop > lastScrollTop){
+               // ACTION ON
+               // SCROLLING DOWN 
+                  $(".header-wrapper").removeClass("fix_header")
+            } else {
+                  $(".header-wrapper").addClass("fix_header")
+            }
+         lastScrollTop = nowScrollTop;
+         }
       }
-    });  
 
+	 });
+    
   });
+
 </script>  
 
 <style>
-
+#shopify-section-header{
+   min-height:101px;
+}
 </style>  

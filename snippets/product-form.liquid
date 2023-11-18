@@ -577,7 +577,7 @@ counter = 0;
           {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
           name="add"
           data-add-to-cart
-          class="{% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn btn--tertiary{% else %}btn{% endif %} btn--full add-to-cart"
+          class="{% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn {% unless product.id == 8240480911618 %}btn--tertiary{% endunless %}{% else %}btn{% endif %} btn--full {% unless product.id == 8240480911618 %}add-to-cart{% else %}def-to-cart{% endunless %}"
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
@@ -634,7 +634,7 @@ ADD TO BAG
           {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
           name="add"
           data-add-to-cart
-          class="{% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn btn--tertiary{% else %}btn{% endif %} btn--full add-to-cart"
+          class="{% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn {% unless product.id == 8240480911618 %}btn--tertiary{% endunless %}{% else %}btn{% endif %} btn--full {% unless product.id == 8240480911618 %}add-to-cart{% else %}def-to-cart{% endunless %}"
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
@@ -1162,7 +1162,7 @@ ADD TO BAG
   <p class="general_builder_box_text_wrapper"><span class="1st_alert_box"></span> of <span class="2nd_alert_box"></span> steps</p>
 </div>
 {% endcomment %}
-<button type="submit" name="add" id="add_to_cart_box" data-add-to-cart="" class="btn btn--tertiary btn--full add-to-cart">
+<button type="submit" name="add" id="add_to_cart_box" data-add-to-cart="" class="btn  {% unless product.id == 8240480911618 %}btn--tertiary{% endunless %} btn--full  {% unless product.id == 8240480911618 %}add-to-cart{% else %}def-to-cart{% endunless %}">
   <span data-add-to-cart-text="">
 {% if template.suffix == "template-scrubs-secret" %}
   PRE-ORDER
@@ -1176,6 +1176,16 @@ ADD TO BAG
 {% endif %}
 
 <style>
+  .def-to-cart{
+    width: 100% !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    background: #000 !important;
+    padding: 12px 0px !important;
+    margin-top: 17px;
+    margin-bottom: 20px;    
+  }
+
   .main-cont
   {
     background-color:{{section.settings.color_link}};

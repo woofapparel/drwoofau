@@ -1,0 +1,36 @@
+{
+    "sections": {
+      "product-template": {
+        "type": "product-template-cap-os2",
+        "settings": {
+        }
+      },      
+      "stories": {
+        "type": "Product-section-template-scrubs-os2",
+        "settings": {
+        }
+      },
+      "reviews": {
+        "type": "looxreviews",
+        "settings": {
+        }
+      },
+      "recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+        }
+      },
+      "sudofooter": {
+        "type": "product-sudofooter-os2",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "product-template",
+      "stories",
+      "reviews",
+      "recommendations",
+      "sudofooter"
+    ]
+  }
