@@ -107,7 +107,7 @@
       - sections/featured-collection-slider
       - snippets/page-block-featured-collection-slider
       {% endcomment %}
-      {%- assign paginate_by = 22 -%}
+      {%- assign paginate_by = 500 -%}
 
 
 
@@ -135,7 +135,7 @@
 
       {% paginate collection.products by 1000 %}
         {% assign metafield = 1 %}
-          {% for product in collection.products limit: 50 %}
+          {% for product in collection.products limit: 1000 %}
           {% unless template contains 'index' %}
             {% for product_option in product.options_with_values %}
               {% assign option_name = product_option.name | handle %}
@@ -458,7 +458,7 @@
                                             {{ 'products.general.from_text_html' | t: price: price }}
                                             </span>-->
                                             <!-- commented by mlveda -->
-                                              <span {% if variant.compare_at_price > variant.price %}class="classa"{% endif %} style="color:red"> {{ variant.price | money }}
+                                              <span {% if variant.compare_at_price > variant.price %}class="classa" style="color:red"{% endif %}> {{ variant.price | money }}
                                             </span>
                                           {% else %}
 

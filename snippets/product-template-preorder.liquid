@@ -202,7 +202,7 @@
         <div class="product-content-right grid__item {{ product_description_width }}{% if product_image_type == 'stacked' %} product-single__sticky{% endif %}">
           <div class="product-single__meta">
 
-            {% if template contains 'capsbundle' %}
+            {% if product.type == 'Surgical Scrub Cap' %}
               <p class="main-textamonials">{{ section.settings.txt3 }}</p>
             {% endif %}
             {% if product.type == 'Women Performance Underscrubs' %}

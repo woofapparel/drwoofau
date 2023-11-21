@@ -136,17 +136,19 @@ counter = 0;
 </script>
 <!-- 09 -->
 {% unless product.has_only_default_variant %}
-{% for option in product.options_with_values %}
-  <!-- 09 -->
-  {% if variant_type == 'button' %} 
-  <!-- 10 -->
-  {% include 'variant-button', section_id: section_id, option_drop: option %}
-  {% else %}
-  <!-- 11 -->
-  {% include 'variant-dropdown', section_id: section_id %}
-  {% endif %}
-<!-- 12 -->
-{% endfor %}
+    <div class="flexer">
+      {% for option in product.options_with_values %}
+        <!-- 09 -->
+        {% if variant_type == 'button' %} 
+        <!-- 10 -->
+        {% include 'variant-button', section_id: section_id, option_drop: option %}
+        {% else %}
+        <!-- 11 -->
+        {% include 'variant-dropdown', section_id: section_id %}
+        {% endif %}
+      <!-- 12 -->
+      {% endfor %}
+    </div>
 {% endunless %}
 <!-- 14 -->
 {% comment %}Start Please dont delete it{% endcomment %} 
@@ -1206,5 +1208,15 @@ ADD TO BAG
   color: {{ my_value }} !important;
 }
 {% endif %}
-
+.flexer{
+  display:flex;
+  flex-wrap:wrap; 
+}
+.variant-wrapper{
+  flex: 0 0 100%;
+  order:1;
+}
+.variant-change-color{
+  order:0 !important;
+}
 </style>

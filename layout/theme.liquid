@@ -4983,10 +4983,11 @@ $(document).ready(function(){
   })
   var interval = setInterval(function() {
         if ($(".image-overlay").length) {
+          
+          $(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").trigger("click")
           {% comment %}
-          /* $(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").trigger("click") */
-          {% endcomment %}
           $(".scrubs-products .image-overlay:first-child").trigger("click")
+        {% endcomment %}
           clearInterval(interval); // Stop the interval when the div is fully loaded
         }
       }, 1000); // 1000 milliseconds = 1 second
@@ -5083,6 +5084,17 @@ $(".image-overlay").removeClass("activer");
       $capurl = $(this).attr("data-url")
       $capxlid = $(this).attr("data-xl+")
       $capstandardid = $(this).attr("data-standard")
+      $capsprice = $(this).attr("data-price")
+      $capscompare = $(this).attr("data-compare")
+      
+
+      if (typeof $capscompare === 'undefined' || $capscompare == '$0.00' || $capscompare == '') {
+        $(".product-single__prices").html('<span data-price="" class="9 normalPrice product__price" data-product-price="">' + $capsprice + '</span>')
+      }else{
+        $(".product-single__prices").html('<span class=" normal_price" data-price-wrapper=""><span class="1 product__price product__price--compare" data-product-price-compare="">' + $capscompare + '</span></span>    <span data-price="" class="2 normalPrice product__price sale-price" data-product-price="">' + $capsprice + '<span style="margin-bottom:12px;color:black; font-size: medium;display:inline-block"></span></span>')
+      }
+      
+      
       $(".capstandardid").val($capstandardid)
       $(".capxlid").val($capxlid)
       $(".product-single__title").html($captitle)
