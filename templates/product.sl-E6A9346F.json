@@ -1,10 +1,9 @@
 {
   "sections": {
     "product-template": {
-      "type": "product-template-nlp-os2",
+      "type": "product-template-cap-os2",
       "settings": {
-        "enable_abtesting": true,
-        "enable_abtesting2": true,
+        "enable_ab": true,
         "product_image_size": "large",
         "product_image_type": "stacked",
         "product_zoom_enable": true,
@@ -37,7 +36,7 @@
       }
     },
     "stories": {
-      "type": "product-sections-bundle-os2",
+      "type": "Product-section-template-scrubs-os2",
       "settings": {}
     },
     "reviews": {
@@ -53,7 +52,7 @@
       }
     },
     "sudofooter": {
-      "type": "product-nlp-sudofooter-os2",
+      "type": "product-sudofooter-os2",
       "settings": {}
     }
   },

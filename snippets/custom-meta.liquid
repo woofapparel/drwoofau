@@ -1,18 +1,23 @@
-{% case request.path %}
-{% when '/collections/baby-pink-scrubs/men' %}
-<title>Men's Baby Pink Scrubs | Buy Scrubs Australia | Dr. Woof Apparel</title>
-<meta name="description" content="Browse our Men's 3-pocket scrub top, classic 5-pocket jogger, and straight-cut 9-pocket cargo pants in baby pink! Soft, breathable, sweat-wicking, and wrinkle-resistant!">
+{%- assign collection_tag = collection.metafields.custom.collection_tag.value -%}
 
-  {% when '/collections/shadow-gray-scrubs/women' %}
-<title>Women's Dark Gray Scrubs | Buy Scrubs Australia | Dr. Woof Apparel</title>
-<meta name="description" content="Browse our Women's 3-pocket scrub top, 6-pocket jogger, and scrub pants in dark grey! Softer than pyjamas, breathable, sweat-wicking, and made to last!">
+{%- if template contains 'collection' -%}
+  {%- liquid 
+    assign title = page_title
+    assign description = page_description
 
-  {% when '' %}
-<title></title>
-<meta name="description" content="">
-
-  
-{% else %}
-    <title>{{ page_title }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
-    {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
-{% endcase %}
+    if collection_tag
+      for metaobject in collection_tag
+      if request.path contains metaobject.name
+        assign title = metaobject.title
+        assign description = metaobject.description
+        break
+      endif
+     endfor
+   endif
+  -%}
+  <title>{{ title }}{% unless title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+  {%- if description -%}<meta name="description" content="{{ description | escape }}">{%- endif -%}
+{%- else -%}
+  <title>{{ page_title }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+{%- endif -%}

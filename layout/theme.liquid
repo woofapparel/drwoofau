@@ -4846,10 +4846,12 @@ $('.mainpdpslider').slick({
           padding-top: 14px;
           line-height: 0 !important;
         }
-
+      /* removed by milski due to weird spacing in LP */
+      /*
       .product-image-main{
         padding-right:10px;
       }
+      */
 
 
 
@@ -5111,9 +5113,15 @@ $(".image-overlay").removeClass("activer");
                             success: function (t) {
                                 t = disableJavaScript(t)
                                 var i = $(t).find(".oneway.product__photos").html();
+                                var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
+                                var k = $(t).find(".shopify-section:nth-child(2) .custom-image-with-richtext").html();
+                                var l = $(t).find(".shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
                                 $(".oneway.product__photos").html(i),
+                                $(".collapsible-content:first-of-type .collapsible-content__inner").html(j), 
+                                $(".shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                                $(".shopify-section:nth-child(2)").html(l), 
                                     $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
-                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '40px', dots: !0 }),
+                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '90px', dots: !0 }),
                                     
                                     $(".product__photos").css("opacity", 1);
                             },

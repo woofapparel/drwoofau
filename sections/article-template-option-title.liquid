@@ -77,7 +77,8 @@
               data-sizes="auto"
               alt="{{ article.image.alt }}">
           <noscript>
-            <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '1000x' }}" alt="{{ article.image.alt }}">
+            <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '750x' }}" alt="{{ article.image.alt }}">
+            <!-- article.image | img_url: '1000x' -->
           </noscript>
         </div>
       </div>

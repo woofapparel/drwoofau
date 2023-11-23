@@ -66,19 +66,32 @@
   }
   @media only screen and (max-width:480px){
     .section-header__title,
-  .title-left,
-  .custtitle,
-  .boxer .title-center{  
-    font-family: 'futurapt';
-    font-weight: 700;
-    font-size: 22px !important;
-    line-height: 29px !important;
-    text-align: center;
+    .title-left,
+    .custtitle,
+    .boxer .title-center{  
+      font-family: 'futurapt';
+      font-weight: 700;
+      font-size: 22px !important;
+      line-height: 29px !important;
+      text-align: center;
+    }
+
+
   }
-  }
+  {% if section.settings.enable_abtesting3 %}
+      div#shopify-section-header,
+      .site-footer,
+      .shopify-section-footer{
+        display:none !important;
+      }
+      main#MainContent{
+        padding-top:20px;
+      }
+    {% endif %}
   .storyslide video{
     border-radius:8px;
   }
+
 </style> 
 
 
@@ -105,7 +118,12 @@
         "type": "checkbox",
         "id": "enable_abtesting2",
         "label": "Enable abtesting2"
-      },      
+      },  
+      {
+        "type": "checkbox",
+        "id": "enable_abtesting3",
+        "label": "Enable abtesting3"
+      },       
       {
         "type": "header",
         "content": "Media"

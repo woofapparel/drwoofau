@@ -644,6 +644,10 @@
                     {% if product.type == 'Surgical Scrub Cap' %}
                         {% if section.settings.enable_ab %}  
                         <style>
+                          .product__slide{
+                            padding-left:6px;
+                            padding-right:6px;
+                          }
                           .image-overlay{
                             z-index: 1;
                             display: block;
@@ -696,7 +700,7 @@
                                       {% assign overlayimagex = overlayimage | img_url: '500x500' %}
                                       {% endif %}
                                     {% endfor %}
-                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}"
+                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
                                     {% for variant in productb.variants %}
                                         data-{{ variant.title }} = '{{ variant.id }}'
                                     {% endfor %}
@@ -788,6 +792,11 @@
                             margin-bottom:-12px !important;
                           }
                         @media only screen and (max-width:480px){
+                          .main-text,
+                          .main-icon-cont{
+                            margin-left:0 !important;
+                            margin-right:0 !important;
+                          }
                           .scrubcaps-wrapper{
                             width: 100%;
                             overflow-x: scroll;

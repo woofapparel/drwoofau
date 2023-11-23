@@ -82,8 +82,9 @@
                 alt="{{ block.settings.image.alt | escape }}">
               <noscript>
                 <img data-swift-lazy="1" loading="lazy"   class="hero__image hero__image--{{ blockId }} {% if block.settings.image_mobile != blank %} small--hide{% endif %}"
-                  src="{{ block.settings.image | img_url: '1400x' }}"
+                  src="{{ block.settings.image | img_url: '20x' }}"
                   alt="{{ block.settings.image.alt | escape }}">
+                  <-- img_url: '900x' -->
               </noscript>
 
               {% if block.settings.image_mobile != blank %}
@@ -97,8 +98,9 @@
                   alt="{{ block.settings.image_mobile.alt | escape }}">
                 <noscript>
                   <img data-swift-lazy="1" loading="lazy"   class="hero__image hero__image--{{ blockId }} medium-up--hide"
-                    src="{{ block.settings.image_mobile | img_url: '1400x' }}"
+                    src="{{ block.settings.image_mobile | img_url: '20x' }}"
                     alt="{{ block.settings.image_mobile.alt | escape }}">
+                  <-- img_url: '900x' -->
                 </noscript>
               {% endif %}
             {% else %}

@@ -27,7 +27,7 @@
     {%- assign review_count = rd_a3[1] | plus: 1 | minus: 1 -%}
   {% endif %}
 {% endif %}
-
+{% comment %}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,6 +76,41 @@
       "height": 1024
     }
   }
+</script>
+{% endcomment %}
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": {{ product.title | json }},
+        "image": "https:{{ product.featured_media.preview_image | img_url: '1024x1024' }}",
+        "description": {{ product.description | strip_html | json }},
+        "brand": {{ product.vendor | json }},
+        "sku": {{ current_variant.sku | json }},
+        {%- if is_barcode_available and is_valid_gtin_length %}
+            "{{gtin_option}}": {{ current_variant.barcode | json }},
+            "productId": {{ current_variant.barcode | json }},
+        {%- elsif is_barcode_available %}
+            "mpn": {{ current_variant.barcode | json }},
+            "productId": {{ current_variant.barcode | json }},
+        {%- endif -%}
+        "offers": {
+            "@type": "Offer",
+            "url": "{{ shop.url }}{{ product.url }}",
+            "priceCurrency": "{{ cart.currency.iso_code }}",
+            "price": "{{ current_variant.price | divided_by: 100.00 }}",
+            "priceValidUntil": "{{ 'now' | date: '%s' | plus: days_price_valid_until | date: '%Y-%m-%d'}}",
+            "availability":"https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
+        },
+        {%- if product.metafields.loox.num_reviews != blank -%}
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ product.metafields.loox.avg_rating }}",
+            "reviewCount": "{{ product.metafields.loox.num_reviews }}"
+        }
+        {%- endif -%}
+    }
 </script>
 
 {%- assign product_thumb_size = '180x' -%}

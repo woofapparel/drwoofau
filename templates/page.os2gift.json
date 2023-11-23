@@ -1,11 +1,15 @@
 {
-    "wrapper": "div#div_id.div_class[attribute-one=value]",
-    "sections": {
-      "main": {
-        "type": "page-pagetemplate"
+  "wrapper": "div#div_id.div_class[attribute-one=value]",
+  "sections": {
+    "main": {
+      "type": "page-pagetemplate",
+      "settings": {
+        "page_title_enable": false,
+        "page_content_enable": true
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

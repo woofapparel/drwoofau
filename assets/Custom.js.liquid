@@ -126,17 +126,22 @@ if($totalin >= 97){
     })
     var lastScrollTop = 0, delta = 0;
 	 $(window).scroll(function(){
-		 var nowScrollTop = $(this).scrollTop();
-		 if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
-		 	if (nowScrollTop > lastScrollTop){
-		 		// ACTION ON
-		 		// SCROLLING DOWN 
-                 $(".header-wrapper").removeClass("fix_header")
-		 	} else {
-                $(".header-wrapper").addClass("fix_header")
-			}
-		 lastScrollTop = nowScrollTop;
-		 }
+      if ($(this).scrollTop() == 0 ) {
+         $(".header-wrapper").removeClass("fix_header")
+      }else{
+         var nowScrollTop = $(this).scrollTop();
+         if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+            if (nowScrollTop > lastScrollTop){
+               // ACTION ON
+               // SCROLLING DOWN 
+                  $(".header-wrapper").removeClass("fix_header")
+            } else {
+                  $(".header-wrapper").addClass("fix_header")
+            }
+         lastScrollTop = nowScrollTop;
+         }
+      }
+
 	 });
     var t = setInterval(function () {
         var i = $("#BIS_trigger");
