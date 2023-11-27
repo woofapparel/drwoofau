@@ -4982,6 +4982,13 @@ $(document).ready(function(){
   $(".btn-primer").on('click',function(){
     $(".btn-primer").removeClass("atv")
     $(this).addClass("atv")
+    if($(this).hasClass("butttonsoldout")){
+      $(".capsbundleatc").html("SOLD OUT")
+      $(".capsbundleatc").addClass("soldoutx")
+    }else{
+      $(".capsbundleatc").html("ADD TO CART")
+      $(".capsbundleatc").removeClass("soldoutx")
+    }
   })
   var interval = setInterval(function() {
         if ($(".image-overlay").length) {
@@ -4995,7 +5002,7 @@ $(document).ready(function(){
       }, 1000); // 1000 milliseconds = 1 second
   
   $(".capsbundleatc").click(function() {
-    
+    $(this).html("Preparing..")
   $capstandardid = $(".capstandardid").val()            
   $capxlid = $(".capxlid").val()
   if($(".standard").hasClass("atv")){
@@ -5011,6 +5018,7 @@ $(document).ready(function(){
                data: dataxc,
                dataType: 'json',
                success: function () {
+                $(".capsbundleatc").html("ADDED TO BAG")
                 cart_update();
                }
             })
@@ -5027,6 +5035,7 @@ $(document).ready(function(){
                data: dataxc,
                dataType: 'json',
                success: function () {
+                $(".capsbundleatc").html("ADDED TO BAG")
                 cart_update();
                }
             })
@@ -5047,7 +5056,7 @@ $(document).ready(function(){
     console.log(productsJson)
     // Call Shopify's AJAX API to add the products to the cart
     addToCart(productsJson);
-    */
+*/
   });
 
   // Function to add products to the cart
@@ -5074,9 +5083,8 @@ $(document).ready(function(){
 
 
 
-
 $(".image-overlay").on("click",function(){
-
+  $(".capsbundleatc").html("ADD TO CART")
 $(".image-overlay").removeClass("activer");
       $(this).addClass("activer");
       $caphandle = $(this).attr("data-handle")
@@ -5085,10 +5093,25 @@ $(".image-overlay").removeClass("activer");
       $capimage = $(this).attr("data-image")
       $capurl = $(this).attr("data-url")
       $capxlid = $(this).attr("data-xl+")
+      $capxlavail = $(this).attr("data-xl+-avail")
       $capstandardid = $(this).attr("data-standard")
+      $capstandardavail = $(this).attr("data-standard-avail")
       $capsprice = $(this).attr("data-price")
       $capscompare = $(this).attr("data-compare")
-      
+      if($capstandardavail == 'true'){
+        $(".standard").removeClass("butttonsoldout")
+        $(".standard").addClass("atv")
+        $(".XL").removeClass("atv")
+      }else{
+        $(".standard").addClass("butttonsoldout")
+        $(".standard").removeClass("atv")
+        $(".XL").addClass("atv")
+      }
+      if($capxlavail == 'true'){
+        $(".XL").removeClass("butttonsoldout")
+      }else{
+        $(".XL").addClass("butttonsoldout")
+      }
 
       if (typeof $capscompare === 'undefined' || $capscompare == '$0.00' || $capscompare == '') {
         $(".product-single__prices").html('<span data-price="" class="9 normalPrice product__price" data-product-price="">' + $capsprice + '</span>')
@@ -5114,14 +5137,14 @@ $(".image-overlay").removeClass("activer");
                                 t = disableJavaScript(t)
                                 var i = $(t).find(".oneway.product__photos").html();
                                 var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
-                                var k = $(t).find(".shopify-section:nth-child(2) .custom-image-with-richtext").html();
-                                var l = $(t).find(".shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
+                                var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
+                                var l = $(t).find(".main-content .shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
                                 $(".oneway.product__photos").html(i),
                                 $(".collapsible-content:first-of-type .collapsible-content__inner").html(j), 
-                                $(".shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
-                                $(".shopify-section:nth-child(2)").html(l), 
+                                $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                                $(".main-content .shopify-section:nth-child(2)").html(l), 
                                     $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
-                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '90px', dots: !0 }),
+                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '70px', dots: !0 }),
                                     
                                     $(".product__photos").css("opacity", 1);
                             },

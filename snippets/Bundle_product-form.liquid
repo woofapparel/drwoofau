@@ -315,6 +315,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -328,6 +329,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -704,6 +706,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" or product_type == "women scrub tops" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -717,6 +720,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -1105,7 +1109,9 @@
                           {% endif %}
 
 
+                          
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -1119,6 +1125,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -1492,6 +1499,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -1505,6 +1513,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -1894,6 +1903,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -1907,6 +1917,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -2297,6 +2308,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -2310,6 +2322,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -2695,6 +2708,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -2708,6 +2722,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option
@@ -3101,6 +3116,7 @@
 
 
                           {% if product_type == "stethoscope charms" or product_type == "men performance underscrubs" or product_type == "surgical scrub cap" or product_type == "women performance underscrubs" %}
+                            {% unless product.tags contains 'clearance' %}
                             <option
                               {% if product.available %}{% else %}disabled{% endif %}
                               value="{{forloop.index}}"
@@ -3114,6 +3130,7 @@
                               {% if SelectHandle == Phandle %}
                               selected="selected"
                               {% endif %}>{{ product.title }}</option>
+                            {% endunless %}
                           {% else %}
                             {% if product.metafields.sf_product_combined.product_handle == BLANK %}
                               <option

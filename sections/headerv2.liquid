@@ -1,0 +1,99 @@
+<!-- section/headerv2.liquid -->
+<div class="headerv2">
+    <div class="headerv2-wrapper">
+        <div class="duo">
+            {% if section.settings.colored_header %}
+                <span class="colored_header">{% section.settings.colored_header %}</span>
+            {% endif %}
+            {% if section.settings.main_header %}
+                <h1 class="main_header">{% section.settings.main_header %}</h1>
+            {% endif %}
+            {% if section.settings.content %}
+                <h1 class="content">{% section.settings.content %}</h1>
+            {% endif %}
+            <ul>
+                {% for block in section.blocks %}  
+                    <div class="link" {{ block.shopify_attributes }}>   
+                        {{ block.settings.text_list }}
+                    </div>                
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="duo">
+
+        </div>
+    </div>    
+</div>
+    
+<style>
+    /* Add your custom styles here */
+    .text-section {
+      /* Add styles as needed */
+    }
+</style>
+
+{% schema %}
+    {
+      "name": "Header V2",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Colored Header",
+          "id": "colored_header",
+          "default": "TRUSTED BY 40,000+ HEALTH PROFESSIONALS"
+        },
+        {
+          "type": "text",
+          "label": "Main Header",
+          "id": "main_header",
+          "default": "Black Friday Mode is On!"
+        },
+        {
+          "type": "text",
+          "label": "Content",
+          "id": "content",
+          "default": "Comfortable designer scrubs and medical apparel that's 100% joypul. Dr. Woof Apparel | Premium Scrubs & Accessories"
+        },
+        {
+          "type": "text",
+          "label": "Button 1 text",
+          "id": "button_text_1"          
+        },
+        {
+          "type": "url",
+          "label": "Button 1 Url",
+          "id": "button_1_url"          
+        },
+        {
+          "type": "text",
+          "label": "Button 2 text",
+          "id": "button_text_2"
+        },
+        {
+          "type": "url",
+          "label": "Button 2 Url",
+          "id": "button_2_url"          
+        }
+      ],
+      "blocks": [
+        {
+            "name": "List",
+            "type": "list",
+            "settings": [
+                {
+                    "type": "text",
+                    "label": "List",
+                    "id": "text_list"
+                }
+            ]
+        }
+      ], 
+      "presets": [
+        {
+          "category": "V2",
+          "name": "Header V2"
+        }
+      ]
+    }
+    {% endschema %}
+    

@@ -644,6 +644,25 @@
                     {% if product.type == 'Surgical Scrub Cap' %}
                         {% if section.settings.enable_ab %}  
                         <style>
+                          .butttonsoldout:after{
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            background: #353535;
+                            transform: rotate(45deg);
+                            height: 100%;
+                            width: 1px;
+                            margin: auto;
+                          }
+                          .butttonsoldout:hover{
+                         
+                          }
+                          .soldoutx{
+                            pointer-events: none;
+                          }
                           .product__slide{
                             padding-left:6px;
                             padding-right:6px;
@@ -703,6 +722,7 @@
                                     <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
                                     {% for variant in productb.variants %}
                                         data-{{ variant.title }} = '{{ variant.id }}'
+                                        data-{{ variant.title }}-avail = '{{ variant.available }}'
                                     {% endfor %}
                                     style="background: url({{ overlayimagex }}) left top;" >
                                     </div>
@@ -729,6 +749,13 @@
                       </div>
 
                       <style>
+                        p.afterpay-paragraph{
+                          margin-top:0 !important;
+                        }
+                        .loox-rating{
+                          margin-bottom:0 !important;
+                        }
+                        .main-textamonials{display:none;}
                         .scrubcaps-wrapper{
                           width:100%;
                           overflow-x:scroll;
@@ -761,6 +788,7 @@
                         .btn-primer {
                           display:inline-block;
                           text-align: center;
+                          position:relative;
                           padding: 0 15px;
                           line-height: 30px;
                           font-weight: 500;
