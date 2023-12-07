@@ -1,0 +1,95 @@
+<!-- section/simple-collection.liquid -->
+<div class="simple-collection">
+    <div class="simple-collection-wrapper">
+      {% for block in section.blocks %}  
+        <div class="quad">
+          <a href="{{ block.settings.col_url }}">
+            <img src="{{ block.settings.col_image | img_url: 'master' }}" />
+            <p>{{ block.settings.col_name }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>    
+</div>
+    
+<style>
+@font-face {
+  font-family: futura2;
+  src: url({{ 'futura.otf' | asset_url }});
+}
+
+.simple-collection{
+  
+}
+.simple-collection-wrapper{
+  max-width: 1300px;
+  margin-left:auto;
+  margin-right:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.simple-collection-wrapper img{
+  width: 83%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.simple-collection-wrapper .quad{
+  flex:0 0 24%;
+  margin-bottom:48px;
+}
+.simple-collection-wrapper .quad p{
+  font-weight:800;
+  text-align:center;
+}
+@media only screen and (max-width:1400px){
+  .simple-collection{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+@media only screen and (max-width:480px){
+  .simple-collection-wrapper .quad{
+    flex:0 0 48%;
+    margin-bottom:20px;
+  }
+}
+</style>
+
+{% schema %}
+    {
+      "name": "Simple Collection",
+      "blocks": [
+        {
+            "name": "List",
+            "type": "list",
+              "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "col_image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "label": "Collection Name",
+                    "id": "col_name"
+                },
+                {
+                    "type": "url",
+                    "label": "Collection Url",
+                    "id": "col_url" 
+                }
+            ]
+        }
+      ], 
+      "presets": [
+        {
+          "category": "V2",
+          "name": "Simple Collection"
+        }
+      ]
+    }
+    {% endschema %}
+    

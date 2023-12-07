@@ -150,6 +150,7 @@ counter = 0;
       {% endfor %}
     </div>
 {% endunless %}
+
 <!-- 14 -->
 {% comment %}Start Please dont delete it{% endcomment %} 
 {% assign totalVariants = product.variants.size %}
@@ -469,7 +470,7 @@ counter = 0;
          </div>
        </div>
 
-
+        
        <style>
        .embroi-details{
        position:relative;
@@ -747,8 +748,9 @@ ADD TO BAG
   </div>
  {%endif%}
   </div>
-  
+
 </div>
+
 {% if section.settings.txt_ != blank %}
 <div class="main-text" style="padding:20px 0px 5px;">
   <p>{{section.settings.txt_}}</p>
@@ -757,6 +759,31 @@ ADD TO BAG
 <div class="custom-klarna-new">
   <div class="klarna-new-div"></div>
 </div>
+{% if section.settings.abtesting1 %}
+  <div class="abtesting1">
+    <img src="{{ 'picbundle.png' | asset_url }}" style="width:100%;height:auto;"/> 
+    <!-- 
+    <h3>STANDARD SHIPPING FROM $11.90</h4>
+    <h2>BUNDLE & SAVE</h2>
+    <hr/>
+    <div class="flexer">
+      <div class="trio">
+        <h4>The Scrub Cap Mega 8 Pack</h4>
+        <p>Add any 8 caps to cart and <u>get 2 caps FREE</u></p>
+      </div>
+      <div class="trio">
+      <p class="liner">or</p>
+      <hr>
+      </div>
+      <div class="trio">
+        <h4>The Awesome Foursome Scrub Cap Pack</h4>
+        <p>Add any 4 caps to cart for <u>15% off</u></p>
+      </div>
+
+    </div>
+    -->
+  </div>
+{% endif %}
 {% if template contains 'custom_builder' %}
 
 {% if product.tags contains "Men" %}
@@ -1218,5 +1245,48 @@ ADD TO BAG
 }
 .variant-change-color{
   order:0 !important;
+}
+.abtesting1{
+  background: #E0EDE9;
+    padding: 0;
+    position: relative;
+    top: -20px;
+    padding-bottom:20px;
+}
+.abtesting1 hr{
+  background-color: #989C9A;
+}
+
+.abtesting1 h3{
+  color:#989C9A;
+  font-size:16px;
+  text-align: center;
+}
+
+.abtesting1 h2{
+  color:#989C9A;
+  font-size:22px;
+
+}
+
+.abtesting1 h4{
+  font-size:16px;
+  font-weight:800;
+  color:#000;
+}
+.abtesting1 p{
+  color:#989C9A;
+  font-size:16px;
+}
+.abtesting1 .liner{
+  text-align: center;
+}
+.abtesting1 .flexer{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.abtesting1 .flexer .trio{
+  flex: 0 0 32%;
 }
 </style>

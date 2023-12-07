@@ -420,7 +420,6 @@ counter = 0;
          </div>
        </div>
 
-
        <style>
        .embroi-details{
        position:relative;
@@ -473,7 +472,31 @@ counter = 0;
 
 
 
+{% if section.settings.abtesting3 %}
+  <div class="abtesting2" style="width:100%;margin-bottom:10px">
+    <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/> 
+    <!-- 
+    <h3>STANDARD SHIPPING FROM $11.90</h4>
+    <h2>BUNDLE & SAVE</h2>
+    <hr/>
+    <div class="flexer">
+      <div class="trio">
+        <h4>The Scrub Cap Mega 8 Pack</h4>
+        <p>Add any 8 caps to cart and <u>get 2 caps FREE</u></p>
+      </div>
+      <div class="trio">
+      <p class="liner">or</p>
+      <hr>
+      </div>
+      <div class="trio">
+        <h4>The Awesome Foursome Scrub Cap Pack</h4>
+        <p>Add any 4 caps to cart for <u>15% off</u></p>
+      </div>
 
+    </div>
+    -->
+  </div>
+{% endif %}
 
 
 

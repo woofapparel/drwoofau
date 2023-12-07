@@ -655,28 +655,54 @@
               </div>
 
         {% endunless %}
-        {% if section.settings.enable_abtesting %}
-      <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">{% if section.settings.enable_abtesting %}Use code SCRUBUP at checkout for 20% off {% else %}Get your set for only $98 with code SCRUBUP {% endif %}<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
-        
-            <div class="left-flexer">
-              <div class="trio">
-                <img src="{{ 'family.png' | asset_url }}" class="tinypng">
-                <p>20K+ sets sold<br/>
-                  in Australia</p>
-              </div>
-            <div class="trio">
-                <img src="{{ 'hand.png' | asset_url }}" class="tinypng">
-                <p>60-day return<br/>
-                  guarantee</p>
-              </div>
-              <div class="trio">
-                <img src="{{ 'truck.png' | asset_url }}" class="tinypng">
-                <p>FREE & FAST<br/>Shipping from Sydney</p>
-              </div>
-            </div>
+
+        {% if section.settings.enable_abtesting5 %}
+              {% if section.settings.enable_abtesting %}
+                  <img src="{{ 'specialab.png' | asset_url }}" class="specialab" styl="width:100%;height:auto;"/> 
+
+                  <div class="left-flexer">
+                    <div class="trio">
+                      <img src="{{ 'family.png' | asset_url }}" class="tinypng">
+                      <p>20K+ sets sold<br/>
+                        in Australia</p>
+                    </div>
+                  <div class="trio">
+                      <img src="{{ 'hand.png' | asset_url }}" class="tinypng">
+                      <p>60-day return<br/>
+                        guarantee</p>
+                    </div>
+                    <div class="trio">
+                      <img src="{{ 'truck.png' | asset_url }}" class="tinypng">
+                      <p>FREE & FAST<br/>Shipping from Sydney</p>
+                    </div>
+                  </div>
+              {% else %}
+                <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">Get your set for only $98 with code SCRUBUP<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
+              {% endif %}
         {% else %}
-      <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">Get your set for only $98 with code SCRUBUP<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
-        {% endif %}   
+            {% if section.settings.enable_abtesting %}
+              <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">{% if section.settings.enable_abtesting %}Use code SCRUBUP at checkout for 20% off {% else %}Get your set for only $98 with code SCRUBUP {% endif %}<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
+                      
+                <div class="left-flexer">
+                  <div class="trio">
+                    <img src="{{ 'family.png' | asset_url }}" class="tinypng">
+                    <p>20K+ sets sold<br/>
+                      in Australia</p>
+                  </div>
+                <div class="trio">
+                    <img src="{{ 'hand.png' | asset_url }}" class="tinypng">
+                    <p>60-day return<br/>
+                      guarantee</p>
+                  </div>
+                  <div class="trio">
+                    <img src="{{ 'truck.png' | asset_url }}" class="tinypng">
+                    <p>FREE & FAST<br/>Shipping from Sydney</p>
+                  </div>
+                </div>
+            {% else %}
+                <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">Get your set for only $98 with code SCRUBUP<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
+            {% endif %}
+        {% endif %}          
             {%- if settings.trust_image != blank -%} 
               <div class="aos-animate trust-image" style="max-width: {{ settings.trust_image.width }}px;">
                 <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: settings.trust_image.aspect_ratio }}%;">
@@ -801,6 +827,12 @@
         font-family: futurapt;
         font-weight: normal;
         src: url("https://cdn.shopify.com/s/files/1/0573/7250/8344/files/FuturaPTMedium.otf?v=1682068317") format("opentype");
+    }
+        img.specialab {
+        position: relative;
+        left: -5%;
+        margin-top:12px;
+        margin-bottom:12px;
     }
     .preorder-text{
       display:none;

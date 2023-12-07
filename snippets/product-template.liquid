@@ -632,7 +632,6 @@
             </div>
 
 
-
             {% unless isModal %}
 
               {% comment %}
@@ -642,6 +641,8 @@
               {% endcomment %}
 
                     {% if product.type == 'Surgical Scrub Cap' %}
+                      
+
                         {% if section.settings.enable_ab %}  
                         <style>
                           .butttonsoldout:after{
@@ -710,7 +711,8 @@
                         <input type="hidden" class="capxlid" value=""/>
                         <div class="scrubcaps-wrapper">
                           <div class="scrubs-products">
-                              {% for productb in collections['scrub-caps'].products %}
+                            {% paginate collections['scrub-caps'].products by 200 %}
+                              {% for productb in collections['scrub-caps'].products limit:100 %}
                                 {% if productb.available %}
                                   {% if productb.tags contains 'caps bundle' %}
                                     {% for media in productb.media %}
@@ -739,6 +741,7 @@
                                   {% endif %}
                                 {% endif %}
                               {% endfor %}
+                            {% endpaginate %}
                           </div>
                         </div>
 
@@ -782,7 +785,7 @@
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 438%;
+                          width: 453%;
                           height: 327px;
                         }
                         .btn-primer {
@@ -834,7 +837,7 @@
                           }
                           .scrubs-products{
                             flex-wrap:wrap;
-                            width:2800px;
+                            width:2918px;
                             height:auto;
                           }
                           
@@ -1052,6 +1055,7 @@
                 padding: 0px 10px 10px;
                 background:#e0ede9;
               }
+              
               .fullimage img{
                 display:block;
                 width:100%;

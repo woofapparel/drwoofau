@@ -1,0 +1,74 @@
+{%- assign collection = collections[section.settings.selected_collection] -%}
+<div class="collection-slider">
+    <div class="collection-slider-wrapper">
+        {% for product in collection.products %}
+            <div class="product_slide">
+                <a href="{{ product.url }}" class="collection-slider-url">
+                    <img src="{{ product.featured_image.src | img_url: 'medium' }}" class="collection-slider-thumbnail"/>
+                    <div class="review"></div>
+                    <p><b>{{ product.title }}</b></p>
+                    <div class="product-price">
+                        {% if product.compare_at_price > product.price %}
+                            <p>
+                            <span class="original-price">{{ product.compare_at_price | money }}</span>
+                            <span class="sale-price">{{ product.price | money }}</span>
+                            </p>
+                        {% else %}
+                            <p class="regular-price">{{ product.price | money }}</p>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<style>
+    .collection-slider{
+        width:100%;
+        display:block;
+    }
+    .collection-slider-wrapper{
+        max-width:1300px;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+    }
+    .collection-slider-wrapper .product_slide{
+        /* flex:0 0 19%; */
+    }
+    .collection-slider-wrapper .product_slide img{
+        width:100%;
+        display:block;
+    }
+</style>
+{% schema %}
+  {
+    "name": "New Collection Slider",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Caps A/B testing"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_enable_ab",
+        "label": "Enable caps A/B testing",
+        "default": false
+      },
+      {
+        "type": "collection",
+        "id": "selected_collection",
+        "label": "Collection"
+      }  
+    ],
+    "presets": [
+      {
+        "name": "New Collection Slider",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

@@ -5155,6 +5155,16 @@ $(".image-overlay").removeClass("activer");
 
 {% endif %}
 
+
+  $(document).ready(function(){
+      $('.collection-slider-wrapper').slick({
+        slidesToShow: 5, 
+        arrows: true,
+        autoplay: false    
+      });
+    })
+
+
 {% if template.suffix == 'atheltikan' %}
 $(document).ready(function(){
   /*
