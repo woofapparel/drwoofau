@@ -15,68 +15,134 @@
       {% assign first_text = collection.metafields.sf_collection.first_text %}
       {% assign first_url  = collection.metafields.sf_collection.first_url %}
 
-      {% if first_image !=blank or first_text !=blank or  first_url !=blank %}
-      <!-- 01 -->
-    <div class="grid__item grid-product 1_ nohid small--one-half medium-up--one-third main-metafield-image ">
-      <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
-        <div class="metafield-image collection-image-metafield">
-          {% if first_image !=blank %}
-          {% if first_url !=blank %}  <a href="{{ first_url }}">  {% endif %}
-          <img src="{{ first_image }}" class="image-metafield-one" alt="{{ first_text }}" />
-          {% if first_url !=blank %}   </a>  {% endif %}
-          {% endif %}
-        </div>
-        <div class="metafield-text-url">
-          {% if first_url !=blank %}  
-          <a href="{{ first_url }}">  
-            {% endif %}
-            <div class="grid-product__content custom_collection_product__content">
-              <div class="grid-product__meta">
-                <div class="grid-product__title"> {{ first_text }} </div>
+
+      {% if section.settings.super_image_1 %}
+                  <!-- 01 -->
+                <div class="grid__item grid-product 1_ nohid small--one-half medium-up--one-third main-metafield-image ">
+                  <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
+                    <div class="metafield-image collection-image-metafield">
+                      
+                      
+                      <img src="{{ section.settings.super_image_1 | img_url: 'master' }}" class="image-metafield-one" alt="{{ section.settings.super_text_1 }}" />
+                      
+                  
+                    </div>
+                    <div class="metafield-text-url">
+                      
+                      
+                       
+                        <div class="grid-product__content custom_collection_product__content">
+                          <div class="grid-product__meta">
+                            <div class="grid-product__title"> {{ section.settings.super_text_1 }} </div>
+                          </div>
+                        </div>
+                        
+                      
+                     
+                    </div>
+                  </div>
+                  </div>
+               
+
+      {% else %}
+            {% if first_image !=blank or first_text !=blank or  first_url !=blank %}
+              <!-- 01 -->
+            <div class="grid__item grid-product 1_ nohid small--one-half medium-up--one-third main-metafield-image ">
+              <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
+                <div class="metafield-image collection-image-metafield">
+                  {% if first_image !=blank %}
+                  {% if first_url !=blank %}  <a href="{{ first_url }}">  {% endif %}
+                  <img src="{{ first_image }}" class="image-metafield-one" alt="{{ first_text }}" />
+                  {% if first_url !=blank %}   </a>  {% endif %}
+                  {% endif %}
+                </div>
+                <div class="metafield-text-url">
+                  {% if first_url !=blank %}  
+                  <a href="{{ first_url }}">  
+                    {% endif %}
+                    <div class="grid-product__content custom_collection_product__content">
+                      <div class="grid-product__meta">
+                        <div class="grid-product__title"> {{ first_text }} </div>
+                      </div>
+                    </div>
+                    {% if first_url !=blank %}  
+                  </a> 
+                  {% endif %}
+                </div>
               </div>
-            </div>
-            {% if first_url !=blank %}  
-          </a> 
-          {% endif %}
-        </div>
-      </div>
-      </div>
+              </div>
+              {% endif %}
       {% endif %}
+
       {% endcapture %}
+
+
       {% capture second_mf %} 
       {% assign second_image = collection.metafields.sf_collection.second_image %}
       {% assign second_title  = collection.metafields.sf_collection.second_title %}
       {% assign second_url = collection.metafields.sf_collection.second_url %}
-      {% if second_image !=blank or second_title !=blank or  second_url !=blank %}
-      <!-- 02 -->
-      <div class="grid__item grid-product 1_ nohid small--one-half medium-up--one-third main-metafield-image">
-         <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
-        <div class="metafield-image collection-image-metafield">
-          {% if second_image !=blank %}
-          {% if second_url !=blank %}  <a href="{{ second_url }}">  {% endif %}
-          <img src="{{ second_image }}" class="image-metafield-one" alt="{{ second_title }}" />
-          {% if second_url !=blank %}   </a>  {% endif %}
-          {% endif %}
-        </div>
-        <div class="metafield-text-url">
-          {% if second_title  !=blank%}
-          {% if second_url !=blank %}  
-          <a href="{{ second_url }}">  
+      {% if section.settings.super_image_2 %}
+              <!-- 01 -->
+              <div class="grid__item grid-product 2_ nohid small--one-half medium-up--one-third main-metafield-image ">
+                <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
+                  <div class="metafield-image collection-image-metafield">
+                    
+                    
+                    <img src="{{ section.settings.super_image_2 | img_url: 'master' }}" class="image-metafield-one" alt="{{ section.settings.super_text_2 }}" />
+                    
+                
+                  </div>
+                  <div class="metafield-text-url">
+                    
+                    
+                    
+                      <div class="grid-product__content custom_collection_product__content">
+                        <div class="grid-product__meta">
+                          <div class="grid-product__title"> {{ section.settings.super_text_2 }} </div>
+                        </div>
+                      </div>
+                      
+                    
+                 
+                  </div>
+                </div>
+                </div>
+       
+
+      {% else %}
+            {% if second_image !=blank or second_title !=blank or  second_url !=blank %}
+            <!-- 02 -->
+            <div class="grid__item grid-product 1_ nohid small--one-half medium-up--one-third main-metafield-image">
+            <div class="Main-alt-image grid__image-ratio grid__image-ratio--portrait lazyloaded">
+            <div class="metafield-image collection-image-metafield">
+              {% if second_image !=blank %}
+              {% if second_url !=blank %}  <a href="{{ second_url }}">  {% endif %}
+              <img src="{{ second_image }}" class="image-metafield-one" alt="{{ second_title }}" />
+              {% if second_url !=blank %}   </a>  {% endif %}
+              {% endif %}
+            </div>
+            <div class="metafield-text-url">
+              {% if second_title  !=blank%}
+              {% if second_url !=blank %}  
+              <a href="{{ second_url }}">  
+              {% endif %}
+              <div class="grid-product__content custom_collection_product__content">
+                <div class="grid-product__meta">
+                <div class="grid-product__title"> {{ second_title }} </div>
+              </div>
+              </div>
+              {% if second_url !=blank %}  
+              </a> 
+              {% endif %}
+              {% endif %}
+            </div>
+            </div>
+            </div>
             {% endif %}
-             <div class="grid-product__content custom_collection_product__content">
-               <div class="grid-product__meta">
-              <div class="grid-product__title"> {{ second_title }} </div>
-            </div>
-            </div>
-            {% if second_url !=blank %}  
-          </a> 
-          {% endif %}
-          {% endif %}
-        </div>
-      </div>
-      </div>
       {% endif %}
       {% endcapture %}
+
+
       {% comment %}
       This sections requires the same `paginate_by` variable value as
       the other sections for the ajax loading to work.
@@ -1367,6 +1433,59 @@ $(document).ready(function(){
   {
     "name": "Collection pages",
     "settings": [
+      {
+        "type": "header",
+        "content": "Super Products"
+      },
+      {
+               "type": "image_picker",
+               "id": "super_image_1",
+               "label": "Super Product Image 1"
+      },
+      {
+            "type": "text",
+            "id": "super_text_1",
+            "label": "Super Product Text 1"
+      },
+      {
+          "type": "url",
+          "label": "Super Product Link 1",
+          "id": "super_link_1"          
+        },
+      {
+               "type": "image_picker",
+               "id": "super_image_2",
+               "label": "Super Product Image 2"
+      },
+      {
+            "type": "text",
+            "id": "super_text_2",
+            "label": "Super Product Text 2"
+      },
+      {
+          "type": "url",
+          "label": "Super Product Link 2",
+          "id": "super_link_2"        
+      },
+      {
+               "type": "image_picker",
+               "id": "super_image_3",
+               "label": "Super Product Image 3"
+      },
+      {
+            "type": "text",
+            "id": "super_text_3",
+            "label": "Super Product Text 3"
+      },
+      {
+          "type": "url",
+          "label": "Super Product Link 3",
+          "id": "super_link_3"         
+        },
+      {
+        "type": "header",
+        "content": "Advance Settings"
+      },
       {
         "type": "range",
         "id": "per_row_desktop",

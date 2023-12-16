@@ -2,16 +2,36 @@
   "sections": {
     "a155aa5c-40ac-40b5-8a70-5059e600e448": {
       "type": "headerv2",
+      "blocks": {
+        "16c1b801-5445-4096-9718-10b5b06f0f49": {
+          "type": "list",
+          "settings": {
+            "text_list": "testing"
+          }
+        },
+        "57eaf7c2-b51a-429f-9c6b-d84222894a17": {
+          "type": "list",
+          "settings": {
+            "text_list": "testing2"
+          }
+        }
+      },
+      "block_order": [
+        "16c1b801-5445-4096-9718-10b5b06f0f49",
+        "57eaf7c2-b51a-429f-9c6b-d84222894a17"
+      ],
       "settings": {
         "colored_header": "TRUSTED BY 40,000+ HEALTH PROFESSIONALS",
+        "header_color": "#b53728",
+        "light_theme": false,
         "main_header": "Black Friday Mode is On!",
         "content": "Comfortable designer scrubs and medical apparel that's 100% joypul. Dr. Woof Apparel | Premium Scrubs & Accessories",
-        "button_text_1": "",
-        "button_1_url": "",
-        "button_text_2": "",
-        "button_2_url": "",
+        "button_text_1": "Shop Women",
+        "button_1_url": "shopify:\/\/collections\/deals",
+        "button_text_2": "Shop Men",
+        "button_2_url": "shopify:\/\/pages\/contact",
         "header_image": "shopify:\/\/shop_images\/Frame_1.png",
-        "bg_color": "#FFD7D2",
+        "bg_color": "#ffd7d2",
         "margin-top": 0,
         "margin-bottom": 20
       }
@@ -51,7 +71,6 @@
             "col_url": ""
           }
         },
-
         "9b56d564-44f2-42be-ab50-131ed87c5101": {
           "type": "list",
           "settings": {
@@ -90,17 +109,24 @@
         "30d1998f-47bc-4d3b-8fc0-a0cfc84a5641",
         "e4ad0574-3491-470d-97d0-50a7e602265f",
         "a5dd2c14-bfca-4257-aa8b-e4b48551870e",
-
         "9b56d564-44f2-42be-ab50-131ed87c5101",
         "30d1998f-47bc-4d3b-8fc0-a0cfc84a5602",
         "e4ad0574-3491-470d-97d0-50a7e6022603",
         "a5dd2c14-bfca-4257-aa8b-e4b485518704"
       ],
       "settings": {}
+    },
+    "699ca706-700a-4865-a136-2658aac2cd41": {
+      "type": "collection-slider",
+      "settings": {
+        "collection_enable_ab": false,
+        "selected_collection": "women"
+      }
     }
   },
   "order": [
     "a155aa5c-40ac-40b5-8a70-5059e600e448",
-    "95875c25-a009-4f6e-98ba-84e356d73603"
+    "95875c25-a009-4f6e-98ba-84e356d73603",
+    "699ca706-700a-4865-a136-2658aac2cd41"
   ]
 }

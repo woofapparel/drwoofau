@@ -1,6 +1,19 @@
+<!-- sections/collection-slider.liquid -->
 {%- assign collection = collections[section.settings.selected_collection] -%}
 <div class="collection-slider">
-    <div class="collection-slider-wrapper">
+  <div class="pager-wrapper">
+    {% if section.settings.show_title %}
+      <div class="title-wrapper">
+        <h4>{{ collection.title }}</h4>
+      </div>
+      {% endif %}
+      <div class="arrow-wrapper">
+        <img src="{{ 'leftlight.png' | asset_url }}" class="prev{{ section.id }}"/>
+        <img src="{{ 'rightlight.png' | asset_url }}" class="next{{ section.id }}"/>
+      </div>
+  </div>
+
+    <div class="collection-slider-wrapper slider{{ section.id }}">
         {% for product in collection.products %}
             <div class="product_slide">
                 <a href="{{ product.url }}" class="collection-slider-url">
@@ -23,18 +36,66 @@
     </div>
 </div>
 <style>
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+  .slider{{ section.id }} .slick-slider{
+    padding-bottom:500px;
+  }
+  .slider{{ section.id }} .slick-list{
+    width:124%;
+    
+  }
+  .slider{{ section.id }} .slick-slide{
+    padding-right:16px;
+  }
+  .pager-wrapper{
+    max-width:1300px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    height:1px;
+    position:relative;
+    margin-bottom:55px;
+  }
+  .arrow-wrapper{
+      position: absolute;
+      top: 0px;
+      right: 0%;
+      z-index: 99;
+  }
+  .title-wrapper{
+      position: absolute;
+      top: 0px;
+      left: 0%;
+      z-index: 99;
+  }
+
+  .arrow-wrapper .fa{
+    padding: 0 7px;
+    font-size: 23px;
+  }
+  
     .collection-slider{
         width:100%;
         display:block;
+        position:relative;
     }
+
     .collection-slider-wrapper{
         max-width:1300px;
-        width:100%;
+        overflow-x: visible;
         margin-left:auto;
         margin-right:auto;
         display:flex;
         flex-wrap:wrap;
         justify-content: space-between;
+    }
+    
+    .collection-slider-wrapper{
+      position: relative;
+      
     }
     .collection-slider-wrapper .product_slide{
         /* flex:0 0 19%; */
@@ -42,8 +103,33 @@
     .collection-slider-wrapper .product_slide img{
         width:100%;
         display:block;
+        margin-bottom:8px;
+    }
+    .collection-slider-wrapper .product_slide p{
+      margin-bottom:8px;
+    }
+    @media only screen and (max-width:480px){
+      .collection-slider{
+        padding-left:12px;
+        padding-right:12px;
+      }
+      .popups_country{
+        display:none;
+      }
     }
 </style>
+<script>
+
+$(document).ready(function(){
+      $('.slider{{ section.id }}').slick({
+        slidesToShow: 4, 
+        prevArrow: $('.prev{{ section.id }}'),
+        nextArrow: $('.next{{ section.id }}'),
+        autoplay: false
+      });
+    })
+
+</script>
 {% schema %}
   {
     "name": "New Collection Slider",
@@ -55,14 +141,26 @@
       {
         "type": "checkbox",
         "id": "collection_enable_ab",
-        "label": "Enable caps A/B testing",
+        "label": "Enable new hp A/B testing",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_title",
+        "label": "Show title",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "dark_theme",
+        "label": "Dark Theme",
         "default": false
       },
       {
         "type": "collection",
         "id": "selected_collection",
         "label": "Collection"
-      }  
+      }
     ],
     "presets": [
       {

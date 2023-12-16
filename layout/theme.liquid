@@ -2620,6 +2620,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                            </div>
                         </div>
                      </div>
+                     <p style="color:red">Important: Embroidery orders resume processing on January 12th post-holiday break. Please expect delivery by late January.</p>
                      <span class="formmessage notifcolorchecker"></span>
                      <input type="hidden" class="colorchecker" value="false">
                      <p><input type="checkbox" class="addname-checkbox"> <b>I acknowledge that this will add 10 working days to the standard delivery time and have read the FAQ below.</b></p>
@@ -2692,6 +2693,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
 
                      </div>
+                     <p style="color:red">Important: Embroidery orders resume processing on January 12th post-holiday break. Please expect delivery by late January.</p>
+                     <span class="formmessage notifcolorchecker"></span>
                      <span class="formmessage notifcolorchecker"></span>
                      <input type="hidden" class="colorchecker" value="false">
                      <p><input type="checkbox" class="addicon-checkbox"> <b>I acknowledge that this will add 10 working days to the standard delivery time and have read the FAQ below.</b>
@@ -2796,6 +2799,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
 
                      </div>
+                     <p style="color:red">Important: Embroidery orders resume processing on January 12th post-holiday break. Please expect delivery by late January.</p>
+                     <span class="formmessage notifcolorchecker"></span>
                      <span class="formmessage notifinitialcolorchecker"></span>
                      <input type="hidden" class="initialcolorchecker" value="false">
                      <p><input type="checkbox" class="addboth-checkbox"> <b>I acknowledge that this will add 10 working days to the standard delivery time and have read the FAQ below.</b>
@@ -4991,12 +4996,14 @@ $(document).ready(function(){
     }
   })
   var interval = setInterval(function() {
-        if ($(".image-overlay").length) {
+        if ($(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").length) {
           
           $(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").trigger("click")
-          {% comment %}
-          $(".scrubs-products .image-overlay:first-child").trigger("click")
-        {% endcomment %}
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+        }else{
+          $(".capsbundleatc").html("SOLD OUT")
+          $(".capsbundleatc").addClass("soldoutx")
+          $(".btn-primer").hide()
           clearInterval(interval); // Stop the interval when the div is fully loaded
         }
       }, 1000); // 1000 milliseconds = 1 second
@@ -5085,6 +5092,10 @@ $(document).ready(function(){
 
 $(".image-overlay").on("click",function(){
   $(".capsbundleatc").html("ADD TO CART")
+      $(".capsbundleatc").removeClass("soldoutx")
+      $(".btn-primer").show()
+      
+  $(".capsbundleatc").html("ADD TO CART")
 $(".image-overlay").removeClass("activer");
       $(this).addClass("activer");
       $caphandle = $(this).attr("data-handle")
@@ -5155,14 +5166,6 @@ $(".image-overlay").removeClass("activer");
 
 {% endif %}
 
-
-  $(document).ready(function(){
-      $('.collection-slider-wrapper').slick({
-        slidesToShow: 5, 
-        arrows: true,
-        autoplay: false    
-      });
-    })
 
 
 {% if template.suffix == 'atheltikan' %}

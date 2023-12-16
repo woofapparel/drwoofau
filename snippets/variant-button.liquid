@@ -45,7 +45,11 @@
         {% if tag contains "VariantType" %}
           {% assign collectiontag = tag | split: " - " %}
           {% assign colortag = collectiontag[1] %}
-          {% assign messagetag = collectiontag[2] %}colorarray.push('{{ tag }}');{% endif %}{% endfor %}{% assign colortag = colortag | handleize %}{% assign accolor = option.name | handleize %}
+          {% assign messagetag = collectiontag[2] %}colorarray.push('{{ tag }}');
+          {% endif %}
+      {% endfor %}
+      {% assign colortag = colortag | handleize %}
+      {% assign accolor = option.name | handleize %}
     </script>
     <span style="display:none;" class="colorhere">{{ colortag }}</span>
     <span style="display:none;" class="messagehere">{{ messagetag }}</span>
@@ -257,16 +261,58 @@
   <fieldset
     class="1 variant-input-wrap {% if option.name == 'Size (Unisex)' or option.name == 'size' or option.name == 'Size' %} custom-ajax-size{% endif %}"
     name="{{ option.name }}"
-    data-index="option{{ option_index }}"
+    
     id="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
+
+    {% for value in option.values %}
+      {% assign xvalue = value | escape  %}
+    {% endfor %}
+
+
+    
+    {% for tag in all_products["women-classic-6-pocket-joggers"].tags %}
+      {% if tag contains "VariantType" %}
+        {% assign collectiontag = tag | split: " - " %}
+        {% assign colortag = collectiontag[1] %}
+        {% assign messagetag = collectiontag[2] %}
+        {% assign newvalue = value | escape  %}
+        {% assign newcolortag = colortag | escape  %}
+        {% if xvalue == newcolortag %}
+          <h1 class="mestag hidden" style="display:none;">{{ messagetag }}</h1>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    
+
+
+
     {% for value in option.values %}
       {%- assign product_available = true -%}
       {%- assign product_available = product.variants[forloop.index0].available -%}
+      {% assign orderthis = false %}
+      {% if value == "Navy" %}
+        <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+        <span>Staple colours, available year-round.</span></span></i></span>
+      {% else %}
+        {% if value == "Ceil Blue" %}
+            <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+            <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+          {% else %}
+            {% if value == "Eucalyptus" %}
+              {% assign orderthis = true %}
+            {% endif %}
+        {% endif %}
+      {% endif %}
+
       <div
         data-handle="current"
         class="variant-input"
         data-index="option{{ option_index }}"
-        data-value="{{ value | escape }}">
+        data-value="{{ value | escape }}"
+        {% if orderthis %}
+        style="order:99"
+        {% endif %}
+        >
         <input
           op_val="{{ value }}"
           option_index="{{option_index}}"
@@ -317,18 +363,36 @@
       </div>
     {% endfor %}
 
+
+
+
     {% unless sf_product_combined.empty? %}
       {%- assign product_combined_index = forloop.index -%}
+   
 
       {% for product_combined in sf_product_combined.options_with_values %}
+
         {% if option.name == product_combined.name %}
           {% if product_combined.name == 'size' or product_combined.name == 'Size' or product_combined.name == 'inseam' or product_combined.name == 'Inseam' %}
             {% else %}
 
               {% for combined_value in product_combined.values %}
-                {%- assign combined_value_available = true -%}
-                {%- assign combined_value_available = product.variants[forloop.index0].available -%}
 
+               {%- assign combined_value_available = true -%}
+                {%- assign combined_value_available = product.variants[forloop.index0].available -%}
+      {% if combined_value == "Navy" %}
+          <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+          <span>Staple colours, available year-round.</span></span></i></span>
+        {% else %}
+          {% if combined_value == "Ceil Blue" %}
+            <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+            <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+            {% else %}
+              {% if combined_value == "Eucalyptus" %}
+                {% assign orderthis = true %}
+              {% endif %}
+          {% endif %}
+        {% endif %}
                 <div
                   data-handle="{{sf_product_combined.handle}}"
                   class="variant-input"
@@ -384,10 +448,29 @@
 
 
 
+
     {% unless sf_product_third.empty? %}
       {%- assign product_combined_index = forloop.index -%}
 
+      {% comment %}
+      {% if is_color %}
+        {% assign bbproduct = false %}
+        {% for product_combined in sf_product_third.options_with_values %}
+          {% if product_combined.values contains "Navy" %}
+            {% assign bbproduct = true %}
+          {% endif %}
+        {% endfor %}
+          {% if bbproduct %}
+            <h1>bbClassic</i>
+          {% else %}
+            <h1>bbLimited Edition</i>
+          {% endif %}
+    {% endif %}
+  {% endcomment %}
+
       {% for product_combined in sf_product_third.options_with_values %}
+
+
         {% if option.name == product_combined.name %}
           {% if product_combined.name == 'size' or product_combined.name == 'Size' or product_combined.name == 'inseam' or product_combined.name == 'Inseam' %}
             {% else %}
@@ -395,7 +478,19 @@
               {% for combined_value in product_combined.values %}
                 {%- assign combined_value_available = true -%}
                 {%- assign combined_value_available = product.variants[forloop.index0].available -%}
-
+                {% if combined_value == "Navy" %}
+                  <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+                  <span>Staple colours, available year-round.</span></span></i></span>
+                {% else %}
+                  {% if combined_value == "Ceil Blue" %}
+                    <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+                    <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+                    {% else %}
+                      {% if combined_value == "Eucalyptus" %}
+                        {% assign orderthis = true %}
+                      {% endif %}
+                  {% endif %}
+                {% endif %}
                 <div
                   data-handle="{{sf_product_third.handle}}"
                   class="variant-input"
@@ -450,10 +545,15 @@
     {% endunless %}
 
 
+
+
     {% unless sf_product_fourth.empty? %}
       {%- assign product_combined_index = forloop.index -%}
 
+     
+
       {% for product_combined in sf_product_fourth.options_with_values %}
+        
         {% if option.name == product_combined.name %}
           {% if product_combined.name == 'size' or product_combined.name == 'Size' or product_combined.name == 'inseam' or product_combined.name == 'Inseam' %}
             {% else %}
@@ -461,7 +561,19 @@
               {% for combined_value in product_combined.values %}
                 {%- assign combined_value_available = true -%}
                 {%- assign combined_value_available = product.variants[forloop.index0].available -%}
-
+                {% if combined_value == "Navy" %}
+                  <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+                  <span>Staple colours, available year-round.</span></span></i></span>
+                {% else %}
+                  {% if combined_value == "Ceil Blue" %}
+                    <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+                    <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+                    {% else %}
+                      {% if combined_value == "Eucalyptus" %}
+                        {% assign orderthis = true %}
+                      {% endif %}
+                  {% endif %}
+                {% endif %}
                 <div
                   data-handle="{{sf_product_fourth.handle}}"
                   class="variant-input"
@@ -784,6 +896,12 @@ $(function() {
   });
 });
 </script><style>
+  .classicclicker:hover{
+    cursor:pointer
+  }
+  .limitedclicker:hover{
+    cursor:pointer
+  }
 .supdis {
   pointer-events: none !important;
   position: relative;
@@ -801,5 +919,53 @@ $(function() {
   height: 100%;
   width: 1px;
   margin: auto;
+}
+.fa-question-circle{
+  padding-left:8px;
+} 
+
+.mytooltip{
+  display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    padding: 12px 20px;
+    width: 200px;
+    width: 10;
+    background: #fff;
+    z-index: 999;
+    border: 1px solid lightgray;
+}
+.mytooltip h6{
+  margin-bottom:4px;
+  font-size:14px;
+  text-transform:capitalize !important;
+  font-family: Oxygen, sans-serif;
+}
+.mytooltip span{
+  font-size:14px;
+  text-transform:none !important;
+  color:#707070;
+  font-family: Oxygen, sans-serif;
+  line-height: 1.3;
+}
+.limitedclicker,
+.classicclicker{
+position:relative
+}
+.limitedclicker:hover .mytooltip,
+.classicclicker:hover .mytooltip{
+display:block;
+}
+@media only screen and (max-width:480px){
+  /*
+  .mytooltip{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    
+  }
+  */
 }
 </style>
