@@ -897,7 +897,12 @@
 
                         }
                       </style>
-                      <img src="{{ 'capblue.png' | asset_url }}" style="width:100%;display:block;margin-top:12px;" />
+                      {% unless section.settings.freesetcap %}
+                        <img src="{{ 'capblue.png' | asset_url }}" style="width:100%;display:block;margin-top:12px;" />
+                      {% else %}
+                      <img src="{{  section.settings.freesetcap | img_url: 'master' }}" style="width:100%;display:block;margin-top:12px;" />
+                      {% endunless %}
+                      
                       <div class="greenmark">
                         <button class="capsbundleatc">Add to cart</button>
                       </div>
@@ -1339,6 +1344,18 @@
         ? $(".mobile-atc").css({"bottom": "0"})
         : $(".mobile-atc").css({"bottom": "-100px"});
     });
+
+
+
+    var intervalId2 = window.setInterval(function(){
+      for (let i = 0; i < 3; i++) {
+        $("html, body").animate({ scrollTop: 0 });
+        clearInterval(intervalId2) 
+      }
+    }, 500);
+
+
+
 
   });
 
