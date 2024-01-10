@@ -1,6 +1,6 @@
 <!-- sections/collection-slider.liquid -->
 {%- assign collection = collections[section.settings.selected_collection] -%}
-<div class="collection-slider slidertop{{ section.id }} {% if section.settings.dark_theme %}darktheme{% endif %}" style="">
+<div class="collection-slider slidertop{{ section.id }} {% if section.settings.dark_theme %}darktheme{% endif %}" >
   <div class="pager-wrapper">
     {% if section.settings.show_title %}
       <div class="title-wrapper">
@@ -18,8 +18,8 @@
         </div>
       {% else %}
       <div class="arrow-wrapper">
-        <img src="{{ 'rightwhite.png' | asset_url }}" class="prev{{ section.id }}"/>
-        <img src="{{ 'leftwhite.png' | asset_url }}" class="next{{ section.id }}"/>
+        <img src="{{ 'rightwhite.png' | asset_url }}" class="next{{ section.id }}"/>
+        <img src="{{ 'leftwhite.png' | asset_url }}" class="prev{{ section.id }}"/>
       </div>
       {% endunless %}
   </div>
@@ -29,11 +29,8 @@
         {% for product in collection.products %}
             <div class="product_slide">
                 <a href="{{ product.url }}" class="collection-slider-url">
-                    <img src="{{ product.featured_image.src | img_url: 'grande' }}" class="collection-slider-thumbnail" style="margin-bottom:20px;" />
-                    {% if section.settings.reviewstars %}
-                    {% render 'loox_reviews', product: product %}
-                    {% endif %}
-
+                    <img src="{{ product.featured_image.src | img_url: 'medium' }}" class="collection-slider-thumbnail"/>
+                    <div class="review"></div>
                     <p><b>{{ product.title }}</b></p>
                     <div class="product-price">
                         {% if product.compare_at_price > product.price %}
@@ -57,28 +54,10 @@
         {% for block in section.blocks %}
             <div class="product_slide">
                 <a href="{{ block.settings.col_url }}" class="collection-slider-url">
-                    <img src="{{ block.settings.col_image | img_url: 'grande' }}" class="collection-slider-thumbnail desktopview"/>
-                    <img src="{{ block.settings.mobcol_image | img_url: 'grande' }}" class="collection-slider-thumbnail mobileview"/>
-                    
-                    {% if section.settings.dark_theme %}
-                      {% if section.settings.reviewstars %}
-                      <div class="review"><img src="{{ 'stars.png' | asset_url }}" /> {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
-                      {% endif %}
-                      
-                    {% else %}
-                    {% if section.settings.reviewstars %}
-                    <div class="review"><img src="{{ 'darkstars.png' | asset_url }}" />  {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
-                      {% endif %}
-                    {% endif %}
-                    
-                    {% if block.settings.block_title %}
-                      <p style="margin-bottom:12px;"><b>{{ block.settings.col_text }}</b></p>
-                    {% else %}
-                      <p style="margin-bottom:12px;">{{ block.settings.col_text }}</p>
-                    {% endif %}
-                    
-                  <p class="{% if section.settings.dark_theme %}twittername{% endif %}" style="margin-bottom:8px;"><b>{{ block.settings.col_name }}</b></p>
-                    <p class="blockprices"><span class="blackprice">{{ block.settings.blackprice }}</span> <span class="slashprice">{{ block.settings.slashprice }}</span> <span class="redprice">{{ block.settings.redprice }}</span></p>
+                    <img src="{{ block.settings.col_image | img_url: 'medium' }}" class="collection-slider-thumbnail"/>
+                    <div class="review"><img src="{{ 'stars.png' | asset_url }}" /></div>
+                    <p style="margin-bottom:12px;"><b>{{ block.settings.col_text }}</b></p>
+                    <p><b>{{ block.settings.col_name }}</b></p>
                     
                     {% comment %}
                     <div class="product-price">
@@ -100,98 +79,23 @@
 
 </div>
 <style>
-  .product_slide a{
-    position:relative;
-  }
-  .twittername{
-    position:absolute;
-    bottom:20px;
-  }
-  .blackprice{
-      color:#050507;
-  }
-  .slashprice{
-    color:#959595;
-    text-decoration-style: dashed;
-    position:relative;
-  }
-  .slashprice:after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 2px solid #959595;
-    left: 0;
-    z-index: 999;
-    top: 11px;
-  }
-  .redprice{
-    color:red;
-  }
-  {% unless section.settings.dark_theme %}
-    .slidertop{{ section.id }} .slick-dots{
-      display:none !important;
-    }
-  {% endunless %}
-  .collection-slider{
-    overflow-x:hidden !important;
-  }
-  .collection-slider-thumbnail{
-    border:1px solid #EBEBEB;
-    border-radius: 8px;
-    overflow-x:hidden !important;
-  }
-  .desktopview{
-    display:block !important;
-  }
-
-  .mobileview{
-    display:none !important;
-  }
-  .slidertop{{ section.id }}{
-    border-bottom: 1px solid #EBEBEB;
-  }
-
-  .iconcontainer{
-    display:none;
-  }
-
   body{
     width:100%;
     overflow-x:hidden;
   }
 
-  .collection-slider-thumbnail{
-    border-radius: 8px !important;
-  }
 
-  .product_slide p,
-  .product_slide b,
-  .product_slide span{
-    font-size:18px;
-  }
-
-  .slidertop{{ section.id }} .review{
-    {% if section.settings.dark_theme %}
-      padding-left:20px;
-      {% else %}
-      padding-left:0px;
-    {% endif %}
+  .review{
+    padding-left:20px;
     margin-top:20px;
   }
-
-  .review img{
-    width:81px;
-    display:inline-block !important;
-  }
-
   .slider{{ section.id }} .slick-slider{
     padding-bottom:500px;
   }
-
   .slider{{ section.id }} .slick-list{
     width:124%;
+    
   }
-
   .slider{{ section.id }} .slick-slide{
     padding-right:16px;
   }
@@ -256,7 +160,7 @@
         margin-bottom:8px;
     }
     .collection-slider-wrapper .product_slide p{
-      padding-bottom:0px;
+      padding-bottom:12px;
     }
     
     .collection-slider{
@@ -282,7 +186,6 @@
       padding-top: 8px;
     }
     .slidertop{{ section.id }} .collection-slider-url{
-      min-height:546px !important;
       color: #fff !important;
       border: #fff;
       border-radius: 13px;
@@ -294,71 +197,15 @@
     .index-section{
       margin:20px 0 80px !important;
     }
-    .slidertop{{ section.id }}{
-      padding-top:{{ section.settings.martop_this }}px !important;
-      padding-bottom:{{ section.settings.marbot_this }}px !important;
-    }
-
-    .slick-dots{
-      bottom:-28px !important;
-      text-align: left !important;
-    }
-    .slick-slider .slick-dots li{
-      background:rgba(255, 255, 255, 0.16);
-      width: 40px !important;
-      border-radius:4px !important;
-      height: 2px !important;
-      border:none !important;
-      
-    }
-    .slick-slider .slick-dots li.slick-active{
-      background:#fff;
-    }
 
     @media only screen and (max-width:480px){
-      .twittername{
-        font-size:12px !important;
-      }
-      #shopify-section-template--17050281476354__d7ce4bb2-d5b4-41f8-9143-17fe80432c85 .page-width > div{
-        margin:40px auto 0 !important;
-      }
-      .index-section{
-      margin:20px 0 62px !important;
-    }
-      .slick-dots{
-        bottom:-34px !important;
-        text-align: left !important;
-      }
-      .slick-slider .slick-dots li{
-        
-        width: 8px !important;
-        border-radius:50% !important;
-        height: 8px !important;
-        border:none !important;
-        
-      }
-      .desktopview{
-        display:none !important;
-      }
-
-      .mobileview{
-        display:block !important;
-      }
-    {% if section.settings.dark_theme %}
-    .slidertop{{ section.id }} .collection-slider-url{
-      min-height:405px !important;
-    }
-    {% endif %}
-    
-      .product_slide p,
-      .product_slide b,
-      .product_slide span{
-        font-size:15px;
-      }
       .logo-bar{
         justify-content: space-between !important;
       }
-
+      .logo-bar__item{
+        margin:0 !important;
+        flex:0 0 33% !important;
+      }
       .collection-slider{
         padding-left:12px;
         padding-right:12px;
@@ -381,7 +228,7 @@
         display:none;
       }
       .title-wrapper h4{
-        width: 76%;
+        width: 70%;
         font-size: 40px;
         font-family: Futura;
         
@@ -393,14 +240,8 @@
       .title-wrapper{
         position:static;
         margin-bottom:20px;
-      }    
-      .slidertop{{ section.id }}{
-        padding-top:{{ section.settings.mmartop_this }}px !important;
-        padding-bottom:{{ section.settings.mmarbot_this }}px !important;
-       
       }
     }
-
 </style>
 <script>
 
@@ -410,7 +251,6 @@ $(document).ready(function(){
     slidesToShow: 4,
     prevArrow: $('.prev{{ section.id }}'),
     nextArrow: $('.next{{ section.id }}'),
-    dots: true,
     autoplay: false,
     responsive: [
       {
@@ -444,19 +284,12 @@ $(document).ready(function(){
 </script>
 {% schema %}
   {
-    "name": "New Collection Slider",
+    "name": "Tri Icon",
     "settings": [
       {
         "type": "header",
         "content": "Caps A/B testing"
       },
-      {
-        "type": "checkbox",
-        "id": "reviewstars",
-        "label": "Turn on stars",
-        "default": true
-      },
-
       {
         "type": "checkbox",
         "id": "blocklist",
@@ -476,42 +309,6 @@ $(document).ready(function(){
         "default": false
       },
       {
-        "type": "range",
-        "id": "martop_this",
-        "label": "Space on top",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 20
-      },
-      {
-        "type": "range",
-        "id": "marbot_this",
-        "label": "Space on bottom",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 20
-      },
-      {
-        "type": "range",
-        "id": "mmartop_this",
-        "label": "Mobile space on top",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 20
-      },
-      {
-        "type": "range",
-        "id": "mmarbot_this",
-        "label": "Mobile space on bottom",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 20
-      },
-      {
         "type": "collection",
         "id": "selected_collection",
         "label": "Collection"
@@ -528,45 +325,14 @@ $(document).ready(function(){
             "type": "list",
               "settings": [
                 {
-                  "type": "text",
-                  "id": "reviewstarsnumber",
-                  "label": "Review count"
-                },
-                {
                     "type": "image_picker",
                     "id": "col_image",
                     "label": "Image"
                 },
                 {
-                    "type": "image_picker",
-                    "id": "mobcol_image",
-                    "label": "Mobile Image"
-                },
-                {  
-                  "type": "checkbox",
-                  "id": "block_title",
-                  "label": "Block title",
-                  "default": false
-                },
-                {
                     "type": "text",
                     "label": "Collection Text",
                     "id": "col_text"
-                },
-                {
-                    "type": "text",
-                    "label": "Price black",
-                    "id": "blackprice"
-                },
-                {
-                    "type": "text",
-                    "label": "Price slash",
-                    "id": "slashprice"
-                },
-                {
-                    "type": "text",
-                    "label": "Price red",
-                    "id": "redprice"
                 },
                 {
                     "type": "text",
@@ -583,7 +349,7 @@ $(document).ready(function(){
     ], 
     "presets": [
       {
-        "name": "New Collection Slider",
+        "name": "Tri Icon",
         "category": "Section"
       }
     ]

@@ -17,9 +17,25 @@
     <input type="hidden" name="contact[context]" value="{{ snippet_context }}">
     <div class="newsletter-form-group">
       <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email-{{ section.id }}" class="newsletter-form-group__input" autocapitalize="off">
-      <button type="submit" class="newsletter-form-group__submit" name="commit" title="{{ 'general.newsletter_form.submit' | t }}">
         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-email" viewBox="0 0 64 64"><path d="M63 52H1V12h62zM1 12l25.68 24h9.72L63 12M21.82 31.68L1.56 51.16m60.78.78L41.27 31.68"/></svg>
-      </button>
+      <button type="submit" class="newsletter-form-group__submit" name="commit" title="{{ 'general.newsletter_form.submit' | t }}">Subscribe now</button>
     </div>
   {%- endunless -%}
 {% endform %}
+<style>
+  .newsletter-form-group__submit{
+    position:static !important;
+    background:#f5be15;
+    color:#000 !important;
+    width: 100%;
+    padding: 15px 0px;
+  }
+  svg.icon.icon-email {
+    position: absolute;
+    right: 0;
+    top: 6px;
+  }
+  .newsletter-form-group__input{
+    margin-bottom:18px !important;
+  }
+</style>

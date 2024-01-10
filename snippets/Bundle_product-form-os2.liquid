@@ -3376,7 +3376,7 @@
     class="btn btn--tertiary btn--full add-to-cart"
     data-maintitle="{{product.handle}}">
       <span class="add_to_bundle" data-add-to-cart-text="">
-      <span class="atbtext">ADD TO BAG</span> &#8226; ${{ normal_price }}
+<span class="atbtext">ADD TO BAG</span> {% unless section.settings.enable_abtesting6 %}&#8226; ${{ normal_price }}{% endunless %}
     </span>
     <span class="bundle_preparing" style="display:none;">
       PREPARING YOUR BUNDLE...

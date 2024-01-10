@@ -3,7 +3,7 @@
 
 var checker5 = 0; 
 $(document).ready(function() {
-    
+    $(".slick-dots").hide()
     $(".variant__label-info span:first-child").html("")
     $(".master_designs").on("change", function() {
         $(this).parents(".Main_bundle_Here").find(".master_sizes").prop('selectedIndex', 0);
@@ -28,6 +28,8 @@ function disableJavaScript(html) {
 
     // Disable all <script> elements inside the fetched data
     tempContainer.find('script').remove();
+    tempContainer.find('style').remove();
+    tempContainer.find('.desktop-view').removeClass("desktop-view");
 
     // Return the sanitized HTML data
     return tempContainer.html();
@@ -820,7 +822,9 @@ $(document).ready(function() {
                 $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".main-icon-cont").hide()
                 $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".variant-wrapper").hide()
                 $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".completoseto").hide()
-                
+                $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".abtesting2").hide()    
+                $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".completoseto .fullwidth").hide()
+                $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").find(".product-description-popup .product-single__header.desktop-view").css("display", "block !important")
 
                 $(".product-description-popup").css("display", "flex")
                 $(".product-description-popup").css("position","fixed")

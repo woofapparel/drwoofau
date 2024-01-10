@@ -1,10 +1,11 @@
 <!-- section/simple-collection.liquid -->
-<div class="simple-collection">
+<div id="sec-id-{{ section.id }}" class="simple-collection">
     <div class="simple-collection-wrapper">
       {% for block in section.blocks %}  
         <div class="quad">
           <a href="{{ block.settings.col_url }}">
-            <img src="{{ block.settings.col_image | img_url: 'master' }}" />
+            <img src="{{ block.settings.col_image | img_url: 'master' }}" class="desktop_only" />
+            <img src="{{ block.settings.col_image_mobile | img_url: 'master' }}" class="mobile_only" />
             <p>{{ block.settings.col_name }}</p>
           </a>
         </div>
@@ -17,9 +18,13 @@
   font-family: futura2;
   src: url({{ 'futura.otf' | asset_url }});
 }
-
-.simple-collection{
-  
+#sec-id-{{ section.id }}{
+      margin-top: {{ section.settings.simp-martop }}px !important;
+      margin-bottom: {{ section.settings.simp-marbot }}px !important;
+      
+}
+.simple-collection img{
+  border:1px solid #EBEBEB;
 }
 .simple-collection-wrapper{
   max-width: 1300px;
@@ -35,6 +40,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  border-radius:8px;
 }
 .simple-collection-wrapper .quad{
   flex:0 0 24%;
@@ -44,6 +50,17 @@
   font-weight:800;
   text-align:center;
 }
+.desktop_only{
+  display:block !important;
+}
+.mobile_only{
+  display:none !important;
+}
+#sec-id-{{ section.id }}{
+
+border-bottom: 1px solid #EBEBEB;
+}
+
 @media only screen and (max-width:1400px){
   .simple-collection{
     padding-left:20px;
@@ -51,16 +68,66 @@
   }
 }
 @media only screen and (max-width:480px){
+  .desktop_only{
+    display:none !important;
+  }
+  .mobile_only{
+    display:block !important;
+  }
   .simple-collection-wrapper .quad{
     flex:0 0 48%;
     margin-bottom:20px;
   }
+  #sec-id-{{ section.id }}{
+      margin-top: {{ section.settings.mobsimp-martop }}px !important;
+      margin-bottom: {{ section.settings.mobsimp-marbot }}px !important; 
+      
+  }
+  
 }
 </style>
 
 {% schema %}
     {
       "name": "Simple Collection",
+      "settings": [
+          {
+                    "type": "range",
+                    "id": "simp-martop",
+                    "label": "Space on top",
+                    "default": 20,
+                    "min": 0,
+                    "max": 100,
+                    "step": 20
+                  },
+                  {
+                    "type": "range",
+                    "id": "simp-marbot",
+                    "label": "Space at the bottom",
+                    "default": 20,
+                    "min": 0,
+                    "max": 100,
+                    "step": 20
+                  },
+                  {
+                    "type": "range",
+                    "id": "mobsimp-martop",
+                    "label": "Space on top",
+                    "default": 20,
+                    "min": 0,
+                    "max": 100,
+                    "step": 20
+                  },
+                  {
+                    "type": "range",
+                    "id": "mobsimp-marbot",
+                    "label": "Space at the bottom",
+                    "default": 20,
+                    "min": 0,
+                    "max": 100,
+                    "step": 20
+                  }
+        ],
       "blocks": [
         {
             "name": "List",
@@ -70,6 +137,11 @@
                     "type": "image_picker",
                     "id": "col_image",
                     "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "col_image_mobile",
+                    "label": "Mobile Image"
                 },
                 {
                     "type": "text",

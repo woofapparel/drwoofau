@@ -4,7 +4,7 @@
 }
 {% endstyle %}
 
-<div class="index-section{% if section.settings.alt %} index-section--alt{% endif %}">
+<div class="index-section{% if section.settings.alt %} index-section--alt{% endif %} logolist-{{ section.id  }}">
 
   <div class="page-width" data-aos="logo__animation">
     {% if section.settings.title != blank %}
@@ -24,15 +24,20 @@
             {% endif %}
             {% if block.settings.image != blank %}
               {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-              <img data-swift-lazy="1" loading="lazy"   class="logo-bar__image lazyload"
-                  data-src="{{ img_url }}"
-                  data-widths="[180, 360, 540, 750]"
-                  data-aspectratio="{{ block.settings.image.aspect_ratio }}"
-                  data-sizes="auto"
-                  alt="{{ block.settings.image.alt }}">
+              <div class="logo-wrapper">
+                <img data-swift-lazy="1" loading="lazy"   class="logo-bar__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 750]"
+                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.image.alt }}">
+              </div>
+
             {% else %}
               {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
+            <div class="logocontent"><p class="logotitle"><strong>{{ block.settings.logotitle }}</strong></p>
+            <p class="logotext">{{ block.settings.logotext }}</p></div>
             {% if block.settings.link != blank %}
               </a>
             {% endif %}
@@ -44,7 +49,71 @@
 
 </div>
 
+<style>
+  .logocontent{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .logocontent p{
+    margin-bottom:6px;
+  }
+  .logo-bar{
+    align-items:flex-start !important;
+  }
+  .logolist-{{ section.id  }}{
+    margin-top: 40px !important;
+  }
+  .logo-bar__item .logo-wrapper{
+    min-height: 92px;
+  }
+  .logo-bar__item .logo-wrapper img{
+    width:59%;
+  }
+  @media only screen and (min-width:481px){
+    p.logotitle{
+    font-size:17px;
+  }
+  .logotext{
+    font-size:13px;
+  }
+    .logo-bar{
+      width:910px !important;
+      margin-left:auto;
+      margin-right:auto;
+      justify-content: space-between !important;
+    }
+    .logo-bar__item{
+      flex:0 0 200px !important;
+    }
+  }
 
+@media only screen and (max-width:480px){
+  p.logotitle{
+    font-size: 12px;
+  }
+  .logotext{
+    margin-bottom:40px;
+  }
+  .logotext{
+    font-size: 12px;
+  }
+  .logo-bar__item{
+        margin:0 !important;
+      }
+ .logo-bar__item{
+  flex:0 0 97px !important;
+ }
+  .logo-bar__item .logo-wrapper{
+    min-height: 77px !important;
+  }
+  .logo-bar__item .logo-wrapper img{
+    width:100%;
+  }
+  .logocontent{
+    font-size:15px;
+  }
+}
+</style>
 {% schema %}
   {
     "name": "Logo list",
@@ -86,6 +155,16 @@
             "id": "link",
             "label": "Link",
             "info": "Optional"
+          },
+          {
+            "type": "text",
+            "id": "logotitle",
+            "label": "Logo title"
+          },
+          {
+            "type": "text",
+            "id": "logotext",
+            "label": "logo text"
           }
         ]
       }

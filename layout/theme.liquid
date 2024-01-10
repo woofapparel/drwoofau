@@ -2507,7 +2507,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </style> 
         {% endif %}
 
-        <div id="sliderchecker"></div>
+
         <script>
           window.KlarnaThemeGlobals = {};{%case template.name%}{%when"product"%}
             {% if product.first_available_variant.price %}
@@ -3834,13 +3834,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .spend-progress-main ul li:first-child{
-          flex: 0 0 50% !important;
+          flex: 0 0 75% !important;
+          left: 24px;
         }
         .spend-progress-main ul li:nth-child(2){
-          flex: 0 0 12% !important;
+          flex: 0 0 25% !important;
+          left: 19px;
         }
+
+
         .spend-progress-main ul li:nth-child(3){
-          flex: 0 0 38% !important;
+          flex: 0 0 25% !important;
         }
         .spend-progress-main ul li p{
 
@@ -3853,6 +3857,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* text-align: center; */
     inline-size: 500px !important;
 
+        }
+        @media only screen and (max-width:480px){
+          .spend-progress-main ul li:nth-child(3) p:last-child{
+          left:6px;
+        }
         }
       </style>
 
@@ -4415,7 +4424,7 @@ $('.mainpdpslider').slick({
           centerMode: false,
           slidesToShow: 1,
           asNavFor: '.product__thumbs-sticky',  
-          focusOnSelct: true,
+          focusOnSelect: true,
           dots: true,
           arrows: false,
           responsive: [
@@ -4751,7 +4760,7 @@ $('.mainpdpslider').slick({
         font-size:14px !important;
       }
       .product-single__title{ 
-        font-size: 22px !important;
+        font-size: 23px !important;
         line-height: 28px;
         color: #050507;
       }
@@ -5176,13 +5185,13 @@ $(document).ready(function(){
     vertical: !0, 
     arrows: false,
     autoplay: false,
-    focusOnSelct: true,
+    focusOnSelect: true,
     asNavFor: '.Main--ProductPhotos'
   });
   $('.Main--ProductPhotos').slick({
     slidesToShow: 1,
     autoplay: false,
-    focusOnSelct: true,
+    focusOnSelect: true,
     asNavFor: '.product__thumbs-sticky',  
     dots: true,
     arrows: false

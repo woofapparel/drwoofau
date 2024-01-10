@@ -522,13 +522,16 @@ counter = 0;
 {% endif %} 
 
 
+<!-- this -->
 
-{% if section.settings.abtesting3 %}
+  <!-- this2 -->
   <div class="abtesting2" style="width:100%;margin-bottom:10px">
     {% unless section.settings.abtesting3image %}
+        <!-- this3 -->
     <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/> 
     {% else %}
-    <img src="{{ section.settings.abtesting3image | img_url: 'master' }} style="width:100%;height:auto;"/> 
+      <!-- this4 -->
+    <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;" /> 
     {% endunless %}
     <!-- 
     <h3>STANDARD SHIPPING FROM $11.90</h4>
@@ -551,7 +554,7 @@ counter = 0;
     </div>
     -->
   </div>
-{% endif %}
+
 
 
 

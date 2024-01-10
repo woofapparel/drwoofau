@@ -13,7 +13,98 @@
 {%- if currency_selector or locale_selector -%}
   {%- assign show_selectors = true -%}
 {%- endif -%}
+<div class="page-width" actualheight="55.3906px" actualwidth="1300px" actualmaxheight="none" actualmaxwidth="1300px" actualminheight="0px" actualminwidth="0px" windowheight="633"><style>
+	.acc-heading {
+		margin: 10px 0 !important;
+		padding: 15px 0;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		position: relative;
+		cursor: pointer;
+	}
+	.acc-heading::after {
+		position: absolute;
+		content: '+';
+		right: 15px;
+		top: 45%;
+		transform: translateY(-50%);
+		font-size: 25px;
+	}
+	.acc-heading.active-acc-heading::after {
+		content: '-';
+	}
+  .h2.appear-delay{
+    font-weight:600;
+  }
+  .footer{
+    margin-bottom: 20px;
 
+  }
+  footer .rte p{
+    max-width: 461px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+  }
+  footer .rte strong{
+    font-weight:400;
+    color:#f5be15;
+
+  }
+  @media only screen and (max-width:480px){
+    footer .page-width{
+      padding:0 23px !important;
+    }
+    .newsletter-form-group{
+      width:100%;
+      max-width:100% !important;
+    }
+    .newsletter-form-group__submit{
+      font-size:18px;
+      font-weight:900;
+    }
+    .newsletter-form-group__input,
+    .rte.rte--block.appear-delay-1{
+      font-size: 20px !important;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .h2.appear-delay{
+      font-weight:600;
+      font-size:37px;
+    }
+  }
+  body{
+    width:100% !important;
+    overflow-x:hidden;
+  }
+</style>
+<!--
+<div style="max-width: 800px; margin: 0 auto 100px;" actualheight="55.3906px" actualwidth="800px" actualmaxheight="none" actualmaxwidth="800px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+	<h4 class="acc-heading" onclick="$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')" actualheight="55.3906px" actualwidth="800px" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">A sneak peek at the year to come … shhhh</h4>
+	<div class="acc-panel" style="display: none;text-align: center;" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<p>Hey Woof Pack,</p>
+		<p>Ron, Dave and An here. We can’t thank you enough for your support last year. </p>
+		<p>When we started this little Australian scrubs brand in 2019, we had no idea how many amazing healthcare professionals we’d get to meet. To us, Dr Woof Apparel is more just a place where you can buy medical scrubs and accessories online – it’s a vehicle that we can use to bring joy to the medical world.</p>
+		<p>In 2023 we’ll be ramping up our mission to make the medical world smile. If you’re curious, here’s what we’ll be focusing on: </p>
+		<img style="max-width: 300px;" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/071_NOMV_B_W_Front_Female.jpg?v=1672991542" alt="nomv black and white front female" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="300px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<h3 actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">1. New collabs with charities that you know and respect.</h3>
+		<img style="max-width: 300px;" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/DR.Woof_Test_edits_4.3.1_540x.jpg?v=1662559257" alt="New collabs with charities" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="300px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<h3 actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">2. Growing ROUNDS by Dr. Woof</h3>
+		<p><a href="https://www.drwoofapparel.com.au/pages/rounds" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">Rounds</a> is a project that we started in 2022 with the aim of giving healthcare workers a louder voice on social media. It’s already starting conversations about important healthcare topics on <a href="https://www.tiktok.com/@drwoofapparel" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">Tiktok</a>, <a href="https://www.instagram.com/drwoofapparel/" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">Instagram</a> &amp; <a href="https://www.youtube.com/@drwoofapparel" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">Youtube</a>. </p>
+		<img style="max-width: 300px;" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/products/W-FernGreenJoggers2DRWoof_AprilShoot_Product_xx13488_900x.jpg?v=1669024093" alt="fern green joggers2 drwoof" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="300px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<h3 actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">3. Green scrubs. </h3>
+		<p>No, not green the color.  We’re working on a new environmentally friendly, fully-recycled premium scrubs fabric that’s just as soft as our famous softer-than-pajamas blend. </p>
+		<img style="max-width: 300px;" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/W_Peri_Group_3.jpg?v=1672991571" alt="Hospital scrubs that don’t suck" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="300px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<h3 actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">4. Hospital scrubs that don’t suck</h3>
+		<p>We’re looking into a few exciting options for getting Dr. Woof scrubs and accessory options for our friends in public and private hospitals. </p>
+		<img style="max-width: 300px;" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/077_Whales_Front_Female.jpg?v=1672991571" alt="Whales Front Female" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="300px" actualminheight="0px" actualminwidth="0px" windowheight="633">
+		<h3 actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">5. More of the scrubs and medical accessories you love</h3>
+		<p>We’re also working on more fun, comfortable. premium quality <a href="https://www.drwoofapparel.com.au/collections/scrub-caps" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">scrub caps</a>, <a href="https://www.drwoofapparel.com.au/collections/stethoscope-charms" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">stethoscope charms</a>, <a href="https://www.drwoofapparel.com.au/collections/women/Underscrubs" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">underscrubs</a> and <a href="https://www.drwoofapparel.com.au/collections/women" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="633">medical scrubs</a>  – including this beauty (eta February.)</p>
+	</div>
+</div>
+-->
+</div>
 <footer
   class="site-footer text-center"
   data-section-id="{{ section.id }}"
@@ -594,6 +685,14 @@
   li.tag.product-tabs-data[value='eucalyptus'] {
     order: 20;
   }
+
+  .variant-input[data-value='Caribbean Blue'],
+  .variant-input[data-arrange='caribbean-blue'],
+  li.tag.product-tabs-data[value='caribbean-blue'] {
+    order: {{ section.settings.color_caribbean-blue }}
+  }
+
+
   .variant-input[data-value='Double Purple'],
   .variant-input[data-arrange='double-purple'],
   li.tag.product-tabs-data[value='double-purple'] {
@@ -619,6 +718,23 @@
     order: 21;
   }
   
+  .site-footer__section p{
+    color:#fff;
+  }
+  .site-footer__section--newsletter{
+    margin-bottom:60px !important;
+  }
+  .index-section{
+    margin: 20px 0 50px !important;
+  }
+  @media only screen and (max-width:480px){
+    .site-footer__section--newsletter{
+      padding:50px 0 !important;
+    }
+    .acc-heading{
+      font-size:14px;
+    }
+  }
 </style>
 
 {% schema %}
@@ -786,7 +902,17 @@
         "min": 1,
         "max": 20,
         "step": 1
-      }, {
+      }, 
+      {
+        "type": "range",
+        "id": "color_color_caribbean-blue",
+        "label": "Order Caribbean Blue",
+        "default": 20,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },     
+      {
         "type": "header",
         "content": "Footer Text"
       }, {

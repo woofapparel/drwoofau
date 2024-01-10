@@ -64,6 +64,7 @@
     color: #050507;
     margin-bottom:25px;
   }
+  .loox-rating{display:none;}
   @media only screen and (max-width:480px){
     .section-header__title,
     .title-left,
@@ -91,9 +92,26 @@
   .storyslide video{
     border-radius:8px;
   }
-
+  @media only screen and (max-width:480px){
+    .product-section .page-content{
+      position:relative;
+      top:-15px;
+    }
+    .product-single__header.desktop-view{
+      display:block !important;
+    }
+    .product-single__meta > .product-single__header.desktop-view{
+      display:none !important;
+    }
+    .product-single__header .product-single__prices,
+    .product-single__header .fullimage{
+      display:none !important;
+    }
+    .mobile-view > .product-single__prices{
+      display:inline-block !important;
+    }
+  }
 </style> 
-
 
 
 
@@ -128,7 +146,17 @@
         "type": "checkbox",
         "id": "enable_abtesting5",
         "label": "Enable abtesting nov 29"
-      },        
+      },   
+      {
+        "type": "image_picker",
+        "id": "imgbundle",
+        "label": "Special offer image"
+      },   
+      {
+        "type": "checkbox",
+        "id": "enable_abtesting6",
+        "label": "Remove SCRUBUP details"
+      },
       {
         "type": "header",
         "content": "Media"

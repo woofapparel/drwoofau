@@ -177,7 +177,7 @@ when using the 'Fade' image style (set in Product grid)
 
       <div
         id="ProductThumbs-{{ section_id }}"
-        class="product__thumbs product__thumbs--{{ thumbnail_position }} small--hide{% if product.images.size == 1 %} medium-up--hide{% endif %}"
+        class="product__thumbs product__thumbs--{{ thumbnail_position }} {% unless  section.settings.threeway %}small--hide{% endunless %} {% if product.images.size == 1 %} medium-up--hide{% endif %}"
         data-position="{{ thumbnail_position }}"
         data-product-thumbs
         data-aos>

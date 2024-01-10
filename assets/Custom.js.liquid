@@ -101,7 +101,7 @@ var intervalId = window.setInterval(function(){
     $totalin = $(".totalin").html()
     $totalin = $totalin.replace('$', '');
     $totalin = parseInt($totalin)
-    if($totalin >= 97){
+    if($totalin >= 150){
         $("#cartshipping").html("Free")
     }
 }, 2000);
@@ -117,7 +117,7 @@ $('.cart__item').each(function(i, obj) {
 $totalin = $(".totalin").html()
 $totalin = $totalin.replace('$', '');
 $totalin = parseInt($totalin)
-if($totalin >= 97){
+if($totalin >= 150){
     $("#cartshipping").html("Free")
 }
 
@@ -258,12 +258,70 @@ if($totalin >= 97){
                     success: function (t) {
                         t = disableJavaScript(t)
                         var i = $(t).find(".oneway.product__photos").html();
-                        $(".oneway.product__photos").html(i),
-                            $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
-                            768 >= $(window).width() && $(".Main--ProductPhotos").slick({ autoplay: true, slidesToShow: 1, slidesToScroll: 1, infinite: true, variableWidth: true, arrows: !1, dots: !0, centerMode: true, initialSlide: 5, focusOnSelect: true }),
-                            
-                            
-                            $(".product__photos").css("opacity", 1);
+                        $(".oneway.product__photos").html(i)
+                        if ($(window).width() <= 768){
+                                    $(".product__thumbs").removeClass("small--hide")
+                                    $(".product__thumbs").slick({ 
+                                        slidesToShow: 6, 
+                                        vertical: !0,
+                                        arrows: false,
+                                        asNavFor: '.Main--ProductPhotos',
+                                        focusOnSelect: true,
+                                        responsive: [
+                                            {
+                                            breakpoint: 480,
+                                            settings: {
+                                                asNavFor: '.Main--ProductPhotos', 
+                                                vertical: false,
+                                                initialSlide: 1,
+                                                slidesToShow: 5
+                                            }
+                                            }
+                                        ]
+                                        }),
+         
+                                    $('.Main--ProductPhotos').slick({
+                                    centerMode: false,
+                                    slidesToShow: 1,
+                                    asNavFor: '.product__thumbs',
+                                    dots: true,
+                                    arrows: false,
+                                    responsive: [
+                                        {
+                                            breakpoint: 768,
+                                            settings: {
+                                                asNavFor: '.product__thumbs', 
+                                                arrows: false,
+                                                dots: true,
+                                                initialSlide: 5,
+                                                centerMode: true,
+                                                centerPadding: '0',
+                                                slidesToShow: 3,
+                                                infinite: true
+                                                }
+                                            },
+                                        {
+                                        breakpoint: 480,
+                                        settings: {
+                                            asNavFor: '', 
+                                            arrows: false,
+                                            dots: true,
+                                            initialSlide: 5,
+                                            centerMode: true,
+                                            centerPadding: '60px',
+                                            slidesToShow: 1,
+                                            infinite: true
+                                        }
+                                        }
+                                    ]
+                                    });
+                                    
+                                }else{
+                                    $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: true, asNavFor: '.Main--ProductPhotos' })
+                                    
+                                    
+                                }
+                        $(".product__photos").css("opacity", 1);
                     },
                 });
                   

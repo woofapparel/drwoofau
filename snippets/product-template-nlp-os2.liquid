@@ -69,19 +69,12 @@
               {% endif %}
             </p>
           {% endif %}
-          {% if isModal %}
-            <p class="h1 product-single__title">
-              {{ product.title }}
-            </p>
-          {% else %}
+
             <h1 class="h1 product-single__title">
-              {% if section.settings.enable_abtesting %}
+              
                 Your New Perfect Scrub Set
-              {% else %}
-                {{ product.title }}
-              {% endif %}
             </h1>
-          {% endif %}
+  
 
           {% if settings.enable_product_reviews %}
             {% if isModal %}
@@ -658,8 +651,12 @@
 
         {% if section.settings.enable_abtesting5 %}
               {% if section.settings.enable_abtesting %}
-                  <img src="{{ 'specialab.png' | asset_url }}" class="specialab" styl="width:100%;height:auto;"/> 
-
+                {% unless section.settings.imgbundle %}
+                  <img src="{{ 'specialab.png' | asset_url }}" class="specialab" style="width:100%;height:auto;"/> 
+                {% else %}
+                <img src="{{ section.settings.imgbundle | img_url: 'master' }}" class="specialab" style="width:100%;height:auto;"/> 
+                {% endunless %}
+                
                   <div class="left-flexer">
                     <div class="trio">
                       <img src="{{ 'family.png' | asset_url }}" class="tinypng">
@@ -941,7 +938,7 @@
       font-family: 'futuraptbold';
     }
     .product-single__title{
-      font-size: 22px;
+      font-size: 23px !important;
       line-height: 28px;
       color: #050507;
     }
@@ -1003,6 +1000,33 @@
         }
 
   }
+
+
+{% if section.settings.enable_abtesting6 %}
+  .product__slide[data-index="7"],
+  .product__thumb-item[data-index="7"],
+  .normalPrice{
+    display:none !important;
+  }
+
+  .product-content-right{
+
+  }
+  .normal_price .product__price--compare{
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 23px;
+    text-decoration-line: none !important;
+    color: #050507 !important;
+    font-family: futurapt;
+  }
+  img.specialab{
+    left:0 !important;
+  }
+{% endif %}
+
+
+
 </style>
 <script>
   const modal = document.querySelector(".pop-up-modal");
