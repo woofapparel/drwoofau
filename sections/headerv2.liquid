@@ -2,6 +2,7 @@
 <div class="headerv2">
     <div class="headerv2-wrapper">
         <div class="duo">
+          <img src="{{ 'whitestars.png' | asset_url }}" class="reviewwhitestars" />
             {% if section.settings.colored_header %}
                 <span class="colored_header">{{ section.settings.colored_header }}</span>
             {% endif %}
@@ -40,6 +41,9 @@
   font-family: futura2;
   src: url({{ 'futura.otf' | asset_url }});
 }
+img.reviewwhitestars{
+  margin-bottom:10px;
+}
 .headerimage{
    width:100%;
    height:auto;
@@ -61,14 +65,14 @@
 }
 
 .header-button{
-    background: #000;
+    background: #fff;
     padding: 12px 0px;
-    color:#fff;
+    color:#000;
     margin-right:12px;
     width:100%;
     {% if section.settings.light_theme %}
-      background: #fff;
-      color:#000;
+      background: #000;
+      color:#fff;
       border:2px solid #000;
     {% endif %}
 }
@@ -76,6 +80,10 @@
   width:100%;
   padding:80px 160px;
   background-color: {{ section.settings.bg_color }};
+  {% if section.settings.desktop_bgimage %}
+    background: url({{ section.settings.desktop_bgimage | img_url: 'grande' }});
+    background-size:cover;
+  {% endif %}
 }
 .smallbadge{
   display:inline-block;
@@ -171,6 +179,11 @@
   }
 }
 @media only screen and (max-width:480px){
+  .headerv2{
+    {% if section.settings.desktop_bgimage %}
+      background: url({{ section.settings.mobile_bgimage | img_url: 'grande' }});
+    {% endif %}
+  }
   .headerimage{
     display:none;
   }
@@ -179,6 +192,9 @@
   }
   .header-list{
     margin-bottom:20px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .button-wrapper{
     margin-bottom:33px;
@@ -195,7 +211,7 @@
     margin-bottom:8px;
   }
   .headerv2 .main_header{
-    font-size:48px;
+    font-size:44px;
     line-height:1.2em;
     margin-bottom:16px;
   }
@@ -275,6 +291,16 @@
             "id": "bg_color",
             "label": "Color",
             "default": "#FFD7D2"
+        },
+        {
+            "type": "image_picker",
+            "id": "desktop_bgimage",
+            "label": "Desktop background image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_bgimage",
+            "label": "Mobile background image"
         },
         {
           "type": "range",

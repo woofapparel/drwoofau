@@ -1,4 +1,9 @@
 <!-- snippets/product-template-nlp-os2.liquid -->
+<style>
+  .master_designs{
+    display:none !important;
+  }
+</style>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -654,7 +659,8 @@
                 {% unless section.settings.imgbundle %}
                   <img src="{{ 'specialab.png' | asset_url }}" class="specialab" style="width:100%;height:auto;"/> 
                 {% else %}
-                <img src="{{ section.settings.imgbundle | img_url: 'master' }}" class="specialab" style="width:100%;height:auto;"/> 
+                  <img src="{{ section.settings.imgbundle | img_url: 'master' }}" class="specialab dv" style="width:100%;height:auto;"/> 
+                  <img src="{{ section.settings.mobimgbundle | img_url: 'master' }}" class="specialab mv" style="width:100%;height:auto;"/> 
                 {% endunless %}
                 
                   <div class="left-flexer">
@@ -670,7 +676,7 @@
                     </div>
                     <div class="trio">
                       <img src="{{ 'truck.png' | asset_url }}" class="tinypng">
-                      <p>FREE & FAST<br/>Shipping from Sydney</p>
+                      <p>FREE SHIPPING<br/>Over $150</p>
                     </div>
                   </div>
               {% else %}
@@ -693,7 +699,7 @@
                   </div>
                   <div class="trio">
                     <img src="{{ 'truck.png' | asset_url }}" class="tinypng">
-                    <p>FREE & FAST<br/>Shipping from Sydney</p>
+                    <p>FREE SHIPPING<br/>Over $150</p>
                   </div>
                 </div>
             {% else %}
@@ -748,7 +754,11 @@
               .mobileshow{
                 display:none !important;
               }
+              .dv{display:block;}
+              .mv{display:none;}
               @media only screen and (max-width:480px){
+                .dv{display:none;}
+                .mv{display:block;}
                 .fullimage img{
                   display: block;
                   width: 108%;
@@ -1025,7 +1035,9 @@
   }
 {% endif %}
 
-
+img.specialab{
+    left:0 !important;
+  }
 
 </style>
 <script>
@@ -1073,6 +1085,8 @@
       
     $('.product_One_Shown .master_designs option[data-handle="women-3-pocket-scrub-top"]').prop('selected',true);
     $('.product_One_Shown .master_designs option[data-handle="women-classic-6-pocket-joggers"]').prop('selected',true);
+    $('.master_designs option[data-handle="mens-3-pocket-scrub-top"]').prop('selected',true);
+        $('.master_designs option[data-handle="mens-classic-5-pocket-joggers"]').prop('selected',true);
       clearInterval(intervalId) 
     }
     

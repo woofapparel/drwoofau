@@ -24,14 +24,23 @@ THIS SECTION WAS ADDED BY CASEY. IT WAS PREVIOUSLY IN PRODUCT-TEMPLATE (AT SECTI
     <h2>Invest in Quality: Scrubs for a Lifetime</h2>
     <div class="flexer">
       <div class="fleft">
+        {% if section.settings.maleimageleft %}
+          <img src="{{ section.settings.maleimageleft | img_url: 'master' }}" alt="Image">
+          {% else %}
         <img src="{{ 'left1.png' | asset_img_url: 'master' }}" alt="Image">
+        {% endif %}
       </div>
       <div class="fmid">
 
         <img src="{{ 'mid.png' | asset_img_url: 'master' }}" alt="Image">
       </div>
       <div class="fright">
+        {% if section.settings.maleimageright %}
+          <img src="{{ section.settings.maleimageright | img_url: 'master' }}" alt="Image">
+
+          {% else %}
         <img src="{{ 'right2.png' | asset_img_url: 'master' }}" alt="Image">
+      {% endif %}
       </div>
     </div>
     <div class="flexer">
@@ -90,6 +99,20 @@ THIS SECTION WAS ADDED BY CASEY. IT WAS PREVIOUSLY IN PRODUCT-TEMPLATE (AT SECTI
 {% schema %}
   {
     "name": "Product story",
+    "settings": [
+      {
+               "type": "image_picker",
+               "id": "maleimageleft",
+               "label": "Left image"
+      },
+      {
+               "type": "image_picker",
+               "id": "maleimageright",
+               "label": "Right image"
+      }
+
+
+    ],
     "blocks": [
       {
         "type": "contact-form",

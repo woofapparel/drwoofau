@@ -148,7 +148,12 @@ counter = 0;
 
     {% if variant_type == 'button' %} 
     <!-- 10 -->
-    {% include 'variant-button', section_id: section_id, option_drop: option %}
+    {% if product.type == "Men Scrub Pants" or product.type == "Women Scrub Pants" %}
+      {% include 'variant-button-v2', section_id: section_id, option_drop: option %}
+      {% else %}
+      {% include 'variant-button', section_id: section_id, option_drop: option %}
+    {% endif %}
+    
     {% else %}
     <!-- 11 -->
     {% include 'variant-dropdown', section_id: section_id %}
@@ -531,7 +536,8 @@ counter = 0;
     <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/> 
     {% else %}
       <!-- this4 -->
-    <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;" /> 
+    <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;" class="dv" /> 
+    <img src="{{ section.settings.abtesting3imagemob | img_url: 'master' }}" style="width:100%;height:auto;" class="mv" /> 
     {% endunless %}
     <!-- 
     <h3>STANDARD SHIPPING FROM $11.90</h4>
@@ -1235,5 +1241,11 @@ counter = 0;
   color: {{ my_value }} !important;
 }
 {% endif %}
-
+.dv{display:block;}
+              .mv{display:none;}
+              @media only screen and (max-width:480px){
+                #logo-link{display:none !important;}
+                .dv{display:none;}
+                .mv{display:block;}
+                }
 </style>
