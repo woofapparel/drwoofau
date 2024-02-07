@@ -1,6 +1,13 @@
-<div id="ProductSections-{{ product.id }}">
-  {% include 'page-template-blocks' %}
-</div>
+{% assign heading = product.metafields.sf_image_with_text.heading %}
+{% if heading != blank %}
+  {% include 'product-text-with-image' %}
+{% else %}
+  <div id="ProductSections-{{ product.id }}">
+    {% include 'page-template-blocks' %}
+  </div>
+{% endif %}
+
+
 
 {% comment %}
 THIS SECTION WAS ADDED BY CASEY. IT WAS PREVIOUSLY IN PRODUCT-TEMPLATE (AT SECTION LEVEL)      

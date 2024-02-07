@@ -2,7 +2,9 @@
 <div class="adsection">
     <h2>{{ section.settings.bigtext }}</h2>
     <a href="{{ section.settings.buttonlink }}"><button class="btn-prime">{{ section.settings.textbut }}</button></a>
-    <p><img src="{{ 'stars.png' | asset_url }}" class="reviewstars" /> 200+ 5 Star Reviews</p>
+    {% if section.settings.reviewstars_text != blank or section.settings.reviewstars_text != '' %}
+    <p><img src="{{ 'stars.png' | asset_url }}" class="reviewstars" /> {{ section.settings.reviewstars_text }}</p>
+    {% endif %}
 </div>
     
 <style>
@@ -117,6 +119,11 @@ footer{
             "type": "text",
             "id": "bigtext",
             "label": "Big Text"
+        },
+        {
+            "type": "text",
+            "id": "reviewstars_text",
+            "label": "Reviewstars text"
         },
         {
         "type": "range",

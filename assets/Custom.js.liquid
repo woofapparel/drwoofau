@@ -156,7 +156,7 @@ if($totalin >= 150){
             $color = $(".variant-input-wrap[data-index='option2'] input:checked").val();
 
             
-
+            console.log("AAYAYYAYAYA" + $color + "YAYAYYAYA")
             if($(".variant-input-wrap[data-index='option3']").length){
                 console.log("AAYAYYAYAYAYAYAYYAYA")
                 $inseam = $(".variant-input-wrap[data-index='option3'] input:checked").val();
@@ -174,7 +174,7 @@ if($totalin >= 150){
 
                 
             }else{
-                console.log("ABABABABBABABAAB")
+                console.log("ABABABABBABABAABxx")
                 if($(".variant-input-wrap[data-index='option2']").length){
                     console.log("YOYOYOYOYOYO")
                     var setchosen = $size + " / " + $color;
@@ -654,7 +654,8 @@ $('html, body').animate({
 if(true){
     $('.add-to-cart').on('click', function (e) {
             e.preventDefault()
-            if($("body").hasClass("scrunchies")){
+            
+            if($("body").hasClass("os2scrunchies")){
                 $varidx = $('input[name=data-product-variant-id]').val()
                 $dataxx = {
                             "id": $varidx,

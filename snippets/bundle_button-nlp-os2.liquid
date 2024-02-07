@@ -139,7 +139,7 @@
                     name="{{ product_combined.name }}"
                     data-variant-input
                     {% if is_color %}data-color-swatch{% endif %}
-                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} disabled{% endunless %}"
+                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} {% endunless %}"
                     {% if is_color %}
                     data-color-name="{{ combined_value | escape }}"
                     {% endif %}
@@ -156,7 +156,7 @@
                           op_val="{{ combined_value }}"
                           option_index="{{product_combined_index}}"
                           for="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}"
-                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} disabled{% endunless %}"
+                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} {% endunless %}"
                           style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                           {{ combined_value | escape }}
                         </label>
@@ -216,7 +216,7 @@
                     name="{{ product_combined.name }}"
                     data-variant-input
                     {% if is_color %}data-color-swatch{% endif %}
-                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} disabled{% endunless %}"
+                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} {% endunless %}"
                     {% if is_color %}
                     data-color-name="{{ combined_value | escape }}"
                     {% endif %}
@@ -233,7 +233,7 @@
                           op_val="{{ combined_value }}"
                           option_index="{{product_combined_index}}"
                           for="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}"
-                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} disabled{% endunless %}"
+                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} {% endunless %}"
                           style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                           {{ combined_value | escape }}
                         </label>
@@ -292,7 +292,7 @@
                     name="{{ product_combined.name }}"
                     data-variant-input
                     {% if is_color %}data-color-swatch{% endif %}
-                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} disabled{% endunless %}"
+                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} {% endunless %}"
                     {% if is_color %}
                     data-color-name="{{ combined_value | escape }}"
                     {% endif %}
@@ -309,7 +309,7 @@
                           op_val="{{ combined_value }}"
                           option_index="{{product_combined_index}}"
                           for="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}"
-                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} disabled{% endunless %}"
+                          class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} {% endunless %}"
                           style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                           {{ combined_value | escape }}
                         </label>

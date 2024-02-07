@@ -2,7 +2,9 @@
 <div class="headerv2">
     <div class="headerv2-wrapper">
         <div class="duo">
+          {% unless section.settings.hide_review_stars %}
           <img src="{{ 'whitestars.png' | asset_url }}" class="reviewwhitestars" />
+          {% endunless %}
             {% if section.settings.colored_header %}
                 <span class="colored_header">{{ section.settings.colored_header }}</span>
             {% endif %}
@@ -44,6 +46,10 @@
 img.reviewwhitestars{
   margin-bottom:10px;
 }
+.headerv2 .reviewwhitestars{
+  float:none !important;
+  display:block;
+}
 .headerimage{
    width:100%;
    height:auto;
@@ -70,11 +76,11 @@ img.reviewwhitestars{
     color:#000;
     margin-right:12px;
     width:100%;
-    {% if section.settings.light_theme %}
+    
       background: #000;
       color:#fff;
       border:2px solid #000;
-    {% endif %}
+    
 }
 .headerv2{
   width:100%;
@@ -93,9 +99,9 @@ img.reviewwhitestars{
 }
 .header-list{
   padding:0;
-  margin:0 !important;
+  margin:0;
   margin-left:0;
-  margin-bottom:32px !important;
+  margin-bottom:32px;
   {% if section.settings.light_theme %}
       color:#fff;
   {% endif %}
@@ -116,12 +122,17 @@ img.reviewwhitestars{
   display:flex;
   justify-content: space-between;
   flex-wrap:wrap;
+  {% if section.settings.top_mode %}
+  align-items: flex-start;
+  {% else %}
   align-items: center;
+  {% endif %}
   padding:0 92px;
   max-width:1300px;
   margin-left:auto;
   margin-right:auto;
 }
+
 .headerv2-wrapper .duo{
   flex:0 0 46%;
 }
@@ -134,19 +145,19 @@ img.reviewwhitestars{
 .headerv2 .colored_header{
     font-size: 16px;
     color: {{ section.settings.header_color }};
-    font-weight:600;
+    font-weight:400;
     font-family: 'Oxygen', sans-serif;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
 }
 
 .headerv2 .main_header{
     font-family: futura2;
     font-weight: 400;
-    font-size: 64px;
-    line-height: 72px;
-    margin-bottom: 32px;
+    font-size: {{ section.settings.main_header_size }}px;
+    line-height: 1.2em;
+    margin-bottom: {{ section.settings.main_header_space }}x;
     {% if section.settings.light_theme %}
       color:#fff;
   {% endif %}
@@ -179,10 +190,22 @@ img.reviewwhitestars{
   }
 }
 @media only screen and (max-width:480px){
+  .content{
+    margin-bottom:6px;
+  }
+  .imagecol{
+    margin-bottom:12px;
+  }
   .headerv2{
     {% if section.settings.desktop_bgimage %}
       background: url({{ section.settings.mobile_bgimage | img_url: 'grande' }});
     {% endif %}
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .headerv2-wrapper{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .headerimage{
     display:none;
@@ -191,7 +214,7 @@ img.reviewwhitestars{
     display:block;
   }
   .header-list{
-    margin-bottom:20px;
+    margin-bottom:0px;
     padding: 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -201,25 +224,37 @@ img.reviewwhitestars{
     gap:14px;
   }
   .headerv2{
-    padding:32px 6px;
+    padding:32px 0px;
   }
   .headerv2-wrapper .duo{
     width:100%;
     flex: 0 0 100%;
   }
+  .headerv2-wrapper .duo:first-child{
+    padding-left:18px;
+    padding-right:18px;
+  }
   .headerv2 .colored_header{
     margin-bottom:8px;
   }
   .headerv2 .main_header{
-    font-size:44px;
+    font-size: {{ section.settings.main_header_size_mobile }}px;
     line-height:1.2em;
     margin-bottom:16px;
   }
   .headerv2 .content{
     font-family: 'Oxygen', sans-serif;
     font-size:16px;
-    margin-bottom:24px; 
+    margin-bottom:6px; 
   }
+  {% if section.settings.enable_men %}
+  .headerv2-wrapper .duo:first-child{
+    order:2;
+  }
+  .headerv2-wrapper .duo:nth-child(2){
+    order:1;
+  }
+  {% endif %}
 }
 </style>
 
@@ -241,6 +276,21 @@ img.reviewwhitestars{
         },
         {
           "type": "checkbox",
+          "id": "enable_men",
+          "label": "Enable men"
+        }, 
+        {
+          "type": "checkbox",
+          "id": "hide_review_stars",
+          "label": "Hide review stars"
+        },         
+        {
+          "type": "checkbox",
+          "id": "top_mode",
+          "label": "Top image on header"
+        }, 
+        {
+          "type": "checkbox",
           "id": "light_theme",
           "label": "Turn on light theme"
         }, 
@@ -249,6 +299,36 @@ img.reviewwhitestars{
           "label": "Main Header",
           "id": "main_header",
           "default": "Black Friday Mode is On!"
+        },
+        {
+          "type": "range",
+          "id": "main_header_size",
+          "label": "Main Header size",
+          "default": 64,
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "main_header_size_mobile",
+          "label": "Main Header size mobile",
+          "default": 44,
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "main_header_space",
+          "label": "Main header bottom space",
+          "default": 32,
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px"
         },
         {
           "type": "text",

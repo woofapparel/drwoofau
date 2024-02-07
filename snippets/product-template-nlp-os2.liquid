@@ -76,8 +76,11 @@
           {% endif %}
 
             <h1 class="h1 product-single__title">
-              
-                Your New Perfect Scrub Set
+              {% if section.settings.enable_men %}
+                Your New Toughest Scrub Set
+                {% else %}
+                  Your New Perfect Scrub Set
+                {% endif %}
             </h1>
   
 
@@ -114,7 +117,12 @@
                 <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="half" aria-hidden="true">
                     <use href="#looxicons-rating-icon"></use>
                 </svg>
-                <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 Comfy Nurses</span> 
+                <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 
+                  {% if section.settings.enable_men %}
+                  Comfy kings
+                  {% else %}
+                  Comfy Nurses
+                  {% endif %}</span> 
               </div>
               </a>
             {% endif %}
@@ -344,10 +352,10 @@
                 </p>
               {% else %}
                 <h1 class="h1 product-single__title">
-                  {% if section.settings.enable_abtesting %}
-                    Your New Perfect Scrub Set
+                  {% if section.settings.enable_men %}
+                  Your New Toughest Scrub Set
                   {% else %}
-                    {{ product.title }}
+                    Your New Perfect Scrub Set
                   {% endif %}
                 </h1>
               {% endif %}
@@ -386,7 +394,11 @@
                     <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="half" aria-hidden="true">
                         <use href="#looxicons-rating-icon"></use>
                     </svg>
-                    <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 Comfy Nurses</span> 
+                    <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 {% if section.settings.enable_men %}
+                      Comfy kings
+                      {% else %}
+                      Comfy Nurses
+                      {% endif %}</span> 
                   </div>
                   </a>
                 {% endif %}
@@ -656,12 +668,7 @@
 
         {% if section.settings.enable_abtesting5 %}
               {% if section.settings.enable_abtesting %}
-                {% unless section.settings.imgbundle %}
-                  <img src="{{ 'specialab.png' | asset_url }}" class="specialab" style="width:100%;height:auto;"/> 
-                {% else %}
-                  <img src="{{ section.settings.imgbundle | img_url: 'master' }}" class="specialab dv" style="width:100%;height:auto;"/> 
-                  <img src="{{ section.settings.mobimgbundle | img_url: 'master' }}" class="specialab mv" style="width:100%;height:auto;"/> 
-                {% endunless %}
+
                 
                   <div class="left-flexer">
                     <div class="trio">
@@ -684,7 +691,7 @@
               {% endif %}
         {% else %}
             {% if section.settings.enable_abtesting %}
-              <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">{% if section.settings.enable_abtesting %}Use code SCRUBUP at checkout for 20% off {% else %}Get your set for only $98 with code SCRUBUP {% endif %}<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
+              <p style="text-align:center;font-size:16px;font-family: futurapt;margin-top:12px;margin-bottom:20px;">{% if section.settings.enable_abtesting %}{% unless section.settings.enable_men %}Use code SCRUBUP at checkout for 20% off{% endunless %} {% else %}Get your set for only $98 with code SCRUBUP {% endif %}<br>{% unless section.settings.enable_abtesting %}(One time offer only. Max 3 sets per customer){% endunless %}</p>            
                       
                 <div class="left-flexer">
                   <div class="trio">
@@ -840,6 +847,9 @@
         left: -5%;
         margin-top:12px;
         margin-bottom:12px;
+    }
+    #add_to_cart_box{
+      margin-bottom:20px !important;
     }
     .preorder-text{
       display:none;
@@ -1227,7 +1237,7 @@ $(document).ready(function(){
   svg.compact-badge-logo{
     height:24px;
     position:relative;
-    top:4px;
+    top:5px;
   }
   .product-single__prices{
     display:inline-block !important;

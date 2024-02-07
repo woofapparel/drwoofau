@@ -1122,9 +1122,11 @@
                 }             
               }
             </style>
-            {% assign cts_product_1_a = product.metafields.sf_product_bundle.cts_product_1_a %}
-            {% unless cts_product_1_a == blank %}
-              {% render 'completetheset' %}
+            {% unless product.type == "Printed Pattern Scrub Tops" %}
+              {% assign cts_product_1_a = product.metafields.sf_product_bundle.cts_product_1_a %}
+              {% unless cts_product_1_a == blank %}
+                {% render 'completetheset' %}
+              {% endunless %}
             {% endunless %}
 
 
@@ -1332,7 +1334,7 @@
   const closeButton = document.querySelector(".close-button");
 
   function toggleModal() {
-    modal.classList.toggle("show-pop-up");
+    // modal.classList.toggle("show-pop-up");
   }
 
   function windowOnClick(event) {

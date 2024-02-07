@@ -76,11 +76,17 @@
 {% assign doublenext = "x" %}
 
 
-  {% if intro %}
+  
+    {% if section.settings.step1image1 %}
     <div style="margin-bottom:20px;">
-      {{ intro }}
+      <img src="{{ section.settings.step1image1 | img_url: 'master' }}">
     </div>
-  {% endif %}
+    {% else %}
+      <div style="margin-bottom:20px;">
+        {{ intro }}
+      </div>
+    {% endif %}
+  
 
 
 {% capture size_chart %}
@@ -581,11 +587,17 @@
   {% assign introsingle1 = product.metafields.sf_product_bundle.intro_text_single_1 %}
 
 
-  {% if intro2 %}
-    <div>
-      <p>{{ intro2 }}</p>
-    </div>
-  {% endif %}
+  
+    {% if section.settings.step1image2 %}
+      <div style="margin-bottom:20px;">
+        <img src="{{ section.settings.step1image2 | img_url: 'master' }}">
+      </div>
+      {% else %}
+        <div style="margin-bottom:20px;">
+          {{ intro2 }}
+        </div>
+      {% endif %}
+  
 
   {% assign product_type_2 = product.metafields.sf_product_bundle.product_type_2 %}
   {% if product_type_2 %}
@@ -3349,13 +3361,17 @@
     </div>
   
 
-  {% unless section.settings.enable_abtesting %}
-    {% if intro3 %}
-      <div>
-        <p>{{ intro3 }}</p>
+
+    {% if section.settings.step1image3 %}
+      <div style="margin-bottom:20px;">
+        <img src="{{ section.settings.step1image3 | img_url: 'master' }}">
       </div>
-    {% endif %}
-  {% endunless %}
+      {% else %}
+        <div style="margin-bottom:20px;">
+          {{ intro3 }}
+        </div>
+      {% endif %}
+
 
   {% if template contains 'LTV-Bulk-scrubs-offer' %}
     {% if intro10 %}
@@ -3364,6 +3380,15 @@
       </div>
     {% endif %}
   {% endif %}
+
+  {% unless section.settings.imgbundle %}
+    <img src="{{ 'specialab.png' | asset_url }}" class="specialab" style="width:100%;height:auto;"/> 
+  {% else %}
+    <img src="{{ section.settings.imgbundle | img_url: 'master' }}" class="specialab dv" style="width:100%;height:auto;"/> 
+    <img src="{{ section.settings.mobimgbundle | img_url: 'master' }}" class="specialab mv" style="width:100%;height:auto;"/> 
+  {% endunless %}
+
+
   <div class="error_message5" style="display:none;"></div>
   <div class="error_message" style="display:none;">please select Available Products</div>
   <div class="error_message2" style="display:none;">Oh no! It looks like you missed something. Please review your choices.</div>

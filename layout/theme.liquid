@@ -4,6 +4,16 @@
 <!-- Start of Shoplift scripts -->
 {% render 'shoplift' %}
 <!-- End of Shoplift scripts -->
+{% if template.suffix == 'sl-1C4EB620' %}
+  <script>
+    /* window.location.href == ""; */
+    window.location.replace("/collections/women");
+  </script>
+{% endif %}
+<script>
+  console.log("xx{{ template.suffix }}uuu")
+</script>
+
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-26696QN85B"></script>
@@ -2620,7 +2630,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                            </div>
                         </div>
                      </div>
-                     <p style="color:red;font-weight:900">IMPORTANT: All orders with embroidery will be processed by January 12th post-holiday break. Delivery ETA is around end of January. Happy holidays! <img src="{{ 'whitetree.png' | asset_url }}"   style="display:inline-block;width:17px;position:relative;top:2px;"/></p>
+                     
                      <span class="formmessage notifcolorchecker"></span>
                      <input type="hidden" class="colorchecker" value="false">
                      <p><input type="checkbox" class="addname-checkbox"> <b>I acknowledge that this will add 10 working days to the standard delivery time and have read the FAQ below.</b></p>
@@ -2693,7 +2703,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
 
                      </div>
-                     <p style="color:red;font-weight:900">IMPORTANT: All orders with embroidery will be processed by January 12th post-holiday break. Delivery ETA is around end of January. Happy holidays! <img src="{{ 'whitetree.png' | asset_url }}"   style="display:inline-block;width:17px;position:relative;top:2px;"/></p>
+                     
                      <span class="formmessage notifcolorchecker"></span>
                      <span class="formmessage notifcolorchecker"></span>
                      <input type="hidden" class="colorchecker" value="false">
@@ -2799,7 +2809,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
 
                      </div>
-                     <p style="color:red;font-weight:900">IMPORTANT: All orders with embroidery will be processed by January 12th post-holiday break. Delivery ETA is around end of January. Happy holidays! <img src="{{ 'whitetree.png' | asset_url }}"   style="display:inline-block;width:17px;position:relative;top:2px;"/></p>
+                     
                      <span class="formmessage notifcolorchecker"></span>
                      <span class="formmessage notifinitialcolorchecker"></span>
                      <input type="hidden" class="initialcolorchecker" value="false">
@@ -3833,35 +3843,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           border:2px solid #000 !important;
         }
 
-        .spend-progress-main ul li:first-child{
-          flex: 0 0 75% !important;
-          left: 24px;
-        }
-        .spend-progress-main ul li:nth-child(2){
-          flex: 0 0 25% !important;
-          left: 19px;
-        }
 
-
-        .spend-progress-main ul li:nth-child(3){
-          flex: 0 0 25% !important;
-        }
         .spend-progress-main ul li p{
-
-    min-height: 35px;
-    max-width: 55px;
-    /* right: -15px; */
-    position: relative;
-    margin-right: 0;
-    margin-left: auto;
-    /* text-align: center; */
-    inline-size: 500px !important;
-
+          min-height: 35px;
+          max-width: 55px;
+          /* right: -15px; */
+          position: relative;
+          margin-right: 0;
+          margin-left: auto;
+          /* text-align: center; */
+          inline-size: 500px !important;
         }
         @media only screen and (max-width:480px){
-          .spend-progress-main ul li:nth-child(3) p:last-child{
-          left:6px;
-        }
+            .spend-progress-main ul li:nth-child(3) p:last-child{
+              left:6px;
+            }
         }
       </style>
 
@@ -4616,7 +4612,6 @@ $('.mainpdpslider').slick({
         font-family: 'futurapt';
         position: relative;
         top: -3px;
-
       }
       .product-single__prices>*{
         padding-right:0;
@@ -5314,6 +5309,6 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   }
 {% endif %}
 </style>
-
+{% include 'sizeguide' %}
     </body>
 </html> 
