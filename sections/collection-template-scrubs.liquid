@@ -1,3 +1,4 @@
+<!-- collection-template-scrubs.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -32,7 +33,7 @@
                     <img
                       src="{{ first_image }}"
                       class="image-metafield-one"
-                      alt="{{ first_text }}" />
+                      alt="{% if first_text != blank %}{{ first_text }}{% else %}{{ collection.title }}{% endif %}" />
                     {% if first_url != blank %}
                     </a>
                   {% endif %}
@@ -42,6 +43,7 @@
                 {% if first_url != blank %}
                   <a href="{{ first_url }}">
                   {% endif %}
+          
                   <div class="grid-product__content custom_collection_product__content">
                     <div class="grid-product__meta">
                       <div class="grid-product__title">
@@ -72,7 +74,7 @@
                     <img
                       src="{{ second_image }}"
                       class="image-metafield-one"
-                      alt="{{ second_title }}" />
+                      alt="{% if second_title != blank %}{{ second_title }}{% else %}{{ collection.title }}{% endif %}" />
                     {% if second_url != blank %}
                     </a>
                   {% endif %}
@@ -151,7 +153,7 @@
                   {% assign my_array = my_array | append: ',' | append: new_value %}
                 {% endfor %}
                 {% assign newtag = my_array | uniq | join: "," %}
-                {% assign options = my_array | split: ',' | sort | uniq %}
+                {% assign options = my_array | split: ',' %}
                 {% for option in options %}
                   {% assign finall = option | remove: '"' | remove: "[" | remove: "]" | downcase %}
                   {%- for option_value in option_values -%}
@@ -186,11 +188,13 @@
                                       {{ custom_label }}
                                     </div>
                                   {% else %}
+                                  {% comment %}
                                     {% if sold_out %}
                                       <div class="grid-product__tag grid-product__tag--sold-out">
                                         {{ 'products.product.sold_out' | t }}
                                       </div>
-                                    {% endif %}
+                                  {% endif %}
+                                {% endcomment %}
 
                                     {% if variant.compare_at_price > variant.price %}
                                       <div class="grid-product__tag grid-product__tag--sale">
@@ -401,6 +405,43 @@
                                     {% endif %}
 
                                     <div class="grid-product__meta">
+                                      {% if section.settings.pre-navy %}
+                              {% unless product.title contains "Women" %}
+                                {% if product.title contains "Friendly" %}
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/friendly_2.svg?v=1707276467" class="dv fullimage"/>
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/friendly_2.svg?v=1707276467" style="" class="mv fullimage"/>
+                                {% else %}
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/jogmen.svg?v=1709833507" class="dv fullimage"/>
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/jogmen.svg?v=1709833507" style="" class="mv fullimage"/>
+                                {% endif %}
+                              {% else %}
+
+                                {% if product.title contains "Friendly" %}
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/friendly_2.svg?v=1707276467" class="dv fullimage"/>
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/friendly_2.svg?v=1707276467" style="" class="mv fullimage"/>
+                                {% else %}
+                                  {% if product.title contains "Eco-Soft" %}
+                                    <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/eco.svg?v=1707232976" class="dv fullimage"/>
+                                    <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/eco.svg?v=1707232976" style="" class="mv fullimage"/>
+                                  {% else %}
+                                    {% if product.title contains "Skinny" or product.title contains "Straight" %}
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/straight.svg?v=1707275880" class="dv fullimage"/>
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/straight.svg?v=1707275880" style="" class="mv fullimage"/>
+                                    {% else %}
+                                    {% if product.title contains "V-Neck" %}
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/vneck.png?v=1710139882" class="dv fullimage"/>
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/vneck.png?v=1710139882" style="" class="mv fullimage"/>
+                                    {% else %}
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/jog.svg?v=1707275864" class="dv fullimage"/>
+                                      <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/jog.svg?v=1707275864" style="" class="mv fullimage"/>
+                                    {% endif %}
+                                    {% endif %}
+                                  {% endif %}
+                                {% endif %}
+                              {% endunless %}
+
+
+                            {% endif %}
                                       <div class="grid-product__title">{{ product.title }}</div>
 
                                       {% if coll_prod_var_sp[1] %}
@@ -709,11 +750,13 @@
                 {{ custom_label }}
               </div>
             {% else %}
+            {% comment %}
               {% if sold_out %}
                 <div class="grid-product__tag grid-product__tag--sold-out">
                   {{ 'products.product.sold_out' | t }}
                 </div>
               {% endif %}
+            {% endcomment %}
               {% if on_sale and sold_out == false %}
                 <div class="grid-product__tag grid-product__tag--sale">
                   {% if settings.product_save_amount %}
@@ -862,6 +905,18 @@
                 {% endif %}
 
                 <div class="grid-product__meta">
+                  {% if section.settings.pre-navy %}
+            {% if product.title contains "Women's 8-Pocket Tactical Fleece Jacket" or product.title contains "Basics Collection" %}
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/black.svg?v=1707234144" class="dv fullimage"/>
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/black.svg?v=1707234144" style="" class="mv fullimage"/>
+              {% else %}
+              {% if product.title contains "Aussie" or product.title contains "Hoppy Easter Women’s V-Neck Tuck Top" %}
+                {% else %}
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/navy.svg?v=1707230459" class="dv fullimage"/>
+                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/navy.svg?v=1707230459" style="" class="mv fullimage"/>
+                {% endif %}
+            {% endif %}
+          {% endif %}
                   <div class="grid-product__title">{{ product.title }}</div>
 
                   {% for variant in product.variants %}
@@ -1092,6 +1147,44 @@
     }
 </style>
   {% endif %}
+  <style>
+    .fullimage{
+      padding-right: 0px;
+      margin-bottom: 12px;
+      
+    }
+      .fullimage{
+        width:50%;
+        display:block;
+      }
+    .dv{
+      display:block;
+    }
+    .mv{
+      display:none;
+    }
+    @media only screen and (max-width:480px){
+    .dv{
+      display:none;
+    }
+
+    .mv{
+      display:block;
+    }
+          .fullimage{
+                width:80%;
+                  padding-right: 2px;
+          }
+    }
+
+  </style>
+  {% if section.settings.pre-navy %}
+<script>
+$(document).ready(function(){
+  $(".color-swatch--navy").trigger("click")
+})
+</script>
+  {% endif %}
 {% schema %}
   {
     "name": "Collection pages",
@@ -1125,6 +1218,12 @@
         "type": "checkbox",
         "id": "description_bottom",
         "label": "Show collection description at bottom of page"
+      },
+      {
+        "type": "checkbox",
+        "id": "pre-navy",
+        "label": "Enable Pre-Select to Navy",
+        "default": false
       }
     ]
   }

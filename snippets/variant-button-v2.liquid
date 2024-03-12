@@ -1,4 +1,4 @@
-<!-- snippets/variant-button.liquid -->
+<!-- snippets/variant-button-v2.liquid -->
 {%- assign swatch_file_extension = 'png' -%}
 {%- assign is_color = false -%}
 {%- assign color_swatch_drop = option_drop -%}
@@ -35,7 +35,7 @@
 {% endfor %}
 
 
-<div class="{% if is_color %} variant-change-color {% endif %} variant-wrapper variant-wrapper--{{ variant_type }} js">
+<div class="{% if is_color %} guhittaas variant-change-color {% endif %} variant-wrapper variant-wrapper--{{ variant_type }} js">
   <div class="size-chart-with-labels">
 
     <script>
@@ -55,10 +55,9 @@
     <span style="display:none;" class="messagehere">{{ messagetag }}</span>
 
 
-    <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels_enable %} hidden-label{% endunless %}" for="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
-      {{ option.name }}
+    <label class="newpdptop variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels_enable %} hidden-label{% endunless %}" for="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
+      {{ option.name }}:
       <span class="variant__label-info  {% if option.name == 'size' or option.name == 'Size' %}Size-ajax-based {% endif %}">
-        &nbsp;
         {% if option.name == 'Size (Unisex)' or option.name == 'size' or option.name == 'Size' %}
 
           {% assign option_downcaseVal = option.selected_value | downcase | strip_html %}
@@ -229,7 +228,7 @@
         {% endif %}
       </span>
       {% if colorname == "color" %}
-        <span class="dotspacer" style="color:#7A70B8;font-style:normal !important;{% if colorname == "color" %}display:none;{% endif %}">
+        <span class="dotspacer" style="color:#000;font-style:normal !important;{% if colorname == "color" %}display:none;{% endif %}">
           {% assign prodcolor = option.selected_value | handleize %}
           {% if messagetag %}&#8226;{% endif %}
         </span>
@@ -248,7 +247,7 @@
 
       {% if product.options contains 'Size' %}
         {% if product.tags contains 'men' or product.tags contains 'Men' or product.tags contains 'MEN' or product.tags contains 'women' or product.tags contains 'Women' or product.tags contains 'WOMEN' %}
-          <a class="trigger-pop-up btn">{{ settings.newsizechart }}</a>
+          <a class="trigger-pop-up btn">Size Guide</a>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -261,7 +260,7 @@
   <fieldset
     class="1 variant-input-wrap {% if option.name == 'Size (Unisex)' or option.name == 'size' or option.name == 'Size' %} custom-ajax-size{% endif %}"
     name="{{ option.name }}"
-    
+    data-index="option{{ option_index }}"
     id="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
 
     {% for value in option.values %}
@@ -278,7 +277,7 @@
         {% assign newvalue = value | escape  %}
         {% assign newcolortag = colortag | escape  %}
         {% if xvalue == newcolortag %}
-          <h1 class="mestag hidden" style="display:none;">{{ messagetag }}</h1>
+          <p class="mestag hidden" style="display:none;">{{ messagetag }}</p>
         {% endif %}
       {% endif %}
     {% endfor %}
@@ -286,16 +285,16 @@
 
 
 
-    {% for value in option.values %}
+    {% for value in option.values %} 
       {%- assign product_available = true -%}
       {%- assign product_available = product.variants[forloop.index0].available -%}
       {% assign orderthis = false %}
       {% if value == "Navy" %}
-        <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+        <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
         <span>Staple colours, available year-round.</span></span></i></span>
       {% else %}
         {% if value == "Black" %}
-            <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+            <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
             <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
           {% else %}
             {% if value == "Eucalyptus" %}
@@ -313,6 +312,7 @@
         style="order:99"
         {% endif %}
         >
+        <div class="swatchwrapper">
         <input
           op_val="{{ value }}"
           option_index="{{option_index}}"
@@ -345,6 +345,7 @@
 
           {%- assign color_image = value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '50x' | prepend: 'https:' | split: '?' | first -%}
           {%- assign color_swatch_fallback = value | split: ' ' | last | handle -%}
+          
           <label
             op_val="{{ value }}"
             option_index="{{option_index}}"
@@ -353,6 +354,9 @@
             style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
             {{ value | escape }}
           </label>
+          {% if section.settings.newpdptop %}
+          <img alt="mdi tick" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/mdi_tick_1.png?v=1682964378" class="swatchcheck">
+          {% endif %}
         {% else %}
           <label
             op_val="{{ value }}"
@@ -360,6 +364,7 @@
             for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
             class="label_options {% unless product_available %} {% endunless %}">{{ value | escape }}</label>
         {% endif %}
+        </div>
       </div>
     {% endfor %}
 
@@ -381,11 +386,11 @@
                {%- assign combined_value_available = true -%}
                 {%- assign combined_value_available = product.variants[forloop.index0].available -%}
       {% if combined_value == "Navy" %}
-          <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+          <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
           <span>Staple colours, available year-round.</span></span></i></span>
         {% else %}
           {% if combined_value == "Black" %}
-            <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+            <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
             <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
             {% else %}
               {% if combined_value == "Eucalyptus" %}
@@ -398,6 +403,8 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
+
+                  <div class="swatchwrapper">
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -430,6 +437,9 @@
                       style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                       {{ combined_value | escape }}
                     </label>
+                    {% if section.settings.newpdptop %}
+                    <img alt="mdi tick" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/mdi_tick_1.png?v=1682964378" class="swatchcheck">
+                    {% endif %}
                   {% else %}
                     <label
                       op_val="{{ combined_value }}"
@@ -438,7 +448,7 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
-
+                </div>
               {% endfor %}
           {% endif %}
         {% endif %}
@@ -479,11 +489,11 @@
                 {%- assign combined_value_available = true -%}
                 {%- assign combined_value_available = product.variants[forloop.index0].available -%}
                 {% if combined_value == "Navy" %}
-                  <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+                  <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
                   <span>Staple colours, available year-round.</span></span></i></span>
                 {% else %}
                   {% if combined_value == "Black" %}
-                    <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+                    <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
                     <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
                     {% else %}
                       {% if combined_value == "Eucalyptus" %}
@@ -496,6 +506,7 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
+                  <div class="swatchwrapper">
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -528,6 +539,9 @@
                       style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                       {{ combined_value | escape }}
                     </label>
+                    {% if section.settings.newpdptop %}
+                    <img alt="mdi tick" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/mdi_tick_1.png?v=1682964378" class="swatchcheck">
+                    {% endif %}
                   {% else %}
                     <label
                       op_val="{{ combined_value }}"
@@ -536,7 +550,7 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
-
+</div>
               {% endfor %}
           {% endif %}
         {% endif %}
@@ -562,11 +576,11 @@
                 {%- assign combined_value_available = true -%}
                 {%- assign combined_value_available = product.variants[forloop.index0].available -%}
                 {% if combined_value == "Navy" %}
-                  <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+                  <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
                   <span>Staple colours, available year-round.</span></span></i></span>
                 {% else %}
                   {% if combined_value == "Black" %}
-                    <span style="display:block;width:100%;margin-bottom:8px;font-size:14px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+                    <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
                     <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
                     {% else %}
                       {% if combined_value == "Eucalyptus" %}
@@ -579,6 +593,7 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
+                  <div class="swatchwrapper">
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -611,6 +626,9 @@
                       style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
                       {{ combined_value | escape }}
                     </label>
+                    {% if section.settings.newpdptop %}
+                    <img alt="mdi tick" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/mdi_tick_1.png?v=1682964378" class="swatchcheck">
+                    {% endif %}
                   {% else %}
                     <label
                       op_val="{{ combined_value }}"
@@ -619,7 +637,7 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
-
+</div>
               {% endfor %}
           {% endif %}
         {% endif %}

@@ -1,3 +1,4 @@
+<!-- sections/product-template-nlp-os2.liquid -->
 <script src="{{ 'bundle_functionality-nlp.js' | asset_url }}" defer></script>
 <style>
   select [data-handle='womens-3-pocket-scrub-top-2'],
@@ -21,7 +22,9 @@
   crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
 
-
+<div class="hidden-logo">
+  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/main-logo.webp?v=1708596105" class="centered-logo-img">
+</div>
 {% include 'product-template-nlp-os2' 
  , section_id: product.id,
  product_shipping_callout: section.settings.product_shipping_callout,
@@ -47,7 +50,32 @@
     </div>
   </div>
 {% endif %}
+
+<div class="hidden-logo">
+  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/main-logo.webp?v=1708596105" class="centered-logo-img">
+</div>
+
 <style>
+  .hidden-logo{
+    display:none;
+  }
+  {% if section.settings.hide_header_footer %}
+    #shopify-section-header,
+    #shopify-section-footer{
+      display:none !important;
+    }
+    .centered-logo-img{
+      display:block;
+      margin:0 auto;
+    }
+    .hidden-logo{
+      margin-top:50px;
+      margin-bottom:40px;
+      display:block;
+
+    }
+  {% endif %}
+
   .main-textamonials {
     margin-bottom: 0 !important;
   }
@@ -124,8 +152,18 @@
     "name": "Product pages",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "hide_header_footer",
+        "label": "Hide header and footer"
+      },
+      {
         "type": "header",
         "content": "A/B testing"
+      },
+      {
+        "type": "checkbox",
+        "id": "remove_steps",
+        "label": "Disable steps"  
       },
       {
         "type": "checkbox",

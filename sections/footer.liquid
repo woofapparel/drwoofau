@@ -740,6 +740,14 @@
   li.tag.product-tabs-data[value='aussie-natives'] {
     order: {{ section.settings.color_aussie-natives }};
   }
+
+  .variant-input[data-value='Lavender'],
+  .variant-input[data-arrange='lavender'],
+  li.tag.product-tabs-data[value='lavender'] {
+    order: {{ section.settings.color_lavender }};
+  }
+
+
   .site-footer__section p{
     color:#fff;
   }
@@ -965,6 +973,15 @@
         "type": "range",
         "id": "color_aussie-natives",
         "label": "Order Aussie Natives",
+        "default": 20,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },  
+      {
+        "type": "range",
+        "id": "color_lavender",
+        "label": "Order Lavender",
         "default": 20,
         "min": 1,
         "max": 20,

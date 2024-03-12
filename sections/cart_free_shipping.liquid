@@ -18,14 +18,17 @@
 {% assign lastindex = block.settings.spendamount | times: 1.0 %}
 {% endif %}
 {% endfor %}
+<div class="drawer__header">
+  {% if lastindex > cartamount %}  
+    <div class="next-spend-msg">
+      <span>Spend <strong>{{spendmsg | times : 100 | money_without_trailing_zeros}}</strong> more to get <strong>FREE</strong> {{spendrulmsg}}</span>
+    </div> 
+    {% endif %}
+  </div>
 <div class="outer-spent" >
   <div class="spend-progress-bar">
 
-    {% if lastindex > cartamount %}  
-    <div class="next-spend-msg">
-      Spend {{spendmsg | times : 100 | money_without_trailing_zeros}} more to get <span style="color:#000">free {{spendrulmsg}}</span>
-    </div> 
-    {% endif %}
+
     {%- for block in section.blocks -%}
     {% if forloop.last == true %}
     {% assign lastindex = block.settings.spendamount | times: 1.0 %}
@@ -72,6 +75,16 @@
 
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 
 <style type="text/css">
   .spend-progress-main ul {
@@ -165,6 +178,13 @@
   .outer-spent .unlock-msg{
     display:none;
   }  
+  .unlockmsg{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 33px;
+    left: 22px;
+  }
+
   .unlockmsg  .outer-spent .unlock-msg{
     display:block !important;
   }
@@ -192,7 +212,9 @@
     margin: 0px 10px 0 0;
     top: -2px;
   }
-
+  .slick-slide .vactive{
+    border-radius:8px;
+  }
   #tick-mark::before {
     position: absolute;
     left: 0;
@@ -219,13 +241,184 @@
   .unlock-msg {
      margin-top: -14px;
   }
-  @media (max-width:480px){
-    .outer-spent{
-      padding:0px 15px;
-
+  .cart_drawer_custom .drawer__header{
+    height:auto !important;
+    padding-top:0px;
+    margin-bottom:20px;
+    padding-left:20px !important;
+    padding-right:20px !important;
+    border-bottom:1px solid #ebebeb;
+  }
+  .cart__product-name{
+    font-family: Oxygen;
+    font-size:16px !important;
+    font-weight:900;
+  }
+  .cart__item-price{
+    font-size:14px;
+    font-weight:900;
+  }
+  .spend-progress-main ul li{
+    font-weight:800;
+  }
+  .next-spend-msg{
+    
+  }
+  .header-main-cart{
+    padding-top:16px;
+    position:relative;
+    padding-bottom:22px;
+    border-radius:8px;
+  }
+  .drawer__inner .qty-remove{
+    display:block !important;
+  }
+  .cart-meta{
+    width:72% !important;
+  }
+  .quant{
+    width:27% !important;
+  }
+  .drawer__inner .custom_plus_minus{
+    border: 2px solid #010101 !important;
+    border-radius:4px;
+    margin-bottom:20px;
+  }
+  .drawer__inner .custom_plus_minus .qty-icons-main{
+    width:30% !important;
+  }
+  .drawer__inner .custom_plus_minus input.Custom_cart__quantity{
+    width:40% !important;
+  }
+  .drawer__inner .custom_plus_minus input.Custom_cart__quantity,
+  .drawer__inner .custom_plus_minus .qty-icons-main{
+    height:26px !important;
+  }
+  .cart_drawer_custom .drawer__footer{
+    /* border-top: 1px solid #EBEBEB !important; */
+    border-top: none !important;
+  }
+  .cart__details{
+    margin-bottom:20px;
+    align-items:flex-start;
+  }
+  .cart-all-products{
+    background:#f7f7f7 !important;
+    border-radius:8px;
+    /* overflow: hidden; */
+  }
+  .qty-remove .cart__item-price p{
+    font-size:14px !important;
+    color:gray !important;
+    display:flex;
+    font-weight:400;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 400;
+    align-items: flex-start;
+    position: relative;
+    top: -12px;
+    
+  }
+  .desktop-view, .qty-remove .cart__item-price p svg{
+    margin-right:5px;
+  }
+  .cart__row-product .cart__product-image-wrap{
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  select{
+    background-position: right 6px center !important;
+      }
+      .red-block{
+        position:relative;
+      }
+      .red-block::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px; /* Half of the arrow height */
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #B53728 transparent transparent; /* Adjust the color as needed */
+    }
+    .cart-all-products .slick-track{
+      padding-top:0px;
+      padding-bottom:0px;
+    }   
+    
+    .cart__details.flexer-start{
+      display:flex;
+      justify-content:space-between
+    }
+    .cart__details.flexer-start .red-block{
+        margin-bottom:7px;
     }
 
+    span.br-clean{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width:80%;
+    }
+  @media (max-width:480px){
+    span.br-clean{
+      width:100%;
+    }
+    .cart__details.flexer-start{
+      display:flex;
+      justify-content:space-between
+    }
+    .cart__details.flexer-start .red-block{
+        display:block;
+    }
+    .ajaxcart__product{
+      margin-bottom:20px;
+    }
+    .qty-remove .cart__item-price p{
+      width:80px;
+      top:-9px;
+    }
+    .cart__item .cart__item-subtitle{
+      font-size:14px !important;
+    }
+    .drawer__inner .qty-remove{
+      padding-left:0 !important;
+    }
+    .cart__details{
+      margin-bottom:9px !important;
+    }
+    .drawer__close-button{
+      top: -7px;
+      position: absolute !important;
+      right: 9px !important;
+    }
+    .cart_drawer_custom .cart__item .cart__row-product{
+      margin-bottom:0 !important;
+    }
+    .cart_drawer_custom{
+      padding:21px 15px !important;
+    }
+    .drawer__footer{
+      margin-top:0 !important;
+    }
+    .outer-spent{
+      padding:0px 15px;
+    }
+    .cart__row-product{
+      align-items:flex-start !important;
+
+    }
+    .cart-meta{
+      width:68% !important;
+    }
+    .cart__row-product .cart__product-image-wrap{
+      min-width: 59px !important;
+      width: 57px !important;
+    }
   }
+
 
 </style>
 

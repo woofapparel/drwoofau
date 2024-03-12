@@ -76,7 +76,7 @@
 {% assign doublenext = "x" %}
 
 
-  
+  {% unless section.settings.remove_steps %}
     {% if section.settings.step1image1 %}
     <div style="margin-bottom:20px;">
       <img src="{{ section.settings.step1image1 | img_url: 'master' }}">
@@ -86,6 +86,7 @@
         {{ intro }}
       </div>
     {% endif %}
+  {% endunless %}
   
 
 
@@ -587,7 +588,7 @@
   {% assign introsingle1 = product.metafields.sf_product_bundle.intro_text_single_1 %}
 
 
-  
+  {% unless section.settings.remove_steps %}
     {% if section.settings.step1image2 %}
       <div style="margin-bottom:20px;">
         <img src="{{ section.settings.step1image2 | img_url: 'master' }}">
@@ -597,6 +598,7 @@
           {{ intro2 }}
         </div>
       {% endif %}
+    {% endunless %}
   
 
   {% assign product_type_2 = product.metafields.sf_product_bundle.product_type_2 %}

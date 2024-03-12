@@ -1,5 +1,4 @@
-<!-- section/product-template-os2.liquid -->
-{% include 'product-template',
+{% include 'product-template-sock',
   section_id: product.id,
 
   product_shipping_callout: section.settings.product_shipping_callout,
@@ -38,32 +37,36 @@
     "name": "Product pages",
     "settings": [
       {
+        "type": "header",
+        "content": "Caps A/B testing"
+      },
+      {
         "type": "checkbox",
-        "id": "threeway",
-        "label": "Enable new mobile three images layout",
+        "id": "enable_ab",
+        "label": "Enable caps A/B testing",
         "default": false
       },
       {
         "type": "checkbox",
-        "id": "newpdptop",
-        "label": "Enable new pdp layout",
+        "id": "abtesting1",
+        "label": "Enable ab testing 1",
         "default": false
       },
       {
         "type": "checkbox",
-        "id": "abtesting3",
+        "id": "abtesting2",
         "label": "Enable Freeset Offer",
         "default": false
       },
       {
-               "type": "image_picker",
-               "id": "abtesting3image",
-               "label": "Abtesting image right above atc"
+        "type": "image_picker",
+        "id": "freesetcap",
+        "label": "Freeset caps image"
       },
       {
-               "type": "image_picker",
-               "id": "abtesting3imagemob",
-               "label": "Abtesting image right above atc mobile"
+        "type": "checkbox",
+        "id": "dark_theme",
+        "label": "Dark Theme"
       },
       {
         "type": "header",
@@ -209,7 +212,12 @@
         "label": "Enable social sharing",
         "default": true
       },
-      
+      {
+      "type": "color",
+       "id": "color_link",
+      "label": "Background-color",
+       "default": "#2980b9"
+   },
     {
      "type":"image_picker",
      "id":"img1",
@@ -220,16 +228,7 @@
      "id":"txt",
      "label":"Add_text"
   },
-  {
-   "type":"text",
-     "id":"txt_",
-     "label":"Add_text"
-  },{
-      "type": "color",
-       "id": "color_link",
-      "label": "Background-color",
-       "default": "#2980b9"
-   },
+
 
   {
      "type":"image_picker",
@@ -238,9 +237,10 @@
   },
   {
    "type":"text",
-     "id":"txt1",
+     "id":"txt_",
      "label":"Add_text"
   },
+
   
   
     {
@@ -250,8 +250,13 @@
   },
   {
    "type":"text",
-     "id":"txt2",
+     "id":"txt1",
      "label":"Add_text"
+  },
+  {
+   "type":"text",
+     "id":"txt2",
+     "label":"Standard Shipping"
   },
   {
    "type":"text",

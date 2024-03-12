@@ -1,37 +1,19 @@
 <div id="CartDrawer" class="drawer drawer--cart{% if cart.items.size < 3 %} drawer--cart--static{% endif %}" data-drawer="true">
   <div class="cart_drawer_custom">
-  
+    <div class="my_bag">My bag</div>
+    <div class="drawer__close text-right">
+      <button type="button" class="drawer__close-button js-drawer-close">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+        <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+      </button>
+
+
+    </div>
+
   <form action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents cart ajaxcart{% if cart.items.size == 0 %} cart--empty{% endif %}">
       
     <div class="header-main-cart">
-    <div class="drawer__header">
-        <div class="drawer__close text-right">
-          <button type="button" class="drawer__close-button js-drawer-close">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
-            <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
-          </button>
-          <div class="my_bag">MY BAG</div>
-  
-      <a href="#" class="site-nav__link site-nav__link--icon site-nav__link--cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
-          <span class="cart-link">
-            {%- if settings.cart_icon == 'cart' -%}
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
-            {%- else -%}
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
-            {%- endif -%}
-            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-            <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
-                  <span class="cart_count_icon">
-        <span class="cart-link__count" aria-hidden="true">
-                {{ cart.item_count }}
-                </span>
-              </span>
-            </span>
-          </span>
-        </a>
-        </div>
-  
-      </div>
+
   {% section 'cart_free_shipping' %}
       <div class="unlockmsg">
               
@@ -122,7 +104,7 @@
   
                   <div class="ajaxcart__item-content">
                     <div class="grid grid--small">
-                      <div class="grid__item two-quarters">
+                      <div class="grid__item cart-meta">
                         <a href="{% unless item.id == 43272026063106 or item.id == 43272054112514 or item.id == 43048672166146 or item.id == 43096458625282 %}{{ item.url }}{% else %}#{% endunless %}" class="cart__product-name" data-cart-item-href data-cart-item-title>
                           {{ item.product.title }}
                         </a>
@@ -192,7 +174,7 @@
                             {% endunless %}
                           {% endfor %}
                         </div>
-  
+{% comment %}
                         <div data-cart-item-discount-list>
                           {%- for discount_allocation in item.line_level_discount_allocations -%}
                             <div data-cart-item-discount>
@@ -203,6 +185,7 @@
                             </div>
                           {%- endfor -%}
                         </div>
+{% endcomment %}
   
                         {%- if item.unit_price_measurement -%}
                           <div data-cart-item-unit-price class="product__unit-price">
@@ -220,7 +203,7 @@
                         {%- endif -%}
   
                       </div>
-                      <div class="grid__item two-quarters Cart-hidden-data" >
+                      <div class="grid__item quant Cart-hidden-data" >
                         <div class="qty-remove">
                       
                       <div class="qty-box" {% if item.id == 43272026063106 or item.id == 43272054112514 or item.id == 43048672166146 or item.id == 43096458625282 %} style="display:none" {% endif %}>
@@ -283,7 +266,7 @@
   
                           <p data-property = "{{ notsame }}" class="custom_remove_btn cart__remove th_pb_remove_cart_item" data-priceehere="${{ mainprice[1] | times: item.quantity }} " data-index="{{forloop.index}}">
                                     <svg height="20px" width="20px" viewBox="0 0 20 20" class="BaseIcon-sc-8v47i9-0 eMYyyx"><g fill-rule="evenodd" fill="currentColor"><path d="M12.527 4.01c0-.244.007-.458 0-.671-.015-.382-.228-.587-.6-.59a148.54 148.54 0 00-3.04.003c-.35.004-.554.206-.572.562-.011.226-.002.453-.002.696h4.214zM5.645 5.265c-.014.112-.026.16-.025.21.102 3.16.196 6.32.314 9.48.034.91.765 1.615 1.703 1.628 1.847.026 3.695.026 5.542.002.973-.013 1.697-.742 1.732-1.713.112-3.077.207-6.154.306-9.23.004-.126-.02-.253-.03-.377H5.645zm8.08-1.224h2.132c.566 0 1.132.004 1.697-.001.41-.004.74.096.765.58.02.403-.246.61-.785.619-.347.006-.695.001-1.191.001 0 .865.02 1.691-.004 2.517-.064 2.329-.15 4.656-.22 6.985-.052 1.791-1.275 3.029-3.073 3.05-1.763.019-3.527.02-5.29-.002-1.781-.022-2.985-1.226-3.047-3.016-.102-2.976-.198-5.953-.297-8.93-.006-.179-.02-.358-.035-.604-.36 0-.688.002-1.015 0-.593-.005-.854-.186-.862-.593-.008-.419.241-.603.837-.605 1.065-.003 2.13-.001 3.195-.001h.582c0-.315-.01-.561.002-.807.043-.897.715-1.635 1.608-1.668 1.13-.04 2.264-.04 3.393 0 .892.033 1.563.773 1.606 1.671.012.245.002.492.002.804z"></path><path d="M8.622 10.868c0 .93.002 1.861-.002 2.792-.002.517-.233.82-.619.783-.457-.045-.583-.353-.582-.774.008-1.878.002-3.757.005-5.635.001-.494.214-.755.593-.758.381-.003.6.26.603.75.005.947.001 1.894.002 2.842m2.398-.023c0 .948.003 1.895-.002 2.843-.002.486-.224.758-.597.76-.374 0-.598-.271-.599-.757-.003-1.895-.004-3.79 0-5.685.002-.477.241-.759.62-.726.434.037.581.319.58.723-.006.948-.002 1.895-.002 2.842m2.398.017c0 .931.002 1.862-.001 2.793-.002.52-.228.822-.614.788-.457-.04-.59-.346-.587-.769.007-1.878.006-3.756 0-5.635 0-.42.126-.728.592-.76.381-.024.605.253.608.74.006.948.002 1.896.002 2.843"></path></g></svg>
-                            </p>
+                                    <span style="text-decoration:underline;position:relative;top:-6px;font-size:14px;">Remove</span></p> 
                         </div>
                         {% endif %}
                         
@@ -335,23 +318,108 @@
 {% endcomment %}
 
 
+{% comment %}
+{% assign unique_discount_codes = "" %}
+{% assign x = 0 %}
+{% for line_item in cart.items %}
+  <!-- line item info -->
+
+  {% if line_item.original_price > line_item.final_price %}
+    
+  {% endif %}
+
+  {% if line_item.line_level_discount_allocations.size > 0 %}
+    <div class="flexer">
+      {% for discount_allocation in line_item.line_level_discount_allocations %}  
+        {% assign x = x | plus: discount_allocation.amount %}
+        {% unless unique_discount_codes contains discount_allocation.discount_application.title %}
+          <div class="discount_coder">#{{ discount_allocation.discount_application.title }}</div>
+          {% assign unique_discount_codes = unique_discount_codes | append: discount_allocation.discount_application.title | append: " " %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endfor %}
+{% endcomment %}
+
+  <div class="cart__details flexer-start">
+  <span style="color:#B53728;padding-right:7px;font-weight:900;">Discount:</span> 
+      <span class="br-clean">
+        {% assign unique_discount_codes = "" %}
+        {% assign x = 0 %}
+        {% for line_item in cart.items %}
+          <!-- line item info -->
+        
+          {% if line_item.original_price > line_item.final_price %}
+            
+          {% endif %}
+        
+          {% if line_item.line_level_discount_allocations.size > 0 %}
+            
+              {% for discount_allocation in line_item.line_level_discount_allocations %}  
+                {% assign x = x | plus: discount_allocation.amount %}
+                
+                {% unless unique_discount_codes contains discount_allocation.discount_application.title %}
+                  <span class="red-block" style="background: #B53728;color: #fff;font-size: 12px;margin-right:14px;padding: 3px 5px;margin-bottom:8px;position:relative;">{% case discount_allocation.discount_application.title %}
+                    {% when 'FREESCRUNCH' %}
+                      #{{ discount_allocation.discount_application.title }}  (-$8.90)
+                    {% when 'FREESET' %}
+                      #{{ discount_allocation.discount_application.title }}  (-$122.8)
+                      {% when '4PACK' %}
+                        #{{ discount_allocation.discount_application.title }}  (-15%)
+                      {% when '8PACK' %}
+                        #{{ discount_allocation.discount_application.title }}  (-$57.80)
+                        {% when '4for3' %}
+                          #{{ discount_allocation.discount_application.title }}   (-25%)      
+                          {% when '15SOCKS' %}
+                            #{{ discount_allocation.discount_application.title }}   (-$15.72)      
+                            {% when '15-SOCKS' %}
+                              #{{ discount_allocation.discount_application.title }}   (-$20.96)      
+                              {% when '5FOR4SOCKS' %}
+                                #{{ discount_allocation.discount_application.title }} 1 Free Sock
+                    {% else %}
+                    #{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})
+                    {% endcase %}
+                  
+                  
+                  </span>
+                  {% assign unique_discount_codes = unique_discount_codes | append: discount_allocation.discount_application.title | append: " " %}
+                {% endunless %}
+              {% endfor %}
+            
+          {% endif %}
+        {% endfor %}
+      </span>
+
+        
+    
+      
+      <div class="cart__detail-info">
+        {% assign discount_int = cart.total_price | times: 0.3 %}
+      <span class="discounted" style="color:#B53728;font-weight:900">-{{ x | money }}</span>
+      </div>
+    </div>
+
+      <div class="cart__details" style="border-bottom: 1px solid #ebebeb;margin-bottom: 17px;padding-bottom: 16px;">
+        <div class="" style="font-weight:900;">
+        Est. Shipping
+        </div>
+        <div class="cart__detail-info">
+          
+        <span id="cartshipping" style="font-weight:900"> $11.90</span>
+        </div>
+      </div>
+
         <div class="cart__details">
-          <div class="cart__detail-title">
+          <div class="cart__detail-title" style="margin-bottom:20px;font-weight:900;">
             Subtotal
           </div>
           <div class="cart__detail-info">
-            <span data-cart-subtotal class="totalin">{{ cart.total_price | money }}</span>
+            <span data-cart-subtotal class="totalin" style="font-weight:900">{{ cart.total_price | money }}</span>
           </div>
         </div>
         <!-- shipping calculation -->
-        <div class="cart__details">
-          <div class="">
-           Est. Shipping
-          </div>
-          <div class="cart__detail-info">
-           <span id="cartshipping">$11.90</span>
-          </div>
-        </div>
+
         
 		{% if settings.cart_notes_enable %}
         <p class="cart__note text-center">
@@ -385,7 +453,7 @@
         {% endcomment %}
 
         <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer{% if settings.cart_terms_conditions_enable %} cart__checkout--ajax{% endif %}" name="checkout" data-cart-submit>
-          <span>{{ 'cart.general.checkout' | t }}</span>
+          <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/Vector.png?v=1707420905" style="display:inline;margin-right:12px;position: relative;margin-right: 9px;top: 2px;" /><span>{{ 'cart.general.checkout' | t }}</span>
         </button>
         
       </div>
@@ -399,8 +467,62 @@
   
 </div>
 <style>
+  .cart__details{
+    align-items:flex-start !important;
+  }
+  .flexer{
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    width:100%;
+  }
+  .discount_coder{
+    background:#E4E4E4;
+    color:#000;
+    font-family:'Oxygen';
+    font-size:14px;
+    padding:8px 14px;
+    margin-right:12px;
+    font-weight:900;
+    position:relative;
+    top:-20px;
+    border-radius:6px;
+  }
 .addonjin{
   display:none;
+}
+.drawer__footer, .drawer__header, .drawer__scrollable{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.cart_drawer_custom{
+  padding:30px;
+}
+.drawer__close-button{
+  position:absolute !important;
+  right:25px !important;
+}
+.my_bag{
+  font-family: Futura;
+  font-size:24px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+.drawer__close.text-right{
+  position:absolute;
+  top:32px;
+  right:3px;
+}
+@media only screen and (max-width:480px){
+  .discount_coder{
+    font-size: 14px;
+    padding: 5px 9px;
+    margin-right: 12px;
+    font-weight: 900;
+    position: relative;
+    top: -12px;
+  }
+
 }
 </style>
 <script>

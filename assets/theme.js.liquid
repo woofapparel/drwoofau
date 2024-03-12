@@ -9,7 +9,7 @@ function cart_open() {
                   $(".drawer__inner").removeClass("overlay-applied"),
                   $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
                   $(".unlockmsg").html($(t).find(".unlockshtml").html()),
-                  $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                  $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                   jQuery("a.open-cart-drawer-new").trigger("click");
           },
           error: function (t, e, i) {},
@@ -42,7 +42,7 @@ function cart_update() {
               $(".drawer__inner").removeClass("overlay-applied"),
               $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
               $(".unlockmsg").html($(t).find(".unlockshtml").html()),
-              $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+              $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
               $(".js-drawer-open-cart").trigger("click");
       },
       error: function (t, e, i) {},
@@ -839,7 +839,7 @@ function cart_update() {
                                 $(".drawer__inner").removeClass("overlay-applied"),
                                 $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
                                 $(".unlockmsg").html($(t).find(".unlockshtml").html()),
-                                $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                                $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                                 jQuery("a.open-cart-drawer-new").trigger("click");
     
                                 cart_update()
@@ -870,7 +870,7 @@ function cart_update() {
                             $(".drawer__inner").removeClass("overlay-applied"),
                             $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
                             $(".unlockmsg").html($(t).find(".unlockshtml").html()),
-                            $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                            $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                             jQuery("a.open-cart-drawer-new").trigger("click");
 
                             cart_update()
@@ -904,7 +904,7 @@ function cart_update() {
                             $(".drawer__inner").removeClass("overlay-applied"),
                             $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
                             $(".unlockmsg").html($(t).find(".unlockshtml").html()),
-                            $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                            $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                             jQuery("a.open-cart-drawer-new").trigger("click");
 
                             
@@ -4503,6 +4503,7 @@ if(isNaN($realcount3)){
     
       /* t.preventDefault(), $(".drawer__inner").addClass("overlay-applied"); */
       t.preventDefault();
+      $(".qty-remove").addClass("disabledbutton");
       var aj = $(this).parents(".cart__item").find(".addonjin").html()
       var e = $(this).parent().find(".cart__quantity").val(),
           i = parseInt(e) + 1;
@@ -4534,6 +4535,7 @@ if(isNaN($realcount3)){
                dataType: 'json',
                success: function (e) {
                     cart_update();
+                    $(".qty-remove").removeClass("disabledbutton");
                }
             })
          }
@@ -4553,6 +4555,7 @@ if(isNaN($realcount3)){
                dataType: 'json',
                success: function () {
                 cart_update();
+                $(".qty-remove").removeClass("disabledbutton");
                }
             })
          }
@@ -4584,6 +4587,7 @@ if(isNaN($realcount3)){
                      success: function () {
                         
                         cart_update();
+                        $(".qty-remove").removeClass("disabledbutton");
                      }
                   })
                }
@@ -4597,7 +4601,7 @@ if(isNaN($realcount3)){
   $(document).on("click", ".minus_icon2", function (t) {
       /* t.preventDefault(), $(".drawer__inner").addClass("overlay-applied"); */
       t.preventDefault()
-
+      $(".qty-remove").addClass("disabledbutton");
       var aj = $(this).parents(".cart__item").find(".addonjin").html()
       var e = $(this).parent().find(".cart__quantity").val(),
           i = parseInt(e) - 1;
@@ -4618,7 +4622,14 @@ if(isNaN($realcount3)){
                 updates: {
                     43048672166146: $realcount1 - 1
                 },
-                success: function () {cart_update();}
+                success: function () {
+                    cart_update(); 
+                    setTimeout(() => {
+                          $(".qty-remove").removeClass("disabledbutton");
+                        }, 1000);
+
+            
+            }
               });
          }
          
@@ -4628,7 +4639,13 @@ if(isNaN($realcount3)){
                 updates: {
                     43096458625282: $realcount2 - 1
                 },
-                success: function () {cart_update();}
+                success: function () {
+                    cart_update();
+                    setTimeout(() => {
+                          $(".qty-remove").removeClass("disabledbutton");
+                        }, 1000);
+
+                }
               });
          }
          
@@ -4640,7 +4657,13 @@ if(isNaN($realcount3)){
                     43272026063106: $realcount3 - 1,
                     43272054112514: $realcount3 - 1
                 },
-                success: function () {cart_update();}
+                success: function () {
+                    cart_update(); 
+                    setTimeout(() => {
+                          $(".qty-remove").removeClass("disabledbutton");
+                        }, 1000);
+
+                }
               });
 
          }
@@ -4678,12 +4701,13 @@ if(isNaN($realcount3)){
           $(".all-colors .active").trigger('click')
       })
       
-      $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 }),
+      $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true }),
           $(document).on("click", ".add-cart-drawer", function (t) {
               t.preventDefault();
               var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
                   i = $(this).parents(".product-data").find(".size").val();
-              if ("2" == $(this).attr("data-size"))
+{% comment %}
+                  if ("2" == $(this).attr("data-size"))
                   var n = i + " / " + e,
                       a = $(this)
                           .parents(".product-data")
@@ -4695,7 +4719,7 @@ if(isNaN($realcount3)){
                           .parents(".product-data")
                           .find(".variproducts div[data-name='" + n + "']")
                           .attr("value");
-              $(".drawer__inner").addClass("overlay-applied"),
+              
                   $.ajax({
                       type: "POST",
                       url: "/cart/add.js",
@@ -4713,10 +4737,25 @@ if(isNaN($realcount3)){
                                       $(".unlockmsg").html($(t).find(".unlockshtml").html()),
                                       $(".cart-all-products").html(""),
                                       $(".cart-all-products").html($(t).find(".cart-all-products").html()),
-                                      $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                                      $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                               },
                               error: function (t, e, i) {},
                           });
+                      },
+                  });
+{% endcomment %}
+a = $(this)
+                         .parents(".product-data")
+                         .find(".product-name")
+                         .attr("data-varid");
+                         
+                  $.ajax({
+                      type: "POST",
+                      url: "/cart/add.js",
+                      data: { quantity: 1, id: a },
+                      dataType: "json",
+                      success: function (t) {
+                        cart_update()
                       },
                   });
           }),
@@ -6288,7 +6327,7 @@ arrows:true,
      error: function (t, e, i) {},
  }),
  $(document).ready(function () {
-     $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 }),
+     $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true }),
          $(document).on("click", ".add-cart-drawer", function (t) {
              t.preventDefault();
              var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
@@ -6323,7 +6362,7 @@ arrows:true,
                                      $(".unlockmsg").html($(t).find(".unlockshtml").html()),
                                      $(".cart-all-products").html(""),
                                      $(".cart-all-products").html($(t).find(".cart-all-products").html()),
-                                     $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !0 });
+                                     $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
                              },
                              error: function (t, e, i) {},
                          });
