@@ -312,7 +312,9 @@
         style="order:99"
         {% endif %}
         >
+        {% if section.settings.newpdptop %}
         <div class="swatchwrapper">
+        {% endif %}
         <input
           op_val="{{ value }}"
           option_index="{{option_index}}"
@@ -365,7 +367,9 @@
             class="label_options {% unless product_available %} {% endunless %}">{{ value | escape }}</label>
         {% endif %}
         </div>
+        {% if section.settings.newpdptop %}
       </div>
+        {% endif %}
     {% endfor %}
 
 
@@ -403,8 +407,9 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
-
+                  {% if section.settings.newpdptop %}
                   <div class="swatchwrapper">
+                  {% endif %}
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -448,7 +453,9 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
+                {% if section.settings.newpdptop %}
                 </div>
+                {% endif %}
               {% endfor %}
           {% endif %}
         {% endif %}
@@ -506,7 +513,9 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
+                  {% if section.settings.newpdptop %}
                   <div class="swatchwrapper">
+                  {% endif %}
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -550,7 +559,9 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
+                {% if section.settings.newpdptop %}
 </div>
+                {% endif %}
               {% endfor %}
           {% endif %}
         {% endif %}
@@ -593,7 +604,9 @@
                   class="variant-input"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
+                  {% if section.settings.newpdptop %}
                   <div class="swatchwrapper">
+                  {% endif %}
                   <input
                     op_val="{{ combined_value }}"
                     option_index="{{product_combined_index}}"
@@ -637,7 +650,9 @@
                       class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
                   {% endif %}
                 </div>
+                {% if section.settings.newpdptop %}
 </div>
+                {% endif %}
               {% endfor %}
           {% endif %}
         {% endif %}
@@ -737,15 +752,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -757,15 +772,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -780,15 +795,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -800,15 +815,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -823,15 +838,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -842,15 +857,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2 + ' / ' + index3;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -873,16 +888,16 @@ $(function() {
           var index2 = $(this).attr("op_val");
           var created_option = index1 + ' / ' + index2;
           var getoption_array = jsonoption[created_option];
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
 
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 
@@ -894,15 +909,15 @@ $(function() {
           var created_option = index1 + ' / ' + index2;
           var getoption_array = jsonoption[created_option];
           console.log(getoption_array)
-          $(this).parent().removeClass("disabled");
-          $(this).parent().removeClass("supdis")
+          $(this).parents(".variant-input").removeClass("disabled");
+          $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-            $(this).parent().addClass("supdis")
+            $(this).parents(".variant-input").addClass("supdis")
           } else {
             if (getoption_array == "unavailable") {
 
-              $(this).parent().addClass("disabled");
-              $(this).parent().removeClass("supdis")
+              $(this).parents(".variant-input").addClass("disabled");
+              $(this).parents(".variant-input").removeClass("supdis")
             }
           }
 

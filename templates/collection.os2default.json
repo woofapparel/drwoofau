@@ -41,6 +41,15 @@
             "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/women\/jogger-scrub-pants"
           }
         },
+        "image_d7bHyi": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "image_thumbnail": "shopify:\/\/shop_images\/NEW_COLLETION_TEMPLATE_1806e7ac-e2be-4d6b-8844-c436f752474d.png",
+            "collection_title": "Printed Tops",
+            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/printed-pattern-scrub-tops?view=os2default"
+          }
+        },
         "3814d66d-5871-45fa-a9d8-23b6a868e741": {
           "type": "Image",
           "settings": {
@@ -59,6 +68,7 @@
         },
         "ef196b56-d539-41ad-a16d-1c9b83ab5223": {
           "type": "Image",
+          "disabled": true,
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/10_5b200487-ee31-4202-879c-f84cfb462d8c.png",
             "collection_title": "Bundle Deals",
@@ -70,6 +80,7 @@
         "fdfe7764-8114-4127-8915-5218955d8969",
         "7bc29040-9643-4f99-ae9f-94c2e98fd7c9",
         "59f4a693-0d59-49ba-b613-4454da80cbbd",
+        "image_d7bHyi",
         "3814d66d-5871-45fa-a9d8-23b6a868e741",
         "4b66583c-5f94-4582-b8f7-c35129b628f9",
         "ef196b56-d539-41ad-a16d-1c9b83ab5223"
@@ -105,7 +116,8 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": true,
+        "pre-navy": true
       }
     }
   },

@@ -80,7 +80,7 @@
           "settings": {
             "col-title": "Underscrubs",
             "col-img": "shopify:\/\/shop_images\/Underscrubs.jpg",
-            "col-link": "shopify:\/\/collections\/underscrubs-1"
+            "col-link": "shopify:\/\/collections\/underscrubs"
           }
         },
         "ab887346-723e-4881-ad5b-ee523ba41073": {
@@ -367,7 +367,7 @@
           "type": "collection_block",
           "settings": {
             "show_on": "all_devices",
-            "collection": "underscrubs-1",
+            "collection": "underscrubs",
             "title": "Underscrubs",
             "image": "shopify:\/\/shop_images\/10_67e0fca8-4f1f-499d-9d24-a3e16d4e5727.jpg",
             "overlay_opacity": 10

@@ -1,19 +1,32 @@
-<!-- section/main-page.liquid -->
+<!-- section/headerv2.liquid -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="headerv2">
+  {% if section.settings.added_date %}
+    {% if section.settings.colored_header %}
+      <span class="colored_header">{{ section.settings.colored_header }}</span>
+    {% endif %}
+    {% if section.settings.main_header %}
+      <h1 class="main_header">{{ section.settings.main_header }}</h1>
+    {% endif %}
+  
+  <p style="text-align:center;font-size:14px;margin-bottom:40px;padding:0 12px;opacity: 0.6"><i class="fa-regular fa-clock"></i> 3 minute read. Published <span class="tdate"></span></p>
+{% endif %}
     <div class="headerv2-wrapper">
         <div class="duo">
-          {% unless section.settings.hide_review_stars %}
-          <img src="{{ 'whitestars.png' | asset_url }}" class="reviewwhitestars" />
+          {% unless section.settings.added_date %}
+            {% unless section.settings.hide_review_stars %}
+            <img src="{{ 'whitestars.png' | asset_url }}" class="reviewwhitestars" />
+            {% endunless %}
+              {% if section.settings.colored_header %}
+                  <span class="colored_header">{{ section.settings.colored_header }}</span>
+              {% endif %}
+              {% if section.settings.main_header %}
+                  <h1 class="main_header">{{ section.settings.main_header }}</h1>
+              {% endif %}
           {% endunless %}
-            {% if section.settings.colored_header %}
-                <span class="colored_header">{{ section.settings.colored_header }}</span>
-            {% endif %}
-            {% if section.settings.main_header %}
-                <h1 class="main_header">{{ section.settings.main_header }}</h1>
-            {% endif %}
-            {% if section.settings.content %}
+            {% unless  section.settings.content == blank %}
                 <p class="content">{{ section.settings.content }}</h1>
-            {% endif %}
+            {% endunless %}
             <ul class="header-list">
                 {% for block in section.blocks %}  
                     <li>   
@@ -22,14 +35,36 @@
                 {% endfor %}
             </ul>
             <div class="button-wrapper">
+
               {% unless section.settings.button_text_1 == blank  %}
-                <a href="{% if section.settings.button_1_url %}{{ section.settings.button_1_url }}{% else %}#{% endif %}"><button class="header-button">{{ section.settings.button_text_1 }}</button></a>
+                <a href="{% if section.settings.button_1_url %}{{ section.settings.button_1_url }}{% else %}#{% endif %}" style="position:relative;">
+                  {% unless section.settings.textaroundtop == blank  %}
+                    <span class="textaroundtop">{{ section.settings.textaroundtop }}</span>
+                  {% endunless %}
+                  <button class="header-button">{{ section.settings.button_text_1 }}</button>
+                  {% unless section.settings.textaroundbottom == blank  %}
+                    <span class="textaroundbottom">{{ section.settings.textaroundbottom }}</span>
+                  {% endunless %}
+                  </a>
                 {% endunless %}
               {% unless section.settings.button_text_2  == blank %}
                 <a href="{% if section.settings.button_2_url %}{{ section.settings.button_2_url }}{% else %}#{% endif %}"><button class="header-button">{{ section.settings.button_text_2 }}</button></a>
                 {% endunless %}
             </div>
-            
+            {% comment %}
+            <div class="flexer dv">
+              <div class="duo">
+                {% unless section.settings.textaroundtop == blank  %}
+                  <span class="textaroundtop">{{ section.settings.textaroundtop }}</span>
+                {% endunless %}
+              </div>
+              <div class="duo">
+                {% unless section.settings.textaroundbottom == blank  %}
+                  <span class="textaroundbottom">{{ section.settings.textaroundbottom }}</span>
+                {% endunless %}
+              </div>
+            </div>
+          {% endcomment %}
         </div>
         <div class="duo">
             <img src="{{ section.settings.header_image | img_url: 'master' }}" class="headerimage">
@@ -43,6 +78,11 @@
   font-family: futura2;
   src: url({{ 'futura.otf' | asset_url }});
 }
+{% if section.settings.added_bigger_button_hero %}
+.header-button{
+  min-height:67px;
+}
+{% endif %}
 img.reviewwhitestars{
   margin-bottom:10px;
 }
@@ -59,6 +99,9 @@ img.reviewwhitestars{
   width:100%;
    height:auto;
   display:none;
+  {% if section.settings.added_date %}
+    margin-bottom:20px;
+  {% endif %}
 }
 .button-wrapper{
     display: flex;
@@ -84,13 +127,18 @@ img.reviewwhitestars{
 }
 .headerv2{
   width:100%;
-  padding:80px 160px;
+  padding:80px 0;
   background-color: {{ section.settings.bg_color }};
+  margin-left:auto;
+  margin-right:auto;
   {% if section.settings.desktop_bgimage %}
     background: url({{ section.settings.desktop_bgimage | img_url: 'grande' }});
     background-size:cover;
   {% endif %}
 }
+
+
+
 .smallbadge{
   display:inline-block;
   width:28px;
@@ -123,16 +171,20 @@ img.reviewwhitestars{
   justify-content: space-between;
   flex-wrap:wrap;
   {% if section.settings.top_mode %}
-  align-items: flex-start;
+  align-items: center;
   {% else %}
   align-items: center;
   {% endif %}
-  padding:0 92px;
+  padding:0 0px;
   max-width:1300px;
   margin-left:auto;
   margin-right:auto;
 }
-
+@media only screen and (max-width:481px){
+  .headerv2-wrapper{
+    align-items: flex-start;
+  }
+}
 .headerv2-wrapper .duo{
   flex:0 0 46%;
 }
@@ -145,6 +197,7 @@ img.reviewwhitestars{
 .headerv2 .colored_header{
     font-size: 16px;
     color: {{ section.settings.header_color }};
+    font-size: {{ section.settings.colored_header_size }}px;
     font-weight:400;
     font-family: 'Oxygen', sans-serif;
     display: inline-block;
@@ -157,11 +210,34 @@ img.reviewwhitestars{
     font-weight: 400;
     font-size: {{ section.settings.main_header_size }}px;
     line-height: 1.2em;
-    margin-bottom: {{ section.settings.main_header_space }}x;
+    margin-bottom: {{ section.settings.main_header_space }}px;
     {% if section.settings.light_theme %}
       color:#fff;
   {% endif %}
+  max-width:1300px;
+  margin-left:auto;
+  margin-right:auto;
 }
+
+{% if section.settings.added_date %}
+.main_header{
+  text-align:center;
+  font-size:42px;
+}
+@media only screen and (max-width:480px){
+  .main-content{
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .main_header{
+    text-align:center;
+    font-size:34px;
+    padding-left:8px;
+    padding-right:8px;
+  }
+}
+{% endif %}
+
 
 .headerv2 .content{
   font-family: 'Oxygen', sans-serif;
@@ -180,6 +256,9 @@ img.reviewwhitestars{
   border-radius: 8px;
 }
 @media only screen and (max-width:1400px){
+  .main-content{
+
+  }
   .headerv2{
     padding: 30px 0;
   }
@@ -190,6 +269,7 @@ img.reviewwhitestars{
   }
 }
 @media only screen and (max-width:480px){
+
   .content{
     margin-bottom:6px;
   }
@@ -204,8 +284,8 @@ img.reviewwhitestars{
     padding-right: 0 !important;
   }
   .headerv2-wrapper{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 15 !important;
+    padding-right: 15 !important;
   }
   .headerimage{
     display:none;
@@ -215,7 +295,7 @@ img.reviewwhitestars{
   }
   .header-list{
     margin-bottom:0px;
-    padding: 20px 0;
+    padding: 0 0 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
@@ -231,11 +311,12 @@ img.reviewwhitestars{
     flex: 0 0 100%;
   }
   .headerv2-wrapper .duo:first-child{
-    padding-left:18px;
-    padding-right:18px;
+    padding-left:0px;
+    padding-right:0px;
   }
   .headerv2 .colored_header{
     margin-bottom:8px;
+    font-size: {{ section.settings.colored_header_size_mobile }}px;
   }
   .headerv2 .main_header{
     font-size: {{ section.settings.main_header_size_mobile }}px;
@@ -257,7 +338,41 @@ img.reviewwhitestars{
   {% endif %}
 }
 </style>
-
+{% if section.settings.added_date %}
+  <script>
+    function getCurrentTime() {
+      var date = new Date();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // Handle midnight
+      minutes = minutes < 10 ? '0' + minutes : minutes; // Add leading zero to minutes if needed
+      var currentTime = hours + ':' + minutes + ' ' + ampm;
+      return currentTime;
+  }
+  function formatDate(dateString) {
+      var date = new Date(dateString);
+      var options = { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' };
+      var formattedDate = date.toLocaleDateString('en-US', options);
+      return formattedDate;
+  }
+  function getTwoDaysAgoDate() {
+      var currentDate = new Date();
+      var twoDaysAgoDate = new Date(currentDate);
+      twoDaysAgoDate.setDate(currentDate.getDate() - 2); // Subtract 2 days
+      return twoDaysAgoDate;
+  }
+  var twoDaysAgo = getTwoDaysAgoDate();
+  console.log(formatDate(twoDaysAgo));
+  $time = getCurrentTime();
+  $date = formatDate(twoDaysAgo);
+  $(document).ready(function(){
+    $(".ttime").html($time)
+    $(".tdate").html($date)
+  })
+  </script>
+{% endif %}
 {% schema %}
     {
       "name": "Header V2",
@@ -269,11 +384,41 @@ img.reviewwhitestars{
           "default": "TRUSTED BY 40,000+ HEALTH PROFESSIONALS"
         },
         {
+          "type": "range",
+          "id": "colored_header_size",
+          "label": "Colored Header size",
+          "default": 16,
+          "min": 16,
+          "max": 100,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "colored_header_size_mobile",
+          "label": "Colored Header size mobile",
+          "default": 18,
+          "min": 14,
+          "max": 100,
+          "step": 2,
+          "unit": "px"
+        },
+        {
             "type": "color",
             "id": "header_color",
             "label": "Header Color",
             "default": "#B53728"
         },
+        {
+          "type": "checkbox",
+          "id": "added_bigger_button_hero",
+          "label": "AB bigger button on hero"
+        },
+        {
+          "type": "checkbox",
+          "id": "added_date",
+          "label": "Added date ab testing.."
+        }, 
         {
           "type": "checkbox",
           "id": "enable_men",
@@ -335,6 +480,16 @@ img.reviewwhitestars{
           "label": "Content",
           "id": "content",
           "default": "Comfortable designer scrubs and medical apparel that's 100% joypul. Dr. Woof Apparel | Premium Scrubs & Accessories"
+        },
+        {
+          "type": "text",
+          "label": "Text around the button top",
+          "id": "textaroundtop"          
+        },
+        {
+          "type": "text",
+          "label": "Text around the button bottom",
+          "id": "textaroundbottom"          
         },
         {
           "type": "text",

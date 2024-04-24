@@ -530,9 +530,10 @@ counter = 0;
   {% if section.settings.abtesting3image  %}
   <div class="abtesting2" style="width:100%;margin-bottom:10px">
       <!-- this4 -->
+      {% unless product.title contains "UTS" %}
     <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;" class="dv" /> 
     <img src="{{ section.settings.abtesting3imagemob | img_url: 'master' }}" style="width:100%;height:auto;" class="mv" /> 
-  
+      {% endunless %}
     <!-- 
     <h3>STANDARD SHIPPING FROM $11.90</h4>
     <h2>BUNDLE & SAVE</h2>

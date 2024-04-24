@@ -8,9 +8,9 @@
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
-        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_8.png",
+        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_6_ab8921ff-b5d9-4c15-ac3b-7b2a822c344d.jpg",
         "image_webp_pc": "",
-        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px_12.jpg",
+        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_6_ab8921ff-b5d9-4c15-ac3b-7b2a822c344d.jpg",
         "image_webp_mobile": ""
       }
     },
@@ -58,7 +58,13 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": true
+      }
+    },
+    "6101950e-64fc-4bf2-a01c-0652d2287a13": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<h1 style=\"display:none\">Deals<\/h1>"
       }
     }
   },
@@ -66,6 +72,7 @@
     "collection-header",
     "collection-filter",
     "collection-filters",
-    "main-collection"
+    "main-collection",
+    "6101950e-64fc-4bf2-a01c-0652d2287a13"
   ]
 }

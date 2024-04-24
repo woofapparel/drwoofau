@@ -15,8 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
     pointer-events: none;
     opacity: 0.4;
 }
-      </style>
 
+{% if page.title contains "5 Reasons Your Cheeks Deserve" or page.title contains "6 Reasons Why Thousands Of Aussie Nurses" %}
+
+  .needsclick{display:none !important}
+      
+{% endif %}
+</style>
 <!-- Start of Shoplift scripts -->
 {% render 'shoplift' %}
 <!-- End of Shoplift scripts -->
@@ -26,6 +31,30 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.replace("/collections/women");
   </script>
 {% endif %}
+
+
+
+{% if template.suffix == 'sl-A2D67F03' %}
+  <script>
+    /* window.location.href == ""; */
+    window.location.replace("/pages/your-day-in-dr-woof-scrubs");
+  </script>
+{% endif %}
+
+
+
+{% if template.suffix == 'os2newlisticle' %}     
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+{% endif %}
+
+{% if template.suffix == 'os2newlandingpage' or template.suffix == 'sl-420B5A91' %}
+  <script>
+    /* window.location.href == ""; */
+    window.location.replace("/pages/5-reasons-your-cheeks-deserve-dr-woofs-buttery-scrub-embrace");
+  </script>
+{% endif %}
+
 
 {% if page.handle == '6-reasons-why-aussie-nurses-are-choosing-dr-woof-compression-socks' %}
   {% if template.suffix == 'sl-9F78888C' %}
@@ -41,15 +70,10 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("xx{{ template.suffix }}uuu")
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-26696QN85B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-26696QN85B');
-</script>
 <link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
 <link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
 <!-- <link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin /> 
@@ -363,6 +387,16 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
           color: #000;
           background: #b8d2bc
         }
+        {% if section.settings.newpdptop %}
+          .collapsible-trigger-btn--borders{
+            text-transform:capitalize;  
+            font-weight:500;
+          }
+        {% else %}
+
+        {% endif %}
+
+
         @media only screen and (max-width:768px) {
           .btn {
             padding: 8px 23px
@@ -2297,6 +2331,17 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
         .cart_drawer_custom .drawer__inner .drawer__scrollable {
           padding-top: 0
         }
+
+        {% if section.settings.newpdptop %}
+            .collapsible-trigger-btn--borders{
+              font-family: "futurapt";
+              font-size:16px;
+              font-weight:500;
+            }
+        {% else %}
+
+        {% endif %}
+
         @media(max-width:768px) {
           .cart_drawer_custom .drawer__inner .drawer__scrollable {}
           .cart_drawer_custom .drawer__header svg.icon.icon-bag {
@@ -2469,7 +2514,10 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
       
         </style>
       {% include 'swift-optimize-master' %}
-      <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width,initial-scale=1"> <meta name="theme-color" content="{{ settings.color_button }}"> <link rel="canonical" href="{% if collection %}{% if collection.handle == "women-tester" %}{{ shop.url }}/collections/women{% else %}{{ shop.url }}/collections/{{ collection.handle }}{% else %}{{ canonical_url }}{% endif %}{% else %}{{ canonical_url }}{% endif %}">{%- if settings.favicon -%}
+      <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width,initial-scale=1"> <meta name="theme-color" content="{{ settings.color_button }}"> 
+{% comment %} <link rel="canonical" href="{% if collection %}{% if collection.handle == "women-tester" %}{{ shop.url }}/collections/women{% else %}{{ shop.url }}/collections/{{ collection.handle }}{% else %}{{ canonical_url }}{% endif %}{% else %}{{ canonical_url }}{% endif %}">  {% endcomment %}
+    <link rel="canonical" href="{{ canonical_url }}">
+{%- if settings.favicon -%}
         <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />{%- endif -%}
       <!-- <title>Dr. Woof Apparel | Premium Scrubs & Accessories</title> --> 
     {% render 'custom-meta' %}
@@ -2493,6 +2541,7 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
         {% endif %}
       </style>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% comment %}
 
         <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -2502,6 +2551,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5HNBFCH');</script>
 <!-- End Google Tag Manager -->
 
+{% endcomment %}
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHPZ44KM77"></script>
 <script>
@@ -2539,7 +2589,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
  {% endif %}   
-      </head>
+      {% include 'abconvert-price-test' %}
+</head>
       <body data-instant-intensity="viewport" class="{{ template }} {{ template.suffix }} {% if template == 'product.preorder' %}Body_preorder_Template {% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" ontouchstart="return true;">
         {% if template.suffix == 'default' %}   
         <style>
@@ -3582,7 +3633,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {%- if request.page_type contains 'customers/' -%}
           <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
         {%- endif -%}
-        {% comment %}
+        
         <!-- Hotjar Tracking Code for https://www.drwoofapparel.com.au -->
         <script>
           (function(h, o, t, j, a, r) {
@@ -3600,7 +3651,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             a.appendChild(r);
           })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
         </script>
-        {% endcomment %}
+        
         <!-- Critical for loader -->
         {% include 'load-css' %}
         {{ shop.metafields.loox["global_html_head"] }}
@@ -5018,8 +5069,8 @@ $(document).ready(function(){
 {% if product.type == 'Surgical Scrub Cap' %}
 $(document).ready(function(){
   $(document).on("click",".btn-primer",function(){
-
-
+    
+    $capid = $(".activer").attr("data-id")
     $(".btn-primer").removeClass("atv")
       $(this).addClass("atv")
       if($(this).hasClass("butttonsoldout")){
@@ -5237,13 +5288,44 @@ $(document).ready(function() {
   $(".btn-primer").on('click', function() {
       $(".btn-primer").removeClass("atv")
       $(this).addClass("atv")
-      if ($(this).hasClass("butttonsoldout")) {
+/*
+      switch ($capid) {
+          case "8402749325570":
+            $(".capsbundleatc").html("PRE-ORDER")
+            $(".preorder-text").show()
+            break;
+          case "8402749587714":
+            $(".capsbundleatc").html("PRE-ORDER")
+            $(".preorder-text").show()
+            break;
+          case "8402749096194":
+            $(".capsbundleatc").html("PRE-ORDER")
+            $(".preorder-text").show()
+            break;
+          case "8402748834050":
+            $(".capsbundleatc").html("PRE-ORDER")
+            $(".preorder-text").show()
+            break;
+          case "8402749784322":
+            $(".capsbundleatc").html("PRE-ORDER")
+            $(".preorder-text").show()
+            break;
+          case 5:
+            $(".capsbundleatc").html("ADD TO CART")
+            $(".preorder-text").show()
+            break;
+          default:
+
+        }
+        */
+        if ($(this).hasClass("butttonsoldout")) {
           $(".capsbundleatc").html("SOLD OUT")
           $(".capsbundleatc").addClass("soldoutx")
       } else {
           $(".capsbundleatc").html("ADD TO CART")
           $(".capsbundleatc").removeClass("soldoutx")
       }
+
   })
   var interval = setInterval(function() {
       if ($(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").length) {
@@ -5402,7 +5484,37 @@ $(document).ready(function() {
                   $(".product__photos").css("opacity", 1);
           },
       });
-
+      /*
+      switch ($capid) {
+        case "8402749325570":
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        case "8402749587714":
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        case "8402749096194":
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        case "8402748834050":
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        case "8402749784322":
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        case 5:
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        default:
+        $(".capsbundleatc").html("ADD TO CART")
+        $(".preorder-text").hide()
+      }
+      */
   })
 })
 {% endif %}
@@ -5503,6 +5615,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '645105989386037');
 fbq('track', 'PageView');
 
+
 /*
 window.addEventListener("klaviyoForms", function(e) {
   if (e.detail.type == 'submit') {
@@ -5546,6 +5659,15 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   }
 {% endif %}
 </style>
-{% include 'sizeguide' %}
+{% if template contains 'product' %}
+  {% unless  product.title contains "Socks" %}
+    {% include 'sizeguide' %}
+    {% else %}
+    {% include 'sizeguidesocks' %}
+  {% endunless %}
+{% endif %}
+<script>
+  AOS.init();
+</script>
     </body>
 </html> 

@@ -203,7 +203,13 @@ margin-top: 40px;
 {% if section.settings.header_search_enable %}
 {% include 'search-modal' %}
 {% endif %}
-{% render 'newslidingmenu' %}
+
+{% if section.settings.megmenu %}
+   {% render 'newslidingmenu2' %}
+{% else %}
+   {% render 'newslidingmenu' %}
+{% endif %}
+
 {% schema %}
 {
    "name": "Header",
@@ -231,6 +237,11 @@ margin-top: 40px;
                "label": "Top only"
             }
          ]
+      },
+      {
+        "type": "checkbox",
+        "id": "megmenu",
+        "label": "Show light type mobile menu"
       },
       {
          "type": "select",
@@ -353,9 +364,33 @@ margin-top: 40px;
          "type": "url",
          "id": "announcement_link",
          "label": "Announcement link"
+      },
+      {
+         "type": "header",
+         "content": "Megamenu settings"
+      },
+      {
+         "type": "image_picker",
+         "id": "right_image_1",
+         "label": "Right image 1"
+      },
+      {
+         "type": "url",
+         "id": "right_link_1",
+         "label": "Right image 1 link"
+      },
+      {
+         "type": "image_picker",
+         "id": "right_image_2",
+         "label": "Right image 2"
+      },
+      {
+         "type": "url",
+         "id": "right_link_2",
+         "label": "Right image 2 link"
       }
    ],
-   "max_blocks": 20,
+   "max_blocks": 50,
    "blocks": [
       {
          "type": "text",
@@ -462,6 +497,26 @@ margin-top: 40px;
                "type": "link_list",
                "id": "dropdown-link",
                "label": "Menu Dropdown"
+            },
+            {
+            "type": "radio",
+            "id": "gender",
+            "label": "Gender",
+            "options": [
+               {
+                  "value": "women",
+                  "label": "Women"
+               }, 
+               {
+                  "value": "men",
+                  "label": "Men"
+               },
+               {
+                  "value": "unisex",
+                  "label": "Unisex"
+               }
+            ],
+               "default": "women"
             }
          ]
       }

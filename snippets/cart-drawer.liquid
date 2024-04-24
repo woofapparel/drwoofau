@@ -22,11 +22,49 @@
     </div>
       <div class="drawer__inner">
         <div class="drawer__scrollable">
+          <!-- l01 -->
           <div class="cart__empty-text text-center">
             <p>{{ 'cart.general.empty' | t }}</p>
             <p class="rte">{{ 'cart.general.continue_browsing_html' | t: url: routes.all_products_collection_url }}</p>
           </div>
-  
+          <!-- thiscode -->
+          {% if cart.item_count == 0 %}
+            
+            
+          <div class="flexer">
+              <div class="duo">
+                <a href="/collections/women">
+                <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_a75bab0a-79dc-49b3-8fcd-d1931a347667.png?v=1713351035" class="fullwidth" />
+                <p style="text-align:center">Women's Scrubs</p>
+                </a>
+                
+              </div>
+              <div class="duo">
+                <a href="/collections/planet-friendly-scrub-uniforms"> <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_c4a9155a-09f1-4fd8-a919-fcf18fb568ea.png?v=1713351035" class="fullwidth" />                
+                <p style="text-align:center">Planet Friendly Scrubs</p>
+                </a>
+               
+              </div>
+          </div>
+          <div class="flexer">
+              <div class="duo">
+                
+                <a href="/collections/compression-socks">
+                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/3_b2545e27-5202-4ddb-85fa-accf7e1f26cd.png?v=1713351035" class="fullwidth" />                
+                  <p style="text-align:center">Compression Socks</p>
+                </a>
+                
+              </div>
+              <div class="duo">
+                <a href="/collections/men">
+                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_b0f21eb8-36e3-4cc7-be23-5538c0b0ffc2.png?v=1713351035" class="fullwidth" />                
+                  <p style="text-align:center">Men's Scrubs</p>                  
+                </a>
+              </div>
+          </div> 
+        {% endif %}
+          <!-- thiscode -->
+
           {% comment %}
             Cart items. If no items, include an hidden element to reference
             as our template
@@ -341,8 +379,16 @@
   {% endif %}
 {% endfor %}
 {% endcomment %}
+{% assign y = 0 %}
+{% for line_item in cart.items %}
+  {% if line_item.line_level_discount_allocations.size > 0 %}
+    {% for discount_allocation in line_item.line_level_discount_allocations %}  
+    {% assign y = y | plus: discount_allocation.amount %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 
-  <div class="cart__details flexer-start">
+  <div class="cart__details flexer-start" {% if y == 0 %}style="display:none !important;"{% endif %}>
   <span style="color:#B53728;padding-right:7px;font-weight:900;">Discount:</span> 
       <span class="br-clean">
         {% assign unique_discount_codes = "" %}
@@ -364,11 +410,11 @@
                     {% when 'FREESCRUNCH' %}
                       #{{ discount_allocation.discount_application.title }}  (-$8.90)
                     {% when 'FREESET' %}
-                      #{{ discount_allocation.discount_application.title }}  (-$122.8)
+                      #{{ discount_allocation.discount_application.title }}  (-$140.8)
                       {% when '4PACK' %}
                         #{{ discount_allocation.discount_application.title }}  (-15%)
                       {% when '8PACK' %}
-                        #{{ discount_allocation.discount_application.title }}  (-$57.80)
+                        #{{ discount_allocation.discount_application.title }}  (-25%)
                         {% when '4for3' %}
                           #{{ discount_allocation.discount_application.title }}   (-25%)      
                           {% when '15SOCKS' %}
@@ -467,6 +513,36 @@
   
 </div>
 <style>
+  
+  /* thiscode */
+  {% if cart.item_count == 0 %}
+          .cart__empty-text{
+            padding-bottom:20px !important;
+            line-height:28px;
+          }
+          .drawer__inner .flexer{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            margin-bottom:12px;
+          }
+          .drawer__inner .fullwidth{
+            margin-bottom:12px;
+          }
+          .drawer__inner p{
+              margin-bottom:0;
+              font-weight:800;
+          }
+          .drawer__inner .duo{
+            flex: 0 0 48%;
+          }
+          .drawer__inner .duo img{
+            width:100%;
+            display:block;
+          }
+  {% endif %}
+  /* thiscode */
+
   .cart__details{
     align-items:flex-start !important;
   }

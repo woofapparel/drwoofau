@@ -8,9 +8,9 @@
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
-        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_5.png",
+        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_2_8a273de2-6a7a-457d-9419-d97c7ae1c319.webp",
         "image_webp_pc": "",
-        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px_5.jpg",
+        "image_lib_mobile": "shopify:\/\/shop_images\/Mobile_Collection_Banner_1x1_0197be0a-c426-4528-8db2-1e76b1e71e0b.jpg",
         "image_webp_mobile": ""
       }
     },
@@ -51,6 +51,7 @@
         },
         "79585222-b8ae-4bd2-b466-001a89979fba": {
           "type": "Image",
+          "disabled": true,
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/10_5b200487-ee31-4202-879c-f84cfb462d8c.png",
             "collection_title": "Bundles",
@@ -66,7 +67,7 @@
         "79585222-b8ae-4bd2-b466-001a89979fba"
       ],
       "settings": {
-        "title_enable": true
+        "title_enable": false
       }
     },
     "collection-filters": {
@@ -96,7 +97,8 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": true,
+        "pre-navy": true
       }
     }
   },

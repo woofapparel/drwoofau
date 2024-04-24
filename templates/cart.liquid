@@ -20,6 +20,7 @@
           {% comment %}
           Empty cart state
           {% endcomment %}
+          <!-- l02 -->
           <div class="cart__empty-text text-center">
             <p>{{ 'cart.general.empty' | t }}</p>
             <p>
@@ -205,7 +206,7 @@
 {% assign file_type = p.last | split: '.' | last | downcase %}
 {% assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' %}
 {% if file_types contains file_type %}
-  <div class="bcpo-cart-file"><img src="{{ p.last }}" style="max-width: 50px; height: auto;"></div>
+  <div class="bcpo-cart-file"><img alt="Dr.Woof" src="{{ p.last }}" style="max-width: 50px; height: auto;"></div>
 {% else %}
   <span class="bcpo-cart-file">Uploaded file</span>
 {% endif %}

@@ -355,9 +355,13 @@ function cart_update() {
                               window.history.replaceState({ path: e }, "", e);
                               var varqty = parseInt(variantStock[t.id])
                              if(varqty < 1){
+                                /*
                                 $(".add-to-cart span").html("PRE-ORDER")
                                 $(".preorder-text").show()
+                                */
+                                $(".add-to-cart span").html("SOLD OUT")
                              }else{
+                                $(".add-to-cart span").html("ADD TO BAG")
                                 $(".preorder-text").hide()
                              }
                           }
@@ -2151,8 +2155,8 @@ function cart_update() {
                           a
                               ? a.available
                                   ? (t(n.addToCart, this.$container).removeClass(i.disabled).prop("disabled", !1),
-                                    t("body").hasClass("Body_preorder_Template") ? t(n.addToCartText, this.$container).html("Pre-order") : t(n.addToCartText, this.$container).html(theme.strings.addToCart))
-                                  : (t(n.addToCart, this.$container).addClass(i.disabled).prop("disabled", !0), t(n.addToCartText, this.$container).html("PRE-ORDER"))
+                                    t("body").hasClass("Body_preorder_Template") ? t(n.addToCartText, /* this.$container).html("Pre-order")*/ : t(n.addToCartText, this.$container).html(theme.strings.addToCart))
+                                  : (t(n.addToCart, this.$container).addClass(i.disabled).prop("disabled", !0), t(n.addToCartText, this.$container).html("PRE-ORDER")),alert("xxxx")
                               : (t(n.addToCart, this.$container).removeClass(i.disabled).prop("disabled", !1), t(n.addToCartText, this.$container).html(theme.strings.unavailable));
                       },
                       updatePrice: function (e) {
@@ -4104,8 +4108,10 @@ function cart_update() {
       var quantitytoh = $("#quantitytoh").html()
       quantitytoh = parseInt(quantitytoh)
       if(quantitytoh < 1){
+        /*
         $(".add-to-cart span").html("PRE-ORDER")
         $(".preorder-text").show()
+        */
       }else{
         
         $(".add-to-cart span").html("ADD TO CART")

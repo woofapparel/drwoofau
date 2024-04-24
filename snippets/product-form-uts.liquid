@@ -271,9 +271,12 @@ counter = 0;
     <span data-add-to-cart-text>
       {% if current_variant.available %}
       {% if template == 'product.preorder' %}
+        {% comment %}
       {{ 'products.product.preorder' | t }}
+      {% endcomment %}
+        {% render 'alt-atc', cl:cl %}
       {% else %}
-      {% render 'alt-atc', cl:cl %}
+        {% render 'alt-atc', cl:cl %}
       {% endif %}
       {% else %}
       Pre-order
@@ -322,13 +325,16 @@ counter = 0;
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
-      {% if template == 'product.preorder' %}
-      {{ 'products.product.preorder' | t }}
+        {% if template == 'product.preorder' %}
+            {% comment %}
+          {{ 'products.product.preorder' | t }}
+          {% endcomment %}
+          {% render 'alt-atc', cl:cl %}
+        {% else %}
+          {% render 'alt-atc', cl:cl %}
+        {% endif %}
       {% else %}
-      {% render 'alt-atc', cl:cl %}
-      {% endif %}
-      {% else %}
-      Preorder
+      SOLD OUT
       {% endif %}
     </span>
   </button>

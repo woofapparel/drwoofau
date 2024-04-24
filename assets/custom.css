@@ -558,9 +558,90 @@ square-placement{
 .custom-option-value{
   display:none;
 }
-
+/* new header */
 @media only screen and (min-width:481px){
-  .main-icon-cont .sub-icon-cont .sub-icon-cont1{
-    min-height: 84px;
+  .site-nav__dropdown-link{
+    font-size:14px;
+  }
+  .iconsizer{
+    width: 13px;
+    height: auto;
+    position: relative;
+    left: -9px;
+    z-index: 999;
+    color:#000 !important;
+    stroke: black !important;
+    fill: black !important;
+  }
+  .iconsizer.icon-chevron-up{
+    display:none
+  }
+  .site-nav__dropdown .flexer{
+    justify-content: space-between !important;
+  }
+  .hoverimage{
+    width:100%;
+    display:block;
+    height:auto;
+    padding-left:20px;
+  }
+  .hoverimage{
+    max-height:250px;
+    overflow-y:hidden;
+    border-radius: 12px;
+  }
+  .hoverimage img{
+    border-radius: 12px;
+  }
+  .hoverimage img,
+  .hoverimage{
+    width:100%;
+    display:block;
+  }
+  .site-nav__dropdown .flexer{
+    max-width: 1300px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .page-width{
+    max-width: 1300px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .site-nav__dropdown{
+    padding:40px 0;
+    display:none;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    top:80%;
+  }
+  .site-nav__dropdown ul
+{
+  column-count: 2;
+  /* Optionally adjust other styles as needed */
+  column-gap: 20px; /* Adjust the gap between columns */
+  padding: 0; /* Remove default padding */
+  list-style: none; /* Remove default list styles */
+}
+.site-nav__dropdown:hover,
+  .is-focused .site-nav__dropdown{
+    justify-content: space-between;
+    flex-wrap:wrap;
+    display:flex !important; 
+  }
+
+  .site-nav__item{
+    position:static !important;
+  }
+  .side{
+    width:33%;
+    padding:0 12px;
+  }
+  .side img{
+    width:100%;
+    margin-bottom:12px;
+  }
+  .midside{
+    width:33%;
   }
 }
