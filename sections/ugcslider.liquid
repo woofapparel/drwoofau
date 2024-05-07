@@ -1,0 +1,217 @@
+<div id="custom-slider-{{ section.id }}" class="custom-slider slider-{{ section.id }}">
+  <div class="main-slider-{{ section.id }}">
+    {% for block in section.blocks %}
+      {% if block.type == 'slide' %}
+        <div class="slide">
+          <a href="{{ block.settings.link }}">
+            <img src="{{ block.settings.image | img_url: 'medium' }}" alt="Slide Image">
+          </a>
+        </div>
+      {% elsif block.type == 'video_slide' %}
+        <div class="slide">
+          <video controls>
+            <source src="{{ block.settings.video_link }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      {% elsif block.type == 'youtube_slide' %}
+        <div class="slide">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ block.settings.youtube_id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+  
+  <style>
+    #custom-slider-{{ section.id }}{
+      width:980px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    #custom-slider-{{ section.id }} .slide iframe,
+    #custom-slider-{{ section.id }} .slide video,
+    #custom-slider-{{ section.id }} .slide img{
+      width:100%;
+      height:auto;
+    }
+    #custom-slider-{{ section.id }} .slide{
+      padding:14px;
+    }
+    #custom-slider-{{ section.id }} .slick-center img{
+      transform: scale(1.12);
+    }
+
+  </style>
+    
+    {% if section.blocks.size > 1 %}
+        {% if first_time_loading_global %}
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        {% endif %}
+        <script>
+
+          // Only do anything if jQuery isn't defined
+if (typeof jQuery == 'undefined') {
+
+if (typeof $ == 'function') {
+  // warning, global var
+  thisPageUsingOtherJSLibrary = true;
+}
+
+function getScript(url, success) {
+
+  var script     = document.createElement('script');
+       script.src = url;
+  
+  var head = document.getElementsByTagName('head')[0],
+  done = false;
+  
+  // Attach handlers for all browsers
+  script.onload = script.onreadystatechange = function() {
+  
+    if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+    
+    done = true;
+      
+      // callback function provided as param
+      success();
+      
+      script.onload = script.onreadystatechange = null;
+      head.removeChild(script);
+      
+    };
+  
+  };
+  
+  head.appendChild(script);
+
+};
+
+getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', function() {
+
+  if (typeof jQuery=='undefined') {
+  
+    // Super failsafe - still somehow failed...
+  
+  } else {
+  
+    // jQuery loaded! Make sure to use .noConflict just in case
+    fancyCode();
+    
+    if (thisPageUsingOtherJSLibrary) {
+
+      // Run your jQuery Code
+
+    } else {
+
+      // Use .noConflict(), then run your jQuery Code
+
+    }
+  
+  }
+
+});
+
+} else { // jQuery was already loaded
+
+// Run your jQuery Code
+$(document).ready(function(){
+            $('.main-slider-{{ section.id }}').slick({
+              slidesToShow: {{ section.settings.slidercount }},
+              centerMode: true,
+              centerPadding: '60px',
+              slidesToScroll: 1,
+              autoplay: {{ section.settings.autoplay }},
+              arrows: {{ section.settings.arrows }},
+              dots: {{ section.settings.dots }},
+              // Add any additional settings you need
+            });
+          });
+};
+
+
+
+        </script>
+      {% endif %}
+    
+
+      {% schema %}
+        {
+          "name": "UGC Slider",
+          "settings": [
+            {
+              "type": "checkbox",
+              "id": "autoplay",
+              "label": "Autoplay",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "arrows",
+              "label": "Show Arrows",
+              "default": true
+            },
+            {
+              "type": "range",
+              "id": "slidercount",
+              "label": "Sliders per row",
+              "default": 5,
+              "min": 1,
+              "max": 10,
+              "step": 1
+            },
+            {
+              "type": "checkbox",
+              "id": "dots",
+              "label": "Show Dots",
+              "default": true
+            }
+          ],
+          "blocks": [
+            {
+              "type": "slide",
+              "name": "Slide",
+              "settings": [
+                {
+                  "type": "text",
+                  "label": "Link",
+                  "id": "link"
+                },
+                {
+                  "type": "image_picker",
+                  "label": "Image",
+                  "id": "image"
+                }
+              ]
+            },
+            {
+              "type": "video_slide",
+              "name": "Video Slide",
+              "settings": [
+                {
+                  "type": "text",
+                  "label": "Video Link",
+                  "id": "video_link"
+                }
+              ]
+            },
+            {
+              "type": "youtube_slide",
+              "name": "YouTube Slide",
+              "settings": [
+                {
+                  "type": "text",
+                  "label": "YouTube Video ID",
+                  "id": "youtube_id"
+                }
+              ]
+            }
+          ],
+          "presets": [{
+            "name": "UGC Slider",
+            "category": "Sliders"
+          }]
+        }
+        {% endschema %}

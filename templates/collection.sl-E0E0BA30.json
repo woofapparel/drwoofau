@@ -21,6 +21,7 @@
       ],
       "settings": {
         "pad": "30px",
+        "enable_auto": false,
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
@@ -89,7 +90,7 @@
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/10_82d6bc1b-3f8b-4720-80a3-c44db31b0f6b.png",
             "collection_title": "Bundle Deals",
-            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/deals"
+            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/sale"
           }
         }
       },
@@ -132,7 +133,8 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": false,
+        "pre-navy": false
       }
     }
   },

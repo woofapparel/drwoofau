@@ -282,6 +282,26 @@
 </style>
 <script>
     $(document).ready(function(){
+
+
+    
+    $(".trigger-pop-up-1").click(function(){
+            $('.size-guide-wrapper').css('right', '0'); 
+            setTimeout(function() {
+                $('.size-guide-wrapper').css('background', 'rgba(0,0,0,0.6)'); 
+            }, 500);
+            
+            
+        })
+
+        $(".trigger-pop-up-2").click(function(){
+            $('.size-guide-wrapper').css('right', '0'); 
+            setTimeout(function() {
+                $('.size-guide-wrapper').css('background', 'rgba(0,0,0,0.6)'); 
+            }, 500);
+            
+            
+        })
         $(".trigger-pop-up").click(function(){
             $('.size-guide-wrapper').css('right', '0'); 
             setTimeout(function() {
@@ -292,6 +312,16 @@
         })
 
         $(".close-guide").click(function(){
+            
+            $('.size-guide-wrapper').css('background', 'transparent');
+            setTimeout(function() {
+                $('.size-guide-wrapper').css('right', '-100%');      
+            }, 500);
+            
+            
+            
+        })
+        $(".size-guide-wrapper").click(function(){
             
             $('.size-guide-wrapper').css('background', 'transparent');
             setTimeout(function() {

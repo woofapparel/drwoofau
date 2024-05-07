@@ -16,6 +16,28 @@
         src: url("https://cdn.shopify.com/s/files/1/0573/7250/8344/files/FuturaPTMedium.otf?v=1682068317") format("opentype");
     }
 
+    .wider{
+      DISPLAY: flex;
+      width: 100%;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .trigger-pop-up.btn{
+      padding: 11px 15px !important;
+      background: #fff !important;
+      color: #050507 !important;
+      border: 1px solid #050507;
+      position: absolute !important;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      top: -38px !important;
+      /* right: 0; */
+      line-height: 1em;
+      left: inherit;
+    }
+    
     {% if section.settings.newpdptop %}
       square-placement{
         display:none !important;
@@ -154,9 +176,14 @@
         font-size:18px !important;
         margin-top:6px !important;
       }
+
       {% if section.settings.newpdptop2 %}
       {% else %}
-        .product__thumbs,
+          {% if section.settings.newpdptop %}
+            {% comment %}
+            .product__thumbs,
+            {% endcomment %}
+          {% endif %}      
       {% endif %}
       .dv{
       display:none !important;
@@ -267,6 +294,23 @@
 
 {% assign prewhite = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_white %}
 <span class="prewhite">{{ prewhite }}</span>
+
+
+{% assign precblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_caribbean_blue %}
+<span class="precblue">{{ precblue }}</span>
+
+
+{% assign preaunatives = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_aussie_natives %}
+<span class="preaunatives">{{ preaunatives }}</span>
+
+{% assign prewcoral = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_whimsical_coral %}
+<span class="prewcoral">{{ prewcoral }}</span>
+
+{% assign preblurple = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_blurple %}
+<span class="preblurple">{{ preblurple }}</span>
+
+{% assign preeucalyptus = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_eucalyptus %}
+<span class="preeucalyptus">{{ preeucalyptus }}</span>
 
 
 {% assign premistyblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_misty_blue %}
@@ -829,8 +873,9 @@ dual
                 {% comment %} <span class="product__note">
                 <p>&nbsp;</p>  {{ product.description }} <p>&nbsp;</p> 
                 </span>   {% endcomment %}
-
+{% comment %}
                 {% unless section.settings.newpdptop2 %}
+                  {% unless product.id ==  8296907473154%}
                   <span class="afterpay-logo-link"><button class="afterpay-logo brand-afterpay compact-badge type-badge black-on-mint" aria-label="Afterpay logo - Opens a dialog" title="Afterpay logo - Opens a dialog">
                               <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="98" height="36" class="compact-badge-logo" viewBox="0 0 100 21">
                                 <path class="afterpay-logo-badge-background" fill="#b2fce4" d="M89.85 20.92h-78.9a10.42 10.42 0 110-20.82h78.89a10.42 10.42 0 010 20.83v-.01z"></path>
@@ -846,7 +891,9 @@ dual
                                 </g>
                               </svg></button> <button id="logo-link" class="afterpay-link" tabindex="0" aria-label="Learn More about Afterpay - Opens a dialog" title="Learn More about Afterpay - Opens a dialog"><template style="text-decoration: none; display: inline-block;"></template></button>
                               </span>
-                {% endunless %}
+                {% endunless %}{% endunless %}
+                add this if pdp2 is returned
+              {% endcomment %}
               </div>
 
                           
@@ -1111,6 +1158,13 @@ dual
                         </div>
                       </div>
 
+
+                      	
+                      <div class="wider">
+                        <a class="trigger-pop-up btn">Size Guide</a>
+                      </div>
+
+
                       <style>
                         p.afterpay-paragraph{
                           margin-top:0 !important;
@@ -1370,7 +1424,7 @@ dual
                               quantity_enable: quantity_enable,
                               enable_payment_button: enable_payment_button %}
                             {% else %}
-                                  {% if product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %} 
+                                  {% if product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 or product.title contains "UTS" %} 
                                     {% include 'product-form-preorder'
                                     , section_id: section_id,
                                     variant_type: variant_type,
@@ -1556,8 +1610,57 @@ dual
 </div>
 
 <style>
+  #BIS_trigger{display:none !important}
+{% unless section.settings.newpdptop2 %}  
+  .main-icon-cont .sub-icon-cont .sub-icon-cont1{
+    min-height:82px;
+  }
+  .main_contnt2{
+    background:#e0ede9 !important;
+    padding:14px !important
+  }
+  .main-text{
+    display:block !important;
+    width:100%;
+    text-align:center !important;
+  }
+  @media only screen and (max-width:480px){
+    .payment-buttons{
+              
+              background:#e0ede9 !important;
+            }
+    .main_contnt2{
+    background:#e0ede9 !important;
+      padding:14px !important;
+      margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+    .preorder-text,
+   .main-text{
+    margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+   }
+   .main-text{
+    {% if product.id == 8296907473154 %}
+      width:100% !important;
+    {% else %}
+    width:auto !important;
+    {% endif %}
+    
+   }
+  }
+  .preorderdate{
+    font-weight:800 !important; 
+  }
 
+
+  .main-icon-cont{
+    display:flex !important;
+  }
+  
+{% endunless %}
 {% if section.settings.newpdptop2 %}
+
   .main-cont,
     .main-cont, .main-icon-cont, .main-text{
       background:#fff !important;

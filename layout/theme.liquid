@@ -33,22 +33,27 @@ document.addEventListener("DOMContentLoaded", function() {
 {% endif %}
 
 
-
+{% comment %}
 {% if template.suffix == 'sl-A2D67F03' %}
   <script>
     /* window.location.href == ""; */
     window.location.replace("/pages/your-day-in-dr-woof-scrubs");
   </script>
 {% endif %}
-
-
+{% endcomment %}
+{% if page.title contains '5 Reasons Your Cheeks' %}
+<script>
+  /* window.location.href == ""; */
+  window.location.replace("/pages/your-day-in-dr-woof-scrubs");
+</script>
+{% endif %}
 
 {% if template.suffix == 'os2newlisticle' %}     
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 {% endif %}
 
-{% if template.suffix == 'os2newlandingpage' or template.suffix == 'sl-420B5A91' %}
+{% if template.suffix == 'sl-420B5A91' %}
   <script>
     /* window.location.href == ""; */
     window.location.replace("/pages/5-reasons-your-cheeks-deserve-dr-woofs-buttery-scrub-embrace");
@@ -2589,7 +2594,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
  {% endif %}   
-      {% include 'abconvert-price-test' %}
+      
 </head>
       <body data-instant-intensity="viewport" class="{{ template }} {{ template.suffix }} {% if template == 'product.preorder' %}Body_preorder_Template {% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" ontouchstart="return true;">
         {% if template.suffix == 'default' %}   
@@ -3747,7 +3752,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% if template == "product.preordernew" %}
       <script src="{{ 'theme-uts.js' | asset_url }}" defer></script>
       {% else %}
-        {% if product.id == 8207921185026 or product.id == 8177226187010 or product.id == 8005417533698 or product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192 or product.id == 8005449679106 or product.id == 6751404523704  or product.id == 7473530503426 or product.id == 6701375455416  or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 6751389483192 or product.id == 7461809258754 %}
+        {% if product.id == 8207921185026 or product.id == 8177226187010 or product.id == 8005417533698 or product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192 or product.id == 8005449679106 or product.id == 6751404523704  or product.id == 7473530503426 or product.id == 6701375455416  or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 6751389483192 or product.id == 7461809258754 or product.id == 8296907473154 %}
           <script src="{{ 'theme-preorder.js' | asset_url }}" defer></script>
         {% else %}
           <script src="{{ 'theme.js' | asset_url }}" defer></script>
@@ -5200,19 +5205,20 @@ $(".image-overlay").on("click",function(){
         $socname = $(this).attr("name")
         $socavail = $(this).attr("data-socavail")
         $socvarid = $(this).attr("data-socvarid")
+        $xsocqty = $(this).attr("data-socqty")
 
         if ( i === 0) {
           $(".righthere").html("")
           if($socavail == 'true'){
-            $(".righthere").append("<span class='btn-primer " + $socname + " atv' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+            $(".righthere").append("<span class='btn-primer " + $socname + " atv' data-socvarid='" + $socvarid + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
           }else{
-            $(".righthere").append("<span class='btn-primer " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+            $(".righthere").append("<span class='btn-primer " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
           }
         }else{
           if($socavail == 'true'){
-            $(".righthere").append("<span class='btn-primer " + $socname + "' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+            $(".righthere").append("<span class='btn-primer " + $socname + "' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
           }else{
-            $(".righthere").append("<span class='btn-primer  " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+            $(".righthere").append("<span class='btn-primer  " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
           }
         }
       
@@ -5285,48 +5291,63 @@ $(".image-overlay").on("click",function(){
 {% if product.type == 'Compression Socks' %}
 $(document).ready(function() {
 
-  $(".btn-primer").on('click', function() {
-      $(".btn-primer").removeClass("atv")
+  $('body').on("click",".btn-primer",function(){
+    $(".btn-primer").removeClass("atv")
       $(this).addClass("atv")
-/*
+      $capid = $(".activer").attr("data-id")
+      $capqty = $(this).attr("data-socvarid")
+
+      
+      $capqty = parseFloat($(this).attr("data-socqty"))
+      
       switch ($capid) {
-          case "8402749325570":
-            $(".capsbundleatc").html("PRE-ORDER")
-            $(".preorder-text").show()
+          case "8296911995138":
+            if($capqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".preorder-text").hide()
+              $(".capsbundleatc").html("ADD TO CART")
+            }
             break;
-          case "8402749587714":
-            $(".capsbundleatc").html("PRE-ORDER")
-            $(".preorder-text").show()
+          case "8296912421122":
+          if($capqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".preorder-text").hide()
+              $(".capsbundleatc").html("ADD TO CART")
+            }
             break;
-          case "8402749096194":
-            $(".capsbundleatc").html("PRE-ORDER")
-            $(".preorder-text").show()
+          case "8320635240706":
+          if($capqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".preorder-text").hide()
+              $(".capsbundleatc").html("ADD TO CART")
+            }
             break;
-          case "8402748834050":
-            $(".capsbundleatc").html("PRE-ORDER")
-            $(".preorder-text").show()
-            break;
-          case "8402749784322":
-            $(".capsbundleatc").html("PRE-ORDER")
-            $(".preorder-text").show()
-            break;
-          case 5:
-            $(".capsbundleatc").html("ADD TO CART")
-            $(".preorder-text").show()
+          case "8320635633922":
+          if($capqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".preorder-text").hide()
+              $(".capsbundleatc").html("ADD TO CART")
+            }
             break;
           default:
-
+            if ($(this).hasClass("butttonsoldout")) {
+              $(".capsbundleatc").html("SOLD OUT")
+              $(".capsbundleatc").addClass("soldoutx")
+            } else {
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".capsbundleatc").removeClass("soldoutx")
+            }
         }
-        */
-        if ($(this).hasClass("butttonsoldout")) {
-          $(".capsbundleatc").html("SOLD OUT")
-          $(".capsbundleatc").addClass("soldoutx")
-      } else {
-          $(".capsbundleatc").html("ADD TO CART")
-          $(".capsbundleatc").removeClass("soldoutx")
-      }
-
   })
+
   var interval = setInterval(function() {
       if ($(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").length) {
 
@@ -5410,13 +5431,31 @@ $(document).ready(function() {
       $capstandardid = $(this).attr("data-standard")
       $capstandardavail = $(this).attr("data-standard-avail")
       $capsprice = $(this).attr("data-price")
+      
       $capscompare = $(this).attr("data-compare")
       
       $(this).find("input").each(function(i, obj) {
+        $socname = $(this).attr("name")
         $socavail = $(this).attr("data-socavail")
         $socvarid = $(this).attr("data-socvarid")
-          $("." + $(this).attr("name")).attr('data-socavail',$socavail)
-          $("." + $(this).attr("name")).attr('data-socvarid',$socvarid)
+        $xsocqty = $(this).attr("data-socqty")
+
+        if ( i === 0) {
+          $(".righthere").html("")
+          if($socavail == 'true'){
+            $(".righthere").append("<span class='btn-primer " + $socname + " atv' data-socvarid='" + $socvarid + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+          }else{
+            $(".righthere").append("<span class='btn-primer " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }
+        }else{
+          if($socavail == 'true'){
+            $(".righthere").append("<span class='btn-primer " + $socname + "' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }else{
+            $(".righthere").append("<span class='btn-primer  " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }
+        }
+      
+      
       });
       
       
@@ -5484,28 +5523,46 @@ $(document).ready(function() {
                   $(".product__photos").css("opacity", 1);
           },
       });
-      /*
+     
+
+      $socqty = parseFloat($(".atv").attr("data-socqty"))
       switch ($capid) {
-        case "8402749325570":
-          $(".capsbundleatc").html("PRE-ORDER")
-          $(".preorder-text").show()
-          break;
-        case "8402749587714":
-          $(".capsbundleatc").html("PRE-ORDER")
-          $(".preorder-text").show()
-          break;
-        case "8402749096194":
-          $(".capsbundleatc").html("PRE-ORDER")
-          $(".preorder-text").show()
-          break;
-        case "8402748834050":
-          $(".capsbundleatc").html("PRE-ORDER")
-          $(".preorder-text").show()
-          break;
-        case "8402749784322":
-          $(".capsbundleatc").html("PRE-ORDER")
-          $(".preorder-text").show()
-          break;
+        case "8296911995138":
+            if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8296912421122":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8320635240706":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8320635633922":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
         case 5:
           $(".capsbundleatc").html("PRE-ORDER")
           $(".preorder-text").show()
@@ -5514,7 +5571,7 @@ $(document).ready(function() {
         $(".capsbundleatc").html("ADD TO CART")
         $(".preorder-text").hide()
       }
-      */
+    
   })
 })
 {% endif %}
@@ -5661,13 +5718,67 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
 </style>
 {% if template contains 'product' %}
   {% unless  product.title contains "Socks" %}
-    {% include 'sizeguide' %}
-    {% else %}
+      
+      
+      {% if  product.title contains "Cap" %}
+        {% include 'sizeguidecaps' %}
+      {% else %}
+        {% include 'sizeguide' %}
+      {% endif %}
+
+  {% else %}
     {% include 'sizeguidesocks' %}
   {% endunless %}
 {% endif %}
 <script>
   AOS.init();
 </script>
+<script>
+    {% if product.handle == "dr-woof-scrub-set" %}
+  $(document).ready(function(){
+
+    var interval = setInterval(function() {
+          // Your jQuery code to be executed repeatedly
+          // For example, let's log something to the console
+
+          $(".product_One_Shown .variant-input[data-value='Navy']").trigger("click")
+        
+          // You can put your jQuery code here
+          
+          // Example: Changing the background color of the body
+          // $("body").css("background-color", "red");
+
+    }, 1000);
+
+    setTimeout(function() {
+        clearInterval(interval);
+        console.log("Execution stopped after 5 seconds.");
+    }, 5000);
+
+  })
+    
+{% endif %}
+</script>
+{% if product.handle == "dr-woof-scrub-set" %}
+  <script>
+    $(document).ready(function(){
+        var currentPageURL = window.location.href;
+      console.log(currentPageURL)
+      // Check if the current page URL contains "fbclid"
+      if(currentPageURL.indexOf("fbclid") !== -1) {
+        window.location.replace("/pages/your-day-in-dr-woof-scrubs");        
+        // You can perform further actions here if the link is from Facebook
+      } else {
+          console.log("The link to this page is not from Facebook.");
+          // You can perform further actions here if the link is not from Facebook
+      }
+      })
+  </script>
+  {% endif %}
+
+
+
+
+
     </body>
 </html> 

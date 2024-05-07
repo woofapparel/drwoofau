@@ -4,7 +4,7 @@
       "type": "product-template-os2",
       "settings": {
         "threeway": true,
-        "newpdptop": false,
+        "newpdptop": true,
         "newpdptop2": false,
         "abtesting3": true,
         "abtesting3image": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",

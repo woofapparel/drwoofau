@@ -6,7 +6,7 @@
     }
     .product__thumb-item img,
     .product-image-main img{
-      border-radius:8px;
+      /* border-radius:8px; */
     } 
   {% endif %}
     .tprice,
@@ -412,7 +412,7 @@ counter = 0;
     {% if product.type == "Women Scrub Tops" or product.type == "Men Scrub Tops" or product.type == 'OS2 test product' %}
 
     <input type="hidden" class="embroidery-products" value="">
-    {% unless section.settings.newpdptop %}
+    {% unless section.settings.newpdptop2 %}
         <span class="hoverclicker"><label class="variant__label tleft"><input type="checkbox" id="embroiderycheckbox">Add Embroidery <span class="icon"><img src="{{ 'gificon.gif' | asset_url }}" class="gificon" alt="gificon" /></span> </label>  <span class="thirder"><span class="dollarsign">+$</span><span class="tprice">18 to $30</span> 
 
                 <div class="dynadelete">
@@ -422,12 +422,12 @@ counter = 0;
         <span class="signalarrow"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg></span>
       </span>
     {% endunless %}
-    {% if section.settings.newpdptop %}
+    {% if section.settings.newpdptop2 %}
       <span class="hoverclicker" style="font-weight:900;text-align:center;display:inline-block !important;width:100%;margin-top:24px;margin-bottom:24px;"><div class="tleft" style="text-align:center;"><label class="variant__label">Add Embroidery  </label>  - <span class="thirder"><span class="dollarsign">$</span> <span class="">18 to $30</span></span></div></span>  
     {% endif %}
 
       <style>
-        {% if section.settings.newpdptop %}
+        {% if section.settings.newpdptop2 %}
           .collapsible-content__inner ul{
           list-style-type: none !important;
           margin-left:0 !important;
@@ -471,7 +471,7 @@ counter = 0;
           }
 
 
-        {% if section.settings.newpdptop %}
+        {% if section.settings.newpdptop2 %}
           .thirder{
             font-family: 'futurapt';
                 font-size:16px !important; 
@@ -487,6 +487,7 @@ counter = 0;
             font-family: Oxygen, sans-serif;
             font-size:16px;
           }
+          
             .hoverclicker .variant__label{
                 margin-bottom: 0 !important;
                 font-weight:800;
@@ -853,6 +854,10 @@ counter = 0;
 
 {% if section.settings.newpdptop2 %}
   <!-- k01 -->
+  <div class="preorder-text" style="padding:20px 20px 12px 20px;margin-bottom:12px;background:#fff !important;">
+    <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
+    <p style="margin-top:10px;color:red;margin-bottom:0 !important;">**We're expecting to restock the color you picked on <span class="preorderdate"></span>. Thanks for your patience!**</p> 
+    </div>
   <div class="addliner">
     <hr class="hrliner">
     <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/image_10_7b2e26cb-b357-4544-90d5-6e28be46e12c.png?v=1712982042" class="afterpay-logo-new dv">
@@ -944,7 +949,7 @@ counter = 0;
 
 
 <div class="main-icon-cont" style="padding:5px 0px 5px;{% if section.settings.newpdptop %}display:none;{% endif %}">
-    <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;">
+  <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;background:#e0ede9 !important;">
     <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
     <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate"></span>. Thanks for your patience!**</p> 
     </div>
@@ -959,6 +964,7 @@ counter = 0;
   <p style="font-size:0.77em;">{{section.settings.txt}}</p>
   </div>
     {%endif%}
+
   </div>
 
   
@@ -974,7 +980,7 @@ counter = 0;
   </div>
  {%endif%}
   </div>
-   
+
    
   <div class="sub-icon-cont">
    {%if section.settings.img3 != blank %}
@@ -995,6 +1001,7 @@ counter = 0;
   <p>{{section.settings.txt_}}</p>
   </div>
  {%endif%}
+
 <div class="custom-klarna-new">
   <div class="klarna-new-div"></div>
 </div>
@@ -1422,7 +1429,7 @@ counter = 0;
     flex-wrap:wrap;
   }
 
-  {% if section.settings.newpdptop %}
+  {% if section.settings.newpdptop2 %}
   .main-text{
     display:none !important;
   }

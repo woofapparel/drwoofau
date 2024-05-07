@@ -4,11 +4,11 @@
       "type": "product-template-os2",
       "settings": {
         "threeway": true,
-        "newpdptop": false,
-        "newpdptop2": false,
+        "newpdptop": true,
+        "newpdptop2": true,
         "abtesting3": true,
-        "abtesting3image": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
-        "abtesting3imagemob": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
+        "abtesting3image": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_6.png",
+        "abtesting3imagemob": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_6.png",
         "product_image_size": "large",
         "product_image_type": "slider",
         "product_zoom_enable": false,
@@ -107,19 +107,40 @@
         "cebdefb5-34a5-4646-84a6-5b410256612f",
         "a12e0795-fe3c-4658-84d1-f37cd9abd485"
       ],
+      "disabled": true,
       "settings": {}
     },
-    "reviews": {
-      "type": "looxreviews",
-      "settings": {}
+    "new_product_recommedation_74kiCE": {
+      "type": "new-product-recommedation",
+      "settings": {
+        "related_products": "scrubs"
+      }
     },
     "recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "show_product_recommendations": true,
         "product_recommendations_heading": "You may also like",
         "per_row": "small"
       }
+    },
+    "new_product_story_PBRdzM": {
+      "type": "new-product-story",
+      "settings": {
+        "product_story_img_1": "shopify:\/\/shop_images\/1_2abefe69-4db5-4fce-9f1b-69ba6d18af47.jpg",
+        "product_story_title_1": "20% Rayon (aka vegan silk) for a feel so soft you'll want a second pair for bedtime.",
+        "product_story_img_2": "shopify:\/\/shop_images\/2_f25f29de-8146-4f08-a8ff-d5f9e6e4f01c.jpg",
+        "product_story_title_2": "Move, bend, stretch & crouch (without showing your bum crack.)",
+        "product_story_img_3": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_540x_1_750x_06221bd3-f09f-4474-9258-43f6436b3b12.webp",
+        "product_story_title_3": "Bye bye sweaty, too-big hospital scrubs. Hello superior comfort all shift long.",
+        "product_story_img_4": "shopify:\/\/shop_images\/4_ab79976f-9466-41bf-99a1-e020328d5776.jpg",
+        "product_story_title_4": "From seam yanking to wash testing — our custom 17-step QA process ensures top quality every time."
+      }
+    },
+    "reviews": {
+      "type": "looxreviews",
+      "settings": {}
     },
     "sudofooter": {
       "type": "product-sudofooter-os2",
@@ -129,8 +150,10 @@
   "order": [
     "product-template",
     "stories",
-    "reviews",
+    "new_product_recommedation_74kiCE",
     "recommendations",
+    "new_product_story_PBRdzM",
+    "reviews",
     "sudofooter"
   ]
 }

@@ -5,10 +5,9 @@
       "settings": {
         "threeway": true,
         "newpdptop": false,
-        "newpdptop2": false,
         "abtesting3": true,
-        "abtesting3image": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
-        "abtesting3imagemob": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
+        "abtesting3image": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_6.png",
+        "abtesting3imagemob": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_6.png",
         "product_image_size": "large",
         "product_image_type": "slider",
         "product_zoom_enable": false,

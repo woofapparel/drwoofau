@@ -25,7 +25,7 @@ $(document).ready(function() {
 function disableJavaScript(html) {
     // Create a temporary container element to work with the fetched data
     var tempContainer = $('<div>').html(html);
-
+    
     // Disable all <script> elements inside the fetched data
     tempContainer.find('script').remove();
     tempContainer.find('style').remove();
@@ -802,8 +802,21 @@ $(document).ready(function() {
                 })(document)
     
     */
+                function disableJavaScript(html) {
+                    // Create a temporary container element to work with the fetched data
+                    var tempContainer = $('<div>').html(html);
+                    
+                    // Disable all <script> elements inside the fetched data
+                    tempContainer.find('script').remove();
+                    tempContainer.find('style').remove();
+                    tempContainer.find('.desktop-view').removeClass("desktop-view");
+
+                    // Return the sanitized HTML data
+                    return tempContainer.html();
+                }
                 
                 data = disableJavaScript(data);
+                
                 $(".proddesInner .prodshowcase .flexer .duo:nth-child(2)").html($(data).find('.product-single__meta').html()).show('fast',function(){
                     
                     setTimeout(function() {

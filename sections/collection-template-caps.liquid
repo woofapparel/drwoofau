@@ -826,15 +826,21 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
               width:40%;
               display:block;
               position:absolute;
-              top:20px;
-              left:20px;
-              
+              bottom:80px;
+              right:20px;
               background-size: 100% !important;
             }
             .image-overlay:after {
                 content: "";
                 display: block;
                 padding-bottom: 100%;
+              }
+              @media only screen and (max-width:480px){
+                .image-overlay{
+                  bottom:48px;
+                  right:12px;
+                  left:auto;
+                }
               }
           </style>
                     <div
@@ -1317,8 +1323,8 @@ document.location.href=FinalData;
       width:50% !important;
     }
     .collection-variant-tag{
-      right: 9px !important;
-      left: inherit !important;
+      left: 9px !important;
+      right: inherit !important;
       bottom: 52px !important;
     }
     .step1{display:none !important}

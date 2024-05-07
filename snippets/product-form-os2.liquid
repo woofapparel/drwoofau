@@ -698,13 +698,14 @@ ADD TO BAG
 
 </div>
 </div>
-<div class="main-icon-cont" style="padding:5px 0px 5px;">
-  {% if template.suffix == "template-scrubs-secret" %}
+{% if template.suffix == "template-scrubs-secret" %}
   <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;">
     <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
     <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate" style="font-weight:bold">October 7th</span>. Thanks for your patience!**</p> 
     </div>
 {% endif %}
+<div class="main-icon-cont" style="padding:5px 0px 5px;">
+
   <div class="sub-icon-cont">
     {%if section.settings.img1 != blank %}
     <div class="sub-icon-cont1">

@@ -433,7 +433,8 @@ li.tag.product-tabs-data[value='misty-blue']{
   .collection-variant-tag{
     font-size: 11px;
     padding: 3px 6px;
-    left:9px;
+    right:9px;
+    left:auto;
     
   }
   .datahere{

@@ -180,7 +180,21 @@ img.reviewwhitestars{
   margin-left:auto;
   margin-right:auto;
 }
+{% if page.title contains "6 Reasons Why Thousands" %}
+  .button-wrapper a{
+  flex: 0 0 65% !important;
+  }
+  .header-button{
+  padding-left: 22px;
+  padding-right: 22px;
+  }
+{% endif %}
 @media only screen and (max-width:481px){
+  {% if page.title contains "6 Reasons Why Thousands" %}
+    .button-wrapper a{
+    flex: 0 0 100% !important;
+    }
+  {% endif %}
   .headerv2-wrapper{
     align-items: flex-start;
   }
