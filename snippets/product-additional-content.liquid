@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 {%- assign blockId = block.id -%}
 {% if product %}
 {%- assign blockId = block.id | append: product.id -%}
@@ -18,12 +22,17 @@
   {% for part in productDescription %}
   {% unless forloop.index == 1 %}
   <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-new-{{ forloop.index}}-{{ section_id }}">
-    {{part | split:"</h3>" | first}} 
+    {{part | replace: "$month$", month | replace: "$year$", year | split:"</h3>" | first}} 
     {% include 'collapsible-icons' %}
   </button>
   <div id="Product-content-new-{{ forloop.index}}-{{ section_id }}" class="collapsible-content collapsible-content--all">
     <div class="collapsible-content__inner rte">
-      {{part | split:"</h3>" | last}}        </div>
+      {{part | replace: "$month$", month | replace: "$year$", year | split:"</h3>" | last}}        </div>
+    
+    {% comment %} {% endcomment %}
+    {%- render 'autolink', cssselector: "#Product-content-new-2-7626418454786" -%}
+    
+    
   </div>
   {% endunless %}
   {% endfor %}

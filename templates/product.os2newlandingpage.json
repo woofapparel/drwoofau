@@ -93,6 +93,12 @@
     "sudofooter": {
       "type": "product-nlp-sudofooter-os2",
       "settings": {}
+    },
+    "sizeguider_Xi6T6G": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
@@ -101,6 +107,7 @@
     "stories",
     "reviews",
     "recommendations",
-    "sudofooter"
+    "sudofooter",
+    "sizeguider_Xi6T6G"
   ]
 }

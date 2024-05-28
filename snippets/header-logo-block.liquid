@@ -46,10 +46,10 @@
     }
   {% endstyle %}
 
-  <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+  <div class="h1 site-header__logo" itemtype="http://schema.org/Organization">
 
     {%- if template == 'index' -%}
-      <h1 class="visually-hidden">{{ shop.name }}</h1>
+      <p class="visually-hidden">{{ shop.name }}</p>
     {%- endif -%}
 
     {% comment %}

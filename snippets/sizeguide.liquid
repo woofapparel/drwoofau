@@ -1,8 +1,14 @@
 <div class="size-guide-wrapper">
     <div class="size-guide section-id-{{ section.id }}">
         <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/Frame_147.png?v=1706547860" class="close-guide">
-        <h4>Size guide</h4>
-        <p>You work in healthcare - which means your heart size is 37XL and your tolerance for BS is 37XS. But, what size are your scrubs?</p>
+
+        {% if texter %}
+            <p style="margin-top:40px;"><i>"Love these pants! Unfortunately I ordered a size too small originally however Dr Woof was super efficient and helpful in exchanging for a bigger size! Will definitely be returning as a customer"<br/></i></p>
+                <p style="text-align:right"><i>- Katherine D. </i></p>
+        {% else %}
+            <h4>Size guide</h4>
+            <p>You work in healthcare - which means your heart size is 37XL and your tolerance for BS is 37XS. But, what size are your scrubs?</p>
+        {% endif %}
         <hr/>
         <h4>Sizes & Measurements</h4>
         {% if product.tags contains 'Men' %}

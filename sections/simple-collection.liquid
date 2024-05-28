@@ -4,8 +4,8 @@
       {% for block in section.blocks %}  
         <div class="quad">
           <a href="{{ block.settings.col_url }}">
-            <img src="{{ block.settings.col_image | img_url: 'master' }}" class="desktop_only" />
-            <img src="{{ block.settings.col_image_mobile | img_url: 'master' }}" class="mobile_only" />
+            <img alt="{{ block.settings.col_image.alt }}" src="{{ block.settings.col_image | img_url: 'master' }}" class="desktop_only" />
+            <img alt="{{ block.settings.col_image_mobile.alt }}" src="{{ block.settings.col_image_mobile | img_url: 'master' }}" class="mobile_only" />
             <p>{{ block.settings.col_name }}</p>
           </a>
         </div>

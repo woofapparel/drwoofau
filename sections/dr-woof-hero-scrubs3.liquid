@@ -391,22 +391,22 @@
 {% if section.settings.enable_auto %}
 <div class="autosize">
   {% if section.settings.image_webp_pc != ""%}
-        <img src="{{ section.settings.image_webp_pc | img_url: 'master' }}" class="fullwidth desktopver">
+        <img alt="Dr. Woof" src="{{ section.settings.image_webp_pc | img_url: 'master'}}" class="fullwidth desktopver">
   {%else %}
-        <img src="{{ section.settings.image_lib_pc | img_url: 'master'}}" class="fullwidth desktopver">       
+        <img alt="Dr. Woof" src="{{ section.settings.image_lib_pc | img_url: 'master'}}" class="fullwidth desktopver">       
   {% endif %}
 
 
 
         {% if section.settings.image_webp_mobile != ""%}
-                  <img src="{{ section.settings.image_lib_mobile | img_url: 'master' }}}" class="fullwidth mobilever">
+                  <img alt="Dr. Woof" src="{{ section.settings.image_lib_mobile | img_url: 'master' }}}" class="fullwidth mobilever">
         
                 {% elsif section.settings.image_lib_mobile != blank %}
-                  <img src="{{ section.settings.image_lib_mobile | img_url: 'master'}}" class="fullwidth mobilever">
+                  <img alt="Dr. Woof" src="{{ section.settings.image_lib_mobile | img_url: 'master'}}" class="fullwidth mobilever">
                 {% elsif section.settings.image_webp_pc != ""%}
-                  <img src="{{ section.settings.image_webp_pc| img_url: 'master' }}" class="fullwidth mobilever">
+                  <img alt="Dr. Woof" src="{{ section.settings.image_webp_pc| img_url: 'master' }}" class="fullwidth mobilever">
                 {% else %}
-                  <img src="{{ section.settings.image_lib_pc | img_url: 'master'}}" class="fullwidth mobilever">
+                  <img alt="Dr. Woof" src="{{ section.settings.image_lib_pc | img_url: 'master'}}" class="fullwidth mobilever">
 
         {% endif %}
 

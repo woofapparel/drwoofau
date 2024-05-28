@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 <!-- snippets/product-template-preorder.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -53,11 +57,11 @@
           {% endif %}
           {% if isModal %}
             <p class="h1 product-single__title">
-              {{ product.title }}
+              {{ product.title | replace: "$month$", month | replace: "$year$", year }}
             </p>
           {% else %}
             <h1 class="h1 product-single__title">
-              {{ product.title }}
+              {{ product.title | replace: "$month$", month | replace: "$year$", year }}
             </h1>
           {% endif %}
           {% if settings.enable_product_reviews %}
@@ -246,11 +250,11 @@
 
               {% if isModal %}
                 <p class="h1 product-single__title">
-                  {{ product.title }}
+                  {{ product.title | replace: "$month$", month | replace: "$year$", year }}
                 </p>
               {% else %}
                 <h1 class="h1 product-single__title">
-                  {{ product.title }}
+                  {{ product.title | replace: "$month$", month | replace: "$year$", year }}
                 </h1>
               {% endif %}
 

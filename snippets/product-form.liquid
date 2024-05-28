@@ -561,6 +561,22 @@ counter = 0;
 
 
 
+{% if template.suffix contains "xmas" %}
+  {% if product.title contains "Christmas" or product.title contains "Ho Ho" %}
+      <p>Pre-Order Notification: Limited Edition Christmas Scrubs<br/>
+        Please read this message carefully before placing your order:</p>
+      </p>
+      <ul>
+        <li>This is a pre-order for our highly popular limited edition Christmas scrubs.</li>
+        <li>By placing this pre-order, you acknowledge that <u>your order will not be dispatched until October.</u></li>
+        <li>If you add any other items to your cart along with this pre-order, <u>your ENTIRE order</u> will not be shipped until October.</li>
+        <li>To proceed with adding this pre-order to your cart, you must check the box below confirming that you have read and understood this pre-order notification.</li>
+        <li>Due to the nature of this pre-order, refunds will not be available. You may only request an exchange of sizes in October after the order is dispatched.</li>
+      </ul>  
+        <p><input type="checkbox" class="add-to-cart-checkbox"> <b> By checking the box below, you acknowledge that you have read, understood, and agree to the terms of this pre-order notification. You accept that your order will not be dispatched until October, and that refunds will not be available for this purchase.</b><br/>
+        </p>
+  {% endif %}
+{% endif %}
 
 
 <div class="mobile-atc">
@@ -735,7 +751,7 @@ ADD TO BAG
   {% if product.id == 8296907473154 %}
     <div class="preorder-text" style="padding: 0px 20px 12px; margin-bottom: 12px;" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
       <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
-      <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate">May 22</span>. Thanks for your patience!**</p>
+      <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate">{% if product.title contains "Socks" %}{{ section.settings.sockpreorderdate }}{% else %}{% endif %}</span>. Thanks for your patience!**</p>
     </div>
     {% endif %}
   <div class="sub-icon-cont">

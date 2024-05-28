@@ -66,6 +66,8 @@
             <div class="product-single__vendor">
               {{ product.vendor }}
             </div>
+            </div>
+            
           {% endif %}
           {% if sku_enable %}
             <p class="product-single__sku" data-sku>
@@ -75,13 +77,13 @@
             </p>
           {% endif %}
 
-            <h1 class="h1 product-single__title">
+            <p class="h1 product-single__title">
               {% if section.settings.enable_men %}
                 Your New Toughest Scrub Set
                 {% else %}
                   Your New Perfect Scrub Set
                 {% endif %}
-            </h1>
+            </p>
   
 
           {% if settings.enable_product_reviews %}

@@ -1,5 +1,9 @@
 {%- assign collection_tag = collection.metafields.custom.collection_tag.value -%}
 
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 {%- if template contains 'collection' -%}
   {%- liquid 
     assign title = page_title
@@ -15,9 +19,10 @@
      endfor
    endif
   -%}
-  <title>{{ title }}{% unless title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
-  {%- if description -%}<meta name="description" content="{{ description | escape }}">{%- endif -%}
+  
+  <title>{{ title | replace: "$month$", month | replace: "$year$", year  }}{% unless title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+  {%- if description -%}<meta name="description" content="{{ description | replace: "$month$", month | replace: "$year$", year | escape }}">{%- endif -%}
 {%- else -%}
-  <title>{{ page_title }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
-  {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+  <title>{{ page_title | replace: "$month$", month | replace: "$year$", year }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | replace: "$month$", month | replace: "$year$", year | escape }}">{%- endif -%}
 {%- endif -%}

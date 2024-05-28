@@ -803,6 +803,7 @@ function cart_update() {
                   return t.ajax(e).then(
                       function (e) {
                       $thisaddon = $("#addon").val()
+                      $tekalang = $(".add-to-cart span").html()
                       $(".add-to-cart span").html("ADDING TO BAG...")
                       
                       $realcount1 = parseInt($(".cart__item[dataid='43048672166146'").find(".cart__quantity").val())
@@ -850,7 +851,7 @@ function cart_update() {
     
     
     
-                                $(".add-to-cart span").html("ADD TO BAG")
+                                $(".add-to-cart span").html($tekalang)
                           }
                           if($thisaddon == "Sleeve Mate"){
                               
@@ -881,7 +882,7 @@ function cart_update() {
 
 
 
-                            $(".add-to-cart span").html("ADD TO BAG")
+                            $(".add-to-cart span").html($tekalang)
 
 
                           }
@@ -915,7 +916,7 @@ function cart_update() {
 
 
 
-                            $(".add-to-cart span").html("ADD TO BAG")
+                            $(".add-to-cart span").html($tekalang)
                             cart_update()
 
                           }
@@ -923,11 +924,11 @@ function cart_update() {
               
                       }, 2000);
                       if(($thisaddon != "Name") && ($thisaddon != "Sleeve Mate") && ($thisaddon != "Name + Sleeve Mate")){
-                          $(".add-to-cart span").html("ADD TO BAG")
+                          $(".add-to-cart span").html($tekalang)
                           return t("body").trigger("updateCart", e), e;
                       }else{
                            setTimeout(function () {
-                          $(".add-to-cart span").html("ADD TO BAG")
+                          $(".add-to-cart span").html($tekalang)
                           return t("body").trigger("updateCart", e), e;
                           }, 5000);                   
                       }

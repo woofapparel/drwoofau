@@ -711,7 +711,7 @@ if(true){
             $initials = $("#initials").val()
             $initialsColor = $("#initialsColor").val()
       
-      
+            $tekalang = $(".add-to-cart span").html()
             $thisaddon = $("#addon").val()
             $(".add-to-cart span").html("ADDING TO BAG...")
       
@@ -731,7 +731,7 @@ if(true){
       
      
             if (($thisaddon != "Name") && ($thisaddon != "Sleeve Mate") && ($thisaddon != "Name + Sleeve Mate")) {
-             $(".add-to-cart span").html("ADD TO BAG")
+             $(".add-to-cart span").html($tekalang)
              if ($('.variant-wrapper:nth-of-type(3) .variant__label-info span').length) {
                 $aet = $.trim($(".variant-wrapper .custom-option-value").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html()) + " / " + $.trim($('.variant-wrapper:nth-of-type(3) .variant__label-info span').html())
              } else {
@@ -777,7 +777,7 @@ if(true){
      
           } else {
              setTimeout(function () {
-                $(".add-to-cart span").html("ADD TO BAG")
+                $(".add-to-cart span").html($tekalang)
                 if ($('.variant-wrapper:nth-of-type(3) .variant__label-info span').length) {
                    $aet = $.trim($(".variant-wrapper .custom-option-value").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html()) + " / " + $.trim($('.variant-wrapper:nth-of-type(3) .variant__label-info span').html())
                 } else {
@@ -859,7 +859,7 @@ if(true){
                   $(".tprice").html("18 to $30")
       
       
-                  $(".add-to-cart span").html("ADD TO BAG")
+                  $(".add-to-cart span").html($tekalang)
                }
                if ($thisaddon == "Sleeve Mate") {
       
@@ -896,7 +896,7 @@ if(true){
                   $(".tprice").html("18 to $30")
       
       
-                  $(".add-to-cart span").html("ADD TO BAG")
+                  $(".add-to-cart span").html($tekalang)
       
       
                }
@@ -936,7 +936,7 @@ if(true){
                   $(".tprice").html("18 to $30")
       
       
-                  $(".add-to-cart span").html("ADD TO BAG")
+                  $(".add-to-cart span").html($tekalang)
                   cart_update()
       
                }
@@ -957,7 +957,11 @@ if(true){
     var interval = setInterval(function () {
         if ($(".slick-dots").length) {
             clearInterval(interval);
+            /*
+            emil
+            removed due to page scrolling 
             $(".slick-dots li:first-child").trigger("click")
+            */
         }
     }, 100);
  })

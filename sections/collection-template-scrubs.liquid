@@ -929,8 +929,10 @@
               {% else %}
               {% if product.title contains "Aussie" or product.title contains "Hoppy Easter Women’s V-Neck Tuck Top" %}
                 {% else %}
-                                  <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/navy.svg?v=1707230459" class="dv fullimage"/>
+                <!--                 
+                <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/navy.svg?v=1707230459" class="dv fullimage"/>
                                   <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/navy.svg?v=1707230459" style="" class="mv fullimage"/>
+                -->
                 {% endif %}
             {% endif %}
           {% endif %}
@@ -1056,6 +1058,8 @@
                     </div>
                   {%- endif -%}
 
+
+
                   {% if settings.enable_product_reviews and settings.enable_product_reviews_collection %}
                     <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
                   {% endif %}
@@ -1127,9 +1131,20 @@
         {% endif %}
       </div>
       {% if section.settings.description_bottom %}
-        <div class="collection-description rte">
+        <div class="collection-description rte read-hide">
           {% render 'custom-collection-description' %}
         </div>
+
+<style>.read-hide{height:200px;overflow:hidden;}.read-btn{text-align:center;line-height:50px}.read-btn span{cursor:pointer;}</style>
+						<div class="read-btn"><span onclick="read()">Read more &darr;</span></div>
+							<script>
+								function read() {
+									var des = document.querySelector('.collection-description');
+									var btn = document.querySelector('.read-btn span');
+									des.classList.toggle("read-hide");
+									if (des.classList.contains('read-hide')){btn.innerHTML = "Read more &darr;"} else {btn.innerHTML = "Collapse &uarr;"}
+								}
+							</script>
       {% endif %}
     {% endpaginate %}
   </div>

@@ -9,7 +9,7 @@
       <div class="collection-thumbnail">
         {% for block in section.blocks %} 
           {% assign popular_product = all_products[block.settings.product] %}
-          <div class="thumbnail-entry"><a href="{{ block.settings.linkurl }}"><div class="thumbnail-wrapper"><img src="{{ block.settings.image_thumbnail | img_url: 'MASTER' }}" class="collection-entry"></div>
+          <div class="thumbnail-entry"><a href="{{ block.settings.linkurl }}"><div class="thumbnail-wrapper"><img alt="Dr.Woof" src="{{ block.settings.image_thumbnail | img_url: 'MASTER' }}" class="collection-entry"></div>
           <p class="col-title"><b>{{ block.settings.collection_title }}</b></p></a>
           </div>
         {% endfor %}

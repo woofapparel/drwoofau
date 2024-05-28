@@ -3,6 +3,7 @@
     "product-template": {
       "type": "product-template-sock-os2",
       "settings": {
+        "sockpreorderdate": "",
         "enable_ab": true,
         "abtesting1": false,
         "abtesting2": false,
@@ -40,6 +41,21 @@
         "txt9": "",
         "txt10": "",
         "txt11": ""
+      }
+    },
+    "new_product_story_Df6UTP": {
+      "type": "new-product-story",
+      "disabled": true,
+      "settings": {
+        "section_title": "Why you'll love our scrubs",
+        "product_story_img_1": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy4DRWoof_AprilShoot_Product_xx15176.jpg",
+        "product_story_title_1": "",
+        "product_story_img_2": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy2DRWoof_AprilShoot_Product_xx15167.jpg",
+        "product_story_title_2": "",
+        "product_story_img_3": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy4DRWoof_AprilShoot_Product_xx15176.jpg",
+        "product_story_title_3": "",
+        "product_story_img_4": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy2DRWoof_AprilShoot_Product_xx15167.jpg",
+        "product_story_title_4": ""
       }
     },
     "stories": {
@@ -123,13 +139,21 @@
     "sudofooter": {
       "type": "product-sudofooter-os2",
       "settings": {}
+    },
+    "sizeguider_weFXRH": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
     "product-template",
+    "new_product_story_Df6UTP",
     "stories",
     "reviews",
     "recommendations",
-    "sudofooter"
+    "sudofooter",
+    "sizeguider_weFXRH"
   ]
 }

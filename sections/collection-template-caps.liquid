@@ -1143,10 +1143,25 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
         {% include 'pagination' %}
       {% endif %}
       </div>
+      
       {% if section.settings.description_bottom %}
-        <div class="collection-description rte">
+        <div class="collection-description rte read-hide">
+          {{ collection.description }}
+          {% comment %}
           {% render 'custom-collection-description' %}
+        {% endcomment %}
         </div>
+
+<style>.read-hide{height:200px;overflow:hidden;}.read-btn{text-align:center;line-height:50px}.read-btn span{cursor:pointer;}</style>
+						<div class="read-btn"><span onclick="read()">Read more &darr;</span></div>
+							<script>
+								function read() {
+									var des = document.querySelector('.collection-description');
+									var btn = document.querySelector('.read-btn span');
+									des.classList.toggle("read-hide");
+									if (des.classList.contains('read-hide')){btn.innerHTML = "Read more &darr;"} else {btn.innerHTML = "Collapse &uarr;"}
+								}
+							</script>
       {% endif %}
       {% endpaginate %}
   </div>

@@ -70,11 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
   {% endif %}
 {% endif %}
 
-
-<script>
-  console.log("xx{{ template.suffix }}uuu")
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -93,6 +88,7 @@ window.TriplePixelData={TripleName:"dr-woof-apparel-au.myshopify.com",ver:"1.9.0
   {% if handle contains 'seq=uniform' %}
   <meta name="robots" content="noindex">
   {% endif %}
+  
 <!--  {{ handle }}  -->
 <!--  x  -->
 {% comment %}
@@ -5136,7 +5132,7 @@ $(document).ready(function(){
               }
           })
       }else{
-        alert("not avail")
+        
       }
 
 /*
@@ -5268,12 +5264,12 @@ $(".image-overlay").on("click",function(){
                                 t = disableJavaScript(t)
                                 var i = $(t).find(".oneway.product__photos").html();
                                 var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
-                                var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
+                                // var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
                                 var l = $(t).find(".main-content .shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
                                 $(".oneway.product__photos").html(i),
                                 $(".collapsible-content:first-of-type .collapsible-content__inner").html(j), 
-                                $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
-                                $(".main-content .shopify-section:nth-child(2)").html(l), 
+                                // $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                                // $(".main-content .shopify-section:nth-child(2)").html(l), 
                                     $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
                                     768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '70px', dots: !0 }),
                                     
@@ -5498,12 +5494,12 @@ $(document).ready(function() {
               t = disableJavaScript(t)
               var i = $(t).find(".oneway.product__photos").html();
               var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
-              var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
+              // var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
               var l = $(t).find(".main-content .shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
               $(".oneway.product__photos").html(i),
                   $(".collapsible-content:first-of-type .collapsible-content__inner").html(j),
-                  $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
-                  $(".main-content .shopify-section:nth-child(2)").html(l),
+                  // $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                  // $(".main-content .shopify-section:nth-child(2)").html(l),
                   $(".oneway .product__thumbs").slick({
                       slidesToShow: 6,
                       slidesToScroll: 1,
@@ -5575,6 +5571,226 @@ $(document).ready(function() {
   })
 })
 {% endif %}
+
+
+
+
+{% if product.type == 'Printed Pattern Scrub Tops' %}
+$(document).ready(function(){
+  $(document).on("click",".btn-primer",function(){
+    
+    $capid = $(".activer").attr("data-id")
+    $(".btn-primer").removeClass("atv")
+      $(this).addClass("atv")
+      if($(this).hasClass("butttonsoldout")){
+        $(".capsbundleatc").html("SOLD OUT")
+        $(".capsbundleatc").addClass("soldoutx")
+      }else{
+        $(".capsbundleatc").html("ADD TO CART")
+        $(".capsbundleatc").removeClass("soldoutx")
+      }
+       $(".preorder-text").hide()
+      $alttag = $(this).html();
+    $(".product__thumb-item img[alt='" + $alttag + "']").trigger("click")
+    $index = $("img[alt='" + $alttag + "']").parents(".product__slide").attr('data-index')
+    console.log($index)
+    $(".Main--ProductPhotos").slick('slickGoTo', $index)
+
+    
+  })
+
+
+  var interval = setInterval(function() {
+        if ($(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").length) {
+          
+          $(".scrubs-products .image-overlay[data-handle={{ product.handle }}]").trigger("click")
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+        }else{
+          $(".capsbundleatc").html("SOLD OUT")
+          $(".capsbundleatc").addClass("soldoutx")
+          $(".btn-primer").hide()
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+        }
+      }, 1000); // 1000 milliseconds = 1 second
+  
+  $(".capsbundleatc").click(function() {
+    $(this).html("Preparing..")
+    
+
+
+    $socvarid = $(".atv").attr("data-socvarid")
+    $socavail = $(".atv").attr("data-socavail")
+
+
+    if($socavail){
+        dataxc = {
+              "id": $socvarid,
+              "quantity": 1
+          }
+
+
+          jQuery.ajax({
+              type: 'POST',
+              url: '/cart/add.js',
+              data: dataxc,
+              dataType: 'json',
+              success: function() {
+                   $(".capsbundleatc").html("ADD TO CART")
+                  cart_update();
+              }
+          })
+      }else{
+        
+      }
+
+/*
+    var products = [];
+  
+    // Loop through the list items and create an array of product objects
+    $(".scrubs-cast-list li").each(function() {
+      var variantId = $(this).data("id");
+      
+      products.push({ id: variantId, quantity: 1 });
+    });
+    
+    // Convert the array of product objects to JSON
+    var productsJson = JSON.stringify(products);
+    console.log(productsJson)
+    // Call Shopify's AJAX API to add the products to the cart
+    addToCart(productsJson);
+*/
+  });
+
+  // Function to add products to the cart
+  function addToCart(productsJson) {
+    $.ajax({
+      type: 'POST',
+      url: '/cart/add.js', // Shopify's cart endpoint
+      data: {
+        items: products
+      },
+      dataType: 'json',
+      success: function() {
+        alert("Products added to the cart.");
+        cart_update();
+        // You can optionally update the cart contents or show a success message here
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR);
+        cart_update();
+        // Handle errors or display an error message if needed
+      }
+    });
+  }
+
+
+
+$(".image-overlay").on("click",function(){
+  $(".preorder-text").hide()
+  $(".capsbundleatc").html("ADD TO BAG")
+  $(".capsbundleatc").removeClass("soldoutx")
+  $(".btn-primer").show()
+      
+  // $(".capsbundleatc").html("PRE-ORDER")
+  $(".image-overlay").removeClass("activer");
+      $(this).addClass("activer");
+      $caphandle = $(this).attr("data-handle")
+      $captitle = $(this).attr("data-title")
+      $capid = $(this).attr("data-id")
+      $capimage = $(this).attr("data-image")
+      $capurl = $(this).attr("data-url")
+      $capxlid = $(this).attr("data-xl+")
+      $capxlavail = $(this).attr("data-xl+-avail")
+      $capstandardid = $(this).attr("data-standard")
+      $capstandardavail = $(this).attr("data-standard-avail")
+      $capsprice = $(this).attr("data-price")
+      $capscompare = $(this).attr("data-compare")
+
+      $(this).find("input").each(function(i, obj) {
+        $socname = $(this).attr("name")
+        $socavail = $(this).attr("data-socavail")
+        $socvarid = $(this).attr("data-socvarid")
+        $xsocqty = $(this).attr("data-socqty")
+
+        if ( i === 0) {
+          $(".righthere").html("")
+          if($socavail == 'true'){
+            $(".righthere").append("<span class='btn-primer " + $socname + " atv' data-socvarid='" + $socvarid + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+          }else{
+            $(".righthere").append("<span class='btn-primer " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }
+        }else{
+          if($socavail == 'true'){
+            $(".righthere").append("<span class='btn-primer " + $socname + "' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }else{
+            $(".righthere").append("<span class='btn-primer  " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }
+        }
+      
+      
+      });
+
+
+      
+      /*
+      if($capstandardavail == 'true'){
+        $(".standard").removeClass("butttonsoldout")
+        $(".standard").addClass("atv")
+        $(".XL").removeClass("atv")
+      }else{
+        $(".standard").addClass("butttonsoldout")
+        $(".standard").removeClass("atv")
+        $(".XL").addClass("atv")
+      }
+      if($capxlavail == 'true'){
+        $(".XL").removeClass("butttonsoldout")
+      }else{
+        $(".XL").addClass("butttonsoldout")
+      }
+      */
+
+      if (typeof $capscompare === 'undefined' || $capscompare == '$0.00' || $capscompare == '') {
+        $(".product-single__prices").html('<span data-price="" class="9 normalPrice product__price" data-product-price="">' + $capsprice + '</span>')
+      }else{
+        $(".product-single__prices").html('<span class=" normal_price" data-price-wrapper=""><span class="1 product__price product__price--compare" data-product-price-compare="">' + $capscompare + '</span></span>    <span data-price="" class="2 normalPrice product__price sale-price" data-product-price="">' + $capsprice + '<span style="margin-bottom:12px;color:black; font-size: medium;display:inline-block"></span></span>')
+      }
+      
+      
+      $(".capstandardid").val($capstandardid)
+      $(".capxlid").val($capxlid)
+      $(".product-single__title").html($captitle)
+      $.ajax({
+                            type: "GET",
+                            url: $capurl,
+                            datatype: "HTML",
+                            beforeSend: function () {},
+                            complete: function () {
+                                setTimeout(function () {
+                                    $(".product__photos").css("opacity", 1);
+                                }, 1);
+                            },
+                            success: function (t) {
+                                t = disableJavaScript(t)
+                                var i = $(t).find(".oneway.product__photos").html();
+                                var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
+                                // var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
+                                var l = $(t).find(".main-content .shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
+                                $(".oneway.product__photos").html(i),
+                                $(".collapsible-content:first-of-type .collapsible-content__inner").html(j), 
+                                // $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                                // $(".main-content .shopify-section:nth-child(2)").html(l), 
+                                    $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
+                                    768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({ slidesToShow: 1, centerMode: true, slidesToScroll: 1, arrows: !1, centerPadding: '70px', dots: !0 }),
+                                    
+                                    $(".product__photos").css("opacity", 1);
+                            },
+                        });
+
+  })
+})
+
+{% endif %}
+
 
 
 
@@ -5716,20 +5932,7 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   }
 {% endif %}
 </style>
-{% if template contains 'product' %}
-  {% unless  product.title contains "Socks" %}
-      
-      
-      {% if  product.title contains "Cap" %}
-        {% include 'sizeguidecaps' %}
-      {% else %}
-        {% include 'sizeguide' %}
-      {% endif %}
 
-  {% else %}
-    {% include 'sizeguidesocks' %}
-  {% endunless %}
-{% endif %}
 <script>
   AOS.init();
 </script>
@@ -5776,9 +5979,10 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   </script>
   {% endif %}
 
-
-
-
-
+    <style>
+      .xmas .variant-change-color{
+        display:none !important;
+      }
+    </style>
     </body>
 </html> 

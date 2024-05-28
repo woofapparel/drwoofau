@@ -1,9 +1,13 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 <div class="page-width">
   <div class="collection-filters flexer">
     <div class="collection-title">
       <a href="{{ collection.url }}">
         <h1 class="section-header__title appear-delay">
-          {{ collection.title }}
+          {{ collection.title | replace: "$month$", month | replace: "$year$", year }}
         </h1>
       </a>
     </div>

@@ -13,13 +13,13 @@
       {% endif %}
       {% unless section.settings.dark_theme %}
         <div class="arrow-wrapper">
-          <img src="{{ 'leftlight.png' | asset_url }}" class="prev{{ section.id }}"/>
-          <img src="{{ 'rightlight.png' | asset_url }}" class="next{{ section.id }}"/>
+          <img alt="leftlight" src="{{ 'leftlight.png' | asset_url }}" class="prev{{ section.id }}"/>
+          <img alt="leftlight" src="{{ 'rightlight.png' | asset_url }}" class="next{{ section.id }}"/>
         </div>
       {% else %}
       <div class="arrow-wrapper">
-        <img src="{{ 'rightwhite.png' | asset_url }}" class="prev{{ section.id }}"/>
-        <img src="{{ 'leftwhite.png' | asset_url }}" class="next{{ section.id }}"/>
+        <img alt="rightwhite" src="{{ 'rightwhite.png' | asset_url }}" class="prev{{ section.id }}"/>
+        <img alt="rightwhite" src="{{ 'leftwhite.png' | asset_url }}" class="next{{ section.id }}"/>
       </div>
       {% endunless %}
   </div>
@@ -29,7 +29,7 @@
         {% for product in collection.products %}
             <div class="product_slide">
                 <a href="{{ product.url }}" class="collection-slider-url">
-                    <img src="{{ product.featured_image.src | img_url: 'grande' }}" class="collection-slider-thumbnail" style="margin-bottom:20px;" />
+                    <img alt="{{ product.featured_image.alt | img_url: 'grande' }}" src="{{ product.featured_image.src | img_url: 'grande' }}" class="collection-slider-thumbnail" style="margin-bottom:20px;" />
                     {% if section.settings.reviewstars %}
                     {% render 'loox_reviews', product: product %}
                     {% endif %}
@@ -57,17 +57,17 @@
         {% for block in section.blocks %}
             <div class="product_slide">
                 <a href="{{ block.settings.col_url }}" class="collection-slider-url">
-                    <img src="{{ block.settings.col_image | img_url: 'grande' }}" class="collection-slider-thumbnail desktopview"/>
-                    <img src="{{ block.settings.mobcol_image | img_url: 'grande' }}" class="collection-slider-thumbnail mobileview"/>
+                    <img alt="{{ block.settings.col_image.alt }}" src="{{ block.settings.col_image | img_url: 'grande' }}" class="collection-slider-thumbnail desktopview"/>
+                    <img alt="{{ block.settings.mobcol_image.alt }}" src="{{ block.settings.mobcol_image | img_url: 'grande' }}" class="collection-slider-thumbnail mobileview"/>
                     
                     {% if section.settings.dark_theme %}
                       {% if section.settings.reviewstars %}
-                      <div class="review"><img src="{{ 'stars.png' | asset_url }}" /> {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
+                      <div class="review"><img alt="stars" src="{{ 'stars.png' | asset_url }}" /> {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
                       {% endif %}
                       
                     {% else %}
                     {% if section.settings.reviewstars %}
-                    <div class="review"><img src="{{ 'darkstars.png' | asset_url }}" />  {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
+                    <div class="review"><img alt="stars" src="{{ 'darkstars.png' | asset_url }}" />  {% unless block.settings.reviewstarsnumber == "" %}({{ block.settings.reviewstarsnumber }}){% endunless %}</div>
                       {% endif %}
                     {% endif %}
                     

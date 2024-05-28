@@ -52,9 +52,15 @@
 
           {% when 'collection-slider' %}
             {% include 'page-block-featured-collection-slider' %}
-
+          
         {% endcase %}
       </div>
     </div>
   {% endfor %}
+  
+  {% if section.settings.description_bottom %}
+        <div class="collection-description rte">
+            {% render 'custom-collection-description' %}
+        </div>
+      {% endif %}
 </div>

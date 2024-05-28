@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <style>
 .grid-product__colors{
@@ -31,7 +35,7 @@
             {% endif %}
             <div class="grid-product__content custom_collection_product__content">
               <div class="grid-product__meta">
-                <div class="grid-product__title"> {{ first_text }} </div>
+                <div class="grid-product__title"> {{ first_text | replace: "$month$", month | replace: "$year$", year }} </div>
               </div>
             </div>
             {% if first_url !=blank %}  
@@ -63,7 +67,7 @@
             {% endif %}
              <div class="grid-product__content custom_collection_product__content">
                <div class="grid-product__meta">
-              <div class="grid-product__title"> {{ second_title }} </div>
+              <div class="grid-product__title"> {{ second_title | replace: "$month$", month | replace: "$year$", year }} </div>
             </div>
             </div>
             {% if second_url !=blank %}  
@@ -373,7 +377,7 @@
             {% endif %}
 
             <div class="grid-product__meta">
-              <div class="grid-product__title">{{ product.title }}</div>
+              <div class="grid-product__title">{{ product.title | replace: "$month$", month | replace: "$year$", year }}</div>
               
               {% if coll_prod_var_sp[1] %}
               <span class="product__title_color_variants" var-name="{{ coll_prod_var_sp[1] | handleize }}">
@@ -788,7 +792,7 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
           
             <div class="grid-product__meta">
             
-              <div class="grid-product__title">{{ product.title }}</div>
+              <div class="grid-product__title">{{ product.title | replace: "$month$", month | replace: "$year$", year }}</div>
 
                               {% for variant in product.variants %}
 
@@ -983,10 +987,25 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
       {% endif %}
         </div>
       {% endpaginate %}
-      {% if section.settings.description_bottom %}
-        <div class="collection-description rte">
-            {% render 'custom-collection-description' %}
+      
+       {% if section.settings.description_bottom %}
+        <div class="collection-description rte read-hide">
+          {{ collection.description }}
+          {% comment %}
+          {% render 'custom-collection-description' %}
+          {% endcomment %}
         </div>
+
+<style>.read-hide{height:200px;overflow:hidden;}.read-btn{text-align:center;line-height:50px}.read-btn span{cursor:pointer;}</style>
+						<div class="read-btn"><span onclick="read()">Read more &darr;</span></div>
+							<script>
+								function read() {
+									var des = document.querySelector('.collection-description');
+									var btn = document.querySelector('.read-btn span');
+									des.classList.toggle("read-hide");
+									if (des.classList.contains('read-hide')){btn.innerHTML = "Read more &darr;"} else {btn.innerHTML = "Collapse &uarr;"}
+								}
+							</script>
       {% endif %}
   </div>
 </div>

@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 {% paginate blog.articles by section.settings.post_limit %}
 
 <div data-section-id="{{ section.id }}" data-section-type="blog">
@@ -5,7 +9,7 @@
 
     <header class="section-header" data-aos>
       <h1 class="section-header__title appear-delay">
-        {{ blog.title }}
+        {{ blog.title | replace: "$month$", month | replace: "$year$", year }}
 
         {% if section.settings.blog_show_tag_filter %}
           {% if blog.tags.size > 0 %}

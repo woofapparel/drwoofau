@@ -1,3 +1,8 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
+
 {%- assign og_title = page_title  -%}
 {%- assign og_url = canonical_url -%}
 {%- assign og_type = 'website' -%}
@@ -65,9 +70,9 @@
 
   <meta property="og:site_name" content="{{ shop.name }}">
   <meta property="og:url" content="{{ og_url }}">
-  <meta property="og:title" content="{{ og_title | escape }}">
+  <meta property="og:title" content="{{ og_title | replace: "$month$", month | replace: "$year$", year | escape }}">
   <meta property="og:type" content="{{ og_type }}">
-  <meta property="og:description" content="{{ og_description | strip_html }}">
+  <meta property="og:description" content="{{ og_description | replace: "$month$", month | replace: "$year$", year | strip_html }}">
   {%- if template_base == 'product' -%}
     <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
     <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
@@ -76,5 +81,5 @@
   {{ og_image_secure_url_tags }}
   <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ og_title }}">
-  <meta name="twitter:description" content="{{ og_description | strip_html }}">
+  <meta name="twitter:title" content="{{ og_title | replace: "$month$", month | replace: "$year$", year }}">
+  <meta name="twitter:description" content="{{ og_description | replace: "$month$", month | replace: "$year$", year | strip_html }}">

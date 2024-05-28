@@ -259,26 +259,40 @@
           "e4d2187c-f5ca-44d0-9b04-555a4959adc8"
         ],
         "settings": {
+          "men-hide-color": "",
+          "men-hide-color2": "",
+          "men-hide-color3": "",
+          "women-hide-color": "Mermaid Teal",
+          "women-hide-color2": "Lavender",
+          "women-hide-color3": "Double Purple",
           "show_newsletter": true,
-          "newsletter_title": "JOIN THE WOOF PACK XX",
-          "newsletter_richtext": "<p>Get the low down on deals, discounts and new product drops. Plus 10% off your first order. <\/p>",
+          "newsletter_title": "Join the Woof Pack",
+          "newsletter_richtext": "<p>Get the low down on deals, discounts and new product drops. Plus <strong>10%<\/strong> off your first order.<\/p>",
           "color_twilight-blue": 12,
-          "color_navy": 2,
+          "color_navy": 1,
           "color_cool-ray": 5,
-          "color_black": 3,
-          "color_ceil-blue": 11,
+          "color_black": 2,
+          "color_ceil-blue": 13,
           "color_burgundy": 8,
           "color_fern-green": 4,
-          "color_shadow-gray": 7,
-          "color_royal-blue": 9,
+          "color_shadow-gray": 20,
+          "color_royal-blue": 5,
           "color_steel-gray": 10,
-          "color_baby-pink": 6,
-          "color_blurple": 16,
+          "color_baby-pink": 7,
+          "color_blurple": 8,
           "color_white": 14,
           "color_misty-blue": 15,
-          "color_mint": 13,
+          "color_mint": 20,
           "color_bold-magenta": 14,
-          "color_whimsical-coral": 1,
+          "color_whimsical-coral": 13,
+          "color_caribbean-blue": 3,
+          "color_mermaid-teal": 20,
+          "color_hoppy-easter": 20,
+          "color_blush": 20,
+          "color_aussie-natives": 20,
+          "color_lavender": 12,
+          "color_pistachio": 20,
+          "color_apricot": 20,
           "footer_richtext": "<p>In the spirit of reconciliation, Dr Woof Apparel acknowledges the Traditional Custodians of country throughout Australia and their connections to land, sea and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.<\/p>",
           "show_locale_selector": false,
           "show_currency_selector": false,
@@ -369,7 +383,7 @@
           "d84c5735-ec95-4537-9ee1-5cff05a9de70": {
             "type": "post",
             "settings": {
-              "image": "shopify:\/\/shop_images\/2_899f6b14-713a-41ef-ad12-d9ffb6b8fb42.png",
+              "image": "shopify:\/\/shop_images\/tester_25.jpg",
               "link": "\/collections\/burgundy-scrubs",
               "product": "",
               "account": "@yourvetlianne",
@@ -402,7 +416,7 @@
           "73076f6a-e3b5-4872-a38a-7a6348c0546a": {
             "type": "post",
             "settings": {
-              "image": "shopify:\/\/shop_images\/1_dd937771-2b60-4a8d-8029-1e226a104c23.png",
+              "image": "shopify:\/\/shop_images\/tester_10.jpg",
               "link": "\/collections\/ceil-blue-scrubs",
               "product": "",
               "account": "@nursetobe_2023)",
@@ -413,7 +427,7 @@
           "6ecad0c2-6a00-4b93-9691-825785d62aa3": {
             "type": "post",
             "settings": {
-              "image": "shopify:\/\/shop_images\/9_4ff1d3a7-21aa-4cfe-be48-96c65f4cb9c9.png",
+              "image": "shopify:\/\/shop_images\/tester_26.jpg",
               "link": "collections\/cool-gray-scrubs",
               "product": "",
               "account": "@dr.deadliftt",
@@ -424,7 +438,7 @@
           "43642906-a69f-4c30-8c4b-68747a504f50": {
             "type": "post",
             "settings": {
-              "image": "shopify:\/\/shop_images\/10.png",
+              "image": "shopify:\/\/shop_images\/tester_27.jpg",
               "link": "\/collections\/royal-blue-scrubs",
               "product": "",
               "account": "@paola_rdh.15",
@@ -446,7 +460,7 @@
           "6e5aa6c3-268e-405e-96b6-b1dfafb0af28": {
             "type": "post",
             "settings": {
-              "image": "shopify:\/\/shop_images\/5_022b2cb7-b3b5-49d5-aef1-fb6bfd03ad26.png",
+              "image": "shopify:\/\/shop_images\/tester_7.jpg",
               "link": "collections\/scrub-caps",
               "product": "",
               "account": "@carolinasfieldguide",
@@ -509,7 +523,7 @@
           "2e0b7d05-f8c9-427e-9257-d9334195ae24"
         ],
         "settings": {
-          "enable_home": true,
+          "enable_home": false,
           "enable_product": false,
           "enable_collection": false,
           "title": "Look who's wearing Woof",
@@ -548,12 +562,227 @@
       "page-faq-template": {
         "type": "page-faq-template",
         "blocks": {
+          "9ec8884b-5a2c-4742-b419-9847397bde03": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Scrubs & Underscrubs",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "a714c64a-ed7e-4d66-8bef-63233b98c1c7": {
+            "type": "question",
+            "settings": {
+              "title": "Are your scrubs true to size?",
+              "text": "<p>Yes. A vast majority of the people who buy our scrubs are happy with the fit.<br\/><br\/>If you are not sure what size to get, the best option is to compare your measurements to the measurements on our sizing chart. <\/p>"
+            }
+          },
+          "cf8bde58-89b9-4e26-89f4-25c3edf87441": {
+            "type": "question",
+            "settings": {
+              "title": "What size am I?",
+              "text": "<p>Check our sizing chart to find your size.<br\/><br\/><a href=\"\/pages\/womens-sizes\" title=\"Women's Sizing Chart\">Women <\/a><br\/><a href=\"\/pages\/mens-sizing-chart\" title=\"Men's Sizing Chart\">Men<\/a><\/p>"
+            }
+          },
+          "4cb7f558-23c5-48d6-83f7-8262979cde12": {
+            "type": "question",
+            "settings": {
+              "title": "Do you have petite and tall sizes?",
+              "text": "<p>Yes. Our core colors come in regular, petite & tall.  Depending on expected demand, limited edition releases may not include tall & petite options. <\/p>"
+            }
+          },
+          "d50d5644-778b-423a-a0ce-3c59cb26c3a6": {
+            "type": "question",
+            "settings": {
+              "title": "How do I care for my Dr. Woof Scrubs?",
+              "text": "<p><strong>Scrubs: <\/strong>Cold machine wash inside-out. Tumble dry low. <br\/><br\/><strong>Underscrubs: <\/strong>Cold machine wash inside-out. Tumble dry low. <\/p>"
+            }
+          },
+          "e2cc1e81-72f2-43c1-97bc-6f3e6ed3d1a2": {
+            "type": "question",
+            "settings": {
+              "title": "Will you be offering more sizes & colours soon?",
+              "text": "<p>Yes. Our range is always expanding. <br\/><br\/>Join our mailing list (signup link below) for announcements.<\/p>"
+            }
+          },
+          "e5d089ed-0ae2-4663-aa82-ac85bf33f9d6": {
+            "type": "question",
+            "settings": {
+              "title": "Any plans for larger sizes?",
+              "text": "<p>Yes! We have added 3XL in late 2023, and we will continue to expand the range moving forward.<\/p>"
+            }
+          },
+          "11771d68-287c-4940-806f-ea3e01dc15d4": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Custom Embroidery",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "d0db33c4-12c3-409a-82ab-4e056ac4f019": {
+            "type": "question",
+            "settings": {
+              "title": "Do you offer embroidery?",
+              "text": "<p><\/p><p><em>Yes. We can add embroidery to all of our clothing for you. <br\/><br\/>Our service is fully customisable. We have a huge range of colours, fonts and designs available. We can even embroider clinic logos and personal artwork.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us to get a quote<\/em><\/a><br\/><\/p>"
+            }
+          },
+          "0b093925-b277-4967-9c80-249fc59a65ac": {
+            "type": "question",
+            "settings": {
+              "title": "How do I add embroidery to my order?",
+              "text": "<p><\/p><p><em>Embroidery cannot be ordered online.<br\/><br\/>To allow full customisation, our team will talk with you to organise your order.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to get started.<\/em><\/a><br\/><\/p>"
+            }
+          },
+          "2643f52d-0859-4e24-b1dd-b781a3907181": {
+            "type": "question",
+            "settings": {
+              "title": "How long does embroidery take?",
+              "text": "<p><\/p><p>It depends on what you’d like embroidered. Please allow 2–3 extra weeks for embroidered items to arrive. <\/p>"
+            }
+          },
+          "283491d9-3248-4717-83b4-59caefd5420a": {
+            "type": "question",
+            "settings": {
+              "title": "What embroidery colours, fonts and font-sizes can I choose from?",
+              "text": "<p><\/p><p><em>Our service is fully customisable.<br\/><br\/>Unlike other scrubs embroidery services, you are not limited to two or three options. You can select the<br\/>design that is right for you.  <br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to organise your order.<\/em><br\/><\/a><\/p>"
+            }
+          },
+          "32335cb5-2dbb-443e-bd16-75b2c964313f": {
+            "type": "question",
+            "settings": {
+              "title": "Do you embroider logos and artwork?",
+              "text": "<p><br\/><em>Yes! Show us your design and we’ll make sure it is <\/em>embodiable<em>. If it is, we’ll organize a quote. <br\/><br\/>Please note: for logos and artwork, there will be a fee to set up the embroidery plate. This fee will only apply once, no matter how many garments you decide to get your design added to. <br\/><\/em><br\/><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to discuss your design. <\/em><\/a><br\/><br\/><br\/><\/p>"
+            }
+          },
+          "324c5308-9e4f-4841-8977-941b192e3039": {
+            "type": "question",
+            "settings": {
+              "title": "Can I add embroidery to a team or bulk order?",
+              "text": "<p><br\/>Yes! Talk to the Dr. Woof  team member who is looking after your order. They’ll confirm prices for you. <br\/><br\/><\/p>"
+            }
+          },
+          "f2ec7535-cd31-4c17-baac-bd3b551a76aa": {
+            "type": "question",
+            "settings": {
+              "title": "Where on my scrubs can I place embroidery?",
+              "text": "<p><\/p><p><em>Tell us where you want it! Our service is fully customisable. You are not limited to left or right chest.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to organise your order.<\/em><\/a><br\/><\/p>"
+            }
+          },
+          "f1d6e7e5-2ffb-4343-b292-194eebb48af9": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Bulk & Wholesale",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "ad5e54b3-bd3a-493a-9e88-22e451857e9c": {
+            "type": "question",
+            "settings": {
+              "title": "Do you offer a bulk discount?",
+              "text": "<p><\/p><p><em>Yes. Visit our<\/em><a href=\"\/pages\/corporate-gifts-for-medical-workers\" title=\"Corporate Gifting\"><em> <\/em>corporate gifting<\/a> and <a href=\"\/pages\/teams\" title=\"Teams\">team order<\/a> page for more details. <em> <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Or, contact our team. <\/em><\/a><\/p>"
+            }
+          },
+          "1fc52681-a885-49bb-bed1-5fec246ce4e4": {
+            "type": "question",
+            "settings": {
+              "title": "Do you sell wholesale?",
+              "text": "<p><\/p><p><em>Yes, but we’ll need to have a chat first. <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Contact us to organise a time.<\/em><\/a><\/p>"
+            }
+          },
+          "7c17a26f-fc26-4c5b-a297-c09b5d09a63f": {
+            "type": "question",
+            "settings": {
+              "title": "Can you do custom designs and embroidery?",
+              "text": "<p><\/p><p><em>Yes. Visit our<\/em><a href=\"\/pages\/corporate-gifts-for-medical-workers\" title=\"Corporate Gifting\"><em> <\/em>corporate gifting<\/a> and <a href=\"\/pages\/teams\" title=\"Teams\">team order<\/a> page for more details. <em> <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Or, contact our team. <\/em><\/a><\/p>"
+            }
+          },
+          "1599910131636": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Influencers and Ambassadors",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "1599910169893": {
+            "type": "question",
+            "settings": {
+              "title": "Are you looking for ambassadors?",
+              "text": "<p><\/p><p><em>Yes we are always looking to work closely with healthcare influencers across all disciplines! Doctors, Nurses, Dentists, Veterinarians, and more! <\/em><a href=\"\/pages\/join-the-family\" title=\"Join the Family\"><em>Click this link to learn more.<\/em><\/a><\/p>"
+            }
+          },
           "e57ac8ce-40d5-4a7b-ab12-a6a6b7df19fb": {
             "type": "rich-text",
             "settings": {
               "title": "Shipping & Returns",
               "text": "<p>Please refer to our dedicated <a href=\"\/pages\/shipping-returns\" title=\"Shipping & Returns\">Shipping & Returns<\/a> page.<\/p>",
               "align_text": "left"
+            }
+          },
+          "rich_text_wcD9nU": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Compression Socks",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "question_J8DqUR": {
+            "type": "question",
+            "settings": {
+              "title": "What’s the compression level of Dr Woof Graduated Compression Socks?",
+              "text": "<p>Kick back and relax; our Graduated Compression Socks offer a snug, not too tight compression level of 15-20 mmHg. Perfect for those days when your feet need a little extra love and support.<\/p>"
+            }
+          },
+          "question_BeNhxD": {
+            "type": "question",
+            "settings": {
+              "title": "What sets Dr Woof Graduated Compression Socks apart?",
+              "text": "<p>Our socks come with a whole suite of features to keep your feet happy! They offer 360° seamless compression for comfort, a medium compression level to ease your day, super stretchy fabric that hugs your feet just right, moisture-wicking technology to keep you dry, and extra cushioning in the heel and toe for that cloud-nine feeling.<\/p>"
+            }
+          },
+          "question_NGUFHm": {
+            "type": "question",
+            "settings": {
+              "title": "What are Dr Woof Graduated Compression Socks made of?",
+              "text": "<p>Crafted with care, our socks are made from 97% Nylon and 3% Elastane, blending durability and flexibility for the ultimate fit and comfort.<\/p>"
+            }
+          },
+          "question_WpGKKU": {
+            "type": "question",
+            "settings": {
+              "title": "How should I care for my Dr Woof Graduated Compression Socks?",
+              "text": "<p>Keep your socks in prime condition by washing them with like colors at a cool temperature under 30°C, and letting them air dry. Steer clear of bleach, ironing, and tumble drying to keep them perfect.<\/p>"
+            }
+          },
+          "question_frKyMh": {
+            "type": "question",
+            "settings": {
+              "title": "What sizes do Dr Woof Graduated Compression Socks come in?",
+              "text": "<p>Currently, we offer sizes Small and Medium. Check out our sizing guide to find your perfect match and step into comfort.<\/p>"
+            }
+          },
+          "question_633HYw": {
+            "type": "question",
+            "settings": {
+              "title": "Will the fabric of Dr Woof Graduated Compression Socks lose its stretch over time?",
+              "text": "<p>No worries here! Our socks are designed with super stretchy fabric that maintains its elasticity, ensuring you get a consistent fit and comfort, wear after wear.<\/p>"
+            }
+          },
+          "question_bKkJgQ": {
+            "type": "question",
+            "settings": {
+              "title": "Can Dr Woof Graduated Compression Socks help keep my feet dry?",
+              "text": "<p>Yes, indeed! Our socks are equipped with moisture-wicking technology that pulls sweat away from your skin, keeping your feet dry and comfortable all day long.<\/p>"
+            }
+          },
+          "question_FpP83D": {
+            "type": "question",
+            "settings": {
+              "title": "Do Dr Woof Graduated Compression Socks offer extra protection for my feet?",
+              "text": "<p>Absolutely! With extra thick cushioning in the heel and toe areas, our socks provide enhanced comfort and protection against blisters, so you can move through your day with ease.<\/p>"
             }
           },
           "1592318221161": {
@@ -568,11 +797,27 @@
             "type": "question",
             "settings": {
               "title": "Will your scrub caps fit me?",
-              "text": "<p><\/p><p><em>Yes! Our standard caps fit heads from XS to XL, and our XL+ caps can stretch much larger. <\/em><\/p>"
+              "text": "<p><\/p><p><em>Yes! Our caps fit heads up to 62cm in circumference. That’s hat sizes XS - XXL.<\/em><\/p>"
+            }
+          },
+          "question_AknWjQ": {
+            "type": "question",
+            "settings": {
+              "title": "What are your scrub caps made of?",
+              "text": "<p><\/p><p><em>Our standard range scrub caps are 100% cotton. <\/em><\/p><p><em>Our Perfect Match Scrub Caps are made from the same material as our scrubs.<\/em><\/p><ul><li><em>Original Scrubs: 74% Poly, 20% Rayon and 6% Spandex <\/em><\/li><li><em>Planet Friendly Scrubs: 92% Recycled Poly and 8% Spandex<\/em><\/li><\/ul>"
+            }
+          },
+          "cf758a4b-ce90-48f6-b61c-c69040340c7a": {
+            "type": "question",
+            "disabled": true,
+            "settings": {
+              "title": "What are your scrub caps made of?",
+              "text": "<p><\/p><p><em>Our scrub caps are 100% cotton. That’s what makes them so cosy and soft.<\/em><\/p><p><\/p><p><em>Our perfect match scrub caps are made from the same material as our scrubs (20% Rayon, 6% Spandex & 74% Poly)<\/em><\/p>"
             }
           },
           "1598510192326": {
             "type": "question",
+            "disabled": true,
             "settings": {
               "title": "Would your scrub caps fit a really big watermelon?",
               "text": "<p><\/p><p><em>What a bizarre question. But, okay, let’s logic it out: <\/em><\/p><p><em>We designed XL+ caps to cover long thick hair. They stretch up to 73cm. <\/em><\/p><p><em>Thanks to a sneaky measure-mission at our local supermarket, we can confirm that a watermelon with a 73cm circumference is pretty darn big. <\/em><\/p><p><em>So yes! Our scrub caps can cover a really big watermelon. <\/em><\/p>"
@@ -580,6 +825,7 @@
           },
           "1592318400076": {
             "type": "question",
+            "disabled": true,
             "settings": {
               "title": "I have long hair. Will it fit inside your scrub cap?",
               "text": "<p><\/p><p><em>We designed our caps to cover long hair in a bun — none of this ponytail-dangling-out-the-back business.  <br\/><br\/>At the back of each scrub cap, you’ll find a special elastic band. The band allows the cap to stretch over a large hair bun, and still tie snuggly against your head. <\/em><\/p><p><em>Our standard scrub caps stretch up to 64cm. This is suitable for medium-length hair in most cases.  <br\/><br\/>We made the XL+ scrub cap for long thick hair. It stretches up to an impressive 73cm! That’s 7XL in hat sizes.<\/em><\/p><p><\/p>"
@@ -587,6 +833,7 @@
           },
           "0b3e6d0f-e5a3-42ff-b24b-97a0e3f13eed": {
             "type": "question",
+            "disabled": true,
             "settings": {
               "title": "What size scrub cap should I get?",
               "text": "<p><\/p><p><em>There are two sizes, standard and XL+. If you’re not sure which one you need, the best option is to measure your head. Here’s how: <\/em><\/p><p><strong>STEP 1: <\/strong><em>Tie your hair in a bun (if necessary.) When you wear our caps, you should position your bun just below the crown of your head. But, for measuring only, we suggest tying your bun lower — roughly in line with your nose. <br\/><br\/><\/em><strong>STEP 2: <\/strong><em>Measure the circumference of your head, including your hair. <\/em><\/p><p><strong>STEP 3:<\/strong><em> Select a size. Standard XS– XL is suitable for up to 62cm. XL+ is suitable for up to 73cm.<\/em><\/p>"
@@ -594,6 +841,7 @@
           },
           "e1255a94-8a8a-46d9-abf4-5c859098f75a": {
             "type": "question",
+            "disabled": true,
             "settings": {
               "title": "How do I put my scrub cap on?",
               "text": "<p><\/p><p><strong>Instructions for short hair:  <br\/><br\/><\/strong><em>1. Position the scrub hat on your head.<\/em><\/p><p><em>2. Pull the sides of the cap down firmly while you fasten the ties at the back.<\/em><\/p><p><\/p><p><strong>Instructions for medium and long hair:  <\/strong><\/p><p><em>1. Tie your hair in a bun just below the crown of your head.<\/em><\/p><p><em>2. Position the scrub hat on your head. Make sure the cap’s elastic band sits underneath your bun. <\/em><\/p><p><em>3. Pull the sides of the cap down firmly while you fasten the ties at the back.<\/em><strong> <\/strong><\/p><p><strong>Having trouble? Here’s a video to help you out. <\/strong><\/p><p><em>[R3a3F2mQUDg]<br\/><\/em><\/p>"
@@ -601,23 +849,45 @@
           },
           "1592318384719": {
             "type": "question",
+            "disabled": true,
             "settings": {
               "title": "My hair will not fit in the scrub cap. What should I do?",
               "text": "<p><\/p><p><em>Before you panic, check you’ve put your bun in the right place.<\/em><\/p><p><em>•     If you can’t pull the cap down fully onto your head, the bun is probably too high.<\/em><\/p><p><em>•     If your hair is poking out the back of the cap, the bun is probably too low. <br\/><\/em><\/p>"
             }
           },
-          "cf758a4b-ce90-48f6-b61c-c69040340c7a": {
+          "question_4BD8wi": {
             "type": "question",
             "settings": {
-              "title": "What are your scrub caps made of?",
-              "text": "<p><\/p><p><em>Our scrub caps are 100% cotton. That’s what makes them so cosy and soft.<\/em><\/p><p><\/p><p><em>Our perfect match scrub caps are made from the same material as our scrubs (20% Rayon, 6% Spandex & 74% Poly)<\/em><\/p>"
+              "title": "Will your Tie Back Scrub Caps cover my long hair?",
+              "text": "<p><\/p><p><em>Our Tie Back Scrub Caps have an elastic back to stretch over hair in a bun. <\/em><\/p><p><em>To test the fit, tie a bun slightly below the crown of your head, then check that your head circumference including the bun is less than 62cm. <\/em><\/p>"
             }
           },
-          "714b219b-8acc-4aec-8832-cf8c3b7a5d97": {
+          "question_GTdeab": {
             "type": "question",
             "settings": {
-              "title": "How do I wash my scrub cap?",
-              "text": "<p><\/p><p><em>Regular machine wash with like colours in temperature no higher than 40C\/104F.<\/em><\/p><p><\/p><p><em>Hang dry only. Most of our caps are 100% cotton, which means they can shrink in the dryer. <\/em><\/p>"
+              "title": "How do I put a Tie Back Scrub Cap on?",
+              "text": "<p><\/p><p><em>1. Tie your hair in a bun just below the crown of your head.<\/em><\/p><p><em>2. Position the scrub cap on your head. Make sure the cap’s elastic band sits underneath your bun. <\/em><\/p><p><em>3. Pull the sides of the cap down firmly while you fasten the ties at the back. <\/em><\/p>"
+            }
+          },
+          "question_tBknFm": {
+            "type": "question",
+            "settings": {
+              "title": "My hair will not fit in the Tie Back Scrub Cap. What should I do?",
+              "text": "<p><\/p><p><em>We offer returns up to 60 days. Before you request a return, it’s a good idea to check you’ve put your bun in the right place.<\/em><\/p><p><em>• If you can’t pull the cap down fully onto your head, the bun might be too high.<\/em><\/p><p><em>• If your hair is poking out the back of the cap, the bun might be too low. <\/em><\/p>"
+            }
+          },
+          "question_myjQHe": {
+            "type": "question",
+            "settings": {
+              "title": "Will your Ponytail Scrub Caps cover my long hair?",
+              "text": "<p><\/p><p><em>Our Ponytail Scrub Caps are designed for long or thick hair. They have two parts: <\/em><\/p><ul><li><em>The hat stretches up to 65 cm in circumference. That’s hat sizes XS -XXXL. <\/em><\/li><li><em>The ponytail pouch stretches up to 40cm in circumference. That is roughly the size of a cantaloupe.<\/em><\/li><\/ul>"
+            }
+          },
+          "question_yfUdtC": {
+            "type": "question",
+            "settings": {
+              "title": "How do I put a Ponytail Scrub Cap on?",
+              "text": "<p><\/p><p><em>1. Tie your hair in a low ponytail or bun.<\/em><\/p><p><em>2. Position the scrub hat on your head.<\/em><\/p><p><em>3. If you’re wearing a bun, stretch the elastic hair pouch over your bun.<\/em><\/p><p><em>4. If you’re wearing a ponytail, coil it into a bun shape and place the pouch over top.<\/em><\/p><p><em>5. Loop the ribbon around the outside of the pouch as close as possible to the base of your skull.<\/em><\/p><p><em>6. Tie to secure.<\/em><\/p>"
             }
           },
           "23e17e99-f60c-4ce8-a0e4-89b6c6cef372": {
@@ -625,6 +895,21 @@
             "settings": {
               "title": "The scrub cap I wanted is out of stock. Will it be back?",
               "text": "<p><br\/><em>We can't give an ETA on restocks. But, we can make sure you're the first to know when one takes place. <\/em><\/p><p><\/p><p><em>Go to the product page and use the EMAIL WHEN AVAILABLE button to request a back in stock email.<\/em><\/p>"
+            }
+          },
+          "714b219b-8acc-4aec-8832-cf8c3b7a5d97": {
+            "type": "question",
+            "settings": {
+              "title": "How do I wash my scrub cap?",
+              "text": "<p><\/p><p><em>Regular machine wash with like colours in temperature no higher than 40°C.<\/em><\/p><p><\/p><p><em>Hang dry only. Most of our caps are 100% cotton, which means they can shrink in the dryer. <\/em><\/p>"
+            }
+          },
+          "question_iAJWcY": {
+            "type": "question",
+            "disabled": true,
+            "settings": {
+              "title": "How do I wash my scrub cap?",
+              "text": "<p><\/p><p><em>Regular machine wash with like colours at a temperature no higher than 40C\/104F. Hang dry only. Most of our caps are 100% cotton, which means they can shrink in the dryer.<\/em><\/p>"
             }
           },
           "eef7f494-ea0c-4ff9-a7a3-c1c684a7d1ce": {
@@ -812,56 +1097,6 @@
               "text": "<p><\/p><p><em>Yes. You can attach the charm to bags or keys. It comes with a ring to help you do this. <\/em><\/p><p><em>Please note that our charms are not jewellery, and you should not wear them in direct contact with the skin.<\/em><\/p>"
             }
           },
-          "9ec8884b-5a2c-4742-b419-9847397bde03": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Scrubs & Underscrubs",
-              "text": "",
-              "align_text": "left"
-            }
-          },
-          "a714c64a-ed7e-4d66-8bef-63233b98c1c7": {
-            "type": "question",
-            "settings": {
-              "title": "Are your scrubs true to size?",
-              "text": "<p>Yes. A vast majority of the people who buy our scrubs are happy with the fit.<br\/><br\/>If you are not sure what size to get, the best option is to compare your measurements to the measurements on our sizing chart. <\/p>"
-            }
-          },
-          "cf8bde58-89b9-4e26-89f4-25c3edf87441": {
-            "type": "question",
-            "settings": {
-              "title": "What size am I?",
-              "text": "<p>Check our sizing chart to find your size.<br\/><br\/><a href=\"\/pages\/womens-sizes\" title=\"Women's Sizing Chart\">Women <\/a><br\/><a href=\"\/pages\/mens-sizing-chart\" title=\"Men's Sizing Chart\">Men<\/a><\/p>"
-            }
-          },
-          "4cb7f558-23c5-48d6-83f7-8262979cde12": {
-            "type": "question",
-            "settings": {
-              "title": "Do you have petite and tall sizes?",
-              "text": "<p>Yes. Our core colors come in regular, petite & tall.  Depending on expected demand, limited edition releases may not include tall & petite options. <\/p>"
-            }
-          },
-          "d50d5644-778b-423a-a0ce-3c59cb26c3a6": {
-            "type": "question",
-            "settings": {
-              "title": "How do I care for my Dr. Woof Scrubs?",
-              "text": "<p><strong>Scrubs: <\/strong>Cold machine wash inside-out. Tumble dry low. <br\/><br\/><strong>Underscrubs: <\/strong>Cold machine wash inside-out. Tumble dry low. <\/p>"
-            }
-          },
-          "e2cc1e81-72f2-43c1-97bc-6f3e6ed3d1a2": {
-            "type": "question",
-            "settings": {
-              "title": "Will you be offering more sizes & colours soon?",
-              "text": "<p>Yes. Our range is always expanding. <br\/><br\/>Join our mailing list (signup link below) for announcements.<\/p>"
-            }
-          },
-          "e5d089ed-0ae2-4663-aa82-ac85bf33f9d6": {
-            "type": "question",
-            "settings": {
-              "title": "Any plans for larger sizes?",
-              "text": "<p>Yes! We have added 3XL in late 2023, and we will continue to expand the range moving forward.<\/p>"
-            }
-          },
           "bbdb54fc-083b-4ab9-94e4-7919bafc50ab": {
             "type": "rich-text",
             "settings": {
@@ -905,63 +1140,6 @@
               "text": "<p>Our vests are sized to match our scrub-tops and underscrubs. So if you know your Dr. Woof top size... you're away laughing. <br\/><br\/>If you are not sure of your top size, you can check our size guide:<br\/><br\/><a href=\"\/pages\/mens-sizing-chart\" title=\"Men's Sizing Chart\">Men's<\/a><br\/><a href=\"\/pages\/womens-sizes\" title=\"Women's Sizing Chart\">Women's<\/a><\/p>"
             }
           },
-          "11771d68-287c-4940-806f-ea3e01dc15d4": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Custom Embroidery",
-              "text": "",
-              "align_text": "left"
-            }
-          },
-          "d0db33c4-12c3-409a-82ab-4e056ac4f019": {
-            "type": "question",
-            "settings": {
-              "title": "Do you offer embroidery?",
-              "text": "<p><\/p><p><em>Yes. We can add embroidery to all of our clothing for you. <br\/><br\/>Our service is fully customisable. We have a huge range of colours, fonts and designs available. We can even embroider clinic logos and personal artwork.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us to get a quote<\/em><\/a><br\/><\/p>"
-            }
-          },
-          "0b093925-b277-4967-9c80-249fc59a65ac": {
-            "type": "question",
-            "settings": {
-              "title": "How do I add embroidery to my order?",
-              "text": "<p><\/p><p><em>Embroidery cannot be ordered online.<br\/><br\/>To allow full customisation, our team will talk with you to organise your order.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to get started.<\/em><\/a><br\/><\/p>"
-            }
-          },
-          "2643f52d-0859-4e24-b1dd-b781a3907181": {
-            "type": "question",
-            "settings": {
-              "title": "How long does embroidery take?",
-              "text": "<p><\/p><p>It depends on what you’d like embroidered. Please allow 2–3 extra weeks for embroidered items to arrive. <\/p>"
-            }
-          },
-          "283491d9-3248-4717-83b4-59caefd5420a": {
-            "type": "question",
-            "settings": {
-              "title": "What embroidery colours, fonts and font-sizes can I choose from?",
-              "text": "<p><\/p><p><em>Our service is fully customisable.<br\/><br\/>Unlike other scrubs embroidery services, you are not limited to two or three options. You can select the<br\/>design that is right for you.  <br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to organise your order.<\/em><br\/><\/a><\/p>"
-            }
-          },
-          "32335cb5-2dbb-443e-bd16-75b2c964313f": {
-            "type": "question",
-            "settings": {
-              "title": "Do you embroider logos and artwork?",
-              "text": "<p><br\/><em>Yes! Show us your design and we’ll make sure it is <\/em>embodiable<em>. If it is, we’ll organize a quote. <br\/><br\/>Please note: for logos and artwork, there will be a fee to set up the embroidery plate. This fee will only apply once, no matter how many garments you decide to get your design added to. <br\/><\/em><br\/><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to discuss your design. <\/em><\/a><br\/><br\/><br\/><\/p>"
-            }
-          },
-          "324c5308-9e4f-4841-8977-941b192e3039": {
-            "type": "question",
-            "settings": {
-              "title": "Can I add embroidery to a team or bulk order?",
-              "text": "<p><br\/>Yes! Talk to the Dr. Woof  team member who is looking after your order. They’ll confirm prices for you. <br\/><br\/><\/p>"
-            }
-          },
-          "f2ec7535-cd31-4c17-baac-bd3b551a76aa": {
-            "type": "question",
-            "settings": {
-              "title": "Where on my scrubs can I place embroidery?",
-              "text": "<p><\/p><p><em>Tell us where you want it! Our service is fully customisable. You are not limited to left or right chest.<br\/><br\/><\/em><a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><em>Contact us today to organise your order.<\/em><\/a><br\/><\/p>"
-            }
-          },
           "1598406390920": {
             "type": "rich-text",
             "settings": {
@@ -974,7 +1152,7 @@
             "type": "question",
             "settings": {
               "title": "Why is there no free shipping option?",
-              "text": "<p><\/p><p><em>We offer free shipping Australia wide on all orders over $100 AUD.  International orders will incur a shipping cost. <br\/><br\/>US residents can get free shipping on orders over $60USD by shopping in our <\/em><a href=\"https:\/\/www.drwoofapparel.com\/\" title=\"https:\/\/www.drwoofapparel.com\/\"><em>US store. <\/em><\/a><\/p><p><\/p><p><em>If you are ordring for delivery in Australia and have spent over $80 AUD:<\/em><\/p><p><em>1.     Check you’re looking at the order value in AUD.<\/em><\/p><p><em>2.     Check you’ve used the correct country in your address.<\/em><\/p><p><em>3.    <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em> Contact us<\/em><\/a><\/p>"
+              "text": "<p><\/p><p><em>We offer free shipping Australia wide on all orders over $150 AUD.  International orders will incur a shipping cost. <br\/><br\/>US residents can get free shipping on orders over $60USD by shopping in our <\/em><a href=\"https:\/\/www.drwoofapparel.com.au\/\" title=\"https:\/\/www.drwoofapparel.com.au\/\"><em>US store<\/em><\/a><em>. <\/em><\/p><p><\/p><p><em>If you are ordring for delivery in Australia and have spent over $80 AUD:<\/em><\/p><p><em>1.     Check you’re looking at the order value in AUD.<\/em><\/p><p><em>2.     Check you’ve used the correct country in your address.<\/em><\/p><p><em>3.    <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em> Contact us<\/em><\/a><\/p>"
             }
           },
           "464884f8-248c-45d6-aa2d-f3b0c2d5f0fb": {
@@ -1027,35 +1205,6 @@
               "text": "<p><\/p><p><em>Check out our <\/em><a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\"><em>privacy policy.<\/em><\/a><\/p>"
             }
           },
-          "f1d6e7e5-2ffb-4343-b292-194eebb48af9": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Bulk & Wholesale",
-              "text": "",
-              "align_text": "left"
-            }
-          },
-          "ad5e54b3-bd3a-493a-9e88-22e451857e9c": {
-            "type": "question",
-            "settings": {
-              "title": "Do you offer a bulk discount?",
-              "text": "<p><\/p><p><em>Yes. Visit our<\/em><a href=\"\/pages\/corporate-gifts-for-medical-workers\" title=\"Corporate Gifting\"><em> <\/em>corporate gifting<\/a> and <a href=\"\/pages\/teams\" title=\"Teams\">team order<\/a> page for more details. <em> <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Or, contact our team. <\/em><\/a><\/p>"
-            }
-          },
-          "1fc52681-a885-49bb-bed1-5fec246ce4e4": {
-            "type": "question",
-            "settings": {
-              "title": "Do you sell wholesale?",
-              "text": "<p><\/p><p><em>Yes, but we’ll need to have a chat first. <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Contact us to organise a time.<\/em><\/a><\/p>"
-            }
-          },
-          "7c17a26f-fc26-4c5b-a297-c09b5d09a63f": {
-            "type": "question",
-            "settings": {
-              "title": "Can you do custom designs and embroidery?",
-              "text": "<p><\/p><p><em>Yes. Visit our<\/em><a href=\"\/pages\/corporate-gifts-for-medical-workers\" title=\"Corporate Gifting\"><em> <\/em>corporate gifting<\/a> and <a href=\"\/pages\/teams\" title=\"Teams\">team order<\/a> page for more details. <em> <\/em><a href=\"\/pages\/contact\" title=\"Contact\"><em>Or, contact our team. <\/em><\/a><\/p>"
-            }
-          },
           "27d8d5ed-b3c4-4637-8e3f-e99c9d9952bd": {
             "type": "rich-text",
             "settings": {
@@ -1084,35 +1233,57 @@
               "title": "Why do doctors, nurses, and healthcare workers wear Dr. Woof scrubs?",
               "text": "<p><\/p><p><em>Because they’re comfy and they make you smile.<br\/><br\/>Sorry. This one’s not a joke — it’s more of a fun fact.<\/em><\/p>"
             }
-          },
-          "1599910131636": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Influencers and Ambassadors",
-              "text": "",
-              "align_text": "left"
-            }
-          },
-          "1599910169893": {
-            "type": "question",
-            "settings": {
-              "title": "Are you looking for ambassadors?",
-              "text": "<p><\/p><p><em>Yes we are always looking to work closely with healthcare influencers across all disciplines! Doctors, Nurses, Dentists, Veterinarians, and more! <\/em><a href=\"\/pages\/join-the-family\" title=\"Join the Family\"><em>Click this link to learn more.<\/em><\/a><\/p>"
-            }
           }
         },
         "block_order": [
+          "9ec8884b-5a2c-4742-b419-9847397bde03",
+          "a714c64a-ed7e-4d66-8bef-63233b98c1c7",
+          "cf8bde58-89b9-4e26-89f4-25c3edf87441",
+          "4cb7f558-23c5-48d6-83f7-8262979cde12",
+          "d50d5644-778b-423a-a0ce-3c59cb26c3a6",
+          "e2cc1e81-72f2-43c1-97bc-6f3e6ed3d1a2",
+          "e5d089ed-0ae2-4663-aa82-ac85bf33f9d6",
+          "11771d68-287c-4940-806f-ea3e01dc15d4",
+          "d0db33c4-12c3-409a-82ab-4e056ac4f019",
+          "0b093925-b277-4967-9c80-249fc59a65ac",
+          "2643f52d-0859-4e24-b1dd-b781a3907181",
+          "283491d9-3248-4717-83b4-59caefd5420a",
+          "32335cb5-2dbb-443e-bd16-75b2c964313f",
+          "324c5308-9e4f-4841-8977-941b192e3039",
+          "f2ec7535-cd31-4c17-baac-bd3b551a76aa",
+          "f1d6e7e5-2ffb-4343-b292-194eebb48af9",
+          "ad5e54b3-bd3a-493a-9e88-22e451857e9c",
+          "1fc52681-a885-49bb-bed1-5fec246ce4e4",
+          "7c17a26f-fc26-4c5b-a297-c09b5d09a63f",
+          "1599910131636",
+          "1599910169893",
           "e57ac8ce-40d5-4a7b-ab12-a6a6b7df19fb",
+          "rich_text_wcD9nU",
+          "question_J8DqUR",
+          "question_BeNhxD",
+          "question_NGUFHm",
+          "question_WpGKKU",
+          "question_frKyMh",
+          "question_633HYw",
+          "question_bKkJgQ",
+          "question_FpP83D",
           "1592318221161",
           "1592318251599",
+          "question_AknWjQ",
+          "cf758a4b-ce90-48f6-b61c-c69040340c7a",
           "1598510192326",
           "1592318400076",
           "0b3e6d0f-e5a3-42ff-b24b-97a0e3f13eed",
           "e1255a94-8a8a-46d9-abf4-5c859098f75a",
           "1592318384719",
-          "cf758a4b-ce90-48f6-b61c-c69040340c7a",
-          "714b219b-8acc-4aec-8832-cf8c3b7a5d97",
+          "question_4BD8wi",
+          "question_GTdeab",
+          "question_tBknFm",
+          "question_myjQHe",
+          "question_yfUdtC",
           "23e17e99-f60c-4ce8-a0e4-89b6c6cef372",
+          "714b219b-8acc-4aec-8832-cf8c3b7a5d97",
+          "question_iAJWcY",
           "eef7f494-ea0c-4ff9-a7a3-c1c684a7d1ce",
           "a6293739-ea27-49a3-8e4b-eb7d71bf370a",
           "765dadfa-6d6f-4762-9553-ea59687a0227",
@@ -1139,27 +1310,12 @@
           "1586a7f2-44c8-4d85-9cfe-e4ccf8ee2475",
           "3bfc0eed-92bf-4850-81dc-48756800a0a9",
           "ceb1061c-97c7-47f5-bf11-3ea7589b8673",
-          "9ec8884b-5a2c-4742-b419-9847397bde03",
-          "a714c64a-ed7e-4d66-8bef-63233b98c1c7",
-          "cf8bde58-89b9-4e26-89f4-25c3edf87441",
-          "4cb7f558-23c5-48d6-83f7-8262979cde12",
-          "d50d5644-778b-423a-a0ce-3c59cb26c3a6",
-          "e2cc1e81-72f2-43c1-97bc-6f3e6ed3d1a2",
-          "e5d089ed-0ae2-4663-aa82-ac85bf33f9d6",
           "bbdb54fc-083b-4ab9-94e4-7919bafc50ab",
           "af8ce0dc-8416-4624-87ea-72fe7a23ed82",
           "1bbefdbc-7ccb-41eb-bb54-9861122fd651",
           "169a857c-c7a4-4736-a920-d6e26ffb5d6d",
           "c5eee33a-3ae6-4ec4-b945-5b4694f62343",
           "9bc42c22-be9f-49f4-8447-88a03af8dad6",
-          "11771d68-287c-4940-806f-ea3e01dc15d4",
-          "d0db33c4-12c3-409a-82ab-4e056ac4f019",
-          "0b093925-b277-4967-9c80-249fc59a65ac",
-          "2643f52d-0859-4e24-b1dd-b781a3907181",
-          "283491d9-3248-4717-83b4-59caefd5420a",
-          "32335cb5-2dbb-443e-bd16-75b2c964313f",
-          "324c5308-9e4f-4841-8977-941b192e3039",
-          "f2ec7535-cd31-4c17-baac-bd3b551a76aa",
           "1598406390920",
           "1597739242482",
           "464884f8-248c-45d6-aa2d-f3b0c2d5f0fb",
@@ -1169,16 +1325,10 @@
           "338eddf1-15eb-43ae-a6cc-9b1707df9ebe",
           "761166b7-5fcc-4fb4-b8c6-d58f740e4a81",
           "67d37a9d-31d1-4a4a-8ceb-95f28b201eac",
-          "f1d6e7e5-2ffb-4343-b292-194eebb48af9",
-          "ad5e54b3-bd3a-493a-9e88-22e451857e9c",
-          "1fc52681-a885-49bb-bed1-5fec246ce4e4",
-          "7c17a26f-fc26-4c5b-a297-c09b5d09a63f",
           "27d8d5ed-b3c4-4637-8e3f-e99c9d9952bd",
           "35eed3b2-24fc-4783-aa73-1fde00389126",
           "42cb942b-1d28-402e-abfe-30d250bc8fc9",
-          "98014a0a-6c6c-4adc-b8a1-3dc30a2c95b3",
-          "1599910131636",
-          "1599910169893"
+          "98014a0a-6c6c-4adc-b8a1-3dc30a2c95b3"
         ],
         "settings": {
           "page_title_enable": true,
@@ -1229,14 +1379,14 @@
           "inventory_transfers_enable": false,
           "quantity_enable": false,
           "social_enable": false,
-          "img1": "shopify:\/\/shop_images\/Untitled_design_2_a0e5c991-5d95-460f-9590-276a5fd6565b.png",
-          "txt": "Free shipping over $100 🇦🇺",
-          "txt_": "STANDARD SHIPPING FROM $11.90",
+          "img1": "shopify:\/\/shop_images\/4_2c9aee3f-aec7-4015-a798-7c27f3a591f0.png",
+          "txt": "93% satisfaction rate from 40,000+ customers",
+          "txt_": "Free & Fast shipping over $150",
           "color_link": "#e0ede9",
-          "img2": "shopify:\/\/shop_images\/Untitled_design_3.png",
-          "txt1": "Ships from Sydney, AU",
+          "img2": "shopify:\/\/shop_images\/Untitled_design_2_4043dd2d-b061-4ce9-a771-22be6e7d9d6e.png",
+          "txt1": "Dispatch from Melbourne within 24 hours",
           "img3": "shopify:\/\/shop_images\/Untitled_design_1_e7f5d94c-adf4-4443-94a9-c44a5ce3bf0c.png",
-          "txt2": "60-day hassle-free returns",
+          "txt2": "60-day hassle-free return & exchange",
           "txt3": "\"I love the scrub cap so much! It's so cute and so well made!\" — Nadine M.",
           "txt4": "\"So Comfortable - I’ve ordered more\" — Tess E.",
           "txt5": "\"Excellent quality. Excellent fabric. Creating an excellent fit\" — Mike P.",
@@ -1416,102 +1566,192 @@
       "header": {
         "type": "header",
         "blocks": {
-          "da5f4408-3fa8-4cba-8ced-b441b3c19635": {
-            "type": "text",
-            "settings": {
-              "col-title": "Black Friday Deals",
-              "col-img": "shopify:\/\/shop_images\/HERO_BANNER_-_MOBILE_1250_x_1250px_4.jpg",
-              "col-link": "https:\/\/www.drwoofapparel.com.au\/collections\/deals"
-            }
-          },
-          "91afc41c-1bbc-4615-b43b-74c9fbe264e9": {
+          "text_fnTN6t": {
             "type": "text",
             "disabled": true,
             "settings": {
-              "col-title": "Clearance Sale",
-              "col-img": "shopify:\/\/shop_images\/Copy_of_DW_Clearance_2023_Email_1_Launch_900_x_900px.jpg",
-              "col-link": "shopify:\/\/collections\/sale"
+              "col-title": "New Collection: Printed Scrub Tops",
+              "col-img": "shopify:\/\/shop_images\/6_c723a05a-f056-43bd-96dd-23386bea26aa.jpg",
+              "col-link": "shopify:\/\/collections\/printed-pattern-scrub-tops"
             }
           },
-          "1a48923f-b0f0-4c4f-a897-f6a06bf54d1a": {
+          "text_MXAXQA": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Women's Scrubs",
               "col-img": "shopify:\/\/shop_images\/12312323_3b1a8f63-f2af-40c6-b134-4dc331a66484.jpg",
               "col-link": "shopify:\/\/collections\/women"
             }
           },
-          "9afe1662-c572-48c6-b963-3a92ef5a02a4": {
+          "text_ek8HzF": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Women's Joggers",
               "col-img": "shopify:\/\/shop_images\/11111_0352458a-54e0-4a5b-9584-cf6e45f016d3.jpg",
               "col-link": "https:\/\/www.drwoofapparel.com.au\/collections\/women\/jogger-scrub-pants"
             }
           },
-          "efe91a0e-d1f1-4252-adf7-044dee90a5cb": {
+          "text_jXNB64": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Planet Friendly Scrubs",
               "col-img": "shopify:\/\/shop_images\/5_83b593af-040d-4f35-b853-080c42a41ebe.jpg",
               "col-link": "shopify:\/\/collections\/planet-friendly-scrub-uniforms"
             }
           },
-          "cffba3f9-ebcd-4f0d-bc1d-131af0b06f1e": {
+          "text_tnn7gT": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Men's Scrubs",
               "col-img": "shopify:\/\/shop_images\/M_Navy_Top_1_DRWoof_AprilShoot_Product_xx14983_1ba9bc6d-22bc-4085-bfb1-f6b7d1b87fca.jpg",
               "col-link": "shopify:\/\/collections\/men"
             }
           },
-          "035e065f-c3e6-4d13-a066-6b13f65abe29": {
+          "text_E8ACRJ": {
             "type": "text",
+            "disabled": true,
             "settings": {
-              "col-title": "Christmas Collection",
-              "col-img": "shopify:\/\/shop_images\/christmas1.webp",
-              "col-link": "shopify:\/\/collections\/chistmas-scrubs"
+              "col-title": "Compression Socks",
+              "col-img": "shopify:\/\/shop_images\/7_9a89071a-b14c-4327-98a0-dad6cc279cb7.jpg",
+              "col-link": "shopify:\/\/collections\/compression-socks"
             }
           },
-          "b1789bcc-79b4-4d1c-9bd5-114c81459a65": {
+          "text_LWztGL": {
             "type": "text",
+            "disabled": true,
+            "settings": {
+              "col-title": "Limited edition: Easter Printed Scrub Tops",
+              "col-img": "shopify:\/\/shop_images\/12345.jpg",
+              "col-link": "shopify:\/\/collections\/easter-scrubs"
+            }
+          },
+          "text_cXA9Fa": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "col-title": "Aussie Natives Collection",
+              "col-img": "shopify:\/\/shop_images\/MOBILE_NEW_BANNER_THUMBNAIL_2.jpg",
+              "col-link": "shopify:\/\/collections\/aussie-natives-scrubs"
+            }
+          },
+          "text_XUL7qw": {
+            "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Woof X ATHLETIKAN Sneakers",
               "col-img": "shopify:\/\/shop_images\/1_bf09a7e6-2216-48d6-9c4f-41d8a1f9cd06.jpg",
               "col-link": "shopify:\/\/collections\/woof-x-athletikan-sneakers"
             }
           },
-          "5f2362f0-ba68-4654-a58f-327deca2f81e": {
+          "text_CiBCHx": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Scrub Caps",
               "col-img": "shopify:\/\/shop_images\/075_Sausage_Dogs_Front_Female_63bd2646-b3dd-4764-ab64-c82c4a408334.jpg",
               "col-link": "https:\/\/www.drwoofapparel.com.au\/collections\/scrub-caps?sort_by=created-descending"
             }
           },
-          "c29d9b38-926e-465f-90f9-4d1ab6199d3e": {
+          "text_7CEgbB": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "col-title": "Outerwear",
               "col-img": "shopify:\/\/shop_images\/Outerwear.jpg",
               "col-link": "shopify:\/\/collections\/layers"
             }
           },
-          "e1c58a56-0a4c-446b-afbc-024ac9ef5647": {
-            "type": "text",
-            "settings": {
-              "col-title": "Underscrubs",
-              "col-img": "shopify:\/\/shop_images\/Underscrubs.jpg",
-              "col-link": "shopify:\/\/collections\/underscrubs-1"
-            }
-          },
-          "850912b4-8819-422c-ab4f-24c21aa8ac50": {
+          "text_BDAr7L": {
             "type": "text",
             "disabled": true,
             "settings": {
-              "col-title": "DEALS",
-              "col-img": "shopify:\/\/shop_images\/Untitleddesign.jpg",
-              "col-link": "shopify:\/\/collections\/christmas-collection"
+              "col-title": "Underscrubs",
+              "col-img": "shopify:\/\/shop_images\/Underscrubs.jpg",
+              "col-link": "shopify:\/\/collections\/underscrubs"
+            }
+          },
+          "image_wdnKjb": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Women",
+              "menu-icon": "fa-globe",
+              "menu-link": "",
+              "dropdown-link": "women-new-navigation",
+              "gender": "women"
+            }
+          },
+          "image_KrNtPK": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Men",
+              "menu-icon": "fa-globe",
+              "menu-link": "",
+              "dropdown-link": "men-scrubs-new-navigation",
+              "gender": "men"
+            }
+          },
+          "image_cjQHtQ": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Printed Scrub Tops",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/printed-pattern-scrub-tops",
+              "dropdown-link": "",
+              "gender": "women"
+            }
+          },
+          "image_tmEAiU": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Compression Socks",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/compression-socks",
+              "dropdown-link": "",
+              "gender": "unisex"
+            }
+          },
+          "image_ifLtkX": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Scrub Caps",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/scrub-caps",
+              "dropdown-link": "",
+              "gender": "unisex"
+            }
+          },
+          "image_mbTewM": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Underscrubs",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/underscrubs",
+              "dropdown-link": "",
+              "gender": "unisex"
+            }
+          },
+          "image_gemYpT": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Sneakers",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/woof-x-athletikan-sneakers",
+              "dropdown-link": "",
+              "gender": "women"
+            }
+          },
+          "image_jrhixL": {
+            "type": "image",
+            "settings": {
+              "menu-title": "Outerwear",
+              "menu-icon": "fa-globe",
+              "menu-link": "shopify:\/\/collections\/layers",
+              "dropdown-link": "",
+              "gender": "unisex"
             }
           },
           "0a675e89-9002-41f6-b366-77c2123288f5": {
@@ -1521,38 +1761,19 @@
               "menu-icon": "fa-life-ring",
               "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design.png",
               "menu-link": "",
-              "dropdown-link": "accessories"
-            }
-          },
-          "a3c1de83-5f15-4690-8c83-11c2eccdc287": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Deals",
-              "menu-icon": "fa-heart-o",
-              "menu-icon-image": "shopify:\/\/shop_images\/kisspng-white-symmetry-black-angle-pattern-white-heart-cliparts-5aa24b82089491.0213318615205856020352.png",
-              "menu-link": "shopify:\/\/collections\/deals",
-              "dropdown-link": ""
+              "dropdown-link": "accessories",
+              "gender": "women"
             }
           },
           "3ae4986a-dac3-499a-a44e-42c29aa9a327": {
             "type": "image",
             "settings": {
-              "menu-title": "Shop By Color",
+              "menu-title": "Shop By Colour",
               "menu-icon": "fa-globe",
               "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_11.png",
               "menu-link": "",
-              "dropdown-link": "slider-menu-colors"
-            }
-          },
-          "8929eb57-f13a-4c16-844b-27e12d0ae3f2": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "menu-title": "Students\/Clinics",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_12.png",
-              "menu-link": "https:\/\/www.drwoofapparel.com.au\/pages\/teams",
-              "dropdown-link": ""
+              "dropdown-link": "slider-menu-colors",
+              "gender": "unisex"
             }
           },
           "b8ef33f0-337a-4480-8253-6066bc7401f8": {
@@ -1562,18 +1783,8 @@
               "menu-icon": "fa-globe",
               "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_13.png",
               "menu-link": "https:\/\/www.drwoofapparel.com.au\/pages\/teams",
-              "dropdown-link": ""
-            }
-          },
-          "d15dc05f-4289-4abe-8fb4-5af0858ef4c9": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "menu-title": "ROUNDS",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/Yellow_1500_x_1500_Transparent_Background_PNG.png",
-              "menu-link": "shopify:\/\/pages\/rounds",
-              "dropdown-link": ""
+              "dropdown-link": "",
+              "gender": "unisex"
             }
           },
           "76d2c610-13de-45e3-b85f-e49a371b2cfb": {
@@ -1583,47 +1794,58 @@
               "menu-icon": "fa-globe",
               "menu-icon-image": "shopify:\/\/shop_images\/white_logo_transparent_background_no_words_e5be0237-220e-4803-b4fa-f45b168f9199.png",
               "menu-link": "",
-              "dropdown-link": "slider-menu-who-are-we"
+              "dropdown-link": "slider-menu-who-are-we",
+              "gender": "unisex"
             }
           }
         },
         "block_order": [
-          "da5f4408-3fa8-4cba-8ced-b441b3c19635",
-          "91afc41c-1bbc-4615-b43b-74c9fbe264e9",
-          "1a48923f-b0f0-4c4f-a897-f6a06bf54d1a",
-          "9afe1662-c572-48c6-b963-3a92ef5a02a4",
-          "efe91a0e-d1f1-4252-adf7-044dee90a5cb",
-          "cffba3f9-ebcd-4f0d-bc1d-131af0b06f1e",
-          "035e065f-c3e6-4d13-a066-6b13f65abe29",
-          "b1789bcc-79b4-4d1c-9bd5-114c81459a65",
-          "5f2362f0-ba68-4654-a58f-327deca2f81e",
-          "c29d9b38-926e-465f-90f9-4d1ab6199d3e",
-          "e1c58a56-0a4c-446b-afbc-024ac9ef5647",
-          "850912b4-8819-422c-ab4f-24c21aa8ac50",
+          "text_fnTN6t",
+          "text_MXAXQA",
+          "text_ek8HzF",
+          "text_jXNB64",
+          "text_tnn7gT",
+          "text_E8ACRJ",
+          "text_LWztGL",
+          "text_cXA9Fa",
+          "text_XUL7qw",
+          "text_CiBCHx",
+          "text_7CEgbB",
+          "text_BDAr7L",
+          "image_wdnKjb",
+          "image_KrNtPK",
+          "image_cjQHtQ",
+          "image_tmEAiU",
+          "image_ifLtkX",
+          "image_mbTewM",
+          "image_gemYpT",
+          "image_jrhixL",
           "0a675e89-9002-41f6-b366-77c2123288f5",
-          "a3c1de83-5f15-4690-8c83-11c2eccdc287",
           "3ae4986a-dac3-499a-a44e-42c29aa9a327",
-          "8929eb57-f13a-4c16-844b-27e12d0ae3f2",
           "b8ef33f0-337a-4480-8253-6066bc7401f8",
-          "d15dc05f-4289-4abe-8fb4-5af0858ef4c9",
           "76d2c610-13de-45e3-b85f-e49a371b2cfb"
         ],
         "settings": {
           "header_style": "bar",
+          "megmenu": true,
           "main_menu_alignment": "right",
           "sticky_index": false,
           "sticky_collection": false,
           "header_search_enable": true,
-          "logo": "shopify:\/\/shop_images\/Untitled-2_8e4e0372-7496-4014-bef7-2f26f5748b39.jpg",
+          "logo": "shopify:\/\/shop_images\/Horizontal_logo_transparent_background_blue_2_7dc8a8de-20c6-4155-8747-0810a5b4b5e0.png",
           "logo-inverted": "shopify:\/\/shop_images\/Horizontal_white_logo_transparent_background_200x_0eb46344-9199-4be0-a3fc-5c338323a068.png",
-          "desktop_logo_width": 200,
-          "mobile_logo_width": 150,
+          "desktop_logo_width": 210,
+          "mobile_logo_width": 160,
           "logo_hide_mobile": true,
           "main_menu_link_list": "new-homepage-menu",
           "show_announcement": true,
           "show_announcement_home_only": false,
-          "announcement_text": "Buy 3 Sets Get 1 Set Free",
-          "announcement_link": "shopify:\/\/products\/wardrobe-deal"
+          "announcement_text": "60-day hassle-free return & exchange",
+          "announcement_link": "https:\/\/www.drwoofapparel.com.au\/collections\/women",
+          "right_image_1": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_2_1e881814-91de-4320-b995-af6d3d590c35.png",
+          "right_link_1": "https:\/\/www.drwoofapparel.com.au\/collections\/compression-socks",
+          "right_image_2": "shopify:\/\/shop_images\/PDP_Discount_Banner_-_Desktop_5.png",
+          "right_link_2": "shopify:\/\/collections\/pistachio-green-scrubs"
         }
       },
       "product-recommendations": {
@@ -1860,7 +2082,7 @@
               "title": "Dr Dave BSc BVSc (Hons)",
               "text": "<p>Small Animal Veterinary Generalist (in every sense of the word), Car guy, Tech nerd, Semi-professional Redditor, Serial Dog Patter<\/p>",
               "button_label": "SEE MY FAVOURITE DR WOOF DESIGN",
-              "button_link": "shopify:\/\/products\/fairy-floss-surgical-scrub-cap",
+              "button_link": "",
               "button_style": "primary",
               "layout": "right",
               "alt": false
@@ -2031,7 +2253,7 @@
               "title": "The powerhouse of our scrub cap collection",
               "text": "<p>Meet Sumana Mahata, BS. She’s an artist, future doctor and creator of the coolest science prints you’ll ever see. Her work includes a mask worn by Dr. Fauci, and this super cute mitochondria scrub cap design.<\/p>",
               "button_label": "Meet Sumana",
-              "button_link": "shopify:\/\/products\/mitochondria-surgical-scrub-cap",
+              "button_link": "",
               "image": "shopify:\/\/shop_images\/download_11.png",
               "desktop_size": 0,
               "image_alignment": "center center",
@@ -2046,7 +2268,7 @@
               "title": "Talk about WOOF",
               "text": "<p>When we asked vet and artist Dr. Leatrize to design a cap for #OperationWoof's Made by Medical collection, she really took the Woof part to heart.<\/p>",
               "button_label": "Meet Dr. Leatrize",
-              "button_link": "shopify:\/\/products\/dogs-dogs-dogs-surgical-scrub-cap",
+              "button_link": "https:\/\/www.instagram.com\/leatrize.vet.notes\/",
               "image": "shopify:\/\/shop_images\/Names_Brainstorm_3.png",
               "desktop_size": 0,
               "image_alignment": "center center",
@@ -2061,7 +2283,7 @@
               "title": "Step Back in Time with Dr. Emma Cheng",
               "text": "<p>Meet Vintage Medical — the newest cap in our <em>The Med Life <\/em>collection designed by doctor and artist Dr. Emma Cheng.<\/p>",
               "button_label": "DISCOVER VINTAGE MEDICAL",
-              "button_link": "shopify:\/\/products\/vintage-anatomical-art-surgical-scrub-cap",
+              "button_link": "",
               "image": "shopify:\/\/shop_images\/Names_Brainstorm_2.png",
               "desktop_size": 0,
               "image_alignment": "center center",
@@ -2606,7 +2828,7 @@
             "type": "image-hero",
             "settings": {
               "title": "Corporate Gifts for Medical Workers",
-              "color_title": "#FFFFFF",
+              "color_title": "#ffffff",
               "title_size": 72,
               "subheading": "Stand out from the crowd with branded gifts that healthcare workers actually want",
               "link": "https:\/\/www.drwoofapparel.com.au\/pages\/corporate-gifts-for-medical-workers#contact",
@@ -2974,11 +3196,41 @@
               "code": "<a name=\"contact\"><\/a>"
             }
           },
+          "d109cf5f-2fb5-47ce-818c-117342d8c872": {
+            "type": "custom-html",
+            "settings": {
+              "full_width": false,
+              "space_around": true,
+              "alt": false,
+              "code": "<style>\n\t.acc-heading {\n\t\tmargin: 10px 0 !important;\n\t\tpadding: 15px 0;\n\t\tborder-top: 1px solid;\n\t\tborder-bottom: 1px solid;\n\t\tposition: relative;\n\t\tcursor: pointer;\n\t}\n\t.acc-heading::after {\n\t\tposition: absolute;\n\t\tcontent: '+';\n\t\tright: 15px;\n\t\ttop: 45%;\n\t\ttransform: translateY(-50%);\n\t\tfont-size: 25px;\n\t}\n\t.acc-heading.active-acc-heading::after {\n\t\tcontent: '-';\n\t}\n<\/style>\n<h2><strong>Ready to Place a Team Order?<\/strong><\/h2>\n<p>Getting your team geared up with Dr. Woof is a breeze! Connect with our fantastic team order support, by simply drop your contact details in the form below, and we'll be right there to help you select the trendiest scrubs, the perfect sizes, and just the right quantities to keep your team looking awesome.<\/p>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>Team Orders = Savings! 💰<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>Guess what? Our team orders come with some seriously cool perks! Discounts and exclusive pricing from our catalogue await. The more you order, the more you save. Contact our team order support crew to get in on all the fantastic deals!<\/p>\n<\/div>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>Customise Like a Pro! 🎨<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>Want your team to stand out? You got it! You can promote your brand and project professionalism by add your team’s logo or each team member names, or any other personalized touches to create scrubs that are as unique as your squad.<\/p>\n<\/div>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>Yes! We do Embroidery<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>Elevate your style and brand with our expertly crafted embroidered designs. Whether it's custom logos, intricate patterns, or personalized text, our embroidery service adds a touch of sophistication to your apparel.<\/p>  \n<\/div>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>No Order Too Small or Too Big! 📦<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>Whether you're stocking up for a small crew or a big team, we've got you covered. The minimum order quantity? We'll figure that out together based on your preferences. No hoops to jump through—just easy ordering!<\/p>\n  <\/div>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>Sizing, Sorted! 👕<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>When it comes to sizing, we've got sizes to suit everyone. Work with our designers to outfit your team in something comfortable, functional and stylish.<\/p>\n  <\/div>\n\n<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\"><strong>Reordering Made Simple! 🔄<\/strong><\/h4>\n<div class=\"acc-panel\" style=\"display: none;\">\n  <p>Good news! If you ever need to restock your team's scrubs, it's a breeze. We keep all your team's order info tucked away, so you can easily reorder and keep that pro look going strong.<\/p>\n  <\/div>"
+            }
+          },
+          "custom_html_H6JJj9": {
+            "type": "custom-html",
+            "settings": {
+              "full_width": false,
+              "space_around": true,
+              "alt": false,
+              "code": "<style>\n\t.acc-heading {\n\t\tmargin: 10px 0 !important;\n\t\tpadding: 15px 0;\n\t\tborder-top: 1px solid;\n\t\tborder-bottom: 1px solid;\n\t\tposition: relative;\n\t\tcursor: pointer;\n\t}\n\t.acc-heading::after {\n\t\tposition: absolute;\n\t\tcontent: '+';\n\t\tright: 15px;\n\t\ttop: 45%;\n\t\ttransform: translateY(-50%);\n\t\tfont-size: 25px;\n\t}\n\t.acc-heading.active-acc-heading::after {\n\t\tcontent: '-';\n\t}\n<\/style>\n<h2><strong>Got questions or just want to chat? We're here for you. Here's how you can reach us:<\/strong><\/h2>\n\n<p>1. 📞Give us a ring at <strong>1300 902 400<\/strong> – we love a good conversation!<\/p>\n\n<p>2. 📆Too busy for a call right now? No worries! Click <strong><a href=\"https:\/\/calendly.com\/drwoofteams\/10min\">here<\/a><\/strong> to book a quick 10-minute call at a time that suits you.<\/p>\n\n<p>3. 📝Prefer typing? Fill out the form below, and we'll shoot you an email back ASAP. Let's talk!<\/p>"
+            }
+          },
+          "rich_text_d3jhGV": {
+            "type": "rich-text",
+            "disabled": true,
+            "settings": {
+              "title": "Hey there! Got questions or just want to chat? We're here for you. Here's how you can reach us:",
+              "text": "<p>1. Give us a ring at <strong>1300 902 400<\/strong> – we love a good conversation!<br\/><br\/>2. Too busy for a call right now? No worries! Click <a href=\"https:\/\/calendly.com\/drwoofteams\/10min\" target=\"_blank\" title=\"https:\/\/calendly.com\/drwoofteams\/10min\"><strong>here<\/strong><\/a><strong> <\/strong>to book a quick 10-minute call at a time that suits you.<br\/><br\/>3. Prefer typing? Fill out the form below, and we'll shoot you an email back ASAP. Let's talk!<\/p>",
+              "align_text": "left",
+              "narrow_column": true,
+              "enlarge_text": false,
+              "alt": false
+            }
+          },
           "1925eb6e-4837-4b73-8fbe-4b5d421db488": {
             "type": "contact-form",
             "settings": {
-              "title": "CONTACT US TO DISCUSS YOUR ORDER",
-              "show_phone": false,
+              "title": "Please call: 1300 902 400 or fill in the form below and we will email you back!",
+              "show_phone": true,
               "narrow_column": true
             }
           },
@@ -3006,12 +3258,15 @@
           "c31333cb-6e0a-4845-9a0d-6b1d80d8336f",
           "c0d588c2-9489-4506-81b8-f92ceea8ae6d",
           "b7066ca5-01e4-428c-a284-2cb11001e86b",
+          "d109cf5f-2fb5-47ce-818c-117342d8c872",
+          "custom_html_H6JJj9",
+          "rich_text_d3jhGV",
           "1925eb6e-4837-4b73-8fbe-4b5d421db488",
           "903f540b-51f7-4a76-bc67-671d3f87c134"
         ],
         "settings": {
           "page_title_enable": false,
-          "page_content_enable": false
+          "page_content_enable": true
         }
       },
       "cart_shipping": {
@@ -3028,28 +3283,20 @@
           "7069d94e-031b-467d-ae68-326f658ce0fe": {
             "type": "cart-spend-section",
             "settings": {
-              "spendamount": "100",
+              "spendamount": "150",
               "spendamountmsg": "Standard shipping"
-            }
-          },
-          "382e2ae1-3583-489e-8911-c1b86d5358e9": {
-            "type": "cart-spend-section",
-            "settings": {
-              "spendamount": "135",
-              "spendamountmsg": "$10 Gift Card*"
             }
           },
           "08fb4474-8310-494d-8e8b-4e84cb6af465": {
             "type": "cart-spend-section",
             "settings": {
               "spendamount": "200",
-              "spendamountmsg": "Secret Gift & $30 Off"
+              "spendamountmsg": "Secret Gift"
             }
           }
         },
         "block_order": [
           "7069d94e-031b-467d-ae68-326f658ce0fe",
-          "382e2ae1-3583-489e-8911-c1b86d5358e9",
           "08fb4474-8310-494d-8e8b-4e84cb6af465"
         ],
         "settings": {
@@ -3058,6 +3305,7 @@
       },
       "162682029070dd2a76": {
         "type": "featured-collection-slider",
+        "disabled": true,
         "settings": {
           "title": "This just in",
           "description": "",
@@ -3068,6 +3316,7 @@
       },
       "16324507174c90bdf2": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Copy_of_Scrub_Up_Landing_Page_Mobile_Hero_Ron.png",
           "image_width": 700,
@@ -3197,7 +3446,7 @@
               "title_2": "Why stick to one look? With amazing deals on 2, 4 and 5 sets you can have a different vibe every single day of the week.",
               "text_2": "",
               "button_label_2": "Discover Bundles",
-              "button_link_2": "shopify:\/\/collections\/deals",
+              "button_link_2": "https:\/\/www.drwoofapparel.com.au\/collections\/sale",
               "enable_image_3": false,
               "image_width_3": 650,
               "title_3": "",
@@ -3285,19 +3534,19 @@
           "2a615604-1cbb-4c2e-989b-747c2caef9d5": {
             "type": "cart-spend-section",
             "settings": {
-              "products": "womens-short-sleeve-performance-underscrub"
+              "products": "woodland-compression-socks"
             }
           },
           "658c681b-c7be-4743-b3f6-f7b7701b92b6": {
             "type": "cart-spend-section",
             "settings": {
-              "products": "womens-long-sleeve-performance-underscrub"
+              "products": "baby-pink-compression-socks"
             }
           },
           "02fa1dcd-f6e3-49b9-b5bf-a4ce0cc5ea73": {
             "type": "cart-spend-section",
             "settings": {
-              "products": "mens-long-sleeve-performance-underscrub"
+              "products": "white-compression-socks"
             }
           }
         },
@@ -3313,21 +3562,12 @@
       "1650947126b57380d2": {
         "type": "shop_by_color",
         "blocks": {
-          "6b0a91e3-a699-4455-8b16-4a1abfd31904": {
+          "85fcacf2-5a34-4b4c-a736-cbc5f306474b": {
             "type": "Image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC1950-web_25bff5ca-eab0-45fd-887a-4313a8affbd6.jpg",
-              "link": "shopify:\/\/collections\/eucalyptus-scrubs",
-              "title": "Eucalyptus",
-              "sub_title": ""
-            }
-          },
-          "703e1230-b21e-468a-bfed-490d803e671e": {
-            "type": "Image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DRWoof_AprilShoot_Product_xx13862_1.jpg",
-              "link": "shopify:\/\/collections\/baby-pink-scrubs",
-              "title": "Baby Pink",
+              "image": "shopify:\/\/shop_images\/DSC1992-web_e214ddb6-040e-4d17-9fbd-679e978946c6.jpg",
+              "link": "shopify:\/\/collections\/double-purple-scrubs",
+              "title": "Double Purple",
               "sub_title": ""
             }
           },
@@ -3337,6 +3577,15 @@
               "image": "shopify:\/\/shop_images\/DRWoof_AprilShoot_Product_xx13998.jpg",
               "link": "shopify:\/\/collections\/navy-scrubs",
               "title": "Navy",
+              "sub_title": ""
+            }
+          },
+          "703e1230-b21e-468a-bfed-490d803e671e": {
+            "type": "Image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DRWoof_AprilShoot_Product_xx13862_1.jpg",
+              "link": "shopify:\/\/collections\/baby-pink-scrubs",
+              "title": "Baby Pink",
               "sub_title": ""
             }
           },
@@ -3439,6 +3688,15 @@
               "sub_title": ""
             }
           },
+          "6b0a91e3-a699-4455-8b16-4a1abfd31904": {
+            "type": "Image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC1950-web_25bff5ca-eab0-45fd-887a-4313a8affbd6.jpg",
+              "link": "shopify:\/\/collections\/eucalyptus-scrubs",
+              "title": "Eucalyptus",
+              "sub_title": ""
+            }
+          },
           "f5dc79a3-bc83-4242-ae7e-338c9b7c734a": {
             "type": "Image",
             "disabled": true,
@@ -3490,9 +3748,9 @@
           }
         },
         "block_order": [
-          "6b0a91e3-a699-4455-8b16-4a1abfd31904",
-          "703e1230-b21e-468a-bfed-490d803e671e",
+          "85fcacf2-5a34-4b4c-a736-cbc5f306474b",
           "3be89ffe-5f59-4bee-9f9e-0fb6c654d21c",
+          "703e1230-b21e-468a-bfed-490d803e671e",
           "99c14f85-7b6a-4323-8ee0-d3b3c7ba11f6",
           "60a0e77e-b49f-4002-965b-800889a41897",
           "487215fd-86b8-4b89-ae64-0b5b2b0d2e74",
@@ -3504,12 +3762,14 @@
           "351ceb77-bfcc-4dfc-b3b7-e6198e4fa99a",
           "8e36d043-5513-4a52-a15e-0b826fca04ec",
           "a0a020b9-df96-4fda-9a8a-8e6234542cbd",
+          "6b0a91e3-a699-4455-8b16-4a1abfd31904",
           "f5dc79a3-bc83-4242-ae7e-338c9b7c734a",
           "666cda46-ff07-41ec-bf4f-553de6d6ebe8",
           "4a9a81b9-bdd3-4a4c-9fb2-322b82d81eb1",
           "6ba1abe6-d40c-4c2c-bcd4-4d1c05bc0d99",
           "6a8fdbdd-0232-4fda-9ce6-14b441a07a78"
         ],
+        "disabled": true,
         "settings": {
           "title": "Shop by colour",
           "description": "",
@@ -3821,102 +4081,6 @@
         ],
         "settings": {}
       },
-      "16606759991161eabc": {
-        "type": "dr-woof-hero",
-        "blocks": {
-          "bc33736b-d890-4d9c-aeae-53d68d0315f9": {
-            "type": "review",
-            "settings": {
-              "text_content": "TRUSTED BY 40,000+ AUSSIE HEALTH PROFESSIONALS",
-              "text_content2": "Trusted by 5000+ Doctors",
-              "text_content3": "Trusted by 5000+ Doctors",
-              "text_content4": "Trusted by 5000+ Doctors",
-              "marquee_enable": false,
-              "marquee_image_size": 40,
-              "m_marquee_image_size": 40,
-              "marquee_image_spacing": 40,
-              "m_marquee_image_spacing": 40,
-              "marquee_image_speed": 20,
-              "m_marquee_image_speed": 20,
-              "text_color": "#f5be15",
-              "background_color": "#0b0d32",
-              "hide": "true"
-            }
-          },
-          "943c24a0-a6d9-44ec-b1c4-c809a535d383": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "text_content": "<p>EFFORTLESSLY POLISHED<\/p>",
-              "text_content_mobile": "",
-              "shadow_enable": false,
-              "shadow_color": "#fafafa",
-              "text_color": "#f5be15",
-              "text_color2": "#050507",
-              "font_size": 78,
-              "font_size_m": 30
-            }
-          },
-          "6ee931e4-6fa0-4977-b68d-f6eaff27f608": {
-            "type": "text",
-            "settings": {
-              "text_content": "<p>Slooooow fashion scrubs & accessories that look like streetwear, perform like gym wear and feel like sleepwear.<\/p>",
-              "text_content_mobile": "<p>Slooooow fashion scrubs & accessories that look like streetwear, perform like gym wear and feel like sleepwear.<\/p>",
-              "shadow_enable": false,
-              "shadow_color": "#fafafa",
-              "text_color": "#ffffff",
-              "text_color2": "#050507",
-              "font_size": 36,
-              "font_size_m": 22
-            }
-          },
-          "ee64588f-aa0d-408e-85dc-76e3af7c7b76": {
-            "type": "button",
-            "settings": {
-              "text_content": "Shop Women",
-              "text_content_mobile": "Shop Women",
-              "color_button_desktop": "#ffffff",
-              "color_button_mobile": "#000000",
-              "color_text_button_desktop": "#000000",
-              "color_text_button_mobile": "#ffffff",
-              "link": "https:\/\/www.drwoofapparel.com.au\/collections\/women",
-              "float": "right"
-            }
-          },
-          "d5bba04a-5f97-4e9b-ba85-2f9af95e6f6c": {
-            "type": "button",
-            "settings": {
-              "text_content": "SHOP MEN",
-              "text_content_mobile": "SHOP MEN",
-              "color_button_desktop": "#ffffff",
-              "color_button_mobile": "#000000",
-              "color_text_button_desktop": "#000000",
-              "color_text_button_mobile": "#ffffff",
-              "link": "https:\/\/www.drwoofapparel.com.au\/collections\/men",
-              "float": "right"
-            }
-          }
-        },
-        "block_order": [
-          "bc33736b-d890-4d9c-aeae-53d68d0315f9",
-          "943c24a0-a6d9-44ec-b1c4-c809a535d383",
-          "6ee931e4-6fa0-4977-b68d-f6eaff27f608",
-          "ee64588f-aa0d-408e-85dc-76e3af7c7b76",
-          "d5bba04a-5f97-4e9b-ba85-2f9af95e6f6c"
-        ],
-        "settings": {
-          "pad": "0px",
-          "desktop_positioning": 100,
-          "desktop_disable": true,
-          "border_disable": false,
-          "height": 100,
-          "mobile_height": 52,
-          "image_lib_pc": "shopify:\/\/shop_images\/HERO_BANNER_USE_-_LANDSCAPE_FINAL_ODDIT_COMPATIBLE_1440_x_900_px_1800_x_900px_2_54ee9b83-f3a8-4345-9b49-141ddd3fef25.png",
-          "image_webp_pc": "",
-          "image_lib_mobile": "shopify:\/\/shop_images\/HERO_BANNER_-_MOBILE_1250_x_1250px_5_6b181e75-2261-4124-85a6-44b863f9b367.jpg",
-          "image_webp_mobile": ""
-        }
-      },
       "product-sections-bundle": {
         "type": "product-sections-bundle",
         "settings": {}
@@ -3931,102 +4095,6 @@
           "blog_show_comments": true,
           "blog_show_author": false,
           "social_sharing_blog": true
-        }
-      },
-      "16618564484a912556": {
-        "type": "dr-woof-hero",
-        "blocks": {
-          "4f789810-a1f2-49b5-b340-dd40b74ecfb7": {
-            "type": "review",
-            "settings": {
-              "text_content": "TRUSTED BY 15,000+ AUSSIE HEALTH PROFESSIONALS",
-              "text_content2": "Trusted by 5000+ Doctors",
-              "text_content3": "Trusted by 5000+ Doctors",
-              "text_content4": "Trusted by 5000+ Doctors",
-              "marquee_enable": false,
-              "marquee_image_size": 40,
-              "m_marquee_image_size": 40,
-              "marquee_image_spacing": 40,
-              "m_marquee_image_spacing": 40,
-              "marquee_image_speed": 20,
-              "m_marquee_image_speed": 20,
-              "text_color": "#f5be15",
-              "background_color": "#0b0d32",
-              "hide": "false"
-            }
-          },
-          "f3ef4a30-37b9-4529-b0fa-63f08eafea51": {
-            "type": "text",
-            "settings": {
-              "text_content": "<p>EFFORTLESSLY POLISHED<\/p>",
-              "text_content_mobile": "<p><\/p>",
-              "shadow_enable": true,
-              "shadow_color": "#000000",
-              "text_color": "#ffffff",
-              "text_color2": "#0b0d32",
-              "font_size": 60,
-              "font_size_m": 32
-            }
-          },
-          "b56e9946-e9bd-49ae-9914-e00e5ca36d51": {
-            "type": "text",
-            "settings": {
-              "text_content": "<p>Slooooow fashion scrubs & accessories that look like streetwear, perform like gym wear and feel like sleepwear.<\/p>",
-              "text_content_mobile": "<p><\/p>",
-              "shadow_enable": false,
-              "shadow_color": "rgba(0,0,0,0)",
-              "text_color": "rgba(0,0,0,0)",
-              "text_color2": "#0b0d32",
-              "font_size": 12,
-              "font_size_m": 22
-            }
-          },
-          "75d670a2-36f7-4aed-8fc6-a1ca87371f7b": {
-            "type": "button",
-            "settings": {
-              "text_content": "Shop WOMEN",
-              "text_content_mobile": "",
-              "color_button_desktop": "",
-              "color_button_mobile": "",
-              "color_text_button_desktop": "",
-              "color_text_button_mobile": "",
-              "link": "https:\/\/www.drwoofapparel.com.au\/collections\/women",
-              "float": "right"
-            }
-          },
-          "4a692b35-31c7-4952-b8b2-737a718214b4": {
-            "type": "button",
-            "settings": {
-              "text_content": "Shop caps",
-              "text_content_mobile": "",
-              "color_button_desktop": "",
-              "color_button_mobile": "",
-              "color_text_button_desktop": "",
-              "color_text_button_mobile": "",
-              "link": "\/collections\/scrub-caps",
-              "float": "right"
-            }
-          }
-        },
-        "block_order": [
-          "4f789810-a1f2-49b5-b340-dd40b74ecfb7",
-          "f3ef4a30-37b9-4529-b0fa-63f08eafea51",
-          "b56e9946-e9bd-49ae-9914-e00e5ca36d51",
-          "75d670a2-36f7-4aed-8fc6-a1ca87371f7b",
-          "4a692b35-31c7-4952-b8b2-737a718214b4"
-        ],
-        "disabled": true,
-        "settings": {
-          "pad": "30",
-          "desktop_positioning": -6,
-          "desktop_disable": false,
-          "border_disable": false,
-          "height": 101,
-          "mobile_height": 50,
-          "image_lib_pc": "shopify:\/\/shop_images\/22-11-07_Love_at_first_shift_DESKTOP_2400_x_1350px.jpg",
-          "image_webp_pc": "",
-          "image_lib_mobile": "shopify:\/\/shop_images\/22-11-07_Love_at_first_shift_MOBILE_1250_x_1250px.jpg",
-          "image_webp_mobile": ""
         }
       },
       "dr-woof-hero": {
@@ -4333,7 +4401,7 @@
       "ce9a6cf9-6111-4efb-b6e0-d16d8fd842df": {
         "type": "custom-html",
         "settings": {
-          "custom_html": "<style>\n\t.acc-heading {\n\t\tmargin: 10px 0 !important;\n\t\tpadding: 15px 0;\n\t\tborder-top: 1px solid;\n\t\tborder-bottom: 1px solid;\n\t\tposition: relative;\n\t\tcursor: pointer;\n\t}\n\t.acc-heading::after {\n\t\tposition: absolute;\n\t\tcontent: '+';\n\t\tright: 15px;\n\t\ttop: 45%;\n\t\ttransform: translateY(-50%);\n\t\tfont-size: 25px;\n\t}\n\t.acc-heading.active-acc-heading::after {\n\t\tcontent: '-';\n\t}\n\n<\/style>\n<div style=\"max-width: 800px; margin: 0 auto;\">\n\t<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\">A sneak peek at the year to come … shhhh<\/h4>\n\t<div class=\"acc-panel\" style=\"display: none;text-align: center;\">\n\t\t<p>Hey Woof Pack,<\/p>\n\t\t<p>Ron, Dave and An here. We can’t thank you enough for your support last year. <\/p>\n\t\t<p>When we started this little Australian scrubs brand in 2019, we had no idea how many amazing healthcare professionals we’d get to meet. To us, Dr Woof Apparel is more just a place where you can buy medical scrubs and accessories online – it’s a vehicle that we can use to bring joy to the medical world.<\/p>\n\t\t<p>In 2023 we’ll be ramping up our mission to make the medical world smile. If you’re curious, here’s what we’ll be focusing on: <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/071_NOMV_B_W_Front_Female.jpg?v=1672991542\" alt=\"nomv black and white front female\">\n\t\t<h3>1. New collabs with charities that you know and respect.<\/h3>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/DR.Woof_Test_edits_4.3.1_540x.jpg?v=1662559257\" alt=\"New collabs with charities\">\n\t\t<h3>2. Growing ROUNDS by Dr. Woof<\/h3>\n\t\t<p><a href=\"https:\/\/www.drwoofapparel.com.au\/pages\/rounds\">Rounds<\/a> is a project that we started in 2022 with the aim of giving healthcare workers a louder voice on social media. It’s already starting conversations about important healthcare topics on <a href=\"https:\/\/www.tiktok.com\/@drwoofapparel\">Tiktok<\/a>, <a href=\"https:\/\/www.instagram.com\/drwoofapparel\/\">Instagram<\/a> & <a href=\"https:\/\/www.youtube.com\/@drwoofapparel\">Youtube<\/a>. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/products\/W-FernGreenJoggers2DRWoof_AprilShoot_Product_xx13488_900x.jpg?v=1669024093\" alt=\"fern green joggers2 drwoof\">\n\t\t<h3>3. Green scrubs. <\/h3>\n\t\t<p>No, not green the color.  We’re working on a new environmentally friendly, fully-recycled premium scrubs fabric that’s just as soft as our famous softer-than-pajamas blend. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/W_Peri_Group_3.jpg?v=1672991571\" alt=\"Hospital scrubs that don’t suck\">\n\t\t<h3>4. Hospital scrubs that don’t suck<\/h3>\n\t\t<p>We’re looking into a few exciting options for getting Dr. Woof scrubs and accessory options for our friends in public and private hospitals. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/077_Whales_Front_Female.jpg?v=1672991571\" alt=\"Whales Front Female\">\n\t\t<h3>5. More of the scrubs and medical accessories you love<\/h3>\n\t\t<p>We’re also working on more fun, comfortable. premium quality <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/scrub-caps\">scrub caps<\/a>, <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/stethoscope-charms\">stethoscope charms<\/a>, <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/women\/Underscrubs\">underscrubs<\/a> and <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/women\">medical scrubs<\/a>  – including this beauty (eta February.)<\/p>\n\t<\/div>\n<\/div>"
+          "custom_html": "<style>\n\t.acc-heading {\n\t\tmargin: 10px 0 !important;\n\t\tpadding: 15px 0;\n\t\tborder-top: 1px solid;\n\t\tborder-bottom: 1px solid;\n\t\tposition: relative;\n\t\tcursor: pointer;\n\t}\n\t.acc-heading::after {\n\t\tposition: absolute;\n\t\tcontent: '+';\n\t\tright: 15px;\n\t\ttop: 45%;\n\t\ttransform: translateY(-50%);\n\t\tfont-size: 25px;\n\t}\n\t.acc-heading.active-acc-heading::after {\n\t\tcontent: '-';\n\t}\n@media only screen and (max-width:480px){\n.tigs{\nmargin: 70px auto 40px !important;\n}\n}\n<\/style>\n<div class=\"tigs\" style=\"max-width: 800px; margin: 70px auto 60px;\">\n\t<h4 class=\"acc-heading\" onclick=\"$(this).next('.acc-panel').slideToggle();$(this).toggleClass('active-acc-heading')\">A sneak peek at the year to come … shhhh<\/h4>\n\t<div class=\"acc-panel\" style=\"display: none;text-align: center;\">\n\t\t<p>Hey Woof Pack,<\/p>\n\t\t<p>Ron, Dave and An here. We can’t thank you enough for your support last year. <\/p>\n\t\t<p>When we started this little Australian scrubs brand in 2019, we had no idea how many amazing healthcare professionals we’d get to meet. To us, Dr Woof Apparel is more just a place where you can buy medical scrubs and accessories online – it’s a vehicle that we can use to bring joy to the medical world.<\/p>\n\t\t<p>In 2023 we’ll be ramping up our mission to make the medical world smile. If you’re curious, here’s what we’ll be focusing on: <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/071_NOMV_B_W_Front_Female.jpg?v=1672991542\" alt=\"nomv black and white front female\">\n\t\t<h3>1. New collabs with charities that you know and respect.<\/h3>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/DR.Woof_Test_edits_4.3.1_540x.jpg?v=1662559257\" alt=\"New collabs with charities\">\n\t\t<h3>2. Growing ROUNDS by Dr. Woof<\/h3>\n\t\t<p><a href=\"https:\/\/www.drwoofapparel.com.au\/pages\/rounds\">Rounds<\/a> is a project that we started in 2022 with the aim of giving healthcare workers a louder voice on social media. It’s already starting conversations about important healthcare topics on <a href=\"https:\/\/www.tiktok.com\/@drwoofapparel\">Tiktok<\/a>, <a href=\"https:\/\/www.instagram.com\/drwoofapparel\/\">Instagram<\/a> & <a href=\"https:\/\/www.youtube.com\/@drwoofapparel\">Youtube<\/a>. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/products\/W-FernGreenJoggers2DRWoof_AprilShoot_Product_xx13488_900x.jpg?v=1669024093\" alt=\"fern green joggers2 drwoof\">\n\t\t<h3>3. Green scrubs. <\/h3>\n\t\t<p>No, not green the color.  We’re working on a new environmentally friendly, fully-recycled premium scrubs fabric that’s just as soft as our famous softer-than-pajamas blend. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/W_Peri_Group_3.jpg?v=1672991571\" alt=\"Hospital scrubs that don’t suck\">\n\t\t<h3>4. Hospital scrubs that don’t suck<\/h3>\n\t\t<p>We’re looking into a few exciting options for getting Dr. Woof scrubs and accessory options for our friends in public and private hospitals. <\/p>\n\t\t<img style=\"max-width: 300px;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/7250\/8344\/files\/077_Whales_Front_Female.jpg?v=1672991571\" alt=\"Whales Front Female\">\n\t\t<h3>5. More of the scrubs and medical accessories you love<\/h3>\n\t\t<p>We’re also working on more fun, comfortable. premium quality <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/scrub-caps\">scrub caps<\/a>, stethoscope charms, <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/women\/Underscrubs\">underscrubs<\/a> and <a href=\"https:\/\/www.drwoofapparel.com.au\/collections\/women\">medical scrubs<\/a>  – including this beauty (eta February.)<\/p>\n\t<\/div>\n<\/div>"
         }
       },
       "product-template-uts": {
@@ -4400,7 +4468,7 @@
         "settings": {
           "per_row_desktop": 3,
           "per_row_mobile": "2",
-          "description_bottom": false
+          "description_bottom": true
         }
       },
       "product-template-nlp": {
@@ -4603,17 +4671,6 @@
           "txt11": ""
         }
       },
-      "6b71f50b-51ac-4c3d-af39-d16c4aed32d7": {
-        "type": "featured-collection-clean",
-        "disabled": true,
-        "settings": {
-          "title": "This just in",
-          "description": "",
-          "home_featured_products": "new-releases",
-          "per_row": "small",
-          "alt": false
-        }
-      },
       "product-sections-atheltikan": {
         "type": "product-sections-atheltikan",
         "blocks": {
@@ -4686,18 +4743,18 @@
           "96bf3fa4-48b1-492f-9802-63a282f0c5b2": {
             "type": "text-columns",
             "settings": {
-              "title": "",
+              "title": "Why you'll love our scrubs",
               "align_text": "center",
               "alt": false,
               "enable_image_1": true,
-              "image_1": "shopify:\/\/shop_images\/60_5b3a0c9e-ae09-4615-9222-6f1a9b440e48.png",
+              "image_1": "shopify:\/\/shop_images\/60_cad4299b-c28b-41b3-bbd0-fd339f29123c.jpg",
               "image_width_1": 500,
               "title_1": "Made from 92% recycled materials.",
               "text_1": "",
               "button_label_1": "",
               "button_link_1": "",
               "enable_image_2": true,
-              "image_2": "shopify:\/\/shop_images\/61_e29ac94c-3b4f-4a9a-95d3-0aa7b9e62aff.png",
+              "image_2": "shopify:\/\/shop_images\/61_d726370e-cfcc-4053-b555-1dd7886cf09d.jpg",
               "image_width_2": 500,
               "title_2": "Move, bend, stretch & crouch (without showing your bum crack.)",
               "text_2": "",
@@ -4718,16 +4775,16 @@
               "align_text": "center",
               "alt": false,
               "enable_image_1": true,
-              "image_1": "shopify:\/\/shop_images\/62.png",
+              "image_1": "shopify:\/\/shop_images\/62.jpg",
               "image_width_1": 500,
               "title_1": "Bye-bye sweaty, too-big hospital scrubs. Hello, superior comfort all shift long.",
               "text_1": "",
               "button_label_1": "",
               "button_link_1": "",
               "enable_image_2": true,
-              "image_2": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_1.png",
+              "image_2": "shopify:\/\/shop_images\/63.jpg",
               "image_width_2": 500,
-              "title_2": "We aim to make scrubs that still look fresh after YEARS of washing and wearing.",
+              "title_2": "We aim to make scrubs that still look fresh after YEARS of washing and wearing",
               "text_2": "",
               "button_label_2": "",
               "button_link_2": "",
@@ -4745,196 +4802,6 @@
           "9ea71b64-3072-4250-ac30-74119661f317"
         ],
         "settings": {}
-      },
-      "7d5553f4-7ac7-472a-ba20-b56c445add59": {
-        "type": "headersection",
-        "blocks": {
-          "6588bc2c-ee31-472f-a24c-b7c9cda3d9e5": {
-            "type": "text",
-            "settings": {
-              "col-title": "Buy 3 Sets Get 1 Set Free Deal",
-              "col-img": "shopify:\/\/shop_images\/NEW_GIF_THUMBNAILS.gif",
-              "col-link": "https:\/\/www.drwoofapparel.com.au\/products\/wardrobe-deal?_pos=1&_sid=b4d25761a&_ss=r"
-            }
-          },
-          "c5197b20-f41d-4a9e-92c0-cda938622a2a": {
-            "type": "text",
-            "settings": {
-              "col-title": "Women's Scrubs",
-              "col-img": "shopify:\/\/shop_images\/12312323_3b1a8f63-f2af-40c6-b134-4dc331a66484.jpg",
-              "col-link": "shopify:\/\/collections\/women"
-            }
-          },
-          "9191e8dd-0012-4a12-bfd0-2bdeaaac9ef8": {
-            "type": "text",
-            "settings": {
-              "col-title": "Women's Joggers",
-              "col-img": "shopify:\/\/shop_images\/11111_0352458a-54e0-4a5b-9584-cf6e45f016d3.jpg",
-              "col-link": "https:\/\/www.drwoofapparel.com.au\/collections\/women\/jogger-scrub-pants"
-            }
-          },
-          "989ef870-412c-4a15-b047-9b362a84becb": {
-            "type": "text",
-            "settings": {
-              "col-title": "Planet Friend Scrubs",
-              "col-img": "shopify:\/\/shop_images\/5_43e78421-c469-48f5-a41e-3e92d0eb8fb4.jpg",
-              "col-link": "shopify:\/\/collections\/planet-friendly-scrub-uniforms"
-            }
-          },
-          "cbbe3b59-0e7f-4db6-b016-8bdf368900b7": {
-            "type": "text",
-            "settings": {
-              "col-title": "Men's Scrubs",
-              "col-img": "shopify:\/\/shop_images\/M_Navy_Top_1_DRWoof_AprilShoot_Product_xx14983_1ba9bc6d-22bc-4085-bfb1-f6b7d1b87fca.jpg",
-              "col-link": "shopify:\/\/collections\/men"
-            }
-          },
-          "2fbdb4aa-3e28-49dc-8886-41babaeac6ec": {
-            "type": "text",
-            "settings": {
-              "col-title": "Woof X ATHLETIKAN Sneakers",
-              "col-img": "shopify:\/\/shop_images\/1_bf09a7e6-2216-48d6-9c4f-41d8a1f9cd06.jpg",
-              "col-link": "shopify:\/\/collections\/woof-x-athletikan-sneakers"
-            }
-          },
-          "30f15711-b2f9-48a8-adaa-9a556396348b": {
-            "type": "text",
-            "settings": {
-              "col-title": "Christmas Collection",
-              "col-img": "shopify:\/\/shop_images\/christmas1.webp",
-              "col-link": "shopify:\/\/collections\/chistmas-scrubs"
-            }
-          },
-          "71f0ca15-e3ac-4a0a-8fe0-ad7a975750fe": {
-            "type": "text",
-            "settings": {
-              "col-title": "Scrub Caps",
-              "col-img": "shopify:\/\/shop_images\/075_Sausage_Dogs_Front_Female_63bd2646-b3dd-4764-ab64-c82c4a408334.jpg",
-              "col-link": "https:\/\/www.drwoofapparel.com.au\/collections\/scrub-caps?sort_by=created-descending"
-            }
-          },
-          "fc04e15d-7fc9-4955-8467-c0d8ee46bf4b": {
-            "type": "text",
-            "settings": {
-              "col-title": "Outerwear",
-              "col-img": "shopify:\/\/shop_images\/Outerwear.jpg",
-              "col-link": "shopify:\/\/collections\/layers"
-            }
-          },
-          "2753b504-1b00-43ef-9f57-8e164fed2d41": {
-            "type": "text",
-            "settings": {
-              "col-title": "Underscrubs",
-              "col-img": "shopify:\/\/shop_images\/Underscrubs.jpg",
-              "col-link": "shopify:\/\/collections\/underscrubs-1"
-            }
-          },
-          "ab887346-723e-4881-ad5b-ee523ba41073": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "col-title": "DEALS",
-              "col-img": "shopify:\/\/shop_images\/Untitleddesign.jpg",
-              "col-link": ""
-            }
-          },
-          "e59ed861-c681-4f92-8810-8dddec2b5184": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Accessories",
-              "menu-icon": "fa-life-ring",
-              "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design.png",
-              "menu-link": "",
-              "dropdown-link": "accessories"
-            }
-          },
-          "f2e6406d-9d6d-45ac-a903-088bb3586e69": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Deals",
-              "menu-icon": "fa-heart-o",
-              "menu-icon-image": "shopify:\/\/shop_images\/kisspng-white-symmetry-black-angle-pattern-white-heart-cliparts-5aa24b82089491.0213318615205856020352.png",
-              "menu-link": "shopify:\/\/collections\/deals",
-              "dropdown-link": ""
-            }
-          },
-          "aa11bbd0-c29f-4ddb-b59e-7e8c8b5b063e": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Shop By Color",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_11.png",
-              "menu-link": "",
-              "dropdown-link": "slider-menu-colors"
-            }
-          },
-          "56e58e95-9215-4a74-b66a-0fef3c6ada25": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Corporate",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_13.png",
-              "menu-link": "https:\/\/www.drwoofapparel.com.au\/pages\/teams",
-              "dropdown-link": ""
-            }
-          },
-          "6248e07e-3402-4b85-b21e-f9f90dcf990e": {
-            "type": "image",
-            "settings": {
-              "menu-title": "ROUNDS",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/Yellow_1500_x_1500_Transparent_Background_PNG.png",
-              "menu-link": "",
-              "dropdown-link": "slider-menu-rounds"
-            }
-          },
-          "7d995ac0-4b7a-402a-887e-907b0c4d5533": {
-            "type": "image",
-            "settings": {
-              "menu-title": "Who Are We?",
-              "menu-icon": "fa-globe",
-              "menu-icon-image": "shopify:\/\/shop_images\/white_logo_transparent_background_no_words_e5be0237-220e-4803-b4fa-f45b168f9199.png",
-              "menu-link": "",
-              "dropdown-link": "slider-menu-who-are-we"
-            }
-          }
-        },
-        "block_order": [
-          "6588bc2c-ee31-472f-a24c-b7c9cda3d9e5",
-          "c5197b20-f41d-4a9e-92c0-cda938622a2a",
-          "9191e8dd-0012-4a12-bfd0-2bdeaaac9ef8",
-          "989ef870-412c-4a15-b047-9b362a84becb",
-          "cbbe3b59-0e7f-4db6-b016-8bdf368900b7",
-          "2fbdb4aa-3e28-49dc-8886-41babaeac6ec",
-          "30f15711-b2f9-48a8-adaa-9a556396348b",
-          "71f0ca15-e3ac-4a0a-8fe0-ad7a975750fe",
-          "fc04e15d-7fc9-4955-8467-c0d8ee46bf4b",
-          "2753b504-1b00-43ef-9f57-8e164fed2d41",
-          "ab887346-723e-4881-ad5b-ee523ba41073",
-          "e59ed861-c681-4f92-8810-8dddec2b5184",
-          "f2e6406d-9d6d-45ac-a903-088bb3586e69",
-          "aa11bbd0-c29f-4ddb-b59e-7e8c8b5b063e",
-          "56e58e95-9215-4a74-b66a-0fef3c6ada25",
-          "6248e07e-3402-4b85-b21e-f9f90dcf990e",
-          "7d995ac0-4b7a-402a-887e-907b0c4d5533"
-        ],
-        "disabled": true,
-        "settings": {
-          "header_style": "button",
-          "main_menu_alignment": "right",
-          "sticky_index": false,
-          "sticky_collection": false,
-          "header_search_enable": true,
-          "logo": "shopify:\/\/shop_images\/mainlogo.png",
-          "desktop_logo_width": 200,
-          "mobile_logo_width": 150,
-          "logo_hide_mobile": true,
-          "main_menu_link_list": "new-homepage-menu",
-          "show_announcement": true,
-          "show_announcement_home_only": false,
-          "announcement_text": "BUY BABY PINK ALTIS BUNDLE FOR 15% OFF",
-          "announcement_link": "shopify:\/\/products\/wednesday-bundle"
-        }
       },
       "collection-thumbnail-filter": {
         "type": "collection-thumbnail-filter",
@@ -4998,32 +4865,6 @@
         ],
         "settings": {}
       },
-      "495cb38f-2f5f-4c48-bc38-033bed559a6f": {
-        "type": "shop_by_best",
-        "blocks": {
-          "5e7091d9-04de-46a8-b7bc-44d6497d864b": {
-            "type": "Image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC2063-web1_2e9d3408-5976-42e0-b36b-93696322a809.jpg",
-              "link": "",
-              "title": "",
-              "sub_title": ""
-            }
-          }
-        },
-        "block_order": [
-          "5e7091d9-04de-46a8-b7bc-44d6497d864b"
-        ],
-        "disabled": true,
-        "settings": {
-          "title": "",
-          "description": "",
-          "link": "",
-          "per_row": "small",
-          "alt": false,
-          "quick_buy_text": ""
-        }
-      },
       "b08ad3ae-1d49-443c-bf20-3daa936d220c": {
         "type": "sl-quick-nav-1-1",
         "blocks": {
@@ -5073,7 +4914,7 @@
               "show_on": "all_devices",
               "collection": "woof-x-athletikan-sneakers",
               "title": "Woof X Athletikan Sneakers",
-              "image": "shopify:\/\/shop_images\/7_c9449f0f-a9a2-4f95-a0ab-ae25b78c61cd.jpg",
+              "image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_4.jpg",
               "overlay_opacity": 10
             }
           },
@@ -5101,7 +4942,7 @@
             "type": "collection_block",
             "settings": {
               "show_on": "all_devices",
-              "collection": "underscrubs-1",
+              "collection": "underscrubs",
               "title": "Underscrubs",
               "image": "shopify:\/\/shop_images\/10_112b5d48-4d7a-4a2b-aeaf-93b4ec55b253.jpg",
               "overlay_opacity": 10
@@ -5118,6 +4959,7 @@
           "495d743b-527c-480b-aef1-68013dca4810",
           "dceaae13-8495-40f3-bde0-f19c8751c01a"
         ],
+        "disabled": true,
         "settings": {
           "devices": "all",
           "card_format": "image",
@@ -5141,19 +4983,1259 @@
           "section_background_color": "rgba(0,0,0,0)",
           "section_border_color": "rgba(0,0,0,0)"
         }
+      },
+      "1c64d667-b672-4f7b-b9be-2310692e99f1": {
+        "type": "headerv2",
+        "blocks": {
+          "a743e2f1-c2aa-4c32-b8b8-29666dcb324a": {
+            "type": "list",
+            "settings": {
+              "text_list": "Designed to last with our 17-step quality check process",
+              "icon_image": "shopify:\/\/shop_images\/badge1_6e099361-924c-4c53-ae73-f9a176cb89a4.png"
+            }
+          },
+          "000f0d80-ed47-4981-9f86-fda252a99cce": {
+            "type": "list",
+            "settings": {
+              "text_list": "Ultra-soft comfort that feels like a hug",
+              "icon_image": "shopify:\/\/shop_images\/badge1_6e099361-924c-4c53-ae73-f9a176cb89a4.png"
+            }
+          },
+          "c1c1b93e-33ac-4f9d-826b-0839bf80508c": {
+            "type": "list",
+            "settings": {
+              "text_list": "9-functional pockets designed for healthcare",
+              "icon_image": "shopify:\/\/shop_images\/badge1_6e099361-924c-4c53-ae73-f9a176cb89a4.png"
+            }
+          }
+        },
+        "block_order": [
+          "a743e2f1-c2aa-4c32-b8b8-29666dcb324a",
+          "000f0d80-ed47-4981-9f86-fda252a99cce",
+          "c1c1b93e-33ac-4f9d-826b-0839bf80508c"
+        ],
+        "settings": {
+          "colored_header": "<span style=\"line-height:1.7em\">TRUSTED BY <b style=\"color:#;\">40,000+<\/b> COMFY<br> AUSSIE NURSES & DOCTORS<\/span>",
+          "colored_header_size": 16,
+          "colored_header_size_mobile": 18,
+          "header_color": "#000000",
+          "added_bigger_button_hero": false,
+          "added_date": false,
+          "enable_men": false,
+          "hide_review_stars": false,
+          "top_mode": false,
+          "light_theme": false,
+          "main_header": "Scrubs you can wear and wear",
+          "main_header_size": 64,
+          "main_header_size_mobile": 44,
+          "main_header_space": 32,
+          "content": "",
+          "textaroundtop": "",
+          "textaroundbottom": "",
+          "button_text_1": "SHOP WOMEN",
+          "button_1_url": "shopify:\/\/collections\/women",
+          "button_text_2": "SHOP MEN",
+          "button_2_url": "shopify:\/\/collections\/men",
+          "header_image": "shopify:\/\/shop_images\/DESKTOP_NEW_BANNER_THUMBNAIL_1_f136e086-e64f-4dae-a517-1bbbc8afa7d1.png",
+          "mobile_image": "shopify:\/\/shop_images\/MOBILE_NEW_BANNER_THUMBNAIL_0380750c-6003-424c-8aa8-5822080ca8b9.jpg",
+          "bg_color": "#fafafa",
+          "desktop_bgimage": "shopify:\/\/shop_images\/HERO_BANNER_-_LANDSCAPE_FINAL_ODDIT_COMPATIBLE_1440_x_900_px_6a52a8cb-64e8-4c09-9e49-d2bf7565e841.png",
+          "mobile_bgimage": "shopify:\/\/shop_images\/Untitled_design_269be36c-97d4-4087-8d04-be8c7735417a.jpg",
+          "margin-top": 0,
+          "margin-bottom": 0
+        }
+      },
+      "ddf4d5b8-a6eb-415b-9b5f-fde5f56a7fbc": {
+        "type": "collection-slider",
+        "blocks": {
+          "7aebc301-6e39-4f51-88fd-898f35cdeaa6": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/1_06fcde7b-3fef-4e57-aea2-7e226306fdca.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/Vet_in_fern_green_scrubs_copy.jpg",
+              "block_title": false,
+              "col_text": "enjoying the summer sun with her pal Johnson (and her Fern Green Scrubs)",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@lozzieeyre",
+              "col_url": "shopify:\/\/collections\/fern-green-scrubs"
+            }
+          },
+          "9dba7887-f5b2-4137-8fe0-00cce0cf118e": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/2_b6ca3f50-08f7-4533-9384-84f0182cac16.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/293230316_382360953885289_967965882652571642_n.jpg",
+              "block_title": false,
+              "col_text": "looking 🔥in their new Cool Gray scrub uniforms",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@sunshinefamilydentalclinic",
+              "col_url": "shopify:\/\/collections\/cool-gray-scrubs"
+            }
+          },
+          "5efd090c-75a5-4448-bdbf-5656848fdf5e": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/3_bab69e56-15ed-4ebe-aa88-b16b142d5a8f.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/Med_Student_in_Baby_Pink.jpg",
+              "block_title": false,
+              "col_text": "Giving us head to toe Pink (possibly on a Wednesday?)",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@bethdoesmed",
+              "col_url": "shopify:\/\/collections\/baby-pink-scrubs"
+            }
+          },
+          "c5714281-620c-462d-9d07-9a85d43a101e": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/4_ade1ead2-4e76-4f76-93e3-b3a70584bc6b.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/Vet_wearing_cool_scrub_scrubs_dd6bc967-12ad-4422-9e86-f84419c6d66d.jpg",
+              "block_title": false,
+              "col_text": "looking cool AF in her Cool Gray Scrubs",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@the.nature.vet",
+              "col_url": "shopify:\/\/collections\/cool-gray-scrubs"
+            }
+          },
+          "1e416590-b73a-4d8d-8541-a2944a4b7ae8": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/6_5504826e-f3f6-42ba-b4a7-85647482e08e.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/tester_25.jpg",
+              "block_title": false,
+              "col_text": "enjoying some burgundy (scrubs) in the sun",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@yourvetlianne",
+              "col_url": "shopify:\/\/collections\/burgundy-scrubs"
+            }
+          },
+          "2726e924-576c-42ec-9375-933cf418e676": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_3.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/Vanessa.jpg",
+              "block_title": false,
+              "col_text": "Giving us some navy blue-tiful backyard vibes ☀☀",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@_vanessasmithh_ ⁠",
+              "col_url": "shopify:\/\/collections\/navy-scrubs"
+            }
+          },
+          "e6ebc9bf-223c-4925-b16c-5ce557784d57": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/8_5b7327c3-b558-48d1-b5ed-8cd74c584089.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/image_-_1818868.jpg",
+              "block_title": false,
+              "col_text": "in our Cool Grey Scrubs, and a cap that she designed!",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@notquitenetter (and friend)",
+              "col_url": "shopify:\/\/collections\/scrub-caps"
+            }
+          },
+          "8dcb1c2f-f0f3-4a11-8d60-5fbfad07b5fd": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/7_7e25bc5f-3cc1-42cb-a131-28fdde28e0b1.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/tester_10.jpg",
+              "block_title": false,
+              "col_text": "taking a (very well deserved) break in our Women's Ciel Gray Scrubs",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@nursetobe_2023",
+              "col_url": "shopify:\/\/collections\/ceil-blue-scrubs"
+            }
+          },
+          "061503be-b7c6-455a-9498-ccb38419b01b": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/9_5c1b1514-7c7c-4dec-82d0-527f03a64f3f.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/tester_26.jpg",
+              "block_title": false,
+              "col_text": "snapped by @zainrahimi27 ⁠in Cool Gray scrubs",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@dr.deadliftt",
+              "col_url": "shopify:\/\/collections\/cool-gray-scrubs"
+            }
+          },
+          "40cfe7f6-4d5b-41fe-aff4-eef061e47f0d": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/10_a9294086-9263-4f4a-a77f-5ee9ce091bca.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/tester_27.jpg",
+              "block_title": false,
+              "col_text": "Brush brush brushing in her Royal Blue Scrubs",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@paola_rdh.15",
+              "col_url": "shopify:\/\/collections\/royal-blue-scrubs"
+            }
+          },
+          "acf07d9b-e4a2-4300-bee2-5b102fcd2b84": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/11_6479159b-237c-4a69-a04f-9bf045966475.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/Team_in_caps.jpg",
+              "block_title": false,
+              "col_text": "⁠ & friends showing us the true meaning of awesome foursome",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@lifeofavetnurse",
+              "col_url": "shopify:\/\/collections\/scrub-caps"
+            }
+          },
+          "5fbc8d6a-de28-462f-8980-421e61f0fbee": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/12_6c0b2d6f-d5e8-4f6b-a6ef-ab677e21dd53.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/tester_7.jpg",
+              "block_title": false,
+              "col_text": "Furry friend wearing Ciel Blue Scrubs and our Made by Medical Quokka Scrub Cap",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@carolinasfieldguide",
+              "col_url": "shopify:\/\/collections\/scrub-caps"
+            }
+          },
+          "6608edc8-7c96-459e-ba2e-bfb396a215a2": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/13_1696a49c-680e-47e1-b978-67272614833f.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/DRW_HOMEPAGE_COLLECTION_LIST_3_ebd54b4a-a935-4b38-a522-b0cf27ae3211.png",
+              "block_title": false,
+              "col_text": "looking ex-seal-ent in her cool gray + seals combo.",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@nicunursetiff",
+              "col_url": "shopify:\/\/collections\/cool-gray-scrubs"
+            }
+          },
+          "8b545128-195c-4dba-9e88-d30b38575a19": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/14_0705e1d7-25c2-49ed-8da7-0ee383e74134.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/1_76f6028c-e366-4d8d-8f9c-2add59a39f3f.jpg",
+              "block_title": false,
+              "col_text": "showing us the definition of glowing in her Navy Scrub Set.",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "@thepremednurse",
+              "col_url": "shopify:\/\/collections\/navy-scrubs"
+            }
+          }
+        },
+        "block_order": [
+          "7aebc301-6e39-4f51-88fd-898f35cdeaa6",
+          "9dba7887-f5b2-4137-8fe0-00cce0cf118e",
+          "5efd090c-75a5-4448-bdbf-5656848fdf5e",
+          "c5714281-620c-462d-9d07-9a85d43a101e",
+          "1e416590-b73a-4d8d-8541-a2944a4b7ae8",
+          "2726e924-576c-42ec-9375-933cf418e676",
+          "e6ebc9bf-223c-4925-b16c-5ce557784d57",
+          "8dcb1c2f-f0f3-4a11-8d60-5fbfad07b5fd",
+          "061503be-b7c6-455a-9498-ccb38419b01b",
+          "40cfe7f6-4d5b-41fe-aff4-eef061e47f0d",
+          "acf07d9b-e4a2-4300-bee2-5b102fcd2b84",
+          "5fbc8d6a-de28-462f-8980-421e61f0fbee",
+          "6608edc8-7c96-459e-ba2e-bfb396a215a2",
+          "8b545128-195c-4dba-9e88-d30b38575a19"
+        ],
+        "settings": {
+          "reviewstars": true,
+          "blocklist": true,
+          "show_title": true,
+          "dark_theme": true,
+          "martop_this": 60,
+          "marbot_this": 100,
+          "mmartop_this": 40,
+          "mmarbot_this": 60,
+          "selected_collection": "",
+          "sec_name": "Look who's wearing Woof"
+        }
+      },
+      "14a6d1da-4bb0-467d-8179-0f89444b4027": {
+        "type": "simple-collection",
+        "blocks": {
+          "56d56b04-d0d1-4c87-97f7-58c52ed604c0": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/15_040a166e-7daa-43ae-8bbb-79df2bfe081c.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/1_ee012e69-9340-4ed0-9587-2203c8e84a73.jpg",
+              "col_name": "Women's scrubs",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/women"
+            }
+          },
+          "39becd13-a0d2-4719-ad38-95850449f974": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/16_0a8fe525-fe16-4f5e-8104-f624938e422a.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/2_952185b2-a483-41f4-a2f1-413e6a49f1e3.jpg",
+              "col_name": "Women's joggers",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/women\/jogger-scrub-pants"
+            }
+          },
+          "2f0efd8f-06c8-4a42-9684-158cf8909a11": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_1.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/NEW_HOMEPAGE_MOBILE_QUICK_NAV_1.jpg",
+              "col_name": "Planet friendly scrubs",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/planet-friendly-scrub-uniforms"
+            }
+          },
+          "f0a92ee5-b35f-4575-8165-64ac80d6d156": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/18_a7b5d86d-a0a6-4dcb-a170-ee8b0d1685db.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/4_7b9edb05-0edb-4211-825c-d63464a3a5f8.jpg",
+              "col_name": "Men's scrubs",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/men"
+            }
+          },
+          "5460b48e-4911-4ed3-8b83-a1e90605016e": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_4.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/NEW_HOMEPAGE_MOBILE_QUICK_NAV_7.jpg",
+              "col_name": "Compression Socks",
+              "col_url": "shopify:\/\/collections\/compression-socks"
+            }
+          },
+          "list_xkTVTc": {
+            "type": "list",
+            "disabled": true,
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_3a7f05b0-0ff1-4a11-9f64-bcf6f4e52ad3.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/NEW_HOMEPAGE_MOBILE_QUICK_NAV_a4cdd294-ac50-492d-b77f-ab43dc3336a4.jpg",
+              "col_name": "Woof X ATHLETIKAN Sneakers",
+              "col_url": "shopify:\/\/collections\/woof-x-athletikan-sneakers"
+            }
+          },
+          "b2628b11-bbc4-4f71-a914-18e95ec1f36e": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/Quicknav_Homepage_Images_5_bc33fdf0-582d-4156-8348-ca863b94ca3a.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/NEW_HOMEPAGE_MOBILE_QUICK_NAV_6.jpg",
+              "col_name": "Printed Tops",
+              "col_url": "shopify:\/\/collections\/printed-pattern-scrub-tops"
+            }
+          },
+          "918a59c9-2cfc-47bf-8ee5-4e2a09a56e1d": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/21_ce47ebf1-b2ea-490f-9ee3-47a3ed3a2e2e.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/7_0773e0f2-246a-4e18-aada-77432341554d.jpg",
+              "col_name": "Scrub caps",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/scrub-caps"
+            }
+          },
+          "10d72627-23a2-42d0-851f-f8aef7f4f232": {
+            "type": "list",
+            "settings": {
+              "col_image": "shopify:\/\/shop_images\/22_7f584ed2-6083-4dd9-9308-b4b0b9c5e95c.jpg",
+              "col_image_mobile": "shopify:\/\/shop_images\/8_425028a4-7fcf-4c05-b2e8-131796c6e519.jpg",
+              "col_name": "Underscrubs",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/underscrubs"
+            }
+          }
+        },
+        "block_order": [
+          "56d56b04-d0d1-4c87-97f7-58c52ed604c0",
+          "39becd13-a0d2-4719-ad38-95850449f974",
+          "2f0efd8f-06c8-4a42-9684-158cf8909a11",
+          "f0a92ee5-b35f-4575-8165-64ac80d6d156",
+          "5460b48e-4911-4ed3-8b83-a1e90605016e",
+          "list_xkTVTc",
+          "b2628b11-bbc4-4f71-a914-18e95ec1f36e",
+          "918a59c9-2cfc-47bf-8ee5-4e2a09a56e1d",
+          "10d72627-23a2-42d0-851f-f8aef7f4f232"
+        ],
+        "settings": {
+          "simp-martop": 60,
+          "simp-marbot": 20,
+          "mobsimp-martop": 20,
+          "mobsimp-marbot": 20
+        }
+      },
+      "7369b26d-3f2e-4d4c-a896-29470c300195": {
+        "type": "logo-list",
+        "blocks": {
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Truck_1600x_c6730f1b-6713-48cb-b825-46c34dea16e2.png",
+              "link": "",
+              "logotitle": "Free secured shipping",
+              "logotext": "Over $150 on domestic orders"
+            }
+          },
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Doghouse_1600x_41530f32-19e4-4713-93f0-2721c14269c2.png",
+              "link": "",
+              "logotitle": "Aussie family business",
+              "logotext": "Run by medical workers"
+            }
+          },
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-4": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Award_750x_9dd04e23-79e7-40e3-933a-670ba3458258.png",
+              "link": "",
+              "logotitle": "60-day guarantee",
+              "logotext": "Love it or your money back"
+            }
+          }
+        },
+        "block_order": [
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-1",
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-2",
+          "7369b26d-3f2e-4d4c-a896-29470c300195-logo_image-4"
+        ],
+        "settings": {
+          "title": "",
+          "logo_opacity": 100,
+          "alt": false
+        }
+      },
+      "ba72dc37-5808-48c1-b3cb-3ec8be06d8fe": {
+        "type": "collection-slider",
+        "blocks": {
+          "list_UbmhDJ": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "233",
+              "col_image": "shopify:\/\/shop_images\/83_e491441b-d617-47fd-8c40-f50ecfede3d9.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/83_e491441b-d617-47fd-8c40-f50ecfede3d9.jpg",
+              "block_title": true,
+              "col_text": "Women's 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-3-pocket-scrub-top-2?variant=43678396678402"
+            }
+          },
+          "list_DnGg4r": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "212",
+              "col_image": "shopify:\/\/shop_images\/84_6cc697c6-9937-4c1d-bcf3-e1442a0381a4.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/84_6cc697c6-9937-4c1d-bcf3-e1442a0381a4.jpg",
+              "block_title": true,
+              "col_text": "Women's 6-Pocket Jogger",
+              "blackprice": "$78.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/women-classic-6-pocket-joggers?variant=39955647234232"
+            }
+          },
+          "list_GRLgxk": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/76.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/76.jpg",
+              "block_title": true,
+              "col_text": "Wild Meadow Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/wild-meadow-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_QQJrbP": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/78_8625494d-020c-4ffe-b81b-b704c46507cf.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/78_8625494d-020c-4ffe-b81b-b704c46507cf.jpg",
+              "block_title": true,
+              "col_text": "Blue-tiful Blooms Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/blue-tiful-blooms-womens-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_zBBCLJ": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/81_60440ef0-1179-4803-b603-2b7d2e14ce8e.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/81_60440ef0-1179-4803-b603-2b7d2e14ce8e.jpg",
+              "block_title": true,
+              "col_text": "Art Attack Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/art-attack-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_BB6MJh": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/82_efab6786-c90f-4ff7-96cf-1506cce53337.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/82_efab6786-c90f-4ff7-96cf-1506cce53337.jpg",
+              "block_title": true,
+              "col_text": "Aussie Treats Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/aussie-treats-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_bnWDfK": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/77.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/77.jpg",
+              "block_title": true,
+              "col_text": "Border Collies Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/border-collies-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_m6gFrw": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/80_4335bc20-d7f5-479b-89d9-7dd26e97fd3e.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/80_4335bc20-d7f5-479b-89d9-7dd26e97fd3e.jpg",
+              "block_title": true,
+              "col_text": "Black & White Confetti Women’s 3-Pocket Scrub Top",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/black-and-white-confetti-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_8d9JFC": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "3",
+              "col_image": "shopify:\/\/shop_images\/79_e5866f74-cd87-406d-8b4e-e3e6e3da87e4.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/79_e5866f74-cd87-406d-8b4e-e3e6e3da87e4.jpg",
+              "block_title": true,
+              "col_text": "Under the Sea Women’s 3-Pocket Scrub Top",
+              "blackprice": "$$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/under-the-sea-womens-3-pocket-scrub-top"
+            }
+          },
+          "list_QipXnj": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "1, 829",
+              "col_image": "shopify:\/\/shop_images\/72_d9219534-6306-460a-90a6-c695160395b0.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/72_d9219534-6306-460a-90a6-c695160395b0.jpg",
+              "block_title": true,
+              "col_text": "Flower Market Scrub Cap",
+              "blackprice": "$28.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/flower-market-scrub-cap"
+            }
+          },
+          "list_DcL4Rd": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "1, 829",
+              "col_image": "shopify:\/\/shop_images\/73.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/73.jpg",
+              "block_title": true,
+              "col_text": "Womb to Grow Uterus Scrub Cap",
+              "blackprice": "$28.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/womb-to-grow-uterus-scrub-cap"
+            }
+          },
+          "list_HGX68M": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "1, 829",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_1_07711a58-0043-498d-95f7-b6a9284ca975.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_1_07711a58-0043-498d-95f7-b6a9284ca975.jpg",
+              "block_title": true,
+              "col_text": "German Shepard Scrub Cap",
+              "blackprice": "$28.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/products\/german-shepherds-scrub-cap"
+            }
+          },
+          "list_JTxJqm": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "1, 829",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_5.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_5.jpg",
+              "block_title": false,
+              "col_text": "",
+              "blackprice": "$28.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "Five a Day Scrub Cap",
+              "col_url": "shopify:\/\/products\/five-a-day-scrub-cap"
+            }
+          },
+          "list_dpWF6X": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "233",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_4.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_4.jpg",
+              "block_title": false,
+              "col_text": "",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "Women's V-Neck Tuck-in Scrub Top",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-v-neck-tuck-top"
+            }
+          },
+          "list_BLdwfF": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "233",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_2.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_2.jpg",
+              "block_title": false,
+              "col_text": "",
+              "blackprice": "$61.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "Women's 3-Pocket Scrub Top",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-3-pocket-scrub-top-2?variant=43678397464834"
+            }
+          },
+          "list_DqxJYV": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "212",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_3.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_3.jpg",
+              "block_title": false,
+              "col_text": "",
+              "blackprice": "$78.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "Women's 6-Pocket Jogger",
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/women-classic-6-pocket-joggers?variant=39955647234232"
+            }
+          },
+          "list_QJr7dE": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "1, 829",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_678226ba-8eb0-4acf-8bcb-ee8778b165f8.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_678226ba-8eb0-4acf-8bcb-ee8778b165f8.jpg",
+              "block_title": false,
+              "col_text": "",
+              "blackprice": "$28.90",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "Flutter Scrub Cap",
+              "col_url": "shopify:\/\/products\/flutter-scrub-cap"
+            }
+          }
+        },
+        "block_order": [
+          "list_UbmhDJ",
+          "list_DnGg4r",
+          "list_GRLgxk",
+          "list_QQJrbP",
+          "list_zBBCLJ",
+          "list_BB6MJh",
+          "list_bnWDfK",
+          "list_m6gFrw",
+          "list_8d9JFC",
+          "list_QipXnj",
+          "list_DcL4Rd",
+          "list_HGX68M",
+          "list_JTxJqm",
+          "list_dpWF6X",
+          "list_BLdwfF",
+          "list_DqxJYV",
+          "list_QJr7dE"
+        ],
+        "settings": {
+          "reviewstars": true,
+          "blocklist": true,
+          "show_title": true,
+          "dark_theme": false,
+          "martop_this": 60,
+          "marbot_this": 40,
+          "mmartop_this": 20,
+          "mmarbot_this": 0,
+          "selected_collection": "",
+          "sec_name": "This just in"
+        }
+      },
+      "9e8f0f64-90c7-4706-a7a9-aa3e68275269": {
+        "type": "collection-slider",
+        "blocks": {
+          "list_ibFxkw": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/66_66e74feb-f41b-42ee-80cb-67b302539644.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/66_66e74feb-f41b-42ee-80cb-67b302539644.jpg",
+              "block_title": true,
+              "col_text": "Pistachio",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/pistachio-green-scrubs"
+            }
+          },
+          "list_3qpKYd": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_c3d8d44c-78b3-499f-b985-da9ca4ae479e.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/NEW_HOMEPAGE_SHOP_BY_COLORTHIS_JUST_IN_c3d8d44c-78b3-499f-b985-da9ca4ae479e.jpg",
+              "block_title": true,
+              "col_text": "Lavender",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/lavender-scrubs"
+            }
+          },
+          "list_dBqqMt": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/34_96d80f15-9d1c-4387-a223-84d1bd092b44.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/34_96d80f15-9d1c-4387-a223-84d1bd092b44.jpg",
+              "block_title": true,
+              "col_text": "Mermaid Teal",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/mermaid-teal-scrubs"
+            }
+          },
+          "7f622bb3-7386-4665-a218-2a7dce4aa820": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/17_3b4c7bd5-5b96-4068-946f-1a18486cf0b2.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/17_3b4c7bd5-5b96-4068-946f-1a18486cf0b2.jpg",
+              "block_title": true,
+              "col_text": "Caribbean Blue",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/caribbean-blue-scrubs"
+            }
+          },
+          "551ffa34-d0bc-42e7-862c-73ba71e9f526": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/18_848bff45-7cc1-4b9a-85db-b1cc8fee1af5.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/18_848bff45-7cc1-4b9a-85db-b1cc8fee1af5.jpg",
+              "block_title": true,
+              "col_text": "Double Purple",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/double-purple-scrubs"
+            }
+          },
+          "70915dfc-365f-4483-bc1a-d00c4275a7e0": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/19_a4e32f87-097c-4942-a97f-aa2ac42b0100.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/19_a4e32f87-097c-4942-a97f-aa2ac42b0100.jpg",
+              "block_title": true,
+              "col_text": "Navy",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/navy-scrubs"
+            }
+          },
+          "549b37b1-40dd-4c85-bcfd-bdb9b37051b7": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/20_75f788b4-f3a1-4df8-8210-6b2677e3c406.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/20_75f788b4-f3a1-4df8-8210-6b2677e3c406.jpg",
+              "block_title": true,
+              "col_text": "Baby Pink",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/baby-pink-scrubs"
+            }
+          },
+          "f0d0f6f3-ea23-4e9f-9f73-bef82e429653": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/21_e38da09a-5cb4-41a4-af50-371361182ad5.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/21_e38da09a-5cb4-41a4-af50-371361182ad5.jpg",
+              "block_title": true,
+              "col_text": "Blurple",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/blurple-scrubs"
+            }
+          },
+          "9c1656d3-e2e3-4e05-b15e-30fac24c70c1": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/22_71ab07c8-10a0-48c2-9e06-7e451a5b744c.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/22_71ab07c8-10a0-48c2-9e06-7e451a5b744c.jpg",
+              "block_title": true,
+              "col_text": "Whimsical Coral",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/whimsical-coral-scrubs"
+            }
+          },
+          "732980d9-8a76-48e9-95d2-9fb0113c3671": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/68_f313e31d-d435-4bd8-9f96-f5921767e9da.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/68_f313e31d-d435-4bd8-9f96-f5921767e9da.jpg",
+              "block_title": true,
+              "col_text": "Blush",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/blush-pink-scrub-uniforms"
+            }
+          },
+          "7282a7a1-d6d5-47fc-9d35-68dc406ba950": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/23_b8b33030-0cd7-4ece-b20b-004902f15c2c.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/23_b8b33030-0cd7-4ece-b20b-004902f15c2c.jpg",
+              "block_title": true,
+              "col_text": "Fern Green",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/fern-green-scrubs"
+            }
+          },
+          "928c5607-ac77-4260-b7b1-a31f0c0d6ebe": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/24_9c306325-4946-43bf-831d-7cf4a5d9ff88.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/24_9c306325-4946-43bf-831d-7cf4a5d9ff88.jpg",
+              "block_title": true,
+              "col_text": "Burgundy",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/burgundy-scrubs"
+            }
+          },
+          "0406e351-5489-4b7d-b859-d23a5c1e1107": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/25_86a9d9c4-3fee-4105-bb85-ce47b7051b03.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/25_86a9d9c4-3fee-4105-bb85-ce47b7051b03.jpg",
+              "block_title": true,
+              "col_text": "Shadow Gray",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/shadow-gray-scrubs"
+            }
+          },
+          "9b2e36be-f9a7-4e17-8adb-f91b44d1163c": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/26_a9257241-a087-40f4-8127-85a2ffd430da.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/26_a9257241-a087-40f4-8127-85a2ffd430da.jpg",
+              "block_title": true,
+              "col_text": "Steel Gray",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/steel-gray-scrubs"
+            }
+          },
+          "d550ffd7-e7bc-4501-95d8-a2050d257d10": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/27_618ae900-2998-4299-be8e-620445ca193c.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/27_618ae900-2998-4299-be8e-620445ca193c.jpg",
+              "block_title": true,
+              "col_text": "Black",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/black-scrubs"
+            }
+          },
+          "50bca50b-4ef5-42f7-9289-57c00aaf3b23": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/28_a8bab8d5-77f9-46a3-8e06-ca226dade649.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/28_a8bab8d5-77f9-46a3-8e06-ca226dade649.jpg",
+              "block_title": true,
+              "col_text": "Royal Blue",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/royal-blue-scrubs"
+            }
+          },
+          "ff7eab9a-5376-487e-abfa-48456884aac9": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/29_d5cadc27-e67e-4253-9061-a9696e338965.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/29_d5cadc27-e67e-4253-9061-a9696e338965.jpg",
+              "block_title": true,
+              "col_text": "Cool Gray",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/cool-gray-scrubs"
+            }
+          },
+          "4ce17baf-dd10-41a1-a995-86e318e1a971": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/30_6626129b-5049-46cb-a293-2dc8367849b3.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/30_6626129b-5049-46cb-a293-2dc8367849b3.jpg",
+              "block_title": true,
+              "col_text": "Ceil Blue",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/ceil-blue-scrubs"
+            }
+          },
+          "5748aba1-cb1d-4673-bb77-b718642d8989": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/69_43b0194c-017c-40ee-aec3-888023f789b2.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/69_43b0194c-017c-40ee-aec3-888023f789b2.jpg",
+              "block_title": true,
+              "col_text": "Bold Magenta",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/magenta-scrubs"
+            }
+          },
+          "e7232c43-44a6-4cc7-936a-ced05c09bcfb": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/70_711f1dc3-c5f4-42dc-a246-353448cfdf3d.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/70_711f1dc3-c5f4-42dc-a246-353448cfdf3d.jpg",
+              "block_title": true,
+              "col_text": "Eucalyptus",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/eucalyptus-scrubs"
+            }
+          },
+          "3b1a9fbe-4055-486f-9178-40b828e3560d": {
+            "type": "list",
+            "settings": {
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/33_3d60d885-82e5-4ed0-97e6-1bed04cb7895.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/33_3d60d885-82e5-4ed0-97e6-1bed04cb7895.jpg",
+              "block_title": true,
+              "col_text": "",
+              "blackprice": "",
+              "slashprice": "",
+              "redprice": "",
+              "col_name": "",
+              "col_url": "shopify:\/\/collections\/scrubs"
+            }
+          }
+        },
+        "block_order": [
+          "list_ibFxkw",
+          "list_3qpKYd",
+          "list_dBqqMt",
+          "7f622bb3-7386-4665-a218-2a7dce4aa820",
+          "551ffa34-d0bc-42e7-862c-73ba71e9f526",
+          "70915dfc-365f-4483-bc1a-d00c4275a7e0",
+          "549b37b1-40dd-4c85-bcfd-bdb9b37051b7",
+          "f0d0f6f3-ea23-4e9f-9f73-bef82e429653",
+          "9c1656d3-e2e3-4e05-b15e-30fac24c70c1",
+          "732980d9-8a76-48e9-95d2-9fb0113c3671",
+          "7282a7a1-d6d5-47fc-9d35-68dc406ba950",
+          "928c5607-ac77-4260-b7b1-a31f0c0d6ebe",
+          "0406e351-5489-4b7d-b859-d23a5c1e1107",
+          "9b2e36be-f9a7-4e17-8adb-f91b44d1163c",
+          "d550ffd7-e7bc-4501-95d8-a2050d257d10",
+          "50bca50b-4ef5-42f7-9289-57c00aaf3b23",
+          "ff7eab9a-5376-487e-abfa-48456884aac9",
+          "4ce17baf-dd10-41a1-a995-86e318e1a971",
+          "5748aba1-cb1d-4673-bb77-b718642d8989",
+          "e7232c43-44a6-4cc7-936a-ced05c09bcfb",
+          "3b1a9fbe-4055-486f-9178-40b828e3560d"
+        ],
+        "settings": {
+          "reviewstars": false,
+          "blocklist": true,
+          "show_title": true,
+          "dark_theme": false,
+          "martop_this": 60,
+          "marbot_this": 40,
+          "mmartop_this": 40,
+          "mmarbot_this": 20,
+          "selected_collection": "",
+          "sec_name": "Shop by colour"
+        }
+      },
+      "ugcslider_WVccfR": {
+        "type": "ugcslider",
+        "blocks": {
+          "video_slide_4gyjCD": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e065ee6ee1fc4b82a904ec53a9141373.mp4",
+              "text-upper": "",
+              "text-bottom": "NAVY",
+              "button-link": "shopify:\/\/collections\/blue-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_KQjd7q": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab62323f79f14a18be054b956c4d849e.mp4",
+              "text-upper": "",
+              "text-bottom": "BLACK",
+              "button-link": "shopify:\/\/collections\/black-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_HQRiKT": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0b6f95c3bb5a4c45a054ba683a2d00e0.mp4",
+              "text-upper": "",
+              "text-bottom": "CARIBBEAN BLUE",
+              "button-link": "shopify:\/\/collections\/blue-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_DJ4qCf": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b238c15b88564e0881bd6e43d61d913d.mp4",
+              "text-upper": "",
+              "text-bottom": "FERN GREEN",
+              "button-link": "shopify:\/\/collections\/green-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_fUU8jy": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/290e696590a94d70ae465a98aafca323.mp4",
+              "text-upper": "",
+              "text-bottom": "COOL GRAY",
+              "button-link": "shopify:\/\/collections\/gray-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_UycCwi": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/13e4877f4f3f4f018c4d45d361311d68.mp4",
+              "text-upper": "",
+              "text-bottom": "ROYAL BLUE",
+              "button-link": "shopify:\/\/collections\/blue-scrubs",
+              "button-text": "SHOP NOW"
+            }
+          },
+          "video_slide_rD3dnr": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eb6f329da947ba8295815671ec988d.mp4",
+              "text-upper": "",
+              "text-bottom": "BABY PINK",
+              "button-link": "shopify:\/\/collections\/pink-scrubs",
+              "button-text": "SHOP NOW • LIMITED EDITION"
+            }
+          },
+          "video_slide_Xdh8qz": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab7520fc35c44a23949d6f942cfeca57.mp4",
+              "text-upper": "",
+              "text-bottom": "BLURPLE",
+              "button-link": "shopify:\/\/collections\/purple-scrubs",
+              "button-text": "SHOP NOW • LIMITED EDITION"
+            }
+          },
+          "video_slide_tjVpKa": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/52e91a949fb646ef91fa9cd3ad37712a.mp4",
+              "text-upper": "",
+              "text-bottom": "WHIMSICAL CORAL",
+              "button-link": "shopify:\/\/collections\/orange-scrubs",
+              "button-text": "SHOP NOW • LIMITED EDITION"
+            }
+          },
+          "video_slide_KmtCPR": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fc118539c4044d5ebb0c6a5f0b3e4e44.mp4",
+              "text-upper": "",
+              "text-bottom": "PISTACHIO",
+              "button-link": "shopify:\/\/collections\/green-scrubs",
+              "button-text": "SHOP NOW • LIMITED EDITION"
+            }
+          },
+          "video_slide_JQrbCr": {
+            "type": "video_slide",
+            "settings": {
+              "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b15356a92a494556893f278c8d424254.mp4",
+              "text-upper": "",
+              "text-bottom": "EUCALYPTUS",
+              "button-link": "shopify:\/\/collections\/green-scrubs",
+              "button-text": "SHOP NOW • LIMITED EDITION"
+            }
+          }
+        },
+        "block_order": [
+          "video_slide_4gyjCD",
+          "video_slide_KQjd7q",
+          "video_slide_HQRiKT",
+          "video_slide_DJ4qCf",
+          "video_slide_fUU8jy",
+          "video_slide_UycCwi",
+          "video_slide_rD3dnr",
+          "video_slide_Xdh8qz",
+          "video_slide_tjVpKa",
+          "video_slide_KmtCPR",
+          "video_slide_JQrbCr"
+        ],
+        "disabled": true,
+        "settings": {
+          "sec_name": "Testing",
+          "autoplay": false,
+          "arrows": true,
+          "slidercount": 3,
+          "dots": false
+        }
+      },
+      "sizeguider": {
+        "type": "sizeguider",
+        "settings": {
+          "dwomen-size-guide-text": true
+        }
       }
     },
     "content_for_index": [
-      "7d5553f4-7ac7-472a-ba20-b56c445add59",
-      "16606759991161eabc",
+      "1c64d667-b672-4f7b-b9be-2310692e99f1",
       "b08ad3ae-1d49-443c-bf20-3daa936d220c",
-      "16618564484a912556",
-      "495cb38f-2f5f-4c48-bc38-033bed559a6f",
+      "14a6d1da-4bb0-467d-8179-0f89444b4027",
+      "7369b26d-3f2e-4d4c-a896-29470c300195",
+      "ddf4d5b8-a6eb-415b-9b5f-fde5f56a7fbc",
+      "ba72dc37-5808-48c1-b3cb-3ec8be06d8fe",
+      "9e8f0f64-90c7-4706-a7a9-aa3e68275269",
       "1650947126b57380d2",
-      "6b71f50b-51ac-4c3d-af39-d16c4aed32d7",
       "162682029070dd2a76",
       "16324507174c90bdf2",
-      "ce9a6cf9-6111-4efb-b6e0-d16d8fd842df"
+      "ce9a6cf9-6111-4efb-b6e0-d16d8fd842df",
+      "ugcslider_WVccfR"
     ],
     "blocks": {
       "855628211100114053": {
@@ -5169,6 +6251,11 @@
       "uppromote-affiliate-referral-message-bar-57368-64c32457-930d-4cb9-9641-e24c0d9cf1f4": {
         "type": "shopify:\/\/apps\/uppromote-affiliate-referral\/blocks\/message-bar\/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
         "disabled": true,
+        "settings": {}
+      },
+      "9323109295802554384": {
+        "type": "shopify:\/\/apps\/upstackified-universal-pixel\/blocks\/adtScript\/2ef9f833-e251-4eed-af16-8dca98b27a2f",
+        "disabled": false,
         "settings": {}
       }
     }

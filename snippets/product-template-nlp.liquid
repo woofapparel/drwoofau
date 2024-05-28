@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 <!-- snippets/product-template-nlp.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -71,11 +75,11 @@
           {% endif %}
           {% if isModal %}
             <p class="h1 product-single__title">
-              {{ product.title }}
+              {{ product.title | replace: "$month$", month | replace: "$year$", year }}
             </p>
           {% else %}
             <h1 class="h1 product-single__title">
-              {{ product.title }}
+              {{ product.title | replace: "$month$", month | replace: "$year$", year }}
             </h1>
           {% endif %}
           {% if settings.enable_product_reviews %}
@@ -244,7 +248,7 @@
 
         </div>
 
-        <div class="product-content-right grid__item {{ product_description_width }}{% if product_image_type == 'stacked' %} product-single__sticky{% endif %} {{ product.title | truncate: 3, "" }}" data-title="">
+        <div class="product-content-right grid__item {{ product_description_width }}{% if product_image_type == 'stacked' %} product-single__sticky{% endif %} {{ product.title | replace: "$month$", month | replace: "$year$", year | truncate: 3, "" }}" data-title="">
           <div class="product-single__meta">
 
             {% if product.type == 'Surgical Scrub Cap' %}
@@ -291,11 +295,11 @@
 
               {% if isModal %}
                 <p class="h1 product-single__title">
-                  {{ product.title }}
+                  {{ product.title | replace: "$month$", month | replace: "$year$", year }}
                 </p>
               {% else %}
                 <h1 class="h1 product-single__title">
-                  {{ product.title }}
+                  {{ product.title | replace: "$month$", month | replace: "$year$", year }}
                 </h1>
               {% endif %}
 
@@ -845,7 +849,7 @@
       font-family: 'futuraptbold';
     }
     .product-single__title{
-      font-size: 23px;
+      font-size: 22px;
       line-height: 28px;
       color: #050507;
     }
@@ -1071,7 +1075,7 @@ var intervalId2 = window.setInterval(function(){
 .custom_builder_option .size-chart-with-labels{
   top: -94px !important;
 }
-.variant-input-wrap[="option2"]{
+.variant-input-wrap[data-index="option2"]{
   margin-bottom:0;
 }
 </style>

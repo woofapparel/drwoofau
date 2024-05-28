@@ -1,45 +1,27 @@
-
-    
-    <div class="product-story">
+<div class="product-story">
         <div class="ps-wrapper">
-            <h2 class="sectit">Why you'll love our scrubs</h2>
+<h2 class="sectit">{% unless section.settings.section_title == blank or section.settings.section_title == "" %}{{ section.settings.section_title }}{% endunless %}</h2>
             <div class="flexer">
                 <div class="quad">
-                  
-                    <img src="{{ section.settings.product_story_img_1 | img_url: 'master' }}" alt="{{ section.settings.product_story_title_1 }}" class="product-story-image">
-                    
-                    <h3 class="product-story-title">{{ section.settings.product_story_title_1 }}</h3>
-                  
+                    <img src="{% unless section.settings.product_story_img_1 == blank or section.settings.product_story_img_1 == "" %}{{ section.settings.product_story_img_1 | img_url: 'master' }}{% endunless %}" alt="{% unless section.settings.product_story_title_1 == blank or section.settings.product_story_title_1 == "" %}{{ section.settings.product_story_title_1 }}{% endunless %}" class="product-story-image">
+                    <h3 class="product-story-title">{% unless section.settings.product_story_title_1 == blank or section.settings.product_story_title_1 == "" %}{{ section.settings.product_story_title_1 }}{% endunless %}</h3>
                 </div>
-    
                 <div class="quad">
-                  
-                    <img src="{{ section.settings.product_story_img_2 | img_url: 'master' }}" alt="{{ section.settings.product_story_title_2 }}" class="product-story-image">
-                    
-                    <h3 class="product-story-title">{{ section.settings.product_story_title_2 }}</h3>
-                  
+                    <img src="{% unless section.settings.product_story_img_2 == blank or section.settings.product_story_img_2 == "" %}{{ section.settings.product_story_img_2 | img_url: 'master' }}{% endunless %}" alt="{% unless section.settings.product_story_title_2 == blank or section.settings.product_story_title_2 == "" %}{{ section.settings.product_story_title_2 }}{% endunless %}" class="product-story-image">
+                    <h3 class="product-story-title">{% unless section.settings.product_story_title_2 == blank or section.settings.product_story_title_2 == "" %}{{ section.settings.product_story_title_2 }}{% endunless %}</h3>
                 </div>
-    
                 <div class="quad">
-                  
-                    <img src="{{ section.settings.product_story_img_3 | img_url: 'master' }}" alt="{{ section.settings.product_story_title_3 }}" class="product-story-image">
-                    
-                    <h3 class="product-story-title">{{ section.settings.product_story_title_3 }}</h3>
-                
+                    <img src="{% unless section.settings.product_story_img_3 == blank or section.settings.product_story_img_3 == "" %}{{ section.settings.product_story_img_3 | img_url: 'master' }}{% endunless %}" alt="{% unless section.settings.product_story_title_3 == blank or section.settings.product_story_title_3 == "" %}{{ section.settings.product_story_title_3 }}{% endunless %}" class="product-story-image">
+                    <h3 class="product-story-title">{% unless section.settings.product_story_title_3 == blank or section.settings.product_story_title_3 == "" %}{{ section.settings.product_story_title_3 }}{% endunless %}</h3>
                 </div>
-    
-    
                 <div class="quad">
-                        
-                    <img src="{{ section.settings.product_story_img_4 | img_url: 'master' }}" alt="{{ section.settings.product_story_title_4 }}" class="product-story-image">
-                    
-                    <h3 class="product-story-title">{{ section.settings.product_story_title_4 }}</h3>
-                
+                    <img src="{% unless section.settings.product_story_img_4 == blank or section.settings.product_story_img_4 == "" %}{{ section.settings.product_story_img_4 | img_url: 'master' }}{% endunless %}" alt="{% unless section.settings.product_story_title_4 == blank or section.settings.product_story_title_4 == "" %}{{ section.settings.product_story_title_4 }}{% endunless %}" class="product-story-image">
+                    <h3 class="product-story-title">{% unless section.settings.product_story_title_4 == blank or section.settings.product_story_title_4 == "" %}{{ section.settings.product_story_title_4 }}{% endunless %}</h3>
                 </div>
-              
             </div>
         </div>
-      </div>
+</div>
+
           <style>
             .product-story{
                 width:100%;
@@ -117,8 +99,14 @@
           </style>
       {% schema %}
           {
-            "name": "New Product Story",
+            "name": "New Product Stories",
             "settings": [
+                {
+                    "type": "text",
+                    "id": "section_title",
+                    "label": "Section title",
+                    "default": "Why you'll love our scrubs"
+                },
                 {
                     "type": "image_picker",
                     "id": "product_story_img_1",
@@ -162,8 +150,8 @@
             ],
             "presets": [
               {
-                  "name": "New Product Story",
-                "category": "Products"
+                "name": "New Product Stories",
+                "category": "Lister"
               }
             ]
           }

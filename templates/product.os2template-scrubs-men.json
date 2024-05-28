@@ -3,16 +3,18 @@
     "product-template": {
       "type": "product-template-nlp-os2",
       "settings": {
+        "hide_header_footer": false,
+        "remove_steps": false,
         "enable_abtesting": true,
         "enable_abtesting2": true,
         "enable_abtesting3": false,
         "enable_abtesting5": true,
-        "imgbundle": "shopify:\/\/shop_images\/Desktop_1_1.png",
-        "mobimgbundle": "shopify:\/\/shop_images\/Mobile_1_1.png",
+        "imgbundle": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
+        "mobimgbundle": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
         "enable_abtesting6": true,
         "enable_men": true,
         "product_image_size": "large",
-        "product_image_type": "stacked",
+        "product_image_type": "slider",
         "product_zoom_enable": true,
         "enable_video_looping": true,
         "product_video_style": "muted",
@@ -64,6 +66,12 @@
     "sudofooter": {
       "type": "product-nlp-sudofooter-os2",
       "settings": {}
+    },
+    "sizeguider_JUEnDL": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
@@ -71,6 +79,7 @@
     "stories",
     "reviews",
     "recommendations",
-    "sudofooter"
+    "sudofooter",
+    "sizeguider_JUEnDL"
   ]
 }

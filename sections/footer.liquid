@@ -504,6 +504,36 @@
 </div>
 
 <style>
+{% if product.title contains "Men" or product.title contains "men" or collection.title contains "Men" or collection.title contains "men" or product.handle contains "scrub-set" %}
+  .product-tabs-data[value='{{ section.settings.women-hide-color |  handleize }}'],
+  .variant-input[data-value='{{ section.settings.men-hide-color }}']{
+    display:none !important;
+  }
+  .product-tabs-data[value='{{ section.settings.women-hide-color2 |  handleize }}'],
+  .variant-input[data-value='{{ section.settings.men-hide-color2 }}']{
+    display:none !important;
+  }
+  .product-tabs-data[value='{{ section.settings.women-hide-color3 |  handleize }}'],
+  .variant-input[data-value='{{ section.settings.men-hide-color3 }}']{
+    display:none !important;
+  }
+{% endif %}
+
+{% if product.title contains "Women" or product.title contains "women" or collection.title contains "Women" or collection.title contains "women"  or product.handle contains "scrub-set" %}
+  .product-tabs-data[value='{{ section.settings.women-hide-color |  handleize  }}'],
+  .variant-input[data-value='{{ section.settings.women-hide-color }}']{
+    display:none !important;
+  }
+  .product-tabs-data[value='{{ section.settings.women-hide-color2 |  handleize  }}'],
+  .variant-input[data-value='{{ section.settings.women-hide-color2 }}']{
+    display:none !important;
+  }
+  .product-tabs-data[value='{{ section.settings.women-hide-color3 |  handleize  }}'],
+  .variant-input[data-value='{{ section.settings.women-hide-color3 }}']{
+    display:none !important;
+  }
+{% endif %}
+
 
 .variant-input[data-value='Twilight Blue'],
   .variant-input[data-arrange='twilight-blue'],
@@ -680,6 +710,11 @@
     order: {{ section.settings.color_twilight-blue }}
     ;
   }
+  .variant-input[data-value='Apricot'],
+  .variant-input[data-arrange='apricot'],
+  li.tag.product-tabs-data[value='apricot'] {
+    order: {{ section.settings.color_apricot }};
+  }
   .variant-input[data-value='Eucalyptus'],
   .variant-input[data-arrange='eucalyptus'],
   li.tag.product-tabs-data[value='eucalyptus'] {
@@ -776,6 +811,36 @@
   {
     "name": "Footer",
     "settings": [
+      {
+        "type": "text",
+        "id": "men-hide-color",
+        "label": "Men Hide Color"
+      },
+      {
+        "type": "text",
+        "id": "men-hide-color2",
+        "label": "Men Hide Color"
+      },
+      {
+        "type": "text",
+        "id": "men-hide-color3",
+        "label": "Men Hide Color"
+      },
+      {
+        "type": "text",
+        "id": "women-hide-color",
+        "label": "Women Hide Color"
+      },
+      {
+        "type": "text",
+        "id": "women-hide-color2",
+        "label": "Women Hide Color"
+      },
+      {
+        "type": "text",
+        "id": "women-hide-color3",
+        "label": "Women Hide Color"
+      },
       {
         "type": "header",
         "content": "Newsletter"
@@ -1000,7 +1065,16 @@
         "min": 1,
         "max": 20,
         "step": 1
-      },  
+      },
+      {
+        "type": "range",
+        "id": "color_apricot",
+        "label": "Order Apricot",
+        "default": 20,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },
       {
         "type": "header",
         "content": "Footer Text"

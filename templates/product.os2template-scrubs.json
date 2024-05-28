@@ -4,7 +4,7 @@
       "type": "product-template-os2",
       "settings": {
         "threeway": true,
-        "newpdptop": false,
+        "newpdptop": true,
         "newpdptop2": false,
         "abtesting3": true,
         "abtesting3image": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
@@ -124,6 +124,12 @@
     "sudofooter": {
       "type": "product-sudofooter-os2",
       "settings": {}
+    },
+    "sizeguider_DB3KEn": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
@@ -131,6 +137,7 @@
     "stories",
     "reviews",
     "recommendations",
-    "sudofooter"
+    "sudofooter",
+    "sizeguider_DB3KEn"
   ]
 }

@@ -6,7 +6,7 @@
         "enable_ab": true,
         "abtesting1": false,
         "abtesting2": false,
-        "freesetcap": "shopify:\/\/shop_images\/CAPS_AU.jpg",
+        "freesetcap": "shopify:\/\/shop_images\/CAPS_AU_1.jpg",
         "dark_theme": false,
         "product_image_size": "large",
         "product_image_type": "slider",
@@ -89,7 +89,7 @@
             "enable_image_2": true,
             "image_2": "shopify:\/\/shop_images\/Product_Page_USPs_4_540x_1f16c29a-3008-4f37-9dc5-84f17bbcce1d.webp",
             "image_width_2": 500,
-            "title_2": "Use code 4PACK at checkout for 10% off when you buy any 4 caps — including Perfect Match designs.*",
+            "title_2": "Add 4 to 8 scrub caps in your cart — the discount will automatically apply.",
             "text_2": "",
             "button_label_2": "",
             "button_link_2": "",
@@ -123,6 +123,12 @@
     "sudofooter": {
       "type": "product-sudofooter-os2",
       "settings": {}
+    },
+    "sizeguider_C9mgci": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
@@ -130,6 +136,7 @@
     "stories",
     "reviews",
     "recommendations",
-    "sudofooter"
+    "sudofooter",
+    "sizeguider_C9mgci"
   ]
 }

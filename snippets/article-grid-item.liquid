@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 {%- assign fixed_aspect_ratio = false -%}
 {% unless image_size == 'natural' %}
   {%- assign fixed_aspect_ratio = true -%}
@@ -16,7 +20,7 @@
               data-sizes="auto">
             </div>
             <noscript>
-              <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
+              <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | replace: "$month$", month | replace: "$year$", year | escape }}">
             </noscript>
           </div>
         {% else %}
@@ -29,7 +33,7 @@
                 data-sizes="auto"
                 alt="{{ article.image.alt | escape }}">
             <noscript>
-              <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
+              <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | replace: "$month$", month | replace: "$year$", year | escape }}">
             </noscript>
           </div>
         {% endif %}
@@ -40,7 +44,7 @@
   <div class="article__content text-center">
     <div class="article__content-meta">
       <div class="h3">
-        <a href="{{ article.url }}">{{ article.title }}</a>
+        <a href="{{ article.url }}">{{ article.title | replace: "$month$", month | replace: "$year$", year }}</a>
       </div>
 
       <div class="article__date">
@@ -73,7 +77,7 @@
 
     {% if show_excerpt and article.excerpt.size > 0 %}
       <div class="rte rte--block">
-        {{ article.excerpt }}
+        {{ article.excerpt | replace: "$month$", month | replace: "$year$", year }}
       </div>
     {% endif %}
   </div>

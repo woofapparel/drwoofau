@@ -22,22 +22,22 @@
       justify-content: flex-end;
       position: relative;
     }
-
+/*
     .trigger-pop-up.btn{
       padding: 11px 15px !important;
       background: #fff !important;
       color: #050507 !important;
       border: 1px solid #050507;
-      position: absolute !important;
+       position: absolute !important; 
       font-size: 14px;
       font-weight: 400;
       text-decoration: none;
       top: -38px !important;
-      /* right: 0; */
+      
       line-height: 1em;
       left: inherit;
     }
-    
+*/ 
     {% if section.settings.newpdptop %}
       square-placement{
         display:none !important;
@@ -195,6 +195,9 @@
     {% endif %}
 </style>
 <div id="sliderchecker" class="{% if section.settings.threeway %}threeway{% endif %}"></div>
+
+{% assign current = product.selected_or_first_available_variant %}
+<input type="hidden" id="currentvariantId" value="{{ current.id }}">
 <script>
   var comprice = {}
   var normprice = {}
@@ -1543,7 +1546,9 @@ dual
         {% unless product.type == "Printed Pattern Scrub Tops" %}
           {% assign cts_product_1_a = product.metafields.sf_product_bundle.cts_product_1_a %}
           {% unless cts_product_1_a == blank %}
-            {% render 'completetheset' %}
+            {% unless product.title contains "Christmas" or product.title contains "Ho Ho" %}
+              {% render 'completetheset' %}
+            {% endunless %}
           {% endunless %}
         {% endunless %}
   {% endif %}
@@ -2041,12 +2046,48 @@ $(document).ready(function(){
   })
 })
 {% endif %}
+
+
   </script>
 
   {% if product.handle == "scrunchies" %}
   <script>
     window.location.replace("https://www.drwoofapparel.com.au/collections/scrunchies");
   </script>
+  {% endif %}
+
+  {% if template.suffix contains "xmas" %}
+    <style>
+      .disabledbutton{
+        background:gray !important;
+      }
+      .disabledbutton:hover{
+        cursor: not-allowed !important;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function(){
+        $(".add-to-cart span").html("PRE-ORDER");
+        $(".add-to-cart").prop("disabled", true);
+        $(".add-to-cart").addClass("disabledbutton");
+        $(".add-to-cart-checkbox").change(function() {
+            if ($(this).is(":checked")) {
+                $(".add-to-cart").prop("disabled", false);
+                $(".add-to-cart").removeClass("disabledbutton");
+            } else {
+                $(".add-to-cart").prop("disabled", true);
+                $(".add-to-cart").addClass("disabledbutton");
+                
+            }
+        });
+      })
+    </script>
+    
+
+
+  
+  
   {% endif %}
 
 <style>

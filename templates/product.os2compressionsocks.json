@@ -116,12 +116,19 @@
         "product_recommendations_heading": "You may also like",
         "per_row": "small"
       }
+    },
+    "sizeguider_ACkiVz": {
+      "type": "sizeguider",
+      "settings": {
+        "dwomen-size-guide-text": false
+      }
     }
   },
   "order": [
     "product-template",
     "stories",
     "reviews",
-    "recommendations"
+    "recommendations",
+    "sizeguider_ACkiVz"
   ]
 }

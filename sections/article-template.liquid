@@ -1,3 +1,7 @@
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+
 {%- assign number_of_comments = article.comments_count -%}
 
 {% if comment %}
@@ -29,7 +33,7 @@
           </div>
         {% endif %}
         <h1 class="section-header__title appear-delay">
-          {{ article.title }}
+          {{ article.title | replace: "$month$", month | replace: "$year$", year }}
         </h1>
         {% if section.settings.blog_show_author %}
           <div class="section-header__description appear-delay-1">
@@ -50,7 +54,7 @@
               data-sizes="auto"
               alt="{{ article.image.alt }}">
           <noscript>
-            <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '750x' }}" alt="{{ article.image.alt }}">
+            <img data-swift-lazy="1" loading="lazy"   class="lazyloaded" src="{{ article.image | img_url: '750x' }}" alt="{{ article.image.alt | replace: "$month$", month | replace: "$year$", year }}">
             <!-- article.image | img_url: '1000x' -->
           </noscript>
         </div>
@@ -59,7 +63,12 @@
 
     <div class="article__content">
       <div class="article__body rte rte--indented-images">
-        {{ article.content }}
+        {{ article.content | replace: "$month$", month | replace: "$year$", year }}
+        
+        {% comment %}{% endcomment %}
+        {%- render 'autolink', cssselector: ".article__body.rte.rte--indented-images" -%}
+        
+        
       </div>
 
       {% if section.settings.social_sharing_blog %}
@@ -156,27 +165,30 @@
       <hr class="hr--large hr--clear">
     </div>
   </article>
-
   <div class="text-center">
     <a href="{{ blog.url }}" class="btn btn--tertiary">
       <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg>
-      {{ blog.title }}
+      {{ blog.title | replace: "$month$", month | replace: "$year$", year }}
     </a>
 
     <hr class="hr--medium hr--clear medium-up--hide">
   </div>
 </div>
 
+{% comment %} Time now {% endcomment %}
+{%- assign month = "now" | date: "%m" -%}
+{%- assign year = "now" | date: "%Y" -%}
+        
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "articleBody": {{ article.content | strip_html | json }},
+  "articleBody": {{ article.content | replace: "$month$", month | replace: "$year$", year | strip_html | json }},
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": {{ shop.url | append: article.url | json }}
   },
-  "headline": {{ article.title | json }},
+  "headline": {{ article.title | replace: "$month$", month | replace: "$year$", year | json }},
   {% if article.excerpt != blank %}
     "description": {{ article.excerpt | strip_html | json }},
   {% endif %}
