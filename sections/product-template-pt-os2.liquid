@@ -30,8 +30,126 @@
   .main-textamonials{
     margin-bottom:0 !important;
   }
+  {% if section.settings.enable_ab_size %}
+    .scrubcaps-wrapper{
+      margin-bottom:36px !important;
+    }
 
+  {% endif %}
 </style>
+<script>
+  $(document).ready(function(){
+
+
+  $(".image-overlay").on("click", function() {
+      {% if section.settings.enable_ab_size %}
+          $dron = ""
+          $dron = $(".atv").html()
+          switch ($dron) {
+            case "XXS":
+            $(".size-desc").html("XXS (AU 4-6)")
+            break;
+          case "XS":
+            $(".size-desc").html("XS (AU 6-8)")
+            break;
+          case "S":
+            $(".size-desc").html("S (AU 8-10)")
+            break;
+          case "M":
+            $(".size-desc").html("M (AU 10-12)")
+            break;
+          case "L":
+            $(".size-desc").html("L (AU 12-14)")
+            break;
+          case "XL":
+            $(".size-desc").html("XL (AU 14-16)")
+            break;            
+          case "XXL":
+            $(".size-desc").html("XXL(AU 16-18)")
+            break;
+          default:
+            $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+        }
+      {% endif %}
+  })
+
+
+  
+    {% if section.settings.enable_ab_size %}
+  var interval = setInterval(function() {
+      if ($(".atv").length) {
+          $dron = $(".atv").html()
+          switch ($dron) {
+            case "XXS":
+            $(".size-desc").html("XXS (AU 4-6)")
+            break;
+          case "XS":
+            $(".size-desc").html("XS (AU 6-8)")
+            break;
+          case "S":
+            $(".size-desc").html("S (AU 8-10)")
+            break;
+          case "M":
+            $(".size-desc").html("M (AU 10-12)")
+            break;
+          case "L":
+            $(".size-desc").html("L (AU 12-14)")
+            break;
+          case "XL":
+            $(".size-desc").html("XL (AU 14-16)")
+            break;            
+          case "XXL":
+            $(".size-desc").html("XXL(AU 16-18)")
+            break;
+          default:
+            alert("not working")
+        }
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+      } 
+    }, 1000); 
+{% endif %}
+
+
+
+    $(document).on("click",".btn-primer",function(){
+      
+    {% if section.settings.enable_ab_size %}
+
+        $size = $(this).html()
+
+        switch ($size) {
+          case "XXS":
+            $(".size-desc").html("XXS (AU 4-6)")
+            break;
+          case "XS":
+            $(".size-desc").html("XS (AU 6-8)")
+            break;
+          case "S":
+            $(".size-desc").html("S (AU 8-10)")
+            break;
+          case "M":
+            $(".size-desc").html("M (AU 10-12)")
+            break;
+          case "L":
+            $(".size-desc").html("L (AU 12-14)")
+            break;
+          case "XL":
+            $(".size-desc").html("XL (AU 14-16)")
+            break;            
+          case "XXL":
+            $(".size-desc").html("XXL(AU 16-18)")
+            break;
+          default:
+            alert("not working")
+        }
+
+
+    {% endif %}
+    })
+
+  })
+</script>
+
 {% schema %}
   {
     "name": "Product pages",
@@ -39,6 +157,24 @@
       {
         "type": "header",
         "content": "Caps A/B testing"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ab_size",
+        "label": "Enable caps A/B testing for sizing",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "abtestnoicons",
+        "label": "Enable AB test no icons",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "abtestdavideo",
+        "label": "Enable video below atc",
+        "default": false
       },
       {
         "type": "checkbox",

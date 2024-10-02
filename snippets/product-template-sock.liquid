@@ -662,7 +662,7 @@
                     {% if product.type == 'Secret' or product.type == 'Compression Socks' %}
                       
 
-                        {% if section.settings.enable_ab %}  
+                       
                         <style>
                           .butttonsoldout:after{
                             position: absolute;
@@ -732,8 +732,9 @@
                         <input type="hidden" class="capxlid" value=""/>
                         <div class="scrubcaps-wrapper">
                           <div class="scrubs-products">
-                            {% paginate collections['compression-socks'].products by 200 %}
-                              {% for productb in collections['compression-socks'].products limit:100 %}
+
+                            {% paginate collections['new-bamboo-socks'].products by 200 %}
+                              {% for productb in collections['new-bamboo-socks'].products limit:100 %}
                                 {% if productb.available %}
                                   
                                     {% for media in productb.media %}
@@ -742,7 +743,29 @@
                                       {% assign overlayimagex = overlayimage | img_url: '500x500' %}
                                       {% endif %}
                                     {% endfor %}
-                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
+                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-type="bamboo" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
+
+                                    style="background: url({{ overlayimagex }}) left top;" >
+                                    {% for variant in productb.variants %}
+                                      <input type="hidden" name="{{ variant.title }}" data-socqty="{{ variant.inventory_quantity }}" data-socavail="{{ variant.available }}" data-socvarid="{{ variant.id }}" data-socprice="{{ variant.price | money }}">
+                                    {% endfor %}
+                                    
+                                    </div>
+
+                                {% endif %}
+                              {% endfor %}
+                            {% endpaginate %}
+                            {% paginate collections['non-bamboo-sock'].products by 200 %}
+                              {% for productb in collections['non-bamboo-sock'].products limit:100 %}
+                                {% if productb.available %}
+                                  
+                                    {% for media in productb.media %}
+                                      {% if media.alt contains "Closeup" %}
+                                      {% assign overlayimage = media %}
+                                      {% assign overlayimagex = overlayimage | img_url: '500x500' %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-type="regular" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
 
                                     style="background: url({{ overlayimagex }}) left top;" >
                                     {% for variant in productb.variants %}
@@ -764,13 +787,17 @@
                                 {% endif %}
                               {% endfor %}
                             {% endpaginate %}
+
                           </div>
                         </div>
 
-  
+                      <div class="scrubs-cart" style="margin-bottom:20px;">
+                        <label style="margin-bottom:8px">Type: <span class="type-desc"></span></label> 
+                        <span class="btn-sock bamboo" style="display:none">Bamboo</span> <span class="btn-sock regular" style="display:none">Regular</span> 
+                      </div>
 
                       <div class="scrubs-cart">
-                        <label style="margin-bottom:8px">Size</label>
+                        <label style="margin-bottom:8px">Size: <span class="size-desc"></span></label> 
                         <div class="righthere">
                           {% for variant in product.variants %}
                           <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" data-socvarid="{{ variant.id }}" data-socname="{{ variant.name }}" data-socavail="{{ variant.available }}" data-socqty="{{ variant.inventory_quantity }}" data-socprice="{{ variant.price }}">{{ variant.title }}</span>
@@ -783,6 +810,11 @@
                       </div>
                       
                       <style>
+                        /*
+                        .btn-sock:hover{
+                          cursor:pointer;
+                        }
+                          */
                         p.afterpay-paragraph{
                           margin-top:0 !important;
                         }
@@ -816,9 +848,14 @@
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 196%;
+                          /*
+                          width: 251%;
                           height: 230px;
+                          */
+                          width:281%;
+                          height: 461px;
                         }
+                        .btn-sock,
                         .btn-primer {
                           display:inline-block;
                           text-align: center;
@@ -832,6 +869,7 @@
                         .btn-primer:hover{
                           cursor:pointer;
                         }
+                        .btn-sock.actives,
                         .btn-primer.atv {
                           box-shadow: 0 0 0 1px #000;
                         }
@@ -868,7 +906,7 @@
                           }
                           .scrubs-products{
                             flex-wrap:wrap;
-                            width:900px;
+                            width:1751px;
                             height:auto;
                           }
                           
@@ -940,8 +978,76 @@
                       <div class="main-icon-cont" style="margin-top:-19px;padding:5px 0px 5px;" actualheight="118.453px" actualwidth="462px" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                         <div class="preorder-text" style="padding: 0px 20px 12px; margin-bottom: 12px; display: none;" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                            <p>Pre-order now to secure your preferred design. Your entire order will ship once this item becomes available.</p>
-                           <p style="margin-top:10px;color:red;">Expected dispatch date:  {% if product.type == "Printed Pattern Scrub Tops" %}<span style="font-weight:900">May 23</span>{% else %}<span class="preorderdate" style="font-weight:900">June 17</span>{% endif %}. Thanks for your patience!</p>
+                           <p style="margin-top:10px;color:red;">Expected dispatch date:  {% if product.type == "Printed Pattern Scrub Tops" %}<span style="font-weight:900">May 23</span>{% else %}<span class="preorderdate" style="font-weight:900">{% if product.id == 8702953062658 %}October 20{% else %}October 10{% endif %}</span>{% endif %}. Thanks for your patience!</p>
                         </div>
+
+                        {% if section.settings.abtestdavideo %}
+                          <div class="ugs_container">
+                            <div class="video-gallery">
+                              <div class="video-container zero1">
+                                <video class="video" src="https://cdn.shopify.com/videos/c/o/v/7aec805873de4b859b2954140a487b5e.mov" autoplay muted loop playsinline preload="metadata"></video>
+                                  <span>Why nurses should wear compression socks</span>
+                              </div>
+                              <div class="video-container zero2">
+                                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/ed7ec6ef8b8549969f0c2a394b1ccd60.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                  <span>How To Wear Compression Socks</span>
+                              </div>
+                              <div class="video-container zero3">
+                                <video class="video" src="https://cdn.shopify.com/videos/c/o/v/8c5fe7ec8aad41c8b9a0f674ef1f8e60.mov" autoplay muted loop playsinline preload="metadata"></video>
+                                  
+                                  <span>Make sure your day off is actually a day off</span>
+                              </div>
+                              <!-- 
+                              <div class="video-container zero4">
+                                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/c5fb46949ef64a199884f1995b514bfc.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                              </div>
+                              -->
+                            </div>
+                          </div>
+                          <style>
+                          .ugs_container{
+                            padding-left: 12px;
+                              padding-right: 12px;
+                              margin-top: 20px;
+                              margin-bottom:20px;
+                          }
+                          {% if section.settings.abtestnoicons %}
+                            .ugs_container{
+                                margin-top: -2px;
+                            }
+                          {% endif %}
+                          
+                          .ugs_container span{
+                            font-size: 11px;
+                            font-weight: 800;
+                          }
+                          
+                          .ugs_container .video-gallery {
+                              display: flex;
+                              gap: 10px;
+                          }
+                          
+                          .ugs_container .video-container {
+                              flex: 1;
+                              overflow: hidden;
+                              position: relative;
+                          }
+                          
+                          .ugs_container .video {
+                              width: 100%;
+                              height: auto;
+                              transition: transform 0.3s ease-in-out;
+                              object-fit: cover;
+                          }
+                          
+                          .ugs_container .video-container:hover {
+                              transform: scale(1.05);
+                              cursor:pointer;
+                          }
+                          </style>
+                          {% endif %}
+
+                          {% unless section.settings.abtestnoicons %}                          
                         <div class="sub-icon-cont" actualheight="108.453px" actualwidth="153.984px" actualmaxheight="none" actualmaxwidth="none" actualminheight="auto" actualminwidth="auto" windowheight="611">
                            <div class="sub-icon-cont1" actualheight="71.4531px" actualwidth="90px" actualmaxheight="none" actualmaxwidth="90px" actualminheight="0px" actualminwidth="0px" windowheight="611">
                             {% if section.settings.img1 %}
@@ -998,18 +1104,12 @@
                               </p>
                            </div>
                         </div>
+                            {% endunless %}
                      </div>
                      <div class="main-text" style="padding:20px 0px 5px;" actualheight="63.1875px" actualwidth="462px" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                             <p>{% unless section.settings.txt2 == '' or section.settings.txt2 == nil or section.settings.txt2 == blank %}{{ section.settings.txt2 }}{% else %}Free & Fast shipping over $100{% endunless %}</p>
                      </div>
-                      {% else %}
-                          {% include 'product-form'
-                          , section_id: section_id,
-                          variant_type: variant_type,
-                          variant_labels_enable: variant_labels_enable,
-                          quantity_enable: quantity_enable,
-                          enable_payment_button: enable_payment_button %}                  
-                      {% endif %}
+
 
 
                   

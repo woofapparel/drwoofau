@@ -43,6 +43,20 @@
         "txt11": "\"LOVE LOVE LOVE these scrubs. Super comfy and so many compliments when im at work.\" — Troy P"
       }
     },
+    "new_product_story_d3RMG8": {
+      "type": "new-product-story",
+      "settings": {
+        "section_title": "Why you'll love our scrubs",
+        "product_story_img_1": "shopify:\/\/shop_images\/1_8efde0c3-476d-49fb-a987-80ce031d30ef.jpg",
+        "product_story_title_1": "20% Rayon (aka vegan silk) for a feel so soft you'll want a second pair for bedtime.",
+        "product_story_img_2": "shopify:\/\/shop_images\/2_e5f06e2a-2c3f-452a-ae00-bdc51f9221c7.jpg",
+        "product_story_title_2": "Move, bend, stretch & crouch (without showing your bum crack.)",
+        "product_story_img_3": "shopify:\/\/shop_images\/3_96f600c5-ddc7-494e-bec7-4813d3639bcf.jpg",
+        "product_story_title_3": "Bye bye sweaty, too-big hospital scrubs. Hello superior comfort all shift long.",
+        "product_story_img_4": "shopify:\/\/shop_images\/4_38c7ba74-74b2-44bc-a34c-a0296a08ca11.jpg",
+        "product_story_title_4": "From seam yanking to wash testing — our custom 17-step QA process ensures top quality every time."
+      }
+    },
     "stories": {
       "type": "Product-section-template-scrubs-os2",
       "blocks": {
@@ -107,6 +121,7 @@
         "cebdefb5-34a5-4646-84a6-5b410256612f",
         "a12e0795-fe3c-4658-84d1-f37cd9abd485"
       ],
+      "disabled": true,
       "settings": {}
     },
     "reviews": {
@@ -134,6 +149,7 @@
   },
   "order": [
     "product-template",
+    "new_product_story_d3RMG8",
     "stories",
     "reviews",
     "recommendations",

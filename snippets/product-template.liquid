@@ -287,10 +287,6 @@
 <span class="preceilblue">{{ preceilblue }}</span>
 
 
-{% assign pretwilightblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_twilight_blue %}
-<span class="pretwilightblue">{{ pretwilightblue }}</span>
-
-
 {% assign premint = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_mint %}
 <span class="premint">{{ premint }}</span>
 
@@ -318,6 +314,29 @@
 
 {% assign premistyblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_misty_blue %}
 <span class="premistyblue">{{ premistyblue }}</span>
+
+{% assign pretwilightblue = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_twilight_blue %}
+<span class="pretwilightblue">{{ pretwilightblue }}</span>
+
+
+{% assign preblush = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_blush %}
+<span class="preblush">{{ preblush }}</span>
+
+{% assign predoublepurple  = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_double_purple %}
+<span class="predoublepurple">{{ predoublepurple }}</span>
+
+{% assign prelavender  = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_lavender %}
+<span class="prelavender">{{ prelavender }}</span>
+{% assign preaubergine  = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_aubergine %}
+<span class="preaubergine">{{ preaubergine }}</span>
+
+{% assign prerosewood = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_rosewood %}
+<span class="prerosewood">{{ prerosewood }}</span>
+
+
+{% assign premermaidteal = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.mermaid_teal %}
+<span class="premermaidteal">{{ premermaidteal }}</span>
+
 </div>
 
       {% if template contains "new-bundle-template" %}
@@ -1153,7 +1172,7 @@ dual
                         </div>
 
                       <div class="scrubs-cart">
-                        <label style="margin-bottom:8px">Size</label>
+                        <label style="margin-bottom:8px">Size: <span class="size-desc"></span></label>
                         <div class="righthere">
                           {% for variant in product.variants %}
                           <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" data-socvarid="{{ variant.id }}" data-socavail="{{ variant.available }}" data-socprice="{{ variant.price | money }}">{{ variant.title }}</span>
@@ -1173,7 +1192,7 @@ dual
                           margin-top:0 !important;
                         }
                         .loox-rating{
-                          margin-bottom:0 !important;
+                          
                         }
                         .main-textamonials{display:none;}
                         .scrubcaps-wrapper{
@@ -1202,7 +1221,7 @@ dual
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 453%;
+                          width: 661%;
                           height: 327px;
                         }
                         .btn-primer {
@@ -1427,7 +1446,7 @@ dual
                               quantity_enable: quantity_enable,
                               enable_payment_button: enable_payment_button %}
                             {% else %}
-                                  {% if product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 or product.title contains "UTS" %} 
+                                  {% if product.id == 7812766597378 or product.id == 8056106189058 or product.id == 8320636780802 or product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 or product.title contains "UTS" or product.id == 8224581288194 %} 
                                     {% include 'product-form-preorder'
                                     , section_id: section_id,
                                     variant_type: variant_type,
@@ -2056,6 +2075,7 @@ $(document).ready(function(){
   </script>
   {% endif %}
 
+  {% comment %}
   {% if template.suffix contains "xmas" %}
     <style>
       .disabledbutton{
@@ -2082,13 +2102,9 @@ $(document).ready(function(){
             }
         });
       })
-    </script>
-    
-
-
-  
-  
-  {% endif %}
+   </script>
+{% endif %}
+{% endcomment %}
 
 <style>
 .grid-product__price{
@@ -2096,3 +2112,38 @@ $(document).ready(function(){
 }
 </style>
 
+<script>
+  $(document).ready(function(){
+    $(".image-overlay").on("click", function() {
+        
+            $dron = ""
+            $dron = $(".atv").html()
+            switch ($dron) {
+              case "XXS":
+              $(".size-desc").html("XXS (AU 4-6)")
+              break;
+            case "XS":
+              $(".size-desc").html("XS (AU 6-8)")
+              break;
+            case "S":
+              $(".size-desc").html("S (AU 8-10)")
+              break;
+            case "M":
+              $(".size-desc").html("M (AU 10-12)")
+              break;
+            case "L":
+              $(".size-desc").html("L (AU 12-14)")
+              break;
+            case "XL":
+              $(".size-desc").html("XL (AU 14-16)")
+              break;            
+            case "XXL":
+              $(".size-desc").html("XXL(AU 16-18)")
+              break;
+            default:
+              $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+          }
+        
+    })
+  })
+</script>

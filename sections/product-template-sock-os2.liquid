@@ -30,8 +30,339 @@
   .main-textamonials{
     margin-bottom:0 !important;
   }
-
+  span.size-desc {
+    font-size: 16px;
+}
 </style>
+<script>
+  $(document).ready(function(){
+
+
+  $(".image-overlay").on("click", function() {
+    
+    $datatype = $(this).attr("data-type")
+    if($datatype == "regular"){
+      $(".bamboo").removeClass("actives")
+      $(".regular").addClass("actives")     
+       $(".bamboo").hide()
+      $(".regular").show()
+
+    }else{
+      $(".bamboo").show()
+      $(".regular").hide()
+      $(".regular").removeClass("actives")
+      $(".bamboo").addClass("actives")
+    }
+    {% comment %}
+    {% if product.title contains "Bamboo" or product.title contains "bamboo" %}
+      $(".capsbundleatc").html("PRE-ORDER")
+      {% else %}
+      $(".capsbundleatc").html("ADD TO CART")
+      {% endif %}
+    {% endcomment %}
+    
+      $(".capsbundleatc").removeClass("soldoutx")
+      $(".btn-primer").show()
+
+      
+      $(".image-overlay").removeClass("activer");
+      $(this).addClass("activer");
+      $caphandle = $(this).attr("data-handle")
+      $captitle = $(this).attr("data-title")
+      $capid = $(this).attr("data-id")
+      $capimage = $(this).attr("data-image")
+      $capurl = $(this).attr("data-url")
+      $capxlid = $(this).attr("data-xl+")
+      $capxlavail = $(this).attr("data-xl+-avail")
+      $capstandardid = $(this).attr("data-standard")
+      $capstandardavail = $(this).attr("data-standard-avail")
+      $capsprice = $(this).attr("data-price")
+      $capscompare = $(this).attr("data-compare")
+      
+      $(this).find("input").each(function(i, obj) {
+        $socname = $(this).attr("name")
+        $socavail = $(this).attr("data-socavail")
+        $socvarid = $(this).attr("data-socvarid")
+        $xsocqty = $(this).attr("data-socqty")
+
+        if ( i === 0) {
+          $(".righthere").html("")
+          if($socavail == 'true'){
+            
+            $(".righthere").append("<span class='btn-primer " + $socname + " atv' data-socvarid='" + $socvarid + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' data-socavail='" + $socavail + "'>" + $socname + "</span>")
+            if($xsocqty <= 0 ){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              switch($capid) {
+                case "8742079267074":
+                $(".preorderdate").html("October 3")
+                  break;
+                  case "8702953947394":
+                $(".preorderdate").html("October 3")
+                  break;
+                  case "8742080872706":
+                $(".preorderdate").html("October 3")
+                  break;
+                case "8742083002626":
+                $(".preorderdate").html("October 10")
+                  break;
+                case "8320634192130":
+                $(".preorderdate").html("October 10")
+                  break;
+                  case "8742084247810":
+                $(".preorderdate").html("October 10")
+                  break;
+                  case "8702954799362":
+                $(".preorderdate").html("October 3")
+                  break;
+                  
+                case "8702953062658":
+                $(".preorderdate").html("October 3")
+                  break;
+                case "8742079267074":
+                $(".preorderdate").html("October 20")
+                  break;
+                  case "8702949916930":
+                $(".preorderdate").html("October 3")
+                  break;
+                  case "8702953718018":
+                $(".preorderdate").html("October 3")
+                  break;
+                  case "8702953947394":
+                $(".preorderdate").html("October 20")
+                  break;
+                  case "87029547993624":
+                $(".preorderdate").html("October 20")
+                  break;
+                  case "8702954963202":
+                $(".preorderdate").html("October 3")
+                  break;
+                  case "8702955356418":
+                $(".preorderdate").html("October 3")
+                  break;
+                default:
+                $(".preorderdate").html("October 10")
+              }
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()           
+            }
+
+          }else{
+            $(".righthere").append("<span class='btn-primer " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+              $(".capsbundleatc").html("SOLD OUT")
+              $(".preorder-text").hide()
+          }
+        }else{
+          if($socavail == 'true'){
+            
+            $(".righthere").append("<span class='btn-primer " + $socname + "' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }else{
+            
+            $(".righthere").append("<span class='btn-primer  " + $socname + " butttonsoldout' data-socvarid='" + $socvarid + "' data-socavail='" + $socavail + "' data-socname='" + $socname + "' data-socqty='" + $xsocqty + "' >" + $socname + "</span>")
+          }
+        }
+      
+      
+      });
+      
+      
+      if ($capstandardavail == 'true') {
+          $(".standard").removeClass("butttonsoldout")
+          $(".standard").addClass("atv")
+          $(".XL").removeClass("atv")
+      } else {
+          $(".standard").addClass("butttonsoldout")
+          $(".standard").removeClass("atv")
+          $(".XL").addClass("atv")
+      }
+      if ($capxlavail == 'true') {
+          $(".XL").removeClass("butttonsoldout")
+      } else {
+          $(".XL").addClass("butttonsoldout")
+      }
+
+      if (typeof $capscompare === 'undefined' || $capscompare == '$0.00' || $capscompare == '') {
+          $(".product-single__prices").html('<span data-price="" class="9 normalPrice product__price" data-product-price="">' + $capsprice + '</span>')
+      } else {
+          $(".product-single__prices").html('<span class=" normal_price" data-price-wrapper=""><span class="1 product__price product__price--compare" data-product-price-compare="">' + $capscompare + '</span></span>    <span data-price="" class="2 normalPrice product__price sale-price" data-product-price="">' + $capsprice + '<span style="margin-bottom:12px;color:black; font-size: medium;display:inline-block"></span></span>')
+      }
+
+
+      $(".capstandardid").val($capstandardid)
+      $(".capxlid").val($capxlid)
+      $(".product-single__title").html($captitle)
+      $.ajax({
+          type: "GET",
+          url: $capurl,
+          datatype: "HTML",
+          beforeSend: function() {},
+          complete: function() {
+              setTimeout(function() {
+                  $(".product__photos").css("opacity", 1);
+              }, 1);
+          },
+          success: function(t) {
+              t = disableJavaScript(t)
+              var i = $(t).find(".oneway.product__photos").html();
+              var j = $(t).find(".collapsible-content:first-of-type .collapsible-content__inner").html();
+              // var k = $(t).find(".main-content .shopify-section:nth-child(2) .custom-image-with-richtext").html();
+              var l = $(t).find(".main-content .shopify-section:nth-child(2) .sections-wrapper.page-blocks").html();
+              $(".oneway.product__photos").html(i),
+                  $(".collapsible-content:first-of-type .collapsible-content__inner").html(j),
+                  // $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
+                  // $(".main-content .shopify-section:nth-child(2)").html(l),
+                  $(".oneway .product__thumbs").slick({
+                      slidesToShow: 6,
+                      slidesToScroll: 1,
+                      arrows: !1,
+                      fade: !1,
+                      vertical: !0
+                  }),
+                  768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({
+                      slidesToShow: 1,
+                      centerMode: true,
+                      slidesToScroll: 1,
+                      arrows: !1,
+                      centerPadding: '70px',
+                      dots: !0
+                  }),
+
+                  $(".product__photos").css("opacity", 1);
+          },
+      });
+     
+
+
+
+
+      $socqty = parseFloat($(".atv").attr("data-socqty"))
+      $datasocavail = $(".atv").attr("data-socavail")
+      
+
+      if(($socqty <= 0) && ($datasocavail == 'true')) {
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+
+
+      {% comment %}
+      switch ($capid) {
+        case "8296911995138":
+            if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8296912421122":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8320635240706":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+          case "8320635633922":
+          if($socqty <= 0){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+            }else{
+              $(".capsbundleatc").html("ADD TO CART")
+              $(".preorder-text").hide()
+            }
+            break;
+        case 5:
+          $(".capsbundleatc").html("PRE-ORDER")
+          $(".preorder-text").show()
+          break;
+        default:
+        $(".capsbundleatc").html("ADD TO CART")
+        $(".preorder-text").hide()
+      }
+      {% endcomment %}
+
+      {% if section.settings.enable_ab_size %}
+          $dron = ""
+          $dron = $(".atv").html()
+          switch ($dron) {
+          case "S":
+          $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+            break;
+          case "M":
+          $(".size-desc").html("Medium (Women 9-11 | Men 7.5-9.5)")
+            break;
+          default:
+            $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+        }
+      {% endif %}
+  })
+
+
+  
+    {% if section.settings.enable_ab_size %}
+
+
+  var interval = setInterval(function() {
+      if ($(".atv").length) {
+          $dron = $(".atv").html()
+          switch ($dron) {
+          case "S":
+          $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+            break;
+          case "M":
+          $(".size-desc").html("Medium (Women 9-11 | Men 7.5-9.5)")
+            break;
+            case "L":
+          $(".size-desc").html("Large")
+            break;
+          default:
+            alert("not working")
+        }
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+      } 
+    }, 1000); 
+{% endif %}
+    $(document).on("click",".btn-primer",function(){
+      
+    {% if section.settings.enable_ab_size %}
+
+        $size = $(this).html()
+
+        switch ($size) {
+          case "S":
+          $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+            break;
+          case "M":
+          $(".size-desc").html("Medium (Women 9-11 | Men 7.5-9.5)")
+            break;
+            case "L":
+          $(".size-desc").html("Large")
+            break;
+          default:
+            alert("not working")
+        }
+
+
+    {% endif %}
+    })
+  })
+</script>
 {% schema %}
   {
     "name": "Product pages",
@@ -44,11 +375,23 @@
       {
         "type": "header",
         "content": "Caps A/B testing"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "abtestnoicons",
+        "label": "Enable AB test no icons",
+        "default": false
       },
       {
         "type": "checkbox",
-        "id": "enable_ab",
-        "label": "Enable caps A/B testing",
+        "id": "abtestdavideo",
+        "label": "Enable video below atc",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ab_size",
+        "label": "Enable caps A/B testing for sizing",
         "default": false
       },
       {

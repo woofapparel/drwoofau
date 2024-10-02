@@ -151,6 +151,22 @@ counter = 0;
     </div>
 {% endunless %}
 
+{% if product.type == "Christmas" %}
+<div class="wider">
+  <a class="trigger-pop-up btn">Size Guide</a>
+</div>
+<style>
+  .product-single__form{
+    position:relative;
+    
+  }
+  .wider{
+    top:6px;
+    position:absolute;
+  }
+</style>
+{% endif %}
+
 <!-- 14 -->
 {% comment %}Start Please dont delete it{% endcomment %} 
 {% assign totalVariants = product.variants.size %}
@@ -560,7 +576,7 @@ counter = 0;
   {% endif %}
 
 
-
+{% comment %}
 {% if template.suffix contains "xmas" %}
   {% if product.title contains "Christmas" or product.title contains "Ho Ho" %}
       <p>Pre-Order Notification: Limited Edition Christmas Scrubs<br/>
@@ -577,7 +593,7 @@ counter = 0;
         </p>
   {% endif %}
 {% endif %}
-
+{% endcomment %}
 
 <div class="mobile-atc">
 {%- assign enable_dynamic_buttons = false -%}
@@ -722,11 +738,11 @@ ADD TO BAG
     </p><p><span>**We're expecting to restock the color you picked on {% if xmy_value %}<span class="colorit">{{ xmy_value }}</span>{% endif %}. Thanks for your patience!"**</span></p>
 </div>
 {% if product.type == "Women Scrub Tops" or product.type == "Women Scrub Pants" %}
-<a href="https://www.drwoofapparel.com.au/collections/deals/products/wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
+<a href="https://www.drwoofapparel.com.au" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
 {% endif %}
 
 {% if product.type == "Men Scrub Tops" or product.type == "Men Scrub Pants" %}
-<a href="https://www.drwoofapparel.com.au/collections/deals/products/men-wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
+<a href="https://www.drwoofapparel.com.au" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
 {% endif %}
 
 {% unless product.empty? %}

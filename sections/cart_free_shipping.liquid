@@ -1,176 +1,665 @@
 {% assign spendmsg = '' %}
+{% assign total_cart = cart.original_total_price | divided_by: 100 %}
+    
+<input type="hidden" class="set_cart" value="{{ total_cart }}" /> 
+
 {%- for block in section.blocks -%}
-{% assign cartamount =  cart.original_total_price | divided_by: 100 %}
-{% assign ruleamount = block.settings.spendamount | times: 1 %}
-{% if cartamount < ruleamount%}
-{% assign spendmsg = ruleamount | minus : cartamount %}
-{% assign spendrulmsg = block.settings.spendamountmsg %} 
-{% assign previndex = forloop.index | minus:1  %} 
-{% break %}
-{% endif %}
+  {% assign cartamount =  cart.original_total_price | divided_by: 100 %}
+  {% assign ruleamount = block.settings.spendamount | times: 1 %}
+  {% if cartamount < ruleamount %}
+    {% assign spendmsg = ruleamount | minus : cartamount %}
+    {% assign spendrulmsg = block.settings.spendamountmsg %} 
+    {% assign previndex = forloop.index | minus:1  %} 
+    {% break %}
+  {% endif %}
 {%- endfor -%}
 
 {%- for block in section.blocks -%}
-{% if forloop.first == true %}
-{% assign firstindex = block.settings.spendamount | times: 100 %}
-{% endif %}
-{% if forloop.last == true %}
-{% assign lastindex = block.settings.spendamount | times: 1.0 %}
-{% endif %}
-{% endfor %}
-<div class="drawer__header">
-  {% if lastindex > cartamount %}  
-    <div class="next-spend-msg">
-      <span>Spend <strong>{{spendmsg | times : 100 | money_without_trailing_zeros}}</strong> more to get <strong>FREE</strong> {{spendrulmsg}}</span>
-    </div> 
-    {% endif %}
-  </div>
-<div class="outer-spent" >
-  <div class="spend-progress-bar">
-
-
-    {%- for block in section.blocks -%}
-    {% if forloop.last == true %}
+  {% if forloop.first == true %}
+    {% assign firstindex = block.settings.spendamount | times: 1 %}
+    {% assign firstmsg = block.settings.spendamountmsg %}
+    
+  {% endif %}
+  {% if forloop.last == true %}
     {% assign lastindex = block.settings.spendamount | times: 1.0 %}
+    {% assign lastmsg = block.settings.spendamountmsg %}
+  {% endif %}
+{% endfor %}
+
+
+{%- for block in section.blocks -%}
+  {% if forloop.last == true %}
+    {% assign lastindex = block.settings.spendamount | times: 1.0 %}
+    {% assign lastindexnozero = block.settings.spendamount %}
+
     {% assign lastindexof  = forloop.index   %}  
-    {% endif %}
-    {% endfor %}
-    {% assign perc = cartamount | divided_by: lastindex | times: 100 %}
-    {% assign cartamount =  cart.original_total_price | divided_by: 100 %}
-    {% if cartamount > lastindex %}
-    {% assign perc = '102.5' %}
-    {% assign previndex = lastindexof  %} 
-    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign firstpos = firstindex | divided_by: lastindex %}
+
+{% assign firstpos = firstpos | times: 100 %}
+
+{% assign perc = cartamount | divided_by: lastindex | times: 100 %}
+{% assign cartamount =  cart.original_total_price | divided_by: 100 %}
+{% if cartamount > lastindex %}
+  {% assign perc = '102.5' %}
+  {% assign previndex = lastindexof %} 
+{% endif %}
 
 
-    <div class="spend-progress-main">
-      <ul>
-        {%- for block in section.blocks -%}
-        <li><p>{{block.settings.spendamount | times: 100 | money_without_trailing_zeros}}</p><p>{{block.settings.spendamountmsg }}</p></li>  
-        {%- endfor -%}  
-      </ul>   
-    </div> 
-    <div class="unlockshtml">
-      <div class="unlock-msg">
-        {%- for block in section.blocks -%}
-        {% if forloop.index == previndex %}
-        <div  >Enjoy - <b> {{ block.settings.spendamountmsg }}</b> 
-          <span class="svg-img">
-          <?xml version="1.0" encoding="utf-8"?>
-          <!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-               viewBox="0 0 624 570" style="enable-background:new 0 0 624 570;" xml:space="preserve">
-            <style type="text/css">
-              .st0{fill-rule:evenodd;clip-rule:evenodd;}
-            </style>
-            <path class="st0" d="M200.2,565L4.8,307.2l195.4,143L619.2,5L200.2,565z"/>
-          </svg>
 
-          </span>
-        </div>
-        {% endif %} 
-        {%- endfor -%}
-      </div>  
+  <div class="off1 progress-container">
+    <div class="offer">General Offer</div>
+    <div class="progress-bar">
+      <div class="milestone top-mon milone">${{ firstindex }}</div>
+      <div class="milestone top-mon miltwo">${{ lastindexnozero }}</div>
+      <div class="linertop milestone milone">|</div>
+      <div class="linertop milestone miltwo">|</div>
+        <div class="progress"></div>
+        <div class="progress-circle"></div>
+        <div class="linerbot milestone milone">|</div>
+        <div class="linerbot milestone miltwo">|</div>
+        <div class="milestone bot-mon milone">{{ firstmsg }}</div>
+        <div class="milestone bot-mon miltwo">{{ lastmsg }}</div>
     </div>
+    <div class="progress-text">
+        <span class="notif-inc">Add <strong>$<span class="amount-needed"></span></strong> more to cart to get <b>{{ firstmsg }}</b> </span>
+        <span class="notif-com1">Congratulations! You get FREE <b>Standard Shipping</b> and <b>FREE $40 Gift Card</b> </span>
+    </div>
+  </div>
+  
+  {% comment %}
+    <li><p>{{block.settings.spendamount | times: 100 | money_without_trailing_zeros}}</p><p>{{block.settings.spendamountmsg }}</p></li>  
+  {% endcomment %}
+  
 
+
+  <div class="off2 progress-container" style="display:none">
+    {% assign women_scrub_tops = 0 %}
+    {% assign women_scrub_pants = 0 %}
+    {% assign men_scrub_tops = 0 %}
+    {% assign men_scrub_pants = 0 %}
+    
+    {% for item in cart.items %}
+      {% if item.product.type == "Women Scrub Tops" %}
+        {% assign women_scrub_tops = women_scrub_tops | plus: item.quantity %}
+      {% elsif item.product.type == "Women Scrub Pants" %}
+        {% assign women_scrub_pants = women_scrub_pants | plus: item.quantity %}
+      {% elsif item.product.type == "Men Scrub Tops" %}
+        {% assign men_scrub_tops = men_scrub_tops | plus: item.quantity %}
+      {% elsif item.product.type == "Men Scrub Pants" %}
+        {% assign men_scrub_pants = men_scrub_pants | plus: item.quantity %}
+      {% endif %}
+    {% endfor %}
+    
+    {% assign women_sets = women_scrub_tops | minus: women_scrub_pants %}
+    {% if women_sets > 0 %}
+      {% assign women_sets = women_scrub_pants %}
+    {% else %}
+      {% assign women_sets = women_scrub_tops %}
+    {% endif %}
+    
+    {% assign men_sets = men_scrub_tops | minus: men_scrub_pants %}
+    {% if men_sets > 0 %}
+      {% assign men_sets = men_scrub_pants %}
+    {% else %}
+      {% assign men_sets = men_scrub_tops %}
+    {% endif %}
+    
+    {% assign total_sets = women_sets | plus: men_sets %}
+    
+    <input type="hidden" class="set_count" value="{{ total_sets }}" /> 
+    <div class="offer">Scrubs Offer</div>
+    <div class="progress-bar">
+      
+      <div class="milestone top-mon miltwo">3 Sets of Scrubs</div>
+      
+      <div class="linertop milestone miltwo">|</div>
+        <div class="progress"></div>
+        <div class="progress-circle"></div>
+        
+        <div class="linerbot milestone miltwo">|</div> 
+        <div class="milestone bot-mon miltwo">FREE Set</div>
+    </div>
+    <div class="progress-text">
+      <span class="notif-com1">Congratulations! You get a <b>FREE SET</b> </span>
+      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more set to get a<span class="another">another</span> <b class="promo">FREE SET</b> </span>
+      
+    </div>
+  </div>
+
+
+
+  <div class="off3 progress-container" style="display:none">
+    <div class="offer">Compression Socks Offer</div>
+    <div class="progress-bar">
+      <div class="milestone top-mon milone">4 Socks</div>
+      <div class="milestone top-mon miltwo">6 Socks</div>
+      <div class="linertop milestone milone">|</div>
+      <div class="linertop milestone miltwo">|</div>
+        <div class="progress"></div>
+        <div class="progress-circle"></div>
+        <div class="linerbot milestone milone">|</div>
+        <div class="linerbot milestone miltwo">|</div>
+        <div class="milestone bot-mon milone">FREE Pair</div>
+        <div class="milestone bot-mon miltwo">35% OFF</div>
+    </div>
+    <div class="progress-text">
+      <span class="notif-com1">Congratulations! You get <b>35% OFF</b> on your Compression Socks order </span>
+      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more Compression Socks to get <span class="another">another</span> <b class="get2">35% Off. </b> </span>
+      
+    </div>
+  </div>
+
+  <div class="off4 progress-container" style="display:none">
+    <div class="offer">Printed Scrub Tops Offer</div>
+    <div class="progress-bar">
+      <div class="milestone top-mon milone">Buy 2</div>
+      <div class="milestone top-mon miltwo">Buy 3</div>
+      <div class="linertop milestone milone">|</div>
+      <div class="linertop milestone miltwo">|</div>
+        <div class="progress"></div>
+        <div class="progress-circle"></div>
+        <div class="linerbot milestone milone">|</div>
+        <div class="linerbot milestone miltwo">|</div>
+        <div class="milestone bot-mon milone">15% OFF</div>
+        <div class="milestone bot-mon miltwo">GET 1 FREE</div>
+    </div>
+    <div class="progress-text">
+      <span class="notif-com1">Congratulations! You get <b>15% OFF</b> </span>
+      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more to get <span class="another">another</span> a <b class="get2"> 1 FREE</b> </span>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="off5 progress-container" style="display:none">
+    <div class="offer">Scrunchies Offer</div>
+    <div class="progress-bar">
+      
+      <div class="milestone top-mon milone">Add 3 scrunchies</div>
+      <div class="linertop milestone milone">|</div>
+      
+        <div class="progress"></div>
+        <div class="progress-circle"></div>
+        <div class="linerbot milestone milone">|</div>
+        
+        <div class="milestone bot-mon milone">FREE scrunchie</div>
+    </div>
+    <div class="progress-text">
+      <span class="notif-com1">Congratulations! You get one <b>FREE Scrunchie</b> on your order </span>
+      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more scrunchies to get <span class="another">another</span> <b>one FREE</b> </span>
+      
+    </div>
+  </div>
+
+
+
+  <script>
+$(document).ready(function() {
+
+
+$(".another").hide()
+
+
+    var totalcart = $(".totalin").html()
+    
+    totalcart  = Number(totalcart.replace('$',''));
+    
+    var progress = 0; // Percentage value to change the progress
+        progress = totalcart - 10;
+        
+    // Update the progress bar width and the position of the circle
+    progressPercentage1 = ( progress / {{ lastindex }} ) * 100;
+    
+    if(progressPercentage1 > 100){
+      $('.off1 .notif-inc').hide()
+      $('.off1 .notif-com1').show()
+      $('.off1 .progress').css('width', 100 + '%');
+      $('.off1 .progress-circle').css('left', 100 + '%');
+      
+    }else{
+      if(progress < 150){
+        // bad
+
+          $('.off1 .notif-inc').show()
+          $('.off1 .notif-com1').hide()
+          $('.off1 .progress').css('width', progressPercentage1 + '%');
+          $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
+          // Calculate the remaining amount for free shipping
+          var amountNeeded = {{ firstindex }} - progress;
+          $('.off1 .amount-needed').html(amountNeeded.toFixed(2));
+
+        
+      }else{
+        // good
+
+
+          $('.off1 .notif-inc').show()
+          $('.off1 .notif-com1').hide()
+          $('.off1 .progress').css('width', progressPercentage1 + '%');
+          $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
+          // Calculate the remaining amount for free shipping
+          var amountNeeded = {{ lastindex }} - progress;
+          $('.off1 .amount-needed').html(amountNeeded.toFixed(2));
+
+        
+      }
+    }
+
+  $sockcount = 0;
+  $scrubcount = 0;
+  $capscount = 0;
+  $scrunchiescount = 0;
+  var carttype;
+
+  $('.cart__item').each(function() {
+      $proqty = $(this).find(".Custom_cart__quantity").val()
+      carttype = $(this).find(".protype").val();
+      /*
+      if ((carttype == "Women Scrub Pants") || (carttype == "Women Scrub Tops") || (carttype == "Men Scrub Pants") || (carttype == "Men Scrub Tops")) {
+          $scrubcount = $scrubcount + parseInt($proqty);
+      }
+      */
+      $setCount = $(".set_count").val()
+      if (carttype == "Compression Socks") {
+        $sockcount = $sockcount + parseInt($proqty);
+      }
+
+      if (carttype == "Printed Pattern Scrub Tops") {
+        $capscount = $capscount + parseInt($proqty);
+      }
+      
+      if (carttype == "Scrunchies") {
+        $scrunchiescount = $scrunchiescount + parseInt($proqty);
+      }
+  });
+
+if($setCount > 0){
+  $(".off2").show()
+  $scrubcountpercent = ( $setCount / 3 ) * 100;
+  $scrubcountfull = 3 - $setCount;
+  if( $setCount >= 3 ){
+      $('.off2 .notif-inc').hide()
+      $('.off2 .notif-com1').show()
+      $('.off2 .progress').css('width', 100 + '%');
+      $('.off2 .progress-circle').css('left', 100 + '%');
+      
+    }else{
+      $('.off2 .progress').css('width', $scrubcountpercent + '%');
+      $('.off2 .progress-circle').css('left', $scrubcountpercent + '%');
+        
+          $('.off2 .notif-inc').show()
+          $('.off2 .notif-com1').hide()
+          $('.off2 .notif-com2').hide() 
+          var amountNeeded = 3 - $setCount;
+          $('.off2 .amount-needed').html(amountNeeded);     
+
+      {% comment %}
+            if($scrubcount < 3){
+              $(".another").hide()
+              $(".get2").html("FREE Pair")
+              $('.off2 .notif-inc').show()
+              $('.off2 .notif-com1').hide()
+              $('.off2 .notif-com2').hide()
+              var amountNeeded = 3 - $scrubcount;
+              $('.off2 .amount-needed').html(amountNeeded);
+            }else{
+              if($scrubcount < 6){
+                $(".another").show()
+                $(".get2").html("35% OFF")
+                
+                $('.off2 .notif-inc').show()
+                $('.off2 .notif-com1').show()
+                $('.off2 .notif-com2').hide() 
+                var amountNeeded = 6 - $scrubcount;
+                $('.off2 .amount-needed').html(amountNeeded);          
+              }else{
+                $('.off2 .notif-inc').hide()
+                $('.off2 .notif-com2').show()
+                $('.off2 .notif-com2').show() 
+                var amountNeeded = 6 - $scrubcount;
+                $('.off2 .amount-needed').html(amountNeeded);       
+              }
+            }
+      {% endcomment %}
+    }
+}else{
+  $(".off2").hide()
+}
+
+if($sockcount > 0){
+  $(".off3").show()
+  $sockcountpercent = ( $sockcount / 6 ) * 100;
+  $sockcountfull = 6 - $sockcount;
+  if( $sockcount >= 6 ){
+      $('.off3 .notif-inc').hide()
+      $('.off3 .notif-com1').show()
+      $('.off3 .progress').css('width', 100 + '%');
+      $('.off3 .progress-circle').css('left', 100 + '%');
+      $('.off3 .notif-com1').html("Congratulations! You get <b>35% OFF</b> on your Compression Socks order")
+    }else{
+      $('.off3 .progress').css('width', $sockcountpercent + '%');
+      $('.off3 .progress-circle').css('left', $sockcountpercent + '%');
+      if($sockcount < 4){
+        $(".off3 .another").hide()
+        $('.off3 .notif-inc').show()
+        $('.off3 .notif-com1').hide()
+        $('.off3 .notif-com2').hide()
+        var amountNeeded = 4 - $sockcount;
+        $('.off3 .amount-needed').html(amountNeeded);
+        $('.off3 .get2').html("FREE pair of Compression Socks")
+      }else{
+        if($sockcount < 6){
+          $(".off3 .another").hide()
+          $('.off3 .notif-inc').show()
+          $('.off3 .notif-com1').show()
+          $('.off3 .notif-com1').html("Congratulations! You get a <b>FREE pair</b> of Compression Socks.<br/>")
+          $('.off3 .get2').html("35% OFF")
+          var amountNeeded = 6 - $sockcount;
+          $('.off3 .amount-needed').html(amountNeeded);
+        }else{
+          $('.off3 .notif-inc').hide()
+          $('.off3 .notif-com2').hide()
+          $('.off3 .notif-com2').hide()
+          var amountNeeded = 6 - $sockcount;
+          $('.off3 .amount-needed').html(amountNeeded);
+        }
+      }
+    }
+}else{
+  $(".off3").hide()
+}
+
+
+
+
+if($capscount > 0){
+  $(".off4").show()
+  $capscountpercent = ( $capscount / 3 ) * 100;
+  $capscountfull = 3 - $capscount;
+  if( $capscount >= 3 ){
+      $('.off4 .notif-inc').hide()
+      $('.off4 .notif-com1').show()
+      $('.off4 .progress').css('width', 100 + '%');
+      $('.off4 .progress-circle').css('left', 100 + '%');
+      $('.off4 .notif-com1').html("Congratulations! You get a <b>FREE</b> Printed Scrub Tops")
+    }else{
+      $('.off4 .progress').css('width', $capscountpercent + '%');
+      $('.off4 .progress-circle').css('left', $capscountpercent + '%');
+      if($capscount < 2){
+        $(".off4 .another").hide()
+        $('.off4 .notif-inc').show()
+        $('.off4 .notif-com1').hide()
+        $('.off4 .notif-com2').hide()
+        var amountNeeded = 2 - $capscount;
+        $('.off4 .amount-needed').html(amountNeeded);
+        $('.off4 .get2').html("15% OFF for Printed Scrub Tops.")
+      }else{
+        if($capscount < 3){
+          $(".off4 .another").hide()
+          $('.off4 .notif-inc').show()
+          $('.off4 .notif-com1').show()
+          $('.off4 .notif-com1').html("Congratulations! You get <b>15% OFF</b> Printed Scrub Tops.<br/>")
+          $('.off4 .get2').html("FREE Printed Scrub Top")
+          var amountNeeded = 3 - $capscount;
+          $('.off4 .amount-needed').html(amountNeeded);
+        }else{
+          $('.off4 .notif-inc').hide()
+          $('.off4 .notif-com2').hide()
+          $('.off4 .notif-com2').hide()
+          var amountNeeded = 3 - $capscount;
+          $('.off4 .amount-needed').html(amountNeeded);
+        }
+      }
+    }
+}else{
+  $(".off4").hide()
+}
+
+
+
+
+
+/*
+if($scrunchiescount > 0){
+  $(".off5").show()
+  $scrunchiespercent = ( $scrunchiescount / 3 ) * 100;
+  $scrunchiescountfull = 3 - $scrunchiescount;
+  if( $scrunchiescount >= 3 ){
+      $('.off5 .notif-inc').hide()
+      $('.off5 .notif-com1').show()
+      $('.off5 .progress').css('width', 100 + '%');
+      $('.off5 .progress-circle').css('left', 100 + '%');
+      
+    }else{
+      $('.off5 .progress').css('width', $scrunchiespercent + '%');
+      $('.off5 .progress-circle').css('left', $scrunchiespercent + '%');
+        
+          $('.off5 .notif-inc').show()
+          $('.off5 .notif-com1').hide()
+          $('.off5 .notif-com2').hide() 
+          var amountNeeded = 3 - $scrunchiescount;
+          $('.off5 .amount-needed').html(amountNeeded);     
+    }
+}else{
+  $(".off5").hide()
+}
+
+*/
+
+
+});
+</script>
+
+
+
+
+
+
+
+<!-- 
+<div class="off2 progress-container">
+  
+  <div class="offer">Offer #2</div>
+
+  <div class="progress-bar">
+      <div class="milestone top-mon secret-gift">$350</div>
+      <div class="progress"></div>
+      <div class="progress-circle"></div>
+      <div class="milestone bot-mon secret-gift">Secret Gift</div>
+  </div>
+
+  <div class="progress-text">
+      <span>Add items for <strong>$<span id="amount-needed">89</span></strong> more  to get <b>Secret Gift</b></span>
   </div>
 </div>
+-->
 
-
-
-
-
-
-
-
-
-
-
-<style type="text/css">
-  .spend-progress-main ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+<style>
+  .top-mon{
+    font-size:10px;
+    top: -25px;
+  }
+ .bot-mon{
+    font-size:10px;
+    font-weight:700;
+    top: 20px;
+ }
+.progress-container {
     width: 100%;
-    padding: 0px;
-    list-style: none;
-    position: relative;
-    margin: 0;
-  }
-
-  .spend-progress-main ul li:first-child{
-          flex: 0 0 42% !important;
-          left: 24px;
-        }
-        .spend-progress-main ul li:nth-child(2){
-          flex: 0 0 58% !important;
-          left: 19px;
-        }
-
-        .spend-progress-main ul li:nth-child(3){
-          flex: 0 0 25% !important;
-        }
-        
-  .spend-progress-main ul li {
-    
-    text-align: right;
-    padding: 0px 10px;
-    font-size: 13px;
-    position: relative;
-  }
-
-  .spend-progress-main ul li p {
-    margin: 15px 0px;
-  }
-
-  .spend-progress-main ul:before {
-    border: 1px solid {{section.settings.bgcolor_bar}};
-    position: absolute;
-    top: -20px;
-    bottom: 0;
-    height: 9px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    content: "";
-    border-radius: 10px;
-
-  }
-
-  .spend-progress-main ul li:before {
-    background: {{section.settings.bgcolor_bar}};
-    content: "";
-    position: absolute;
-    height: 9px;
-    width: 1px;
-    top: 35px;
-    right: 23px;
-  }
-  .spend-progress-main ul::after {
-
-    width: calc({{perc}}% - 10px);
-    background: {{section.settings.bgcolor_bar}};
-    position: absolute;
-    top: -20px;
-    bottom: 0;
-    height: 7px;
-    left: 0;
-    margin: auto;
-    content: "";
-    border-radius: 10px;
-  }
-  .spend-progress-main ul li p:last-child
-  {
-    min-height: 35px;
-    max-width: 55px;
-    right: -15px;
-    position: relative;
-    margin-right: 0;
-    margin-left: auto;
+    padding: 20px 20px 22px;
     text-align: center;
+    border-bottom:1px solid #EBEBEB;
+}
+
+  .off2 .progress-container {
+    width: 100%;
+    padding: 20px 20px 17px;
   }
-  .outer-spent{
+@media only and (max-width:480px){
+  .bot-mon{
+    font-size:11px;
+ }
+  .progress-container {
+    padding:20px 20px 24px;
+  }
+}
+.offer {
+    margin-bottom: 10px;
+    text-align:left;
+    font-family: "futurapt";
+    font-size:12px;
+    color:#A8A8A8;
+}
+
+.off1 .milone{
+  left:{{ firstpos }}%;
+  text-align:center;
+}
+
+.off1 .miltwo{
+  left:95%;
+  text-align:center;
+}
+.off1 .linertop.miltwo,
+.off1 .linerbot.miltwo{
+  left:98%;
+  text-align:center;
+}
+.off2 .milone{
+  left:50%;
+  text-align:center;
+}
+
+.off2 .miltwo{
+  left:95%;
+  text-align:center;
+}
+.off2 .linertop.miltwo,
+.off2 .linerbot.miltwo{
+  left:98%;
+}
+.off4 .milone,
+.off3 .milone{
+  left:66%;
+  text-align:center;
+}
+.off4 .miltwo,
+.off3 .miltwo{
+  left:95%;
+  text-align:center;
+}
+.off4 .linertop.miltwo,
+.off4 .linerbot.miltwo,
+.off3 .linertop.miltwo,
+.off3 .linerbot.miltwo{
+  left:98%;
+  text-align:center;
+}
+
+.off5 .milone{
+  left:95%;
+  text-align:center;
+}
+.off5 .linertop.milone,
+.off5 .linerbot.milone{
+  left:98%;
+  text-align:center;
+}
+.linertop{
+  font-size: 6px;
+  top: -7px;
+  color:#E3E3E3;
+}
+.linerbot{
+  font-size: 6px;
+  top: 7px;
+  color:#E3E3E3;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background:#fff;
+    border:2px solid #E3E3E3;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    width: 0;
+    position: absolute;
+    height: 100%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0573/7250/8344/files/Animation_1715636956235_1.gif?v=1717087149);
+    background-repeat: no-repeat; background-position: left; background-blend-mode: screen;background-size:cover;
+}
+
+.progress-circle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #ff0;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.milestone {
+    position: absolute;
+    font-family: "futurapt";
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.free-shipping {
+    right: 20px;
+    transform: translateX(50%);
+}
+
+.secret-gift {
+    right: 20px;
+    transform: translateX(50%);
+}
+
+.progress-text {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    font-size:10px;
+    position: relative;
+    top: 16px;
+}
+
+.off2 .progress-text{
+  top: 0px;
+}
+
+
+  @media only screen and (max-width:480px){
+    .progress-text {
+      position:relative;
+      top:18px;
+      font-size:11px;
+    }
+    .off1 .bot-mon.miltwo{
+      left:90%;
+    }
+  }
+
+
+
+/* from old design */
+.outer-spent{
     padding : 0px 30px;
     margin-top: -15px;
 
@@ -181,7 +670,7 @@
   .unlockmsg{
     position: absolute;
     margin: 0 auto;
-    bottom: 33px;
+    bottom: 0;
     left: 22px;
   }
 
@@ -265,9 +754,7 @@
     
   }
   .header-main-cart{
-    padding-top:16px;
     position:relative;
-    padding-bottom:22px;
     border-radius:8px;
   }
   .drawer__inner .qty-remove{
@@ -418,8 +905,6 @@
       width: 57px !important;
     }
   }
-
-
 </style>
 
 

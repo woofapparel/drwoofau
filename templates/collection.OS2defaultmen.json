@@ -38,7 +38,7 @@
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/8_a768ded0-a882-4884-9454-3218a5b3ec4c.png",
             "collection_title": "Underscrubs",
-            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/men\/underscrubs-men"
+            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/men\/underscrubs"
           }
         },
         "f5cae287-2f9c-48bc-a266-fba70afce910": {
@@ -67,7 +67,7 @@
         "79585222-b8ae-4bd2-b466-001a89979fba"
       ],
       "settings": {
-        "title_enable": false
+        "title_enable": true
       }
     },
     "collection-filters": {

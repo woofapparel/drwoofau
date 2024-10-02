@@ -75,7 +75,7 @@
         "main_header_size": 40,
         "main_header_size_mobile": 32,
         "main_header_space": 40,
-        "content": "Dr. Woof's Graduated Compression Socks deliver essential support, improve your venous blood flow and transforming tiring shifts into pain free comfort for your feet.",
+        "content": "Dr. Woof's Graduated Compression Socks deliver essential support, improve your blood flow and transforming tiring shifts into pain free comfort for your feet.",
         "textaroundtop": "",
         "textaroundbottom": "",
         "button_text_1": "Order Now & Save Up To 35%",
@@ -125,9 +125,9 @@
         "list_T6RnyN": {
           "type": "list",
           "settings": {
-            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_7.jpg",
-            "list_title": "4. Padded Perfection: Step with Comfort",
-            "list_text": "Imagine a sock that feels like a soft embrace for your feet. That's Dr. Woof’s Graduated Compression Socks. Designed specifically for nurses, they feature extra-thick padding and ultra-soft material, ensuring your comfort on even the longest shifts. It’s the comfort you need to keep going, step after step.",
+            "list_image": "shopify:\/\/shop_images\/DL7rnWdHf_mid.jpg",
+            "list_title": "4. Bamboo to the Rescue: No More Stinky Feet!",
+            "list_text": "Eco-friendly and super soft, these socks keep your feet fresh and comfy all shift long. Naturally breathable and moisture-wicking, they’re like a mini spa for your feet. Plus, bamboo’s anti-bacterial properties mean fresher socks for longer. Step up your sock game with bamboo – your feet (and the planet) will thank you!",
             "button_text": "",
             "button_url": ""
           }
@@ -171,38 +171,80 @@
     "advanced_content_7w4nzG": {
       "type": "advanced-content",
       "blocks": {
-        "image_xVigmp": {
+        "image_MmLdPY": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_d73cef14-157e-4784-89eb-a26b4dbecc7b.jpg",
+            "image": "shopify:\/\/shop_images\/1_c8801da3-8a8a-4735-ac42-1c99acb6920a.png",
             "link": "",
-            "width": "33%",
+            "width": "100%",
             "alignment": "top-middle"
           }
         },
-        "image_bxfKbz": {
+        "image_hP3ehb": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_afae5400-4093-459c-8e6a-65ef755e1b01.jpg",
+            "image": "shopify:\/\/shop_images\/4_df93db99-6634-47a7-a901-ac870b57d2fa.png",
             "link": "",
-            "width": "33%",
+            "width": "100%",
             "alignment": "top-middle"
           }
         },
-        "image_cpHEyi": {
+        "image_88gDbD": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Amy_N..jpg",
+            "image": "shopify:\/\/shop_images\/2_7304abf1-2053-4102-a59d-7f87a51bd467.png",
             "link": "",
-            "width": "33%",
+            "width": "100%",
             "alignment": "top-middle"
           }
         }
       },
       "block_order": [
-        "image_xVigmp",
-        "image_bxfKbz",
-        "image_cpHEyi"
+        "image_MmLdPY",
+        "image_hP3ehb",
+        "image_88gDbD"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alt": false
+      }
+    },
+    "advanced_content_qq9YdT": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_Nb8J8e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_594e861b-d3f7-4bc7-b845-fcae65857b37.png",
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "image_BpxKUN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_6260f536-f165-487e-8455-96e776ceb057.png",
+            "link": "",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        },
+        "image_ixqXqT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_701377d4-4bef-4cc7-a4b8-c80bd3dbdeaf.png",
+            "link": "",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "image_Nb8J8e",
+        "image_BpxKUN",
+        "image_ixqXqT"
       ],
       "settings": {
         "full_width": false,
@@ -253,6 +295,7 @@
     "a155aa5c-40ac-40b5-8a70-5059e600e448",
     "68681b12-95a9-4f19-8144-7b29406c141b",
     "advanced_content_7w4nzG",
+    "advanced_content_qq9YdT",
     "text_and_image_6CTcBf",
     "adsection_DFck6h",
     "custom_html_3Jq8JP"

@@ -21,7 +21,7 @@
 
       for (var i = 0; i < texts.length; i++) {
         var regExp = new RegExp(`(?!<h\\d>.*|alt=".*|<a.*>)${texts[i]}(?!<\/a>|.*"|.*<\/h\\d>)`);
-        var anchor = '<a target="blank" href="' + link + '">' + texts[i] + '</a>';
+        var anchor = '&nbsp;<a target="blank" href="' + link + '">' + texts[i] + '</a>';
 
         var replaced = result.replace(regExp, anchor);
        

@@ -4,11 +4,13 @@
       "type": "dr-woof-hero-scrubs3",
       "settings": {
         "pad": "30px",
-        "enable_auto": false,
+        "enable_auto": true,
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
+        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_c1a03f43-e5a2-4c2a-a1b1-35559781dc73.png",
         "image_webp_pc": "",
+        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px.png",
         "image_webp_mobile": ""
       }
     },
@@ -33,7 +35,8 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": true,
+        "pre-navy": false
       }
     }
   },

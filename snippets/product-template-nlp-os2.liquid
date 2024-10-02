@@ -119,12 +119,19 @@
                 <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="half" aria-hidden="true">
                     <use href="#looxicons-rating-icon"></use>
                 </svg>
-                <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 
+                
+                <span class="loox-rating-label">&nbsp; 
+                  {% if section.settings.change_lptitle %}
+                    Over 20, 000 Sets Sold in Australia
+                  {% else %}
+                4.8 Stars from 316 
                   {% if section.settings.enable_men %}
                   Comfy kings
                   {% else %}
                   Comfy Nurses
-                  {% endif %}</span> 
+                  {% endif %}
+                {% endif %}
+                </span> 
               </div>
               </a>
             {% endif %}
@@ -396,11 +403,16 @@
                     <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="half" aria-hidden="true">
                         <use href="#looxicons-rating-icon"></use>
                     </svg>
-                    <span class="loox-rating-label">&nbsp; 4.8 Stars from 316 {% if section.settings.enable_men %}
+                    <span class="loox-rating-label">&nbsp; 
+                      {% if section.settings.change_lptitle %}
+                        Over 20, 000 Sets Sold in Australia
+                      {% else %}
+                      4.8 Stars from 316 {% if section.settings.enable_men %}
                       Comfy kings
                       {% else %}
                       Comfy Nurses
-                      {% endif %}</span> 
+                      {% endif %}
+                    {% endif %}</span> 
                   </div>
                   </a>
                 {% endif %}

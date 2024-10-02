@@ -1,4 +1,4 @@
-<div id="custom-slider-{{ section.id }}" class="custom-slider slider-{{ section.id }}" style="margin-top:60px;margin-bottom:30px;">
+<div id="xcustom-slider-{{ section.id }}" class="custom-slider slider-{{ section.id }}" style="margin-top:60px;margin-bottom:30px;">
   <div class="pager-wrapper">
     
       <div class="title-wrapper">
@@ -28,7 +28,7 @@
           <div class="absolute-btn-container-top">
             <p class="absolute-text-top">{{ block.settings.text-upper }}</p>
           </div>
-          <video muted>
+          <video muted loop playsinline preload="metadata">
             <source src="{{ block.settings.video_link }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -58,23 +58,23 @@
 </div>
 
   <style>
-    #custom-slider-{{ section.id }}{
+    #xcustom-slider-{{ section.id }}{
       width:100%;
       
       margin-left:auto;
       margin-right:auto;
     }
 
-    #custom-slider-{{ section.id }} .slick-next, #custom-slider-{{ section.id }} .slick-prev{
+    #xcustom-slider-{{ section.id }} .slick-next, #xcustom-slider-{{ section.id }} .slick-prev{
       border-radius:25px !important;
       background:#0B0D32;
     }
-    #custom-slider-{{ section.id }} .slick-next:before, #custom-slider-{{ section.id }} .slick-prev:before{
+    #xcustom-slider-{{ section.id }} .slick-next:before, #xcustom-slider-{{ section.id }} .slick-prev:before{
       position:relative;
       top:-15px;
       color:#fff;
     }
-    #custom-slider-{{ section.id }} .slick-slide{
+    #xcustom-slider-{{ section.id }} .slick-slide{
       border-radius:8px;
     }
     .slick-slide{
@@ -145,23 +145,23 @@
       background:#0B0D32;
       color:#fff;
     }
-    #custom-slider-ugcslider_WVccfR .slide,
-    #custom-slider-{{ section.id }} .slide iframe,
-    #custom-slider-{{ section.id }} .slide video,
-    #custom-slider-{{ section.id }} .slide img{
+    #xcustom-slider-ugcslider_WVccfR .slide,
+    #xcustom-slider-{{ section.id }} .slide iframe,
+    #xcustom-slider-{{ section.id }} .slide video,
+    #xcustom-slider-{{ section.id }} .slide img{
       width:100%;
       height:auto;
       border-radius:8px !important;
     }
-    #custom-slider-{{ section.id }} .slide{
+    #xcustom-slider-{{ section.id }} .slide{
       padding:17px;
     }
-    #custom-slider-{{ section.id }} .slick-center iframe,
-    #custom-slider-{{ section.id }} .slick-center video,
-    #custom-slider-{{ section.id }} .slick-center img{
+    #xcustom-slider-{{ section.id }} .slick-center iframe,
+    #xcustom-slider-{{ section.id }} .slick-center video,
+    #xcustom-slider-{{ section.id }} .slick-center img{
 
     }
-    #custom-slider-{{ section.id }} .slick-center{
+    #xcustom-slider-{{ section.id }} .slick-center{
       transform: scale(1.05);
 
     }
@@ -172,14 +172,14 @@
       width:100%;
       overflow-x:hidden;
     }
-    #custom-slider-{{ section.id }} .slide{
+    #xcustom-slider-{{ section.id }} .slide{
       padding:8px;
     }
     .absolute-text,
     .absolute-text-top{
       font-size:16px;
     }
-    #custom-slider-{{ section.id }} .slick-list{
+    #xcustom-slider-{{ section.id }} .slick-list{
       width:120%;
     }
     .slick-current .absolute-btn-container-top{
@@ -197,7 +197,7 @@
         display:block;
         bottom:20px;
       }
-      #custom-slider-{{ section.id }} .absolute-btn{
+      #xcustom-slider-{{ section.id }} .absolute-btn{
       font-size:10px
     }
     }

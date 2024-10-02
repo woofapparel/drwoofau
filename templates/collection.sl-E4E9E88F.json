@@ -92,7 +92,7 @@
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/10_5b200487-ee31-4202-879c-f84cfb462d8c.png",
             "collection_title": "Bundle Deals",
-            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/deals-1?view=sl-E4E9E88F"
+            "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/sale"
           }
         }
       },
@@ -135,7 +135,8 @@
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",
-        "description_bottom": false
+        "description_bottom": false,
+        "pre-navy": false
       }
     }
   },

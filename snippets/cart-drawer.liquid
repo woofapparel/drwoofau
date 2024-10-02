@@ -146,6 +146,7 @@
                         <a href="{% unless item.id == 43272026063106 or item.id == 43272054112514 or item.id == 43048672166146 or item.id == 43096458625282 %}{{ item.url }}{% else %}#{% endunless %}" class="cart__product-name" data-cart-item-href data-cart-item-title>
                           {{ item.product.title }}
                         </a>
+                        <input type="hidden" class="protype" value="{{ item.product.type }}">
                           <input type="hidden" value="{{ item.id }}" class="prodvarid">
                          {%- unless item.product.has_only_default_variant -%}
                         <span class="cart__item-subtitle cart__item-subtitle--inline" data-cart-item-variant-title>
@@ -421,6 +422,11 @@
                             #{{ discount_allocation.discount_application.title }}   (-$15.72)      
                             {% when '15-SOCKS' %}
                               #{{ discount_allocation.discount_application.title }}   (-$20.96)      
+                  {% when 'FLASH15' %}
+                  #{{ discount_allocation.discount_application.title }}   (-15%) 
+                  {% when 'FLASHSOCKS' %}
+                    #{{ discount_allocation.discount_application.title }} 1 Free Sock
+
                               {% when '5FOR4SOCKS' %}
                                 #{{ discount_allocation.discount_application.title }} 1 Free Sock
                     {% else %}
@@ -461,7 +467,14 @@
             Total
           </div>
           <div class="cart__detail-info">
-            <span data-cart-subtotal class="totalin" style="font-weight:900">{{ cart.total_price | money }}</span>
+            {% assign xter = cart.total_price |  divided_by: 100 %}
+            {% if xter >= 150 %}
+              <span data-cart-subtotal class="totalin_hidden" style="font-weight:900;display:none !important;">{{ cart.total_price | money }}</span>
+              <span data-cart-subtotal class="totalin" style="font-weight:900">{{ cart.total_price | money }}</span>
+            {% else %}
+              <span data-cart-subtotal class="totalin_hidden" style="font-weight:900;display:none !important;">{{ cart.total_price | money }}</span>
+              <span data-cart-subtotal class="totalin" style="font-weight:900">{{ cart.total_price | plus: 1190 | money }}</span>
+            {% endif %}
           </div>
         </div>
         <!-- shipping calculation -->

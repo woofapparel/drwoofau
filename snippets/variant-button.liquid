@@ -56,7 +56,7 @@
 
 
     <label class="newpdptop variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels_enable %} hidden-label{% endunless %}" for="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
-      {{ option.name }}:
+    {{ option.name }}: {% if option.name == 'Size' %}<span class="size-desc"></span>{% endif %}
       <span class="variant__label-info  {% if option.name == 'size' or option.name == 'Size' %}Size-ajax-based {% endif %}">
         {% if option.name == 'Size (Unisex)' or option.name == 'size' or option.name == 'Size' %}
 
@@ -1002,3 +1002,101 @@ display:block;
   */
 }
 </style>
+
+{% if product.handle contains "women" %}
+<script>
+  $(document).ready(function(){
+
+    
+  
+  var interval = setInterval(function() {
+      if ($(".swatchwrapper").length) {
+          $dron = "S"
+          
+          switch ($dron) {
+            case "XXS":
+            $(".size-desc").html("XXS (AU 4-6)")
+            break;
+          case "XS":
+            $(".size-desc").html("XS (AU 6-8)")
+            break;
+          case "S":
+            $(".size-desc").html("S (AU 8-10)")
+            break;
+          case "M":
+            $(".size-desc").html("M (AU 10-12)")
+            break;
+          case "L":
+            $(".size-desc").html("L (AU 12-14)")
+            break;
+          case "XL":
+            $(".size-desc").html("XL (AU 14-16)")
+            break;            
+          case "XXL":
+            $(".size-desc").html("XXL(AU 16-18)")
+            break;
+          case "3XL":
+            $(".size-desc").html("3XL(AU 18-20)")
+            break;
+          case "4XL":
+            $(".size-desc").html("4XL(AU 20-22)")
+            break;
+          case "5XL":
+            $(".size-desc").html("5XL(AU 22-24)")
+            break;
+          case "6XL":
+            $(".size-desc").html("6XL(AU 24-26)")
+            break;                        
+          default:
+          $(".size-desc").html($dron)
+        }
+          clearInterval(interval); // Stop the interval when the div is fully loaded
+      } 
+    }, 1000); 
+
+
+$(".swatchwrapper .varin[name='Size']").on("click", function() {
+        
+            $dron = ""
+            $dron = $(this).attr("op_val")
+            switch ($dron) {
+              case "XXS":
+              $(".size-desc").html("XXS (AU 4-6)")
+              break;
+            case "XS":
+              $(".size-desc").html("XS (AU 6-8)")
+              break;
+            case "S":
+              $(".size-desc").html("S (AU 8-10)")
+              break;
+            case "M":
+              $(".size-desc").html("M (AU 10-12)")
+              break;
+            case "L":
+              $(".size-desc").html("L (AU 12-14)")
+              break;
+            case "XL":
+              $(".size-desc").html("XL (AU 14-16)")
+              break;            
+            case "XXL":
+              $(".size-desc").html("XXL(AU 16-18)")
+              break;
+            case "3XL":
+              $(".size-desc").html("3XL(AU 18-20)")
+              break;
+            case "4XL":
+              $(".size-desc").html("4XL(AU 20-22)")
+              break;
+            case "5XL":
+              $(".size-desc").html("5XL(AU 22-24)")
+              break;
+            case "6XL":
+              $(".size-desc").html("6XL(AU 24-26)")
+              default:
+            $(".size-desc").html($dron)
+          }
+        
+    })
+  })
+</script>
+{% endif %}

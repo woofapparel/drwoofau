@@ -1145,12 +1145,77 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
       </div>
       
       {% if section.settings.description_bottom %}
-        <div class="collection-description rte read-hide">
+{%- assign collection_tag = collection.metafields.custom.collection_tag.value -%}
+
+{%- if template contains 'collection' -%}
+    {%- liquid
+      assign content = collection.description
+  
+      if collection_tag
+        for metaobject in collection_tag
+          if request.path contains metaobject.name
+            assign content = metaobject.content
+            break
+          endif
+        endfor
+      endif
+    -%}
+
+    <div class="collection-description rte read-hide">
+        {%- if content -%}
+          {{ content }}
+        {%- endif -%}
+      {%- else -%}
+        
+        {%- if collection.description -%}
           {{ collection.description }}
-          {% comment %}
-          {% render 'custom-collection-description' %}
-        {% endcomment %}
-        </div>
+        {%- endif -%}
+      {%- endif -%}
+  
+            {% comment %}
+            {% render 'custom-collection-description' %}
+            
+    {%- render 'autolink', cssselector: ".collection-description.rte.read-hide" -%}{% endcomment %}
+          </div>
+
+{%- if template contains 'collection' -%}
+  <style>
+	.acc-heading {
+		margin: 10px 0 !important;
+		padding: 15px 0;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		position: relative;
+		cursor: pointer;
+	}
+	.acc-heading::after {
+		position: absolute;
+		content: '+';
+		right: 15px;
+		top: 45%;
+		transform: translateY(-50%);
+		font-size: 25px;
+	}
+	.acc-heading.active-acc-heading::after {
+		content: '-';
+	}
+	.tabled-box {
+		display: flex;
+		max-width: 600px;
+		align-items: start;
+		margin-bottom: 20px;
+	}
+	.tabled-box img {
+		max-width: 200px;
+	}
+	.tabled-right {
+		padding: 0 20px;
+	}
+	.tabled-box h3 {
+		margin-top: 0;
+	}
+</style>
+{%- endif -%}
 
 <style>.read-hide{height:200px;overflow:hidden;}.read-btn{text-align:center;line-height:50px}.read-btn span{cursor:pointer;}</style>
 						<div class="read-btn"><span onclick="read()">Read more &darr;</span></div>

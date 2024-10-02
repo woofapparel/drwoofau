@@ -412,9 +412,7 @@ function cart_update() {
                                 $(".preorderdate").html($(".prebabypink").html())
                              }
                              
-                             if ($color == 'twilight blue') {
-                                $(".preorderdate").html($(".pretwilightblue").html())
-                             }
+
                              if ($color == 'mint') {
                                 $(".preorderdate").html($(".premint").html())
                              }
@@ -424,6 +422,32 @@ function cart_update() {
                              if ($color == 'misty blue') {
                                 $(".preorderdate").html($(".premistyblue").html())
                              }
+
+                             if ($color == 'twilight blue') {
+              $(".preorderdate").html($(".pretwilightblue").html())
+           }
+
+           if ($color == 'lavender') {
+              $(".preorderdate").html($(".prelavender").html())
+           }
+
+           if ($color == 'double purple') {
+              $(".preorderdate").html($(".predoublepurple").html())
+           }
+
+           if ($color == 'blush') {
+              $(".preorderdate").html($(".preblush").html())
+           }
+
+           if ($color == 'aubergine') {
+              $(".preorderdate").html($(".preaubergine").html())
+           }
+           if ($color == 'rosewood') {
+              $(".preorderdate").html($(".prerosewood").html())
+           }
+           if ($color == 'mermaid teal') {
+              $(".preorderdate").html($(".premermaidteal").html())
+           }  
                            }else{
                               $(".preorder-text").hide()
                            }},
@@ -5325,7 +5349,7 @@ a = $(this)
           
          $(".cleft").on("click",function(){
           $(".imagesample").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/leftc.jpg?v=1665590644")
-          $("#iconPlacement").val("Left")
+          $("#iconPlacement").val("Right")
           $(".details-placement span").html("Left")
           $("#addboth .namepocketchecker").val("true")
           $(".floatingname").css({"left":"23%"})

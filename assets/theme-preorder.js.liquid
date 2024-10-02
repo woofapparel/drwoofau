@@ -9,7 +9,7 @@ $(document).ready(function(){
         $(".add-to-cart span").html("PRE-ORDER")
         $(".preorder-text").show()
         $color = $.trim($(".variant-change-color span[data-option-index=1]").html().toLowerCase())
-       
+        
         if ($color == 'navy') {
               $(".preorderdate").html($(".prenavy").html())
            }
@@ -285,7 +285,8 @@ lazySizesConfig.expFactor = 4;
       var properties = ['animation-duration', '-moz-animation-duration', '-webkit-animation-duration', '-o-animation-duration'];
       var duration = 0;
       var promise = $.Deferred().resolve();
-  
+
+
       // check the various CSS properties to see if a duration has been set
       $.each(properties, function(index, value) {
         duration || (duration = parseFloat($el.css(value)));
@@ -843,11 +844,13 @@ lazySizesConfig.expFactor = 4;
         var varava = variantAvail[variant.id]
 
         if((varqty <= 0) && (varava == true)){
-
+            
             $(".add-to-cart span").html("PRE-ORDER")
             $(".preorder-text").show()
             $color = $(".variant-change-color span[data-option-index=1]").html().toLowerCase()
+            
             $color = $color.trim()
+            
             if ($color == 'navy') {
               $(".preorderdate").html($(".prenavy").html())
            }
@@ -906,6 +909,8 @@ lazySizesConfig.expFactor = 4;
               $(".preorderdate").html($(".prewcoral").html())
            }
 
+
+           
            if ($color == 'eucalyptus') {
               $(".preorderdate").html($(".preeucalyptus").html())
            }
@@ -913,6 +918,31 @@ lazySizesConfig.expFactor = 4;
            if ($color == 'blurple') {
               $(".preorderdate").html($(".preblurple").html())
            }
+
+           if ($color == 'twilight blue') {
+              $(".preorderdate").html($(".pretwilightblue").html())
+           }
+
+           if ($color == 'lavender') {
+              $(".preorderdate").html($(".prelavender").html())
+           }
+
+           if ($color == 'double purple') {
+              $(".preorderdate").html($(".predoublepurple").html())
+           }
+           if ($color == 'blush') {
+              $(".preorderdate").html($(".preblush").html())
+           }
+           
+           if ($color == 'aubergine') {
+              $(".preorderdate").html($(".preaubergine").html())
+           }
+           if ($color == 'rosewood') {
+              $(".preorderdate").html($(".prerosewood").html())
+           }
+           if ($color == 'mermaid teal') {
+              $(".preorderdate").html($(".premermaidteal").html())
+           }  
 
          }else{
             $(".preorder-text").hide()
@@ -9002,7 +9032,7 @@ if(isNaN($realcount3)){
           
          $(".cleft").on("click",function(){
           $(".imagesample").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/leftc.jpg?v=1665590644")
-          $("#iconPlacement").val("Left")
+          $("#iconPlacement").val("Right")
           $(".details-placement span").html("Left")
           $("#addboth .namepocketchecker").val("true")
           $(".floatingname").css({"left":"23%"})
@@ -10238,6 +10268,9 @@ arrows:true,
  $(".cone select").change(function(){
     $ok1 = "notok";
     $oknarin1 = "not ok"
+    $setchosen = ""
+    $actualvar = ""
+    $actualprice = ""
     $size = $(".cone select[data-index='xoption1'] option:selected").val();
     $color = $(".cone select[data-index='xoption2'] option:selected").val();
     if($(".cone select[data-index='xoption3']").length){
@@ -10254,6 +10287,8 @@ arrows:true,
           $actualvarid = $(this).find(".datavarid").val()
           $actualvarimage = $(this).find(".datavarimage").val()
           $actualavail = $(this).find(".dataavail").val()
+          $actualprice = $(this).find(".dataprice").val()
+          
           if($actualavail == "available"){
                 
               $(".cts-flexer.cone .imagepart").attr("src",$actualvarimage)
@@ -10266,9 +10301,10 @@ arrows:true,
                // $("#cts-prod1").addClass('adisabled');  
                // $("#cts-prod1").html("Soldout")
           }  
-          
+          $(".cone .price").html($actualprice)
       }
     })
+    
     if($ok1 != "ok"){
         /* $(".cts-flexer.cone .imagepart").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/ProhibitionSign2_svg.png?v=1676935889") */
          $("#cts-prod1").removeClass('adisabled');  
@@ -10285,20 +10321,28 @@ arrows:true,
              }
     }
  })
+
+
  $(".ctwo select").change(function(){
-    
+    $setchosen = ""
+    $actualvar = ""
+    $actualprice = ""
     $ok2 = "notok";
     $oknarin2 = "not ok"
     $size = $(".ctwo select[data-index='xoption1'] option:selected").val();
     $color = $(".ctwo select[data-index='xoption2'] option:selected").val();
     
+    /*
     if($(".ctwo select[data-index='xoption3']").length){
         $inseam = $(".ctwo select[data-index='xoption3'] option:selected").val();
         $setchosen = $size + " / " + $color + " / " + $inseam;
     }else{
         $setchosen = $size + " / " + $color;
     }
-    
+    */
+
+    $setchosen = $size
+
     $('.datavariant.dtwo .parentvar').each(function(){
         $actualvar = $(this).find(".datatitle").val()
         if($actualvar == $setchosen){
@@ -10306,7 +10350,8 @@ arrows:true,
             $actualvarid = $(this).find(".datavarid").val()
             $actualvarimage = $(this).find(".datavarimage").val()
             $actualavail = $(this).find(".dataavail").val()
-        
+            $actualprice = $(this).find(".dataprice").val()
+                
             if($actualavail == "available"){
                 
                 $(".cts-flexer.ctwo .imagepart").attr("src",$actualvarimage)
@@ -10319,10 +10364,11 @@ arrows:true,
                 // $("#cts-prod2").removeClass('bdisabled');  
                 // $("#cts-prod2").html("Soldout")
             }  
-            
+            $(".ctwo .price").html($actualprice)
         }
   
       })
+      
     if($ok2 != "ok"){
          $(".cts-flexer.ctwo .imagepart").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/W-LongsleevesUnderscrubNavy1DRWoof_AprilShoot_Product_xx13730.png?v=1677710648")
          $("#cts-prod2").removeClass('bdisabled');  
@@ -10339,7 +10385,46 @@ arrows:true,
          }
     }
  })
+ 
  jQuery(document).ready(function($) {
+
+
+  $Color = $('input[name="Color"]:checked').val();
+
+  $('.datavariant.done .parentvar').each(function(){
+    $actualvar = $(this).find(".datatitle").val()
+    if($actualvar.toLowerCase().includes($Color.toLowerCase())){
+      $oknarin1 = "ok"
+      $actualvarid = $(this).find(".datavarid").val()
+      $actualvarimage = $(this).find(".datavarimage").val()
+      $actualavail = $(this).find(".dataavail").val()
+      $actualprice = $(this).find(".dataprice").val()
+      $(".cts-flexer.cone .imagepart").attr("src",$actualvarimage)
+      $("#cts-prod1").addClass('adisabled');
+      $("#cts-prod1").removeClass('anotift');
+      $("#cts-prod1").html("ADD")
+      $ok1 = "ok"
+    }else{
+
+    }
+  })
+
+  $('.datavariant.dtwo .parentvar').each(function(){
+      $actualvar = $(this).find(".datatitle").val()
+      
+            $oknarin2 = "ok"
+            $actualvarid = $(this).find(".datavarid").val()
+            $actualvarimage = $(this).find(".datavarimage").val()
+            $actualavail = $(this).find(".dataavail").val()
+            $actualprice = $(this).find(".dataprice").val()      
+            $(".cts-flexer.ctwo .imagepart").attr("src",$actualvarimage)
+            $("#cts-prod2").addClass('bdisabled');
+            $("#cts-prod2").removeClass('bnotift');
+            $("#cts-prod2").html("ADD")
+            $ok2 = "ok"
+      
+  })
+
     $varid = $("input[name=data-product-variant-id]").val()
     var varqty = parseInt(variantStock[$varid])
     console.log("xx" + varqty + "xxx") 
@@ -10382,9 +10467,7 @@ arrows:true,
               $(".preorderdate").html($(".prebabypink").html())
            }
            
-           if ($color == 'twilight blue') {
-              $(".preorderdate").html($(".pretwilightblue").html())
-           }
+
            if ($color == 'mint') {
               $(".preorderdate").html($(".premint").html())
            }
@@ -10416,6 +10499,30 @@ arrows:true,
               $(".preorderdate").html($(".preblurple").html())
            }
 
+           if ($color == 'twilight blue') {
+              $(".preorderdate").html($(".pretwilightblue").html())
+           }
+
+           if ($color == 'lavender') {
+              $(".preorderdate").html($(".prelavender").html())
+           }
+
+           if ($color == 'double purple') {
+              $(".preorderdate").html($(".predoublepurple").html())
+           }
+           if ($color == 'blush') {
+              $(".preorderdate").html($(".preblush").html())
+           }
+           
+           if ($color == 'aubergine') {
+              $(".preorderdate").html($(".preaubergine").html())
+           }
+           if ($color == 'rosewood') {
+              $(".preorderdate").html($(".prerosewood").html())
+           }
+              if ($color == 'mermaid teal') {
+              $(".preorderdate").html($(".premermaidteal").html())
+           }        
     }else{
        $(".preorder-text").hide()
     }
@@ -10439,6 +10546,8 @@ arrows:true,
             $actualvarid = $(this).find(".datavarid").val()
             $actualvarimage = $(this).find(".datavarimage").val()
             $actualavail = $(this).find(".dataavail").val()
+            $actualprice = $(this).find(".dataprice").val()
+            
             if($actualavail == "available"){
                 $dataazz = {
                     "id": $actualvarid,
@@ -10471,13 +10580,15 @@ arrows:true,
         $ok = "notok";
         $size = $(".ctwo select[data-index='xoption1'] option:selected").val();
         $color = $(".ctwo select[data-index='xoption2'] option:selected").val();
+        /*
         if($(".ctwo select[data-index='xoption3']").length){
             $inseam = $(".ctwo select[data-index='xoption3'] option:selected").val();
             $setchosen = $size + " / " + $color + " / " + $inseam;
         }else{
             $setchosen = $size + " / " + $color;
         }
-        
+        */
+        $setchosen = $size
         console.log("hahahaghahaha" + $setchosen)
         $('.datavariant.dtwo .parentvar').each(function(){
           $actualvar = $(this).find(".datatitle").val()
@@ -10516,6 +10627,7 @@ arrows:true,
       })
       $(".cone select[data-index='xoption1']").val("Select");
       $(".ctwo select[data-index='xoption1']").val("Select");
+
     $(".color-swatch").click(function(){
         $opval = $(this).attr("op_val")
         
@@ -10557,6 +10669,8 @@ arrows:true,
                 $actualvarid = $(this).find(".datavarid").val()
                 $actualvarimage = $(this).find(".datavarimage").val()
                 $actualavail = $(this).find(".dataavail").val()
+                $actualprice = $(this).find(".dataprice").val()
+                
                 $oknarin1 = "ok"
                 if($actualavail == "available"){
                     $(".cts-flexer.cone .imagepart").attr("src",$actualvarimage)
@@ -10585,7 +10699,7 @@ arrows:true,
           
         $size = $(".ctwo select[data-index='xoption1'] option:selected").val();
         $color = $opval
-        
+        /*
         if($(".ctwo select[data-index='xoption3']").length){
             $inseam = $(".ctwo select[data-index='xoption3'] option:selected").val();
             $setchosen = $size + " / " + $color + " / " + $inseam;
@@ -10594,7 +10708,8 @@ arrows:true,
             $setchosen = $size + " / " + $color;
             $defaultchosentwo = "S / Navy";
         }
-      
+            */
+        $setchosen = $size
         $('.datavariant.dtwo .parentvar').each(function(){
             $actualvar = $(this).find(".datatitle").val()
             if($actualvar == $defaultchosentwo){
@@ -10620,6 +10735,8 @@ arrows:true,
                   $actualvarid = $(this).find(".datavarid").val()
                   $actualvarimage = $(this).find(".datavarimage").val()
                   $actualavail = $(this).find(".dataavail").val()
+                  $actualprice = $(this).find(".dataprice").val()
+                  
                   $oknarin2 = "ok"
                   if($actualavail == "available"){
                       $(".cts-flexer.ctwo .imagepart").attr("src",$actualvarimage)

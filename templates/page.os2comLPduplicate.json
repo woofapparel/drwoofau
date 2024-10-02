@@ -9,13 +9,6 @@
     "a155aa5c-40ac-40b5-8a70-5059e600e448": {
       "type": "headerv2",
       "blocks": {
-        "16c1b801-5445-4096-9718-10b5b06f0f49": {
-          "type": "list",
-          "settings": {
-            "text_list": "Fatigue-busting graduated compression",
-            "icon_image": "shopify:\/\/shop_images\/badge1_c6034989-69e7-40b0-9b9c-20fc1d4303f4.png"
-          }
-        },
         "57eaf7c2-b51a-429f-9c6b-d84222894a17": {
           "type": "list",
           "settings": {
@@ -23,10 +16,10 @@
             "icon_image": "shopify:\/\/shop_images\/badge1_c6034989-69e7-40b0-9b9c-20fc1d4303f4.png"
           }
         },
-        "list_nG8cQ9": {
+        "16c1b801-5445-4096-9718-10b5b06f0f49": {
           "type": "list",
           "settings": {
-            "text_list": "Proudly designed in Australia",
+            "text_list": "Fatigue-busting graduated compression",
             "icon_image": "shopify:\/\/shop_images\/badge1_c6034989-69e7-40b0-9b9c-20fc1d4303f4.png"
           }
         },
@@ -40,7 +33,14 @@
         "list_BaVwdk": {
           "type": "list",
           "settings": {
-            "text_list": "Cute & trendy designs",
+            "text_list": "Made with sustainable bamboo fibres",
+            "icon_image": "shopify:\/\/shop_images\/badge1_c6034989-69e7-40b0-9b9c-20fc1d4303f4.png"
+          }
+        },
+        "list_nG8cQ9": {
+          "type": "list",
+          "settings": {
+            "text_list": "Proudly Australian owned & designed",
             "icon_image": "shopify:\/\/shop_images\/badge1_c6034989-69e7-40b0-9b9c-20fc1d4303f4.png"
           }
         },
@@ -53,11 +53,11 @@
         }
       },
       "block_order": [
-        "16c1b801-5445-4096-9718-10b5b06f0f49",
         "57eaf7c2-b51a-429f-9c6b-d84222894a17",
-        "list_nG8cQ9",
+        "16c1b801-5445-4096-9718-10b5b06f0f49",
         "6046898d-b597-4393-b1e3-032f2c454626",
         "list_BaVwdk",
+        "list_nG8cQ9",
         "list_x97hrA"
       ],
       "settings": {
@@ -71,19 +71,19 @@
         "hide_review_stars": true,
         "top_mode": true,
         "light_theme": false,
-        "main_header": "Not Just for Grandma: 6 Surprising Ways Dr Woof's Compression Socks Help Nurses Fight Varicose Veins",
+        "main_header": "6 Hilarious Reasons Why Aussie Nurses are Ditching Their Old Socks for Dr. Woof's Compression Marvels",
         "main_header_size": 40,
-        "main_header_size_mobile": 32,
+        "main_header_size_mobile": 26,
         "main_header_space": 40,
-        "content": "Dr. Woof's Graduated Compression Socks deliver essential support, improve your venous blood flow and transforming tiring shifts into pain free comfort for your feet.",
+        "content": "Hey there, Florence Nightingale! Tired of your feet feeling like they've run a marathon after every shift? Well, slip into something more comfortable (and slightly less delusional than those post-night shift thoughts). Here's why your fellow nurses are kicking off their old socks and embracing the Dr. Woof life:",
         "textaroundtop": "",
         "textaroundbottom": "",
         "button_text_1": "Order Now & Save Up To 35%",
         "button_1_url": "shopify:\/\/collections\/compression-socks",
         "button_text_2": "",
         "button_2_url": "",
-        "header_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_1.gif",
-        "mobile_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_1.gif",
+        "header_image": "shopify:\/\/shop_images\/Copy_of_Compression_Socks_Listicle_-_6_Reasons_Why.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Compression_Socks_Listicle_-_6_Reasons_Why.jpg",
         "bg_color": "#ffffff",
         "margin-top": 0,
         "margin-bottom": 20
@@ -96,8 +96,8 @@
           "type": "list",
           "settings": {
             "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_4.jpg",
-            "list_title": "1. Prevention is Key: Not Just for the Elderly",
-            "list_text": "Compression socks aren't just for the elderly or those with existing varicose veins. A study by Sharif Nia et al. (2020) found that wearing compression socks can significantly reduce the risk of developing varicose veins, especially for nurses who spend long hours on their feet. By incorporating Dr Woof's compression socks into your daily routine, you can take proactive steps to maintain healthy legs, regardless of your age.",
+            "list_title": "1. Graduated Compression: Because Your Legs Deserve a Promotion Too",
+            "list_text": "Let's face it, you've been waiting for that Nurse Unit Manager position forever. While we can't fast-track your career, we can give your legs the upgrade they deserve. Our 15-20mmHg compression is like a gentle hug for your calves – minus the awkward \"how long do we keep hugging?\" moment.",
             "button_text": "",
             "button_url": ""
           }
@@ -106,8 +106,8 @@
           "type": "list",
           "settings": {
             "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_1.jpg",
-            "list_title": "2. Lab-Tested Graduated Compression for Venous Health",
-            "list_text": "Dr Woof's compression socks feature lab-tested graduated compression that promotes healthy blood flow, reducing the risk of varicose veins. The scientifically designed compression profile helps prevent venous issues commonly faced by nurses who spend long hours on their feet, ensuring your legs stay healthy and energized throughout your shift.",
+            "list_title": "2. Varicose Vein Prevention: Spider-Man's Got Nothing on These Threads",
+            "list_text": "Forget radioactive spiders. The real superpower is preventing those pesky varicose veins that come with the job. Our socks are like kryptonite to venous insufficiency – because the only blue lines you should be dealing with are the ones on your patients' charts.",
             "button_text": "",
             "button_url": ""
           }
@@ -115,9 +115,9 @@
         "list_T6RnyN": {
           "type": "list",
           "settings": {
-            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_7.jpg",
-            "list_title": "3. Reduces Leg Fatigue and Swelling",
-            "list_text": "Studies show that wearing compression socks can significantly reduce leg fatigue and swelling, two common symptoms of varicose veins. Dr Woof's socks provide the perfect amount of compression to alleviate these symptoms, helping nurses feel energized and focused throughout their shifts.",
+            "list_image": "shopify:\/\/shop_images\/RonSOCKs_-_Made_with_Clipchamp.gif",
+            "list_title": "3. Proudly Aussie: No Dropbear Sightings Guaranteed",
+            "list_text": "Designed Down Under by a family of Aussie docs who probably surf to work. These socks are as Aussie as a kangaroo eating Vegemite (but significantly more comfortable). Plus, they're dropbear-resistant – a critical feature for those night shifts when anything seems possible.",
             "button_text": "",
             "button_url": ""
           }
@@ -125,9 +125,9 @@
         "list_kFJEBz": {
           "type": "list",
           "settings": {
-            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_5.jpg",
-            "list_title": "4. Recover Like an Athlete on Your Days Off",
-            "list_text": "Just like professional athletes, nurses can benefit from Dr Woof's compression socks to help them recover after long, demanding shifts. These socks improve blood circulation, reduce muscle soreness, and alleviate leg fatigue, ensuring that your days off are actually your days OFF.",
+            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_7.jpg",
+            "list_title": "4. Cushioned Luxury: Like Walking on Patient's Jell-O (But Way Less Gross)",
+            "list_text": "Remember that time you had to empty all the Jell-O cups because of a unit-wide clear liquid diet? Imagine that squishiness, but for your feet, and without the sticky mess. Our extra padding is so comfy, you might forget you're not actually walking on clouds (or perfectly set Jell-O).",
             "button_text": "",
             "button_url": ""
           }
@@ -135,19 +135,9 @@
         "list_6pBr9c": {
           "type": "list",
           "settings": {
-            "list_image": "shopify:\/\/shop_images\/RonSOCKs_-_Made_with_Clipchamp.gif",
-            "list_title": "5. Aussie Owned: Uncompromising Quality",
-            "list_text": "In a market flooded with subpar products, Dr Woof's Graduated Compression Socks stand out for their unwavering quality. Founded by a family of three Aussie doctors, our commitment to high standards is personal. We ensure each pair is robust, maintaining stretch and comfort even after extensive use – a reliable choice for nurses who deserve the best. With Dr Woof, you can trust that you're getting a product that's designed to last.",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "list_39FdQp": {
-          "type": "list",
-          "settings": {
-            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_2.jpg",
-            "list_title": "6. Padded Perfection: Step with Comfort",
-            "list_text": "Imagine a sock that feels like a soft embrace for your feet. That's Dr Woof's Graduated Compression Socks. Designed specifically with nurses in mind, they feature extra-thick padding and ultra-soft material, ensuring your comfort on even the longest shifts. It's the comfort you need to keep going, step after step. With Dr Woof, you can focus on your patients, not your aching feet.",
+            "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_5.jpg",
+            "list_title": "5. Cute & Trendy: Fashionable Enough to Make Even Those Paper Gowns Jealous",
+            "list_text": "Why should your scrubs have all the fun? Our designs are so cute, they might just distract patients from asking \"Is it time for my pain meds?\" for the 47th time this hour. Warning: May cause extreme sock envy among colleagues.",
             "button_text": "",
             "button_url": ""
           }
@@ -156,8 +146,8 @@
           "type": "list",
           "settings": {
             "list_image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_6.jpg",
-            "list_title": "7. Try, Love, or Return: 60-Day Promise",
-            "list_text": "At Dr Woof, we understand the hesitation of buying online without feeling the product first. That's why we offer a 60-Day Money Back Guarantee. With a 96% satisfaction rate across all our products, we're confident in our socks, but if they don't meet your expectations, we honor returns with ease. It's risk-free comfort, tailored for nurses. Try Dr Woof's compression socks today and experience the difference for yourself.",
+            "list_title": "6. 60-Day Guarantee: Longer Than Your Longest Shift (We Hope)",
+            "list_text": "Not convinced? Try them for 60 days. That's longer than your worst stretch of night shifts, longer than the time it takes to get an ortho consult, and definitely longer than your patience when someone says, \"You're just a nurse.\" If you don't love them, we'll take them back – no questions asked (except maybe \"Are you feeling okay? Should we check your temperature?\").",
             "button_text": "",
             "button_url": ""
           }
@@ -169,7 +159,6 @@
         "list_T6RnyN",
         "list_kFJEBz",
         "list_6pBr9c",
-        "list_39FdQp",
         "list_nDFFEC"
       ],
       "settings": {
@@ -179,13 +168,24 @@
         "mobmarbot": 20
       }
     },
+    "featured_content_pKmpQi": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p>Don't let another shift pass with sad, unsupported feet. Join the ranks of happy nurses who've discovered the joy of Dr. Woof's Compression Socks. Your feet will thank you, your legs will thank you, and who knows? Maybe that one doctor will finally learn your name.<\/p><p><strong>Order now, before the night shift delirium kicks in and you convince yourself you don't need them!<\/strong><\/p><p>P.S. Studies show that 9 out of 10 nurses prefer Dr. Woof's socks over traditional compression stockings. The 10th nurse was too busy looking for the patient's missing TV remote to participate in the survey.<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "alt": true
+      }
+    },
     "advanced_content_7w4nzG": {
       "type": "advanced-content",
       "blocks": {
         "image_xVigmp": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_d73cef14-157e-4784-89eb-a26b4dbecc7b.jpg",
+            "image": "shopify:\/\/shop_images\/1_c8801da3-8a8a-4735-ac42-1c99acb6920a.png",
             "link": "",
             "width": "33%",
             "alignment": "top-middle"
@@ -194,7 +194,7 @@
         "image_bxfKbz": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Capture_afae5400-4093-459c-8e6a-65ef755e1b01.jpg",
+            "image": "shopify:\/\/shop_images\/2_7304abf1-2053-4102-a59d-7f87a51bd467.png",
             "link": "",
             "width": "33%",
             "alignment": "top-middle"
@@ -203,7 +203,7 @@
         "image_cpHEyi": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Amy_N..jpg",
+            "image": "shopify:\/\/shop_images\/4_df93db99-6634-47a7-a901-ac870b57d2fa.png",
             "link": "",
             "width": "33%",
             "alignment": "top-middle"
@@ -214,6 +214,48 @@
         "image_xVigmp",
         "image_bxfKbz",
         "image_cpHEyi"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alt": false
+      }
+    },
+    "advanced_content_wkVWVC": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_UpHXTx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_6260f536-f165-487e-8455-96e776ceb057.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "top-middle"
+          }
+        },
+        "image_HnXFRc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_594e861b-d3f7-4bc7-b845-fcae65857b37.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "top-middle"
+          }
+        },
+        "image_Xrx9HA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_701377d4-4bef-4cc7-a4b8-c80bd3dbdeaf.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "image_UpHXTx",
+        "image_HnXFRc",
+        "image_Xrx9HA"
       ],
       "settings": {
         "full_width": false,
@@ -244,7 +286,7 @@
         "deskmarbot": 20,
         "mobmartop": 0,
         "mobmarbot": 30,
-        "bigtext": "AUTUMN SALE UP TO 35% OFF",
+        "bigtext": "BUNDLE DEALS UP TO 35% OFF",
         "reviewstars_text": "",
         "bigtextsize": 36,
         "textbut": "Shop",
@@ -263,7 +305,9 @@
     "custom_html_y8fDJx",
     "a155aa5c-40ac-40b5-8a70-5059e600e448",
     "68681b12-95a9-4f19-8144-7b29406c141b",
+    "featured_content_pKmpQi",
     "advanced_content_7w4nzG",
+    "advanced_content_wkVWVC",
     "text_and_image_6CTcBf",
     "adsection_DFck6h",
     "custom_html_3Jq8JP"

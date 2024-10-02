@@ -39,8 +39,23 @@
         "txt11": ""
       }
     },
+    "new_product_story_neDDU4": {
+      "type": "new-product-story",
+      "settings": {
+        "section_title": "Your ponytail will love this (And, let’s be honest,  so will your wrist.)",
+        "product_story_img_1": "shopify:\/\/shop_images\/52_0c702f42-03f7-4ddf-8a0f-0268f533dd98.jpg",
+        "product_story_title_1": "Made with off-cut scrub cap fabric — this scrunchie is rubbish in the best possible way.",
+        "product_story_img_2": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_1_97e2869b-c1df-4ff3-abde-41000659b401.jpg",
+        "product_story_title_2": "With a huge 6cm frill, there ain’t nothing subtle about a Dr Woof scrunchie.",
+        "product_story_img_3": "shopify:\/\/shop_images\/54_96c65e4d-8559-42c4-8b86-92d8ac0827fe.jpg",
+        "product_story_title_3": "Every Dr Woof scrunchie matches a cap in our collection, so you’ll never be without your favorite print.",
+        "product_story_img_4": "shopify:\/\/shop_images\/55_7fc6f5ce-8f5b-4a7f-946f-5c090c6eb2f4.jpg",
+        "product_story_title_4": "Buy 3 scrunchies, and watch in wonder at checkout as one becomes auto-magically free."
+      }
+    },
     "stories": {
       "type": "product-section-scrunchies",
+      "disabled": true,
       "settings": {}
     },
     "reviews": {
@@ -58,6 +73,7 @@
   },
   "order": [
     "product-template",
+    "new_product_story_neDDU4",
     "stories",
     "reviews",
     "recommendations"

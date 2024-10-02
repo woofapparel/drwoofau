@@ -637,8 +637,10 @@ counter = 0;
     <div class="abtesting2" style="width:100%;margin-bottom:10px">
 
       {% unless section.settings.abtesting3image %}
-          <!-- this3 -->
+          <!-- this1 -->
+           {% comment %}
       <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/>
+      {% endcomment %}
       {% else %}
         <!-- this4 -->
       <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;" class="dv" />
@@ -668,7 +670,7 @@ counter = 0;
     {% comment %}
   <div class="abtesting2" style="width:100%;margin-bottom:10px">
     {% unless section.settings.abtesting3image %}
-        <!-- this3 -->
+        <!-- this2 -->
     <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/> 
     {% else %}
       <!-- this4 -->
@@ -699,7 +701,38 @@ counter = 0;
 
   {% endcomment %}
 
-
+  {% if section.settings.abtestnoicons %}
+    {% if section.settings.txt_ != blank %}
+    <div class="mentext" style="padding:0 0px 5px;">
+      <hr class="backdown">
+      <p class="hrin">{{section.settings.txt_}}</p>
+    </div>
+     {% endif %}
+     <style>
+      .hrin{
+        text-align:center;
+        display:inline-block;
+        background:#fff;
+        padding-left:12px;
+        padding-right:12px;
+        position:relative;
+        text-transform: uppercase;
+      }
+      .backdown{
+        position: relative;
+        top: 21px;
+        display: block;
+        left: 0;
+        border-top: 1px solid #e8e8e8 !important;
+      }
+      .mentext{
+        position:relative;
+        top: -7px;
+        text-align:center;
+      
+      }
+     </style>
+  {% endif %}
 
 
 
@@ -842,21 +875,24 @@ counter = 0;
 </div>
 {% endif %}
 
+
+
+
 {% assign xmy_value = product.metafields.sf_product_bundle.preorder_date %}
 
 {% if product.type == "Women Scrub Tops" or product.type == "Women Scrub Pants" or product.type == 'OS2 test product' %}
-<a href="https://www.drwoofapparel.com.au/collections/deals/products/wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
+<a href="https://www.drwoofapparel.com.au" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
 {% endif %}
 
 {% if product.type == "Men Scrub Tops" or product.type == "Men Scrub Pants" or product.type == 'OS2 test product' %}
-<a href="https://www.drwoofapparel.com.au/collections/deals/products/men-wardrobe-deal" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
+<a href="https://www.drwoofapparel.com.au" class="bundlelink">(Or <span>buy 3 sets and get 1 set FREE. Save $122.8</span>)</a>
 {% endif %}
 
 {% if section.settings.newpdptop2 %}
   <!-- k01 -->
   <div class="preorder-text" style="padding:20px 20px 12px 20px;margin-bottom:12px;background:#fff !important;">
     <p>Pre-order now to secure your preferred size and colour. Your entire order will ship once this item becomes available.</p>
-    <p style="margin-top:10px;color:red;margin-bottom:0 !important;">Expected dispatch date: <span class="preorderdate"></span>. Thanks for your patience!</p> 
+    <p style="margin-top:10px;color:red;margin-bottom:0 !important;">Expected dispatch date: <span class="{% if template.suffix == "os2template-scrubs"  or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900">October 1</span>. Thanks for your patience!</p> 
     </div>
   <div class="addliner">
     <hr class="hrliner">
@@ -890,17 +926,22 @@ counter = 0;
     {% endif %}
 
 
+
 {% if section.settings.newpdptop %}
 <div class="abtesting2" style="width:100%;margin-bottom:0px;padding-left:12px;padding-right:12px;">
   {% unless section.settings.abtesting3image %}
-      <!-- this3 -->
+      <!-- this6 -->
+       {% comment %}
   <img src="{{ 'freeset.png' | asset_url }}" style="width:100%;height:auto;"/>
+  {% endcomment %}
   {% else %}
-    <!-- this4 -->
-    {% if section.settings.newpdptop2 %}
-  <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;border-radius:8px;margin-top:0px" class="dv" />
-  <img src="{{ section.settings.abtesting3imagemob | img_url: 'master' }}" style="width:100%;height:auto;border-radius:8px;margin-top:0px" class="mv" />
-  {% endif %}
+    <!-- this5 -->
+     
+      {% if section.settings.newpdptop2 %}
+        <img src="{{ section.settings.abtesting3image | img_url: 'master' }}" style="width:100%;height:auto;border-radius:8px;margin-top:0px" class="dv" />
+        <img src="{{ section.settings.abtesting3imagemob | img_url: 'master' }}" style="width:100%;height:auto;border-radius:8px;margin-top:0px" class="mv" />
+      {% endif %}
+    
   {% endunless %}
   <!--
   <h3>STANDARD SHIPPING FROM $11.90</h4>
@@ -923,6 +964,9 @@ counter = 0;
   -->
 </div>
 {% endif %}
+
+
+
 
 
 {% unless product.empty? %}
@@ -949,10 +993,75 @@ counter = 0;
 
 
 <div class="main-icon-cont" style="padding:5px 0px 5px;{% if section.settings.newpdptop %}display:none;{% endif %}">
-  <div class="preorder-text" style="padding:0 20px 12px 20px;margin-bottom:12px;background:#e0ede9 !important;">
+  <div class="preorder-text" style="padding:0 20px 0px 20px;margin-bottom:20px;background:#e0ede9 !important;">
     <p>Pre-order now to secure your preferred size and colour. Your entire order will ship once this item becomes available.</p>
-    <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="preorderdate"></span>. Thanks for your patience!</p> 
+    <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="{% if template.suffix == "os2template-scrubs" or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900;">October 1</span>. Thanks for your patience!</p> 
     </div>
+    {% if section.settings.abtestdavideo %}
+      <div class="ugs_container">
+        <div class="video-gallery">
+          <div class="video-container zero1">
+              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/3c13f6af71424a2cb2ca2a3626de3392.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <span>Scrubs You Can Wear & Wear</span>
+          </div>
+          <div class="video-container zero2">
+              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/b72c5c0cb4fb4eaea3fa8d7e3a781544.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <span>The Most Joyful Aussie Scrubs Brand</span>
+          </div>
+          <div class="video-container zero3">
+              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/23ae219f351d4904b908311813f8f54d.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <span>3 Reasons Nurses Love Dr. Woof</span>
+          </div>
+          <!-- 
+          <div class="video-container zero4">
+              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/c5fb46949ef64a199884f1995b514bfc.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          </div>
+          -->
+        </div>
+      </div>
+      <style>
+      .ugs_container{
+        padding-left: 12px;
+          padding-right: 12px;
+          margin-top: 20px;
+          margin-bottom:20px;
+      }
+      {% if section.settings.abtestnoicons %}
+        .ugs_container{
+            margin-top: -2px;
+        }
+      {% endif %}
+      
+      .ugs_container span{
+        font-size: 11px;
+        font-weight: 800;
+      }
+      
+      .ugs_container .video-gallery {
+          display: flex;
+          gap: 10px;
+      }
+      
+      .ugs_container .video-container {
+          flex: 1;
+          overflow: hidden;
+          position: relative;
+      }
+      
+      .ugs_container .video {
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease-in-out;
+          object-fit: cover;
+      }
+      
+      .ugs_container .video-container:hover {
+          transform: scale(1.05);
+          cursor:pointer;
+      }
+      </style>
+      {% endif %}
+  {% unless section.settings.abtestnoicons %}
   <div class="sub-icon-cont">
     {%if section.settings.img1 != blank %}
     <div class="sub-icon-cont1">
@@ -994,13 +1103,16 @@ counter = 0;
   </div>
  {%endif%}
   </div>
-  
+{% endunless %}
 </div>
+
+{% unless section.settings.abtestnoicons %}
 {% if section.settings.txt_ != blank %}
 <div class="main-text" style="padding:20px 0px 5px;">
   <p>{{section.settings.txt_}}</p>
   </div>
- {%endif%}
+ {% endif %}
+{% endunless %}
 
 <div class="custom-klarna-new">
   <div class="klarna-new-div"></div>

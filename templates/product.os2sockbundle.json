@@ -4,7 +4,9 @@
       "type": "product-template-sock-os2",
       "settings": {
         "sockpreorderdate": "",
-        "enable_ab": true,
+        "abtestnoicons": false,
+        "abtestdavideo": true,
+        "enable_ab_size": true,
         "abtesting1": false,
         "abtesting2": false,
         "freesetcap": "shopify:\/\/shop_images\/SOCKS_AU.png",
@@ -45,17 +47,16 @@
     },
     "new_product_story_Df6UTP": {
       "type": "new-product-story",
-      "disabled": true,
       "settings": {
-        "section_title": "Why you'll love our scrubs",
-        "product_story_img_1": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy4DRWoof_AprilShoot_Product_xx15176.jpg",
-        "product_story_title_1": "",
-        "product_story_img_2": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy2DRWoof_AprilShoot_Product_xx15167.jpg",
-        "product_story_title_2": "",
-        "product_story_img_3": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy4DRWoof_AprilShoot_Product_xx15176.jpg",
-        "product_story_title_3": "",
-        "product_story_img_4": "shopify:\/\/shop_images\/MUnderscrubsLongsleeveNavy2DRWoof_AprilShoot_Product_xx15167.jpg",
-        "product_story_title_4": ""
+        "section_title": "Why you (and your feet) will love Dr. Woof Compression Socks",
+        "product_story_img_1": "shopify:\/\/shop_images\/65_540x_0d2b74d6-104a-4cd4-9e0f-48898e61035d.webp",
+        "product_story_title_1": "With 15-20 mmHg medium graduated compression, they’re a new BFF for your tired, aching feet.",
+        "product_story_img_2": "shopify:\/\/shop_images\/66_540x_fa43f350-f08b-41eb-9fe3-b76c454efa39.webp",
+        "product_story_title_2": "No more soggy socks! We’ve got airy, moisture-wicking fabric to keep your feet dry all shift long.",
+        "product_story_img_3": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_cdb06792-2383-46c4-9ce5-d7e7d4d90c3b.jpg",
+        "product_story_title_3": "We’re talking super-stretchy, ultra-soft fabric with heel and toe padding to fight blisters.",
+        "product_story_img_4": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_1.jpg",
+        "product_story_title_4": "From fabric to construction to testing – Dr Woof products are made to last. "
       }
     },
     "stories": {
@@ -122,6 +123,7 @@
         "4e14453f-2aed-46a8-bed1-85c8dd75e949",
         "7f00dc63-0001-4e52-b44b-3ce13e275360"
       ],
+      "disabled": true,
       "settings": {}
     },
     "reviews": {

@@ -132,7 +132,18 @@ If you change the number below, it must also be changed in:
   </div>
 
 </div>
-
+{% if template.suffix == 'sl-2A297218' %}
+<style>
+    .overflow-scroller .grid__item{
+        flex:0 0 20% !important;
+    }
+  @media only screen and (max-width:480px){
+    .overflow-scroller .grid__item{
+        flex:0 0 50% !important;
+    }
+  }
+  </style>
+{% endif %}
 {% schema %}
   {
     "name": "Featured collection",

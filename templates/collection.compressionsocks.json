@@ -31,7 +31,7 @@
       }
     },
     "main-collection": {
-      "type": "collection-template-scrubs",
+      "type": "collection-template-socks",
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",

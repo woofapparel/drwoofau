@@ -31,7 +31,7 @@
         "c1c1b93e-33ac-4f9d-826b-0839bf80508c"
       ],
       "settings": {
-        "colored_header": "<span style=\"line-height:1.7em\">TRUSTED BY <b style=\"color:#;\">40,000+<\/b> COMFY<br> AUSSIE NURSES & DOCTORS<\/span>",
+        "colored_header": "TRUSTED BY 40,000+ COMFY AUSSIE NURSES & DOCTORS",
         "colored_header_size": 16,
         "colored_header_size_mobile": 18,
         "header_color": "#000000",
@@ -52,8 +52,8 @@
         "button_1_url": "shopify:\/\/collections\/women",
         "button_text_2": "SHOP MEN",
         "button_2_url": "shopify:\/\/collections\/men",
-        "header_image": "shopify:\/\/shop_images\/DESKTOP_NEW_BANNER_THUMBNAIL_1_f136e086-e64f-4dae-a517-1bbbc8afa7d1.png",
-        "mobile_image": "shopify:\/\/shop_images\/MOBILE_NEW_BANNER_THUMBNAIL_0380750c-6003-424c-8aa8-5822080ca8b9.jpg",
+        "header_image": "shopify:\/\/shop_images\/DESKTOP_NEW_BANNER_THUMBNAIL_2_b8e719fd-07bf-4a4c-85c7-e321d846d504.png",
+        "mobile_image": "shopify:\/\/shop_images\/MOBILE_NEW_BANNER_THUMBNAIL_3.jpg",
         "bg_color": "#fafafa",
         "desktop_bgimage": "shopify:\/\/shop_images\/HERO_BANNER_-_LANDSCAPE_FINAL_ODDIT_COMPATIBLE_1440_x_900_px_6a52a8cb-64e8-4c09-9e49-d2bf7565e841.png",
         "mobile_bgimage": "shopify:\/\/shop_images\/Untitled_design_269be36c-97d4-4087-8d04-be8c7735417a.jpg",
@@ -282,141 +282,6 @@
         "simp-marbot": 20,
         "mobsimp-martop": 20,
         "mobsimp-marbot": 20
-      }
-    },
-    "ugcslider_WVccfR": {
-      "type": "ugcslider",
-      "blocks": {
-        "video_slide_4gyjCD": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e065ee6ee1fc4b82a904ec53a9141373.mp4",
-            "text-upper": "",
-            "text-bottom": "NAVY",
-            "button-link": "shopify:\/\/collections\/blue-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_KQjd7q": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab62323f79f14a18be054b956c4d849e.mp4",
-            "text-upper": "",
-            "text-bottom": "BLACK",
-            "button-link": "shopify:\/\/collections\/black-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_HQRiKT": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0b6f95c3bb5a4c45a054ba683a2d00e0.mp4",
-            "text-upper": "",
-            "text-bottom": "CARIBBEAN BLUE",
-            "button-link": "shopify:\/\/collections\/blue-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_DJ4qCf": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b238c15b88564e0881bd6e43d61d913d.mp4",
-            "text-upper": "",
-            "text-bottom": "FERN GREEN",
-            "button-link": "shopify:\/\/collections\/green-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_fUU8jy": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/290e696590a94d70ae465a98aafca323.mp4",
-            "text-upper": "",
-            "text-bottom": "COOL GRAY",
-            "button-link": "shopify:\/\/collections\/gray-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_UycCwi": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/13e4877f4f3f4f018c4d45d361311d68.mp4",
-            "text-upper": "",
-            "text-bottom": "ROYAL BLUE",
-            "button-link": "shopify:\/\/collections\/blue-scrubs",
-            "button-text": "SHOP NOW"
-          }
-        },
-        "video_slide_rD3dnr": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eb6f329da947ba8295815671ec988d.mp4",
-            "text-upper": "",
-            "text-bottom": "BABY PINK",
-            "button-link": "shopify:\/\/collections\/pink-scrubs",
-            "button-text": "SHOP NOW • LIMITED EDITION"
-          }
-        },
-        "video_slide_Xdh8qz": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab7520fc35c44a23949d6f942cfeca57.mp4",
-            "text-upper": "",
-            "text-bottom": "BLURPLE",
-            "button-link": "shopify:\/\/collections\/purple-scrubs",
-            "button-text": "SHOP NOW • LIMITED EDITION"
-          }
-        },
-        "video_slide_tjVpKa": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/52e91a949fb646ef91fa9cd3ad37712a.mp4",
-            "text-upper": "",
-            "text-bottom": "WHIMSICAL CORAL",
-            "button-link": "shopify:\/\/collections\/orange-scrubs",
-            "button-text": "SHOP NOW • LIMITED EDITION"
-          }
-        },
-        "video_slide_KmtCPR": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fc118539c4044d5ebb0c6a5f0b3e4e44.mp4",
-            "text-upper": "",
-            "text-bottom": "PISTACHIO",
-            "button-link": "shopify:\/\/collections\/green-scrubs",
-            "button-text": "SHOP NOW • LIMITED EDITION"
-          }
-        },
-        "video_slide_JQrbCr": {
-          "type": "video_slide",
-          "settings": {
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b15356a92a494556893f278c8d424254.mp4",
-            "text-upper": "",
-            "text-bottom": "EUCALYPTUS",
-            "button-link": "shopify:\/\/collections\/green-scrubs",
-            "button-text": "SHOP NOW • LIMITED EDITION"
-          }
-        }
-      },
-      "block_order": [
-        "video_slide_4gyjCD",
-        "video_slide_KQjd7q",
-        "video_slide_HQRiKT",
-        "video_slide_DJ4qCf",
-        "video_slide_fUU8jy",
-        "video_slide_UycCwi",
-        "video_slide_rD3dnr",
-        "video_slide_Xdh8qz",
-        "video_slide_tjVpKa",
-        "video_slide_KmtCPR",
-        "video_slide_JQrbCr"
-      ],
-      "settings": {
-        "sec_name": "Shop By Colour",
-        "autoplay": false,
-        "arrows": true,
-        "slidercount": 3,
-        "dots": false
       }
     },
     "7369b26d-3f2e-4d4c-a896-29470c300195": {
@@ -1008,6 +873,141 @@
         "mmarbot_this": 0,
         "selected_collection": "",
         "sec_name": "This just in"
+      }
+    },
+    "ugcslider_WVccfR": {
+      "type": "ugcslider",
+      "blocks": {
+        "video_slide_4gyjCD": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e065ee6ee1fc4b82a904ec53a9141373.mp4",
+            "text-upper": "",
+            "text-bottom": "NAVY",
+            "button-link": "shopify:\/\/collections\/blue-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_KQjd7q": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab62323f79f14a18be054b956c4d849e.mp4",
+            "text-upper": "",
+            "text-bottom": "BLACK",
+            "button-link": "shopify:\/\/collections\/black-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_HQRiKT": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0b6f95c3bb5a4c45a054ba683a2d00e0.mp4",
+            "text-upper": "",
+            "text-bottom": "CARIBBEAN BLUE",
+            "button-link": "shopify:\/\/collections\/blue-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_DJ4qCf": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b238c15b88564e0881bd6e43d61d913d.mp4",
+            "text-upper": "",
+            "text-bottom": "FERN GREEN",
+            "button-link": "shopify:\/\/collections\/green-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_fUU8jy": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/290e696590a94d70ae465a98aafca323.mp4",
+            "text-upper": "",
+            "text-bottom": "COOL GRAY",
+            "button-link": "shopify:\/\/collections\/gray-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_UycCwi": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/13e4877f4f3f4f018c4d45d361311d68.mp4",
+            "text-upper": "",
+            "text-bottom": "ROYAL BLUE",
+            "button-link": "shopify:\/\/collections\/blue-scrubs",
+            "button-text": "SHOP NOW"
+          }
+        },
+        "video_slide_rD3dnr": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eb6f329da947ba8295815671ec988d.mp4",
+            "text-upper": "",
+            "text-bottom": "BABY PINK",
+            "button-link": "shopify:\/\/collections\/pink-scrubs",
+            "button-text": "SHOP NOW • LIMITED EDITION"
+          }
+        },
+        "video_slide_Xdh8qz": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab7520fc35c44a23949d6f942cfeca57.mp4",
+            "text-upper": "",
+            "text-bottom": "BLURPLE",
+            "button-link": "shopify:\/\/collections\/purple-scrubs",
+            "button-text": "SHOP NOW • LIMITED EDITION"
+          }
+        },
+        "video_slide_tjVpKa": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/52e91a949fb646ef91fa9cd3ad37712a.mp4",
+            "text-upper": "",
+            "text-bottom": "WHIMSICAL CORAL",
+            "button-link": "shopify:\/\/collections\/orange-scrubs",
+            "button-text": "SHOP NOW • LIMITED EDITION"
+          }
+        },
+        "video_slide_KmtCPR": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fc118539c4044d5ebb0c6a5f0b3e4e44.mp4",
+            "text-upper": "",
+            "text-bottom": "PISTACHIO",
+            "button-link": "shopify:\/\/collections\/green-scrubs",
+            "button-text": "SHOP NOW • LIMITED EDITION"
+          }
+        },
+        "video_slide_JQrbCr": {
+          "type": "video_slide",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b15356a92a494556893f278c8d424254.mp4",
+            "text-upper": "",
+            "text-bottom": "EUCALYPTUS",
+            "button-link": "shopify:\/\/collections\/green-scrubs",
+            "button-text": "SHOP NOW • LIMITED EDITION"
+          }
+        }
+      },
+      "block_order": [
+        "video_slide_4gyjCD",
+        "video_slide_KQjd7q",
+        "video_slide_HQRiKT",
+        "video_slide_DJ4qCf",
+        "video_slide_fUU8jy",
+        "video_slide_UycCwi",
+        "video_slide_rD3dnr",
+        "video_slide_Xdh8qz",
+        "video_slide_tjVpKa",
+        "video_slide_KmtCPR",
+        "video_slide_JQrbCr"
+      ],
+      "settings": {
+        "sec_name": "Shop By Colour",
+        "autoplay": false,
+        "arrows": true,
+        "slidercount": 5,
+        "dots": false
       }
     },
     "9e8f0f64-90c7-4706-a7a9-aa3e68275269": {
@@ -1625,10 +1625,10 @@
     "1c64d667-b672-4f7b-b9be-2310692e99f1",
     "b08ad3ae-1d49-443c-bf20-3daa936d220c",
     "14a6d1da-4bb0-467d-8179-0f89444b4027",
-    "ugcslider_WVccfR",
     "7369b26d-3f2e-4d4c-a896-29470c300195",
     "ddf4d5b8-a6eb-415b-9b5f-fde5f56a7fbc",
     "ba72dc37-5808-48c1-b3cb-3ec8be06d8fe",
+    "ugcslider_WVccfR",
     "9e8f0f64-90c7-4706-a7a9-aa3e68275269",
     "1650947126b57380d2",
     "162682029070dd2a76",

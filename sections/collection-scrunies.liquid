@@ -868,10 +868,11 @@
                     {% endif %}
                   {% endfor %}
 
-
+                  {% if var_title_temp0[1] %}
                   <span class="product__title_color_variants" var-name="{{ var_title_temp0[1] | handleize }}">
                     {{ var_title_temp0[1] | capitalize }}
                   </span>
+                  {% endif %}
                   {% if settings.enable_product_loox_reviews and settings.enable_product_loox_reviews_collection %}{% comment %} this block was created by belowyellow.com {% endcomment %}{% render 'loox_reviews', product: product %}{% endif %}
 
                   {% if settings.vendor_enable %}

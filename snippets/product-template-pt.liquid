@@ -1,4 +1,4 @@
-<!-- snippets/product-template-sock.liquid -->
+<!-- snippets/product-template-pt.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -758,7 +758,7 @@
 
                                     style="background: url({{ overlayimagex }}) left top;" >
                                     {% for variant in productb.variants %}
-                                      <input type="hidden" name="{{ variant.title }}" data-socavail="{{ variant.available }}" data-socvarid="{{ variant.id }}"  data-socprice="{{ variant.price | money }}">
+                                      <input type="hidden" name="{{ variant.title }}" data-socqty="{{ variant.inventory_quantity }}" data-socavail="{{ variant.available }}" data-socvarid="{{ variant.id }}"  data-socprice="{{ variant.price | money }}">
                                   {% endfor %}
                                     
                                     </div>
@@ -780,12 +780,11 @@
                         </div>
 
   
-
-                      <div class="scrubs-cart">
-                        <label style="margin-bottom:8px">Size</label>
+                        <div class="scrubs-cart">
+                          <label style="margin-bottom:8px">Size: <span class="size-desc"></span></label> 
                         <div class="righthere">
                           {% for variant in product.variants %}
-                          <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" data-socvarid="{{ variant.id }}" data-socavail="{{ variant.available }}"  data-socprice="{{ variant.price | money }}">{{ variant.title }}</span>
+                          <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" data-socvarid="{{ variant.id }}" data-socavail="{{ variant.available }}" data-socqty="{{ variant.inventory_quantity }}" data-socprice="{{ variant.price | money }}">{{ variant.title }}</span>
                           {% endfor %}
                         </div>
 
@@ -806,7 +805,7 @@
                         .main-textamonials{display:none;}
                         .scrubcaps-wrapper{
                           width:100%;
-                          overflow-x:scroll;
+                          overflow-x:auto;
                           margin-bottom:12px;
                         }
                         .scrubcaps-wrapper::-webkit-scrollbar {
@@ -830,8 +829,9 @@
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 150%;
-                          height: 230px;
+                          /* width: 217%; */
+                          width: 136%;
+                          height: 450px;
                         }
                         .btn-primer {
                           display:inline-block;
@@ -882,8 +882,8 @@
                           }
                           .scrubs-products{
                             flex-wrap:wrap;
-                            width:700px;
-                            height:auto;
+                            width: 922px;
+                            height: 226px;
                           }
                           
                           .image-overlay{
@@ -954,8 +954,84 @@
                       <div class="main-icon-cont" style="margin-top:-19px;padding:5px 0px 5px;" actualheight="118.453px" actualwidth="462px" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                         <div class="preorder-text" style="padding: 0px 20px 12px; margin-bottom: 12px; display: none;" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                            <p>Pre-order now to secure your preferred design. Your entire order will ship once this item becomes available.</p>
-                           <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="preorderdate" style="font-weight:800">May 23</span>. Thanks for your patience!</p>
+                           <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="preorderdate" style="font-weight:800">
+                            {% if product.handle contains "aussie-natives" or product.handle contains "border-collies" or product.handle contains "bushland-butterflies" %}
+                              October 31
+                            {% else %}
+                              September 24
+                            {% endif %}
+                            
+                            
+                            </span>. Thanks for your patience!</p>
                         </div>
+
+                        {% if section.settings.abtestdavideo %}
+                          <div class="ugs_container">
+                            <div class="video-gallery">
+                              <div class="video-container zero1">
+                                <video class="video" src="https://cdn.shopify.com/videos/c/o/v/426dd23a96054652afdecde5e3690f50.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                  <span>3 Reasons Nurses Love Dr. Woof Printed Scrub Tops</span>
+                              </div>
+                              <div class="video-container zero2">
+                                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/4a3547a353b54eadabbea15e00c1be6b.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                  <span>How to bring joy to your shift</span>
+                              </div>
+                              <div class="video-container zero3">
+                                <video class="video" src="https://cdn.shopify.com/videos/c/o/v/5475950c13c14c8b8b21e58d8e296cdf.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                  
+                                  <span>Show off your style with ease</span>
+                              </div>
+                              <!-- 
+                              <div class="video-container zero4">
+                                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/c5fb46949ef64a199884f1995b514bfc.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                              </div>
+                              -->
+                            </div>
+                          </div>
+                          <style>
+                          .ugs_container{
+                            padding-left: 12px;
+                              padding-right: 12px;
+                              margin-top: 20px;
+                              margin-bottom:20px;
+                          }
+                          {% if section.settings.abtestnoicons %}
+                            .ugs_container{
+                                margin-top: -2px;
+                            }
+                          {% endif %}
+                          
+                          .ugs_container span{
+                            font-size: 11px;
+                            font-weight: 800;
+                          }
+                          
+                          .ugs_container .video-gallery {
+                              display: flex;
+                              gap: 10px;
+                          }
+                          
+                          .ugs_container .video-container {
+                              flex: 1;
+                              overflow: hidden;
+                              position: relative;
+                          }
+                          
+                          .ugs_container .video {
+                              width: 100%;
+                              height: auto;
+                              transition: transform 0.3s ease-in-out;
+                              object-fit: cover;
+                          }
+                          
+                          .ugs_container .video-container:hover {
+                              transform: scale(1.05);
+                              cursor:pointer;
+                          }
+                          </style>
+                          {% endif %}
+                          
+                          {% unless section.settings.abtestnoicons %}                            
                         <div class="sub-icon-cont" actualheight="108.453px" actualwidth="153.984px" actualmaxheight="none" actualmaxwidth="none" actualminheight="auto" actualminwidth="auto" windowheight="611">
                            <div class="sub-icon-cont1" actualheight="71.4531px" actualwidth="90px" actualmaxheight="none" actualmaxwidth="90px" actualminheight="0px" actualminwidth="0px" windowheight="611">
                             {% if section.settings.img1 %}
@@ -1012,6 +1088,7 @@
                               </p>
                            </div>
                         </div>
+                        {% endunless %}
                      </div>
                      <div class="main-text" style="padding:20px 0px 5px;" actualheight="63.1875px" actualwidth="462px" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
                             <p>{% unless section.settings.txt2 == '' or section.settings.txt2 == nil or section.settings.txt2 == blank %}{{ section.settings.txt2 }}{% else %}Free & Fast shipping over $100{% endunless %}</p>

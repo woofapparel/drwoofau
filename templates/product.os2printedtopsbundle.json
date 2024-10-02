@@ -3,6 +3,9 @@
     "product-template": {
       "type": "product-template-pt-os2",
       "settings": {
+        "enable_ab_size": false,
+        "abtestnoicons": false,
+        "abtestdavideo": true,
         "enable_ab": true,
         "abtesting1": false,
         "abtesting2": false,
@@ -40,6 +43,20 @@
         "txt9": "",
         "txt10": "",
         "txt11": ""
+      }
+    },
+    "new_product_story_fHCPRG": {
+      "type": "new-product-story",
+      "settings": {
+        "section_title": "Why you'll love our scrubs",
+        "product_story_img_1": "shopify:\/\/shop_images\/PDP_-_Story_Section_Images_6e7e6b1c-c3ae-466a-be4e-fbae95f62599.jpg",
+        "product_story_title_1": "Made from 92% recycled materials.",
+        "product_story_img_2": "shopify:\/\/shop_images\/72_a7c89e48-8237-452d-822a-e06269ed07e7.jpg",
+        "product_story_title_2": "Move, bend, stretch & crouch (without showing your bum crack.)",
+        "product_story_img_3": "shopify:\/\/shop_images\/73_b5231026-1cc4-43ca-ba58-590b43052912.jpg",
+        "product_story_title_3": "Bye-bye sweaty, too-big hospital scrubs. Hello, superior comfort all shift long.",
+        "product_story_img_4": "shopify:\/\/shop_images\/74.jpg",
+        "product_story_title_4": "Every item is a joy to look at and a joy to wear."
       }
     },
     "stories": {
@@ -106,6 +123,7 @@
         "4e14453f-2aed-46a8-bed1-85c8dd75e949",
         "7f00dc63-0001-4e52-b44b-3ce13e275360"
       ],
+      "disabled": true,
       "settings": {}
     },
     "reviews": {
@@ -133,6 +151,7 @@
   },
   "order": [
     "product-template",
+    "new_product_story_fHCPRG",
     "stories",
     "reviews",
     "recommendations",

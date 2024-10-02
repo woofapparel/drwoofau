@@ -42,6 +42,20 @@
         "txt11": ""
       }
     },
+    "new_product_story_VPtUjF": {
+      "type": "new-product-story",
+      "settings": {
+        "section_title": "Why You'll Love Our Scrub Caps",
+        "product_story_img_1": "shopify:\/\/shop_images\/Over_1000_Five_star_reviews_540x_c5fef7b4-d1d0-4279-9544-fe690e56794c.webp",
+        "product_story_title_1": "From artwork, to design, to fabric — we've made sure this is the best scrub cap you'll ever own.",
+        "product_story_img_2": "shopify:\/\/shop_images\/Mask_Holders_540x_0c75ebe9-902a-4657-8bc6-8b88a56b9cad.webp",
+        "product_story_title_2": "If your ears would like to thank us, we accept compliments, scrub-cap selfies & carrot cake.",
+        "product_story_img_3": "shopify:\/\/shop_images\/100_Cotton_540x_609cc09b-2861-41db-9c50-e23d2a37b5a4.webp",
+        "product_story_title_3": "Super soft, super breathable, super comfortable — it's basically a cuddle for your skull.",
+        "product_story_img_4": "shopify:\/\/shop_images\/Product_Page_USPs_4_540x_1f16c29a-3008-4f37-9dc5-84f17bbcce1d.webp",
+        "product_story_title_4": "Add 4 to 6 scrub caps in your cart — the discount will automatically apply."
+      }
+    },
     "stories": {
       "type": "product-section-template-scrub-caps",
       "blocks": {
@@ -106,7 +120,171 @@
         "4e14453f-2aed-46a8-bed1-85c8dd75e949",
         "7f00dc63-0001-4e52-b44b-3ce13e275360"
       ],
+      "disabled": true,
       "settings": {}
+    },
+    "collection_slider_XQGNjV": {
+      "type": "collection-slider",
+      "blocks": {
+        "list_CnWGXR": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/20200926-119223449_205429977597809_8410478767044514621_n_grande_26f3d153-3a14-44ae-9092-804b59bc52fd.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/20200926-119223449_205429977597809_8410478767044514621_n_grande_26f3d153-3a14-44ae-9092-804b59bc52fd.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_t7mHPY": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/121585281_121464066385168_1207350443807561176_n_grande_47ba3a76-2d55-4eb9-96c9-7304a6ebbd65.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/121585281_121464066385168_1207350443807561176_n_grande_47ba3a76-2d55-4eb9-96c9-7304a6ebbd65.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_wJmmxz": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/UGC02_vet_touch_pierroveto_grande_a9162ba4-ecd4-476f-9de1-40c9c0c6069b.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/UGC02_vet_touch_pierroveto_grande_a9162ba4-ecd4-476f-9de1-40c9c0c6069b.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_rQEY7H": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/IMG_20200831_210749_169_grande_d0de27a8-7ede-4280-bc89-5b7ca75517c1.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/IMG_20200831_210749_169_grande_d0de27a8-7ede-4280-bc89-5b7ca75517c1.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_wYJVq4": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/09KvhNn9c_mid_grande_8d272218-541a-4957-bde0-28a651eb26e9.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/09KvhNn9c_mid_grande_8d272218-541a-4957-bde0-28a651eb26e9.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_KpxbQn": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/b14N9HaQc_mid_grande_f102ba20-164a-4139-bba0-99a920ce1904.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/b14N9HaQc_mid_grande_f102ba20-164a-4139-bba0-99a920ce1904.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_GnjXXJ": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/WmBVXkX_R_mid_grande_2333dda2-87e9-4067-b594-78161f976de3.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/WmBVXkX_R_mid_grande_2333dda2-87e9-4067-b594-78161f976de3.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_fAgWgi": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/yr4lkSCv1-_mid_grande_73524cb9-a7fb-40a2-8248-5844d81bf8b3.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/yr4lkSCv1-_mid_grande_73524cb9-a7fb-40a2-8248-5844d81bf8b3.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        },
+        "list_Jw4QQz": {
+          "type": "list",
+          "settings": {
+            "reviewstarsnumber": "",
+            "col_image": "shopify:\/\/shop_images\/kY0NG9Oyb_mid_grande_77d90d24-9051-459d-917d-f3482268f20e.jpg",
+            "mobcol_image": "shopify:\/\/shop_images\/kY0NG9Oyb_mid_grande_77d90d24-9051-459d-917d-f3482268f20e.jpg",
+            "block_title": false,
+            "col_text": "",
+            "blackprice": "",
+            "slashprice": "",
+            "redprice": "",
+            "col_name": "",
+            "col_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "list_CnWGXR",
+        "list_t7mHPY",
+        "list_wJmmxz",
+        "list_rQEY7H",
+        "list_wYJVq4",
+        "list_KpxbQn",
+        "list_GnjXXJ",
+        "list_fAgWgi",
+        "list_Jw4QQz"
+      ],
+      "settings": {
+        "reviewstars": false,
+        "blocklist": true,
+        "show_title": true,
+        "dark_theme": false,
+        "martop_this": 0,
+        "marbot_this": 0,
+        "mmartop_this": 0,
+        "mmarbot_this": 0,
+        "selected_collection": "",
+        "sec_name": "Trusted by Thousands of Medical Workers"
+      }
     },
     "reviews": {
       "type": "looxreviews",
@@ -133,7 +311,9 @@
   },
   "order": [
     "product-template",
+    "new_product_story_VPtUjF",
     "stories",
+    "collection_slider_XQGNjV",
     "reviews",
     "recommendations",
     "sudofooter",
