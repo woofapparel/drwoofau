@@ -171,7 +171,92 @@
       $capsprice = $(this).attr("data-price")
       $capscompare = $(this).attr("data-compare")
 
+      console.log("xoooo" + $capid)
+              switch($capid) {
+    case "8742079267074":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8702953947394":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8742080872706":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8742083002626":
+        $(".preorderdate").html("October 10");
+        break;
+    case "8320634192130":
+        $(".preorderdate").html("October 10");
+        break;
+    case "8742084247810":
+        $(".preorderdate").html("October 10");
+        break;
+    case "8702954799362":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8702953062658":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8742079267074":
+        $(".preorderdate").html("October 20");
+        break;
+    case "8702949916930":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8702953718018":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8702953947394":
+        $(".preorderdate").html("October 20");
+        break;
+    case "87029547993624":
+        $(".preorderdate").html("October 20");
+        break;
+    case "8702954963202":
+        $(".preorderdate").html("October 3");
+        break;
+    case "8702955356418":
+        $(".preorderdate").html("October 3");
+        break;
+    
+    // New product IDs
+    case "8810379739394":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810379444482":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810379116802":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810378658050":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810378297602":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810377347330":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810376167682":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810375086338":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810373382402":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810373185794":
+    $(".preorderdate").html("October 25");
+    break;
+    case "8810372858114":
+        $(".preorderdate").html("October 25");
+        break;
 
+    default:
+        $(".preorderdate").html("October 10");
+}
       $selectedProductHandle = $(".activer").attr('data-handle')
       $selectedProductType = $(".actives").attr('data-type')
       $selectedProductSize = $(".atv").attr('data-size')
@@ -211,56 +296,7 @@
             if($xsocqty <= 0 ){
               $(".capsbundleatd").html("PRE-ORDER")
               $(".preorder-text").show()
-              switch($capid) {
-                case "8742079267074":
-                $(".preorderdate").html("October 3")
-                  break;
-                  case "8702953947394":
-                $(".preorderdate").html("October 3")
-                  break;
-                  case "8742080872706":
-                $(".preorderdate").html("October 3")
-                  break;
-                case "8742083002626":
-                $(".preorderdate").html("October 10")
-                  break;
-                case "8320634192130":
-                $(".preorderdate").html("October 10")
-                  break;
-                  case "8742084247810":
-                $(".preorderdate").html("October 10")
-                  break;
-                  case "8702954799362":
-                $(".preorderdate").html("October 3")
-                  break;
-                  
-                case "8702953062658":
-                $(".preorderdate").html("October 3")
-                  break;
-                case "8742079267074":
-                $(".preorderdate").html("October 20")
-                  break;
-                  case "8702949916930":
-                $(".preorderdate").html("October 3")
-                  break;
-                  case "8702953718018":
-                $(".preorderdate").html("October 3")
-                  break;
-                  case "8702953947394":
-                $(".preorderdate").html("October 20")
-                  break;
-                  case "87029547993624":
-                $(".preorderdate").html("October 20")
-                  break;
-                  case "8702954963202":
-                $(".preorderdate").html("October 3")
-                  break;
-                  case "8702955356418":
-                $(".preorderdate").html("October 3")
-                  break;
-                default:
-                $(".preorderdate").html("October 10")
-              }
+
             }else{
               $(".capsbundleatd").html("ADD TO CART")
               $(".preorder-text").hide()           
