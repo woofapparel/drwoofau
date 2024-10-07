@@ -5,7 +5,7 @@
 {% endstyle %}
 
 <div class="index-section{% if section.settings.alt %} index-section--alt{% endif %} logolist-{{ section.id  }}">
-
+  
   <div class="page-width" data-aos="logo__animation">
     {% if section.settings.title != blank %}
       <header class="section-header" data-aos>
@@ -15,7 +15,7 @@
       </header>
     {% endif %}
     {% if section.settings.leftscroll %}
-    <div class="scroll-container"  data-speed="fast" data-animated="true">
+    <div class="scroll-container scroller"  data-speed="fast" data-animated="true">
       {% else %}
       <div class="scroll-container">      
     {% endif %}
@@ -28,6 +28,7 @@
             {% endif %}
             {% if block.settings.image != blank %}
               {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              {% if section.settings.leftscroll %}
               <div class="logo-wrapper deskview">
                 <img data-swift-lazy="1" loading="lazy"   class="logo-bar__image lazyload"
                 data-src="{{ img_url }}"
@@ -36,6 +37,13 @@
                 data-sizes="auto"
                 alt="{{ block.settings.image.alt }}">
               </div>
+              {% else %}
+              <div class="logo-wrapper deskview">
+                <img class="logo-bar__image"
+                src="{{ block.settings.image | img_url: "x100" }}"
+                alt="{{ block.settings.image.alt }}">
+              </div>
+              {% endif %}
               <div class="logo-wrapper mobview">
                 <img data-swift-lazy="1" loading="lazy"   class="logo-bar__image lazyload"
                 data-src="{{ img_url }}"
@@ -85,7 +93,7 @@
   }
 
 
-  .scroll-container {
+  .logolist-{{ section.id  }}  .scroll-container {
   width: 100%;
   overflow: hidden; /* Hide scrollbar */
   position: relative;
@@ -94,12 +102,6 @@
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Creates the blurred edges */
   {% endif %}
 }
-
-
-
-
-
-
 
 
 .scroll-container {
@@ -181,7 +183,7 @@
       justify-content: space-around !important;
     }
     {% if section.settings.leftscroll %}
-    .logo-bar__item{
+      .logolist-{{ section.id  }}  .logo-bar__item{
       flex:0 0 15% !important;
     }
 {% else %}
@@ -235,7 +237,7 @@
 </style>
 {% if section.settings.leftscroll %}
 <script>
-const scrollers = document.querySelectorAll(".scroll-container");
+const scrollers = document.querySelectorAll(".scroller");
 
 // If a user hasn't opted in for recuded motion, then we add the animation
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -248,7 +250,7 @@ function addAnimation() {
     scroller.setAttribute("data-animated", true);
 
     // Make an array from the elements within `.scroller-inner`
-    const scrollerInner = scroller.querySelector(".logo-bar");
+    const scrollerInner = scroller.querySelector(".logo-bar--{{ section.id }}");
     const scrollerContent = Array.from(scrollerInner.children);
 
     // For each item in the array, clone it

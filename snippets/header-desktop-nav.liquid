@@ -32,9 +32,9 @@
         <div class="site-nav__dropdown text-left page-width">
           <div class="flexer">
               <div class="side">
-                <a href="{{ section.settings.right_link_1 }}"><img src="{{ section.settings.right_image_1 | img_url: 'master' }}" class="twoimage"></a>
+                <a href="{{ section.settings.right_link_1 }}"><img src="{{ section.settings.right_image_1 | img_url: '500x' }}" class="twoimage"></a>
                   
-                <a href="{{ section.settings.right_link_2 }}"><img src="{{ section.settings.right_image_2 | img_url: 'master' }}" class="twoimage"></a>
+                <a href="{{ section.settings.right_link_2 }}"><img src="{{ section.settings.right_image_2 | img_url: '500x' }}" class="twoimage"></a>
               </div>
 
               <div class="midside">
@@ -47,29 +47,29 @@
       
                   <li class="imagesource {% if childlink.active %}site-nav--active{% endif %}{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}"  data-img="{% case childlink.url %}
                       {% when '/collections/women/scrub-tops' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_922e05fe-097f-490f-9371-87e47699e282.png?v=1711386663
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_922e05fe-097f-490f-9371-87e47699e282.png?v=1711386663&width=300
                       {% when '/collections/women/scrub-pants' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_f45df840-ec91-4018-97c8-b49b18f41b06.png?v=1712142974
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_f45df840-ec91-4018-97c8-b49b18f41b06.png?v=1712142974&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/women/jogger-scrub-pants' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/men/jogger-scrub-pants' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664&width=300
                       {% when '/collections/men/scrub-pants' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_f27e9635-0f7b-408c-a72c-787079e89e37.png?v=1712142974
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_f27e9635-0f7b-408c-a72c-787079e89e37.png?v=1712142974&width=300
                       {% when '/collections/men/scrub-tops' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/5_ff812058-e6b2-4877-9f3b-b0cc42f818d5.png?v=1711386663
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/5_ff812058-e6b2-4877-9f3b-b0cc42f818d5.png?v=1711386663&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/layers' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/7_2bfbd31e-980a-4183-84f3-b2599cc623f2.png?v=1711561585
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/7_2bfbd31e-980a-4183-84f3-b2599cc623f2.png?v=1711561585&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/scrub-caps?sort_by=best-selling' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/22_5d2dda42-66bf-40ec-8c16-0d69415f6f16.jpg?v=1716196578
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/22_5d2dda42-66bf-40ec-8c16-0d69415f6f16.jpg?v=1716196578&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/scrub-caps?sort_by=created-descending' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/22_5d2dda42-66bf-40ec-8c16-0d69415f6f16.jpg?v=1716196578
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/22_5d2dda42-66bf-40ec-8c16-0d69415f6f16.jpg?v=1716196578&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/printed-pattern-scrub-tops?sort_by=best-selling' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/29.png?v=1717393027
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/29.png?v=1717393027&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/printed-pattern-scrub-tops?sort_by=created-descending' %}
-                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/30.png?v=1717393027
+                        https://cdn.shopify.com/s/files/1/0573/7250/8344/files/30.png?v=1717393027&width=300
                       {% else %}
-                      {{ childlink.object.featured_image | img_url: 'master' }}
+                      {{ childlink.object.featured_image | img_url: '500x' }}
                       {% endcase %}">
                     <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level {% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
                       {{ childlink.title | escape }}
@@ -83,19 +83,19 @@
                           <li>
                             <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link" data-img="{% case grandchildlink.url %}
                             {% when '/collections/women/scrub-tops' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_922e05fe-097f-490f-9371-87e47699e282.png?v=1711386663
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/2_922e05fe-097f-490f-9371-87e47699e282.png?v=1711386663&width=300
                             {% when '/collections/women/scrub-pants' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664&width=300
                             {% when '/collections/women/jogger-scrub-pants' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/1_81150710-ed12-412c-ad86-16b7c9267a1b.png?v=1711386664&width=300
                             {% when '/collections/men/jogger-scrub-pants' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664&width=300
                             {% when '/collections/men/scrub-pants' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664&width=300
                             {% when '/collections/men/scrub-tops' %}
-                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/5_ff812058-e6b2-4877-9f3b-b0cc42f818d5.png?v=1711386663
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/files/5_ff812058-e6b2-4877-9f3b-b0cc42f818d5.png?v=1711386663&width=300
                             {% else %}
-                            {{ grandchildlink.object.featured_image | img_url: 'master' }}
+                            {{ grandchildlink.object.featured_image | img_url: '500x' }}
                             {% endcase %}">
                               {{ grandchildlink.title | escape }}
                             </a>

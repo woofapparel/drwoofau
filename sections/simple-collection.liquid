@@ -1,167 +1,194 @@
 <!-- section/simple-collection.liquid -->
 <div id="sec-id-{{ section.id }}" class="simple-collection">
-    <div class="simple-collection-wrapper">
-      {% for block in section.blocks %}  
-        <div class="quad">
-          <a href="{{ block.settings.col_url }}">
-            <img alt="{{ block.settings.col_image.alt }}" src="{{ block.settings.col_image | img_url: 'master' }}" class="desktop_only" />
-            <img alt="{{ block.settings.col_image_mobile.alt }}" src="{{ block.settings.col_image_mobile | img_url: 'master' }}" class="mobile_only" />
-            <p>{{ block.settings.col_name }}</p>
-          </a>
-        </div>
-      {% endfor %}
-    </div>    
+  <div class="simple-collection-wrapper">
+    {% for block in section.blocks %}  
+      <div class="quad">
+        <a href="{{ block.settings.col_url }}">
+          <img alt="{{ block.settings.col_image.alt }}" data-src="{{ block.settings.col_image | img_url: '300x300' }}" class="desktop_only lazyload" loading="lazy" />
+          <img alt="{{ block.settings.col_image_mobile.alt }}" data-src="{{ block.settings.col_image_mobile | img_url: '300x300' }}" class="mobile_only lazyload" loading="lazy" />
+          <p>{{ block.settings.col_name }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>    
 </div>
-    
+  
 <style>
 @font-face {
   font-family: futura2;
   src: url({{ 'futura.otf' | asset_url }});
 }
-#sec-id-{{ section.id }}{
-      margin-top: {{ section.settings.simp-martop }}px !important;
-      margin-bottom: {{ section.settings.simp-marbot }}px !important;
-      
+#sec-id-{{ section.id }} {
+  margin-top: {{ section.settings.simp-martop }}px !important;
+  margin-bottom: {{ section.settings.simp-marbot }}px !important;
 }
-.simple-collection img{
-  border:1px solid #EBEBEB;
+.simple-collection img {
+  border: 1px solid #EBEBEB;
 }
-.simple-collection-wrapper{
+.simple-collection-wrapper {
   max-width: 1300px;
-  margin-left:auto;
-  margin-right:auto;
-  display:flex;
-  flex-wrap:wrap;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
-.simple-collection-wrapper img{
+.simple-collection-wrapper img {
   width: 83%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  border-radius:8px;
+  border-radius: 8px;
 }
-.simple-collection-wrapper .quad{
-  flex:0 0 24%;
-  margin-bottom:48px;
+.simple-collection-wrapper .quad {
+  flex: 0 0 24%;
+  margin-bottom: 48px;
 }
-.simple-collection-wrapper .quad p{
-  font-weight:800;
-  text-align:center;
+.simple-collection-wrapper .quad p {
+  font-weight: 800;
+  text-align: center;
 }
-.desktop_only{
-  display:block !important;
+.desktop_only {
+  display: block !important;
 }
-.mobile_only{
-  display:none !important;
+.mobile_only {
+  display: none !important;
 }
-#sec-id-{{ section.id }}{
+#sec-id-{{ section.id }} {
+  border-bottom: 1px solid #EBEBEB;
+}
 
-border-bottom: 1px solid #EBEBEB;
-}
-
-@media only screen and (max-width:1400px){
-  .simple-collection{
-    padding-left:20px;
-    padding-right:20px;
+@media only screen and (max-width: 1400px) {
+  .simple-collection {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
-@media only screen and (max-width:480px){
-  .desktop_only{
-    display:none !important;
+@media only screen and (max-width: 480px) {
+  .desktop_only {
+    display: none !important;
   }
-  .mobile_only{
-    display:block !important;
+  .mobile_only {
+    display: block !important;
   }
-  .simple-collection-wrapper .quad{
-    flex:0 0 48%;
-    margin-bottom:20px;
+  .simple-collection-wrapper .quad {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
   }
-  #sec-id-{{ section.id }}{
-      margin-top: {{ section.settings.mobsimp-martop }}px !important;
-      margin-bottom: {{ section.settings.mobsimp-marbot }}px !important; 
-      
+  #sec-id-{{ section.id }} {
+    margin-top: {{ section.settings.mobsimp-martop }}px !important;
+    margin-bottom: {{ section.settings.mobsimp-marbot }}px !important; 
   }
-  
 }
 </style>
 
-{% schema %}
-    {
-      "name": "Simple Collection",
-      "settings": [
-          {
-                    "type": "range",
-                    "id": "simp-martop",
-                    "label": "Space on top",
-                    "default": 20,
-                    "min": 0,
-                    "max": 100,
-                    "step": 20
-                  },
-                  {
-                    "type": "range",
-                    "id": "simp-marbot",
-                    "label": "Space at the bottom",
-                    "default": 20,
-                    "min": 0,
-                    "max": 100,
-                    "step": 20
-                  },
-                  {
-                    "type": "range",
-                    "id": "mobsimp-martop",
-                    "label": "Space on top",
-                    "default": 20,
-                    "min": 0,
-                    "max": 100,
-                    "step": 20
-                  },
-                  {
-                    "type": "range",
-                    "id": "mobsimp-marbot",
-                    "label": "Space at the bottom",
-                    "default": 20,
-                    "min": 0,
-                    "max": 100,
-                    "step": 20
-                  }
-        ],
-      "blocks": [
-        {
-            "name": "List",
-            "type": "list",
-              "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "col_image",
-                    "label": "Image"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "col_image_mobile",
-                    "label": "Mobile Image"
-                },
-                {
-                    "type": "text",
-                    "label": "Collection Name",
-                    "id": "col_name"
-                },
-                {
-                    "type": "url",
-                    "label": "Collection Url",
-                    "id": "col_url" 
-                }
-            ]
-        }
-      ], 
-      "presets": [
-        {
-          "category": "V2",
-          "name": "Simple Collection"
-        }
-      ]
-    }
-    {% endschema %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazyload");    
+  var lazyloadThrottleTimeout;
+  
+  function lazyload() {
+    if(lazyloadThrottleTimeout) {
+      clearTimeout(lazyloadThrottleTimeout);
+    }    
     
+    lazyloadThrottleTimeout = setTimeout(function() {
+      var scrollTop = window.pageYOffset;
+      lazyloadImages.forEach(function(img) {
+        if(img.offsetTop < (window.innerHeight + scrollTop)) {
+          img.src = img.dataset.src;
+          img.classList.remove('lazyload');
+        }
+      });
+      if(lazyloadImages.length == 0) { 
+        document.removeEventListener("scroll", lazyload);
+        window.removeEventListener("resize", lazyload);
+        window.removeEventListener("orientationChange", lazyload);
+      }
+    }, 20);
+  }
+  
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Simple Collection",
+    "settings": [
+        {
+                  "type": "range",
+                  "id": "simp-martop",
+                  "label": "Space on top",
+                  "default": 20,
+                  "min": 0,
+                  "max": 100,
+                  "step": 20
+                },
+                {
+                  "type": "range",
+                  "id": "simp-marbot",
+                  "label": "Space at the bottom",
+                  "default": 20,
+                  "min": 0,
+                  "max": 100,
+                  "step": 20
+                },
+                {
+                  "type": "range",
+                  "id": "mobsimp-martop",
+                  "label": "Space on top",
+                  "default": 20,
+                  "min": 0,
+                  "max": 100,
+                  "step": 20
+                },
+                {
+                  "type": "range",
+                  "id": "mobsimp-marbot",
+                  "label": "Space at the bottom",
+                  "default": 20,
+                  "min": 0,
+                  "max": 100,
+                  "step": 20
+                }
+      ],
+    "blocks": [
+      {
+          "name": "List",
+          "type": "list",
+            "settings": [
+              {
+                  "type": "image_picker",
+                  "id": "col_image",
+                  "label": "Image"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "col_image_mobile",
+                  "label": "Mobile Image"
+              },
+              {
+                  "type": "text",
+                  "label": "Collection Name",
+                  "id": "col_name"
+              },
+              {
+                  "type": "url",
+                  "label": "Collection Url",
+                  "id": "col_url" 
+              }
+          ]
+      }
+    ], 
+    "presets": [
+      {
+        "category": "V2",
+        "name": "Simple Collection"
+      }
+    ]
+  }
+  {% endschema %}
