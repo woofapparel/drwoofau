@@ -704,6 +704,28 @@
                               {% endfor %}
                             {% endpaginate %}
 
+                            
+                            {% paginate collections['non-bamboo-sock'].products by 200 %}
+                              {% for productb in collections['non-bamboo-sock'].products limit:100 %}
+                                {% if productb.available %}
+                                  
+                                    {% for media in productb.media %}
+                                      {% if media.alt contains "Closeup" %}
+                                      {% assign overlayimage = media %}
+                                      {% assign overlayimagex = overlayimage | img_url: '500x500' %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-type="wide" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
+
+                                    style="background: url({{ overlayimagex }}) left top;" >
+
+                                    
+                                    </div>
+
+                                {% endif %}
+                              {% endfor %}
+                            {% endpaginate %}
+
                           </div>
                         </div>
                         
@@ -799,7 +821,7 @@
                           width: 251%;
                           height: 230px;
                           */
-                          width:151%;
+                          width:330%;
                           height: 228px !important; 
                         }
                         .btn-sock,
@@ -853,7 +875,7 @@
                           }
                           .scrubs-products{
                             flex-wrap:wrap;
-                            width:1251px;
+                            width:398%;
                             height:auto;
                           }
                           
