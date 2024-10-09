@@ -73,9 +73,11 @@
           {% if opname == 'size' %}
             <select class="size">
               {% for value in product_option.values %}
+                {% unless product.id == 8742079267074 and value == "S" %}
               <option {% if product_option.selected_value == value %}selected{% endif %} value="{{value | downcase}}">
                 {{ value }}
               </option>
+              {% endunless %}
               {% endfor %}
             </select>
           {% else %}
