@@ -8426,9 +8426,9 @@ if(isNaN($realcount3)){
       $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true }),
           $(document).on("click", ".add-cart-drawer", function (t) {
               t.preventDefault();
-              var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                  i = $(this).parents(".product-data").find(".size").val();
-                  /*
+              var e = $(this).parents(".product-data").find(".size").val();
+              i = $(this).parents(".product-data").find(".type").val();
+                  
               if ("2" == $(this).attr("data-size"))
                   var n = i + " / " + e,
                       a = $(this)
@@ -8442,7 +8442,7 @@ if(isNaN($realcount3)){
                           .find(".variproducts div[data-name='" + n + "']")
                           .attr("value");
               $(".drawer__inner").addClass("overlay-applied"),
-              */
+              /*
               a = $(this)
                          .parents(".product-data")
                          .find(".product-name")
@@ -8457,12 +8457,14 @@ if(isNaN($realcount3)){
                         cart_update()
                       },
                   });
+                  */
           }),
           $(document).on("click", ".all-colors label", function (t) {
               $(this).parent().find("label").removeClass("active"), $(this).addClass("active");
-              var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                  i = $(this).parents(".product-data").find(".size").val();
+              var e = $(this).parents(".product-data").find(".size").val();
+                  i = $(this).parents(".product-data").find(".type").val();
               if ("2" == $(this).parents(".product-data").find(".add-cart-drawer").attr("data-size")) {
+                  
                   var n = i + " / " + e,
                       a = $(this)
                           .parents(".product-data")
@@ -8479,9 +8481,10 @@ if(isNaN($realcount3)){
               }
           }),
           $(document).on("change", ".variants .size", function (t) {
-              var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                  i = $(this).parents(".product-data").find(".size").val();
+            var e = $(this).parents(".product-data").find(".size").val();
+            i = $(this).parents(".product-data").find(".type").val();
               if ("2" == $(this).parents(".product-data").find(".add-cart-drawer").attr("data-size")) {
+                
                   var n = i + " / " + e,
                       a = $(this)
                           .parents(".product-data")
@@ -10229,8 +10232,8 @@ arrows:true,
      $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true }),
          $(document).on("click", ".add-cart-drawer", function (t) {
              t.preventDefault();
-             var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                 i = $(this).parents(".product-data").find(".size").val();
+             var e = $(this).parents(".product-data").find(".size").val();
+                 i = $(this).parents(".product-data").find(".type").val();
              /*    
              if ("2" == $(this).attr("data-size"))
                  var n = i + " / " + e,
@@ -10263,9 +10266,10 @@ arrows:true,
          }),
          $(document).on("click", ".all-colors label", function (t) {
              $(this).parent().find("label").removeClass("active"), $(this).addClass("active");
-             var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                 i = $(this).parents(".product-data").find(".size").val();
+             var e = $(this).parents(".product-data").find(".size").val();
+                 i = $(this).parents(".product-data").find(".type").val();
              if ("2" == $(this).parents(".product-data").find(".add-cart-drawer").attr("data-size")) {
+              
                  var n = i + " / " + e,
                      a = $(this)
                          .parents(".product-data")
@@ -10282,9 +10286,10 @@ arrows:true,
              }
          }),
          $(document).on("change", ".variants .size", function (t) {
-             var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                 i = $(this).parents(".product-data").find(".size").val();
+          var e = $(this).parents(".product-data").find(".size").val();
+          i = $(this).parents(".product-data").find(".type").val();
              if ("2" == $(this).parents(".product-data").find(".add-cart-drawer").attr("data-size")) {
+              
                  var n = i + " / " + e,
                      a = $(this)
                          .parents(".product-data")

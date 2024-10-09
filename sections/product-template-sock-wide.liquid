@@ -138,8 +138,11 @@
       }
       if(!$socavailL){
         $(".btn-primer.L").addClass("supdis")
+        $(".btn-primer.L").hide()
+        
       }else{
         $(".btn-primer.L").removeClass("supdis")
+        $(".btn-primer.L").show()
       }
 
 
@@ -477,8 +480,10 @@
       }
       if(!$socavailL){
         $(".btn-primer.L").addClass("supdis")
+        $(".btn-primer.L").hide()
       }else{
         $(".btn-primer.L").removeClass("supdis")
+        $(".btn-primer.L").show()
       }
 
       $socavailWS = isVariantAvailable($selectedProductHandle, "Wide", "S");

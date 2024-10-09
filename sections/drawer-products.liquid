@@ -71,13 +71,21 @@
           {% for product_option in all_products[handle].options_with_values %}
           {% assign opname = product_option.name | downcase %}     
           {% if opname == 'size' %}
-          <select class="size">
-            {% for value in product_option.values %}
-            <option {% if product_option.selected_value == value %}selected{% endif %} value="{{value | downcase}}">
-              {{ value }}
-            </option>
-            {% endfor %}
-          </select>
+            <select class="size">
+              {% for value in product_option.values %}
+              <option {% if product_option.selected_value == value %}selected{% endif %} value="{{value | downcase}}">
+                {{ value }}
+              </option>
+              {% endfor %}
+            </select>
+          {% else %}
+            <select class="type">
+              {% for value in product_option.values %}
+              <option {% if product_option.selected_value == value %}selected{% endif %} value="{{value | downcase}}">
+                {{ value }}
+              </option>
+              {% endfor %}
+            </select>
           {% endif %}
           {% endfor %}  
   

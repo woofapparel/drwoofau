@@ -4183,8 +4183,8 @@ function cart_update() {
               }
           }),
           $(document).on("change", ".variants .size", function (t) {
-              var e = $(this).parents(".product-data").find(".all-colors label.active").attr("data-value"),
-                  i = $(this).parents(".product-data").find(".size").val();
+              var e = $(this).parents(".product-data").find(".size").val();
+                  i = $(this).parents(".product-data").find(".type").val();
               if ("2" == $(this).parents(".product-data").find(".add-cart-drawer").attr("data-size")) {
                   var n = i + " / " + e,
                       a = $(this)
