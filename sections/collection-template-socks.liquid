@@ -34,6 +34,10 @@
     
   </script>
 {% endif %}
+{% assign product_count = collection.products_count %}
+<div class="page-width">
+  <span style="display:block;margin-bottom:12px;text-align:right;text-decoration:underline;font-weight:800;width:100%">{{ product_count }} Total</span>
+</div>
 <div class="page-width">
   <div id="CollectionAjaxContent">
     <div class="grid grid--uniform grid--scattered-large-3 grid--scattered-small-2" data-collection-container="">
