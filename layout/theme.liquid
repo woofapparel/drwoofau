@@ -3214,6 +3214,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
+              $(".preorder-text").html("November 6")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3228,6 +3229,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
+              $(".preorder-text").html("November 6")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3583,11 +3585,27 @@ $(document).on("click",".btn-primer",function(){
     
 $capqty = parseFloat($(this).attr("data-socqty"))
 
-      switch ($capid) {        
+      switch ($capid) {   
+        case "8704463831298":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorder-text").html("September 24")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
         case "8808183202050":
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
+              $(".preorder-text").html("November 6")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()

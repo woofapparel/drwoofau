@@ -958,7 +958,12 @@
                             {% if product.handle contains "aussie-natives" or product.handle contains "border-collies" or product.handle contains "bushland-butterflies" %}
                               November 6
                             {% else %}
-                              September 24
+                            {% if product.handle contains "breast" %}
+                              October 25
+                            {% else %}
+                              November 6
+                            {% endif %}
+                              
                             {% endif %}
                             
                             
