@@ -10606,6 +10606,10 @@ arrows:true,
     $actualprice = ""
     $size = $(".cone select[data-index='xoption1'] option:selected").val();
     $color = $(".cone select[data-index='xoption2'] option:selected").val();
+    
+    if ($color && $color.trim() !== "") {
+      $color =  "Navy";
+    }
     if($(".cone select[data-index='xoption3']").length){
         $inseam = $(".cone select[data-index='xoption3'] option:selected").val();
         $setchosen = $size + " / " + $color + " / " + $inseam;
@@ -10630,7 +10634,7 @@ arrows:true,
               $("#cts-prod1").html("ADD")
               $ok1 = "ok"
           }else{
-              /* $(".cts-flexer.cone .imagepart").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/ProhibitionSign2_svg.png?v=1676935889") */
+               $(".cts-flexer.cone .imagepart").attr("src","//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391") 
                // $("#cts-prod1").addClass('adisabled');  
                // $("#cts-prod1").html("Soldout")
           }  
@@ -10693,7 +10697,7 @@ arrows:true,
                 $("#cts-prod2").html("ADD")
                 $ok2 = "ok"
             }else{
-                /* $(".cts-flexer.ctwo .imagepart").attr("src","https://cdn.shopify.com/s/files/1/0573/7250/8344/files/ProhibitionSign2_svg.png?v=1676935889") */
+              $(".cts-flexer.cone .imagepart").attr("src","//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391") 
                 // $("#cts-prod2").removeClass('bdisabled');  
                 // $("#cts-prod2").html("Soldout")
             }  
@@ -10738,7 +10742,7 @@ arrows:true,
       $("#cts-prod1").html("ADD")
       $ok1 = "ok"
     }else{
-
+      $(".cts-flexer.cone .imagepart").attr("src","//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391") 
     }
   })
 
@@ -10749,8 +10753,12 @@ arrows:true,
             $actualvarid = $(this).find(".datavarid").val()
             $actualvarimage = $(this).find(".datavarimage").val()
             $actualavail = $(this).find(".dataavail").val()
-            $actualprice = $(this).find(".dataprice").val()      
-            $(".cts-flexer.ctwo .imagepart").attr("src",$actualvarimage)
+            $actualprice = $(this).find(".dataprice").val()    
+            if ($actualvarimage && $actualvarimage.trim() !== "") {
+                $(".cts-flexer.ctwo .imagepart").attr("src", $actualvarimage);
+            } else {
+                $(".cts-flexer.cone .imagepart").attr("src", "//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391");
+            }
             $("#cts-prod2").addClass('bdisabled');
             $("#cts-prod2").removeClass('bnotift');
             $("#cts-prod2").html("ADD")
@@ -10970,7 +10978,14 @@ arrows:true,
         $oknarin2 = "not ok"
         $size = $(".cone select[data-index='xoption1'] option:selected").val();
         $color = $opval
-        $("select[data-index='xoption2']").val($opval)
+        var $select = $("select[data-index='xoption2']");
+        if ($select.find("option[value='" + $opval + "']").length) {
+            $select.val($opval);
+        } else {
+            $select.val("Navy");
+            $color =  "Navy";
+        }
+
         if($(".cone select[data-index='xoption3']").length){
             $inseam = $(".cone select[data-index='xoption3'] option:selected").val();
             $setchosen = $size + " / " + $color + " / " + $inseam;
@@ -10979,7 +10994,7 @@ arrows:true,
             $setchosen = $size + " / " + $color;
             $defaultchosenone = "S / Navy";
         }
-  
+        $score = 0
         $xcounter = 0
         $('.datavariant.done .parentvar').each(function(){
             if($xcounter == 0){
@@ -10988,22 +11003,32 @@ arrows:true,
             $xcounter++
             $defcolor = $(this).find(".datavarimage").val()
             $actualvar = $(this).find(".datatitle").val()
+            console.log($setchosen)
             if ($actualvar.indexOf($color) >= 0){
                 $thae = $(this).find(".datavarimage").val()
+                $(".cts-flexer.cone .imagepart").attr("src",$thae) 
+                $score++
+                // if title contains color, navy is used if no color
+            }
+            if($score <= 0){
+              $(".cts-flexer.cone .imagepart").attr("src","//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391") 
             }
             
             if($actualvar == $defaultchosenone){
+              // get the default data
                 $soldoutvarid = $(this).find(".datavarid").val()
                 $soldoutvarimageone = $(this).find(".datavarimage").val()
                 $soldoutavail = $(this).find(".dataavail").val()
-                
             }
+            console.log($actualvar + "salamat" + $setchosen)
             if($actualvar == $setchosen){
+              // get the chosen data
                 $actualvarid = $(this).find(".datavarid").val()
                 $actualvarimage = $(this).find(".datavarimage").val()
                 $actualavail = $(this).find(".dataavail").val()
                 $actualprice = $(this).find(".dataprice").val()
-                
+                console.log("salamat" + $actualavail)
+
                 $oknarin1 = "ok"
                 if($actualavail == "available"){
                     $(".cts-flexer.cone .imagepart").attr("src",$actualvarimage)
@@ -11012,7 +11037,7 @@ arrows:true,
                     $("#cts-prod1").html("ADD")
                     $ok1 = "ok"
                 }else{
-                    
+                  $(".cts-flexer.cone .imagepart").attr("src","//www.drwoofapparel.com.au/cdn/shop/files/DrWoof_Jun2416758-web.jpg?v=1722413391") 
                    // $(".cts-flexer.cone .imagepart").attr("src",$soldoutvarimageone)
                     //$(".cone select[data-index='xoption1']").val("Select")
                     
@@ -11020,7 +11045,7 @@ arrows:true,
                     /* $("#cts-prod1").addClass('adisabled');  */
                     /* $("#cts-prod1").html("Soldout") */
                 }  
-                
+
             }
       
           })
