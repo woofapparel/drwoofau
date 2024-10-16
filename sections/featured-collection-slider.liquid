@@ -6,30 +6,32 @@ If you change the number below, it must also be changed in:
 - sections/collection-template
 - sections/featured-collection-slider
 - snippets/page-block-featured-collection-slider
-{% endcomment %}{%- assign paginate_by = 24 -%}
+{% endcomment %}
+{%- assign paginate_by = 24 -%}
 
 {%- assign collection = collections[section.settings.home_featured_products] -%}
 {%- assign ajax_paginate = false -%}
-  {% if collection %}
-    {% if collection.all_products_count > paginate_by %}
-  {%- assign ajax_paginate = true -%}
-{% endif %}
+{% if collection %}
+  {% if collection.all_products_count > paginate_by %}
+    {%- assign ajax_paginate = true -%}
+  {% endif %}
 {% endif %}
 
-{%- assign grid_item_width = 'grid-product--small' -%}
+{%- assign grid_item_width = 'grid-product--trio' -%}
 {%- assign scrollable = true -%}
-  {% case section.settings.per_row %}
-  {% when 'small' %}
+{% case section.settings.per_row %}
+  {% when 'three' %}
     {%- if collection.all_products_count <= 3 -%}
-  {%- assign scrollable = false -%}
-  {%- endif -%}
-  {% when 'medium' %}
-  {%- assign grid_item_width = 'grid-product--medium' -%}
-  {% when 'large' %}
-{%- assign grid_item_width = 'grid-product--large' -%}
+      {%- assign scrollable = false -%}
+    {%- endif -%}
+  {% when 'four' %}
+    {%- assign grid_item_width = 'grid-product--quad' -%}
+  {% when 'five' %}
+    {%- assign grid_item_width = 'grid-product--penta' -%}
 {% endcase %}
 
-  <div class="index-section index-section--overflow-scroller{% if section.settings.alt %} index-section--alt{% endif %}"> <div
+<div class="index-section index-section--overflow-scroller{% if section.settings.alt %} index-section--alt{% endif %}">
+  <div
     id="CollectionSection-{{ section.id }}"
     data-section-id="{{ section.id }}"
     data-section-type="featured-collection"
@@ -39,8 +41,8 @@ If you change the number below, it must also be changed in:
     data-paginate-by="{{ paginate_by }}"
     data-collection-url="{{ collection.url }}"
     data-collection-count="{{ collection.all_products_count }}"
-    {% if section.settings.per_row == 'small' and collection.all_products_count <= 3 %}
-    data-center-grid
+    {% if section.settings.per_row == 'three' and collection.all_products_count <= 3 %}
+      data-center-grid
     {% endif %}
     data-aos>
     {% if section.settings.title != blank %}
@@ -142,8 +144,23 @@ If you change the number below, it must also be changed in:
         flex:0 0 50% !important;
     }
   }
-  </style>
+</style>
 {% endif %}
+<style>
+  .grid-product--trio { flex: 0 0 33% !important; }
+  .grid-product--quad { flex: 0 0 25% !important; }
+  .grid-product--penta { flex: 0 0 20% !important; }
+
+  @media only screen and (max-width: 768px) {
+    .grid-product--trio,
+    .grid-product--quad,
+    .grid-product--penta {
+      flex: 0 0 50% !important;
+    }
+  }
+
+
+</style>
 {% schema %}
   {
     "name": "Featured collection",
@@ -168,16 +185,16 @@ If you change the number below, it must also be changed in:
         "type": "select",
         "id": "per_row",
         "label": "Products per row",
-        "default": "small",
+        "default": "three",
         "options": [
           {
-            "value": "small",
+            "value": "three",
             "label": "3"
           }, {
-            "value": "medium",
+            "value": "four",
             "label": "4"
           }, {
-            "value": "large",
+            "value": "five",
             "label": "5"
           }
         ]
