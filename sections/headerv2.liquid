@@ -110,7 +110,7 @@ img.reviewwhitestars{
     gap: 16px; 
 }
 .button-wrapper a {
-    flex: 0 0 48%;
+    flex: 0 0 100%;
 }
 
 .header-button{
@@ -182,7 +182,7 @@ img.reviewwhitestars{
 }
 {% if page.title contains "6 Reasons Why Thousands" %}
   .button-wrapper a{
-  flex: 0 0 65% !important;
+  flex: 0 0 100% !important;
   }
   .header-button{
   padding-left: 22px;
@@ -233,12 +233,17 @@ img.reviewwhitestars{
   margin-right:auto;
 }
 
+.announcement{
+  display:none !important;
+}
+
 {% if section.settings.added_date %}
 .main_header{
   text-align:center;
   font-size:42px;
 }
 @media only screen and (max-width:480px){
+
   .main-content{
     padding-left:20px;
     padding-right:20px;
