@@ -8,6 +8,9 @@ $(document).ready(function(){
     if((avarqty <= 0) && (Avarava == true)){
         $(".add-to-cart span").html("PRE-ORDER")
         $(".preorder-text").show()
+        $("#deliveryDiv").hide()
+        $("#deliveryDivcart").hide()
+        
         $color = $.trim($(".variant-change-color span[data-option-index=1]").html().toLowerCase())
         
         if ($color == 'navy') {
@@ -77,6 +80,8 @@ $(document).ready(function(){
            }
     }else{
        $(".preorder-text").hide()
+       $("#deliveryDiv").show()
+       $("#deliveryDivcart").show()
     }
 })
 function cart_open() {
@@ -847,6 +852,8 @@ lazySizesConfig.expFactor = 4;
             
             $(".add-to-cart span").html("PRE-ORDER")
             $(".preorder-text").show()
+            $("#deliveryDiv").hide()
+            $("#deliveryDivcart").hide()
             $color = $(".variant-change-color span[data-option-index=1]").html().toLowerCase()
             
             $color = $color.trim()
@@ -945,9 +952,10 @@ lazySizesConfig.expFactor = 4;
            } 
          }else{
             $(".preorder-text").hide()
+            $("#deliveryDiv").show()
+            $("#deliveryDivcart").show()
          }
       },
-  
       _updateMasterSelect: function(variant) {
         $(this.originalSelectorId, this.$container).val(variant.id);
       },
@@ -10774,6 +10782,7 @@ arrows:true,
     if((varqty <= 0) && (varava == true)){
         $(".add-to-cart span").html("PRE-ORDER")
         $(".preorder-text").show()
+        $("#deliveryDiv").hide()
         $color = $.trim($(".variant-change-color span[data-option-index=1]").html().toLowerCase())
        
         if ($color == 'navy') {
@@ -10866,6 +10875,7 @@ arrows:true,
            } 
     }else{
        $(".preorder-text").hide()
+       $("#deliveryDiv").hide()
     }
     $thae = '';
     $thae2 = '';

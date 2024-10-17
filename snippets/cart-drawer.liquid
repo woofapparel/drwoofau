@@ -514,7 +514,83 @@
         <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer{% if settings.cart_terms_conditions_enable %} cart__checkout--ajax{% endif %}" name="checkout" data-cart-submit>
           <img src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/Vector.png?v=1707420905" style="display:inline;margin-right:12px;position: relative;margin-right: 9px;top: 2px;" /><span>{{ 'cart.general.checkout' | t }}</span>
         </button>
+        <style>
+          .main-cont2{
+            text-align:center;
+          }
+          .delivery-box {
+            padding: 8px 10px 10px;
+            background-color: #E4F8D5;
+            color: #000;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 0;
+            margin-top: 9px;
+            text-align: center;
+            font-size: 14px;
+            font-weight:500;
+            display:none !important;
+          }
+          .clock-icon {
+            color: #44940C;
+            font-size: 1.2em;
+            position: relative;
+            margin-right: 0;
+            top: 3px;
+        }
+        .main-text p{
+          // display:none;
+        }
+          @media only screen and (max-width:480px){
+            .delivery-box {
+              margin-right: 16px;
+              width:auto;
+              margin-left: 16px;
+              font-size:14px;
+            }
+          }
+        </style>
+                <script>
+        function addDeliveryText() {
+            // Get today's date
+            const today = new Date();
+            // Calculate the date 3 days from today
+            const deliveryDate = new Date(today);
+            deliveryDate.setDate(today.getDate() + 1);
+            
+            // Get the next day for the range
+            const nextDeliveryDate = new Date(deliveryDate);
+            nextDeliveryDate.setDate(deliveryDate.getDate() + 3);
         
+            // Format the delivery dates
+            const options = { month: 'long', day: 'numeric' };
+            const formattedStartDate = deliveryDate.toLocaleDateString('en-US', options);
+            const formattedEndDate = nextDeliveryDate.getDate(); // Get only the day
+            
+            // Create the text for the delivery date with the inverted clock icon and bolded date
+            const deliveryText = `
+                <span class="clock-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                        <circle cx="12" cy="12" r="10" fill="#44940C" /> <!-- Green background -->
+                        <path d="M12 4v7l4 2" stroke="white" stroke-width="2" fill="none" /> <!-- White lines for clock hands -->
+                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" fill="none" /> <!-- White circle outline -->
+                    </svg>
+                </span> 
+                Estimated Delivery: <u><strong>${formattedStartDate.split(' ')[0]} ${formattedStartDate.split(' ')[1]}-${formattedEndDate}</strong></u>.
+            `;
+            
+            // Add the text as HTML to the divs
+            document.getElementById('deliveryDiv').innerHTML = deliveryText;
+            document.getElementById('deliveryDivcart').innerHTML = deliveryText;
+        }
+        
+        // Call the function to add the text
+        addDeliveryText();
+        
+        
+        </script>
+                <div id="deliveryDivcart" class="delivery-box" style="display:none;"></div>
+
       </div>
       {% section 'drawer-products' %}
     </div>
