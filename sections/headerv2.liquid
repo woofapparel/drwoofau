@@ -109,9 +109,17 @@ img.reviewwhitestars{
     justify-content: center;
     gap: 16px; 
 }
-.button-wrapper a {
-    flex: 0 0 100%;
-}
+{% if template.name == "index" %} 
+  .button-wrapper a {
+      flex: 0 0 36%;
+  }
+ 
+{% else %}
+  .button-wrapper a {
+      flex: 0 0 100%;
+  }
+
+{% endif %}
 
 .header-button{
     background: #fff;
