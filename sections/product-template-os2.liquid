@@ -31,7 +31,11 @@
   .main-textamonials{
     margin-bottom:0 !important;
   }
-
+{% unless section.settings.abtestestimateddated %}
+  .delivery-box{
+    display:none !important;
+  }
+{% endunless  %}
 </style>
 {% schema %}
   {
@@ -41,6 +45,12 @@
         "type": "header",
         "content": "AB Testing"
       }, 
+      {
+        "type": "checkbox",
+        "id": "abtestestimateddated",
+        "label": "Enable AB test for estimated date",
+        "default": false
+      },
       {
         "type": "checkbox",
         "id": "abtestnoicons",
