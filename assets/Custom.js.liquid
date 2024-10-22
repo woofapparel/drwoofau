@@ -150,7 +150,20 @@ if($totalin >= 150){
     $col = $.trim($(".variant-change-color .variant__label-info span").html())
         $(document).on("click", ".variant-change-color .variant-input-wrap .variant-input", function () {
             console.log("colorchange")
-
+            $dis = $("[data-handle='current'][data-value='S'").hasClass("disabled")
+            if($dis){
+                
+                    $(".variant-input[data-value='XS'] label").trigger("click");
+                
+                
+            }else{
+                
+                    $(".variant-input[data-value='S'] label").trigger("click");
+                
+                
+            }
+                
+         
             $size = $(".variant-input-wrap[data-index='option1'] input:checked").val();
             $color = $(".variant-input-wrap[data-index='option2'] input:checked").val();
 
@@ -348,6 +361,7 @@ if($totalin >= 150){
                             },
                         });
                     }
+
                 }
 $col = $nowcol
 
@@ -357,6 +371,9 @@ $col = $nowcol
 
               
             }, 100);
+            $(".variant-input[data-value='Standard'] label").trigger("click");
+            clear();
+
         }),
         $(document).on("click", ".variant-input[data-index='option3'] .label_options", function (t) {
             $ok1 = "notok";
