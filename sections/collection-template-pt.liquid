@@ -1257,6 +1257,18 @@
     }
 
 </style>
+{% if template.suffix contains "sl-AE427C45" %}
+  <script>
+    window.onload = function() {
+      var url = window.location.href;
+      var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+  
+      if (fbclid) {
+        window.location.href = "https://www.drwoofapparel.com.au/pages/wearable-art-thats-made-to-last"; // Replace with your desired URL
+      }
+    };
+  </script>
+  {% endif %}10
 {% if collection.handle == 'woof-x-athletikan-sneakers' %}
 <style>
     .cnavy{
