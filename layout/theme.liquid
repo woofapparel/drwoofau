@@ -2808,13 +2808,25 @@ $(document).ready(function(){
     $capid = $(".activer").attr("data-id")
     $(".btn-primer").removeClass("atv")
       $(this).addClass("atv")
-      if($(this).hasClass("butttonsoldout")){
-        $(".capsbundleatc").html("SOLD OUT")
-        $(".capsbundleatc").addClass("soldoutx")
+      $varavail = $(".atv").attr("data-socavail")
+      $varquan = parseInt($(".atv").attr("data-socqty"))
+
+      if(($varavail == "true") && ($varquan <= 0)) {
+        $(".preorder-text").show()
+        $(".preorderdate").html("November 25")
+        $(".capsbundleatc").html("PRE-ORDER")
       }else{
-        $(".capsbundleatc").html("ADD TO CART")
-        $(".capsbundleatc").removeClass("soldoutx")
+        $(".preorder-text").hide()
+        if($(".capsbundleatc").hasClass("butttonsoldout")){
+          $(".capsbundleatc").html("SOLD OUT")
+          $(".capsbundleatc").addClass("soldoutx")
+        }else{
+          $(".capsbundleatc").html("ADD TO CART")
+          $(".capsbundleatc").removeClass("soldoutx")
+        }
       }
+
+
       
       $alttag = $(this).html();
     $(".product__thumb-item img[alt='" + $alttag + "']").trigger("click")
@@ -2984,6 +2996,25 @@ $(".image-overlay").on("click",function(){
       $(".capstandardid").val($capstandardid)
       $(".capxlid").val($capxlid)
       $(".product-single__title").html($captitle)
+
+      $varavail = $(".atv").attr("data-socavail")
+      $varquan = parseInt($(".atv").attr("data-socqty"))
+
+      if(($varavail == "true") && ($varquan <= 0)) {
+        $(".preorder-text").show()
+        $(".preorderdate").html("November 25")
+        $(".capsbundleatc").html("PRE-ORDER")
+      }else{
+        $(".preorder-text").hide()
+        if($(".capsbundleatc").hasClass("butttonsoldout")){
+          $(".capsbundleatc").html("SOLD OUT")
+          $(".capsbundleatc").addClass("soldoutx")
+        }else{
+          $(".capsbundleatc").html("ADD TO CART")
+          $(".capsbundleatc").removeClass("soldoutx")
+        }
+      }
+      
       $.ajax({
                             type: "GET",
                             url: $capurl,
@@ -4147,7 +4178,7 @@ src="https://www.facebook.com/tr?id=645105989386037&noscript=1"
   <style>
     @media only screen and (min-width:481px){
       .scrubs-products{
-        height:222px !important;
+        height:343px !important;
       }
     }
   </style>

@@ -334,7 +334,7 @@
 <span class="prerosewood">{{ prerosewood }}</span>
 
 
-{% assign premermaidteal = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.mermaid_teal %}
+{% assign premermaidteal = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.mermaid_teal  %}
 <span class="premermaidteal">{{ premermaidteal }}</span>
 
 </div>
@@ -1146,16 +1146,17 @@ dual
                                     {% endfor %}
                                     <div class="image-overlay activer" data-id="{{ productb.id }}" data-title="{{ productb.title }}" data-image="{{ productb.images.first | product_img_url: 'medium' }}" data-url="{{ productb.url }}" data-handle="{{ productb.handle }}" data-price="{{ productb.price | money }}" data-compare="{{ productb.compare_at_price | money }}" 
                                     {% for variant in productb.variants %}
-                                        data-{{ variant.title }} = '{{ variant.id }}'
-                                        data-{{ variant.title }}-avail = '{{ variant.available }}'
-                                    {% endfor %}
+                                      data-{{ variant.title }} = '{{ variant.id }}'
+                                      data-{{ variant.title }}-avail = '{{ variant.available }}'
+                                      data-{{ variant.title }}-quantity = '{{ variant.inventory_quantity }}'
+                                  {% endfor %}
                                     style="background: url({{ overlayimagex }}) left top;" >
                                     {% for variant in productb.variants %}
-                                      <input type="hidden" name="{{ variant.title }}" data-socavail="{{ variant.available }}" data-socvarid="{{ variant.id }}" data-socprice="{{ variant.price | money }}">
+                                      <input type="hidden" name="{{ variant.title }}" data-socavail="{{ variant.available }}" data-socqty="{{ variant.inventory_quantity }}" data-socvarid="{{ variant.id }}" data-socprice="{{ variant.price | money }}">
                                   {% endfor %}
                                     </div>
 
-                                    {% comment %}
+                                    {% comment %}   
                                       <li>
                                         <a href="{{ productb.url }}">
                                           <img src="{{ productb.featured_image | img_url: 'medium' }}" alt="{{ productb.title }}">
@@ -1175,7 +1176,12 @@ dual
                         <label style="margin-bottom:8px">Size: <span class="size-desc"></span></label>
                         <div class="righthere">
                           {% for variant in product.variants %}
-                          <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" data-socvarid="{{ variant.id }}" data-socavail="{{ variant.available }}" data-socprice="{{ variant.price | money }}">{{ variant.title }}</span>
+                          <span class="btn-primer {% unless variant.available %}butttonsoldout{% endunless %} {{ variant.title }}{% if forloop.first %} atv{% endif %}" 
+                              data-socvarid="{{ variant.id }}" 
+                              data-socavail="{{ variant.available }}" 
+                              data-socprice="{{ variant.price | money }}"
+                              data-socquantity="{{ variant.inventory_quantity }}"
+                          >{{ variant.title }}</span>
                           {% endfor %}
                         </div>
                       </div>
@@ -1221,7 +1227,7 @@ dual
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 661%;
+                          width: 675%;
                           height: 327px;
                         }
                         .btn-primer {
@@ -2141,7 +2147,7 @@ $(document).ready(function(){
               $(".size-desc").html("XXL(AU 16-18)")
               break;
             default:
-              $(".size-desc").html("Small (Women 5.5-8 | Men 4.5-7)")
+              
           }
         
     })
