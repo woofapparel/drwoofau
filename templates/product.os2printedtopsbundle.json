@@ -3,7 +3,7 @@
     "product-template": {
       "type": "product-template-pt-os2",
       "settings": {
-        "enable_ab_size": false,
+        "enable_ab_size": true,
         "abtestnoicons": false,
         "abtestdavideo": true,
         "enable_ab": true,

@@ -20,9 +20,10 @@
    endif
   -%}
   
-  <title>{{ title | replace: "$month$", month | replace: "$year$", year  }}{% unless title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
+  <title>{{ title | replace: "$month$", month | replace: "$year$", year }}{% unless title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
   {%- if description -%}<meta name="description" content="{{ description | replace: "$month$", month | replace: "$year$", year | escape }}">{%- endif -%}
-{%- else -%}
-  <title>{{ page_title | replace: "$month$", month | replace: "$year$", year }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}</title>
-  {%- if page_description -%}<meta name="description" content="{{ page_description | replace: "$month$", month | replace: "$year$", year | escape }}">{%- endif -%}
+  
+  {%- else -%}
+  <title>{{ page_title | replace: "$month$", month | replace: "$year$", year }}{% unless page_title contains 'Dr. Woof Apparel' %} | {{ shop.name }}{% endunless %}{%- if current_tags %} &ndash; tagged {{ canonical_url | split: '/' | last | replace: "-", " "}}{% endif %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | replace: "$month$", month | replace: "$year$", year | escape }}{%- if current_tags %} &ndash; tagged {{ canonical_url | split: '/' | last | replace: "-", " "}}{% endif %}">{%- endif -%}
 {%- endif -%}

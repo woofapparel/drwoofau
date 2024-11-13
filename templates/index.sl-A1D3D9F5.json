@@ -128,6 +128,7 @@
         "logo_image_jk9EHb"
       ],
       "settings": {
+        "leftscroll": true,
         "title": "Proudly Serving",
         "logo_opacity": 100,
         "alt": false
@@ -535,6 +536,7 @@
         "logo_image_qJEGYd"
       ],
       "settings": {
+        "leftscroll": false,
         "title": "",
         "logo_opacity": 100,
         "alt": false

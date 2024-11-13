@@ -38,8 +38,20 @@
         "@type": "ProductGroup",
         "name": {{ product.title | replace: "$month$", month | replace: "$year$", year | json }},
         "description": {{ page_description | replace: "$month$", month | replace: "$year$", year | strip_html | json }},
-        "url": "{{ shop.url }}{{ product.url }}",
-        "brand": {
+        "url": "{{ shop.url }}{{ product.url }}"
+        {%- if product.metafields.loox.num_reviews != blank -%},
+              "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "{{ product.metafields.loox.avg_rating }}",
+              "reviewCount": "{{ product.metafields.loox.num_reviews }}"
+                  }
+            {% else %}
+            ,"aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5,
+              "reviewCount": 50}
+          {%- endif -%}
+        ,"brand": {
             "@type": "brand",
             "name": "{{ shop.name }}"
         },
@@ -64,16 +76,21 @@
 
           {% if variant.image %}
             "image": "http:{{ variant.featured_media.preview_image.src | img_url: '1024x1024' }}",
+            {% else %}
+            "image": "https://www.drwoofapparel.com.au/cdn/shop/files/Horizontal_logo_transparent_background_blue_2_7dc8a8de-20c6-4155-8747-0810a5b4b5e0_210x.png?v=1704080588",
           {% endif %}
           "name": {{ product.title | replace: "$month$", month | replace: "$year$", year | json }},
           "description": {{ page_description | replace: "$month$", month | replace: "$year$", year | strip_html | json }},
 
            {% if current_color != blank %}
             "color": {{ current_color| json }},
+             {% else %}
+             "color": "black",
           {% endif %}
-        "size" : {{ product_option_value| json  }},
           {% if product.variants.title != blank %}
             "size" : {{ product.variants.title| json  }},
+            {% else %}
+            "size" : "Small",
           {% endif %}
             
             "offers": {
@@ -90,6 +107,11 @@
               "ratingValue": "{{ product.metafields.loox.avg_rating }}",
               "reviewCount": "{{ product.metafields.loox.num_reviews }}"
                   }
+            {% else %}
+            ,"aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5,
+              "reviewCount": 50}
           {%- endif -%}
             }{% unless forloop.last %},{% endunless %}
           {%- endfor -%}

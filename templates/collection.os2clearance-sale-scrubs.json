@@ -21,17 +21,17 @@
       }
     },
     "collection-filters": {
-      "type": "collection-filters-def",
+      "type": "collection-filters-def-new",
       "settings": {
         "filter_type": "groups",
         "tags_combine": false,
-        "collection_title_enable": true,
+        "collection_title_enable": false,
         "collection_filter_enable": true,
         "collection_sort_enable": true
       }
     },
     "main-collection": {
-      "type": "collection-template-scrubs",
+      "type": "collection-template-scrubs-new",
       "settings": {
         "per_row_desktop": 3,
         "per_row_mobile": "2",

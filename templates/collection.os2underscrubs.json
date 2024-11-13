@@ -22,6 +22,18 @@
     },
     "collection-filters": {
       "type": "collection-filters-def",
+      "blocks": {
+        "color_group_7869Gg": {
+          "type": "color_group",
+          "settings": {
+            "title": "",
+            "tag_list": "Burgundy \nHeather grey \nGreen"
+          }
+        }
+      },
+      "block_order": [
+        "color_group_7869Gg"
+      ],
       "settings": {
         "filter_type": "groups",
         "tags_combine": false,

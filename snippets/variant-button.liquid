@@ -935,10 +935,17 @@ $(function() {
   .limitedclicker:hover{
     cursor:pointer
   }
-.supdis {
-  pointer-events: none !important;
-  position: relative;
-}
+{% if product.handle contains "clearance" %}
+  .supdis {
+    /* pointer-events: none !important; */
+    position: relative;
+  }
+{% else %}
+  .supdis {
+    pointer-events: none !important;
+    position: relative;
+  }
+{% endif %}
 .supdis:after {
 
   position: absolute;

@@ -45,8 +45,19 @@
         "txt11": "\"LOVE LOVE LOVE these scrubs. Super comfy and so many compliments when im at work.\" — Troy P"
       }
     },
+    "duallayout_PMPeai": {
+      "type": "duallayout",
+      "settings": {
+        "image_left": true,
+        "background_color": "#d6e6ff",
+        "imagebig": "shopify:\/\/shop_images\/WHY_YOU_LL_LOVE_OUR_SCRUBS.jpg",
+        "contenttitle": "Designed with care in Australia",
+        "contenttext1": "Move, bend, stretch, and crouch with confidence. Say goodbye to oversized, sweaty scrubs and enjoy all-day comfort, backed by our 17-step quality assurance."
+      }
+    },
     "new_product_story_LCPtyq": {
       "type": "new-product-story",
+      "disabled": true,
       "settings": {
         "section_title": "Why you'll love our scrubs",
         "product_story_img_1": "shopify:\/\/shop_images\/1_8efde0c3-476d-49fb-a987-80ce031d30ef.jpg",
@@ -126,6 +137,117 @@
       "disabled": true,
       "settings": {}
     },
+    "faq_section_Dy4dk7": {
+      "type": "faq-section",
+      "blocks": {
+        "rich_text_BqtiEr": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "title": "Frequently Asked Questions",
+            "text": "",
+            "align_text": "center"
+          }
+        },
+        "rich_text_wnfhcQ": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Sizing Guide FAQs",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "question_KcBxDc": {
+          "type": "question",
+          "settings": {
+            "title": "Are your scrubs true to size?",
+            "text": "<p><em>Yes! Most of our customers find the fit perfect. To ensure the best fit, simply compare your measurements with our detailed sizing chart. Plus, we offer easy exchanges if it’s not the right size.<\/em><\/p>"
+          }
+        },
+        "question_8tmDNK": {
+          "type": "question",
+          "settings": {
+            "title": "What size am I?",
+            "text": "<p><em>Finding your perfect size is simple. Just check our sizing chart to match your measurements. We provide separate charts for <\/em><a href=\"https:\/\/www.drwoofapparel.com.au\/pages\/womens-sizes\" target=\"_blank\" title=\"https:\/\/www.drwoofapparel.com.au\/pages\/womens-sizes\"><em>women<\/em><\/a><em> and <\/em><a href=\"https:\/\/www.drwoofapparel.com.au\/pages\/mens-sizing-chart\" target=\"_blank\" title=\"https:\/\/www.drwoofapparel.com.au\/pages\/mens-sizing-chart\"><em>men<\/em><\/a><em> for easy reference.<\/em><\/p>"
+          }
+        },
+        "question_rF66YG": {
+          "type": "question",
+          "settings": {
+            "title": "Do you offer petite and tall sizes?",
+            "text": "<p><em>Yes! Our core colors are available in regular, petite, and tall sizes. For limited edition releases, availability may vary based on demand, but we’re always expanding our options.<\/em><\/p>"
+          }
+        },
+        "question_jt8iNT": {
+          "type": "question",
+          "settings": {
+            "title": "How do I care for my Dr. Woof scrubs?",
+            "text": "<p><em>Keep them looking great with a cold machine wash inside-out and tumble dry on low. It’s that easy—our scrubs are built to last with minimal care.<\/em><\/p>"
+          }
+        },
+        "question_gKrgzE": {
+          "type": "question",
+          "settings": {
+            "title": "Will you be offering more sizes and colours soon?",
+            "text": "<p><em>Absolutely! We’re constantly adding new sizes and colors. Sign up for our mailing list at the bottom of the page to stay updated on all our latest releases.<\/em><\/p>"
+          }
+        },
+        "question_feecU7": {
+          "type": "question",
+          "settings": {
+            "title": "Any plans for larger sizes?",
+            "text": "<p><em>Yes! We introduced 3XL in late 2023 and are committed to expanding our size range to ensure everyone can find the perfect fit.<\/em><\/p>"
+          }
+        },
+        "rich_text_CEkjkV": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Shipping and Return Policy FAQs",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "question_fN8Eqn": {
+          "type": "question",
+          "settings": {
+            "title": "What is your return policy?",
+            "text": "<p><em>We offer a 60-day return policy for clean, unworn items in their original packaging. Returns are easy, and we’re here to help make the process seamless.<\/em><\/p>"
+          }
+        },
+        "question_gYCRHq": {
+          "type": "question",
+          "settings": {
+            "title": "How do I initiate a return?",
+            "text": "<p><em>Just send us an email, and we’ll guide you through the simple steps to return your item. We’re here to make it hassle-free.<\/em><\/p>"
+          }
+        },
+        "question_xQBUmr": {
+          "type": "question",
+          "settings": {
+            "title": "How long does it take to receive my refund?",
+            "text": "<p><em>Once we receive and inspect your return, refunds are processed within 5 business days. Depending on your payment method, it may take a little longer to appear in your account.<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "rich_text_BqtiEr",
+        "rich_text_wnfhcQ",
+        "question_KcBxDc",
+        "question_8tmDNK",
+        "question_rF66YG",
+        "question_jt8iNT",
+        "question_gKrgzE",
+        "question_feecU7",
+        "rich_text_CEkjkV",
+        "question_fN8Eqn",
+        "question_gYCRHq",
+        "question_xQBUmr"
+      ],
+      "settings": {
+        "page_title_enable": false,
+        "page_content_enable": false
+      }
+    },
     "reviews": {
       "type": "looxreviews",
       "settings": {}
@@ -151,8 +273,10 @@
   },
   "order": [
     "product-template",
+    "duallayout_PMPeai",
     "new_product_story_LCPtyq",
     "stories",
+    "faq_section_Dy4dk7",
     "reviews",
     "recommendations",
     "sudofooter",

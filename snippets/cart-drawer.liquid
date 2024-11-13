@@ -413,6 +413,10 @@
                     {% when 'FREESET' %}
                       #{{ discount_allocation.discount_application.title }}  (-$140.8)
                       {% when '4PACK' %}
+                        #{{ discount_allocation.discount_application.title }}  (-20%)
+                        {% when 'BFCM24' %}
+                          #{{ discount_allocation.discount_application.title }}  (-20%)
+                          {% when 'INSIDERS20' %}
                         #{{ discount_allocation.discount_application.title }}  (-15%)
                       {% when '8PACK' %}
                         #{{ discount_allocation.discount_application.title }}  (-25%)

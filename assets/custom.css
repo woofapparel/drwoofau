@@ -561,6 +561,9 @@ square-placement{
   display:none;
 }
 /* new header */
+.site-nav__item{
+  font-size:14px;
+}
 @media only screen and (min-width:481px){
   .site-nav__dropdown-link{
     font-size:14px;
