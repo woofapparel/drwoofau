@@ -294,8 +294,10 @@
         <span>Staple colours, available year-round.</span></span></i></span>
       {% else %}
         {% if value == "Black" %}
-            <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
-            <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+            {% unless product.type == "Nurse Bag" %}
+              <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+              <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+            {% endunless %}
           {% else %}
             {% if value == "Eucalyptus" %}
               {% assign orderthis = true %}
@@ -306,6 +308,7 @@
       <div
         data-handle="current"
         class="variant-input"
+        data-prohandle="{{product.handle}}"
         data-index="option{{ option_index }}"
         data-value="{{ value | escape }}"
         {% if orderthis %}
@@ -347,13 +350,15 @@
 
           {%- assign color_image = value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '50x' | prepend: 'https:' | split: '?' | first -%}
           {%- assign color_swatch_fallback = value | split: ' ' | last | handle -%}
-          
+          {% if value contains "Strength" %}
+            {%- assign color_image = "https://cdn.shopify.com/s/files/1/0573/7250/8344/files/001_DRW_Strength_Bumbag_Pattern_16cm_x_12cm_1.png?v=1742367097" %}
+          {% endif %}
           <label
             op_val="{{ value }}"
             option_index="{{option_index}}"
             for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
             class="label_options color-swatch color-swatch--{{ value | handle }} {% unless product_available %} {% endunless %}"
-            style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
+            style="background-position:center;background-size:cover;background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
             {{ value | escape }}
           </label>
           {% if section.settings.newpdptop %}
@@ -405,6 +410,7 @@
                 <div
                   data-handle="{{sf_product_combined.handle}}"
                   class="variant-input"
+                  data-prohandle="{{sf_product_combined.handle}}"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
                   {% if section.settings.newpdptop %}
@@ -511,6 +517,7 @@
                 <div
                   data-handle="{{sf_product_third.handle}}"
                   class="variant-input"
+                  data-prohandle="{{sf_product_third.handle}}"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
                   {% if section.settings.newpdptop %}
@@ -602,6 +609,94 @@
                 <div
                   data-handle="{{sf_product_fourth.handle}}"
                   class="variant-input"
+                  data-prohandle="{{sf_product_fourth.handle}}"
+                  data-index="option{{ product_combined_index }}"
+                  data-value="{{ combined_value | escape }}">
+                  {% if section.settings.newpdptop %}
+                  <div class="swatchwrapper">
+                  {% endif %}
+                  <input
+                    op_val="{{ combined_value }}"
+                    option_index="{{product_combined_index}}"
+                    type="radio"
+                    {% if product_combined.selected_combined_value == combined_value and product.available %}
+                    checked="checked"
+                    {% endif %}
+                    value="{{ combined_value | escape }}"
+                    data-index="option{{ product_combined_index }}"
+                    name="{{ product_combined.name }}"
+                    data-variant-input
+                    {% if is_color %}data-color-swatch{% endif %}
+                    class="varin variant__input-{{ section_id }}{% unless combined_value_available %} disabled{% endunless %}"
+                    {% if is_color %}
+                    data-color-name="{{ combined_value | escape }}"
+                    {% endif %}
+                    {% if is_color %}
+                    data-color-index="1"
+                    {% endif %}
+                    id="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}">
+
+                  {% if is_color %}
+                    {%- assign color_image = combined_value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '50x' | prepend: 'https:' | split: '?' | first -%}
+                    {%- assign color_swatch_fallback = combined_value | split: ' ' | last | handle -%}
+                    <label
+                      op_val="{{ combined_value }}"
+                      option_index="{{product_combined_index}}"
+                      for="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}"
+                      class="label_options color-swatch color-swatch--{{ combined_value | handle }} {% unless combined_value_available %} disabled{% endunless %}"
+                      style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};">
+                      {{ combined_value | escape }}
+                    </label>
+                    {% if section.settings.newpdptop %}
+                    <img alt="mdi tick" src="https://cdn.shopify.com/s/files/1/0573/7250/8344/files/mdi_tick_1.png?v=1682964378" class="swatchcheck">
+                    {% endif %}
+                  {% else %}
+                    <label
+                      op_val="{{ combined_value }}"
+                      product_combined_index="{{product_combined_index}}"
+                      for="ProductSelect-{{ section_id }}-option-{{ product_combined.name | handleize }}-{{ combined_value | url_encode }}"
+                      class="label_options {% unless combined_value_available %} disabled {% endunless %}">{{ combined_value | escape }}</label>
+                  {% endif %}
+                </div>
+                {% if section.settings.newpdptop %}
+</div>
+                {% endif %}
+              {% endfor %}
+          {% endif %}
+        {% endif %}
+
+      {% endfor %}
+    {% endunless %}
+
+    {% unless sf_product_fifth.empty? %}
+      {%- assign product_combined_index = forloop.index -%}
+
+        {% for product_combined in sf_product_fifth.options_with_values %}
+        
+        {% if option.name == product_combined.name %}
+          {% if product_combined.name == 'size' or product_combined.name == 'Size' or product_combined.name == 'inseam' or product_combined.name == 'Inseam' %}
+            {% else %}
+
+              {% for combined_value in product_combined.values %}
+                {%- assign combined_value_available = true -%}
+                {%- assign combined_value_available = product.variants[forloop.index0].available -%}
+                {% if combined_value == "Navy" %}
+                  <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;">Classics <i class="fa fa-question-circle classicclicker" aria-hidden="true"><span class="mytooltip"><h6>Classics</h6>
+                  <span>Staple colours, available year-round.</span></span></i></span>
+                {% else %}
+                  {% if combined_value == "Black" %}
+                    <span style="display:block;width:100%;margin-bottom:8px;font-size:12px;text-transform:uppercase;font-weight:900;order:6;margin-top:12px;">Limited Edition <i class="fa fa-question-circle limitedclicker" aria-hidden="true" ><span class="mytooltip"><h6>Limited Edition</h6>
+                    <span>Get in quick. Once they're gone, they could be gone for good.</span></span></i></span>
+                    {% else %}
+                      {% if combined_value == "Eucalyptus" %}
+                        {% assign orderthis = true %}
+                      {% endif %}
+                  {% endif %}
+                {% endif %}
+                <div
+                  data-handle="{{sf_product_fifth.handle}}"
+                  class="variant-input"
+                  data-prohandle="{{sf_product_fifth.handle}}"
                   data-index="option{{ product_combined_index }}"
                   data-value="{{ combined_value | escape }}">
                   {% if section.settings.newpdptop %}
@@ -764,7 +859,7 @@ e.preventDefault();
           $(this).parents(".variant-input").removeClass("disabled");
           $(this).parents(".variant-input").removeClass("supdis")
           if ((typeof getoption_array == 'undefined')) {
-             $(this).parents(".variant-input").addClass("supdis") 
+             // $(this).parents(".variant-input").addClass("supdis") 
             
             
           } else {

@@ -143,11 +143,11 @@
         <div class="linerbot milestone milone">|</div>
         <div class="linerbot milestone miltwo">|</div>
         <div class="milestone bot-mon milone">FREE Pair</div>
-        <div class="milestone bot-mon miltwo">35% OFF</div>
+        <div class="milestone bot-mon miltwo">30% OFF</div>
     </div>
     <div class="progress-text">
-      <span class="notif-com1">Congratulations! You get <b>35% OFF</b> on your Compression Socks order </span>
-      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more Compression Socks to get <span class="another">another</span> <b class="get2">35% Off. </b> </span>
+      <span class="notif-com1">Congratulations! You get <b>30% OFF</b> on your Compression Socks order </span>
+      <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more Compression Socks to get <span class="another">another</span> <b class="get2">30% Off. </b> </span>
       
     </div>
   </div>
@@ -206,34 +206,40 @@ $(".another").hide()
 
 
     var totalcart = $(".totalin").html()
-    
+    var totalfk = $(".totalin_hidden").html()
     totalcart  = Number(totalcart.replace('$',''));
-    
+    totalfk = Number(totalfk.replace('$',''));
     var progress = 0; // Percentage value to change the progress
         progress = totalcart - 10;
         
     // Update the progress bar width and the position of the circle
     progressPercentage1 = ( progress / {{ lastindex }} ) * 100;
     
-    if(progressPercentage1 > 100){
+    if(totalcart  >= 350){
       $('.off1 .notif-inc').hide()
       $('.off1 .notif-com1').show()
       $('.off1 .progress').css('width', 100 + '%');
       $('.off1 .progress-circle').css('left', 100 + '%');
       
     }else{
-      if(progress < 150){
+
+
+      if(totalcart < 145){
         // bad
 
-          $('.off1 .notif-inc').show()
+         if(totalfk  == 0){
+            $('.off1 .notif-inc').hide()
+          }else{
+            $('.off1 .notif-inc').show()
+          }
           $('.off1 .notif-com1').hide()
           $('.off1 .progress').css('width', progressPercentage1 + '%');
           $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
           // Calculate the remaining amount for free shipping
-          var amountNeeded = {{ firstindex }} - progress;
+          var amountNeeded = {{ firstindex }} - totalcart;
           $('.off1 .amount-needed').html(amountNeeded.toFixed(2));
 
-        
+        console.log("eto na this {{ firstindex  }} - " + totalfk )
       }else{
         // good
 
@@ -243,7 +249,9 @@ $(".another").hide()
           $('.off1 .progress').css('width', progressPercentage1 + '%');
           $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
           // Calculate the remaining amount for free shipping
-          var amountNeeded = {{ lastindex }} - progress;
+          var amountNeeded = {{ lastindex }} - totalcart;
+          $('.off1 .notif-inc b').html("Free $40 Gift Card")
+          
           $('.off1 .amount-needed').html(amountNeeded.toFixed(2));
 
         
@@ -277,8 +285,7 @@ $(".another").hide()
         $scrunchiescount = $scrunchiescount + parseInt($proqty);
       }
   });
-
-if($setCount > 0){
+  if($setCount > 0){
   $(".off2").show()
   $scrubcountpercent = ( $setCount / 3 ) * 100;
   $scrubcountfull = 3 - $setCount;
@@ -332,6 +339,7 @@ if($setCount > 0){
 }
 
 if($sockcount > 0){
+  
   $(".off3").show()
   $sockcountpercent = ( $sockcount / 6 ) * 100;
   $sockcountfull = 6 - $sockcount;
@@ -340,7 +348,7 @@ if($sockcount > 0){
       $('.off3 .notif-com1').show()
       $('.off3 .progress').css('width', 100 + '%');
       $('.off3 .progress-circle').css('left', 100 + '%');
-      $('.off3 .notif-com1').html("Congratulations! You get <b>35% OFF</b> on your Compression Socks order")
+      $('.off3 .notif-com1').html("Congratulations! You get <b>30% OFF</b> on your Compression Socks order")
     }else{
       $('.off3 .progress').css('width', $sockcountpercent + '%');
       $('.off3 .progress-circle').css('left', $sockcountpercent + '%');
@@ -352,13 +360,16 @@ if($sockcount > 0){
         var amountNeeded = 4 - $sockcount;
         $('.off3 .amount-needed').html(amountNeeded);
         $('.off3 .get2').html("FREE pair of Compression Socks")
+        
       }else{
+        
         if($sockcount < 6){
+          
           $(".off3 .another").hide()
           $('.off3 .notif-inc').show()
           $('.off3 .notif-com1').show()
           $('.off3 .notif-com1').html("Congratulations! You get a <b>FREE pair</b> of Compression Socks.<br/>")
-          $('.off3 .get2').html("35% OFF")
+          $('.off3 .get2').html("30% OFF")
           var amountNeeded = 6 - $sockcount;
           $('.off3 .amount-needed').html(amountNeeded);
         }else{

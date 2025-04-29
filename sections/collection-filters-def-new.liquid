@@ -855,6 +855,11 @@ border-bottom:1px solid #eee;
                     <span class="color-name">Blush</span>
                   </div>
 <!--
+                  <div class="color-option product-tabs-data" value="dark-olive">
+                    <span class="color-swatch2" style="background-color: 4E544B;"></span>
+                    <span class="color-name">Dark Olive</span>
+                  </div>
+
                   <div class="color-option product-tabs-data" value="power-mauve">
                     <span class="color-swatch2" style="background-color: #DB7093;"></span>
                     <span class="color-name">Power mauve</span>
@@ -1074,6 +1079,7 @@ border-bottom:1px solid #eee;
                 <span class="color-swatch2" style="background-color: #008080;"></span>
                 <span class="color-name">Mermaid teal</span>
               </div>
+              
 <!--
               <div class="color-option product-tabs-data" value="lavender">
                 <span class="color-swatch2" style="background-color: #8E4585;"></span>
@@ -1180,6 +1186,11 @@ border-bottom:1px solid #eee;
                 <span class="color-name">Blush</span>
               </div>
 <!--
+              <div class="color-option product-tabs-data" value="dark-olive">
+                <span class="color-swatch2" style="background-color: 4E544B;"></span>
+                <span class="color-name">Dark Olive</span>
+              </div>
+
               <div class="color-option product-tabs-data" value="power-mauve">
                 <span class="color-swatch2" style="background-color: #DB7093;"></span>
                 <span class="color-name">Power mauve</span>
@@ -1692,6 +1703,35 @@ $(document).ready(function() {
             "label": "Swatch list (one per line)",
             "default": "Burgundy \nHeather grey \nGreen",
             "info": "Products must be tagged with their color in order to appear here. Tags are case sensitive and must match your product tag exactly. Ex: 'Heather grey'. [Learn how to set up swatches](https://archetypethemes.co/blogs/impulse/how-do-i-set-up-color-swatch2es)."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Filter",
+        "category": "Collections",
+        "settings": {
+          "filter_type": "groups",
+          "tags_combine": false,
+          "collection_title_enable": true,
+          "collection_filter_enable": true,
+          "collection_sort_enable": true
+        },
+        "blocks": [
+          {
+            "type": "tags_group",
+            "settings": {
+              "title": "Tag Group",
+              "tag_list": "First tag \nSecond tag \nThird tag"
+            }
+          },
+          {
+            "type": "color_group",
+            "settings": {
+              "title": "Color",
+              "tag_list": "Burgundy \nHeather grey \nGreen"
+            }
           }
         ]
       }

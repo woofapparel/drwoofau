@@ -72,8 +72,8 @@
 <input id="nameFirstline" class="resetmarker" type="hidden" name="properties[Name First Line]">
 <input id="nameSecondline" class="resetmarker" type="hidden" name="properties[Name Second Line]">
 <input id="nameColor" class="resetmarker" type="hidden" name="properties[Name Colour]">
-<input id="iconPlacement" class="resetmarker" type="hidden" name="properties[Icon Placement]">
-<input id="iconName" class="resetmarker" type="hidden" name="properties[My Sleeve Mate]">
+<input id="logoPlacement" class="resetmarker" type="hidden" name="properties[Icon Placement]">
+<input id="logoName" class="resetmarker" type="hidden" name="properties[My Sleeve Mate]">
 <input id="initials" class="resetmarker" type="hidden" name="properties[Initials]">
 <input id="initialsColor" class="resetmarker" type="hidden" name="properties[Initials Colour]">
 
@@ -82,6 +82,7 @@
 {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
 {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
 {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+{% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
 
 <script>
 let currentVariant = "{{ product.selected_or_first_available_variant.title }}";
@@ -240,6 +241,27 @@ counter = 0;
   {% endunless %}
 </div>
 
+{% assign SectotalVariants5 = sf_product_fifth.variants.size %}
+<div data-totaljson="{{ totalVariants | plus: SectotalVariants5 }}" style="display:none;" class="all-options secondproducthandle_for_JS" data-secondproducthandle="{{ sf_product_fifth.handle }}">
+  {% unless sf_product_fifth.empty? %}
+  {%- assign product_combined_index = forloop.index -%}
+  {% for product_combined in sf_product_fifth.options_with_values %}
+  <!-- 02 -->
+  {% if product_combined.position  == 1 %}
+  <!-- 03 -->
+ <p class="sec_prod_first_option" data-index="1">{% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 2 %}
+    <!-- 04 -->
+ <p class="sec_prod_sec_option" data-index="2"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 3 %}
+    <!-- 05 -->
+ <p class="sec_prod_third_option" data-index="3"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+  {% endfor %}
+  {% endunless %}
+
 
 {% comment %} End Please dont delete it{% endcomment %} 
 <!-- 06 -->
@@ -310,6 +332,22 @@ counter = 0;
     {% endfor %}
     {% endunless %}
 
+
+    {% unless sf_product_fifth.empty? %}
+      {% for product_combined in sf_product_fifth.variants %}
+      {% if product_combined.available %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+              selected="selected" {% endif %}
+              value="{{ product_combined.id }}">
+        {{ product_combined.title }} 
+      </option>
+      {% else %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+        {{ product_combined.title }}
+      </option>
+      {% endif %}
+      {% endfor %}
+      {% endunless %}
 </select>
   
   <select class="custom-product-single__variants no-js hidden" data-product-select>
@@ -361,6 +399,21 @@ counter = 0;
     {% endif %}
     {% endfor %}
     {% endunless %}
+
+    {% unless sf_product_fifth.empty? %}
+      {% for product_combined in sf_product_fifth.variants %}
+      {% if product_combined.available %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+              selected="selected" {% endif %}
+              value="{{ product_combined.id }}">
+      </option>
+      {% else %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+      </option>
+      {% endif %}
+      {% endfor %}
+      {% endunless %}
+
 </select>
 {% if quantity_enable %}
 <div class="product__quantity product__quantity--{{ variant_type }}">
@@ -444,7 +497,7 @@ counter = 0;
              </div>
            </div>
            <div class="embroi-details">
-             <p><strong>My Name</strong> <!-- - $<span class="add-on-price">18</span> --></p>
+             <p><strong>Title</strong> <!-- - $<span class="add-on-price">18</span> --></p>
              <p class="details-fline">1st Line: <span></span></p>
              <p class="details-sline">2nd Line: <span></span></p>
              <p class="details-color">Text Color: <span></span></p>
@@ -472,8 +525,8 @@ counter = 0;
              </div>
            </div>
            <div class="embroi-details">
-             <p><strong>Icon</strong> <!-- - $<span class="add-on-price">20</span> --><p>
-             <p class="details-icon">Icon: <span></span></p>
+             <p><strong>Logo</strong> <!-- - $<span class="add-on-price">20</span> --><p>
+             <p class="details-icon">Logo: <span></span></p>
              <p class="details-initial">Initals: <span></span></p>
              <p class="details-ini-color">Color: <span></span></p>
              <!-- <p class="placement">Icon Placement:</p> -->
@@ -764,12 +817,12 @@ ADD TO BAG
 </div>
 </div>
 <div class="main-icon-cont" style="padding:5px 0px 5px;">
-  {% if product.id == 8296907473154 %}
+  {% unless product.type contains "Scrunchies" or product.handle contains "underscrub" %}
     <div class="preorder-text" style="padding: 0px 20px 12px; margin-bottom: 12px;" actualheight="auto" actualwidth="auto" actualmaxheight="none" actualmaxwidth="none" actualminheight="0px" actualminwidth="0px" windowheight="611">
-      <p>Oops, looks like we're out of stock on an item in this basket. But don't worry, you can pre-order it now to make sure you get your size and color. Just a heads up, your whole order will ship together once we have this item back in stock.</p>
-      <p style="margin-top:10px;color:red;">**We're expecting to restock the color you picked on <span class="preorderdate">{% if product.title contains "Socks" %}{{ section.settings.sockpreorderdate }}{% else %}{% endif %}</span>. Thanks for your patience!**</p>
+      <p>Pre-order now to secure your preferred size and colour. Your entire order will ship once this item becomes available.</p>
+      <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="preorderdate">{% if product.title contains "Socks" %}{{ section.settings.sockpreorderdate }}{% else %}{% endif %}</span>. Thanks for your patience!</p>
     </div>
-    {% endif %}
+      {% endunless %}
   <div class="sub-icon-cont">
     {%if section.settings.img1 != blank %}
     <div class="sub-icon-cont1">

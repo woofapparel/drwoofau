@@ -7,6 +7,23 @@
 .grid-product__colors{
   display:none !important;
 }
+{% if collection.handle == "dog-scrubs" %}
+  .product__title_color_variants{
+    display:none !important;
+  }
+{% endif %}
+</style>
+<style>
+  @media only screen and (min-width:481px){
+    .slick-slider{
+      display:flex !important;
+      justify-content: flex-end;
+    }
+    .flexer{
+      justify-content: space-between;
+    }
+  }
+
 </style>
 <!-- default -->
 {% assign product_count = collection.products_count %}
@@ -41,6 +58,11 @@
               <div class="grid-product__meta">
                 <div class="grid-product__title"> {{ first_text | replace: "$month$", month | replace: "$year$", year }} </div>
               </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
             </div>
             {% if first_url !=blank %}  
           </a> 
@@ -72,6 +94,11 @@
              <div class="grid-product__content custom_collection_product__content">
                <div class="grid-product__meta">
               <div class="grid-product__title"> {{ second_title | replace: "$month$", month | replace: "$year$", year }} </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
             </div>
             </div>
             {% if second_url !=blank %}  
@@ -382,6 +409,11 @@
 
             <div class="grid-product__meta">
               <div class="grid-product__title">{{ product.title | replace: "$month$", month | replace: "$year$", year }}</div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               
               {% if coll_prod_var_sp[1] %}
               <span class="product__title_color_variants" var-name="{{ coll_prod_var_sp[1] | handleize }}">
@@ -797,7 +829,11 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
             <div class="grid-product__meta">
             
               <div class="grid-product__title">{{ product.title | replace: "$month$", month | replace: "$year$", year }}</div>
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                               {% for variant in product.variants %}
 
                   {% assign var_title_temp = variant.title | downcase %}

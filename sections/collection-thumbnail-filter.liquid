@@ -121,6 +121,7 @@
       text-align:left !important;
       
     }
+
     @media only screen and (min-width:481px){
       .collection-title{ 
         font-size:32px;
@@ -156,6 +157,20 @@
         padding-bottom:0 !important;
       }
     }
+    {% unless section.settings.title_enable %}
+      .flexer .duo{
+        width:100% !important;
+        flex: 0 0 100% !important;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+      }
+      .flexer .duo,
+      .slick-slider{
+        width:100%;
+        justify-content: center !important;
+      }  
+    {% endunless %}
 </style>
 {% schema %}
   {

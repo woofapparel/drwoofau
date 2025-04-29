@@ -153,6 +153,21 @@
 {% assign premermaidteal = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.mermaid_teal %}
 <span class="premermaidteal">{{ premermaidteal }}</span>
 
+{% assign preapricot = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_apricot %}
+<span class="preapricot">{{ preapricot }}</span>
+
+{% assign predarkolive = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_dark-olive %}
+<span class="predarkolive">{{ predarkolive }}</span>
+
+
+{% assign presteelgray = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_steel_gray %}
+<span class="presteelgray">{{ presteelgray }}</span>
+
+{% assign prebluemountains = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_blue_mountains %}
+<span class="prebluemountains">{{ prebluemountains }}</span>
+
+{% assign prepastellavender = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_pastel_lavender %}
+<span class="prepastellavender">{{ prepastellavender }}</span>
 
 </div>
 <!-- back here milski -->
@@ -217,6 +232,11 @@
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
 
+          <!-- Start of Judge.me code --> 
+          <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+            {{ product.metafields.judgeme.badge }} 
+          </div> 
+        <!-- End of Judge.me code -->
 
           <div class="product-single__prices  bundle_template grid-product__price">
             {% if product.compare_at_price_max > product.price %}
@@ -401,6 +421,11 @@
                 {% comment %} this block was created by belowyellow.com {% endcomment %}
                 <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
               {% endif %}
+                        <!-- Start of Judge.me code --> 
+            <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+              {{ product.metafields.judgeme.badge }} 
+            </div> 
+          <!-- End of Judge.me code -->
               <a name="top"></a>
               {% comment %}
               {% if product.id == 7815295336706 or product.id == 7815303627010 or product.id == 7815283802370 or product.id == 7815290028290 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 7815312441602 %}

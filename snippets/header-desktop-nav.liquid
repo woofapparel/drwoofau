@@ -68,6 +68,8 @@
                         https://cdn.shopify.com/s/files/1/0573/7250/8344/files/29.png?v=1717393027&width=300
                       {% when 'https://www.drwoofapparel.com.au/collections/printed-pattern-scrub-tops?sort_by=created-descending' %}
                         https://cdn.shopify.com/s/files/1/0573/7250/8344/files/30.png?v=1717393027&width=300
+                            {% when 'https://www.drwoofapparel.com.au/collections/underscrubs' %}                              
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/collections/11.jpg?v=1711536084                   
                       {% else %}
                       {{ childlink.object.featured_image | img_url: '500x' }}
                       {% endcase %}">
@@ -94,6 +96,8 @@
                               https://cdn.shopify.com/s/files/1/0573/7250/8344/files/4_9ef94ce6-40d7-479f-8763-82b54d5db063.png?v=1711386664&width=300
                             {% when '/collections/men/scrub-tops' %}
                               https://cdn.shopify.com/s/files/1/0573/7250/8344/files/5_ff812058-e6b2-4877-9f3b-b0cc42f818d5.png?v=1711386663&width=300
+                            {% when 'https://www.drwoofapparel.com.au/collections/underscrubs' %}                              
+                              https://cdn.shopify.com/s/files/1/0573/7250/8344/collections/11.jpg?v=1711536084
                             {% else %}
                             {{ grandchildlink.object.featured_image | img_url: '500x' }}
                             {% endcase %}">

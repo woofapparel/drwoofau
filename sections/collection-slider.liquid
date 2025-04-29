@@ -27,34 +27,36 @@
 
     <div class="collection-slider-wrapper slider{{ section.id }}">
         {% for product in collection.products %}
-            <div class="product_slide">
-                <a href="{{ product.url }}" class="collection-slider-url">
-                    <img alt="{{ product.featured_image.alt | img_url: 'grande' }}" 
-                         src="{{ product.featured_image.src | img_url: '100x' }}" 
-                         data-src="{{ product.featured_image.src | img_url: 'grande' }}" 
-                         data-srcset="{{ product.featured_image.src | img_url: '300x' }} 300w,
-                                        {{ product.featured_image.src | img_url: '600x' }} 600w,
-                                        {{ product.featured_image.src | img_url: 'grande' }} 1000w"
-                         class="collection-slider-thumbnail lazyload" 
-                         style="margin-bottom:20px;" 
-                         loading="lazy" />
-                    {% if section.settings.reviewstars %}
-                    {% render 'loox_reviews', product: product %}
-                    {% endif %}
+          {% unless product.title contains "Add" %}
+              <div class="product_slide">
+                  <a href="{{ product.url }}" class="collection-slider-url">
+                      <img alt="{{ product.featured_image.alt | img_url: 'grande' }}" 
+                          src="{{ product.featured_image.src | img_url: '100x' }}" 
+                          data-src="{{ product.featured_image.src | img_url: 'grande' }}" 
+                          data-srcset="{{ product.featured_image.src | img_url: '300x' }} 300w,
+                                          {{ product.featured_image.src | img_url: '600x' }} 600w,
+                                          {{ product.featured_image.src | img_url: 'grande' }} 1000w"
+                          class="collection-slider-thumbnail lazyload" 
+                          style="margin-bottom:20px;" 
+                          loading="lazy" />
+                      {% if section.settings.reviewstars %}
+                      {% render 'loox_reviews', product: product %}
+                      {% endif %}
 
-                    <p><b>{{ product.title }}</b></p>
-                    <div class="product-price">
-                        {% if product.compare_at_price > product.price %}
-                            <p>
-                            <span class="original-price">{{ product.compare_at_price | money }}</span>
-                            <span class="sale-price">{{ product.price | money }}</span>
-                            </p>
-                        {% else %}
-                            <p class="regular-price">{{ product.price | money }}</p>
-                        {% endif %}
-                    </div>
-                </a>
-            </div>
+                      <p><b>{{ product.title }}</b></p>
+                      <div class="product-price">
+                          {% if product.compare_at_price > product.price %}
+                              <p>
+                              <span class="original-price">{{ product.compare_at_price | money }}</span>
+                              <span class="sale-price">{{ product.price | money }}</span>
+                              </p>
+                          {% else %}
+                              <p class="regular-price">{{ product.price | money }}</p>
+                          {% endif %}
+                      </div>
+                  </a>
+              </div>
+            {% endunless %}
         {% endfor %}
     </div>
 

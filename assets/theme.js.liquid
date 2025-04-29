@@ -1,3 +1,6 @@
+{% if page.handle contains 'plp-shipping' %}
+  alert("running x")
+{% endif %}
 function cart_open() {
     setTimeout(function () {
       $.ajax({
@@ -31,13 +34,98 @@ function disableJavaScript(html) {
     // Return the sanitized HTML data
     return tempContainer.html();
   }
+ 
   
+
+  const variantID = "43990758129922";
+
+// Function to check the cart and add product if necessary
+
+// Function to check the cart and remove product if it's the only item
+function checkAndRemoveIfOnlyVariantX() {
+    $.getJSON('/cart.js', function(cart) {
+        let onlyVariantX = cart.items.length === 1 && cart.items[0].variant_id == variantID;
+
+        // If the cart only contains the product with variant ID X, remove it
+        if (onlyVariantX) {
+            $.ajax({
+                type: 'POST',
+                url: '/cart/change.js',
+                data: {
+                    quantity: 0,
+                    id: cart.items[0].key
+                },
+                dataType: 'json',
+                success: function() {
+                    console.log("Product with variant ID " + variantID + " removed from cart.");
+                    location.reload(); // Reload the page to update the cart display
+                },
+                error: function() {
+                    console.error("Failed to remove product with variant ID " + variantID);
+                }
+            });
+        } else {
+            // Call the next function if variant X is not the only item in the cart
+            checkAndAddVariantIfAbsent();
+        }
+    });
+}
+
+// Function to check the cart and add product if necessary
+function checkAndAddVariantIfAbsent() {
+    $.getJSON('/cart.js', function(cart) {
+        let hasVariantX = false;
+        let otherItemsCount = 0;
+
+        // Loop through the cart items to check if variant X is in the cart
+        cart.items.forEach(item => {
+            if (item.variant_id == variantID) {
+                hasVariantX = true;
+            } else {
+                otherItemsCount += 1;
+            }
+        });
+
+        // If variant X is not in the cart and there's at least one other item, add it
+        if (!hasVariantX && otherItemsCount === 1) {
+            $.post('/cart/add.js', {
+                items: [{ id: variantID, quantity: 1 }]
+            })
+            .done(function() {
+                console.log("Product with variant ID " + variantID + " added to cart.");
+                  $.ajax({
+                        url: "/",
+                        type: "GET",
+                        dataType: "html",
+                        success: function (t) {
+                            $(".cart_count_icon").html($(t).find(".cart_count_icon").html()),
+                                $(".drawer__inner").removeClass("overlay-applied"),
+                                $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
+                                $(".unlockmsg").html($(t).find(".unlockshtml").html()),
+                                $(".cart-all-products").slick({ dots: !0, infinite: !0, speed: 300, slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: true });
+                                $(".js-drawer-open-cart").trigger("click");
+                        },
+                        error: function (t, e, i) {},
+                    });
+            })
+            .fail(function() {
+                console.error("Failed to add product with variant ID " + variantID);
+            });
+        }
+    });
+}
+
+
+
 function cart_update() {
+    // disable mystery gift
+    // checkAndRemoveIfOnlyVariantX();
   $.ajax({
       url: "/",
       type: "GET",
       dataType: "html",
       success: function (t) {
+        $("body").addClass("cart-has-items")
           $(".cart_count_icon").html($(t).find(".cart_count_icon").html()),
               $(".drawer__inner").removeClass("overlay-applied"),
               $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
@@ -448,6 +536,12 @@ function cart_update() {
            if ($color == 'mermaid teal') {
               $(".preorderdate").html($(".premermaidteal").html())
            }  
+           if ($color == 'apricot') {
+            $(".preorderdate").html($(".preapricot").html())
+           }  
+           if ($color == 'dark olive') {
+              $(".predarkolive").html($(".predarkolive").html())
+           } 
                            }else{
                               $(".preorder-text").hide()
                            }},

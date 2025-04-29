@@ -2,7 +2,16 @@
 {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
 {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
 {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+{% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+<style>
 
+  @media only screen and (max-width:480px){
+    .product__thumbs{
+      display:none !important;
+    }
+  }
+
+</style>
 {% capture option_titles %}Color{% endcapture %}
 {% assign option_titles = option_titles %}
 {% for option in product.options %}
@@ -320,7 +329,29 @@ when using the 'Fade' image style (set in Product grid)
       </div>
     </div>
   </div>
+ {% if template.suffix contains "sl-6BA09F5E" %}
+  <style>
+    @media only screen and (max-width:480px){
+      .product__thumbs{
+        display:none !important;
+      }
+    }
+  </style>
+  <script>
+  jQuery(document).ready(function() {
+      function checkScreenWidth() {
+          if ($(window).width() <= 480) {
+              setTimeout(function() {
+                  jQuery(".product__thumbs").remove();
+              }, 15000); // 15 seconds
+          }
+      }
 
+      checkScreenWidth(); // Initial check
+      $(window).resize(checkScreenWidth); // Recheck on resize
+  });
+  </script>
+ {% endif %}
   <script type="application/json" id="ModelJson-{{ section_id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>

@@ -129,6 +129,26 @@
       display:none;
     }
     @media only screen and (max-width:480px){
+      .slick-track{
+        position:relative;
+        {% unless section.settings.abtestestdualimage %}
+          left: -30px !important; 
+        {% endunless %}
+      }
+      .product__main-photos-wrapper .slick-dotted.slick-slider{
+        margin-bottom:16px;
+      }
+      .product__main-photos--slider .starting-slide img, .product__main-photos--slider .slick-initialized img{
+        
+      }
+      .product__main-photos--slider .starting-slide img, .product__main-photos--slider .slick-initialized img,
+      .Main--ProductPhotos{
+        //max-height:545px;
+
+      }
+      .slick-initialized .slick-slide{
+        // width:369px !important;
+      }
       {% if section.settings.newpdptop2 %}
         span.afterpay-logo-link,
       square-placement{
@@ -337,6 +357,25 @@
 {% assign premermaidteal = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.mermaid_teal  %}
 <span class="premermaidteal">{{ premermaidteal }}</span>
 
+{% assign preapricot = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_apricot %}
+<span class="preapricot">{{ preapricot }}</span>
+
+{% assign predarkolive = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_dark-olive %}
+<span class="predarkolive">{{ predarkolive }}</span>
+
+{% assign prehamiltonislandblue = all_products.women-classic-6-pocket-joggers.metafields.preorder_hamilton_island_blue %}
+<span class="prehamiltonislandblue">{{ prehamiltonislandblue }}</span>
+
+{% assign presteelgray = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_steel_gray %}
+<span class="presteelgray">{{ presteelgray }}</span>
+
+{% assign prebluemountains = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_blue-mountains %}
+<span class="prebluemountains">{{ prebluemountains }}</span>
+
+{% assign prepastellavender = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_pastel_lavender %}
+<span class="prepastellavender">{{ prepastellavender }}</span>
+
+
 </div>
 
       {% if template contains "new-bundle-template" %}
@@ -394,6 +433,11 @@
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
 
+          <!-- Start of Judge.me code --> 
+            <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+              {{ product.metafields.judgeme.badge }} 
+            </div> 
+          <!-- End of Judge.me code -->
 
           <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Surgical Scrub Cap' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Surgical Scrub Cap' %} bundle_template grid-product__price{% endif %}">
             {% if product.compare_at_price_max > product.price %}
@@ -742,6 +786,11 @@ dual
             {% comment %} this block was created by belowyellow.com {% endcomment %}
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
+          <!-- Start of Judge.me code --> 
+          <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+            {{ product.metafields.judgeme.badge }} 
+          </div> 
+        <!-- End of Judge.me code -->
           <a name="top"></a>
             <div class="product-single__header desktop-view">
               {% if settings.vendor_enable %}
@@ -1227,7 +1276,7 @@ dual
                           background-color: #f5be15;
                         }
                         .scrubs-products{
-                          width: 675%;
+                          width: 535%;
                           height: 327px;
                         }
                         .btn-primer {
@@ -1452,7 +1501,11 @@ dual
                               quantity_enable: quantity_enable,
                               enable_payment_button: enable_payment_button %}
                             {% else %}
-                                  {% if product.id == 7812766597378 or product.id == 8056106189058 or product.id == 8320636780802 or product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 or product.title contains "UTS" or product.id == 8224581288194 %} 
+                            {% comment %}
+                            {% if product.id == 8891402027266 or product.id == 7812766597378 or product.id == 8056106189058 or product.id == 8320636780802 or product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050   or product.id == 8000060850434  or product.id == 7461809160450  or product.id == 6751392006328 or product.id == 7461809258754 or product.id == 6751389483192  or product.id == 8005449679106 or product.id == 6751404523704 or product.id == 7473530503426  or product.id == 6701375455416 or product.id == 7473526767874  or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 or product.title contains "UTS" or product.id == 8224581288194 or product.id == 8891402322178  or product.id == 8079769501954 or product.id == 8891402584322 or product.type == "Scrunchies" or template.suffix contains "eco-soft-scrubs" or template.suffix contains "os2clearance" or product.type contains "Women Puffer Vests" or product.type contains "Men Scrub Tops" or product.type contains "Men Scrub Pants" or product.type contains "Men Performance Underscrubs" or product.type contains "Women Performance Underscrubs" %} 
+                            {% endif %}
+                            {% endcomment %}
+                                  {% if true %} 
                                     {% include 'product-form-preorder'
                                     , section_id: section_id,
                                     variant_type: variant_type,
@@ -1927,8 +1980,10 @@ dual
       
     }
     .Main--ProductPhotos .slick-slide{
+      {% unless section.settings.abtestestdualimage %}
       padding-left:8px;
       padding-right:8px;
+      {% endunless %}
     }
     .product__thumbs{
       z-index: 99;

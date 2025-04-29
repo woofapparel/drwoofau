@@ -203,7 +203,11 @@
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
 
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
           <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Printed Pattern Scrub Tops' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Printed Pattern Scrub Tops' %} bundle_template grid-product__price{% endif %}">
             {% if product.compare_at_price_max > product.price %}
               {%- assign hide_sale_price = true -%}
@@ -410,6 +414,11 @@
                 {% comment %} this block was created by belowyellow.com {% endcomment %}
                 <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
               {% endif %}
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               <a name="top"></a>
               {% comment %}
               {% if product.id == 7815295336706 or product.id == 7815303627010 or product.id == 7815283802370 or product.id == 7815290028290 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 7815312441602 %}
@@ -695,10 +704,12 @@
                           .soldoutx{
                             pointer-events: none;
                           }
+                          {% unless template.suffix == 'os2printedtopsbundle' %}
                           .product__slide{
                             padding-left:6px;
                             padding-right:6px;
                           }
+                          {% endunless %}
                           .image-overlay{
                             z-index: 1;
                             display: block;
@@ -729,7 +740,7 @@
                           .activer{
                             border:2px solid #f5be15;
                           }
-                          .activer:after {
+                          .activer::after {
                               content: "";
                               display: block;
                               padding-bottom: 100%;
@@ -830,7 +841,7 @@
                         }
                         .scrubs-products{
                           /* width: 217%; */
-                          width: 154%;
+                          width: 200%;
                           height: 450px;
                         }
                         .btn-primer {
@@ -882,8 +893,8 @@
                           }
                           .scrubs-products{
                             flex-wrap:wrap;
-                            width: 1400px;
-                            height: 226px;
+                            width: 1342px;
+                            height: 335px;
                           }
                           
                           .image-overlay{

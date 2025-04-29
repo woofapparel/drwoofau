@@ -10,6 +10,8 @@ function disableJavaScript(html) {
   }
 
 $(document).ready(function () {
+    
+    $("#deliveryDiv").css("display", "none !important");
   console.log("XXXXXXXXXXXX")
   console.log("XXXXXXXXXXXX")
   console.log("XXXXXXXXXXXX")
@@ -150,6 +152,9 @@ if($totalin >= 150){
     $col = $.trim($(".variant-change-color .variant__label-info span").html())
         $(document).on("click", ".variant-change-color .variant-input-wrap .variant-input", function () {
             console.log("colorchange")
+            $(".variant-input").removeClass("prohandleactive")
+            $(this).addClass("prohandleactive")
+            $("#deliveryDiv").hide()
             $dis = $("[data-handle='current'][data-value='S'").hasClass("disabled")
              $(".variant-input[data-value='XXS'] label").trigger("click");
             /*
@@ -722,8 +727,8 @@ if(true){
             $nameFirstline = $("#nameFirstline").val()
             $nameSecondline = $("#nameSecondline").val()
             $nameColor = $("#nameColor").val()
-            $iconPlacement = $("#iconPlacement").val()
-            $iconName = $("#iconName").val()
+            $logoPlacement = $("#logoPlacement").val()
+            $logoName = $("#logoName").val()
             $initials = $("#initials").val()
             $initialsColor = $("#initialsColor").val()
       
@@ -734,6 +739,8 @@ if(true){
             $realcount1 = parseInt($(".cart__item[dataid='43048672166146'").find(".cart__quantity").val())
             $realcount2 = parseInt($(".cart__item[dataid='43096458625282'").find(".cart__quantity").val())
             $realcount3 = parseInt($(".cart__item[dataid='43272026063106'").find(".cart__quantity").val())
+            $realcount4 = parseInt($(".cart__item[dataid='45814306570498'").find(".cart__quantity").val())
+
             if (isNaN($realcount1)) {
                $realcount1 = 0
             }
@@ -743,15 +750,25 @@ if(true){
             if (isNaN($realcount3)) {
                $realcount3 = 0
             }
-      
+            if(isNaN($realcount4)){
+               $realcount4 = 0
+           }
       
      
             if (($thisaddon != "Name") && ($thisaddon != "Sleeve Mate") && ($thisaddon != "Name + Sleeve Mate")) {
              $(".add-to-cart span").html($tekalang)
              if ($('.variant-wrapper:nth-of-type(3) .variant__label-info span').length) {
+                
                 $aet = $.trim($(".variant-wrapper .custom-option-value").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html()) + " / " + $.trim($('.variant-wrapper:nth-of-type(3) .variant__label-info span').html())
              } else {
-                $aet = $.trim($(".variant-wrapper .custom-option-value").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html())
+                if ($('.custom-option-value').length) {
+                    $aet = $.trim($(".variant-wrapper .custom-option-value").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html())    
+                } else {
+                    $aet = $.trim($(".variant-wrapper .label_options").html()) + " / " + $.trim($(".variant-change-color .variant__label-info span:first-child").html())                    
+                }
+                
+                
+                
              }
      
      
@@ -766,12 +783,12 @@ if(true){
                          "quantity": 1,
                          properties: {
                             'ADD ON': $addon,
-                            'namePlacement': $namePlacement,
-                            'nameFirstline': $nameFirstline,
-                            'nameSecondline': $nameSecondline,
-                            'nameColor': $nameColor,
-                            'iconPlacement': $iconPlacement,
-                            'iconName': $iconName,
+                            'Title Placement': $namePlacement,
+                            'Title Firstline': $nameFirstline,
+                            'Title Secondline': $nameSecondline,
+                            'Title Color': $nameColor,
+                            'Logo Placement': $logoPlacement,
+                            'Logo Name': $logoName,
                             'initials': $initials,
                             'initialsColor': $initialsColor
                          }
@@ -811,12 +828,12 @@ if(true){
                             "quantity": 1,
                             properties: {
                                'ADD ON': $addon,
-                               'namePlacement': $namePlacement,
-                               'nameFirstline': $nameFirstline,
-                               'nameSecondline': $nameSecondline,
-                               'nameColor': $nameColor,
-                               'iconPlacement': $iconPlacement,
-                               'iconName': $iconName,
+                               'Title Placement': $namePlacement,
+                               'Title Firstline': $nameFirstline,
+                               'Title Secondline': $nameSecondline,
+                               'Title Color': $nameColor,
+                               'Logo Placement': $logoPlacement,
+                               'Logo Name': $logoName,
                                'initials': $initials,
                                'initialsColor': $initialsColor
                             }
@@ -849,7 +866,8 @@ if(true){
                         43272026063106: $realcount3,
                         43272054112514: $realcount3,
                         43048672166146: $realcount1 + 1,
-                        43096458625282: $realcount2
+                        43096458625282: $realcount2,
+                        45814306570498: $realcount4
                      }
                   }).done(function () {
                      cart_update();
@@ -885,7 +903,8 @@ if(true){
                         43272026063106: $realcount3,
                         43272054112514: $realcount3,
                         43048672166146: $realcount1,
-                        43096458625282: $realcount2 + 1
+                        43096458625282: $realcount2 + 1,
+                        45814306570498: $realcount4
                      }
                   }).done(function () {
                      cart_update();
@@ -924,7 +943,8 @@ if(true){
                         43272026063106: $realcount3 + 1,
                         43272054112514: $realcount3 + 1,
                         43048672166146: $realcount1,
-                        43096458625282: $realcount2
+                        43096458625282: $realcount2,
+                        45814306570498: $realcount4
                      }
                   }).done(function () {
                      cart_update();
@@ -956,7 +976,53 @@ if(true){
                   cart_update()
       
                }
+
+
+               if ($thisaddon == "Add Logo") {
       
+      
+                  jQuery.post('/cart/update.js', {
+                     updates: {
+                        43272026063106: $realcount3,
+                        43272054112514: $realcount3,
+                        43048672166146: $realcount1,
+                        43096458625282: $realcount2,
+                        45814306570498: $realcount4 + 1
+                     }
+                  }).done(function () {
+                     cart_update();
+                  });
+      
+      
+                  $(".drawer__inner").removeClass("overlay-applied"),
+                     $(".cart_drawer_custom").html($(t).find(".cart_drawer_custom").html()),
+                     $(".unlockmsg").html($(t).find(".unlockshtml").html()),
+                     $(".cart-all-products").slick({
+                        dots: !0,
+                        infinite: !0,
+                        speed: 300,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: !0,
+                        arrows: true
+                     });
+                  jQuery("a.open-cart-drawer-new").trigger("click");
+      
+      
+                  $(".addmyname").hide()
+                  $(".addicon").hide()
+                  $(".tleft").show()
+                  $(".tprice").html("18 to $30")
+      
+      
+                  $(".add-to-cart span").html($tekalang)
+                  cart_update()
+      
+               }
+
+
+
+
       
             }, 2000);
      

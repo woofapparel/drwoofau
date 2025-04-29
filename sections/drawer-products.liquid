@@ -97,7 +97,7 @@
             <div data-name="{{variant.title | downcase}}" data-avail="{% if variant.available %}avail{% else %}not-avil{% endif %}" value="{{variant.id}}"></div>
             {% endfor %}
           </div>  
-          <button {% if all_products[handle].variants[0].available %}{% else%}disabled{% endif %}  data-size="{{all_products[handle].options.size}}" type="submit"  class=" btn add-cart-drawer"><span data-add-to-cart-text="">ADD</span></button>
+          <button {% if all_products[handle].variants[0].available %}{% else%}disabled{% endif %}  data-size="{{all_products[handle].options.size}}" type="submit"  class="markerx btn add-cart-drawer"><span data-add-to-cart-text="">ADD</span></button>
         </div>  
   
       </div> 

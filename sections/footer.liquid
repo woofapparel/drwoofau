@@ -143,13 +143,13 @@
     </div>
     <div class="iconrow">
       <div class="iconcolumn">
-        <p>Over $150 on domestic orders</p>
+        <p>Over $145 on domestic orders</p>
       </div>
       <div class="iconcolumn">
         <p>Run by medical workers</p>
       </div>
       <div class="iconcolumn">
-        <p>Love it or your money back<a href="/pages/shipping-returns#returns">^</a>
+        <p>Love it or your money back
         </p>
       </div>
     </div>
@@ -860,6 +860,36 @@ li.tag.product-tabs-data[value='pink-punch'] {
 li.tag.product-tabs-data[value='whitsundays-sand'] {
   order: {{ section.settings.color_whitsundays-sand }};
 }
+
+.color-option[value='dark-olive'],
+.variant-input[data-value='Dark Olive'],
+.variant-input[data-arrange='dark-olive'],
+li.tag.product-tabs-data[value='dark-olive'] {
+  order: {{ section.settings.color_dark-olive }};
+}
+
+.color-option[value='hamilton-island-blue'],
+.variant-input[data-value='Hamilton Island Blue'],
+.variant-input[data-arrange='hamilton-island-blue'],
+li.tag.product-tabs-data[value='hamilton-island-blue'] {
+  order: {{ section.settings.color_hamilton-island-blue }};
+}
+
+.color-option[value='blue-mountains'],
+.variant-input[data-value='Blue Mountains'],
+.variant-input[data-arrange='blue-mountains'],
+li.tag.product-tabs-data[value='blue-mountains'] {
+  order: {{ section.settings.color_blue-mountains }};
+}
+
+.color-option[value='pastel-lavender'],
+.variant-input[data-value='Pastel Lavender'],
+.variant-input[data-arrange='pastel-lavender'],
+li.tag.product-tabs-data[value='pastel-lavender'] {
+  order: {{ section.settings.color_pastel-lavender }};
+}
+
+
   .site-footer__section p{
     color:#fff;
   }
@@ -1205,11 +1235,47 @@ li.tag.product-tabs-data[value='whitsundays-sand'] {
         "type": "range",
         "id": "color_whitsundays-sand",
         "label": "Order Whitsundays Sand",
-        "default": 6,
+        "default": 40,
         "min": 1,
         "max": 40,
         "step": 1
-      },  
+      },
+      {
+        "type": "range",
+        "id": "color_dark-olive",
+        "label": "Order Dark Olive",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },   
+      {
+        "type": "range",
+        "id": "color_hamilton-island-blue",
+        "label": "Order Hamilton Island Blue",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },       
+      {
+        "type": "range",
+        "id": "color_blue-mountains",
+        "label": "Order Blue Mountains",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },    
+      {
+        "type": "range",
+        "id": "color_pastel-lavender",
+        "label": "Order Pastel Lavender",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },            
       {
         "type": "header",
         "content": "Footer Text"

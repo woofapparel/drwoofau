@@ -8,10 +8,17 @@
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
-        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_4.png",
+        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_49e2fc68-e93d-493d-bbdc-47ee26697820.png",
         "image_webp_pc": "",
-        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px_4.jpg",
+        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px_351b39e4-208b-4735-b33f-2d43abeeb346.jpg",
         "image_webp_mobile": ""
+      }
+    },
+    "replo_replo_text_below_banner_4QFrCK": {
+      "type": "replo-replo-text-below-banner",
+      "settings": {
+        "replo_text_e352686d-11b3-4326-ad82-8260998ffdde": "<p>Women Scrubs<\/p>",
+        "replo_text_ffb59253-7bb2-43f4-99c4-ed60813402d8": "<p>Crafted by a family of three Australian healthcare workers, our premium scrubs are designed with movement, comfort, and style in mind. Made from high-quality fabric, they’re built to keep up with your demanding day—because quality isn’t just a priority, it’s our promise.<\/p>"
       }
     },
     "collection-filter": {
@@ -95,7 +102,7 @@
         "ef196b56-d539-41ad-a16d-1c9b83ab5223"
       ],
       "settings": {
-        "title_enable": true
+        "title_enable": false
       }
     },
     "collection-filters": {
@@ -132,6 +139,7 @@
   },
   "order": [
     "collection-header",
+    "replo_replo_text_below_banner_4QFrCK",
     "collection-filter",
     "collection-filters",
     "main-collection"

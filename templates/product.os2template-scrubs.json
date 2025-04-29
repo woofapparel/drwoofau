@@ -3,14 +3,15 @@
     "product-template": {
       "type": "product-template-os2",
       "settings": {
+        "abtestestimateddated": false,
         "abtestnoicons": false,
         "abtestdavideo": true,
         "threeway": true,
         "newpdptop": true,
         "newpdptop2": false,
         "abtesting3": true,
-        "abtesting3image": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
-        "abtesting3imagemob": "shopify:\/\/shop_images\/SCRUBS_AU.jpg",
+        "abtesting3image": "shopify:\/\/shop_images\/2025_UPSELL_BANNER.jpg",
+        "abtesting3imagemob": "shopify:\/\/shop_images\/2025_UPSELL_BANNER.jpg",
         "product_image_size": "large",
         "product_image_type": "slider",
         "product_zoom_enable": false,
@@ -28,7 +29,7 @@
         "social_enable": false,
         "img1": "shopify:\/\/shop_images\/4_2c9aee3f-aec7-4015-a798-7c27f3a591f0.png",
         "txt": "93% satisfaction rate from 40,000+ customers",
-        "txt_": "Free & Fast shipping over $150",
+        "txt_": "Free & Fast shipping over $145",
         "color_link": "#e0ede9",
         "img2": "shopify:\/\/shop_images\/Untitled_design_2_4043dd2d-b061-4ce9-a771-22be6e7d9d6e.png",
         "txt1": "Dispatch from Melbourne within 24 hours",
@@ -50,9 +51,9 @@
       "settings": {
         "image_left": true,
         "background_color": "#d6e6ff",
-        "imagebig": "shopify:\/\/shop_images\/WHY_YOU_LL_LOVE_OUR_SCRUBS.jpg",
-        "contenttitle": "Designed with care in Australia",
-        "contenttext1": "Move, bend, stretch, and crouch with confidence. Say goodbye to oversized, sweaty scrubs and enjoy all-day comfort, backed by our 17-step quality assurance."
+        "imagebig": "shopify:\/\/shop_images\/LANDING_PAGE_PDP_4.png",
+        "contenttitle": "From the Front Lines, For the Front Lines",
+        "contenttext1": "At Dr. Woof Apparel, we’re more than just another uniform brand—we’re clinicians who share your commitment to patient care. Founded by a family of three veterinarians, two of whom are still actively working full-time, we stay on top of every challenge you face in the real world. Because we’re in the trenches too, we obsess over every design detail—continually refining based on your feedback and cutting no corners. The result? Medical apparel that stands up to the longest shifts, created by professionals who truly understand what you need—every single day."
       }
     },
     "new_product_story_LCPtyq": {
@@ -252,14 +253,6 @@
       "type": "looxreviews",
       "settings": {}
     },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "show_product_recommendations": true,
-        "product_recommendations_heading": "You may also like",
-        "per_row": "small"
-      }
-    },
     "sudofooter": {
       "type": "product-sudofooter-os2",
       "settings": {}
@@ -269,6 +262,40 @@
       "settings": {
         "dwomen-size-guide-text": false
       }
+    },
+    "173857147071f86a5a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_ckxppx": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_ckxppx"
+      ],
+      "settings": {}
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "per_row": "small"
+      }
+    },
+    "1738571625b10c5b95": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_snippet_widget_mdQC44": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_snippet_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_snippet_widget_mdQC44"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -278,8 +305,10 @@
     "stories",
     "faq_section_Dy4dk7",
     "reviews",
-    "recommendations",
     "sudofooter",
-    "sizeguider_DB3KEn"
+    "sizeguider_DB3KEn",
+    "173857147071f86a5a",
+    "1738571625b10c5b95",
+    "recommendations"
   ]
 }

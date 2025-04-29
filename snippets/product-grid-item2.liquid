@@ -186,12 +186,12 @@ in JS before appending the related section.
               {{ 'products.general.from_text_html' | t: price: price }}
               </span>-->
               <!-- commented by mlveda -->
-                <span {% if on_sale %}class="sale-price"{% endif %}> {{ product.price | money }}
+                <span {% if on_sale %}class="sale-price"{% endif %}> {{ product.selected_or_first_available_variant.price | money }}
               </span>
             {% else %}
 
               <span {% if on_sale %}class="sale-price"{% endif %}>
-                {{ product.price | money }}
+                {{ product.selected_or_first_available_variant.price | money }}
               </span>
             {% endif %}
           {% endunless %}

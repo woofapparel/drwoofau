@@ -45,13 +45,10 @@
               </div>
               {% endif %}
               <div class="logo-wrapper mobview">
-                <img data-swift-lazy="1" loading="lazy"   class="logo-bar__image lazyload"
-                data-src="{{ img_url }}"
-                data-widths="[180, 360, 540, 750]"
-                data-aspectratio="{{ block.settings.image_mobile.aspect_ratio }}"
-                data-sizes="auto"
-                alt="{{ block.settings.image_mobile.alt }}">
-              </div>
+                <img class="logo-bar__image"
+                src="{{ block.settings.image | img_url: "x100" }}"
+                alt="{{ block.settings.image.alt }}">
+              </div>              
             {% else %}
               {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}

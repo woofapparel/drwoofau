@@ -11,14 +11,27 @@
           {% if section.settings.image != blank %}
             <div>
               {% if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif %}
-                <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+                <div class="image-wrap pant" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
                   {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% comment %}
                   <img data-swift-lazy="1" loading="lazy"   class="feature-row__image lazyload"
                     data-src="{{ img_url }}"
                     data-widths="[180, 360, 540, 750, 900, 1080]"
                     data-aspectratio="{{ section.settings.image.aspect_ratio }}"
                     data-sizes="auto"
                     alt="{{ section.settings.image.alt }}">
+                  {% endcomment %}
+                  <img 
+  class="feature-row__image" 
+  src="{{ section.settings.image | img_url: '300x300' }}" 
+  srcset="
+    {{ section.settings.image | img_url: '300x300' }} 300w,
+    {{ section.settings.image | img_url: '600x600' }} 600w,
+    {{ section.settings.image | img_url: '1024x1024' }} 1024w"
+  sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 1024px"
+  loading="lazy" 
+  alt="{{ section.settings.image.alt | escape }}">
+                  
                 </div>
               {% if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif %}
             </div>
@@ -26,7 +39,7 @@
           {% if section.settings.image2 != blank %}
             <div>
               {% if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif %}
-                <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image2.aspect_ratio }}%;">
+                <div class="image-wrap pant" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image2.aspect_ratio }}%;">
                   {%- assign img_url = section.settings.image2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                   <img data-swift-lazy="1" loading="lazy"   class="feature-row__image lazyload"
                     data-src="{{ img_url }}"
@@ -40,12 +53,12 @@
           {% endif %}
           {% if section.settings.image == blank and section.settings.image2 == blank %}
             <div>
-              <div class="image-wrap">
+              <div class="image-wrap pant">
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
             </div>
             <div>
-              <div class="image-wrap">
+              <div class="image-wrap pant">
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
             </div>
@@ -84,7 +97,23 @@
   </div>
 
 </div>
+ <style>
+  .index-section {
+    padding-top: {{ section.settings.padding_top_bottom_main_div }}px;
+    padding-bottom: {{ section.settings.padding_top_bottom_main_div }}px;
+  }
 
+  .feature-row__text {
+    font-size: {{ section.settings.font_size_desktop }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom_text }}px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .feature-row__text {
+      font-size: {{ section.settings.font_size_mobile }}px !important;
+    }
+  }
+ </style>
 {% schema %}
   {
     "name": "Image with text",
@@ -172,6 +201,46 @@
         "type": "checkbox",
         "id": "alt",
         "label": "Use alternate section color"
+      },
+      {
+        "type": "range",
+        "id": "font_size_desktop",
+        "label": "Font Size (Desktop)",
+        "default": 24,
+        "min": 10,
+        "max": 60,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "font_size_mobile",
+        "label": "Font Size (Mobile)",
+        "default": 18,
+        "min": 10,
+        "max": 40,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_text",
+        "label": "Padding Bottom for Text",
+        "default": 20,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_bottom_main_div",
+        "label": "Padding Top & Bottom for Main Div",
+        "default": 40,
+        "min": 10,
+        "max": 100,
+        "step": 5,
+        "unit": "px"
       }
     ],
     "presets": [

@@ -12,6 +12,22 @@
   }
 
 </style>
+<style>
+  @media only screen and (min-width:481px){
+    .slick-slider{
+      display:flex !important;
+      justify-content: flex-end;
+    }
+    .flexer{
+      justify-content: space-between;
+    }
+  }
+  {% if collection.title contains "Bag" %}
+  .image-wrap:hover .secondary-alt-image {
+    opacity:0 !important;
+  }
+  {% endif %}
+</style>
 <!-- template-scrubs -->
 {% if collection.handle == "compression-socks" %}
   <script>
@@ -30,10 +46,12 @@
     
   </script>
 {% endif %}
+{% unless template.suffix == 'sl-7A053224' %}
 {% assign product_count = collection.products_count %}
 <div class="page-width" style="text-align:right">
   <span style="display:inline-block;margin-bottom:12px;border-bottom:1px solid #000;width:auto">{{ product_count }} Total</span>
 </div>
+{% endunless %}
 <div class="page-width">
   <div id="CollectionAjaxContent">
     <div class="grid grid--uniform grid--scattered-large-3 grid--scattered-small-2" data-collection-container="">
@@ -68,9 +86,15 @@
           
                   <div class="grid-product__content custom_collection_product__content">
                     <div class="grid-product__meta">
+
                       <div class="grid-product__title">
                         {{ first_text }}
                       </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                     </div>
                   </div>
                   {% if first_url != blank %}
@@ -81,6 +105,7 @@
           </div>
         {% endif %}
       {% endcapture %}
+
       {% capture second_mf %}
         {% assign second_image = collection.metafields.sf_collection.second_image %}
         {% assign second_title = collection.metafields.sf_collection.second_title %}
@@ -109,9 +134,15 @@
                     {% endif %}
                     <div class="grid-product__content custom_collection_product__content">
                       <div class="grid-product__meta">
+
                         <div class="grid-product__title">
                           {{ second_title }}
                         </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                       </div>
                     </div>
                     {% if second_url != blank %}
@@ -123,6 +154,7 @@
           </div>
         {% endif %}
       {% endcapture %}
+
       {% comment %}
       This sections requires the same `paginate_by` variable value as
       the other sections for the ajax loading to work.
@@ -132,8 +164,6 @@
       - snippets/page-block-featured-collection-slider
       {% endcomment %}
       {%- assign paginate_by = 500 -%}
-
-
 
       {% if section.settings.collection_tags_style == 'inline' and collection.all_tags.size > 0 %}
         {%- assign paginate_by = paginate_by | minus: 1 -%}
@@ -147,6 +177,7 @@
         {% when 4 %}
         {%- assign grid_large_width = 'medium-up--one-quarter' -%}
       {% endcase %}
+
       {%- assign per_row_mobile = section.settings.per_row_mobile -%}
       {%- assign grid_small_width = 'grid-product--padded' -%}
       {%- if section.settings.per_row_mobile contains '2' -%}
@@ -176,6 +207,7 @@
                 {% endfor %}
                 {% assign newtag = my_array | uniq | join: "," %}
                 {% assign options = my_array | split: ',' %}
+
                 {% for option in options %}
                   {% assign finall = option | remove: '"' | remove: "[" | remove: "]" | downcase %}
                   {%- for option_value in option_values -%}
@@ -198,9 +230,51 @@
                               {% assign coll_prod_var_sp = var_title_temp0 %}
 
                               {% assign metafield = metafield | plus: 1 %}
+                              {% assign color_index = 1 %}
+                              {% assign sizes_for_color = '' %}
+                              {% assign unique_colors = '' %}
+                              {% assign size_index = 0 %}
+                              {% assign current_color = var_title_temp0[1] | handleize %}
 
                               <div
-                                class="grid__item grid-product 1_{{ sold_out }} {% if product.tags contains 'hidden' %}hidden{% else %}nohid{% endif %} {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %} {% if coll_prod_var_sp[1] %}{{coll_prod_var_sp[1] | handleize }}{% endif %} cc"
+                                class="grid__item 
+                                              {% if product.title contains "Pocket Jogger" or product.title contains "Pants" %}scrub-pants{% endif %} 
+              {% if product.title contains "Pocket Scrub Top" %}scrub-tops{% endif %} 
+              {% if product.title contains "Scrub Cap" %}scrub-caps{% endif %} 
+
+                                {% assign protype =  product.type | handleize %}
+                                {% case protype %}
+ {% when 'women-scrub-tops' or 'men-scrub-tops' %}
+   scrub-tops
+ {% when 'women-fleece-jacket' or 'women-puffer-vests' or 'men-puffer-vests' %}
+   outerwear
+ {% else %}
+   {{ product.type | handleize }}
+{% endcase %}                 
+{% assign has_color = false %}
+
+{% for option in product.options_with_values %}
+  {% if option.name == "Color" %}
+    {% assign has_color = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if has_color %}
+  {% for variantg in product.variants %}
+  {%  assign loopcolor = variantg.options[color_index] | handleize %}
+  {% if loopcolor  == current_color %}
+  {% assign size = variantg.options[size_index] %}                      
+  {{ size }}{% endif %}
+  {% endfor %} 
+   
+{% else %}
+  {% for variantg in product.variants %}
+    {% assign size = variantg.options[0] %}                      
+    {{ size }}
+  {% endfor %} 
+{% endif %}
+              ac grid-product 1_{{ sold_out }} {% if product.tags contains 'hidden' %}hidden{% else %}nohid{% endif %} {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %} {% if coll_prod_var_sp[1] %}{{coll_prod_var_sp[1] | handleize }}{% endif %} cc"
                                 data-aos
                                 data-product-grid
                                 data-id="{{ product.id }}">
@@ -469,7 +543,11 @@
 
                             {% endif %}
                                       <div class="grid-product__title">{{ product.title }}</div>
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                                       {% if coll_prod_var_sp[1] %}
                                         <span class="product__title_color_variants" var-name="{{ coll_prod_var_sp[1] | handleize }}">
                                           {{ coll_prod_var_sp[1] | capitalize }}
@@ -765,7 +843,21 @@
         {% endunless %}
         <div
           class="grid__item 
-          {% assign var_title_temp = false %}
+              
+              {% if product.title contains "Pocket Jogger" or product.title contains "Pants" %}scrub-pants{% endif %} 
+              {% if product.title contains "Pocket Scrub Top" %}scrub-tops{% endif %} 
+              {% if product.title contains "Scrub Cap" %}scrub-caps{% endif %} 
+              {% assign protype =  product.type | handleize %}
+              {% case protype %}
+              {% when 'women-scrub-tops' or 'men-scrub-tops' %}
+                scrub-tops
+              {% when 'women-fleece-jacket' or 'women-puffer-vests' or 'men-puffer-vests' %}
+                outerwear
+              {% else %}
+                {{ product.type | handleize }}
+              {% endcase %}   
+
+                    {% assign var_title_temp = false %}
           {% for variant in product.variants %}
             {% assign var_title_temp = variant.title | downcase %}
             {% assign var_title_temp0 = var_title_temp | split: ' / ' %}
@@ -773,7 +865,38 @@
               {% assign coll_prod_var_sp = var_title_temp0 %}
             {% endif %}
           {% endfor %}
-        grid-product c{{ var_title_temp0[1] }} 2_{{ sold_out }} {% if product.tags contains 'hidden' %}hidden{% else %}nohid{% endif %} {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %} {% if colorexist == true %} {% unless product.tags contains 'Single variant' or product.tags contains 'single variant' or product.tags contains 'Single Variant' %}hidden--product-main{% endunless %} {% else %} {% endif %} dddsd"
+
+          {% assign color_index = 1 %}
+                              {% assign sizes_for_color = '' %}
+                              {% assign unique_colors = '' %}
+                              {% assign size_index = 0 %}
+                              {% assign current_color = var_title_temp0[1] | handleize %}
+
+
+
+{% assign has_color = false %}
+
+{% for option in product.options_with_values %}
+  {% if option.name == "Color" %}
+    {% assign has_color = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if has_color %}
+  {% for variantg in product.variants %}
+  {% assign loopcolor = variantg.options[color_index] | handleize %}
+  {% if loopcolor ==  current_color %}
+  {% assign size = variantg.options[size_index] %}                      
+  {{ size }}{% endif %}{% endfor %} 
+{% else %}
+  {% for variantg in product.variants %}
+    {% assign size = variantg.options[0] %}                      
+    {{ size }}
+  {% endfor %} 
+{% endif %}
+
+        grid-product c {{ var_title_temp0[1] | handleize }} 2_{{ sold_out }} {% if product.tags contains 'hidden' %}hidden{% else %}nohid{% endif %} {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %} {% if colorexist == true %} {% unless product.tags contains 'Single variant' or product.tags contains 'single variant' or product.tags contains 'Single Variant' %}hidden--product-main{% endunless %} {% else %} {% endif %} dddsd"
           data-aos
           data-product-grid
           data-id="{{ product.id }}">
@@ -953,7 +1076,11 @@
             {% endif %}
           {% endif %}
                   <div class="grid-product__title">{{ product.title }}</div>
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                   {% for variant in product.variants %}
 
                     {% assign var_title_temp = variant.title | downcase %}
@@ -968,6 +1095,7 @@
                   <span class="product__title_color_variants" var-name="{{ var_title_temp0[1] | handleize }}">
                     {{ var_title_temp0[1] | capitalize }}
                   </span>
+
                   {% endif %}
                   {% if settings.enable_product_loox_reviews and settings.enable_product_loox_reviews_collection %}{% comment %} this block was created by belowyellow.com {% endcomment %}{% render 'loox_reviews', product: product %}{% endif %}
 

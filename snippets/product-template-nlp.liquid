@@ -97,7 +97,11 @@
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
 
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
           <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer'  or template contains 'newlandingpage' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'newlandingpage' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer' %} bundle_template grid-product__price{% endif %}">
             {% if product.compare_at_price_max > product.price %}
               {%- assign hide_sale_price = true -%}

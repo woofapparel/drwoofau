@@ -83,6 +83,11 @@
 <span class="premermaidteal">{{ premermaidteal }}</span>
 
 
+{% assign preapricot = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_apricot %}
+<span class="preapricot">{{ preapricot }}</span>
+
+{% assign predarkolive = all_products.women-classic-6-pocket-joggers.metafields.sf_product_bundle.preorder_dark-olive %}
+<span class="predarkolive">{{ predarkolive }}</span>
 
 </div>
 
@@ -334,6 +339,7 @@
                           {% assign my_product = all_products[product.metafields.sf_product_combined.product_handle] %}
                           {% assign my_third = all_products[product.metafields.sf_product_combined.third_product] %}
                           {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+                          {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
 
 
 
@@ -492,7 +498,8 @@
 
                     {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
                     {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
-                    {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.third_product] %}
+                    {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+                    {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
 
                     {% unless sf_product_combined.empty? %}
                       {% for variant in sf_product_combined.variants %}
@@ -579,10 +586,62 @@
 
                     {% endunless %}
 
+                    {% unless sf_product_fifth.empty? %}
+                      {% for variant in sf_product_fifth.variants %}
+                        {% if variant.available %}
+                          <option
+                            data-vartitle="{{ variant.title }}"
+                            data-qty="{{ variant.inventory_quantity }}"
+                            data-avaiablity="yes"
+                            data-text=""
+                            {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                          {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                  selected="selected" {% endif %} value="
+                            {{ variant.id }}
+                            ">
+                            {{ variant.title }} - {{ variant.price | money_with_currency }}
+                          </option>
+                        {% else %}
+                          <option
+                            data-vartitle="{{ variant.title }}"
+                            data-avaiablity="no"
+                            data-text="- Sold Out"
+                            {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                          </option>
+                        {% endif %}
+                      {% endfor %}
 
+                    {% endunless %}
                   </select>
 
+                  {% unless sf_product_fifth.empty? %}
+                    {% for variant in sf_product_fifth.variants %}
+                      {% if variant.available %}
+                        <option
+                          data-vartitle="{{ variant.title }}"
+                          data-qty="{{ variant.inventory_quantity }}"
+                          data-avaiablity="yes"
+                          data-text=""
+                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                        {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                selected="selected" {% endif %} value="
+                          {{ variant.id }}
+                          ">
+                          {{ variant.title }} - {{ variant.price | money_with_currency }}
+                        </option>
+                      {% else %}
+                        <option
+                          data-vartitle="{{ variant.title }}"
+                          data-avaiablity="no"
+                          data-text="- Sold Out"
+                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                        </option>
+                      {% endif %}
+                    {% endfor %}
 
+                  {% endunless %}
 
                 </div>
               </div>
@@ -977,6 +1036,36 @@
                                           {% endfor %}
                     
                                         {% endunless %}
+
+                                        {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                                        {% unless sf_product_fifth.empty? %}
+                                                    {% for variant in sf_product_fifth.variants %}
+                                                      {% if variant.available %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-qty="{{ variant.inventory_quantity }}"
+                                                          data-avaiablity="yes"
+                                                          data-text=""
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                                        {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                                selected="selected" {% endif %} value="
+                                                          {{ variant.id }}
+                                                          ">
+                                                          {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                                        </option>
+                                                      {% else %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-avaiablity="no"
+                                                          data-text="- Sold Out"
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                                        </option>
+                                                      {% endif %}
+                                                    {% endfor %}
+                              
+                                                  {% endunless %}
                   </select>
 
 
@@ -1363,6 +1452,36 @@
                                           {% endfor %}
                     
                                         {% endunless %}
+
+                                        {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                                        {% unless sf_product_fifth.empty? %}
+                                                    {% for variant in sf_product_fifth.variants %}
+                                                      {% if variant.available %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-qty="{{ variant.inventory_quantity }}"
+                                                          data-avaiablity="yes"
+                                                          data-text=""
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                                        {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                                selected="selected" {% endif %} value="
+                                                          {{ variant.id }}
+                                                          ">
+                                                          {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                                        </option>
+                                                      {% else %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-avaiablity="no"
+                                                          data-text="- Sold Out"
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                                        </option>
+                                                      {% endif %}
+                                                    {% endfor %}
+                              
+                                                  {% endunless %}
                   </select>
 
 
@@ -1768,6 +1887,35 @@
           
                               {% endunless %}
 
+                              {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                              {% unless sf_product_fifth.empty? %}
+                                          {% for variant in sf_product_fifth.variants %}
+                                            {% if variant.available %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-qty="{{ variant.inventory_quantity }}"
+                                                data-avaiablity="yes"
+                                                data-text=""
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                              {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                      selected="selected" {% endif %} value="
+                                                {{ variant.id }}
+                                                ">
+                                                {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                              </option>
+                                            {% else %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-avaiablity="no"
+                                                data-text="- Sold Out"
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                              </option>
+                                            {% endif %}
+                                          {% endfor %}
+                    
+                                        {% endunless %}
                   </select>
 
 
@@ -2165,6 +2313,36 @@
                                 {% endfor %}
           
                               {% endunless %}
+
+                              {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                              {% unless sf_product_fifth.empty? %}
+                                          {% for variant in sf_product_fifth.variants %}
+                                            {% if variant.available %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-qty="{{ variant.inventory_quantity }}"
+                                                data-avaiablity="yes"
+                                                data-text=""
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                              {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                      selected="selected" {% endif %} value="
+                                                {{ variant.id }}
+                                                ">
+                                                {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                              </option>
+                                            {% else %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-avaiablity="no"
+                                                data-text="- Sold Out"
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                              </option>
+                                            {% endif %}
+                                          {% endfor %}
+                    
+                                        {% endunless %}
                   </select>
 
 
@@ -2561,6 +2739,35 @@
                                 {% endfor %}
           
                               {% endunless %}
+                              {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                              {% unless sf_product_fifth.empty? %}
+                                          {% for variant in sf_product_fifth.variants %}
+                                            {% if variant.available %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-qty="{{ variant.inventory_quantity }}"
+                                                data-avaiablity="yes"
+                                                data-text=""
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                              {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                      selected="selected" {% endif %} value="
+                                                {{ variant.id }}
+                                                ">
+                                                {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                              </option>
+                                            {% else %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-avaiablity="no"
+                                                data-text="- Sold Out"
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                              </option>
+                                            {% endif %}
+                                          {% endfor %}
+                    
+                                        {% endunless %}
                   </select>
 
                 </div>
@@ -2933,6 +3140,36 @@
                                 {% endfor %}
           
                               {% endunless %}
+
+                              {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                              {% unless sf_product_fifth.empty? %}
+                                          {% for variant in sf_product_fifth.variants %}
+                                            {% if variant.available %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-qty="{{ variant.inventory_quantity }}"
+                                                data-avaiablity="yes"
+                                                data-text=""
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                              {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                      selected="selected" {% endif %} value="
+                                                {{ variant.id }}
+                                                ">
+                                                {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                              </option>
+                                            {% else %}
+                                              <option
+                                                data-vartitle="{{ variant.title }}"
+                                                data-avaiablity="no"
+                                                data-text="- Sold Out"
+                                                {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                              </option>
+                                            {% endif %}
+                                          {% endfor %}
+                    
+                                        {% endunless %}
                   </select>
 
 
@@ -3341,6 +3578,37 @@
                                           {% endfor %}
                     
                                         {% endunless %}
+
+                                        
+                                        {% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
+					
+                                        {% unless sf_product_fifth.empty? %}
+                                                    {% for variant in sf_product_fifth.variants %}
+                                                      {% if variant.available %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-qty="{{ variant.inventory_quantity }}"
+                                                          data-avaiablity="yes"
+                                                          data-text=""
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}" 
+                                                                                                                                                                                                                                                                                                                        {% if variant == product.selected_or_first_available_variant %}
+                                                                                                                                                                                                                                                                                                                                selected="selected" {% endif %} value="
+                                                          {{ variant.id }}
+                                                          ">
+                                                          {{ variant.title }} - {{ variant.price | money_with_currency }}
+                                                        </option>
+                                                      {% else %}
+                                                        <option
+                                                          data-vartitle="{{ variant.title }}"
+                                                          data-avaiablity="no"
+                                                          data-text="- Sold Out"
+                                                          {% if variant.featured_media %}data-image="{{ variant.featured_media | img_url:'medium' }} {% else %} data-image="{{ product.featured_image | img_url: 'medium' }}{% endif %}">
+                                                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                                        </option>
+                                                      {% endif %}
+                                                    {% endfor %}
+                              
+                                                  {% endunless %}
                   </select>
 
 

@@ -4,6 +4,18 @@
   display:none !important;
 }
 </style>
+<style>
+  @media only screen and (min-width:481px){
+    .slick-slider{
+      display:flex !important;
+      justify-content: flex-end;
+    }
+    .flexer{
+      justify-content: space-between !important;
+    }
+  }
+
+</style>
 {% assign product_count = collection.products_count %}
 <div class="page-width" style="text-align:right">
   <span style="display:inline-block;margin-bottom:12px;border-bottom:1px solid #000;width:auto">{{ product_count }} Total</span>
@@ -38,6 +50,11 @@
                           <div class="grid-product__meta">
                             <div class="grid-product__title"> {{ section.settings.super_text_1 }} </div>
                           </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                         </div>
                         
                       
@@ -67,6 +84,11 @@
                       <div class="grid-product__meta">
                         <div class="grid-product__title"> {{ first_text }} </div>
                       </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                     </div>
                     {% if first_url !=blank %}  
                   </a> 
@@ -102,6 +124,11 @@
                       <div class="grid-product__content custom_collection_product__content">
                         <div class="grid-product__meta">
                           <div class="grid-product__title"> {{ section.settings.super_text_2 }} </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                         </div>
                       </div>
                       
@@ -132,6 +159,11 @@
               <div class="grid-product__content custom_collection_product__content">
                 <div class="grid-product__meta">
                 <div class="grid-product__title"> {{ second_title }} </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               </div>
               </div>
               {% if second_url !=blank %}  
@@ -454,6 +486,11 @@
 
             <div class="grid-product__meta">
               <a href="{{ product.url }}"><div class="grid-product__title">{{ product.title }}</div></a>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               
               {% if coll_prod_var_sp[1] %}
               <span class="product__title_color_variants" var-name="{{ coll_prod_var_sp[1] | handleize }}">
@@ -963,6 +1000,11 @@ background:{{ FinalValue }};{% else -%}background:{{ value }};{%- endif -%}">
 
             <div class="grid-product__meta">
               <a href="{{ product.url }}"><div class="grid-product__title">{{ product.title }}</div></a>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               {% if product.tags contains 'Single variant' or product.tags contains 'single variant' or product.tags contains 'Single Variant' %}
               <span class="product__title_color_variants" var-name="{{ var_title_temp0[1] | handleize }}">
                 {{var_title_temp0[1]}}
@@ -1393,7 +1435,7 @@ document.location.href=FinalData;
   }
   .flexer .duo{
     width:49%;
-    flex:0 0 49% !important;
+    flex:0 0 49%;
     margin-bottom:8px
   }
   @media only screen and (max-width:480px){

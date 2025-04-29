@@ -6,7 +6,7 @@
         "enable_ab": true,
         "abtesting1": false,
         "abtesting2": false,
-        "freesetcap": "shopify:\/\/shop_images\/CAPS_AU_1.jpg",
+        "freesetcap": "shopify:\/\/shop_images\/UPSELL_CAPS_AU_606114d9-0b60-4cb3-a9fe-93ecf201121c.jpg",
         "dark_theme": false,
         "product_image_size": "large",
         "product_image_type": "slider",
@@ -30,7 +30,7 @@
         "txt_": "Dispatch from Melbourne within 24 hours",
         "img3": "shopify:\/\/shop_images\/Untitled_design_1_aa1e3d9a-8e5d-4738-9e79-4536b6a0d70e.png",
         "txt1": "60-day hassle-free return & exchange",
-        "txt2": "Free & Fast shipping over $150",
+        "txt2": "Free & Fast shipping over $145",
         "txt3": "",
         "txt4": "",
         "txt5": "",
@@ -42,8 +42,19 @@
         "txt11": ""
       }
     },
+    "duallayout_rexVfQ": {
+      "type": "duallayout",
+      "settings": {
+        "image_left": true,
+        "background_color": "#d6e6ff",
+        "imagebig": "shopify:\/\/shop_images\/LANDING_PAGE_PDP_4.png",
+        "contenttitle": "From the Front Lines, For the Front Lines",
+        "contenttext1": "At Dr. Woof Apparel, we’re more than just another uniform brand—we’re clinicians who share your commitment to patient care. Founded by a family of three veterinarians, two of whom are still actively working full-time, we stay on top of every challenge you face in the real world. Because we’re in the trenches too, we obsess over every design detail—continually refining based on your feedback and cutting no corners. The result? Medical apparel that stands up to the longest shifts, created by professionals who truly understand what you need—every single day."
+      }
+    },
     "new_product_story_VPtUjF": {
       "type": "new-product-story",
+      "disabled": true,
       "settings": {
         "section_title": "Why You'll Love Our Scrub Caps",
         "product_story_img_1": "shopify:\/\/shop_images\/Over_1000_Five_star_reviews_540x_c5fef7b4-d1d0-4279-9544-fe690e56794c.webp",
@@ -273,6 +284,7 @@
         "list_fAgWgi",
         "list_Jw4QQz"
       ],
+      "disabled": true,
       "settings": {
         "reviewstars": false,
         "blocklist": true,
@@ -290,14 +302,6 @@
       "type": "looxreviews",
       "settings": {}
     },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "show_product_recommendations": true,
-        "product_recommendations_heading": "You may also like",
-        "per_row": "small"
-      }
-    },
     "sudofooter": {
       "type": "product-sudofooter-os2",
       "settings": {}
@@ -307,16 +311,53 @@
       "settings": {
         "dwomen-size-guide-text": false
       }
+    },
+    "1738566890438cad75": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_9CXbLW": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_9CXbLW"
+      ],
+      "settings": {}
+    },
+    "1738568290d3b38d85": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_snippet_widget_qLJiB6": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_snippet_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_snippet_widget_qLJiB6"
+      ],
+      "settings": {}
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "per_row": "small"
+      }
     }
   },
   "order": [
     "product-template",
+    "duallayout_rexVfQ",
     "new_product_story_VPtUjF",
     "stories",
     "collection_slider_XQGNjV",
     "reviews",
-    "recommendations",
     "sudofooter",
-    "sizeguider_C9mgci"
+    "sizeguider_C9mgci",
+    "1738566890438cad75",
+    "1738568290d3b38d85",
+    "recommendations"
   ]
 }

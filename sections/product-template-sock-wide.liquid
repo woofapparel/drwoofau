@@ -177,88 +177,88 @@
       console.log("xoooo" + $capid)
               switch($capid) {
     case "8742079267074":
-        $(".preorderdate").html("November 4");
+        $(".preorderdate").html("May 7");
         break;
     case "8702953947394":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8742080872706":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8742083002626":
-        $(".preorderdate").html("October 10");
+        $(".preorderdate").html("May 7");
         break;
     case "8320634192130":
-        $(".preorderdate").html("October 10");
+        $(".preorderdate").html("May 7");
         break;
     case "8742084247810":
-        $(".preorderdate").html("October 10");
+        $(".preorderdate").html("May 7");
         break;
     case "8702954799362":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8702953062658":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8742079267074":
-        $(".preorderdate").html("October 20");
+        $(".preorderdate").html("May 7");
         break;
     case "8702949916930":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8702953718018":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8702953947394":
-        $(".preorderdate").html("October 20");
+        $(".preorderdate").html("May 7");
         break;
     case "87029547993624":
-        $(".preorderdate").html("October 20");
+        $(".preorderdate").html("May 7");
         break;
     case "8702954963202":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     case "8702955356418":
-        $(".preorderdate").html("October 3");
+        $(".preorderdate").html("May 7");
         break;
     
     // New product IDs
     case "8810379739394":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810379444482":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810379116802":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810378658050":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810378297602":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810377347330":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810376167682":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810375086338":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810373382402":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810373185794":
-    $(".preorderdate").html("October 25");
+    $(".preorderdate").html("May 7");
     break;
     case "8810372858114":
-        $(".preorderdate").html("October 25");
+        $(".preorderdate").html("May 7");
         break;
 
     default:
-        $(".preorderdate").html("October 10");
+        $(".preorderdate").html("May 7");
 }
       $selectedProductHandle = $(".activer").attr('data-handle')
       $selectedProductType = $(".actives").attr('data-type')
@@ -371,6 +371,21 @@
                   $(".collapsible-content:first-of-type .collapsible-content__inner").html(j),
                   // $(".main-content .shopify-section:nth-child(2)").html('<div class="page-width feature-row-wrapper custom-image-with-richtext">' + k + '</div>'),
                   // $(".main-content .shopify-section:nth-child(2)").html(l),
+{% if template.suffix == 'os2printedtopsbundle' or template.suffix == 'sl-36C42638' %}
+                                                  $(".oneway .product__thumbs").slick({ slidesToShow: 6, slidesToScroll: 1, arrows: !1, fade: !1, vertical: !0 }),
+                                768 >= $(window).width() && $(".oneway .Main--ProductPhotos").slick({                                             
+                                            asNavFor: '', 
+                                            arrows: true,
+                                            dots: false,
+                                            initialSlide: 0,
+                                            centerMode: false,
+                                            centerPadding: '0px',
+                                            slidesToScroll: 2,
+                                            slidesToShow: 2,
+                                            infinite: true }),   
+                                $(".Main--ProductPhotos video").trigger("play"),        
+{% else %}
+
                   $(".oneway .product__thumbs").slick({
                       slidesToShow: 6,
                       slidesToScroll: 1,
@@ -386,7 +401,7 @@
                       centerPadding: '70px',
                       dots: !0
                   }),
-
+{% endif %}
                   $(".product__photos").css("opacity", 1);
           },
       });
@@ -606,7 +621,11 @@
         $(".preorder-text").hide()
         $(".capsbundleatd").prop('disabled', false);
         }else{
-          $(".capsbundleatd").html("SOLD OUT")
+          if($(this).hasClass("S") && $(".actives").hasClass("wide")){
+            $(".capsbundleatd").html("Unavailable")
+          }else{
+            $(".capsbundleatd").html("SOLD OUT")
+          }          
           $(".capsbundleatd").prop('disabled', true);
           $(".preorder-text").hide()
         }

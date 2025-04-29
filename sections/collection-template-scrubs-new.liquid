@@ -1,4 +1,4 @@
-<!-- collection-template-scrubs.liquid -->
+<!-- collection-template-scrubs-new.liquid -->
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -11,6 +11,17 @@
     display:none !important;
   }
 
+</style>
+<style>
+  @media only screen and (min-width:481px){
+    .slick-slider{
+      display:flex !important;
+      justify-content: flex-end !important;
+    }
+    .flexer{
+      justify-content: space-between;
+    }
+  }
 </style>
 <!-- template-scrubs -->
 {% if collection.handle == "compression-socks" %}
@@ -68,6 +79,11 @@
                       <div class="grid-product__title">
                         {{ first_text }}
                       </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                     </div>
                   </div>
                   {% if first_url != blank %}
@@ -109,6 +125,11 @@
                         <div class="grid-product__title">
                           {{ second_title }}
                         </div>
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                       </div>
                     </div>
                     {% if second_url != blank %}
@@ -508,7 +529,11 @@
 
                             {% endif %}
                                       <div class="grid-product__title">{{ product.title }}</div>
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                                       {% if coll_prod_var_sp[1] %}
                                         <span class="product__title_color_variants" var-name="{{ coll_prod_var_sp[1] | handleize }}">
                                           {{ coll_prod_var_sp[1] | capitalize }}
@@ -1037,7 +1062,11 @@
             {% endif %}
           {% endif %}
                   <div class="grid-product__title">{{ product.title }}</div>
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
                   {% for variant in product.variants %}
 
                     {% assign var_title_temp = variant.title | downcase %}

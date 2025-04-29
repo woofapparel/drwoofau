@@ -8,10 +8,17 @@
         "desktop_positioning": 0,
         "height": 90,
         "mobile_height": 50,
-        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_2_8a273de2-6a7a-457d-9419-d97c7ae1c319.webp",
+        "image_lib_pc": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_PC_2400_x_900_px_1_cad4c236-7d7a-42fe-8204-21c70f97a734.png",
         "image_webp_pc": "",
-        "image_lib_mobile": "shopify:\/\/shop_images\/Mobile_Collection_Banner_1x1_0197be0a-c426-4528-8db2-1e76b1e71e0b.jpg",
+        "image_lib_mobile": "shopify:\/\/shop_images\/COLLECTION_BANNER_TEMPLATE_MOBILE_1600_x_900_px_1_15dff813-a165-4f92-be60-c52baafed0ea.jpg",
         "image_webp_mobile": ""
+      }
+    },
+    "replo_replo_text_below_banner_FDX7eU": {
+      "type": "replo-replo-text-below-banner",
+      "settings": {
+        "replo_text_e352686d-11b3-4326-ad82-8260998ffdde": "<p>Men Scrubs<\/p>",
+        "replo_text_ffb59253-7bb2-43f4-99c4-ed60813402d8": "<p>Crafted by a family of Australian healthcare workers, our premium men’s scrubs are all about freedom of movement, everyday comfort, and a modern fit. Made from high-quality, breathable fabric, they’re built to handle demanding days without sacrificing style—because when you’re caring for others, you deserve scrubs that take care of you.<\/p>"
       }
     },
     "collection-filter": {
@@ -67,7 +74,7 @@
         "79585222-b8ae-4bd2-b466-001a89979fba"
       ],
       "settings": {
-        "title_enable": true
+        "title_enable": false
       }
     },
     "collection-filters": {
@@ -104,6 +111,7 @@
   },
   "order": [
     "collection-header",
+    "replo_replo_text_below_banner_FDX7eU",
     "collection-filter",
     "collection-filters",
     "main-collection"

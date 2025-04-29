@@ -122,8 +122,8 @@
 <input id="nameFirstline" class="resetmarker" type="hidden" name="properties[Name First Line]">
 <input id="nameSecondline" class="resetmarker" type="hidden" name="properties[Name Second Line]">
 <input id="nameColor" class="resetmarker" type="hidden" name="properties[Name Colour]">
-<input id="iconPlacement" class="resetmarker" type="hidden" name="properties[Icon Placement]">
-<input id="iconName" class="resetmarker" type="hidden" name="properties[My Sleeve Mate]">
+<input id="logoPlacement" class="resetmarker" type="hidden" name="properties[Logo Placement]">
+<input id="logoName" class="resetmarker" type="hidden" name="properties[My Sleeve Mate]">
 <input id="initials" class="resetmarker" type="hidden" name="properties[Initials]">
 <input id="initialsColor" class="resetmarker" type="hidden" name="properties[Initials Colour]">
 
@@ -132,6 +132,7 @@
 {% assign sf_product_combined = all_products[product.metafields.sf_product_combined.product_handle] %}
 {% assign sf_product_third = all_products[product.metafields.sf_product_combined.third_product] %}
 {% assign sf_product_fourth = all_products[product.metafields.sf_product_combined.fourth_product] %}
+{% assign sf_product_fifth = all_products[product.metafields.sf_product_combined.fifth_product] %}
 
 
 <script>
@@ -193,7 +194,7 @@ counter = 0;
 
     {% if variant_type == 'button' %} 
     <!-- 10 -->
-    {% if product.type == "Men Scrub Pants" or product.type == "Women Scrub Pants" %}
+    {% if product.type == "Men Scrub Pants" or product.type == "Women Scrub Pants" or product.type == 'Nurse Bag' %}
       {% include 'variant-button-v2', section_id: section_id, option_drop: option %}
       {% else %}
       {% include 'variant-button', section_id: section_id, option_drop: option %}
@@ -279,6 +280,27 @@ counter = 0;
   {% endunless %}
 </div>
 
+{% assign SectotalVariants5 = sf_product_fifth.variants.size %}
+<div data-totaljson="{{ totalVariants | plus: SectotalVariants5 }}" style="display:none;" class="all-options fifthproducthandle_for_JS" data-secondproducthandle3="{{ sf_product_fifth.handle }}">
+  {% unless sf_product_fifth.empty? %}
+  {%- assign product_combined_index = forloop.index -%}
+  {% for product_combined in sf_product_fifth.options_with_values %}
+  <!-- 02 -->
+  {% if product_combined.position  == 1 %}
+  <!-- 03 -->
+ <p class="sec_prod_first_option" data-index="1">{% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 2 %}
+    <!-- 04 -->
+ <p class="sec_prod_sec_option" data-index="2"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+    {% if product_combined.position  == 3 %}
+    <!-- 05 -->
+ <p class="sec_prod_third_option" data-index="3"> {% for combined_value in product_combined.values %}{{ combined_value }}{% if forloop.last == true %}{% else %},{% endif %}{% endfor %}</p>
+  {% endif %}
+  {% endfor %}
+  {% endunless %}
+</div>
 
 {% comment %} End Please dont delete it{% endcomment %} 
 <!-- 06 -->
@@ -330,6 +352,7 @@ counter = 0;
   {% endif %}
   {% endfor %}
   {% endunless %}
+
   {% unless sf_product_fourth.empty? %}
     {% for product_combined in sf_product_fourth.variants %}
     {% if product_combined.available %}
@@ -346,6 +369,22 @@ counter = 0;
     {% endfor %}
     {% endunless %}
   
+    {% unless sf_product_fifth.empty? %}
+      {% for product_combined in sf_product_fifth.variants %}
+      {% if product_combined.available %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+              selected="selected" {% endif %}
+              value="{{ product_combined.id }}">
+        {{ product_combined.title }} 
+      </option>
+      {% else %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+        {{ product_combined.title }}
+      </option>
+      {% endif %}
+      {% endfor %}
+      {% endunless %}
+
 </select>
   
   <select class="custom-product-single__variants no-js hidden" data-product-select>
@@ -396,6 +435,21 @@ counter = 0;
     {% endif %}
     {% endfor %}
     {% endunless %}
+
+    {% unless sf_product_fifth.empty? %}
+      {% for product_combined in sf_product_fifth.variants %}
+      {% if product_combined.available %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" {% if product_combined == product.selected_or_first_available_variant %}
+              selected="selected" {% endif %}
+              value="{{ product_combined.id }}">
+      </option>
+      {% else %}
+      <option data-inqua="{{ product_combined.inventory_quantity}}" varname="{{product_combined.title}}" data-avail="{% if product_combined.available %}available{%else %}unavailable{% endif %}" disabled="disabled">
+      </option>
+      {% endif %}
+      {% endfor %}
+      {% endunless %}
+      
 </select>
 {% if quantity_enable %}
 <div class="product__quantity product__quantity--{{ variant_type }}">
@@ -537,7 +591,7 @@ counter = 0;
              </div>
            </div>
            <div class="embroi-details">
-             <p><strong>My Name</strong> <!-- - $<span class="add-on-price">18</span> --></p>
+             <p><strong>Title</strong> <!-- - $<span class="add-on-price">18</span> --></p>
              <p class="details-fline">1st Line: <span></span></p>
              <p class="details-sline">2nd Line: <span></span></p>
              <p class="details-color">Text Color: <span></span></p>
@@ -565,11 +619,11 @@ counter = 0;
              </div>
            </div>
            <div class="embroi-details">
-             <p><strong>Icon</strong> <!-- - $<span class="add-on-price">20</span> --><p>
-             <p class="details-icon">Icon: <span></span></p>
+             <p><strong>Logo</strong> <!-- - $<span class="add-on-price">20</span> --><p>
+             <p class="details-icon">Logo: <span></span></p>
              <p class="details-initial">Initals: <span></span></p>
              <p class="details-ini-color">Color: <span></span></p>
-             <!-- <p class="placement">Icon Placement:</p> -->
+             <p class="placement">Logo Placement:</p> 
              {% comment %}
              <div class="remove-icon">
                {% render 'remove-icon'  %}
@@ -739,7 +793,7 @@ counter = 0;
 
 <div class="mobile-atc">
 {%- assign enable_dynamic_buttons = false -%}
-{% if enable_payment_button and template != 'product.preorder' and  product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682 and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874  and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 %} 
+{% if enable_payment_button and template != 'product.preorder' and  product.id != 8891402027266 and product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682 and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874  and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 %} 
 {%- assign enable_dynamic_buttons = true -%}
 {% endif %}
 <ul class="sticky-size-list">
@@ -790,7 +844,7 @@ counter = 0;
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
-      {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 6751404523704 or product.id == 7473530503426 or product.id == 6701375455416 or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %} 
+      {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 8891402027266 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434 or product.id == 6751404523704 or product.id == 7473530503426 or product.id == 6701375455416 or product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %} 
           ADD TO BAG
       {% else %}
       {% render 'alt-atc', cl:cl %}
@@ -832,7 +886,7 @@ counter = 0;
 
 
 {%- assign enable_dynamic_buttons = false -%}
-{% if enable_payment_button and template != 'product.preorder' and  product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682  and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874 and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 and product.type != 'OS2 test product' %} 
+{% if enable_payment_button and template != 'product.preorder' and  product.id != 8005417533698 and  product.id != 6701376274616 and product.id != 6701376078008 and product.id != 7461809127682 and product.id != 8891402027266 and product.id != 7819011490050 and product.id != 8000060850434 and product.id != 6751404523704 and product.id != 7473530503426 and product.id != 6701375455416 and product.id != 7473526767874 and product.id != 7815271776514 and product.id != 7815268663554 and product.id != 6751389483192 and product.id != 7461809258754 and product.type != 'OS2 test product' %} 
 {%- assign enable_dynamic_buttons = true -%}
 {% endif %}
 <div class="main_contnt2">
@@ -849,11 +903,11 @@ counter = 0;
           {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
           name="add"
           data-add-to-cart
-          class="{% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn btn--tertiary{% else %}btn{% endif %} btn--full add-to-cart"
+          class="{% if product.type == "Nurse Bag" %}markF{% endif %} {% unless enable_dynamic_buttons %} btn btn--tertiary {% endunless%} {% if enable_dynamic_buttons %}btn btn--tertiary{% else %}btn{% endif %} btn--full add-to-cart"
           {% unless current_variant.available %} disabled="disabled"{% endunless %}>
     <span data-add-to-cart-text>
       {% if current_variant.available %}
-        {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616  or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434  and product.id == 6751404523704  and product.id == 7473530503426  and product.id == 6701375455416 and product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %}
+        {% if template == 'product.preorder' or  product.id == 8005417533698 or  product.id == 6701376274616 or product.id == 8891402027266 or product.id == 6701376078008  or product.id == 7461809127682  or product.id == 7819011490050 or product.id == 8000060850434  and product.id == 6751404523704  and product.id == 7473530503426  and product.id == 6701375455416 and product.id == 7473526767874 or product.id == 7815271776514 or product.id == 7815268663554  or product.id == 6751389483192 or product.id == 7461809258754 %}
             ADD TO BAG
         {% else %}
         {% render 'alt-atc', cl:cl %}
@@ -892,7 +946,7 @@ counter = 0;
   <!-- k01 -->
   <div class="preorder-text" style="padding:20px 20px 12px 20px;margin-bottom:12px;background:#fff !important;">
     <p>Pre-order now to secure your preferred size and colour. Your entire order will ship once this item becomes available.</p>
-    <p style="margin-top:10px;color:red;margin-bottom:0 !important;">Expected dispatch date: <span class="{% if template.suffix == "os2template-scrubs"  or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900">October 1</span>. Thanks for your patience!</p> 
+    <p style="margin-top:10px;color:red;margin-bottom:0 !important;">Expected dispatch date: <span class="{% if template.suffix == "os2vetscrubs" or template.suffix == "os2template-scrubs"  or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900">May 7</span>. Thanks for your patience!</p> 
     </div>
   <div class="addliner">
     <hr class="hrliner">
@@ -924,8 +978,9 @@ counter = 0;
   }
 </style>
     {% endif %}
+    {% unless product.title contains "Planet Friendly" %}
     <div id="deliveryDiv" class="delivery-box"></div>
-
+    {% endunless %}
 
 {% if section.settings.newpdptop %}
 <div class="abtesting2" style="width:100%;margin-bottom:0px;padding-left:12px;padding-right:12px;">
@@ -995,71 +1050,73 @@ counter = 0;
 <div class="main-icon-cont" style="padding:5px 0px 5px;{% if section.settings.newpdptop %}display:none;{% endif %}">
   <div class="preorder-text" style="padding:0 20px 0px 20px;margin-bottom:20px;background:#e0ede9 !important;">
     <p>Pre-order now to secure your preferred size and colour. Your entire order will ship once this item becomes available.</p>
-    <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="{% if template.suffix == "os2template-scrubs" or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900;">October 1</span>. Thanks for your patience!</p> 
+    <p style="margin-top:10px;color:red;">Expected dispatch date: <span class="{% if  template.suffix == "os2vetscrubs" or template.suffix == "os2template-scrubs" or template.suffix == "sl-C6022FA6" %}preorderdate{% endif %}" style="font-weight:900;">May 7</span>. Thanks for your patience!</p> 
     </div>
     {% if section.settings.abtestdavideo %}
-      <div class="ugs_container">
-        <div class="video-gallery">
-          <div class="video-container zero1">
-              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/3c13f6af71424a2cb2ca2a3626de3392.mp4" autoplay muted loop playsinline preload="metadata"></video>
-              <span>Scrubs You Can Wear & Wear</span>
+          {% unless product.type == "Nurse Bag" %}
+          <div class="ugs_container">
+            <div class="video-gallery">
+              <div class="video-container zero1">
+                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/3c13f6af71424a2cb2ca2a3626de3392.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                  <span>Scrubs You Can Wear & Wear</span>
+              </div>
+              <div class="video-container zero2">
+                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/b72c5c0cb4fb4eaea3fa8d7e3a781544.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                  <span>The Most Joyful Aussie Scrubs Brand</span>
+              </div>
+              <div class="video-container zero3">
+                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/23ae219f351d4904b908311813f8f54d.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                  <span>3 Reasons Nurses Love Dr. Woof</span>
+              </div>
+              <!-- 
+              <div class="video-container zero4">
+                  <video class="video" src="https://cdn.shopify.com/videos/c/o/v/c5fb46949ef64a199884f1995b514bfc.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              </div>
+              -->
+            </div>
           </div>
-          <div class="video-container zero2">
-              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/b72c5c0cb4fb4eaea3fa8d7e3a781544.mp4" autoplay muted loop playsinline preload="metadata"></video>
-              <span>The Most Joyful Aussie Scrubs Brand</span>
-          </div>
-          <div class="video-container zero3">
-              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/23ae219f351d4904b908311813f8f54d.mp4" autoplay muted loop playsinline preload="metadata"></video>
-              <span>3 Reasons Nurses Love Dr. Woof</span>
-          </div>
-          <!-- 
-          <div class="video-container zero4">
-              <video class="video" src="https://cdn.shopify.com/videos/c/o/v/c5fb46949ef64a199884f1995b514bfc.mp4" autoplay muted loop playsinline preload="metadata"></video>
-          </div>
-          -->
-        </div>
-      </div>
-      <style>
-      .ugs_container{
-        padding-left: 12px;
-          padding-right: 12px;
-          margin-top: -6px;
-          margin-bottom:20px;
-      }
-      {% if section.settings.abtestnoicons %}
-        .ugs_container{
-            margin-top: -2px;
-        }
-      {% endif %}
-      
-      .ugs_container span{
-        font-size: 11px;
-        font-weight: 800;
-      }
-      
-      .ugs_container .video-gallery {
-          display: flex;
-          gap: 10px;
-      }
-      
-      .ugs_container .video-container {
-          flex: 1;
-          overflow: hidden;
-          position: relative;
-      }
-      
-      .ugs_container .video {
-          width: 100%;
-          height: auto;
-          transition: transform 0.3s ease-in-out;
-          object-fit: cover;
-      }
-      
-      .ugs_container .video-container:hover {
-          transform: scale(1.05);
-          cursor:pointer;
-      }
-      </style>
+          <style>
+          .ugs_container{
+            padding-left: 12px;
+              padding-right: 12px;
+              margin-top: -6px;
+              margin-bottom:20px;
+          }
+          {% if section.settings.abtestnoicons %}
+            .ugs_container{
+                margin-top: -2px;
+            }
+          {% endif %}
+          
+          .ugs_container span{
+            font-size: 11px;
+            font-weight: 800;
+          }
+          
+          .ugs_container .video-gallery {
+              display: flex;
+              gap: 10px;
+          }
+          
+          .ugs_container .video-container {
+              flex: 1;
+              overflow: hidden;
+              position: relative;
+          }
+          
+          .ugs_container .video {
+              width: 100%;
+              height: auto;
+              transition: transform 0.3s ease-in-out;
+              object-fit: cover;
+          }
+          
+          .ugs_container .video-container:hover {
+              transform: scale(1.05);
+              cursor:pointer;
+          }
+          </style>
+          {% endunless %}
       {% endif %}
   {% unless section.settings.abtestnoicons %}
   <div class="sub-icon-cont">
@@ -1524,7 +1581,7 @@ counter = 0;
   <p class="general_builder_box_text_wrapper"><span class="1st_alert_box"></span> of <span class="2nd_alert_box"></span> steps</p>
 </div>
 {% endcomment %}
-<button type="submit" name="add" id="add_to_cart_box" data-add-to-cart="" class="btn btn--tertiary btn--full add-to-cart">
+<button type="submit" name="add" id="add_to_cart_box" data-add-to-cart="" class="markery btn btn--tertiary btn--full add-to-cart">
   <span data-add-to-cart-text="">
 
     ADD TO BAG

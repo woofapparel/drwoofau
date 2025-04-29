@@ -190,7 +190,11 @@
             {% comment %} this block was created by belowyellow.com {% endcomment %}
             <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
           {% endif %}
-
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
 
           <div class="product-single__prices{% unless template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock'  or template contains 'LTV-Bulk-scrubs-offer' or product.type == 'Secret' %} not_bundle{% endunless %}{% if template contains 'Bundle_Metafield' or template contains 'new-bundle-template' or template contains 'compression_sock' or template contains 'LTV-Bulk-scrubs-offer'  or product.type == 'Secret' %} bundle_template grid-product__price{% endif %}">
             {% if product.compare_at_price_max > product.price %}
@@ -398,6 +402,11 @@
                 {% comment %} this block was created by belowyellow.com {% endcomment %}
                 <a href="#looxReviews" class="product-single__review-link">{% render 'loox_reviews' %}</a>
               {% endif %}
+                      <!-- Start of Judge.me code --> 
+                        <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+                          {{ product.metafields.judgeme.badge }} 
+                        </div> 
+                      <!-- End of Judge.me code -->
               <a name="top"></a>
               {% comment %}
               {% if product.id == 7815295336706 or product.id == 7815303627010 or product.id == 7815283802370 or product.id == 7815290028290 or product.id == 7815271776514 or product.id == 7815268663554 or product.id == 7815312441602 %}

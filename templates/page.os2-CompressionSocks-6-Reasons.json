@@ -65,14 +65,14 @@
         "hide_review_stars": false,
         "top_mode": false,
         "light_theme": false,
-        "main_header": "Relieve Leg Fatigue with Every Step",
-        "main_header_size": 64,
-        "main_header_size_mobile": 44,
+        "main_header": "Stand Longer Without Pain",
+        "main_header_size": 80,
+        "main_header_size_mobile": 56,
         "main_header_space": 32,
         "content": "With 15-20 mmHg medium graduated compression, they’re a new BFF for your tired, aching feet.",
         "textaroundtop": "",
         "textaroundbottom": "",
-        "button_text_1": "BUY 6 PAIRS GET 35% OFF | SHOP NOW",
+        "button_text_1": "BUY 6 PAIRS GET 30% OFF | SHOP NOW",
         "button_1_url": "shopify:\/\/collections\/compression-socks",
         "button_text_2": "",
         "button_2_url": "",
@@ -222,7 +222,11 @@
         "button_link": "",
         "button_style": "primary",
         "layout": "left",
-        "alt": false
+        "alt": false,
+        "font_size_desktop": 24,
+        "font_size_mobile": 18,
+        "padding_bottom_text": 20,
+        "padding_top_bottom_main_div": 40
       }
     },
     "text_and_image_YBwq9i": {
@@ -237,7 +241,11 @@
         "button_link": "",
         "button_style": "primary",
         "layout": "left",
-        "alt": false
+        "alt": false,
+        "font_size_desktop": 24,
+        "font_size_mobile": 18,
+        "padding_bottom_text": 20,
+        "padding_top_bottom_main_div": 40
       }
     },
     "hero_9YeibJ": {
@@ -266,13 +274,17 @@
         "image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_7.webp",
         "image_width": 400,
         "subtitle": "",
-        "title": "Cushioned Luxury: Like Walking on Patient's Jell-O (But Way Less Gross)",
-        "text": "<p>Remember that time you had to empty all the Jell-O cups because of a unit-wide clear liquid diet? Imagine that squishiness, but for your feet, and without the sticky mess. Our extra padding is so comfy, you might forget you're not actually walking on clouds (or perfectly set Jell-O).<\/p>",
+        "title": "Cushioned Luxury: Like Walking on Patient's Jelly (But Way Less Gross)",
+        "text": "<p>Remember that time you had to empty all the Jelly cups because of a unit-wide clear liquid diet? Imagine that squishiness, but for your feet, and without the sticky mess. Our extra padding is so comfy, you might forget you're not actually walking on clouds (or perfectly set Jelly).<\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
         "layout": "right",
-        "alt": false
+        "alt": false,
+        "font_size_desktop": 24,
+        "font_size_mobile": 18,
+        "padding_bottom_text": 20,
+        "padding_top_bottom_main_div": 40
       }
     },
     "text_and_image_tUA7jf": {
@@ -287,11 +299,26 @@
         "button_link": "",
         "button_style": "primary",
         "layout": "right",
-        "alt": false
+        "alt": false,
+        "font_size_desktop": 24,
+        "font_size_mobile": 18,
+        "padding_bottom_text": 20,
+        "padding_top_bottom_main_div": 40
+      }
+    },
+    "replo_replo_moneyback_Yz6abp": {
+      "type": "replo-replo-moneyback",
+      "settings": {
+        "replo_text_d2339081-2aac-40df-931c-5c07ef32b084": "<p><\/p>",
+        "replo_text_35ec7589-2470-4d8f-bcfd-c874e67bfb08": "<p>Say Goodbye to Fatigue in 30 Days—Or It’s Free!\n\n<\/p>",
+        "replo_text_a22d138f-60a4-4bfd-96ed-20ea923e6381": "<p>We’re so confident you’ll love them, we’re offering a 30-Day Money-Back Guarantee. Not satisfied? We’ll give you a full refund—no questions asked.<\/p>",
+        "replo_url_a6be2aa5-eb93-44f3-a993-ae2aa2816ea1": "",
+        "replo_text_3c32c631-d5f6-4308-923c-195d96de1982": "<p>SHOP NOW<\/p>"
       }
     },
     "hero_pUNzWf": {
       "type": "hero",
+      "disabled": true,
       "settings": {
         "big_header_text": "60-Day Guarantee: Longer Than Your Longest Shift (We Hope)",
         "subtitle_text": "Not convinced? Try them for 60 days. That's longer than your worst stretch of night shifts, longer than the time it takes to get an ortho consult, and definitely longer than your patience when someone says, \"You're just a nurse.\" If you don't love them, we'll take them back – no questions asked (except maybe \"Are you feeling okay? Should we check your temperature?\").",
@@ -499,7 +526,11 @@
         "button_link": "",
         "button_style": "primary",
         "layout": "right",
-        "alt": false
+        "alt": false,
+        "font_size_desktop": 24,
+        "font_size_mobile": 18,
+        "padding_bottom_text": 20,
+        "padding_top_bottom_main_div": 40
       }
     },
     "linehr_EaE6nr": {
@@ -636,6 +667,7 @@
     "hero_9YeibJ",
     "text_and_image_QUymfG",
     "text_and_image_tUA7jf",
+    "replo_replo_moneyback_Yz6abp",
     "hero_pUNzWf",
     "68681b12-95a9-4f19-8144-7b29406c141b",
     "featured_content_taXBFd",
