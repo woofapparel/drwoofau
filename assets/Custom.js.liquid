@@ -74,14 +74,14 @@ $(document).ready(function () {
             $(".cart__item").each(function (e, i) {
                 a += t = parseInt((t = (t = $(this).find(".qb-price-item").html()).replace("$", "")));
             }),
-                ($totalin = parseInt(($totalin = $(".set_cart").val()))) >= 150 && $("#cartshipping").html("Free");
+                ($totalin = parseInt(($totalin = $(".set_cart").val()))) >= 145 && $("#cartshipping").html("<span style='text-decoration: line-through;font-weight:400;'>$11.90</span> Free").css({padding:'4px 12px',background:'#000',color:'#fff',borderRadius:'4px'});
         }, 2e3);
     let t,
         a = 0;
     $(".cart__item").each(function (e, i) {
         a += t = parseInt((t = (t = $(this).find(".qb-price-item").html()).replace("$", "")));
     }),
-        ($totalin = parseInt(($totalin = $(".set_cart").val()))) >= 150 && $("#cartshipping").html("Free"),
+        ($totalin = parseInt(($totalin = $(".set_cart").val()))) >= 145 && $("#cartshipping").html("<span style='text-decoration: line-through;font-weight:400;'>$11.90</span> Free").css({padding:'4px 12px',background:'#000',color:'#fff',borderRadius:'4px'}),
         $(".close_button").click(function () {
             $(this).closest(".slide-nav__overflow").removeClass("js-menu--is-open"), $(this).parent().parent().find("button.btn.site-nav__thumb-button.js-toggle-slide-nav").trigger("click");
         });

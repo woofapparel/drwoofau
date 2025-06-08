@@ -50,6 +50,7 @@
         },
         "f5cae287-2f9c-48bc-a266-fba70afce910": {
           "type": "Image",
+          "disabled": true,
           "settings": {
             "image_thumbnail": "shopify:\/\/shop_images\/9_2b5e2e18-8e37-403d-af64-3f90eb48aa1d.png",
             "collection_title": "Outerwear",

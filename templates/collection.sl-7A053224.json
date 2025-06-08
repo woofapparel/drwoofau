@@ -14,11 +14,14 @@
         "image_webp_mobile": ""
       }
     },
-    "replo_replo_text_below_banner_4QFrCK": {
-      "type": "replo-replo-text-below-banner",
+    "collection_filters_def_new_cPz9QA": {
+      "type": "collection-filters-def-new",
       "settings": {
-        "replo_text_e352686d-11b3-4326-ad82-8260998ffdde": "<p>Women Scrubs<\/p>",
-        "replo_text_ffb59253-7bb2-43f4-99c4-ed60813402d8": "<p>Crafted by a family of three Australian healthcare workers, our premium scrubs are designed with movement, comfort, and style in mind. Made from high-quality fabric, they’re built to keep up with your demanding day—because quality isn’t just a priority, it’s our promise.<\/p>"
+        "filter_type": "groups",
+        "tags_combine": false,
+        "collection_title_enable": false,
+        "collection_filter_enable": false,
+        "collection_sort_enable": true
       }
     },
     "collection-filter": {
@@ -101,30 +104,20 @@
         "4b66583c-5f94-4582-b8f7-c35129b628f9",
         "ef196b56-d539-41ad-a16d-1c9b83ab5223"
       ],
+      "disabled": true,
       "settings": {
         "title_enable": false
       }
     },
     "collection-filters": {
       "type": "collection-filters-def",
-      "blocks": {
-        "3b7770eb-48a5-4611-bb97-b431bf4800c4": {
-          "type": "color_group",
-          "settings": {
-            "title": "",
-            "tag_list": "Burgundy \nHeather grey \nGreen"
-          }
-        }
-      },
-      "block_order": [
-        "3b7770eb-48a5-4611-bb97-b431bf4800c4"
-      ],
+      "disabled": true,
       "settings": {
         "filter_type": "groups",
         "tags_combine": false,
         "collection_title_enable": false,
-        "collection_filter_enable": false,
-        "collection_sort_enable": false
+        "collection_filter_enable": true,
+        "collection_sort_enable": true
       }
     },
     "main-collection": {
@@ -139,7 +132,7 @@
   },
   "order": [
     "collection-header",
-    "replo_replo_text_below_banner_4QFrCK",
+    "collection_filters_def_new_cPz9QA",
     "collection-filter",
     "collection-filters",
     "main-collection"

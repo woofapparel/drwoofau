@@ -1,16 +1,16 @@
 {
   "sections": {
     "product-template": {
-      "type": "product-template-nursebag",
+      "type": "product-template-pt-os2",
       "settings": {
-        "abtestestdualimage": false,
-        "abtestestimateddated": false,
+        "enable_ab_size": true,
         "abtestnoicons": false,
         "abtestdavideo": true,
-        "threeway": false,
-        "newpdptop": true,
-        "newpdptop2": false,
-        "abtesting3": false,
+        "enable_ab": true,
+        "abtesting1": false,
+        "abtesting2": false,
+        "freesetcap": "shopify:\/\/shop_images\/2025_-_Socks_Upsell_Banner_e9635405-ee92-49ce-958a-03adbcfa48c0.png",
+        "dark_theme": false,
         "product_image_size": "large",
         "product_image_type": "slider",
         "product_zoom_enable": true,
@@ -26,13 +26,13 @@
         "inventory_transfers_enable": false,
         "quantity_enable": false,
         "social_enable": true,
+        "color_link": "#2980b9",
         "img1": "shopify:\/\/shop_images\/4_2c9aee3f-aec7-4015-a798-7c27f3a591f0.png",
         "txt": "93% satisfaction rate from 40,000+ customers",
-        "txt_": "Dispatch from Melbourne within 24 hours",
-        "color_link": "#2980b9",
         "img2": "shopify:\/\/shop_images\/Untitled_design_2_4043dd2d-b061-4ce9-a771-22be6e7d9d6e.png",
-        "txt1": "60-day hassle-free return & exchange",
+        "txt_": "Dispatch from Melbourne within 24 hours",
         "img3": "shopify:\/\/shop_images\/Untitled_design_1_aa1e3d9a-8e5d-4738-9e79-4536b6a0d70e.png",
+        "txt1": "60-day hassle-free return & exchange",
         "txt2": "Free & Fast shipping over $145",
         "txt3": "",
         "txt4": "",
@@ -45,19 +45,14 @@
         "txt11": ""
       }
     },
-    "replo_replo_belt_bag_story_kxkJw9": {
-      "type": "replo-replo-belt-bag-story",
-      "settings": {}
-    },
     "duallayout_twTPbN": {
       "type": "duallayout",
-      "disabled": true,
       "settings": {
         "image_left": true,
         "background_color": "#d6e6ff",
         "imagebig": "shopify:\/\/shop_images\/LANDING_PAGE_PDP_4.png",
-        "contenttitle": "From the Front Lines, For the Front Lines",
-        "contenttext1": "At Dr. Woof Apparel, we’re more than just another uniform brand—we’re clinicians who share your commitment to patient care. Founded by a family of three veterinarians, two of whom are still actively working full-time, we stay on top of every challenge you face in the real world. Because we’re in the trenches too, we obsess over every design detail—continually refining based on your feedback and cutting no corners. The result? Medical apparel that stands up to the longest shifts, created by professionals who truly understand what you need—every single day."
+        "contenttitle": "Smile in Every Stitch – Our Founders’ Printed Scrub Tops",
+        "contenttext1": "We understand that long shifts call not only for performance but also for a touch of joy. That’s why our Printed Scrub Tops are crafted from recycled materials with a four-way stretch, wrinkle resistance, and exceptional softness—ensuring you’re comfortable all day. But more importantly, our exclusive, joyful designs are meant to brighten the medical world, bringing smiles to both colleagues and patients. Every top is our way of adding a spark of happiness to your day, making every shift a little lighter and a lot more vibrant."
       }
     },
     "new_product_story_fHCPRG": {
@@ -193,7 +188,6 @@
   },
   "order": [
     "product-template",
-    "replo_replo_belt_bag_story_kxkJw9",
     "duallayout_twTPbN",
     "new_product_story_fHCPRG",
     "stories",

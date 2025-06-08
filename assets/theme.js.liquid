@@ -24,6 +24,26 @@ function quick_open() {
 jQuery("a.open-cart-drawer-new").trigger("click");
 }
 
+  (function() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === '/cart') {
+      // Avoid redirect loop if already redirected
+      const redirected = window.location.search.includes('cart_open=true');
+      if (!redirected) {
+        window.location.replace('/?cart_open=true');
+      }
+    }
+
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('cart_open') === 'true') {
+         cart_open()
+      }
+
+
+  })();
+  
 function disableJavaScript(html) {
     // Create a temporary container element to work with the fetched data
     var tempContainer = $('<div>').html(html);

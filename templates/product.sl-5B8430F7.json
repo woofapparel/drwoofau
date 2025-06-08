@@ -45,10 +45,6 @@
         "txt11": ""
       }
     },
-    "replo_replo_belt_bag_story_kxkJw9": {
-      "type": "replo-replo-belt-bag-story",
-      "settings": {}
-    },
     "duallayout_twTPbN": {
       "type": "duallayout",
       "disabled": true,
@@ -59,6 +55,10 @@
         "contenttitle": "From the Front Lines, For the Front Lines",
         "contenttext1": "At Dr. Woof Apparel, we’re more than just another uniform brand—we’re clinicians who share your commitment to patient care. Founded by a family of three veterinarians, two of whom are still actively working full-time, we stay on top of every challenge you face in the real world. Because we’re in the trenches too, we obsess over every design detail—continually refining based on your feedback and cutting no corners. The result? Medical apparel that stands up to the longest shifts, created by professionals who truly understand what you need—every single day."
       }
+    },
+    "replo_replo_belt_bag_story_iEzgrM": {
+      "type": "replo-replo-belt-bag-story",
+      "settings": {}
     },
     "new_product_story_fHCPRG": {
       "type": "new-product-story",
@@ -193,8 +193,8 @@
   },
   "order": [
     "product-template",
-    "replo_replo_belt_bag_story_kxkJw9",
     "duallayout_twTPbN",
+    "replo_replo_belt_bag_story_iEzgrM",
     "new_product_story_fHCPRG",
     "stories",
     "reviews",

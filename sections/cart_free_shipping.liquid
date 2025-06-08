@@ -1,7 +1,7 @@
 {% assign spendmsg = '' %}
 {% assign total_cart = cart.original_total_price | divided_by: 100 %}
     
-<input type="hidden" class="set_cart" value="{{ total_cart }}" /> 
+<input type="hidden" class="set_cart" value="{{ cart.total_price | divided_by: 100 }}" /> 
 
 {%- for block in section.blocks -%}
   {% assign cartamount =  cart.original_total_price | divided_by: 100 %}
@@ -123,7 +123,7 @@
         <div class="milestone bot-mon miltwo">FREE Set</div>
     </div>
     <div class="progress-text">
-      <span class="notif-com1">Congratulations! You get a <b>FREE SET</b> </span>
+      <span class="notif-com2">Congratulations! You get a <b>FREE SET</b> </span>
       <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more set to get a<span class="another">another</span> <b class="promo">FREE SET</b> </span>
       
     </div>
@@ -146,7 +146,7 @@
         <div class="milestone bot-mon miltwo">30% OFF</div>
     </div>
     <div class="progress-text">
-      <span class="notif-com1">Congratulations! You get <b>30% OFF</b> on your Compression Socks order </span>
+      <span class="notif-com2">Congratulations! You get <b>30% OFF</b> on your Compression Socks order </span>
       <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more Compression Socks to get <span class="another">another</span> <b class="get2">30% Off. </b> </span>
       
     </div>
@@ -167,7 +167,7 @@
         <div class="milestone bot-mon miltwo">GET 1 FREE</div>
     </div>
     <div class="progress-text">
-      <span class="notif-com1">Congratulations! You get <b>15% OFF</b> </span>
+      <span class="notif-com3">Congratulations! You get <b>15% OFF</b> </span>
       <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more to get <span class="another">another</span> a <b class="get2"> 1 FREE</b> </span>
     </div>
   </div>
@@ -190,7 +190,7 @@
         <div class="milestone bot-mon milone">FREE scrunchie</div>
     </div>
     <div class="progress-text">
-      <span class="notif-com1">Congratulations! You get one <b>FREE Scrunchie</b> on your order </span>
+      <span class="notif-com4">Congratulations! You get one <b>FREE Scrunchie</b> on your order </span>
       <span class="notif-inc">Add <strong><span class="amount-needed"></span></strong> more scrunchies to get <span class="another">another</span> <b>one FREE</b> </span>
       
     </div>
@@ -233,8 +233,8 @@ $(".another").hide()
             $('.off1 .notif-inc').show()
           }
           $('.off1 .notif-com1').hide()
-          $('.off1 .progress').css('width', progressPercentage1 + '%');
-          $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
+          $('.off1 .progress').css('width', progressPercentage1 + 10 + '%');
+          $('.off1 .progress-circle').css('left', progressPercentage1 + 10 + '%');
           // Calculate the remaining amount for free shipping
           var amountNeeded = {{ firstindex }} - totalcart;
           $('.off1 .amount-needed').html(amountNeeded.toFixed(2));
@@ -246,8 +246,8 @@ $(".another").hide()
 
           $('.off1 .notif-inc').show()
           $('.off1 .notif-com1').hide()
-          $('.off1 .progress').css('width', progressPercentage1 + '%');
-          $('.off1 .progress-circle').css('left', progressPercentage1 + '%');
+          $('.off1 .progress').css('width', progressPercentage1 + 1 + '%');
+          $('.off1 .progress-circle').css('left', progressPercentage1 + 1 + '%');
           // Calculate the remaining amount for free shipping
           var amountNeeded = {{ lastindex }} - totalcart;
           $('.off1 .notif-inc b').html("Free $40 Gift Card")
@@ -291,7 +291,7 @@ $(".another").hide()
   $scrubcountfull = 3 - $setCount;
   if( $setCount >= 3 ){
       $('.off2 .notif-inc').hide()
-      $('.off2 .notif-com1').show()
+      $('.off2 .notif-com2').show()
       $('.off2 .progress').css('width', 100 + '%');
       $('.off2 .progress-circle').css('left', 100 + '%');
       
@@ -300,7 +300,7 @@ $(".another").hide()
       $('.off2 .progress-circle').css('left', $scrubcountpercent + '%');
         
           $('.off2 .notif-inc').show()
-          $('.off2 .notif-com1').hide()
+          
           $('.off2 .notif-com2').hide() 
           var amountNeeded = 3 - $setCount;
           $('.off2 .amount-needed').html(amountNeeded);     
@@ -310,7 +310,7 @@ $(".another").hide()
               $(".another").hide()
               $(".get2").html("FREE Pair")
               $('.off2 .notif-inc').show()
-              $('.off2 .notif-com1').hide()
+              
               $('.off2 .notif-com2').hide()
               var amountNeeded = 3 - $scrubcount;
               $('.off2 .amount-needed').html(amountNeeded);
@@ -345,18 +345,18 @@ if($sockcount > 0){
   $sockcountfull = 6 - $sockcount;
   if( $sockcount >= 6 ){
       $('.off3 .notif-inc').hide()
-      $('.off3 .notif-com1').show()
+      $('.off3 .notif-com3').show()
       $('.off3 .progress').css('width', 100 + '%');
       $('.off3 .progress-circle').css('left', 100 + '%');
-      $('.off3 .notif-com1').html("Congratulations! You get <b>30% OFF</b> on your Compression Socks order")
+      $('.off3 .notif-com3').html("Congratulations! You get <b>30% OFF</b> on your Compression Socks order")
     }else{
       $('.off3 .progress').css('width', $sockcountpercent + '%');
       $('.off3 .progress-circle').css('left', $sockcountpercent + '%');
       if($sockcount < 4){
         $(".off3 .another").hide()
         $('.off3 .notif-inc').show()
-        $('.off3 .notif-com1').hide()
-        $('.off3 .notif-com2').hide()
+        
+        $('.off3 .notif-com3').hide()
         var amountNeeded = 4 - $sockcount;
         $('.off3 .amount-needed').html(amountNeeded);
         $('.off3 .get2').html("FREE pair of Compression Socks")
@@ -367,8 +367,8 @@ if($sockcount > 0){
           
           $(".off3 .another").hide()
           $('.off3 .notif-inc').show()
-          $('.off3 .notif-com1').show()
-          $('.off3 .notif-com1').html("Congratulations! You get a <b>FREE pair</b> of Compression Socks.<br/>")
+          $('.off3 .notif-com2').show()
+          $('.off3 .notif-com2').html("Congratulations! You get a <b>FREE pair</b> of Compression Socks.<br/>")
           $('.off3 .get2').html("30% OFF")
           var amountNeeded = 6 - $sockcount;
           $('.off3 .amount-needed').html(amountNeeded);
@@ -394,18 +394,18 @@ if($capscount > 0){
   $capscountfull = 3 - $capscount;
   if( $capscount >= 3 ){
       $('.off4 .notif-inc').hide()
-      $('.off4 .notif-com1').show()
+      $('.off4 .notif-com3').show()
       $('.off4 .progress').css('width', 100 + '%');
       $('.off4 .progress-circle').css('left', 100 + '%');
-      $('.off4 .notif-com1').html("Congratulations! You get a <b>FREE</b> Printed Scrub Tops")
+      $('.off4 .notif-com3').html("Congratulations! You get a <b>FREE</b> Printed Scrub Tops")
     }else{
       $('.off4 .progress').css('width', $capscountpercent + '%');
       $('.off4 .progress-circle').css('left', $capscountpercent + '%');
       if($capscount < 2){
         $(".off4 .another").hide()
         $('.off4 .notif-inc').show()
-        $('.off4 .notif-com1').hide()
-        $('.off4 .notif-com2').hide()
+        
+        $('.off4 .notif-com4').hide()
         var amountNeeded = 2 - $capscount;
         $('.off4 .amount-needed').html(amountNeeded);
         $('.off4 .get2').html("15% OFF for Printed Scrub Tops.")
@@ -413,8 +413,8 @@ if($capscount > 0){
         if($capscount < 3){
           $(".off4 .another").hide()
           $('.off4 .notif-inc').show()
-          $('.off4 .notif-com1').show()
-          $('.off4 .notif-com1').html("Congratulations! You get <b>15% OFF</b> Printed Scrub Tops.<br/>")
+          $('.off4 .notif-com4').show()
+          $('.off4 .notif-com4').html("Congratulations! You get <b>15% OFF</b> Printed Scrub Tops.<br/>")
           $('.off4 .get2').html("FREE Printed Scrub Top")
           var amountNeeded = 3 - $capscount;
           $('.off4 .amount-needed').html(amountNeeded);

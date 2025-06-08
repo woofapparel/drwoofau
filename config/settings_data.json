@@ -262,9 +262,9 @@
           "men-hide-color": "",
           "men-hide-color2": "",
           "men-hide-color3": "",
-          "women-hide-color": "",
-          "women-hide-color2": "",
-          "women-hide-color3": "",
+          "women-hide-color": "Cordovan",
+          "women-hide-color2": "Popberry",
+          "women-hide-color3": "Red Wine",
           "show_newsletter": true,
           "newsletter_title": "Join the Woof Pack",
           "newsletter_richtext": "<p>Get the low down on deals, discounts and new product drops. Plus <strong>10%<\/strong> off your first order.<\/p>",
@@ -304,6 +304,10 @@
           "color_hamilton-island-blue": 8,
           "color_blue-mountains": 10,
           "color_pastel-lavender": 9,
+          "color_byron-bay": 22,
+          "color_cordovan": 23,
+          "color_espresso": 22,
+          "color_chocolate-brownie": 40,
           "footer_richtext": "<p>In the spirit of reconciliation, Dr Woof Apparel acknowledges the Traditional Custodians of country throughout Australia and their connections to land, sea and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.<\/p>",
           "show_locale_selector": false,
           "show_currency_selector": false,
@@ -1777,6 +1781,7 @@
           },
           "image_ifLtkX": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "menu-title": "Scrub Caps",
               "menu-icon": "fa-globe",
@@ -1787,6 +1792,7 @@
           },
           "image_mbTewM": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "menu-title": "Underscrubs",
               "menu-icon": "fa-globe",
@@ -1808,6 +1814,7 @@
           },
           "image_jrhixL": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "menu-title": "Outerwear",
               "menu-icon": "fa-globe",
@@ -1819,7 +1826,7 @@
           "0a675e89-9002-41f6-b366-77c2123288f5": {
             "type": "image",
             "settings": {
-              "menu-title": "Accessories",
+              "menu-title": "Layers & Accessories",
               "menu-icon": "fa-life-ring",
               "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design.png",
               "menu-link": "",
@@ -1840,8 +1847,9 @@
           },
           "b8ef33f0-337a-4480-8253-6066bc7401f8": {
             "type": "image",
+            "disabled": true,
             "settings": {
-              "menu-title": "Corporate",
+              "menu-title": "Teams\/Clinics",
               "menu-icon": "fa-globe",
               "menu-icon-image": "shopify:\/\/shop_images\/Untitled_design_13.png",
               "menu-link": "https:\/\/www.drwoofapparel.com.au\/pages\/teams",
@@ -1908,8 +1916,8 @@
           "show_announcement_home_only": false,
           "announcement_text": "BUILD YOUR PACK: BUY 2 SETS GET 3RD SET FREE",
           "announcement_link": "shopify:\/\/collections\/women",
-          "right_image_1": "shopify:\/\/shop_images\/Homepage_-_Navigation_Featured_2.png",
-          "right_link_1": "shopify:\/\/collections\/easter-scrubs",
+          "right_image_1": "shopify:\/\/shop_images\/Homepage_-_Navigation_Featured_5e585b25-0237-4969-a0e1-3ac9b1a7a5cd.png",
+          "right_link_1": "shopify:\/\/collections\/vet-med-scrubs",
           "right_image_2": "shopify:\/\/shop_images\/Homepage_-_Navigation_Featured_d4657d2d-9c11-45a4-83a5-83b544735219.png",
           "right_link_2": "https:\/\/www.drwoofapparel.com.au\/products\/womens-3-pocket-scrub-top?variant=45997897154818"
         }
@@ -2225,14 +2233,14 @@
               "enable_image_1": true,
               "image_1": "shopify:\/\/shop_images\/Operation_Woof_Objective_1_Joy_360x_b8668d1e-ec4b-487c-9a7e-c77f05b7d26c.png",
               "image_width_1": 100,
-              "title_1": "Make medical uniforms that area JOY to look at and a JOY to wear.",
+              "title_1": "Make medical uniforms that are a JOY to look at and a JOY to wear.",
               "text_1": "<p><br\/><\/p>",
               "button_label_1": "",
               "button_link_1": "",
               "enable_image_2": true,
               "image_2": "shopify:\/\/shop_images\/Operation_Woof_Objective_2_Artists_360x_e885f416-d9cd-4938-96a8-eba4238d58ec.png",
               "image_width_2": 100,
-              "title_2": "Champion medical artists,educators & creators.",
+              "title_2": "Champion medical artists, educators & creators.",
               "text_2": "",
               "button_label_2": "",
               "button_link_2": "",
@@ -5518,151 +5526,106 @@
           "list_UbmhDJ": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "361",
-              "col_image": "shopify:\/\/shop_images\/1_58fcd7b9-e7b3-41b5-bfd7-8a2cc2fda911.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/1_58fcd7b9-e7b3-41b5-bfd7-8a2cc2fda911.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/1_de7b26d4-88a8-4855-bef5-51485f2fa012.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/1_de7b26d4-88a8-4855-bef5-51485f2fa012.jpg",
               "block_title": true,
-              "col_text": "Women's 3-Pocket Scrub Top",
-              "blackprice": "$61.90",
+              "col_text": "VetCore™ Women’s Ved Med Scrub Top",
+              "blackprice": "$68.90",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-3-pocket-scrub-top?variant=45997897154818"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-vet-med-scrub-top?variant=46110466212098"
             }
           },
           "list_DnGg4r": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "322",
-              "col_image": "shopify:\/\/shop_images\/3_54b5ba1a-4c54-4fa7-944c-7cb87e643011.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/3_54b5ba1a-4c54-4fa7-944c-7cb87e643011.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/2_aaaa8ef2-c7b7-4b91-8035-c77f2113ed62.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/2_aaaa8ef2-c7b7-4b91-8035-c77f2113ed62.jpg",
               "block_title": true,
-              "col_text": "Women's 6-Pocket Jogger",
-              "blackprice": "$78.90",
+              "col_text": "VetCore™ Women’s Vet Med Cargo Scrub Pants with GENU™ Removable Knee Protection",
+              "blackprice": "$88.90",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-6-pocket-jogger-3?variant=45997902004482"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-vet-med-cargo-scrub-pants"
             }
           },
           "list_dpWF6X": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "361",
-              "col_image": "shopify:\/\/shop_images\/2_b771f75e-f683-46c2-ba37-928da3a7dadc.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/2_b771f75e-f683-46c2-ba37-928da3a7dadc.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/3_31243017-2f74-40a2-a89e-1669ed570084.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/3_31243017-2f74-40a2-a89e-1669ed570084.jpg",
               "block_title": true,
-              "col_text": "Women's V-Neck Tuck-in Scrub Top",
-              "blackprice": "$61.90",
+              "col_text": "VetCore™ Men’s Vet Med Scrub Top",
+              "blackprice": "$68.90",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/women-s-v-neck-tuck-top?variant=45997894861058"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/mens-vet-med-scrub-top?variant=46110517362946"
             }
           },
           "list_QJr7dE": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "102",
-              "col_image": "shopify:\/\/shop_images\/4_7b14a7a4-3ac6-4dc0-9644-45e3f107a23c.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/4_7b14a7a4-3ac6-4dc0-9644-45e3f107a23c.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/4_8665ee0a-126c-4786-93a5-8c53fb2da3da.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/4_8665ee0a-126c-4786-93a5-8c53fb2da3da.jpg",
               "block_title": true,
-              "col_text": "Yummy Bunnies Women’s 3-Pocket Scrub Top",
-              "blackprice": "$61.90",
+              "col_text": "VetCore™ Men’s Vet Med Cargo Scrub Pants with GENU™ Removable Knee Protection",
+              "blackprice": "$88.90",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/yummy-bunnies-womens-3-pocket-scrub-top"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/mens-vet-med-cargo-scrub-pants?variant=46110524604674"
             }
           },
           "list_b8Xf7L": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "511",
-              "col_image": "shopify:\/\/shop_images\/5_222dd25e-4e4b-43df-a51c-13c717901e37.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/5_222dd25e-4e4b-43df-a51c-13c717901e37.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/5_b738c4d1-51db-4419-999f-f843487e5a6f.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/5_b738c4d1-51db-4419-999f-f843487e5a6f.jpg",
               "block_title": true,
-              "col_text": "Yummy Bunnies Bamboo Compression Socks",
-              "blackprice": "$34.90",
+              "col_text": "Grab & Go Bottomless Belt Bag",
+              "blackprice": "$68.00",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/yummy-bunnies-bamboo-compression-socks"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/belt-bag"
             }
           },
           "list_GRLgxk": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "511",
-              "col_image": "shopify:\/\/shop_images\/6_06aaebb7-9a1e-465d-bf51-f4e29d938cc5.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/6_06aaebb7-9a1e-465d-bf51-f4e29d938cc5.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/6_97489e10-1dc5-464c-b959-dee737b018e8.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/6_97489e10-1dc5-464c-b959-dee737b018e8.jpg",
               "block_title": true,
-              "col_text": "Team Dogs: Printed Dog Scrubs, Scrub Caps and Compression Socks",
-              "blackprice": "$61.90",
+              "col_text": "Grab & Go Bottomless Belt Bag",
+              "blackprice": "$68.00",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "shopify:\/\/collections\/dog-scrubs"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/belt-bag"
             }
           },
           "list_QQJrbP": {
             "type": "list",
             "settings": {
-              "reviewstarsnumber": "361",
-              "col_image": "shopify:\/\/shop_images\/7_49c172b7-3468-4e4d-9f81-adc0b11e9dc2.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/7_49c172b7-3468-4e4d-9f81-adc0b11e9dc2.jpg",
+              "reviewstarsnumber": "",
+              "col_image": "shopify:\/\/shop_images\/7_c23ad346-78f5-4198-a5a8-06711406ef5d.jpg",
+              "mobcol_image": "shopify:\/\/shop_images\/7_c23ad346-78f5-4198-a5a8-06711406ef5d.jpg",
               "block_title": true,
-              "col_text": "Women's 3-Pocket Scrub Top",
-              "blackprice": "$61.90",
+              "col_text": "Grab & Go Bottomless Belt Bag",
+              "blackprice": "$68.00",
               "slashprice": "",
               "redprice": "",
               "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-3-pocket-scrub-top?variant=45874190713090"
-            }
-          },
-          "list_zBBCLJ": {
-            "type": "list",
-            "settings": {
-              "reviewstarsnumber": "322",
-              "col_image": "shopify:\/\/shop_images\/9_7742c834-606b-45ae-9a49-fbb6a783dc2d.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/9_7742c834-606b-45ae-9a49-fbb6a783dc2d.jpg",
-              "block_title": true,
-              "col_text": "Women's 6-Pocket Jogger",
-              "blackprice": "$78.90",
-              "slashprice": "",
-              "redprice": "",
-              "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-6-pocket-jogger-3?variant=45874199003394"
-            }
-          },
-          "list_BB6MJh": {
-            "type": "list",
-            "settings": {
-              "reviewstarsnumber": "361",
-              "col_image": "shopify:\/\/shop_images\/8_df03d5e8-99c4-42a3-91fc-af28c831b165.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/8_df03d5e8-99c4-42a3-91fc-af28c831b165.jpg",
-              "block_title": true,
-              "col_text": "Women’s V-Neck Tuck Top",
-              "blackprice": "$61.90",
-              "slashprice": "",
-              "redprice": "",
-              "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/women-s-v-neck-tuck-top?variant=45874171085058"
-            }
-          },
-          "list_bnWDfK": {
-            "type": "list",
-            "settings": {
-              "reviewstarsnumber": "1",
-              "col_image": "shopify:\/\/shop_images\/10_1701da0d-bf57-4c94-ae47-50cb75d24178.jpg",
-              "mobcol_image": "shopify:\/\/shop_images\/10_1701da0d-bf57-4c94-ae47-50cb75d24178.jpg",
-              "block_title": true,
-              "col_text": "Women's High-Wasted Flare Scrub Pants",
-              "blackprice": "$78.90",
-              "slashprice": "",
-              "redprice": "",
-              "col_name": "",
-              "col_url": "https:\/\/www.drwoofapparel.com.au\/products\/womens-flare-scrub-pants"
+              "col_url": "https:\/\/www.drwoofapparel.com.au\/collections\/belt-bag"
             }
           }
         },
@@ -5673,13 +5636,10 @@
           "list_QJr7dE",
           "list_b8Xf7L",
           "list_GRLgxk",
-          "list_QQJrbP",
-          "list_zBBCLJ",
-          "list_BB6MJh",
-          "list_bnWDfK"
+          "list_QQJrbP"
         ],
         "settings": {
-          "reviewstars": true,
+          "reviewstars": false,
           "blocklist": true,
           "show_title": true,
           "dark_theme": false,
@@ -6271,6 +6231,7 @@
           "logo_image_kHQUJE",
           "logo_image_3BMPD8"
         ],
+        "disabled": true,
         "settings": {
           "leftscroll": true,
           "title": "Proudly serving",
@@ -6394,11 +6355,79 @@
           "selected_collection": "new-products",
           "sec_name": "This just in"
         }
+      },
+      "logolistaani_YJptaJ": {
+        "type": "logolistaani",
+        "blocks": {
+          "logo_aybm9V": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/10_360x_7cc03db0-21f5-446c-a514-1c5a8b59876b.png"
+            }
+          },
+          "logo_hdN4pP": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/14_360x_5786d81d-3941-45ae-9ba3-d88fd0efcfab.png"
+            }
+          },
+          "logo_aEr6AY": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/13_360x_7de88f9e-c5e9-4025-9670-8a6692e48053.png"
+            }
+          },
+          "logo_iHWPMX": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/16_180x_42067ecd-2a17-4eb8-a488-fcb512d51007.png"
+            }
+          },
+          "logo_twVPwK": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/pic4.webp"
+            }
+          },
+          "logo_NBR6HC": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/5_180x_cf8d0955-34e7-4bc6-a82b-1e5e64b3e58e.png"
+            }
+          },
+          "logo_EwzBYx": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/pic3.png"
+            }
+          },
+          "logo_gaKjed": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/pic1_1.png"
+            }
+          }
+        },
+        "block_order": [
+          "logo_aybm9V",
+          "logo_hdN4pP",
+          "logo_aEr6AY",
+          "logo_iHWPMX",
+          "logo_twVPwK",
+          "logo_NBR6HC",
+          "logo_EwzBYx",
+          "logo_gaKjed"
+        ],
+        "name": "Animated Logo Slider",
+        "settings": {
+          "heading": "Proudly serving"
+        }
       }
     },
     "content_for_index": [
       "replo_replo_hero_banner_FJyVaW",
       "1c64d667-b672-4f7b-b9be-2310692e99f1",
+      "logolistaani_YJptaJ",
       "logo_list_gcipMb",
       "b08ad3ae-1d49-443c-bf20-3daa936d220c",
       "14a6d1da-4bb0-467d-8179-0f89444b4027",
@@ -6433,11 +6462,6 @@
         "disabled": true,
         "settings": {}
       },
-      "9323109295802554384": {
-        "type": "shopify:\/\/apps\/upstackified-universal-pixel\/blocks\/adtScript\/2ef9f833-e251-4eed-af16-8dca98b27a2f",
-        "disabled": false,
-        "settings": {}
-      },
       "1173261918193615741": {
         "type": "shopify:\/\/apps\/geo-pro-geolocation\/blocks\/geopro\/16fc5313-7aee-4e90-ac95-f50fc7c8b657",
         "disabled": false,
@@ -6445,6 +6469,16 @@
       },
       "14060646107696862457": {
         "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "10840395464443086010": {
+        "type": "shopify:\/\/apps\/alia\/blocks\/customer-app-frame\/51f1d398-3e41-44da-b81e-defd5804b292",
+        "disabled": false,
+        "settings": {}
+      },
+      "2441077020710769822": {
+        "type": "shopify:\/\/apps\/aimerce-first-party-pixel\/blocks\/c-track-embed\/51cbda5a-dbfc-4e7b-8d12-c9e90363dcd7",
         "disabled": false,
         "settings": {}
       }

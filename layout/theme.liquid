@@ -1099,7 +1099,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {% if product.type contains 'clearance' %}
           <script src="{{ 'theme.js' | asset_url }}" defer></script>
         {% else %}
-          {% if template.suffix == 'os2template-scrubs' or template.suffix == 'os2printedtopsbundle' or template.suffix == 'sl-36C42638' %}
+          {% if template.suffix == 'os2template-scrubs' or template.suffix == 'os2printedtopsbundle' or template.suffix == 'sl-36C42638' or product.type == "Vet Scrubs" or product.type == "Nurse Bag" %}
               <script src="{{ 'theme-dual.js' | asset_url }}" defer></script>
           {% else %}
 
@@ -1347,6 +1347,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% assign someProduct25 = all_products.womens-6-pocket-jogger-5 %}      
       {% assign someProduct26 = all_products.womens-3-pocket-scrub-top-3xl %}
       {% assign someProduct27 = all_products.nurse-bag %}
+      {% assign someProduct28 = all_products.cherry-milkshake-womens-3-pocket-scrub-top %}
+      
 
       var variantStock = {};
       var variantAvail = {};
@@ -1580,7 +1582,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% endfor %}  
       
+    {% for variant in someProduct28.variants %}
+      
+      variantStock[{{- variant.id -}}] = {{ variant.inventory_quantity }};
+      variantAvail[{{- variant.id -}}] = {{ variant.available }};
 
+    {% endfor %}  
     
     </script>
 
@@ -2484,7 +2491,7 @@ $(document).ready(function(){
 
       if(($varavail == "true") && ($varquan <= 0)) {
         $(".preorder-text").show()
-        $(".preorderdate").html("May 7")
+        $(".preorderdate").html("June 9")
         $(".capsbundleatc").html("PRE-ORDER")
       }else{
         $(".preorder-text").hide()
@@ -2673,7 +2680,7 @@ $(".image-overlay").on("click",function(){
 
       if(($varavail == "true") && ($varquan <= 0)) {
         $(".preorder-text").show()
-        $(".preorderdate").html("May 7")
+        $(".preorderdate").html("June 9")
         $(".capsbundleatc").html("PRE-ORDER")
       }else{
         $(".preorder-text").hide()
@@ -2760,6 +2767,7 @@ $(".image-overlay").on("click",function(){
 
   var productsData = {};
   {% assign wideCollection = collections['new-wide-socks'] %}
+{% paginate wideCollection.products by 1000 %}
   {% for product in wideCollection.products %}
     productsData["{{ product.handle }}"] = {
       id: "{{ product.id }}",
@@ -2776,6 +2784,8 @@ $(".image-overlay").on("click",function(){
       ]
     };
   {% endfor %}
+{% endpaginate %}
+
 
   {% assign wideCollection = collections['non-bamboo-sock'] %}
   {% for product in wideCollection.products %}
@@ -2946,7 +2956,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorder-text").html("May 7")
+              $(".preorder-text").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -2961,7 +2971,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorder-text").html("May 7")
+              $(".preorder-text").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -2989,7 +2999,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         case "8687500263682":
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
-              $(".preorder-text").html("May 7")
+              $(".preorder-text").html("June 9")
               $(".preorder-text").show()
             }else{
               if($capavail == 'true'){
@@ -3033,7 +3043,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
           if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3308,7 +3318,7 @@ $(".image-overlay").removeClass("activer");
 
 {% if product.type == 'Printed Pattern Scrub Tops' %}
   $(document).ready(function(){
-
+          
 $(document).on("click",".btn-primer",function(){
   
   $capid = $(".activer").attr("data-id")
@@ -3320,11 +3330,86 @@ $(document).on("click",".btn-primer",function(){
 $capqty = parseFloat($(this).attr("data-socqty"))
 
       switch ($capid) {   
+        case "9006869643522":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorderdate").html("June 9")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
+        case "9006868988162":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorderdate").html("June 9")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
+        case "9006867874050":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorderdate").html("June 9")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
+        case "9007946039554":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorderdate").html("June 9")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
+        case "9007522611458":
+        if(($capqty <= 0) && ($capavail == 'true')){
+              $(".capsbundleatc").html("PRE-ORDER")
+              $(".preorder-text").show()
+              $(".preorderdate").html("June 9")
+            }else{
+              if($capavail == 'true'){
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("ADD TO CART")
+              }else{
+                $(".preorder-text").hide()
+                $(".capsbundleatc").html("SOLD OUT")               
+              }
+            }
+          break;     
         case "8704463831298":
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3339,7 +3424,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3354,7 +3439,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3369,7 +3454,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3384,7 +3469,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3399,7 +3484,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3413,7 +3498,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
         case "8687500263682":
         if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
-              $(".preorder-text").html("May 7")
+              $(".preorder-text").html("June 9")
               $(".preorder-text").show()
             }else{
               if($capavail == 'true'){
@@ -3443,7 +3528,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
           if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -3501,7 +3586,7 @@ $capqty = parseFloat($(this).attr("data-socqty"))
           if(($capqty <= 0) && ($capavail == 'true')){
               $(".capsbundleatc").html("PRE-ORDER")
               $(".preorder-text").show()
-              $(".preorderdate").html("May 7")
+              $(".preorderdate").html("June 9")
             }else{
               if($capavail == 'true'){
                 $(".preorder-text").hide()
@@ -4368,8 +4453,224 @@ $(document).ready(function(){
       width:49% !important;
     }
   }
+
   
+    .kmodal {
+      position: fixed;
+      bottom: -100%;
+      right: 0;
+      width: 480px;
+      transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      opacity: 0;
+    }
+
+    .kmodal.open {
+      bottom: 0;
+      opacity: 1;
+    }
+
+    .kmodal-content {
+      background: white;
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      height: auto;
+    }
+
+    .kmodal-header {
+      background: #0a0c32;
+      height: 40px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      display: block;
+      overflow: hidden;
+    }
+
+    .kmodal .close-btn {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+      transform: translateY(-50%);
+      transition: background 0.2s ease;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .kmodal .footer {
+      background: #f5f5f5;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #666;
+      flex-shrink: 0;
+    }
+
+    .kmodal .footer a {
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .kmodal .footer a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .kmodal {
+        width: 100%;
+        display:none !important;
+      }
+    }
 </style>
+{% unless template.name contains 'page' %}
+<div id="surveyModal" class="kmodal">
+  <div class="kmodal-content">
+    <div class="kmodal-header">
+      <button class="close-btn">×</button>
+    </div>
+    <iframe 
+      src="https://app.knocommerce.com/surveys/1687304d-9548-4f9c-bd40-c9f82c5bd0df" 
+      frameborder="0"
+      id="surveyIframe"
+    ></iframe>
+    <div class="footer">
+      Powered by <a href="https://knocommerce.com/" target="_blank">KnoCommerce</a>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modalElement = document.getElementById('surveyModal');
+    const closeBtn = modalElement.querySelector('.close-btn');
+    const iframe = document.getElementById('surveyIframe');
+    let cooldownActive = false;
+    let cooldownTime = 30000; // 30 seconds cooldown between showings
+    
+    // Function to check if device is mobile
+    function isMobileDevice() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Function to handle exit intent
+    function handleExitIntent(e) {
+      // If cooldown is active, don't show the modal
+      if (cooldownActive) return;
+      
+      // Improved exit intent detection for cross-browser compatibility
+      const shouldShowModal = 
+        (e.clientY <= 20 && e.clientY >= 0) || // Moving towards top
+        (e.clientX <= 0) || // Moving towards left edge
+        (e.clientX >= window.innerWidth - 1); // Moving towards right edge
+        
+      if (shouldShowModal) {
+        showModal();
+      }
+    }
+    
+    // Function to show modal
+    function showModal() {
+      modalElement.classList.add('open');
+      iframe.contentWindow.postMessage('modal-opened', '*');
+      
+      // Set cooldown
+      cooldownActive = true;
+      setTimeout(() => {
+        cooldownActive = false;
+      }, cooldownTime);
+    }
+    
+    // Function to close modal
+    function closeModal() {
+      modalElement.classList.remove('open');
+    }
+
+    // Only initialize modal if not on mobile
+    if (!isMobileDevice()) {
+      // Exit intent detection - works across major browsers
+      document.addEventListener('mouseleave', handleExitIntent);
+      
+      // Also detect rapid mouse movements toward the top
+      document.addEventListener('mousemove', (e) => {
+        // Detect rapid upward movement
+        if (typeof e.movementY === 'number' && e.movementY < -30 && e.clientY < 150) {
+          handleExitIntent(e);
+        }
+      });
+
+      // Close button handler
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!modalElement.contains(e.target) && modalElement.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalElement.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+      // Handle messages from iframe (for survey completion)
+      window.addEventListener('message', (event) => {
+        // Check if the message is from our survey iframe domain
+        if (event.origin.includes('knocommerce.com')) {
+          // Check if survey was completed
+          if (event.data === 'survey-completed') {
+            closeModal();
+            // Set a longer cooldown after completion
+            cooldownActive = true;
+            setTimeout(() => {
+              cooldownActive = false;
+            }, 24 * 60 * 60 * 1000); // 24 hours
+          }
+        }
+      });
+
+      // Adjust iframe height after content loads
+      iframe.addEventListener('load', () => {
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const contentHeight = iframeDoc.body.scrollHeight;
+          iframe.style.height = `${contentHeight}px`;
+          iframe.scrolling = 'no';
+        } catch (e) {
+          console.log('Cannot access iframe content height due to CORS');
+          iframe.style.height = '600px';
+          iframe.scrolling = 'auto';
+        }
+      });
+    }
+  });
+</script>
+
+{% endunless %}
+
+
     {% if product.handle contains "bag" %}
       <script>
         $(document).ready(function () {
@@ -4383,5 +4684,6 @@ $(document).ready(function(){
         });
       </script>
     {% endif %}
+
     </body>
 </html> 

@@ -33,19 +33,19 @@
         "list_F9NbtG": {
           "type": "list",
           "settings": {
-            "text_list": "Fatigue-busting graduated compression"
+            "text_list": "Fights fatigue before it starts"
           }
         },
         "list_kFHWVd": {
           "type": "list",
           "settings": {
-            "text_list": "Varicose veins prevention"
+            "text_list": "Keeps your circulation moving (even if you haven’t sat in 6 hours)"
           }
         },
         "list_EC7PBg": {
           "type": "list",
           "settings": {
-            "text_list": "Proudly designed in Australia"
+            "text_list": "Helps you walk out feeling like you didn’t just walk through fire"
           }
         }
       },
@@ -65,19 +65,19 @@
         "hide_review_stars": false,
         "top_mode": false,
         "light_theme": false,
-        "main_header": "Stand Longer Without Pain",
-        "main_header_size": 80,
-        "main_header_size_mobile": 56,
+        "main_header": "Feet Feel Fabulous (Even When Your Shift Doesn’t)",
+        "main_header_size": 46,
+        "main_header_size_mobile": 36,
         "main_header_space": 32,
-        "content": "With 15-20 mmHg medium graduated compression, they’re a new BFF for your tired, aching feet.",
+        "content": "<b>Graduated compression that shows up for your legs—even when no one else does.<\/b><br><br>Another double shift. Another 10,000 steps. Another patient asking, “Can I have more pain relief?” But what about your relief?<br><br>Dr. Woof’s 15–20 mmHg graduated compression wraps your calves in real support—so you don’t collapse when your shift does. It’s not just a sock. It’s a sigh of relief you can wear.",
         "textaroundtop": "",
         "textaroundbottom": "",
-        "button_text_1": "BUY 6 PAIRS GET 30% OFF | SHOP NOW",
+        "button_text_1": "SHOP NOW",
         "button_1_url": "shopify:\/\/collections\/compression-socks",
         "button_text_2": "",
         "button_2_url": "",
-        "header_image": "shopify:\/\/shop_images\/DESKTOP_NEW_BANNER_THUMBNAIL_1_2d363452-5f1d-4c68-9b87-e645847971b0.png",
-        "mobile_image": "shopify:\/\/shop_images\/MOBILE_NEW_BANNER_THUMBNAIL_1_d4950d77-5558-4da0-9af0-5e2cf5d8ccd0.jpg",
+        "header_image": "shopify:\/\/shop_images\/HERO.png",
+        "mobile_image": "shopify:\/\/shop_images\/HERO_2_76b1833c-8002-4cc4-8c01-44d610dba809.png",
         "bg_color": "#ffd7d2",
         "desktop_bgimage": "shopify:\/\/shop_images\/HERO_BANNER_-_LANDSCAPE_FINAL_ODDIT_COMPATIBLE_1440_x_900_px_6a52a8cb-64e8-4c09-9e49-d2bf7565e841.png",
         "mobile_bgimage": "shopify:\/\/shop_images\/Untitled_design_269be36c-97d4-4087-8d04-be8c7735417a.jpg",
@@ -213,11 +213,11 @@
     "text_and_image_rXLtex": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_4.webp",
+        "image": "shopify:\/\/shop_images\/Point_1.png",
         "image_width": 400,
         "subtitle": "",
-        "title": "Graduated Compression: Because Your Legs Deserve a Promotion Too",
-        "text": "<p>Let's face it, you've been waiting for that Nurse Unit Manager position forever. While we can't fast-track your career, we can give your legs the upgrade they deserve. Our 15-20mmHg compression is like a gentle hug for your calves – minus the awkward \"how long do we keep hugging?\" moment.<\/p>",
+        "title": "The Compression Sweet Spot (Designed for You, Not Your Grandpa)",
+        "text": "<p>Nurses don’t need extreme medical-grade squeeze. And they don’t need flimsy wannabes.<br\/>They need what works—<strong>right in the middle<\/strong>.<\/p><p>Dr. Woof’s 15–20 mmHg is the Goldilocks zone: not too tight, not too light. It’s tailored to the life you actually live—rushing, lifting, standing, squatting, charting, running.<\/p><p><strong>The kind of compression that knows what it means to do the work.<\/strong><\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -232,11 +232,11 @@
     "text_and_image_YBwq9i": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_1.webp",
+        "image": "shopify:\/\/shop_images\/Point_2.png",
         "image_width": 400,
         "subtitle": "",
-        "title": "Varicose Vein Prevention: Spider-Man's Got Nothing on These Threads",
-        "text": "<p>Forget radioactive spiders. The real superpower is preventing those pesky varicose veins that come with the job. Our socks are like kryptonite to venous insufficiency – because the only blue lines you should be dealing with are the ones on your patients' charts.<\/p>",
+        "title": "Vein Protection for the Long Haul",
+        "text": "<p>You care for bodies all day. So don’t forget your own.<\/p><p>Dr. Woof socks support healthy circulation and help prevent varicose veins—before they even think about showing up. Because chronic leg pain isn’t a badge of honour. It’s a warning sign. And we’re not here for that.<\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -251,8 +251,8 @@
     "hero_9YeibJ": {
       "type": "hero",
       "settings": {
-        "big_header_text": "Aussie Designed, Built for Lasting Comfort",
-        "subtitle_text": "From the minds of a family of Aussie docs, these socks are as durable as the Outback and as cozy as they come—ideal for surviving long shifts!",
+        "big_header_text": "Created by Vets. Made Famous by Nurses.",
+        "subtitle_text": "We’re a family of veterinarians—so we know the physical toll of care. But the magic of Dr. Woof? It’s not just what we put in. It’s what nurses put back.\n<br><br>\nOur socks have gone viral in hospitals across Australia because we ask, we listen, and we change things. Every pocket of cushion. Every band of compression. Every thread of softness—it’s been field-tested on the hardest floors by the people who never get to sit.\n<br><br>\nThese aren’t just made for nurses. They’re made with them.",
         "button_text": "SHOP NOW",
         "button_link": "shopify:\/\/collections\/compression-socks",
         "background_color": "#f5be15",
@@ -271,11 +271,11 @@
     "text_and_image_QUymfG": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_7.webp",
+        "image": "shopify:\/\/shop_images\/11_ba9da2a6-01d0-45ce-bde3-c4235705ae99.png",
         "image_width": 400,
         "subtitle": "",
-        "title": "Cushioned Luxury: Like Walking on Patient's Jelly (But Way Less Gross)",
-        "text": "<p>Remember that time you had to empty all the Jelly cups because of a unit-wide clear liquid diet? Imagine that squishiness, but for your feet, and without the sticky mess. Our extra padding is so comfy, you might forget you're not actually walking on clouds (or perfectly set Jelly).<\/p>",
+        "title": "Soft Enough to Make You Swear Out Loud (In a Good Way)",
+        "text": "<p>Let’s talk about the yarn. Bamboo-rich. Ultra-soft. And woven with just the right amount of give.<br\/>You won’t believe you’re wearing compression socks—and you won’t want to take them off.<\/p><p>These are the kind of socks you feel before you see.<br\/>The kind that make you say, “Wait, why doesn’t everything feel like this?”<\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -293,8 +293,8 @@
         "image": "shopify:\/\/shop_images\/Compression_Socks_Listicle_-_6_Reasons_Why_5.webp",
         "image_width": 400,
         "subtitle": "",
-        "title": "Cute & Trendy: Fashionable Enough to Make Even Those Paper Gowns Jealous",
-        "text": "<p>Why should your scrubs have all the fun? Our designs are so cute, they might just distract patients from asking \"Is it time for my pain meds?\" for the 47th time this hour. Warning: May cause extreme sock envy among colleagues.<\/p>",
+        "title": "Uniform-Approved. Personality-Delivered.",
+        "text": "<p>Let’s talk about the yarn. Bamboo-rich. Ultra-soft. And woven with just the right amount of give.<br\/>You won’t believe you’re wearing compression socks—and you won’t want to take them off.<\/p><p>These are the kind of socks you feel before you see.<br\/>The kind that make you say, “Wait, why doesn’t everything feel like this?”<\/p><p><strong>Which is why we made a 6-pack. One for every shift—and one for when you forget laundry day.<\/strong><\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -309,11 +309,30 @@
     "replo_replo_moneyback_Yz6abp": {
       "type": "replo-replo-moneyback",
       "settings": {
-        "replo_text_d2339081-2aac-40df-931c-5c07ef32b084": "<p><\/p>",
-        "replo_text_35ec7589-2470-4d8f-bcfd-c874e67bfb08": "<p>Say Goodbye to Fatigue in 30 Days—Or It’s Free!\n\n<\/p>",
-        "replo_text_a22d138f-60a4-4bfd-96ed-20ea923e6381": "<p>We’re so confident you’ll love them, we’re offering a 30-Day Money-Back Guarantee. Not satisfied? We’ll give you a full refund—no questions asked.<\/p>",
+        "replo_text_d2339081-2aac-40df-931c-5c07ef32b084": "",
+        "replo_text_35ec7589-2470-4d8f-bcfd-c874e67bfb08": "<p><strong>Try Them Risk-Free: 60 Days to Fall in Love<\/strong><\/p>",
+        "replo_text_a22d138f-60a4-4bfd-96ed-20ea923e6381": "<p>If your legs don’t fall head over heels, no worries.<br\/>We’ll give you a full refund—no questions, no guilt, no awkward emails.<\/p>",
         "replo_url_a6be2aa5-eb93-44f3-a993-ae2aa2816ea1": "",
-        "replo_text_3c32c631-d5f6-4308-923c-195d96de1982": "<p>SHOP NOW<\/p>"
+        "replo_text_3c32c631-d5f6-4308-923c-195d96de1982": "<p>SHOP NOW<\/p>",
+        "replo_style_image_e27af923-d3a0-4fc3-940b-8e3217b8c347": "shopify:\/\/shop_images\/HOMEPAGE_HERO_PRODUCT_STORIES_3.png"
+      }
+    },
+    "replo_lp_socks_bundle_gHHpCq": {
+      "type": "replo-lp-socks-bundle",
+      "name": "LP Socks Bundle",
+      "settings": {
+        "replo_text_6189af31-a8f4-4d54-9128-e79f46e28d7a": "<p>BUY 6 PAIRS, GET 30% OFF + FREE SHIPPING<\/p>",
+        "replo_text_b2faea39-76ee-44e9-b4c4-7d0de2a8d6be": "<p><strong>The No-Laundry Lifesaver Pack<\/strong><\/p>",
+        "replo_url_79d59ca9-dbe1-4d21-afc4-444d635edd18": "",
+        "replo_text_2e4ed669-f332-46c9-96af-d20675243953": "<p>SOLIDS<\/p>",
+        "replo_text_19f2ba72-a3d6-4cd8-a549-3d93da3c69a2": "<p>Classic colors, uncomplicated comfort.<\/p>",
+        "replo_url_c21085be-dc2b-4446-879f-e6a444ed239f": "",
+        "replo_text_695d29ba-e453-4dc3-b86d-de4fd4a5aeb2": "<p>Shop Now<\/p>",
+        "replo_url_73746ecc-1ed5-491d-bde8-35c5cf7ddce1": "",
+        "replo_text_b777c8b2-e454-4ac7-99b7-22cd6575a292": "<p>PATTERNED<\/p>",
+        "replo_text_da76183c-7f6e-4821-bbcf-0864ff858981": "<p>Designs that pop, comfort that lasts.<\/p>",
+        "replo_url_9fffa455-6dda-49f8-bae7-577fea599c3b": "",
+        "replo_text_64d737e5-fcaf-4a64-b989-c4f947cd3ebb": "<p>Shop Now<\/p>"
       }
     },
     "hero_pUNzWf": {
@@ -668,6 +687,7 @@
     "text_and_image_QUymfG",
     "text_and_image_tUA7jf",
     "replo_replo_moneyback_Yz6abp",
+    "replo_lp_socks_bundle_gHHpCq",
     "hero_pUNzWf",
     "68681b12-95a9-4f19-8144-7b29406c141b",
     "featured_content_taXBFd",

@@ -35,7 +35,7 @@
         "image_BHh6zT": {
           "type": "Image",
           "settings": {
-            "image_thumbnail": "shopify:\/\/shop_images\/New_Releases_cef7bad8-106d-487a-b695-4dabb4f8caeb.png",
+            "image_thumbnail": "shopify:\/\/shop_images\/New_Releases.jpg",
             "collection_title": "New Releases",
             "linkurl": "https:\/\/www.drwoofapparel.com.au\/collections\/compression-socks?sort_by=created-descending"
           }
@@ -108,6 +108,10 @@
     "main-collection": {
       "type": "collection-template-socks",
       "settings": {
+        "super_text_1": "",
+        "super_link_1": "",
+        "super_text_2": "",
+        "super_link_2": "",
         "thumbnailcollection": false,
         "enable_ab_size": false,
         "per_row_desktop": 3,

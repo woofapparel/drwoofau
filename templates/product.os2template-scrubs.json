@@ -3,6 +3,7 @@
     "product-template": {
       "type": "product-template-os2",
       "settings": {
+        "abtestestdualimage": true,
         "abtestestimateddated": false,
         "abtestnoicons": false,
         "abtestdavideo": true,
@@ -276,14 +277,6 @@
       ],
       "settings": {}
     },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "show_product_recommendations": true,
-        "product_recommendations_heading": "You may also like",
-        "per_row": "small"
-      }
-    },
     "1738571625b10c5b95": {
       "type": "apps",
       "blocks": {
@@ -296,6 +289,14 @@
         "judge_me_reviews_review_snippet_widget_mdQC44"
       ],
       "settings": {}
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "per_row": "small"
+      }
     }
   },
   "order": [

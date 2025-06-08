@@ -168,7 +168,11 @@
                             <div class="cart__item-price th_item_price plus_minus_status {{ firstvalue }} {{ Show_Price }}">
                               <span class='hulkapps-cart-item-price' data-key='{{item.key}}'>
                                 <div class="qb-price-item" data-id="{{ item.key }}">
-                                  {{ item.original_price | money }}
+                                  {% if item.original_price > item.final_price %}
+                                    <span style="text-decoration: line-through;color:#B53728 !important;">{{ item.original_price | money }}</span> - {{ item.final_price| money }}                                 
+                                  {% else %}
+                                    {{ item.original_price | money }}           
+                                  {% endif %}
                                 </div>
                               </span>
                             </div>
@@ -400,7 +404,6 @@
         {% assign x = 0 %}
         {% for line_item in cart.items %}
           <!-- line item info -->
-        
           {% if line_item.original_price > line_item.final_price %}
             
           {% endif %}
@@ -452,6 +455,8 @@
                   #{{ discount_allocation.discount_application.title }}   (-15%) 
                   {% when 'FLASHSOCKS' %}
                     #{{ discount_allocation.discount_application.title }} 1 Free Sock
+                  {% when 'FREESOCKS' %}
+                    #{{ discount_allocation.discount_application.title }} 1 Free Pair
 
                               {% when '5FOR4SOCKS' %}
                                 #{{ discount_allocation.discount_application.title }} 1 Free Sock
@@ -487,7 +492,7 @@
         </div>
         <div class="cart__detail-info">
           
-        <span id="cartshipping" style="font-weight:900"> $11.90</span>
+        <span id="cartshipping" style="font-weight:900;padding:4px 12px;border-radius:4px;"> $11.90</span>
         </div>
       </div>
 
@@ -497,7 +502,7 @@
           </div>
           <div class="cart__detail-info">
             {% assign xter = cart.total_price |  divided_by: 100 %}
-            {% if xter >= 150 %}
+            {% if xter >= 145 %}
               <span data-cart-subtotal class="totalin_hidden" style="font-weight:900;display:none !important;">{{ cart.total_price | money }}</span>
               <span data-cart-subtotal class="totalin" style="font-weight:900">{{ cart.total_price | money }}</span>
             {% else %}

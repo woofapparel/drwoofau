@@ -889,8 +889,36 @@ li.tag.product-tabs-data[value='pastel-lavender'] {
   order: {{ section.settings.color_pastel-lavender }};
 }
 
+.color-option[value='byron-bay'],
+.variant-input[data-value='Byron Bay'],
+.variant-input[data-arrange='byron-bay'],
+li.tag.product-tabs-data[value='byron-bay'] {
+  order: {{ section.settings.color_byron-bay }};
+}
 
-  .site-footer__section p{
+.color-option[value='cordovan'],
+.variant-input[data-value='Cordovan'],
+.variant-input[data-arrange='cordovan'],
+li.tag.product-tabs-data[value='cordovan'] {
+  order: {{ section.settings.color_cordovan }};
+}
+
+.color-option[value='espresso'],
+.variant-input[data-value='Espresso'],
+.variant-input[data-arrange='espresso'],
+li.tag.product-tabs-data[value='espresso'] {
+  order: {{ section.settings.color_espresso }};
+}
+
+.color-option[value='chocolate-brownie'],
+.variant-input[data-value='Chocolate Brownie'],
+.variant-input[data-arrange='chocolate-brownie'],
+li.tag.product-tabs-data[value='chocolate-brownie'] {
+  order: {{ section.settings.color_chocolate-brownie }};
+}
+
+
+.site-footer__section p{
     color:#fff;
   }
   .site-footer__section--newsletter{
@@ -1275,7 +1303,43 @@ li.tag.product-tabs-data[value='pastel-lavender'] {
         "min": 1,
         "max": 40,
         "step": 1
-      },            
+      },  
+      {
+        "type": "range",
+        "id": "color_byron-bay",
+        "label": "Order Byron Bay",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },    
+      {
+        "type": "range",
+        "id": "color_cordovan",
+        "label": "Order Cordovan",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },   
+      {
+        "type": "range",
+        "id": "color_espresso",
+        "label": "Order Espresso",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },  
+      {
+        "type": "range",
+        "id": "color_chocolate-brownie",
+        "label": "Order Chocolate Brownie",
+        "default": 40,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },          
       {
         "type": "header",
         "content": "Footer Text"
